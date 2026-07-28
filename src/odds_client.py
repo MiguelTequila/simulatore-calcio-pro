@@ -1,4 +1,4 @@
-import os, json, requests
+import os, json, requests, time
 from datetime import datetime
 
 BASE_URL = "https://api.the-odds-api.com/v4"
@@ -30,6 +30,7 @@ class OddsAPIClient:
                 print(f"[!] Rate limit {sport_key}")
                 return []
             r.raise_for_status()
+            time.sleep(2)
             return r.json()
         except Exception as e:
             print(f"[!] Errore Odds {sport_key}: {e}")
