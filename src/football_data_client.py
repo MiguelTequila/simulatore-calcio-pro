@@ -1,4 +1,4 @@
-import os, json, requests
+import os, json, requests, time
 from datetime import datetime, timedelta
 
 BASE_URL = "https://api.football-data.org/v4"
@@ -36,6 +36,7 @@ class FootballDataClient:
                 print(f"[!] Rate limit {endpoint}")
                 return None
             r.raise_for_status()
+            time.sleep(7)  # Rate limit piano free: max 10 req/min
             return r.json()
         except Exception as e:
             print(f"[!] Errore {endpoint}: {e}")
@@ -103,14 +104,18 @@ class FootballDataClient:
         return fixtures
 
     def get_team_matches(self, team_id, limit=10):
-        data = self._get(f"/teams/{team_id}/matches", {"status": "FINISHED", "limit": limit})
-        if not data:
-            return []
+        # Disabilitato per evitare rate limit su piano free
+        return []
+
+    def compute_form_from_matches(self, team_id, matches, limit=5):
+        """Calcola forma W/D/L dai match già in memoria (zero chiamate API)."""
+        team_matches = [m for m in matches if m["homeId"] == team_id or m["awayId"] == team_id]
+        team_matches.sort(key=lambda x: x["date"], reverse=True)
         results = []
-        for m in data.get("matches", [])[:5]:
-            home = m["homeTeam"]["id"] == team_id
-            hg = m["score"]["fullTime"]["home"]
-            ag = m["score"]["fullTime"]["away"]
+        for m in team_matches[:limit]:
+            home = m["homeId"] == team_id
+            hg = m.get("homeGoals")
+            ag = m.get("awayGoals")
             if hg is None or ag is None:
                 continue
             if home:
@@ -137,7 +142,7 @@ def fetch_all_data():
             continue
 
         for tid, tinfo in teams.items():
-            form = client.get_team_matches(tid, limit=5)
+            form = client.compute_form_from_matches(tid, recent, limit=5)
             tinfo["form"] = "".join(form) if form else ""
 
         output["competitions"][comp_id] = {
