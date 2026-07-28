@@ -4,8 +4,8 @@
  */
 
 // ===================== CONFIG =====================
-const DATA_URL = '../data/fixtures_processed.json';
-const ODDS_URL = '../data/odds.json';
+const DATA_URL = './data/fixtures_processed.json';
+const ODDS_URL = './data/odds.json';
 
 // Parametri lega per modalità manuale
 const LEAGUE_AVG_GF = 1.45;
