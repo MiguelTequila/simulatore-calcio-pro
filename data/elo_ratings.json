@@ -1,0 +1,82 @@
+{
+  "Leeds United FC": {
+    "elo": 1512.3559170436245,
+    "games": 4
+  },
+  "Burnley FC": {
+    "elo": 1470.0913517445217,
+    "games": 4
+  },
+  "Brentford FC": {
+    "elo": 1497.2674567227275,
+    "games": 4
+  },
+  "West Ham United FC": {
+    "elo": 1474.4146828378384,
+    "games": 4
+  },
+  "Newcastle United FC": {
+    "elo": 1511.7555862910363,
+    "games": 4
+  },
+  "Brighton & Hove Albion FC": {
+    "elo": 1470.9797796920436,
+    "games": 4
+  },
+  "Wolverhampton Wanderers FC": {
+    "elo": 1482.592438952026,
+    "games": 4
+  },
+  "Sunderland AFC": {
+    "elo": 1531.503361629163,
+    "games": 4
+  },
+  "Arsenal FC": {
+    "elo": 1557.8404756964887,
+    "games": 4
+  },
+  "Fulham FC": {
+    "elo": 1488.2840542716629,
+    "games": 4
+  },
+  "AFC Bournemouth": {
+    "elo": 1529.5770683302526,
+    "games": 4
+  },
+  "Crystal Palace FC": {
+    "elo": 1460.9300667148193,
+    "games": 5
+  },
+  "Manchester United FC": {
+    "elo": 1545.7255025390891,
+    "games": 4
+  },
+  "Liverpool FC": {
+    "elo": 1468.872288793251,
+    "games": 4
+  },
+  "Aston Villa FC": {
+    "elo": 1517.7153036360933,
+    "games": 4
+  },
+  "Tottenham Hotspur FC": {
+    "elo": 1513.410581928376,
+    "games": 4
+  },
+  "Chelsea FC": {
+    "elo": 1486.589418071624,
+    "games": 4
+  },
+  "Nottingham Forest FC": {
+    "elo": 1500.8568285950732,
+    "games": 4
+  },
+  "Everton FC": {
+    "elo": 1468.496638370837,
+    "games": 4
+  },
+  "Manchester City FC": {
+    "elo": 1510.7411981394516,
+    "games": 5
+  }
+}
