@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T19:55:35.039584",
+  "updated": "2026-07-28T20:24:17.073715",
   "odds": {
     "PL": [
       {
@@ -433,9 +433,9 @@
         "homeTeam": "Union Berlin",
         "awayTeam": "Eintracht Frankfurt",
         "commenceTime": "2026-08-29T13:30:00Z",
-        "1": 2.42,
+        "1": 2.41,
         "X": 3.62,
-        "2": 2.92,
+        "2": 2.93,
         "over25": 1.7,
         "under25": 2.1,
         "gg": null,
