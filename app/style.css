@@ -257,3 +257,11 @@ footer .small { font-size: 0.75rem; margin-top: 0.3rem; }
 .calib-legend{display:flex;gap:1.2rem;margin-top:.6rem;font-size:.8rem;opacity:.85}
 .calib-legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
 .pred-dot{background:#3d5af1}.act-dot{background:#2ecc71}
+
+/* --- Inserimento quote manuali su partita automatica --- */
+#manualOddsBox .manual-odds{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:.5rem;margin:.6rem 0}
+#manualOddsBox .manual-odds label{display:flex;flex-direction:column;gap:.2rem;font-size:.75rem;opacity:.85}
+#manualOddsBox .manual-odds input{width:100%;padding:.5rem;border-radius:6px;border:1px solid #333;background:#12121f;color:inherit;font-size:1rem}
+.manual-odds-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.manual-odds-actions button{flex:1;min-width:150px}
+#valueCard .best-bet.warn{background:#5c3a12;color:#ffe0b2}
