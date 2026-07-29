@@ -1,5 +1,5 @@
 import os, json, requests, time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 BASE_URL = "https://api.football-data.org/v4"
 
@@ -121,7 +121,7 @@ class FootballDataClient:
 
 def fetch_all_data():
     client = FootballDataClient()
-    output = {"updated": datetime.now().isoformat(), "competitions": {}}
+    output = {"updated": datetime.now(timezone.utc).isoformat(), "competitions": {}}
     all_matches = []
 
     for comp_id, meta in COMPETITIONS.items():
