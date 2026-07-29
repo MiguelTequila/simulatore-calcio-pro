@@ -62,8 +62,26 @@ def build_output():
         json.dump(odds_data, f, ensure_ascii=False, indent=2)
 
     print("\n[4/5] Calcolo predizioni + valore...")
+    # Crediti: se in questo giro non abbiamo interrogato l'API (nessuna partita
+    # entro la finestra), gli header non arrivano. In quel caso conserviamo
+    # l'ultimo valore noto invece di mostrare "n/d".
+    _cred = {"remaining": odds_client.credits_remaining, "used": odds_client.credits_used,
+             "checkedAt": raw_data["updated"], "stale": False}
+    if _cred["remaining"] is None:
+        try:
+            with open("data/fixtures_processed.json", encoding="utf-8") as _f:
+                _prev = json.load(_f).get("apiCredits") or {}
+            if _prev.get("remaining") is not None:
+                _cred = {"remaining": _prev["remaining"], "used": _prev.get("used"),
+                         "checkedAt": _prev.get("checkedAt"), "stale": True}
+        except Exception:
+            pass
+        if _cred["remaining"] is None:
+            _cred["note"] = "nessuna chiamata effettuata (nessuna partita entro la finestra quote)"
+
     output = {"updated": raw_data["updated"], "marketWeight": MARKET_WEIGHT,
-              "apiCredits": {"remaining": odds_client.credits_remaining, "used": odds_client.credits_used},
+              "oddsWindowDays": ODDS_WINDOW_DAYS,
+              "apiCredits": _cred,
               "competitions": {}}
 
     for comp_id, comp_data in raw_data["competitions"].items():
@@ -83,9 +101,9 @@ def build_output():
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
 
-            lam_h, lam_a = compute_lambdas(hs, ast, eh, ea, comp_id)
+            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id)
             odds = fix.get("odds")
-            lam_h, lam_a = calibrate_with_odds(lam_h, lam_a, odds, rho=rho, weight=MARKET_WEIGHT)
+            lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
             value = compute_value(pred, odds)
 
@@ -100,6 +118,8 @@ def build_output():
                 "odds": odds,
                 "prediction": {
                     "lambdaH": round(lam_h, 3), "lambdaA": round(lam_a, 3), "rho": rho,
+                    "lambdaHRaw": round(raw_h, 3), "lambdaARaw": round(raw_a, 3),
+                    "marketWeight": MARKET_WEIGHT,
                     "p1": round(pred["p1"], 4), "px": round(pred["px"], 4), "p2": round(pred["p2"], 4),
                     "pOver25": round(pred["p_over25"], 4), "pUnder25": round(pred["p_under25"], 4),
                     "pGG": round(pred["p_gg"], 4), "pNG": round(pred["p_ng"], 4),
