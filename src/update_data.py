@@ -4,7 +4,8 @@ from football_data_client import fetch_all_data, COMPETITIONS
 from odds_client import OddsAPIClient
 from elo import compute_elo_ratings
 from dixon_coles import compute_lambdas, calibrate_with_odds, dixon_coles_matrix, LEAGUE_RHO
-
+schedule:
+    - cron: '0 16 * * *'
 
 def merge_odds(fixtures, odds_data):
     odds_by_comp = odds_data.get("odds", {})
