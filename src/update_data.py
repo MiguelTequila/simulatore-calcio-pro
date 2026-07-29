@@ -47,7 +47,15 @@ def build_output():
     print(f"    {len(elo_ratings)} squadre in memoria, {n_new} partite nuove conteggiate")
 
     print("\n[3/5] Scarico quote (solo competizioni con partite in calendario)...")
-    active = [cid for cid, c in raw_data["competitions"].items() if c.get("fixtures")]
+    # Le quote servono solo per le partite imminenti: chiediamo l'API solo per le
+    # competizioni che giocano entro ODDS_WINDOW_DAYS. Le fixture restano a 45 giorni
+    # (quelle costano Football-Data, che e' gratis), ma i crediti Odds si spendono
+    # solo dove servono davvero.
+    ODDS_WINDOW_DAYS = 7
+    from datetime import datetime as _dt, timedelta as _td
+    _limit = (_dt.now() + _td(days=ODDS_WINDOW_DAYS)).strftime("%Y-%m-%d")
+    active = [cid for cid, c in raw_data["competitions"].items()
+              if any(f.get("date", "9999") <= _limit for f in c.get("fixtures", []))]
     odds_client = OddsAPIClient()
     odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds(active_comps=active)}
     with open("data/odds.json", "w", encoding="utf-8") as f:
