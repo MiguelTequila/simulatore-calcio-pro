@@ -240,3 +240,20 @@ footer .small { font-size: 0.75rem; margin-top: 0.3rem; }
 .value-head{background:transparent;font-weight:600;opacity:.7;font-size:.8rem;text-transform:uppercase}
 .value-pos{background:#123524;border-left:3px solid #2ecc71}
 .value-neg{opacity:.55}
+
+/* --- Track record & calibrazione --- */
+.track-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.6rem;margin:.8rem 0}
+.track-summary>div{background:#1a1a2e;border-radius:8px;padding:.6rem;display:flex;flex-direction:column;gap:.2rem;text-align:center}
+.stat-big{font-size:1.25rem;font-weight:700}
+.stat-good{color:#2ecc71}.stat-bad{color:#e05c5c}
+.calib-chart{display:flex;flex-direction:column;gap:.35rem;margin-top:.5rem}
+.calib-row{display:grid;grid-template-columns:110px 1fr;gap:.5rem;align-items:center}
+.calib-label{font-size:.78rem;opacity:.8}.calib-label em{opacity:.6;font-style:normal}
+.calib-bars{display:flex;flex-direction:column;gap:2px}
+.calib-bar{height:14px;border-radius:3px;min-width:2px;position:relative;display:flex;align-items:center}
+.calib-bar span{font-size:.65rem;padding-left:4px;white-space:nowrap}
+.calib-bar.pred{background:#3d5af1}
+.calib-bar.act{background:#2ecc71}
+.calib-legend{display:flex;gap:1.2rem;margin-top:.6rem;font-size:.8rem;opacity:.85}
+.calib-legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.pred-dot{background:#3d5af1}.act-dot{background:#2ecc71}
