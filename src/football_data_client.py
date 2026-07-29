@@ -127,7 +127,10 @@ def fetch_all_data():
     for comp_id, meta in COMPETITIONS.items():
         print(f"[→] {meta['name']} ({comp_id})")
         teams = client.get_standings(comp_id)
-        recent = client.get_recent_matches(comp_id, days_back=90)
+        # 180 giorni: a inizio stagione i 90 giorni tagliavano il finale della
+        # stagione precedente e la forma usciva con meno di 5 partite.
+        # Costo API invariato: e' sempre UNA chiamata per competizione.
+        recent = client.get_recent_matches(comp_id, days_back=180)
         upcoming = client.get_upcoming(comp_id, days_ahead=45)
 
         if not teams:
