@@ -60,7 +60,12 @@ function renderValue(value) {
     return;
   }
   let html = '<h3>\uD83D\uDC8E Valore \u2014 modello vs quota migliore</h3>';
-  if (value.bestBet) {
+  if (value.bestBet && value.bestBet.edge > 0.25) {
+    const bb = value.bestBet;
+    html += '<div class="best-bet warn">\u26A0\uFE0F Vantaggio anomalo su <strong>' + bb.market + '</strong> (' + (bb.edge*100).toFixed(0) + '%). ' +
+            'Un margine cos\u00EC grande contro il bookmaker quasi sempre significa che il modello ha dati insufficienti ' +
+            '(inizio stagione, poche partite giocate), non che la quota sia regalata. Nessuna puntata consigliata.</div>';
+  } else if (value.bestBet) {
     const bb = value.bestBet;
     html += '<div class="best-bet">\u2705 Bet di valore: <strong>' + bb.market + '</strong> @ ' + bb.odds.toFixed(2) +
             ' \u00B7 vantaggio <strong>' + (bb.edge*100).toFixed(1) + '%</strong>' +
@@ -293,7 +298,11 @@ function showMatchData(fixture) {
   }
 
   // Predizioni
+  if (!fixture._basePrediction) {
+    fixture._basePrediction = JSON.parse(JSON.stringify(fixture.prediction));
+  }
   showPrediction(fixture.prediction);
+  renderOddsInput(fixture);
 }
 
 function showPrediction(pred) {
@@ -566,7 +575,9 @@ document.getElementById('mCalcBtn').addEventListener('click', () => {
   const manualOdds = (q1 && qX && q2) ? {'1': q1, 'X': qX, '2': q2, over25: mOver || null, under25: mUnder || null} : null;
   currentMatch.prediction.value = computeValueJS(currentMatch.prediction, manualOdds);
 
+  currentMatch._basePrediction = JSON.parse(JSON.stringify(currentMatch.prediction));
   showPrediction(currentMatch.prediction);
+  renderOddsInput(currentMatch);
   modal.style.display = 'none';
 });
 
@@ -660,3 +671,151 @@ function renderTrackRecord(tr) {
   }
   card.innerHTML = html;
 }
+
+
+// ===================== Calibrazione con quote inserite a mano =====================
+// Stessa logica del modello Python: le quote 1-X-2 fissano la differenza tra le
+// squadre, le quote Over/Under la somma dei gol. Ricerca a griglia raffinata.
+function calibrateOddsJS(lamH, lamA, odds, rho, weight) {
+  if (!odds) return [lamH, lamA];
+  let t1x2 = null, tOU = null;
+  const q1 = odds['1'], qX = odds['X'], q2 = odds['2'];
+  if (q1 > 1 && qX > 1 && q2 > 1) {
+    const raw = [1/q1, 1/qX, 1/q2];
+    const s = raw[0] + raw[1] + raw[2];
+    t1x2 = raw.map(r => r / s);
+  }
+  const qo = odds.over25, qu = odds.under25;
+  if (qo > 1 && qu > 1) { tOU = (1/qo) / (1/qo + 1/qu); }
+  if (!t1x2 && !tOU) return [lamH, lamA];
+
+  function loss(lh, la) {
+    if (lh <= 0.1 || la <= 0.1 || lh > 6 || la > 6) return 1e3;
+    const r = dixonColesMatrix(lh, la, rho);
+    let e = 0;
+    if (t1x2) e += Math.pow(r.p1 - t1x2[0], 2) + Math.pow(r.px - t1x2[1], 2) + Math.pow(r.p2 - t1x2[2], 2);
+    if (tOU !== null) e += Math.pow(r.pOver25 - tOU, 2);
+    return e;
+  }
+
+  // ricerca locale progressivamente piu' fine (equivalente pratico dell'ottimizzatore)
+  let bh = lamH, ba = lamA, bs = loss(bh, ba);
+  let step = 0.4;
+  for (let it = 0; it < 6; it++) {
+    let improved = true;
+    while (improved) {
+      improved = false;
+      const cand = [[bh+step, ba], [bh-step, ba], [bh, ba+step], [bh, ba-step],
+                    [bh+step, ba+step], [bh-step, ba-step], [bh+step, ba-step], [bh-step, ba+step]];
+      for (const [ch, ca] of cand) {
+        const sc = loss(ch, ca);
+        if (sc < bs - 1e-9) { bs = sc; bh = ch; ba = ca; improved = true; }
+      }
+    }
+    step /= 2.5;
+  }
+  bh = Math.max(0.3, Math.min(bh, 4.0));
+  ba = Math.max(0.3, Math.min(ba, 3.5));
+  const w = (weight == null ? 0.25 : weight);
+  return [(1-w)*lamH + w*bh, (1-w)*lamA + w*ba];
+}
+
+// Pannello per inserire le quote a mano su una partita gia' selezionata
+function renderOddsInput(fixture) {
+  const card = document.getElementById('predictionCard');
+  if (!card) return;
+  let box = document.getElementById('manualOddsBox');
+  if (!box) {
+    box = document.createElement('div');
+    box.className = 'sub-card';
+    box.id = 'manualOddsBox';
+    const vc = document.getElementById('valueCard');
+    if (vc) card.insertBefore(box, vc); else card.appendChild(box);
+  }
+  const o = (fixture && fixture.odds) || {};
+  const has = !!o['1'];
+  box.innerHTML =
+    '<h3>\u270F\uFE0F Quote tue (Eurobet, Sisal, o quelle che usi)</h3>' +
+    '<p class="note">' + (has
+      ? 'Sono gia\u0300 presenti quote automatiche. Inserendo le tue, il modello si ricalibra e ricalcola il valore su QUELLE quote.'
+      : 'Per questa partita non ci sono quote automatiche: le statistiche ci sono, mancano solo le quote. Inseriscile qui e il modello le user\u00E0 per calibrarsi e cercare valore.') + '</p>' +
+    '<div class="odds-inputs manual-odds">' +
+      '<label>1<input type="number" step="0.01" id="uOdd1" placeholder="1" value="' + (o['1'] || '') + '"></label>' +
+      '<label>X<input type="number" step="0.01" id="uOddX" placeholder="X" value="' + (o['X'] || '') + '"></label>' +
+      '<label>2<input type="number" step="0.01" id="uOdd2" placeholder="2" value="' + (o['2'] || '') + '"></label>' +
+      '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
+      '<label>Under 2.5<input type="number" step="0.01" id="uOddUnder" placeholder="U 2.5" value="' + (o.under25 || '') + '"></label>' +
+    '</div>' +
+    '<div class="manual-odds-actions">' +
+      '<button id="applyOddsBtn" class="btn-primary">\uD83C\uDFAF Ricalcola con queste quote</button>' +
+      '<button id="resetOddsBtn" class="btn-secondary">\u21A9\uFE0F Torna al modello puro</button>' +
+    '</div>';
+
+  document.getElementById('applyOddsBtn').addEventListener('click', applyManualOdds);
+  document.getElementById('resetOddsBtn').addEventListener('click', () => {
+    if (!currentMatch || !currentMatch._basePrediction) return;
+    currentMatch.prediction = JSON.parse(JSON.stringify(currentMatch._basePrediction));
+    showPrediction(currentMatch.prediction);
+  });
+}
+
+function applyManualOdds() {
+  if (!currentMatch) return;
+  const num = id => { const v = parseFloat(document.getElementById(id).value); return (v > 1) ? v : null; };
+  const odds = {'1': num('uOdd1'), 'X': num('uOddX'), '2': num('uOdd2'),
+                over25: num('uOddOver'), under25: num('uOddUnder')};
+  const hasAny = odds['1'] || odds.over25;
+  if (!hasAny) { alert('Inserisci almeno la tripla 1-X-2 oppure Over/Under 2.5.'); return; }
+
+  const base = currentMatch._basePrediction || currentMatch.prediction;
+  const rho = base.rho || RHO_DEFAULT;
+  // Riparte SEMPRE dai lambda grezzi (pre-calibrazione), per non applicare due volte il mercato
+  const lamH0 = base.lambdaHRaw != null ? base.lambdaHRaw : base.lambdaH;
+  const lamA0 = base.lambdaARaw != null ? base.lambdaARaw : base.lambdaA;
+  const w = base.marketWeight != null ? base.marketWeight : 0.25;
+
+  const [lh, la] = calibrateOddsJS(lamH0, lamA0, odds, rho, w);
+  const r = dixonColesMatrix(lh, la, rho);
+  const pred = {
+    p1: r.p1, px: r.px, p2: r.p2,
+    pOver25: r.pOver25, pUnder25: r.pUnder25, pGG: r.pGG, pNG: r.pNG,
+    topExact: r.topExact.map(x => [x.score, x.prob]),
+    totalGoalsDist: r.totalGoalsDist,
+    lambdaH: r.lamH, lambdaA: r.lamA, rho: rho,
+    lambdaHRaw: lamH0, lambdaARaw: lamA0, marketWeight: w,
+    manualOdds: true
+  };
+  pred.value = computeValueJS(pred, odds);
+  currentMatch.prediction = pred;
+  currentMatch.odds = Object.assign({}, currentMatch.odds || {}, odds);
+  showPrediction(pred);
+
+  // aggiorna anche il riquadro quote in alto
+  const row = document.getElementById('oddsRow');
+  if (row) {
+    row.style.display = '';
+    document.getElementById('odd1').textContent = formatOdd(odds['1']);
+    document.getElementById('oddX').textContent = formatOdd(odds['X']);
+    document.getElementById('odd2').textContent = formatOdd(odds['2']);
+    document.getElementById('oddOver').textContent = formatOdd(odds.over25);
+    document.getElementById('oddUnder').textContent = formatOdd(odds.under25);
+    document.getElementById('oddsNote').textContent = '\u270F\uFE0F Quote inserite manualmente da te';
+  }
+}
+
+
+// Il bottone "Ricalcola" nella pagina non aveva alcun handler: ora rietichetta
+// e porta al pannello delle quote manuali.
+(function () {
+  const b = document.getElementById('simulateBtn');
+  if (!b) return;
+  b.textContent = '\u270F\uFE0F Usa le tue quote';
+  b.addEventListener('click', () => {
+    const box = document.getElementById('manualOddsBox');
+    if (box) {
+      box.scrollIntoView({behavior: 'smooth', block: 'center'});
+      const f = document.getElementById('uOdd1');
+      if (f) f.focus();
+    }
+  });
+})();
