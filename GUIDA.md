@@ -74,3 +74,23 @@ debole: tratta gli edge come segnali, non come certezze.
   grandi è un errore del modello, non un regalo del book.
 - Gioca solo ciò che puoi permetterti di perdere. Il ½ Kelly col tetto al 5%
   esiste per proteggerti dalla rovina, non per garantire profitto.
+
+## ✏️ Inserire le quote a mano (partite senza quote automatiche)
+Se una partita ha statistiche ma **nessuna quota** (competizione fuori finestra,
+crediti esauriti, o lega non coperta dall'API delle quote), non serve rifare tutto
+in modalità manuale: nella scheda della predizione trovi il riquadro
+**"✏️ Quote tue"**.
+
+1. Scrivi le quote del tuo bookmaker (Eurobet, Sisal, quello che usi). Basta
+   la tripla 1-X-2 **oppure** Over/Under 2.5; se metti entrambe la calibrazione
+   è più precisa.
+2. Premi **🎯 Ricalcola con queste quote**: il modello si ricalibra partendo dai
+   lambda statistici grezzi e calcola il valore **sulle tue quote reali**.
+3. **↩️ Torna al modello puro** annulla e ripristina la predizione statistica.
+
+Funziona anche quando le quote automatiche ci sono già: serve a confrontare il
+modello con il prezzo che paghi *tu*, non con la media dei bookmaker europei.
+
+⚠️ Se compare l'avviso arancione **"Vantaggio anomalo"** (edge oltre il 25%),
+non puntare: significa che il modello ha troppi pochi dati (tipico a inizio
+stagione) e sta sbagliando lui, non il bookmaker.
