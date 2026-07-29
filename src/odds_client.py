@@ -13,12 +13,16 @@ SPORT_KEYS = {
     "SA":  "soccer_italy_serie_a",
     "PPL": "soccer_portugal_primeira_liga",
     "BL1": "soccer_germany_bundesliga",
+    "DED": "soccer_netherlands_eredivisie",
+    "CL":  "soccer_uefa_champs_league",
 }
 
 
 class OddsAPIClient:
     def __init__(self):
         self.api_key = os.environ.get("ODDSKEY", "")
+        self.credits_remaining = None
+        self.credits_used = None
         if not self.api_key:
             print("[!] ODDSKEY non trovata")
 
@@ -31,8 +35,11 @@ class OddsAPIClient:
         try:
             r = requests.get(url, params=params, timeout=30)
             rem = r.headers.get("x-requests-remaining")
+            used = r.headers.get("x-requests-used")
             if rem is not None:
-                print(f"    crediti Odds API rimasti: {rem}")
+                self.credits_remaining = rem
+                self.credits_used = used
+                print(f"    crediti Odds API rimasti: {rem} (usati: {used})")
             if r.status_code == 429:
                 print(f"[!] Rate limit {sport_key}")
                 return []
@@ -72,9 +79,15 @@ class OddsAPIClient:
                         "over25": best(acc["over25"]), "under25": best(acc["under25"])}}
         return rec
 
-    def fetch_all_odds(self):
+    def fetch_all_odds(self, active_comps=None):
+        """Se active_comps e' fornita, chiama l'API solo per quelle competizioni
+        (risparmio crediti: le coppe giocano poche settimane)."""
         all_odds = {}
         for comp_id, sport_key in SPORT_KEYS.items():
+            if active_comps is not None and comp_id not in active_comps:
+                print(f"[→] Quote {comp_id}: saltate (nessuna partita in calendario)")
+                all_odds[comp_id] = []
+                continue
             print(f"[→] Quote {comp_id}")
             events = self.get_odds(sport_key)
             parsed = []
