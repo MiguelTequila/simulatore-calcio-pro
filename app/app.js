@@ -80,7 +80,7 @@ function renderValue(value) {
             r.odds.toFixed(2) + '</span><span>' + (r.edge*100).toFixed(1) + '%</span><span>' +
             (r.kelly>0 ? (r.kelly*100).toFixed(1)+'%' : '\u2014') + '</span></div>';
   }
-  html += '</div><p class="note">Vantaggio = prob. modello \u00D7 quota \u2212 1. Kelly dimezzato e limitato al 5% del bankroll. Gioca responsabilmente.</p>';
+  html += '</div><p class="note hint">\u2139\uFE0F <strong>Vantaggio (EV)</strong> = probabilit\u00E0 del modello \u00D7 quota \u2212 1: quanto guadagni in media per ogni euro giocato se il modello ha ragione. Esempio: 40% con quota 3.00 \u2192 +20%. Sotto zero la quota \u00E8 pagata meno del giusto.<br>\u2139\uFE0F <strong>\u00BD Kelly</strong> = quota del <em>bankroll totale</em> da puntare, gi\u00E0 dimezzata e tappata al 5% per prudenza. Gioca solo ci\u00F2 che puoi permetterti di perdere.</p>';
   box.innerHTML = html;
 }
 
@@ -202,6 +202,8 @@ async function loadData() {
     }
 
     populateCompetitions();
+    removeUnusedOddsBoxes();
+    renderGlossary();
     renderCreditsBadge(allData.apiCredits);
     loadTrackRecord();
   } catch (e) {
@@ -285,7 +287,7 @@ function showMatchData(fixture) {
     document.getElementById('odd2').textContent = formatOdd(odds['2']);
     document.getElementById('oddOver').textContent = formatOdd(odds.over25);
     document.getElementById('oddUnder').textContent = formatOdd(odds.under25);
-    document.getElementById('oddGG').textContent = formatOdd(odds.gg);
+    const _gg1 = document.getElementById('oddGG'); if (_gg1) _gg1.textContent = formatOdd(odds.gg);
     document.getElementById('oddsNote').textContent = 'Quote recuperate automaticamente da The Odds API';
   } else {
     document.getElementById('odd1').textContent = '—';
@@ -293,7 +295,7 @@ function showMatchData(fixture) {
     document.getElementById('odd2').textContent = '—';
     document.getElementById('oddOver').textContent = '—';
     document.getElementById('oddUnder').textContent = '—';
-    document.getElementById('oddGG').textContent = '—';
+    const _gg2 = document.getElementById('oddGG'); if (_gg2) _gg2.textContent = '—';
     document.getElementById('oddsNote').textContent = 'Quote non disponibili per questa partita — il modello usa solo dati statistici';
   }
 
@@ -303,6 +305,7 @@ function showMatchData(fixture) {
   }
   showPrediction(fixture.prediction);
   renderOddsInput(fixture);
+  renderInlineHints();
 }
 
 function showPrediction(pred) {
@@ -599,10 +602,17 @@ function renderCreditsBadge(credits) {
   }
   if (credits && credits.remaining != null) {
     const rem = parseInt(credits.remaining, 10);
-    b.textContent = '\uD83E\uDE99 Crediti Odds API: ' + rem + '/500';
+    b.textContent = '\uD83E\uDE99 Crediti Odds API: ' + rem + '/500' + (credits.stale ? ' (ultimo dato)' : '');
+    b.title = credits.stale
+      ? 'Nessuna chiamata alle quote in questo aggiornamento: valore rilevato l\u2019ultima volta che l\u2019API \u00E8 stata interrogata.'
+      : 'Crediti residui del mese, letti direttamente dalla risposta di The Odds API.';
     b.style.background = rem < 60 ? '#7a1f1f' : (rem < 150 ? '#7a5c1f' : '');
   } else {
-    b.textContent = '\uD83E\uDE99 Crediti Odds API: n/d';
+    const w = (allData && allData.oddsWindowDays) ? allData.oddsWindowDays : 7;
+    b.textContent = '\uD83E\uDE99 Quote: nessuna chiamata (nessuna partita entro ' + w + " giorni)";
+    b.title = 'Le quote si scaricano solo per le competizioni che giocano entro ' + w +
+              ' giorni, per non consumare crediti inutilmente. Il contatore torner\u00E0 appena si avvicina una giornata.';
+    b.style.background = '';
   }
 }
 
@@ -819,3 +829,67 @@ function applyManualOdds() {
     }
   });
 })();
+
+
+// Il riquadro quota "GG" restava sempre vuoto: il mercato btts non viene
+// scaricato (costerebbe crediti e farebbe sforare il tetto gratuito).
+function removeUnusedOddsBoxes() {
+  const el = document.getElementById('oddGG');
+  if (el && el.parentElement) el.parentElement.remove();
+}
+
+
+// ===================== Legenda / note esplicative =====================
+const GLOSSARY = [
+  ['Elo', 'Punteggio di forza della squadra. Parte da 1500 e sale o scende dopo ogni partita: si guadagna battendo squadre forti, si perde cedendo alle deboli, e conta anche il divario di gol. Sopra 1500 = sopra la media della lega. Una differenza di ~100 punti \u00E8 uno scarto netto di livello. \u00C8 memoria permanente: si accumula run dopo run, non riparte da zero.'],
+  ['\u03BB (lambda)', 'I gol attesi: \u03BB casa 1.60 significa che il modello si aspetta in media 1,60 gol dalla squadra di casa. Da questi due numeri nascono tutte le probabilit\u00E0.'],
+  ['\u03C1 (rho)', 'Correzione Dixon-Coles sui risultati bassi (0-0, 1-0, 0-1, 1-1), che nel calcio reale capitano pi\u00F9 spesso di quanto direbbe una Poisson pura. \u00C8 sempre un numero negativo piccolo.'],
+  ['Vantaggio (EV / edge)', 'Quanto guadagni in media per ogni euro puntato, SE il modello ha ragione. Si calcola: probabilit\u00E0 del modello \u00D7 quota \u2212 1. Esempio: il modello d\u00E0 40% e la quota \u00E8 3.00 \u2192 0,40 \u00D7 3,00 \u2212 1 = +20%. Sotto zero la quota \u00E8 pagata meno del giusto. Serve almeno +3% per essere segnalata.'],
+  ['\u00BD Kelly', 'Quanto puntare, in percentuale del tuo bankroll totale (non della singola giocata). Il criterio di Kelly massimizza la crescita nel lungo periodo; io mostro la met\u00E0 e non oltre il 5%, perch\u00E9 il Kelly pieno \u00E8 troppo aggressivo quando le probabilit\u00E0 sono stimate e non certe.'],
+  ['Brier score', 'Errore medio delle probabilit\u00E0 sugli esiti gi\u00E0 avvenuti: pi\u00F9 basso \u00E8, meglio il modello prevede. Come riferimento, 0,25 equivale a tirare a caso su un evento 50/50.'],
+  ['Calibrazione', 'Il controllo di onest\u00E0 del modello: quando dice 60%, l\u2019evento deve succedere circa il 60% delle volte. Nel grafico, barra blu = probabilit\u00E0 prevista, barra verde = frequenza reale. Simili = modello affidabile.'],
+  ['Forma', 'Esiti delle ultime 5 partite ufficiali, dalla pi\u00F9 recente: W vittoria, D pareggio, L sconfitta.']
+];
+
+function renderGlossary() {
+  if (document.getElementById('glossaryCard')) return;
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+  const sec = document.createElement('section');
+  sec.className = 'card';
+  sec.id = 'glossaryCard';
+  let html = '<h2 id="glossaryToggle" class="collapsible">\uD83D\uDCD6 Legenda \u2014 cosa significano i numeri <span class="chev">\u25BE</span></h2>';
+  html += '<div id="glossaryBody" class="glossary-body">';
+  for (const [term, desc] of GLOSSARY) {
+    html += '<div class="gloss-item"><span class="gloss-term">' + term + '</span><span class="gloss-desc">' + desc + '</span></div>';
+  }
+  html += '<p class="note">Le probabilit\u00E0 sono stime statistiche: non tengono conto di infortuni, squalifiche, turnover o motivazioni. Gioca solo ci\u00F2 che puoi permetterti di perdere.</p>';
+  html += '</div>';
+  sec.innerHTML = html;
+  footer.parentNode.insertBefore(sec, footer);
+  document.getElementById('glossaryToggle').addEventListener('click', () => {
+    const b = document.getElementById('glossaryBody');
+    const open = b.classList.toggle('open');
+    sec.querySelector('.chev').textContent = open ? '\u25B4' : '\u25BE';
+  });
+}
+
+// Note brevi in linea, accanto alle sezioni a cui si riferiscono
+function renderInlineHints() {
+  const cmp = document.querySelector('.teams-comparison');
+  if (cmp && !document.getElementById('eloHint')) {
+    const p = document.createElement('p');
+    p.className = 'note hint';
+    p.id = 'eloHint';
+    p.innerHTML = '\u2139\uFE0F <strong>Elo</strong>: forza della squadra, base 1500. Sopra = sopra la media; ~100 punti di differenza = uno scarto netto di livello. <strong>Forma</strong>: ultime 5 gare (W vittoria, D pari, L sconfitta), dalla pi\u00F9 recente.';
+    cmp.parentNode.insertBefore(p, cmp.nextSibling);
+  }
+  const params = document.querySelector('.params-box');
+  if (params && !document.getElementById('lambdaHint')) {
+    const p = document.createElement('p');
+    p.className = 'note hint';
+    p.id = 'lambdaHint';
+    p.innerHTML = '\u2139\uFE0F <strong>\u03BB</strong> = gol attesi da ciascuna squadra. <strong>\u03C1</strong> = correzione sui risultati bassi (0-0, 1-1), tipici del calcio reale.';
+    params.parentNode.insertBefore(p, params.nextSibling);
+  }
+}

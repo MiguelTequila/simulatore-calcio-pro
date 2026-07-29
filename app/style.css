@@ -265,3 +265,13 @@ footer .small { font-size: 0.75rem; margin-top: 0.3rem; }
 .manual-odds-actions{display:flex;gap:.5rem;flex-wrap:wrap}
 .manual-odds-actions button{flex:1;min-width:150px}
 #valueCard .best-bet.warn{background:#5c3a12;color:#ffe0b2}
+
+/* --- Legenda e note esplicative --- */
+.note.hint{background:#141426;border-left:3px solid #3d5af1;padding:.55rem .7rem;border-radius:6px;margin:.6rem 0;line-height:1.5}
+h2.collapsible{cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+h2.collapsible .chev{font-size:.9rem;opacity:.7}
+.glossary-body{display:none;flex-direction:column;gap:.6rem;margin-top:.6rem}
+.glossary-body.open{display:flex}
+.gloss-item{display:flex;flex-direction:column;gap:.2rem;background:#141426;border-radius:8px;padding:.6rem .75rem}
+.gloss-term{font-weight:700;color:#7f9cff;font-size:.95rem}
+.gloss-desc{font-size:.88rem;line-height:1.5;opacity:.92}
