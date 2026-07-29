@@ -1,20 +1,20 @@
+"""Client The Odds API. Aggrega TUTTI i bookmaker: media (per calibrazione)
+e quota migliore (per il rilevamento del valore)."""
 import os, json, requests, time
 from datetime import datetime
 
 BASE_URL = "https://api.the-odds-api.com/v4"
 
+# Solo le 6 leghe scelte (h2h + totals = 2 crediti a lega -> ~372/mese, sotto i 500)
 SPORT_KEYS = {
     "PL":  "soccer_epl",
     "FL1": "soccer_france_ligue_one",
     "PD":  "soccer_spain_la_liga",
     "SA":  "soccer_italy_serie_a",
     "PPL": "soccer_portugal_primeira_liga",
-    "BL1": "soccer_germany_bundesliga",,
-    "PPL": "soccer_portugal_primeira_liga", "CL": "soccer_uefa_champs_league",
-    "EL": "soccer_uefa_europa_league", "ECL": "soccer_uefa_europa_conference_league",
-    "BSA": "soccer_brazil_campeonato", "ALL": "soccer_sweden_allsvenskan",
-    "ELI": "soccer_norway_eliteserien", "VEIK": "soccer_finland_veikkausliiga",
+    "BL1": "soccer_germany_bundesliga",
 }
+
 
 class OddsAPIClient:
     def __init__(self):
@@ -26,9 +26,13 @@ class OddsAPIClient:
         if not self.api_key:
             return []
         url = f"{BASE_URL}/sports/{sport_key}/odds"
-        params = {"apiKey": self.api_key, "regions": regions, "markets": markets, "oddsFormat": "decimal", "dateFormat": "iso"}
+        params = {"apiKey": self.api_key, "regions": regions, "markets": markets,
+                  "oddsFormat": "decimal", "dateFormat": "iso"}
         try:
             r = requests.get(url, params=params, timeout=30)
+            rem = r.headers.get("x-requests-remaining")
+            if rem is not None:
+                print(f"    crediti Odds API rimasti: {rem}")
             if r.status_code == 429:
                 print(f"[!] Rate limit {sport_key}")
                 return []
@@ -40,27 +44,33 @@ class OddsAPIClient:
             return []
 
     def parse_match_odds(self, event):
-        result = {"homeTeam": event.get("home_team"), "awayTeam": event.get("away_team"),
-                  "commenceTime": event.get("commence_time"), "1": None, "X": None, "2": None,
-                  "over25": None, "under25": None, "gg": None, "ng": None}
-        for bookmaker in event.get("bookmakers", [])[:3]:
-            for market in bookmaker.get("markets", []):
+        home, away = event.get("home_team"), event.get("away_team")
+        acc = {"1": [], "X": [], "2": [], "over25": [], "under25": []}
+        for bk in event.get("bookmakers", []):
+            for market in bk.get("markets", []):
                 if market["key"] == "h2h":
-                    for outcome in market["outcomes"]:
-                        name, price = outcome["name"], outcome["price"]
-                        if name == event.get("home_team"): result["1"] = price
-                        elif name == event.get("away_team"): result["2"] = price
-                        elif name.lower() in ("draw", "x"): result["X"] = price
+                    for o in market["outcomes"]:
+                        n, price = o["name"], o["price"]
+                        if n == home: acc["1"].append(price)
+                        elif n == away: acc["2"].append(price)
+                        elif n.lower() in ("draw", "x"): acc["X"].append(price)
                 elif market["key"] == "totals":
-                    for outcome in market["outcomes"]:
-                        if outcome.get("point") == 2.5:
-                            if outcome["name"].lower() == "over": result["over25"] = outcome["price"]
-                            elif outcome["name"].lower() == "under": result["under25"] = outcome["price"]
-                elif market["key"] == "btts":
-                    for outcome in market["outcomes"]:
-                        if outcome["name"].lower() in ("yes", "true"): result["gg"] = outcome["price"]
-                        elif outcome["name"].lower() in ("no", "false"): result["ng"] = outcome["price"]
-        return result
+                    for o in market["outcomes"]:
+                        if o.get("point") == 2.5:
+                            if o["name"].lower() == "over": acc["over25"].append(o["price"])
+                            elif o["name"].lower() == "under": acc["under25"].append(o["price"])
+
+        def avg(v): return round(sum(v) / len(v), 3) if v else None
+        def best(v): return round(max(v), 3) if v else None
+
+        rec = {"homeTeam": home, "awayTeam": away, "commenceTime": event.get("commence_time"),
+               "n_books": len(event.get("bookmakers", [])),
+               "1": avg(acc["1"]), "X": avg(acc["X"]), "2": avg(acc["2"]),
+               "over25": avg(acc["over25"]), "under25": avg(acc["under25"]),
+               "gg": None, "ng": None,
+               "best": {"1": best(acc["1"]), "X": best(acc["X"]), "2": best(acc["2"]),
+                        "over25": best(acc["over25"]), "under25": best(acc["under25"])}}
+        return rec
 
     def fetch_all_odds(self):
         all_odds = {}
