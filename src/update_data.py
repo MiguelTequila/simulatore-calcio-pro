@@ -2,10 +2,10 @@ import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from football_data_client import fetch_all_data, COMPETITIONS
 from odds_client import OddsAPIClient
-from elo import compute_elo_ratings
-from dixon_coles import compute_lambdas, calibrate_with_odds, dixon_coles_matrix, LEAGUE_RHO
-schedule:
-    - cron: '0 16 * * *'
+from elo import load_state, update_ratings_incremental, save_state
+from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
+                         compute_value, LEAGUE_RHO, DEFAULT_RHO, MARKET_WEIGHT)
+
 
 def merge_odds(fixtures, odds_data):
     odds_by_comp = odds_data.get("odds", {})
@@ -39,18 +39,20 @@ def build_output():
             json.dump({"updated": raw_data["updated"], "competitions": {}}, f)
         return
 
-    print("\n[2/4] Calcolo Elo...")
-    elo_ratings = compute_elo_ratings(all_matches)
-    print(f"    {len(elo_ratings)} squadre")
+    print("\n[2/4] Aggiorno Elo (persistente)...")
+    state = load_state()
+    elo_ratings, state, n_new = update_ratings_incremental(all_matches, state)
+    save_state(state)
+    print(f"    {len(elo_ratings)} squadre in memoria, {n_new} partite nuove conteggiate")
 
     print("\n[3/4] Scarico quote...")
     odds_client = OddsAPIClient()
     odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds()}
-    with open("data/odds.json", "w") as f:
+    with open("data/odds.json", "w", encoding="utf-8") as f:
         json.dump(odds_data, f, ensure_ascii=False, indent=2)
 
-    print("\n[4/4] Calcolo predizioni...")
-    output = {"updated": raw_data["updated"], "competitions": {}}
+    print("\n[4/4] Calcolo predizioni + valore...")
+    output = {"updated": raw_data["updated"], "marketWeight": MARKET_WEIGHT, "competitions": {}}
 
     for comp_id, comp_data in raw_data["competitions"].items():
         teams = comp_data["teams"]
@@ -58,6 +60,7 @@ def build_output():
         if not fixtures:
             continue
         fixtures = merge_odds({comp_id: fixtures}, odds_data)[comp_id]
+        rho = LEAGUE_RHO.get(comp_id, DEFAULT_RHO)
         processed = []
 
         for fix in fixtures:
@@ -70,9 +73,9 @@ def build_output():
 
             lam_h, lam_a = compute_lambdas(hs, ast, eh, ea, comp_id)
             odds = fix.get("odds")
-            lam_h, lam_a = calibrate_with_odds(lam_h, lam_a, odds, weight=0.60)
-            rho = LEAGUE_RHO.get(comp_id, -0.07)
+            lam_h, lam_a = calibrate_with_odds(lam_h, lam_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
+            value = compute_value(pred, odds)
 
             processed.append({
                 "id": fix["id"], "date": fix["date"], "time": fix.get("time", ""),
@@ -90,13 +93,15 @@ def build_output():
                     "pGG": round(pred["p_gg"], 4), "pNG": round(pred["p_ng"], 4),
                     "topExact": [(r, round(p, 4)) for r, p in pred["top_exact"][:3]],
                     "totalGoalsDist": {str(k): round(v, 4) for k, v in pred["total_goals_dist"].items()},
+                    "value": value,
                 }
             })
 
         output["competitions"][comp_id] = {
             "name": comp_data["name"], "country": comp_data["country"], "fixtures": processed
         }
-        print(f"    {comp_id}: {len(processed)} predizioni")
+        n_val = sum(1 for p in processed if p["prediction"]["value"] and p["prediction"]["value"]["bestBet"])
+        print(f"    {comp_id}: {len(processed)} predizioni, {n_val} con valore")
 
     with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
@@ -105,9 +110,6 @@ def build_output():
 
     print("\n" + "=" * 60)
     print("COMPLETATO!")
-    print("   data/fixtures_processed.json")
-    print("   data/odds.json")
-    print("   data/elo_ratings.json")
     print("=" * 60)
 
 
