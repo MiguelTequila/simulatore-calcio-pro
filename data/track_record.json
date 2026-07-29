@@ -1,0 +1,74 @@
+{
+ "graded": 0,
+ "pending": 147,
+ "brier": null,
+ "calibration": [
+  {
+   "bin": "0-10%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "10-20%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "20-30%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "30-40%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "40-50%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "50-60%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "60-70%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "70-80%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "80-90%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  },
+  {
+   "bin": "90-100%",
+   "n": 0,
+   "avgPred": null,
+   "actualFreq": null
+  }
+ ],
+ "valueBets": {
+  "n": 0,
+  "wins": 0,
+  "profitUnits": 0.0,
+  "roi": null,
+  "history": []
+ }
+}
