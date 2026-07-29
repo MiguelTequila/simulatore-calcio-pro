@@ -10,13 +10,8 @@ COMPETITIONS = {
     "SA":  {"name": "Serie A", "country": "Italy"},
     "PPL": {"name": "Primeira Liga", "country": "Portugal"},
     "BL1": {"name": "Bundesliga", "country": "Germany"},
-    "CL": {"name": "Champions League", "country": "Europe"},
-    "EL": {"name": "Europa League", "country": "Europe"},
-    "ECL": {"name": "Conference League", "country": "Europe"},
-    "BSA": {"name": "Brasileirão", "country": "Brazil"},
-    "ALL": {"name": "Allsvenskan", "country": "Sweden"},
-    "ELI": {"name": "Eliteserien", "country": "Norway"},
-    "VEIK": {"name": "Veikkausliiga", "country": "Finland"},
+    "DED": {"name": "Eredivisie", "country": "Netherlands"},
+    "CL":  {"name": "Champions League", "country": "Europe"},
 }
 
 class FootballDataClient:
