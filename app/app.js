@@ -23,6 +23,62 @@ let registry = JSON.parse(localStorage.getItem('simRegistry') || '[]');
 function formatPct(p) { return (p * 100).toFixed(1) + '%'; }
 function formatOdd(o) { return o ? o.toFixed(2) : '—'; }
 
+function computeValueJS(pred, odds) {
+  if (!odds) return null;
+  const src = odds.best || odds;
+  const markets = {
+    '1': [pred.p1, src['1']], 'X': [pred.px, src['X']], '2': [pred.p2, src['2']],
+    'Over 2.5': [pred.pOver25, src.over25], 'Under 2.5': [pred.pUnder25, src.under25]
+  };
+  const rows = [];
+  for (const m in markets) {
+    const p = markets[m][0], q = markets[m][1];
+    if (!q || q <= 1 || p == null) continue;
+    const b = q - 1;
+    const edge = p * q - 1;
+    const kelly = b > 0 ? Math.min(0.05, Math.max(0, (p * q - 1) / b) / 2) : 0;
+    rows.push({ market: m, p, odds: q, edge, kelly });
+  }
+  rows.sort((a, b) => b.edge - a.edge);
+  const bet = rows.length && rows[0].edge >= 0.03 ? rows[0] : null;
+  return { rows, bestBet: bet };
+}
+
+function renderValue(value) {
+  const card = document.getElementById('predictionCard');
+  if (!card) return;
+  let box = document.getElementById('valueCard');
+  if (!box) {
+    box = document.createElement('div');
+    box.className = 'sub-card';
+    box.id = 'valueCard';
+    const actions = card.querySelector('.actions');
+    if (actions) card.insertBefore(box, actions); else card.appendChild(box);
+  }
+  if (!value || !value.rows || !value.rows.length) {
+    box.innerHTML = '<h3>\uD83D\uDC8E Valore</h3><p class="note">Quote non disponibili: nessun confronto di valore per questa partita.</p>';
+    return;
+  }
+  let html = '<h3>\uD83D\uDC8E Valore \u2014 modello vs quota migliore</h3>';
+  if (value.bestBet) {
+    const bb = value.bestBet;
+    html += '<div class="best-bet">\u2705 Bet di valore: <strong>' + bb.market + '</strong> @ ' + bb.odds.toFixed(2) +
+            ' \u00B7 vantaggio <strong>' + (bb.edge*100).toFixed(1) + '%</strong>' +
+            ' \u00B7 puntata (\u00BD Kelly) <strong>' + (bb.kelly*100).toFixed(1) + '%</strong> del bankroll</div>';
+  } else {
+    html += '<p class="note">Nessuna bet con vantaggio \u2265 3%: qui il mercato non offre valore secondo il modello.</p>';
+  }
+  html += '<div class="value-table"><div class="value-row value-head"><span>Mercato</span><span>Modello</span><span>Quota</span><span>Vantaggio</span><span>\u00BD Kelly</span></div>';
+  for (const r of value.rows) {
+    const cls = r.edge >= 0.03 ? ' value-pos' : (r.edge < 0 ? ' value-neg' : '');
+    html += '<div class="value-row' + cls + '"><span>' + r.market + '</span><span>' + (r.p*100).toFixed(1) + '%</span><span>' +
+            r.odds.toFixed(2) + '</span><span>' + (r.edge*100).toFixed(1) + '%</span><span>' +
+            (r.kelly>0 ? (r.kelly*100).toFixed(1)+'%' : '\u2014') + '</span></div>';
+  }
+  html += '</div><p class="note">Vantaggio = prob. modello \u00D7 quota \u2212 1. Kelly dimezzato e limitato al 5% del bankroll. Gioca responsabilmente.</p>';
+  box.innerHTML = html;
+}
+
 function poissonPMF(k, lambda) {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
 }
@@ -196,6 +252,7 @@ function showMatchData(fixture) {
 
   document.getElementById('dataCard').style.display = 'block';
   document.getElementById('predictionCard').style.display = 'block';
+  document.getElementById('oddsRow').style.display = '';
 
   // Squadra casa
   document.getElementById('homeName').textContent = fixture.homeTeam;
@@ -276,6 +333,8 @@ function showPrediction(pred) {
   document.getElementById('lambdaH').textContent = (pred.lambdaH || 0).toFixed(2);
   document.getElementById('lambdaA').textContent = (pred.lambdaA || 0).toFixed(2);
   document.getElementById('rhoVal').textContent = (pred.rho || 0).toFixed(3);
+
+  renderValue(pred.value);
 }
 
 function renderChart(dist) {
@@ -499,6 +558,11 @@ document.getElementById('mCalcBtn').addEventListener('click', () => {
   document.getElementById('awayPlayed').textContent = '—';
 
   document.getElementById('oddsRow').style.display = 'none';
+
+  const mOver = parseFloat(document.getElementById('mOddOver').value);
+  const mUnder = parseFloat(document.getElementById('mOddUnder').value);
+  const manualOdds = (q1 && qX && q2) ? {'1': q1, 'X': qX, '2': q2, over25: mOver || null, under25: mUnder || null} : null;
+  currentMatch.prediction.value = computeValueJS(currentMatch.prediction, manualOdds);
 
   showPrediction(currentMatch.prediction);
   modal.style.display = 'none';
