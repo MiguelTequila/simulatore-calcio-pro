@@ -4,9 +4,12 @@ from datetime import datetime
 BASE_URL = "https://api.the-odds-api.com/v4"
 
 SPORT_KEYS = {
-    "PL": "soccer_epl", "ELC": "soccer_england_efl", "SA": "soccer_italy_serie_a",
-    "PD": "soccer_spain_la_liga", "BL1": "soccer_germany_bundesliga",
-    "FL1": "soccer_france_ligue_one", "DED": "soccer_netherlands_eredivisie",
+    "PL":  "soccer_epl",
+    "FL1": "soccer_france_ligue_one",
+    "PD":  "soccer_spain_la_liga",
+    "SA":  "soccer_italy_serie_a",
+    "PPL": "soccer_portugal_primeira_liga",
+    "BL1": "soccer_germany_bundesliga",,
     "PPL": "soccer_portugal_primeira_liga", "CL": "soccer_uefa_champs_league",
     "EL": "soccer_uefa_europa_league", "ECL": "soccer_uefa_europa_conference_league",
     "BSA": "soccer_brazil_campeonato", "ALL": "soccer_sweden_allsvenskan",
