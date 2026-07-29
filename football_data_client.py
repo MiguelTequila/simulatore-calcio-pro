@@ -4,21 +4,12 @@ from datetime import datetime, timedelta
 BASE_URL = "https://api.football-data.org/v4"
 
 COMPETITIONS = {
-    "PL": {"name": "Premier League", "country": "England"},
-    "ELC": {"name": "Championship", "country": "England"},
-    "SA": {"name": "Serie A", "country": "Italy"},
-    "PD": {"name": "La Liga", "country": "Spain"},
-    "BL1": {"name": "Bundesliga", "country": "Germany"},
+    "PL":  {"name": "Premier League", "country": "England"},
     "FL1": {"name": "Ligue 1", "country": "France"},
-    "DED": {"name": "Eredivisie", "country": "Netherlands"},
+    "PD":  {"name": "La Liga", "country": "Spain"},
+    "SA":  {"name": "Serie A", "country": "Italy"},
     "PPL": {"name": "Primeira Liga", "country": "Portugal"},
-    "CL": {"name": "Champions League", "country": "Europe"},
-    "EL": {"name": "Europa League", "country": "Europe"},
-    "ECL": {"name": "Conference League", "country": "Europe"},
-    "BSA": {"name": "Brasileirão", "country": "Brazil"},
-    "ALL": {"name": "Allsvenskan", "country": "Sweden"},
-    "ELI": {"name": "Eliteserien", "country": "Norway"},
-    "VEIK": {"name": "Veikkausliiga", "country": "Finland"},
+    "BL1": {"name": "Bundesliga", "country": "Germany"},
 }
 
 class FootballDataClient:
@@ -135,7 +126,7 @@ def fetch_all_data():
         print(f"[→] {meta['name']} ({comp_id})")
         teams = client.get_standings(comp_id)
         recent = client.get_recent_matches(comp_id, days_back=90)
-        upcoming = client.get_upcoming(comp_id, days_ahead=14)
+        upcoming = client.get_upcoming(comp_id, days_ahead=45)
 
         if not teams:
             print(f"    [!] Nessun dato squadre")
