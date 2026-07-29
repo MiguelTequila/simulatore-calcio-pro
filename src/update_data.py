@@ -3,6 +3,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from football_data_client import fetch_all_data, COMPETITIONS
 from odds_client import OddsAPIClient
 from elo import load_state, update_ratings_incremental, save_state
+from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
                          compute_value, LEAGUE_RHO, DEFAULT_RHO, MARKET_WEIGHT)
 
@@ -30,7 +31,7 @@ def build_output():
     print("AGGIORNAMENTO DATI SIMULATORE")
     print("=" * 60)
 
-    print("\n[1/4] Scarico dati Football-Data...")
+    print("\n[1/5] Scarico dati Football-Data...")
     raw_data, all_matches = fetch_all_data()
 
     if not raw_data["competitions"]:
@@ -39,20 +40,23 @@ def build_output():
             json.dump({"updated": raw_data["updated"], "competitions": {}}, f)
         return
 
-    print("\n[2/4] Aggiorno Elo (persistente)...")
+    print("\n[2/5] Aggiorno Elo (persistente)...")
     state = load_state()
     elo_ratings, state, n_new = update_ratings_incremental(all_matches, state)
     save_state(state)
     print(f"    {len(elo_ratings)} squadre in memoria, {n_new} partite nuove conteggiate")
 
-    print("\n[3/4] Scarico quote...")
+    print("\n[3/5] Scarico quote (solo competizioni con partite in calendario)...")
+    active = [cid for cid, c in raw_data["competitions"].items() if c.get("fixtures")]
     odds_client = OddsAPIClient()
-    odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds()}
+    odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds(active_comps=active)}
     with open("data/odds.json", "w", encoding="utf-8") as f:
         json.dump(odds_data, f, ensure_ascii=False, indent=2)
 
-    print("\n[4/4] Calcolo predizioni + valore...")
-    output = {"updated": raw_data["updated"], "marketWeight": MARKET_WEIGHT, "competitions": {}}
+    print("\n[4/5] Calcolo predizioni + valore...")
+    output = {"updated": raw_data["updated"], "marketWeight": MARKET_WEIGHT,
+              "apiCredits": {"remaining": odds_client.credits_remaining, "used": odds_client.credits_used},
+              "competitions": {}}
 
     for comp_id, comp_data in raw_data["competitions"].items():
         teams = comp_data["teams"]
@@ -102,6 +106,16 @@ def build_output():
         }
         n_val = sum(1 for p in processed if p["prediction"]["value"] and p["prediction"]["value"]["bestBet"])
         print(f"    {comp_id}: {len(processed)} predizioni, {n_val} con valore")
+
+    print("\n[5/5] Registro esiti e calibrazione...")
+    plog = load_log()
+    n_rec = reconcile_results(plog, raw_data["competitions"])
+    for comp_id, comp in output["competitions"].items():
+        log_predictions(plog, comp_id, comp["name"], comp["fixtures"])
+    save_log(plog)
+    track = build_track_record(plog)
+    save_track(track)
+    print(f"    {n_rec} risultati agganciati | {track['graded']} valutate, {track['pending']} in attesa | value bet: {track['valueBets']['n']} (P&L {track['valueBets']['profitUnits']:+.2f} u)")
 
     with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
