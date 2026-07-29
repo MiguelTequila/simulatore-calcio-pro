@@ -197,6 +197,8 @@ async function loadData() {
     }
 
     populateCompetitions();
+    renderCreditsBadge(allData.apiCredits);
+    loadTrackRecord();
   } catch (e) {
     console.error(e);
     document.getElementById('lastUpdate').textContent = '⚠️ Errore caricamento dati';
@@ -571,3 +573,90 @@ document.getElementById('mCalcBtn').addEventListener('click', () => {
 // ===================== INIT =====================
 loadData();
 renderRegistry();
+
+
+// ===================== Crediti API =====================
+function renderCreditsBadge(credits) {
+  const row = document.querySelector('.badge-row');
+  if (!row) return;
+  let b = document.getElementById('creditsBadge');
+  if (!b) {
+    b = document.createElement('span');
+    b.className = 'badge';
+    b.id = 'creditsBadge';
+    row.appendChild(b);
+  }
+  if (credits && credits.remaining != null) {
+    const rem = parseInt(credits.remaining, 10);
+    b.textContent = '\uD83E\uDE99 Crediti Odds API: ' + rem + '/500';
+    b.style.background = rem < 60 ? '#7a1f1f' : (rem < 150 ? '#7a5c1f' : '');
+  } else {
+    b.textContent = '\uD83E\uDE99 Crediti Odds API: n/d';
+  }
+}
+
+// ===================== Track record & calibrazione =====================
+async function loadTrackRecord() {
+  try {
+    const res = await fetch('data/track_record.json?t=' + Date.now());
+    if (!res.ok) return;
+    renderTrackRecord(await res.json());
+  } catch (e) { /* file non ancora generato: ok */ }
+}
+
+function renderTrackRecord(tr) {
+  let card = document.getElementById('trackCard');
+  if (!card) {
+    card = document.createElement('section');
+    card.className = 'card';
+    card.id = 'trackCard';
+    const footer = document.querySelector('footer');
+    footer.parentNode.insertBefore(card, footer);
+  }
+  if (!tr || !tr.graded) {
+    card.innerHTML = '<h2>\uD83D\uDCC8 Verifica del modello</h2>' +
+      '<p class="note">Nessuna partita valutata ancora: le predizioni si accumulano a ogni aggiornamento e i risultati si agganciano da soli quando le partite finiscono. Torna dopo la prima giornata.</p>';
+    return;
+  }
+  const vb = tr.valueBets || {};
+  const roiPct = vb.roi != null ? (vb.roi * 100).toFixed(1) + '%' : '\u2014';
+  const roiCls = vb.roi > 0 ? 'stat-good' : (vb.roi < 0 ? 'stat-bad' : '');
+  let html = '<h2>\uD83D\uDCC8 Verifica del modello (esiti reali)</h2>';
+  html += '<div class="track-summary">' +
+    '<div><span class="stat-label">Partite valutate</span><span class="stat-big">' + tr.graded + '</span></div>' +
+    '<div><span class="stat-label">In attesa</span><span class="stat-big">' + tr.pending + '</span></div>' +
+    '<div><span class="stat-label">Brier score</span><span class="stat-big">' + (tr.brier != null ? tr.brier.toFixed(3) : '\u2014') + '</span></div>' +
+    '<div><span class="stat-label">Value bet</span><span class="stat-big">' + (vb.n || 0) + '</span></div>' +
+    '<div><span class="stat-label">P&amp;L (1u fissa)</span><span class="stat-big ' + roiCls + '">' + (vb.profitUnits >= 0 ? '+' : '') + (vb.profitUnits || 0).toFixed(2) + 'u</span></div>' +
+    '<div><span class="stat-label">ROI</span><span class="stat-big ' + roiCls + '">' + roiPct + '</span></div>' +
+    '</div>';
+
+  // grafico di calibrazione: per ogni fascia, barra prevista vs barra reale
+  html += '<div class="sub-card"><h3>\uD83C\uDFAF Calibrazione \u2014 prevista vs realta\u0300</h3>';
+  html += '<p class="note">Se il modello \u00E8 onesto, le due barre di ogni fascia sono simili: quando dice 60%, deve succedere ~60% delle volte. Con poche partite le differenze sono normali.</p>';
+  html += '<div class="calib-chart">';
+  for (const b of tr.calibration) {
+    const pred = b.avgPred != null ? b.avgPred * 100 : 0;
+    const act = b.actualFreq != null ? b.actualFreq * 100 : 0;
+    html += '<div class="calib-row">' +
+      '<span class="calib-label">' + b.bin + ' <em>(n=' + b.n + ')</em></span>' +
+      '<div class="calib-bars">' +
+        '<div class="calib-bar pred" style="width:' + pred.toFixed(0) + '%"><span>' + (b.avgPred != null ? pred.toFixed(0) + '%' : '\u2014') + '</span></div>' +
+        '<div class="calib-bar act" style="width:' + act.toFixed(0) + '%"><span>' + (b.actualFreq != null ? act.toFixed(0) + '%' : '\u2014') + '</span></div>' +
+      '</div></div>';
+  }
+  html += '</div><div class="calib-legend"><span><i class="dot pred-dot"></i> Prevista dal modello</span><span><i class="dot act-dot"></i> Frequenza reale</span></div></div>';
+
+  // storico value bet
+  if (vb.history && vb.history.length) {
+    html += '<div class="sub-card"><h3>\uD83D\uDCB0 Storico value bet</h3><div class="value-table">';
+    html += '<div class="value-row value-head"><span>Data</span><span>Partita</span><span>Mercato</span><span>Quota</span><span>P&amp;L cum.</span></div>';
+    for (const b of vb.history.slice(-15).reverse()) {
+      html += '<div class="value-row ' + (b.won ? 'value-pos' : 'value-neg') + '">' +
+        '<span>' + b.date + '</span><span>' + b.match + '</span><span>' + b.market + '</span>' +
+        '<span>' + b.odds.toFixed(2) + '</span><span>' + (b.cum >= 0 ? '+' : '') + b.cum.toFixed(2) + 'u</span></div>';
+    }
+    html += '</div></div>';
+  }
+  card.innerHTML = html;
+}
