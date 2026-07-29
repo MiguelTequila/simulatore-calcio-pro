@@ -1,7 +1,7 @@
 """Client The Odds API. Aggrega TUTTI i bookmaker: media (per calibrazione)
 e quota migliore (per il rilevamento del valore)."""
 import os, json, requests, time
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASE_URL = "https://api.the-odds-api.com/v4"
 
@@ -104,7 +104,7 @@ def save_odds():
     client = OddsAPIClient()
     odds = client.fetch_all_odds()
     with open("data/odds.json", "w", encoding="utf-8") as f:
-        json.dump({"updated": datetime.now().isoformat(), "odds": odds}, f, ensure_ascii=False, indent=2)
+        json.dump({"updated": datetime.now(timezone.utc).isoformat(), "odds": odds}, f, ensure_ascii=False, indent=2)
     print("\n✅ Salvato odds.json")
 
 
