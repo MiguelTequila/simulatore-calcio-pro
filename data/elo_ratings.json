@@ -1,171 +1,171 @@
 {
   "Leeds United FC": {
-    "elo": 1504.778841823072,
-    "games": 4
+    "elo": 1517.020433896889,
+    "games": 15
   },
   "Burnley FC": {
-    "elo": 1464.7416215294186,
-    "games": 4
+    "elo": 1365.7727185487354,
+    "games": 15
   },
   "Girona FC": {
-    "elo": 1468.8268803623928,
-    "games": 5
+    "elo": 1479.4046481127234,
+    "games": 17
   },
   "RCD Mallorca": {
-    "elo": 1495.4395294082483,
-    "games": 5
+    "elo": 1481.2516876140241,
+    "games": 17
   },
   "Brentford FC": {
-    "elo": 1495.2656205641438,
-    "games": 4
+    "elo": 1499.0810397596167,
+    "games": 15
   },
   "West Ham United FC": {
-    "elo": 1475.268363638914,
-    "games": 4
+    "elo": 1516.3275452492983,
+    "games": 15
   },
   "Newcastle United FC": {
-    "elo": 1513.8402799378935,
-    "games": 4
+    "elo": 1462.0471444570503,
+    "games": 19
   },
   "Brighton & Hove Albion FC": {
-    "elo": 1462.0359853716034,
-    "games": 4
+    "elo": 1545.7533960081823,
+    "games": 15
   },
   "Wolverhampton Wanderers FC": {
-    "elo": 1472.2795438409735,
-    "games": 4
+    "elo": 1412.4693909173125,
+    "games": 15
   },
   "Sunderland AFC": {
-    "elo": 1540.1603446014071,
-    "games": 4
+    "elo": 1450.9460806485313,
+    "games": 15
   },
   "Arsenal FC": {
-    "elo": 1560.2086548982002,
-    "games": 6
+    "elo": 1633.1927614100946,
+    "games": 22
   },
   "Fulham FC": {
-    "elo": 1488.474570358503,
-    "games": 4
+    "elo": 1488.6392286157236,
+    "games": 15
   },
   "Villarreal CF": {
-    "elo": 1517.147504774968,
-    "games": 5
+    "elo": 1560.2225289553544,
+    "games": 18
   },
   "Levante UD": {
-    "elo": 1514.7729854640595,
-    "games": 5
+    "elo": 1489.713950430412,
+    "games": 18
   },
   "Valencia CF": {
-    "elo": 1532.0255816275223,
-    "games": 5
+    "elo": 1507.7641356932406,
+    "games": 17
   },
   "Club Atlético de Madrid": {
-    "elo": 1498.231449171253,
-    "games": 6
+    "elo": 1522.9521623793532,
+    "games": 25
   },
   "Deportivo Alavés": {
-    "elo": 1490.9214438073238,
-    "games": 5
+    "elo": 1480.7222817066447,
+    "games": 17
   },
   "Athletic Club": {
-    "elo": 1467.2640535013406,
-    "games": 5
+    "elo": 1473.404607095382,
+    "games": 17
   },
   "CA Osasuna": {
-    "elo": 1421.7296415605579,
-    "games": 5
+    "elo": 1478.5475000367035,
+    "games": 17
   },
   "FC Barcelona": {
-    "elo": 1521.7368138699737,
-    "games": 5
+    "elo": 1673.9486878831815,
+    "games": 21
   },
   "CD Nacional": {
-    "elo": 1482.0797093768845,
-    "games": 3
+    "elo": 1468.246689971045,
+    "games": 15
   },
   "AVS": {
-    "elo": 1539.081262706572,
-    "games": 3
+    "elo": 1443.4012839025254,
+    "games": 15
   },
   "Moreirense FC": {
-    "elo": 1492.918737293428,
-    "games": 3
+    "elo": 1422.1984115142868,
+    "games": 15
   },
   "CF Estrela da Amadora": {
-    "elo": 1488.1065370058648,
-    "games": 3
+    "elo": 1424.8157416006559,
+    "games": 15
   },
   "FC Arouca": {
-    "elo": 1546.2571642532894,
-    "games": 3
+    "elo": 1518.270753417827,
+    "games": 15
   },
   "CD Santa Clara": {
-    "elo": 1506.8107781859665,
-    "games": 3
+    "elo": 1485.8286978257852,
+    "games": 15
   },
   "FC Famalicão": {
-    "elo": 1511.9362467807905,
-    "games": 3
+    "elo": 1560.025254170095,
+    "games": 15
   },
   "Sport Lisboa e Benfica": {
-    "elo": 1528.5394003218503,
-    "games": 3
+    "elo": 1623.003923042553,
+    "games": 17
   },
   "FC Porto": {
-    "elo": 1508.1392573284206,
-    "games": 3
+    "elo": 1619.6738764894724,
+    "games": 15
   },
   "FC Alverca": {
-    "elo": 1472.3302683934028,
-    "games": 3
+    "elo": 1492.0291067783164,
+    "games": 15
   },
   "TSG 1899 Hoffenheim": {
-    "elo": 1483.2987987548745,
-    "games": 3
+    "elo": 1508.0813261632068,
+    "games": 15
   },
   "VfB Stuttgart": {
-    "elo": 1524.2913507122273,
-    "games": 3
+    "elo": 1560.2342892872093,
+    "games": 15
   },
   "SV Werder Bremen": {
-    "elo": 1433.9196229048146,
-    "games": 3
+    "elo": 1462.4318465265785,
+    "games": 15
   },
   "FC Augsburg": {
-    "elo": 1520.84081353201,
-    "games": 3
+    "elo": 1502.3170142184829,
+    "games": 15
   },
   "FC Bayern München": {
-    "elo": 1534.8356891398819,
-    "games": 4
+    "elo": 1721.2052501886253,
+    "games": 21
   },
   "1. FC Heidenheim 1846": {
-    "elo": 1500.2109965021164,
-    "games": 3
+    "elo": 1438.8675780838582,
+    "games": 15
   },
   "1. FC Union Berlin": {
-    "elo": 1553.0639213782097,
-    "games": 3
+    "elo": 1403.9155446128816,
+    "games": 15
   },
   "1. FC Köln": {
-    "elo": 1453.2448026825466,
-    "games": 3
+    "elo": 1444.9049671428754,
+    "games": 15
   },
   "Eintracht Frankfurt": {
-    "elo": 1467.829391423507,
-    "games": 3
+    "elo": 1487.1482292405967,
+    "games": 15
   },
   "Hamburger SV": {
-    "elo": 1532.6843719200167,
-    "games": 3
+    "elo": 1444.9278514622831,
+    "games": 16
   },
   "Bayer 04 Leverkusen": {
-    "elo": 1500.275720086483,
-    "games": 3
+    "elo": 1571.8943542639106,
+    "games": 20
   },
   "RB Leipzig": {
-    "elo": 1467.1457039205459,
-    "games": 3
+    "elo": 1595.6839572427136,
+    "games": 15
   },
   "Botafogo FR": {
     "elo": 1526.3899979602193,
@@ -200,108 +200,108 @@
     "games": 7
   },
   "AFC Bournemouth": {
-    "elo": 1538.8592439856168,
-    "games": 4
+    "elo": 1576.3542983675393,
+    "games": 15
   },
   "Crystal Palace FC": {
-    "elo": 1446.6671119773368,
-    "games": 5
+    "elo": 1488.612552839808,
+    "games": 15
   },
   "Manchester United FC": {
-    "elo": 1559.291861200237,
-    "games": 4
+    "elo": 1580.3696430392763,
+    "games": 15
   },
   "Liverpool FC": {
-    "elo": 1462.1898003087615,
-    "games": 4
+    "elo": 1536.344132732001,
+    "games": 19
   },
   "Aston Villa FC": {
-    "elo": 1524.4115131819353,
-    "games": 4
+    "elo": 1466.6201554529819,
+    "games": 15
   },
   "Tottenham Hotspur FC": {
-    "elo": 1512.8529623410666,
-    "games": 4
+    "elo": 1406.2988910350862,
+    "games": 17
   },
   "RC Celta de Vigo": {
-    "elo": 1531.9675560701971,
-    "games": 5
+    "elo": 1463.8478519259158,
+    "games": 17
   },
   "Elche CF": {
-    "elo": 1483.0688512802603,
-    "games": 5
+    "elo": 1473.8715316601586,
+    "games": 17
   },
   "Getafe CF": {
-    "elo": 1493.5902240643666,
-    "games": 5
+    "elo": 1550.1424388674875,
+    "games": 17
   },
   "Rayo Vallecano de Madrid": {
-    "elo": 1560.8327757546876,
-    "games": 5
+    "elo": 1521.5552127835213,
+    "games": 17
   },
   "Real Betis Balompié": {
-    "elo": 1528.4564209029002,
-    "games": 5
+    "elo": 1527.8710910039,
+    "games": 17
   },
   "Real Oviedo": {
-    "elo": 1419.161364188253,
-    "games": 5
+    "elo": 1462.164890801849,
+    "games": 17
   },
   "RCD Espanyol de Barcelona": {
-    "elo": 1496.2253325459699,
-    "games": 5
+    "elo": 1401.5297127858673,
+    "games": 17
   },
   "Real Madrid CF": {
-    "elo": 1560.8767762230582,
-    "games": 5
+    "elo": 1601.6826889709012,
+    "games": 23
   },
   "Casa Pia AC": {
-    "elo": 1495.326797496655,
-    "games": 3
+    "elo": 1428.8695861331323,
+    "games": 15
   },
   "CD Tondela": {
-    "elo": 1517.7428357467106,
-    "games": 3
+    "elo": 1432.490585963642,
+    "games": 15
   },
   "Sporting Clube de Braga": {
-    "elo": 1496.6065312071937,
-    "games": 3
+    "elo": 1560.4054724538448,
+    "games": 15
   },
   "GD Estoril Praia": {
-    "elo": 1476.398855048295,
-    "games": 3
+    "elo": 1424.0142246198138,
+    "games": 15
   },
   "Rio Ave FC": {
-    "elo": 1470.4517162345328,
-    "games": 3
+    "elo": 1458.8316262018125,
+    "games": 15
   },
   "Gil Vicente FC": {
-    "elo": 1457.269536990488,
-    "games": 3
+    "elo": 1494.8012164858178,
+    "games": 15
   },
   "FC St. Pauli 1910": {
-    "elo": 1440.4507528230386,
-    "games": 3
+    "elo": 1409.8414012602982,
+    "games": 15
   },
   "1. FSV Mainz 05": {
-    "elo": 1520.2633462248068,
-    "games": 3
+    "elo": 1539.8371473148582,
+    "games": 15
   },
   "Borussia Mönchengladbach": {
-    "elo": 1520.1649368197764,
-    "games": 3
+    "elo": 1473.6229949512842,
+    "games": 15
   },
   "Borussia Dortmund": {
-    "elo": 1525.4546692095003,
-    "games": 3
+    "elo": 1586.0132231010984,
+    "games": 17
   },
   "SC Freiburg": {
-    "elo": 1508.2079755572256,
-    "games": 3
+    "elo": 1477.8761075522657,
+    "games": 15
   },
   "VfL Wolfsburg": {
-    "elo": 1510.990024502788,
-    "games": 3
+    "elo": 1406.5135529432157,
+    "games": 15
   },
   "Cruzeiro EC": {
     "elo": 1500.8662403008802,
@@ -352,39 +352,75 @@
     "games": 7
   },
   "Chelsea FC": {
-    "elo": 1478.7270724859864,
-    "games": 4
+    "elo": 1393.5509586155213,
+    "games": 17
   },
   "Nottingham Forest FC": {
-    "elo": 1509.8046272278375,
-    "games": 4
+    "elo": 1531.6984421882141,
+    "games": 15
   },
   "Everton FC": {
-    "elo": 1459.0446050686346,
-    "games": 4
+    "elo": 1485.5620291264397,
+    "games": 15
   },
   "Manchester City FC": {
-    "elo": 1527.9844592020777,
-    "games": 5
+    "elo": 1588.6233864426943,
+    "games": 17
   },
   "Sevilla FC": {
-    "elo": 1510.3689094400343,
-    "games": 5
+    "elo": 1431.6490610349188,
+    "games": 17
   },
   "Real Sociedad de Fútbol": {
-    "elo": 1474.0642951793277,
-    "games": 5
+    "elo": 1493.4498286207497,
+    "games": 17
   },
   "Sporting Clube de Portugal": {
-    "elo": 1572.327053421947,
-    "games": 3
+    "elo": 1598.508860141887,
+    "games": 19
   },
   "Vitória SC": {
-    "elo": 1437.6773122077086,
-    "games": 3
+    "elo": 1498.7892536590955,
+    "games": 15
   },
   "Paris Saint-Germain FC": {
-    "elo": 1519.231639165317,
+    "elo": 1634.49660516971,
+    "games": 9
+  },
+  "Galatasaray SK": {
+    "elo": 1496.040171521547,
+    "games": 4
+  },
+  "Juventus FC": {
+    "elo": 1492.2876432227122,
+    "games": 2
+  },
+  "AS Monaco FC": {
+    "elo": 1486.443553153497,
+    "games": 2
+  },
+  "Atalanta BC": {
+    "elo": 1473.8455044004454,
+    "games": 4
+  },
+  "Qarabağ Ağdam FK": {
+    "elo": 1449.8935555377461,
+    "games": 2
+  },
+  "Club Brugge KV": {
+    "elo": 1472.0485592193593,
+    "games": 2
+  },
+  "PAE Olympiakos SFP": {
+    "elo": 1481.3744258774782,
+    "games": 2
+  },
+  "FK Bodø/Glimt": {
+    "elo": 1539.8191453560107,
+    "games": 4
+  },
+  "FC Internazionale Milano": {
+    "elo": 1463.2489089003593,
     "games": 2
   }
 }
