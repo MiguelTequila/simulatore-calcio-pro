@@ -35,9 +35,17 @@ def build_output():
     raw_data, all_matches = fetch_all_data()
 
     if not raw_data["competitions"]:
-        print("[!] Nessun dato. Verifica FDKEY.")
-        with open("data/fixtures_processed.json", "w") as f:
-            json.dump({"updated": raw_data["updated"], "competitions": {}}, f)
+        # PROTEZIONE DATI: se Football-Data non risponde (403, rate limit, disservizio)
+        # NON sovrascriviamo il file buono con uno vuoto, altrimenti il sito si svuota.
+        # Lasciamo i dati precedenti e usciamo senza errore (niente mail di fallimento).
+        print("[!] Nessun dato ricevuto da Football-Data (chiave, quota o disservizio).")
+        if os.path.exists("data/fixtures_processed.json"):
+            print("[=] Dati precedenti CONSERVATI: nessuna modifica al file.")
+        else:
+            os.makedirs("data", exist_ok=True)
+            with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
+                json.dump({"updated": raw_data["updated"], "competitions": {},
+                           "error": "nessun dato disponibile al primo avvio"}, f)
         return
 
     print("\n[2/5] Aggiorno Elo (persistente)...")
