@@ -2,38 +2,56 @@ name: Update Football Data
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # UNA volta al giorno, 16:00 UTC = 18:00 ora di Roma (17:00 in inverno).
+    - cron: '0 16 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
+  # NIENTE trigger "push": con quello ogni commit fatto a mano lanciava un run,
+  # generando mail di fallimento a raffica e sprecando crediti API.
 
 permissions:
   contents: write
+
+# Un solo run alla volta: due run contemporanei litigano sul push e uno fallisce.
+concurrency:
+  group: update-data
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - uses: actions/checkout@v5
+
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
-        run: pip install requests scipy numpy
-      
+        run: pip install -r requirements.txt
+
       - name: Run data updater
         env:
           FDKEY: ${{ secrets.FDKEY }}
           ODDSKEY: ${{ secrets.ODDSKEY }}
         run: python src/update_data.py
-      
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Auto-update data"
-          git push
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica ai dati: niente da committare."
+            exit 0
+          fi
+          git commit -m "Auto-update data"
+          # Se nel frattempo hai committato dal telefono, riallinea e ritenta
+          # invece di far fallire il run (era la causa delle mail di errore).
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            echo "Push non riuscito (tentativo $i), riprovo tra 5s..."
+            sleep 5
+          done
+          echo "Push non riuscito dopo 3 tentativi."
+          exit 1
