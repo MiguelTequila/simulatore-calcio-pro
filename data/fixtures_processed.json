@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-30T08:05:18.983926+00:00",
+  "updated": "2026-07-30T09:03:35.247543+00:00",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
     "remaining": null,
     "used": null,
-    "checkedAt": "2026-07-30T08:05:18.983926+00:00",
+    "checkedAt": "2026-07-30T09:03:35.247543+00:00",
     "stale": false,
     "note": "nessuna chiamata effettuata (nessuna partita entro la finestra quote)"
   },
