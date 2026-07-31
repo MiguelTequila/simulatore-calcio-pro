@@ -1,13 +1,375 @@
 {
-  "updated": "2026-07-30T17:12:22.731246+00:00",
+  "updated": "2026-07-31T06:53:01.562528+00:00",
   "odds": {
     "PL": [],
     "FL1": [],
     "PD": [],
     "SA": [],
-    "PPL": [],
+    "PPL": [
+      {
+        "homeTeam": "Estoril",
+        "awayTeam": "Famalicão",
+        "commenceTime": "2026-08-07T19:15:00Z",
+        "n_books": 12,
+        "1": 3.152,
+        "X": 3.185,
+        "2": 2.179,
+        "over25": 1.887,
+        "under25": 1.87,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.49,
+          "X": 3.4,
+          "2": 2.29,
+          "over25": 1.93,
+          "under25": 1.9
+        }
+      },
+      {
+        "homeTeam": "CS Maritimo",
+        "awayTeam": "Casa Pia",
+        "commenceTime": "2026-08-08T14:30:00Z",
+        "n_books": 12,
+        "1": 2.537,
+        "X": 3.203,
+        "2": 2.574,
+        "over25": 1.924,
+        "under25": 1.834,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.68,
+          "X": 3.31,
+          "2": 2.75,
+          "over25": 1.97,
+          "under25": 1.85
+        }
+      },
+      {
+        "homeTeam": "Vitória SC",
+        "awayTeam": "Arouca",
+        "commenceTime": "2026-08-08T17:00:00Z",
+        "n_books": 12,
+        "1": 1.828,
+        "X": 3.469,
+        "2": 3.893,
+        "over25": 1.897,
+        "under25": 1.857,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.9,
+          "X": 3.7,
+          "2": 4.17,
+          "over25": 1.92,
+          "under25": 1.9
+        }
+      },
+      {
+        "homeTeam": "CF Estrela",
+        "awayTeam": "Sporting Lisbon",
+        "commenceTime": "2026-08-08T19:30:00Z",
+        "n_books": 12,
+        "1": 12.139,
+        "X": 6.138,
+        "2": 1.187,
+        "over25": 1.513,
+        "under25": 2.413,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 15.0,
+          "X": 6.81,
+          "2": 1.24,
+          "over25": 1.52,
+          "under25": 2.42
+        }
+      },
+      {
+        "homeTeam": "FC Porto",
+        "awayTeam": "Alverca",
+        "commenceTime": "2026-08-09T17:00:00Z",
+        "n_books": 12,
+        "1": 1.169,
+        "X": 6.375,
+        "2": 13.608,
+        "over25": 1.543,
+        "under25": 2.34,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.2,
+          "X": 7.8,
+          "2": 16.5,
+          "over25": 1.55,
+          "under25": 2.38
+        }
+      },
+      {
+        "homeTeam": "Benfica",
+        "awayTeam": "Académico de Viseu",
+        "commenceTime": "2026-08-09T19:30:00Z",
+        "n_books": 10,
+        "1": 1.105,
+        "X": 8.25,
+        "2": 19.911,
+        "over25": 1.44,
+        "under25": 2.68,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.14,
+          "X": 10.0,
+          "2": 25.0,
+          "over25": 1.44,
+          "under25": 2.68
+        }
+      },
+      {
+        "homeTeam": "Moreirense FC",
+        "awayTeam": "Braga",
+        "commenceTime": "2026-08-09T19:30:00Z",
+        "n_books": 12,
+        "1": 4.643,
+        "X": 3.572,
+        "2": 1.683,
+        "over25": 1.94,
+        "under25": 1.815,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 5.25,
+          "X": 3.85,
+          "2": 1.74,
+          "over25": 1.96,
+          "under25": 1.85
+        }
+      },
+      {
+        "homeTeam": "Gil Vicente",
+        "awayTeam": "Rio Ave FC",
+        "commenceTime": "2026-08-09T19:30:00Z",
+        "n_books": 12,
+        "1": 1.808,
+        "X": 3.478,
+        "2": 3.994,
+        "over25": 1.915,
+        "under25": 1.842,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.85,
+          "X": 3.75,
+          "2": 4.2,
+          "over25": 1.95,
+          "under25": 1.89
+        }
+      },
+      {
+        "homeTeam": "Santa Clara",
+        "awayTeam": "Nacional",
+        "commenceTime": "2026-08-10T19:15:00Z",
+        "n_books": 12,
+        "1": 1.901,
+        "X": 3.258,
+        "2": 3.897,
+        "over25": 2.148,
+        "under25": 1.654,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.02,
+          "X": 3.41,
+          "2": 4.2,
+          "over25": 2.2,
+          "under25": 1.68
+        }
+      }
+    ],
     "BL1": [],
-    "DED": [],
+    "DED": [
+      {
+        "homeTeam": "SC Cambuur",
+        "awayTeam": "Excelsior",
+        "commenceTime": "2026-08-07T18:00:00Z",
+        "n_books": 20,
+        "1": 2.399,
+        "X": 3.4,
+        "2": 2.456,
+        "over25": 1.588,
+        "under25": 2.258,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.6,
+          "X": 3.8,
+          "2": 2.65,
+          "over25": 1.65,
+          "under25": 2.32
+        }
+      },
+      {
+        "homeTeam": "NEC Nijmegen",
+        "awayTeam": "SC Telstar",
+        "commenceTime": "2026-08-08T14:30:00Z",
+        "n_books": 20,
+        "1": 1.387,
+        "X": 4.785,
+        "2": 6.49,
+        "over25": 1.4,
+        "under25": 2.817,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.45,
+          "X": 5.25,
+          "2": 8.0,
+          "over25": 1.4,
+          "under25": 2.85
+        }
+      },
+      {
+        "homeTeam": "Go Ahead Eagles",
+        "awayTeam": "Willem II",
+        "commenceTime": "2026-08-08T16:45:00Z",
+        "n_books": 20,
+        "1": 1.612,
+        "X": 3.913,
+        "2": 4.451,
+        "over25": 1.582,
+        "under25": 2.269,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.72,
+          "X": 4.3,
+          "2": 5.08,
+          "over25": 1.63,
+          "under25": 2.4
+        }
+      },
+      {
+        "homeTeam": "PSV Eindhoven",
+        "awayTeam": "Fortuna Sittard",
+        "commenceTime": "2026-08-08T18:00:00Z",
+        "n_books": 20,
+        "1": 1.205,
+        "X": 6.819,
+        "2": 9.488,
+        "over25": 1.233,
+        "under25": 3.947,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.25,
+          "X": 7.8,
+          "2": 12.0,
+          "over25": 1.24,
+          "under25": 4.0
+        }
+      },
+      {
+        "homeTeam": "AZ Alkmaar",
+        "awayTeam": "ADO Den Haag",
+        "commenceTime": "2026-08-08T19:00:00Z",
+        "n_books": 18,
+        "1": 1.454,
+        "X": 4.493,
+        "2": 5.996,
+        "over25": 1.467,
+        "under25": 2.54,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.55,
+          "X": 4.8,
+          "2": 6.75,
+          "over25": 1.48,
+          "under25": 2.56
+        }
+      },
+      {
+        "homeTeam": "Sparta Rotterdam",
+        "awayTeam": "Feyenoord",
+        "commenceTime": "2026-08-09T10:15:00Z",
+        "n_books": 20,
+        "1": 4.34,
+        "X": 3.996,
+        "2": 1.659,
+        "over25": 1.5,
+        "under25": 2.507,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.8,
+          "X": 4.3,
+          "2": 1.74,
+          "over25": 1.5,
+          "under25": 2.51
+        }
+      },
+      {
+        "homeTeam": "FC Zwolle",
+        "awayTeam": "Ajax",
+        "commenceTime": "2026-08-09T12:30:00Z",
+        "n_books": 20,
+        "1": 5.533,
+        "X": 4.402,
+        "2": 1.478,
+        "over25": 1.46,
+        "under25": 2.58,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 6.3,
+          "X": 4.75,
+          "2": 1.54,
+          "over25": 1.47,
+          "under25": 2.62
+        }
+      },
+      {
+        "homeTeam": "Groningen",
+        "awayTeam": "FC Utrecht",
+        "commenceTime": "2026-08-09T12:30:00Z",
+        "n_books": 20,
+        "1": 2.299,
+        "X": 3.34,
+        "2": 2.852,
+        "over25": 1.747,
+        "under25": 2.0,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.45,
+          "X": 3.6,
+          "2": 3.0,
+          "over25": 1.81,
+          "under25": 2.05
+        }
+      },
+      {
+        "homeTeam": "Heerenveen",
+        "awayTeam": "FC Twente Enschede",
+        "commenceTime": "2026-08-09T14:45:00Z",
+        "n_books": 20,
+        "1": 2.891,
+        "X": 3.547,
+        "2": 2.041,
+        "over25": 1.467,
+        "under25": 2.54,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.2,
+          "X": 4.0,
+          "2": 2.18,
+          "over25": 1.48,
+          "under25": 2.56
+        }
+      }
+    ],
     "CL": []
   }
 }

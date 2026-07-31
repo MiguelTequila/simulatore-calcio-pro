@@ -2162,26 +2162,32 @@
    "date": "2026-08-07",
    "home": "GD Estoril Praia",
    "away": "FC Famalicão",
-   "p1": 0.2149,
-   "px": 0.236,
-   "p2": 0.5491,
-   "pOver25": 0.5976,
-   "pUnder25": 0.4024,
+   "p1": 0.2332,
+   "px": 0.2468,
+   "p2": 0.5199,
+   "pOver25": 0.573,
+   "pUnder25": 0.427,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 3.152,
+    "X": 3.185,
+    "2": 2.179,
+    "over25": 1.887,
+    "under25": 1.87
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 3.49,
+    "X": 3.4,
+    "2": 2.29,
+    "over25": 1.93,
+    "under25": 1.9
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "2",
+    "p": 0.5199,
+    "odds": 2.29,
+    "edge": 0.1907,
+    "kelly": 0.05
+   },
    "result": null
   },
   "567263": {
@@ -2218,26 +2224,32 @@
    "date": "2026-08-08",
    "home": "Vitória SC",
    "away": "FC Arouca",
-   "p1": 0.4065,
-   "px": 0.227,
-   "p2": 0.3665,
-   "pOver25": 0.7258,
-   "pUnder25": 0.2742,
+   "p1": 0.4269,
+   "px": 0.2368,
+   "p2": 0.3363,
+   "pOver25": 0.6773,
+   "pUnder25": 0.3227,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.828,
+    "X": 3.469,
+    "2": 3.893,
+    "over25": 1.897,
+    "under25": 1.857
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.9,
+    "X": 3.7,
+    "2": 4.17,
+    "over25": 1.92,
+    "under25": 1.9
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "2",
+    "p": 0.3363,
+    "odds": 4.17,
+    "edge": 0.4023,
+    "kelly": 0.05
+   },
    "result": null
   },
   "567260": {
@@ -2274,26 +2286,32 @@
    "date": "2026-08-09",
    "home": "FC Porto",
    "away": "FC Alverca",
-   "p1": 0.8772,
-   "px": 0.0945,
-   "p2": 0.0283,
-   "pOver25": 0.6883,
-   "pUnder25": 0.3117,
+   "p1": 0.8582,
+   "px": 0.107,
+   "p2": 0.0348,
+   "pOver25": 0.6688,
+   "pUnder25": 0.3312,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.169,
+    "X": 6.375,
+    "2": 13.608,
+    "over25": 1.543,
+    "under25": 2.34
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.2,
+    "X": 7.8,
+    "2": 16.5,
+    "over25": 1.55,
+    "under25": 2.38
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "Over 2.5",
+    "p": 0.6688,
+    "odds": 1.55,
+    "edge": 0.0367,
+    "kelly": 0.0333
+   },
    "result": null
   },
   "567259": {
@@ -2302,26 +2320,32 @@
    "date": "2026-08-09",
    "home": "Moreirense FC",
    "away": "Sporting Clube de Braga",
-   "p1": 0.1529,
-   "px": 0.2005,
-   "p2": 0.6466,
-   "pOver25": 0.6519,
-   "pUnder25": 0.3481,
+   "p1": 0.1624,
+   "px": 0.2137,
+   "p2": 0.6239,
+   "pOver25": 0.6139,
+   "pUnder25": 0.3861,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 4.643,
+    "X": 3.572,
+    "2": 1.683,
+    "over25": 1.94,
+    "under25": 1.815
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 5.25,
+    "X": 3.85,
+    "2": 1.74,
+    "over25": 1.96,
+    "under25": 1.85
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "Over 2.5",
+    "p": 0.6139,
+    "odds": 1.96,
+    "edge": 0.2033,
+    "kelly": 0.05
+   },
    "result": null
   },
   "567261": {
@@ -2330,26 +2354,32 @@
    "date": "2026-08-09",
    "home": "Gil Vicente FC",
    "away": "Rio Ave FC",
-   "p1": 0.6219,
-   "px": 0.2174,
-   "p2": 0.1607,
-   "pOver25": 0.5956,
-   "pUnder25": 0.4044,
+   "p1": 0.595,
+   "px": 0.2295,
+   "p2": 0.1755,
+   "pOver25": 0.5709,
+   "pUnder25": 0.4291,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.808,
+    "X": 3.478,
+    "2": 3.994,
+    "over25": 1.915,
+    "under25": 1.842
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.85,
+    "X": 3.75,
+    "2": 4.2,
+    "over25": 1.95,
+    "under25": 1.89
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "Over 2.5",
+    "p": 0.5709,
+    "odds": 1.95,
+    "edge": 0.1133,
+    "kelly": 0.05
+   },
    "result": null
   },
   "567262": {
@@ -2358,26 +2388,32 @@
    "date": "2026-08-09",
    "home": "Sport Lisboa e Benfica",
    "away": "Académico de Viseu FC",
-   "p1": 0.7492,
-   "px": 0.1585,
-   "p2": 0.0922,
-   "pOver25": 0.6851,
-   "pUnder25": 0.3149,
+   "p1": 0.7732,
+   "px": 0.1492,
+   "p2": 0.0776,
+   "pOver25": 0.677,
+   "pUnder25": 0.323,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.105,
+    "X": 8.25,
+    "2": 19.911,
+    "over25": 1.44,
+    "under25": 2.68
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.14,
+    "X": 10.0,
+    "2": 25.0,
+    "over25": 1.44,
+    "under25": 2.68
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "2",
+    "p": 0.0776,
+    "odds": 25.0,
+    "edge": 0.9394,
+    "kelly": 0.0196
+   },
    "result": null
   },
   "567257": {
@@ -2386,26 +2422,32 @@
    "date": "2026-08-10",
    "home": "CD Santa Clara",
    "away": "CD Nacional",
-   "p1": 0.3945,
-   "px": 0.2949,
-   "p2": 0.3107,
-   "pOver25": 0.435,
-   "pUnder25": 0.565,
+   "p1": 0.4161,
+   "px": 0.2931,
+   "p2": 0.2908,
+   "pOver25": 0.4352,
+   "pUnder25": 0.5648,
    "odds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 1.901,
+    "X": 3.258,
+    "2": 3.897,
+    "over25": 2.148,
+    "under25": 1.654
    },
    "bestOdds": {
-    "1": null,
-    "X": null,
-    "2": null,
-    "over25": null,
-    "under25": null
+    "1": 2.02,
+    "X": 3.41,
+    "2": 4.2,
+    "over25": 2.2,
+    "under25": 1.68
    },
-   "bestBet": null,
+   "bestBet": {
+    "market": "2",
+    "p": 0.2908,
+    "odds": 4.2,
+    "edge": 0.2215,
+    "kelly": 0.0346
+   },
    "result": null
   },
   "567268": {
@@ -4743,6 +4785,3688 @@
    "p2": 0.7678,
    "pOver25": 0.8576,
    "pUnder25": 0.1424,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "560579": {
+   "comp": "PL",
+   "compName": "Premier League",
+   "date": "2026-09-14",
+   "home": "Leeds United FC",
+   "away": "Newcastle United FC",
+   "p1": 0.4402,
+   "px": 0.2342,
+   "p2": 0.3255,
+   "pOver25": 0.681,
+   "pUnder25": 0.319,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559715": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-21",
+   "home": "Olympique de Marseille",
+   "away": "RC Strasbourg Alsace",
+   "p1": 0.3073,
+   "px": 0.2123,
+   "p2": 0.4804,
+   "pOver25": 0.7682,
+   "pUnder25": 0.2318,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559712": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-22",
+   "home": "Racing Club de Lens",
+   "away": "AJ Auxerre",
+   "p1": 0.508,
+   "px": 0.2204,
+   "p2": 0.2716,
+   "pOver25": 0.7121,
+   "pUnder25": 0.2879,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559711": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-22",
+   "home": "Le Mans FC",
+   "away": "Stade Brestois 29",
+   "p1": 0.5825,
+   "px": 0.218,
+   "p2": 0.1995,
+   "pOver25": 0.6488,
+   "pUnder25": 0.3512,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559714": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-22",
+   "home": "ES Troyes AC",
+   "away": "Paris FC",
+   "p1": 0.3587,
+   "px": 0.2552,
+   "p2": 0.3862,
+   "pOver25": 0.5966,
+   "pUnder25": 0.4034,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559716": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-22",
+   "home": "OGC Nice",
+   "away": "FC Lorient",
+   "p1": 0.2222,
+   "px": 0.234,
+   "p2": 0.5438,
+   "pOver25": 0.6095,
+   "pUnder25": 0.3905,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559718": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-22",
+   "home": "Toulouse FC",
+   "away": "Olympique Lyonnais",
+   "p1": 0.296,
+   "px": 0.2372,
+   "p2": 0.4668,
+   "pOver25": 0.6553,
+   "pUnder25": 0.3447,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559717": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-23",
+   "home": "Angers SCO",
+   "away": "Lille OSC",
+   "p1": 0.0812,
+   "px": 0.2263,
+   "p2": 0.6924,
+   "pOver25": 0.3846,
+   "pUnder25": 0.6154,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559719": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-23",
+   "home": "Le Havre AC",
+   "away": "AS Monaco FC",
+   "p1": 0.2786,
+   "px": 0.2204,
+   "p2": 0.501,
+   "pOver25": 0.7169,
+   "pUnder25": 0.2831,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559713": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-23",
+   "home": "Paris Saint-Germain FC",
+   "away": "Stade Rennais FC 1901",
+   "p1": 0.6216,
+   "px": 0.1813,
+   "p2": 0.1971,
+   "pOver25": 0.8027,
+   "pUnder25": 0.1973,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559702": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-28",
+   "home": "Lille OSC",
+   "away": "Paris Saint-Germain FC",
+   "p1": 0.3408,
+   "px": 0.2928,
+   "p2": 0.3664,
+   "pOver25": 0.4425,
+   "pUnder25": 0.5575,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559704": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-29",
+   "home": "RC Strasbourg Alsace",
+   "away": "Racing Club de Lens",
+   "p1": 0.3027,
+   "px": 0.1889,
+   "p2": 0.5084,
+   "pOver25": 0.8607,
+   "pUnder25": 0.1393,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559705": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-29",
+   "home": "FC Lorient",
+   "away": "ES Troyes AC",
+   "p1": 0.3816,
+   "px": 0.2436,
+   "p2": 0.3748,
+   "pOver25": 0.6486,
+   "pUnder25": 0.3514,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559706": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-29",
+   "home": "Olympique Lyonnais",
+   "away": "Le Havre AC",
+   "p1": 0.5043,
+   "px": 0.2405,
+   "p2": 0.2551,
+   "pOver25": 0.6135,
+   "pUnder25": 0.3865,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559708": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-29",
+   "home": "AJ Auxerre",
+   "away": "Angers SCO",
+   "p1": 0.7314,
+   "px": 0.1858,
+   "p2": 0.0828,
+   "pOver25": 0.5299,
+   "pUnder25": 0.4701,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559710": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-29",
+   "home": "Stade Brestois 29",
+   "away": "Toulouse FC",
+   "p1": 0.4314,
+   "px": 0.2404,
+   "p2": 0.3283,
+   "pOver25": 0.6552,
+   "pUnder25": 0.3448,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559707": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-30",
+   "home": "Paris FC",
+   "away": "OGC Nice",
+   "p1": 0.7215,
+   "px": 0.1768,
+   "p2": 0.1017,
+   "pOver25": 0.6275,
+   "pUnder25": 0.3725,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559709": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-30",
+   "home": "Stade Rennais FC 1901",
+   "away": "Le Mans FC",
+   "p1": 0.5567,
+   "px": 0.2077,
+   "p2": 0.2356,
+   "pOver25": 0.7355,
+   "pUnder25": 0.2645,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559703": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-08-30",
+   "home": "AS Monaco FC",
+   "away": "Olympique de Marseille",
+   "p1": 0.6521,
+   "px": 0.1747,
+   "p2": 0.1732,
+   "pOver25": 0.7962,
+   "pUnder25": 0.2038,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559693": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Le Havre AC",
+   "away": "Stade Brestois 29",
+   "p1": 0.4712,
+   "px": 0.2457,
+   "p2": 0.2831,
+   "pOver25": 0.6114,
+   "pUnder25": 0.3886,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559694": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Olympique de Marseille",
+   "away": "Paris FC",
+   "p1": 0.2434,
+   "px": 0.228,
+   "p2": 0.5285,
+   "pOver25": 0.6561,
+   "pUnder25": 0.3439,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559695": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Racing Club de Lens",
+   "away": "FC Lorient",
+   "p1": 0.6555,
+   "px": 0.1689,
+   "p2": 0.1757,
+   "pOver25": 0.8243,
+   "pUnder25": 0.1757,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559696": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Toulouse FC",
+   "away": "Lille OSC",
+   "p1": 0.145,
+   "px": 0.2432,
+   "p2": 0.6118,
+   "pOver25": 0.4636,
+   "pUnder25": 0.5364,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559697": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Paris Saint-Germain FC",
+   "away": "AS Monaco FC",
+   "p1": 0.683,
+   "px": 0.1621,
+   "p2": 0.1549,
+   "pOver25": 0.8191,
+   "pUnder25": 0.1809,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559698": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Angers SCO",
+   "away": "Stade Rennais FC 1901",
+   "p1": 0.0937,
+   "px": 0.1592,
+   "p2": 0.7471,
+   "pOver25": 0.6826,
+   "pUnder25": 0.3174,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559699": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "Olympique Lyonnais",
+   "away": "AJ Auxerre",
+   "p1": 0.333,
+   "px": 0.2597,
+   "p2": 0.4073,
+   "pOver25": 0.5733,
+   "pUnder25": 0.4267,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559700": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "ES Troyes AC",
+   "away": "RC Strasbourg Alsace",
+   "p1": 0.4435,
+   "px": 0.2246,
+   "p2": 0.3319,
+   "pOver25": 0.7252,
+   "pUnder25": 0.2748,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559701": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-05",
+   "home": "OGC Nice",
+   "away": "Le Mans FC",
+   "p1": 0.1907,
+   "px": 0.2369,
+   "p2": 0.5723,
+   "pOver25": 0.5586,
+   "pUnder25": 0.4414,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559689": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-11",
+   "home": "Stade Rennais FC 1901",
+   "away": "Olympique de Marseille",
+   "p1": 0.7081,
+   "px": 0.1564,
+   "p2": 0.1355,
+   "pOver25": 0.8061,
+   "pUnder25": 0.1939,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559687": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-12",
+   "home": "RC Strasbourg Alsace",
+   "away": "AS Monaco FC",
+   "p1": 0.3932,
+   "px": 0.1995,
+   "p2": 0.4073,
+   "pOver25": 0.8423,
+   "pUnder25": 0.1577,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559684": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-12",
+   "home": "FC Lorient",
+   "away": "Toulouse FC",
+   "p1": 0.5524,
+   "px": 0.2159,
+   "p2": 0.2317,
+   "pOver25": 0.6963,
+   "pUnder25": 0.3037,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559688": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-12",
+   "home": "AJ Auxerre",
+   "away": "OGC Nice",
+   "p1": 0.7054,
+   "px": 0.1909,
+   "p2": 0.1038,
+   "pOver25": 0.5728,
+   "pUnder25": 0.4272,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559690": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-12",
+   "home": "Le Havre AC",
+   "away": "Angers SCO",
+   "p1": 0.5989,
+   "px": 0.243,
+   "p2": 0.1581,
+   "pOver25": 0.4863,
+   "pUnder25": 0.5137,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559692": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-12",
+   "home": "Paris FC",
+   "away": "Olympique Lyonnais",
+   "p1": 0.5132,
+   "px": 0.2336,
+   "p2": 0.2532,
+   "pOver25": 0.641,
+   "pUnder25": 0.359,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559685": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-13",
+   "home": "Lille OSC",
+   "away": "ES Troyes AC",
+   "p1": 0.5504,
+   "px": 0.2719,
+   "p2": 0.1777,
+   "pOver25": 0.4146,
+   "pUnder25": 0.5854,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559686": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-13",
+   "home": "Le Mans FC",
+   "away": "Racing Club de Lens",
+   "p1": 0.3028,
+   "px": 0.2161,
+   "p2": 0.4811,
+   "pOver25": 0.7499,
+   "pUnder25": 0.2501,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559691": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-09-13",
+   "home": "Stade Brestois 29",
+   "away": "Paris Saint-Germain FC",
+   "p1": 0.0992,
+   "px": 0.1462,
+   "p2": 0.7546,
+   "pOver25": 0.7609,
+   "pUnder25": 0.2391,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558629": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-22",
+   "home": "Udinese Calcio",
+   "away": "Como 1907",
+   "p1": 0.2592,
+   "px": 0.2697,
+   "p2": 0.4712,
+   "pOver25": 0.4947,
+   "pUnder25": 0.5053,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558632": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-22",
+   "home": "FC Internazionale Milano",
+   "away": "AC Monza",
+   "p1": 0.7156,
+   "px": 0.1585,
+   "p2": 0.126,
+   "pOver25": 0.7726,
+   "pUnder25": 0.2274,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558631": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-22",
+   "home": "Genoa CFC",
+   "away": "SSC Napoli",
+   "p1": 0.1973,
+   "px": 0.248,
+   "p2": 0.5547,
+   "pOver25": 0.5189,
+   "pUnder25": 0.4811,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558636": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-22",
+   "home": "Parma Calcio 1913",
+   "away": "Cagliari Calcio",
+   "p1": 0.4493,
+   "px": 0.2833,
+   "p2": 0.2673,
+   "pOver25": 0.4492,
+   "pUnder25": 0.5508,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558635": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-23",
+   "home": "Frosinone Calcio",
+   "away": "Juventus FC",
+   "p1": 0.3546,
+   "px": 0.2493,
+   "p2": 0.3961,
+   "pOver25": 0.6171,
+   "pUnder25": 0.3829,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558637": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-23",
+   "home": "Venezia FC",
+   "away": "US Lecce",
+   "p1": 0.5647,
+   "px": 0.2344,
+   "p2": 0.2009,
+   "pOver25": 0.5774,
+   "pUnder25": 0.4226,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558633": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-23",
+   "home": "Atalanta BC",
+   "away": "US Sassuolo Calcio",
+   "p1": 0.5337,
+   "px": 0.2437,
+   "p2": 0.2227,
+   "pOver25": 0.5652,
+   "pUnder25": 0.4348,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558634": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-23",
+   "home": "Torino FC",
+   "away": "AC Milan",
+   "p1": 0.4263,
+   "px": 0.2566,
+   "p2": 0.3171,
+   "pOver25": 0.577,
+   "pUnder25": 0.423,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558630": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-24",
+   "home": "Bologna FC 1909",
+   "away": "SS Lazio",
+   "p1": 0.4108,
+   "px": 0.2731,
+   "p2": 0.3161,
+   "pOver25": 0.5089,
+   "pUnder25": 0.4911,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558638": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-24",
+   "home": "AS Roma",
+   "away": "ACF Fiorentina",
+   "p1": 0.5967,
+   "px": 0.2193,
+   "p2": 0.1841,
+   "pOver25": 0.6168,
+   "pUnder25": 0.3832,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558625": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-28",
+   "home": "AC Milan",
+   "away": "Venezia FC",
+   "p1": 0.3309,
+   "px": 0.269,
+   "p2": 0.4001,
+   "pOver25": 0.5291,
+   "pUnder25": 0.4709,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558620": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-29",
+   "home": "US Sassuolo Calcio",
+   "away": "Torino FC",
+   "p1": 0.3903,
+   "px": 0.2395,
+   "p2": 0.3702,
+   "pOver25": 0.6624,
+   "pUnder25": 0.3376,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558624": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-29",
+   "home": "AC Monza",
+   "away": "Udinese Calcio",
+   "p1": 0.3709,
+   "px": 0.2753,
+   "p2": 0.3538,
+   "pOver25": 0.5064,
+   "pUnder25": 0.4936,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558627": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-29",
+   "home": "ACF Fiorentina",
+   "away": "Frosinone Calcio",
+   "p1": 0.3978,
+   "px": 0.2793,
+   "p2": 0.3229,
+   "pOver25": 0.4861,
+   "pUnder25": 0.5139,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558619": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-29",
+   "home": "Juventus FC",
+   "away": "Parma Calcio 1913",
+   "p1": 0.6351,
+   "px": 0.2169,
+   "p2": 0.148,
+   "pOver25": 0.5644,
+   "pUnder25": 0.4356,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558626": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-30",
+   "home": "SSC Napoli",
+   "away": "Como 1907",
+   "p1": 0.3253,
+   "px": 0.2514,
+   "p2": 0.4233,
+   "pOver25": 0.6017,
+   "pUnder25": 0.3983,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558622": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-30",
+   "home": "SS Lazio",
+   "away": "Genoa CFC",
+   "p1": 0.4474,
+   "px": 0.2827,
+   "p2": 0.2699,
+   "pOver25": 0.453,
+   "pUnder25": 0.547,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558623": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-30",
+   "home": "Cagliari Calcio",
+   "away": "FC Internazionale Milano",
+   "p1": 0.0687,
+   "px": 0.1225,
+   "p2": 0.8088,
+   "pOver25": 0.7646,
+   "pUnder25": 0.2354,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558621": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-31",
+   "home": "US Lecce",
+   "away": "AS Roma",
+   "p1": 0.1482,
+   "px": 0.1868,
+   "p2": 0.6649,
+   "pOver25": 0.694,
+   "pUnder25": 0.306,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558628": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-08-31",
+   "home": "Atalanta BC",
+   "away": "Bologna FC 1909",
+   "p1": 0.4889,
+   "px": 0.2678,
+   "p2": 0.2434,
+   "pOver25": 0.4902,
+   "pUnder25": 0.5098,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558609": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-04",
+   "home": "Genoa CFC",
+   "away": "Como 1907",
+   "p1": 0.1394,
+   "px": 0.2231,
+   "p2": 0.6375,
+   "pOver25": 0.5228,
+   "pUnder25": 0.4772,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558616": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-05",
+   "home": "ACF Fiorentina",
+   "away": "Torino FC",
+   "p1": 0.479,
+   "px": 0.2585,
+   "p2": 0.2625,
+   "pOver25": 0.5405,
+   "pUnder25": 0.4595,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558614": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-05",
+   "home": "FC Internazionale Milano",
+   "away": "SSC Napoli",
+   "p1": 0.6049,
+   "px": 0.1941,
+   "p2": 0.2009,
+   "pOver25": 0.7497,
+   "pUnder25": 0.2503,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558611": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-05",
+   "home": "AS Roma",
+   "away": "Atalanta BC",
+   "p1": 0.5984,
+   "px": 0.2096,
+   "p2": 0.192,
+   "pOver25": 0.67,
+   "pUnder25": 0.33,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558612": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-06",
+   "home": "Parma Calcio 1913",
+   "away": "AC Monza",
+   "p1": 0.2599,
+   "px": 0.264,
+   "p2": 0.4761,
+   "pOver25": 0.517,
+   "pUnder25": 0.483,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558615": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-06",
+   "home": "Frosinone Calcio",
+   "away": "Venezia FC",
+   "p1": 0.4232,
+   "px": 0.2483,
+   "p2": 0.3285,
+   "pOver25": 0.6161,
+   "pUnder25": 0.3839,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558613": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-06",
+   "home": "Bologna FC 1909",
+   "away": "US Sassuolo Calcio",
+   "p1": 0.4419,
+   "px": 0.2604,
+   "p2": 0.2977,
+   "pOver25": 0.553,
+   "pUnder25": 0.447,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558618": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-06",
+   "home": "Juventus FC",
+   "away": "AC Milan",
+   "p1": 0.5616,
+   "px": 0.2387,
+   "p2": 0.1997,
+   "pOver25": 0.5585,
+   "pUnder25": 0.4415,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558610": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-07",
+   "home": "Cagliari Calcio",
+   "away": "US Lecce",
+   "p1": 0.3354,
+   "px": 0.2806,
+   "p2": 0.384,
+   "pOver25": 0.4833,
+   "pUnder25": 0.5167,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558617": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-07",
+   "home": "Udinese Calcio",
+   "away": "SS Lazio",
+   "p1": 0.5198,
+   "px": 0.2622,
+   "p2": 0.218,
+   "pOver25": 0.4883,
+   "pUnder25": 0.5117,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558606": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-11",
+   "home": "Venezia FC",
+   "away": "ACF Fiorentina",
+   "p1": 0.4085,
+   "px": 0.2784,
+   "p2": 0.313,
+   "pOver25": 0.4869,
+   "pUnder25": 0.5131,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558604": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-12",
+   "home": "Genoa CFC",
+   "away": "Frosinone Calcio",
+   "p1": 0.277,
+   "px": 0.2735,
+   "p2": 0.4495,
+   "pOver25": 0.4911,
+   "pUnder25": 0.5089,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558608": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-12",
+   "home": "US Sassuolo Calcio",
+   "away": "Juventus FC",
+   "p1": 0.2506,
+   "px": 0.2344,
+   "p2": 0.5149,
+   "pOver25": 0.631,
+   "pUnder25": 0.369,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558607": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-12",
+   "home": "Atalanta BC",
+   "away": "Cagliari Calcio",
+   "p1": 0.623,
+   "px": 0.2266,
+   "p2": 0.1504,
+   "pOver25": 0.5301,
+   "pUnder25": 0.4699,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558603": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-13",
+   "home": "Torino FC",
+   "away": "AS Roma",
+   "p1": 0.1973,
+   "px": 0.1874,
+   "p2": 0.6153,
+   "pOver25": 0.7738,
+   "pUnder25": 0.2262,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558602": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-13",
+   "home": "Como 1907",
+   "away": "Parma Calcio 1913",
+   "p1": 0.7467,
+   "px": 0.169,
+   "p2": 0.0843,
+   "pOver25": 0.6015,
+   "pUnder25": 0.3985,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558605": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-13",
+   "home": "US Lecce",
+   "away": "AC Monza",
+   "p1": 0.2747,
+   "px": 0.2564,
+   "p2": 0.4689,
+   "pOver25": 0.5571,
+   "pUnder25": 0.4429,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558599": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-13",
+   "home": "SSC Napoli",
+   "away": "Bologna FC 1909",
+   "p1": 0.6067,
+   "px": 0.2205,
+   "p2": 0.1728,
+   "pOver25": 0.5936,
+   "pUnder25": 0.4064,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558600": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-13",
+   "home": "SS Lazio",
+   "away": "AC Milan",
+   "p1": 0.3999,
+   "px": 0.2783,
+   "p2": 0.3218,
+   "pOver25": 0.4898,
+   "pUnder25": 0.5102,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558601": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-09-14",
+   "home": "FC Internazionale Milano",
+   "away": "Udinese Calcio",
+   "p1": 0.6468,
+   "px": 0.1975,
+   "p2": 0.1556,
+   "pOver25": 0.6614,
+   "pUnder25": 0.3386,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558214": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-07",
+   "home": "SC Cambuur-Leeuwarden",
+   "away": "SBV Excelsior",
+   "p1": 0.4369,
+   "px": 0.233,
+   "p2": 0.3301,
+   "pOver25": 0.6838,
+   "pUnder25": 0.3162,
+   "odds": {
+    "1": 2.399,
+    "X": 3.4,
+    "2": 2.456,
+    "over25": 1.588,
+    "under25": 2.258
+   },
+   "bestOdds": {
+    "1": 2.6,
+    "X": 3.8,
+    "2": 2.65,
+    "over25": 1.65,
+    "under25": 2.32
+   },
+   "bestBet": {
+    "market": "1",
+    "p": 0.4369,
+    "odds": 2.6,
+    "edge": 0.1359,
+    "kelly": 0.0425
+   },
+   "result": null
+  },
+  "558215": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-08",
+   "home": "NEC",
+   "away": "Telstar 1963",
+   "p1": 0.4297,
+   "px": 0.212,
+   "p2": 0.3584,
+   "pOver25": 0.7834,
+   "pUnder25": 0.2166,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558216": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-08",
+   "home": "Go Ahead Eagles",
+   "away": "Willem II Tilburg",
+   "p1": 0.4363,
+   "px": 0.2433,
+   "p2": 0.3203,
+   "pOver25": 0.635,
+   "pUnder25": 0.365,
+   "odds": {
+    "1": 1.612,
+    "X": 3.913,
+    "2": 4.451,
+    "over25": 1.582,
+    "under25": 2.269
+   },
+   "bestOdds": {
+    "1": 1.72,
+    "X": 4.3,
+    "2": 5.08,
+    "over25": 1.63,
+    "under25": 2.4
+   },
+   "bestBet": {
+    "market": "2",
+    "p": 0.3203,
+    "odds": 5.08,
+    "edge": 0.6272,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558217": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-08",
+   "home": "PSV",
+   "away": "Fortuna Sittard",
+   "p1": 0.8137,
+   "px": 0.1085,
+   "p2": 0.0778,
+   "pOver25": 0.8684,
+   "pUnder25": 0.1316,
+   "odds": {
+    "1": 1.205,
+    "X": 6.819,
+    "2": 9.488,
+    "over25": 1.233,
+    "under25": 3.947
+   },
+   "bestOdds": {
+    "1": 1.25,
+    "X": 7.8,
+    "2": 12.0,
+    "over25": 1.24,
+    "under25": 4.0
+   },
+   "bestBet": {
+    "market": "Over 2.5",
+    "p": 0.8684,
+    "odds": 1.24,
+    "edge": 0.0768,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558218": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-08",
+   "home": "AZ",
+   "away": "ADO Den Haag",
+   "p1": 0.5238,
+   "px": 0.2278,
+   "p2": 0.2483,
+   "pOver25": 0.657,
+   "pUnder25": 0.343,
+   "odds": {
+    "1": 1.454,
+    "X": 4.493,
+    "2": 5.996,
+    "over25": 1.467,
+    "under25": 2.54
+   },
+   "bestOdds": {
+    "1": 1.55,
+    "X": 4.8,
+    "2": 6.75,
+    "over25": 1.48,
+    "under25": 2.56
+   },
+   "bestBet": {
+    "market": "2",
+    "p": 0.2483,
+    "odds": 6.75,
+    "edge": 0.676,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558219": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-09",
+   "home": "Sparta Rotterdam",
+   "away": "Feyenoord Rotterdam",
+   "p1": 0.1369,
+   "px": 0.1858,
+   "p2": 0.6774,
+   "pOver25": 0.6742,
+   "pUnder25": 0.3258,
+   "odds": {
+    "1": 4.34,
+    "X": 3.996,
+    "2": 1.659,
+    "over25": 1.5,
+    "under25": 2.507
+   },
+   "bestOdds": {
+    "1": 4.8,
+    "X": 4.3,
+    "2": 1.74,
+    "over25": 1.5,
+    "under25": 2.51
+   },
+   "bestBet": {
+    "market": "2",
+    "p": 0.6774,
+    "odds": 1.74,
+    "edge": 0.1786,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558220": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-09",
+   "home": "FC Groningen",
+   "away": "FC Utrecht",
+   "p1": 0.3051,
+   "px": 0.2325,
+   "p2": 0.4625,
+   "pOver25": 0.676,
+   "pUnder25": 0.324,
+   "odds": {
+    "1": 2.299,
+    "X": 3.34,
+    "2": 2.852,
+    "over25": 1.747,
+    "under25": 2.0
+   },
+   "bestOdds": {
+    "1": 2.45,
+    "X": 3.6,
+    "2": 3.0,
+    "over25": 1.81,
+    "under25": 2.05
+   },
+   "bestBet": {
+    "market": "2",
+    "p": 0.4625,
+    "odds": 3.0,
+    "edge": 0.3874,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558221": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-09",
+   "home": "PEC Zwolle",
+   "away": "AFC Ajax",
+   "p1": 0.1303,
+   "px": 0.1721,
+   "p2": 0.6976,
+   "pOver25": 0.7207,
+   "pUnder25": 0.2793,
+   "odds": {
+    "1": 5.533,
+    "X": 4.402,
+    "2": 1.478,
+    "over25": 1.46,
+    "under25": 2.58
+   },
+   "bestOdds": {
+    "1": 6.3,
+    "X": 4.75,
+    "2": 1.54,
+    "over25": 1.47,
+    "under25": 2.62
+   },
+   "bestBet": {
+    "market": "2",
+    "p": 0.6976,
+    "odds": 1.54,
+    "edge": 0.0742,
+    "kelly": 0.05
+   },
+   "result": null
+  },
+  "558222": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-09",
+   "home": "SC Heerenveen",
+   "away": "FC Twente '65",
+   "p1": 0.2936,
+   "px": 0.1997,
+   "p2": 0.5066,
+   "pOver25": 0.8107,
+   "pUnder25": 0.1893,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558223": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-14",
+   "home": "Telstar 1963",
+   "away": "Sparta Rotterdam",
+   "p1": 0.8286,
+   "px": 0.1056,
+   "p2": 0.0658,
+   "pOver25": 0.8388,
+   "pUnder25": 0.1612,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558224": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-15",
+   "home": "Willem II Tilburg",
+   "away": "NEC",
+   "p1": 0.3937,
+   "px": 0.233,
+   "p2": 0.3733,
+   "pOver25": 0.6921,
+   "pUnder25": 0.3079,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558225": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-15",
+   "home": "FC Utrecht",
+   "away": "AZ",
+   "p1": 0.5224,
+   "px": 0.2208,
+   "p2": 0.2568,
+   "pOver25": 0.695,
+   "pUnder25": 0.305,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558226": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-15",
+   "home": "SBV Excelsior",
+   "away": "PSV",
+   "p1": 0.1911,
+   "px": 0.1528,
+   "p2": 0.6561,
+   "pOver25": 0.9056,
+   "pUnder25": 0.0944,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558227": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-15",
+   "home": "Fortuna Sittard",
+   "away": "SC Cambuur-Leeuwarden",
+   "p1": 0.2228,
+   "px": 0.2027,
+   "p2": 0.5745,
+   "pOver25": 0.7395,
+   "pUnder25": 0.2605,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558228": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-16",
+   "home": "ADO Den Haag",
+   "away": "FC Groningen",
+   "p1": 0.4563,
+   "px": 0.2308,
+   "p2": 0.313,
+   "pOver25": 0.6872,
+   "pUnder25": 0.3128,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558229": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-16",
+   "home": "Feyenoord Rotterdam",
+   "away": "Go Ahead Eagles",
+   "p1": 0.5169,
+   "px": 0.2346,
+   "p2": 0.2485,
+   "pOver25": 0.6283,
+   "pUnder25": 0.3717,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558230": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-16",
+   "home": "FC Twente '65",
+   "away": "PEC Zwolle",
+   "p1": 0.8647,
+   "px": 0.0856,
+   "p2": 0.0497,
+   "pOver25": 0.8707,
+   "pUnder25": 0.1293,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558231": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-16",
+   "home": "AFC Ajax",
+   "away": "SC Heerenveen",
+   "p1": 0.5307,
+   "px": 0.213,
+   "p2": 0.2563,
+   "pOver25": 0.728,
+   "pUnder25": 0.272,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558232": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-22",
+   "home": "Fortuna Sittard",
+   "away": "AZ",
+   "p1": 0.1791,
+   "px": 0.178,
+   "p2": 0.6429,
+   "pOver25": 0.7882,
+   "pUnder25": 0.2118,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558234": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-22",
+   "home": "Sparta Rotterdam",
+   "away": "FC Utrecht",
+   "p1": 0.0776,
+   "px": 0.1278,
+   "p2": 0.7946,
+   "pOver25": 0.7733,
+   "pUnder25": 0.2267,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558233": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-22",
+   "home": "NEC",
+   "away": "SBV Excelsior",
+   "p1": 0.5126,
+   "px": 0.2041,
+   "p2": 0.2833,
+   "pOver25": 0.7864,
+   "pUnder25": 0.2136,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558235": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-22",
+   "home": "SC Heerenveen",
+   "away": "PEC Zwolle",
+   "p1": 0.7598,
+   "px": 0.1346,
+   "p2": 0.1056,
+   "pOver25": 0.83,
+   "pUnder25": 0.17,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558236": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-23",
+   "home": "Go Ahead Eagles",
+   "away": "ADO Den Haag",
+   "p1": 0.3966,
+   "px": 0.2423,
+   "p2": 0.3612,
+   "pOver25": 0.6493,
+   "pUnder25": 0.3507,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558237": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-23",
+   "home": "PSV",
+   "away": "FC Groningen",
+   "p1": 0.7606,
+   "px": 0.1226,
+   "p2": 0.1168,
+   "pOver25": 0.9078,
+   "pUnder25": 0.0922,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558238": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-23",
+   "home": "SC Cambuur-Leeuwarden",
+   "away": "Feyenoord Rotterdam",
+   "p1": 0.3601,
+   "px": 0.2577,
+   "p2": 0.3821,
+   "pOver25": 0.5809,
+   "pUnder25": 0.4191,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558241": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-28",
+   "home": "FC Groningen",
+   "away": "Fortuna Sittard",
+   "p1": 0.6744,
+   "px": 0.1647,
+   "p2": 0.1609,
+   "pOver25": 0.8158,
+   "pUnder25": 0.1842,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558242": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-29",
+   "home": "SBV Excelsior",
+   "away": "Sparta Rotterdam",
+   "p1": 0.7706,
+   "px": 0.1328,
+   "p2": 0.0967,
+   "pOver25": 0.8134,
+   "pUnder25": 0.1866,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558243": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-29",
+   "home": "AZ",
+   "away": "Go Ahead Eagles",
+   "p1": 0.526,
+   "px": 0.2187,
+   "p2": 0.2553,
+   "pOver25": 0.7025,
+   "pUnder25": 0.2975,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558244": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-29",
+   "home": "PEC Zwolle",
+   "away": "NEC",
+   "p1": 0.1393,
+   "px": 0.1599,
+   "p2": 0.7007,
+   "pOver25": 0.7957,
+   "pUnder25": 0.2043,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558245": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-30",
+   "home": "FC Utrecht",
+   "away": "PSV",
+   "p1": 0.3467,
+   "px": 0.1952,
+   "p2": 0.4581,
+   "pOver25": 0.8507,
+   "pUnder25": 0.1493,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558246": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-30",
+   "home": "Willem II Tilburg",
+   "away": "SC Heerenveen",
+   "p1": 0.4418,
+   "px": 0.2259,
+   "p2": 0.3323,
+   "pOver25": 0.7157,
+   "pUnder25": 0.2843,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558247": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-30",
+   "home": "Feyenoord Rotterdam",
+   "away": "ADO Den Haag",
+   "p1": 0.4781,
+   "px": 0.2485,
+   "p2": 0.2734,
+   "pOver25": 0.5889,
+   "pUnder25": 0.4111,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558248": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-30",
+   "home": "Telstar 1963",
+   "away": "AFC Ajax",
+   "p1": 0.412,
+   "px": 0.2275,
+   "p2": 0.3605,
+   "pOver25": 0.7155,
+   "pUnder25": 0.2845,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558249": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-08-30",
+   "home": "SC Cambuur-Leeuwarden",
+   "away": "FC Twente '65",
+   "p1": 0.2942,
+   "px": 0.2208,
+   "p2": 0.4851,
+   "pOver25": 0.7214,
+   "pUnder25": 0.2786,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558250": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-04",
+   "home": "Sparta Rotterdam",
+   "away": "PEC Zwolle",
+   "p1": 0.4011,
+   "px": 0.227,
+   "p2": 0.3719,
+   "pOver25": 0.719,
+   "pUnder25": 0.281,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558251": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-05",
+   "home": "NEC",
+   "away": "Feyenoord Rotterdam",
+   "p1": 0.4079,
+   "px": 0.2394,
+   "p2": 0.3527,
+   "pOver25": 0.661,
+   "pUnder25": 0.339,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558252": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-05",
+   "home": "FC Utrecht",
+   "away": "Go Ahead Eagles",
+   "p1": 0.6097,
+   "px": 0.2011,
+   "p2": 0.1892,
+   "pOver25": 0.7029,
+   "pUnder25": 0.2971,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558253": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-05",
+   "home": "AFC Ajax",
+   "away": "PSV",
+   "p1": 0.2856,
+   "px": 0.1923,
+   "p2": 0.5221,
+   "pOver25": 0.8362,
+   "pUnder25": 0.1638,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558254": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-05",
+   "home": "Willem II Tilburg",
+   "away": "SBV Excelsior",
+   "p1": 0.4554,
+   "px": 0.2256,
+   "p2": 0.319,
+   "pOver25": 0.7125,
+   "pUnder25": 0.2875,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558255": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-06",
+   "home": "FC Groningen",
+   "away": "FC Twente '65",
+   "p1": 0.2753,
+   "px": 0.2028,
+   "p2": 0.5219,
+   "pOver25": 0.7865,
+   "pUnder25": 0.2135,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558256": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-06",
+   "home": "SC Heerenveen",
+   "away": "AZ",
+   "p1": 0.3818,
+   "px": 0.2193,
+   "p2": 0.3989,
+   "pOver25": 0.7543,
+   "pUnder25": 0.2457,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558257": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-06",
+   "home": "Telstar 1963",
+   "away": "SC Cambuur-Leeuwarden",
+   "p1": 0.4991,
+   "px": 0.2195,
+   "p2": 0.2814,
+   "pOver25": 0.7187,
+   "pUnder25": 0.2813,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558258": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-06",
+   "home": "ADO Den Haag",
+   "away": "Fortuna Sittard",
+   "p1": 0.6775,
+   "px": 0.1721,
+   "p2": 0.1504,
+   "pOver25": 0.764,
+   "pUnder25": 0.236,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558239": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-09",
+   "home": "FC Twente '65",
+   "away": "Telstar 1963",
+   "p1": 0.5516,
+   "px": 0.1927,
+   "p2": 0.2557,
+   "pOver25": 0.8135,
+   "pUnder25": 0.1865,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558899": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-11",
+   "home": "AZ",
+   "away": "Willem II Tilburg",
+   "p1": 0.4858,
+   "px": 0.2321,
+   "p2": 0.2821,
+   "pOver25": 0.6646,
+   "pUnder25": 0.3354,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558898": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-12",
+   "home": "FC Twente '65",
+   "away": "ADO Den Haag",
+   "p1": 0.5922,
+   "px": 0.1992,
+   "p2": 0.2086,
+   "pOver25": 0.7379,
+   "pUnder25": 0.2621,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558897": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-12",
+   "home": "Go Ahead Eagles",
+   "away": "FC Groningen",
+   "p1": 0.4279,
+   "px": 0.2263,
+   "p2": 0.3458,
+   "pOver25": 0.7179,
+   "pUnder25": 0.2821,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558896": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-12",
+   "home": "Fortuna Sittard",
+   "away": "AFC Ajax",
+   "p1": 0.1618,
+   "px": 0.1777,
+   "p2": 0.6605,
+   "pOver25": 0.7607,
+   "pUnder25": 0.2393,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558895": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-12",
+   "home": "SC Heerenveen",
+   "away": "Telstar 1963",
+   "p1": 0.3841,
+   "px": 0.2084,
+   "p2": 0.4075,
+   "pOver25": 0.802,
+   "pUnder25": 0.198,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558894": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-13",
+   "home": "SBV Excelsior",
+   "away": "FC Utrecht",
+   "p1": 0.2829,
+   "px": 0.2149,
+   "p2": 0.5023,
+   "pOver25": 0.74,
+   "pUnder25": 0.26,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558892": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-13",
+   "home": "SC Cambuur-Leeuwarden",
+   "away": "NEC",
+   "p1": 0.3937,
+   "px": 0.233,
+   "p2": 0.3733,
+   "pOver25": 0.6921,
+   "pUnder25": 0.3079,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558893": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-13",
+   "home": "PSV",
+   "away": "Sparta Rotterdam",
+   "p1": 0.8693,
+   "px": 0.0837,
+   "p2": 0.047,
+   "pOver25": 0.8678,
+   "pUnder25": 0.1322,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558891": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-09-13",
+   "home": "PEC Zwolle",
+   "away": "Feyenoord Rotterdam",
+   "p1": 0.1332,
+   "px": 0.1775,
+   "p2": 0.6893,
+   "pOver25": 0.703,
+   "pUnder25": 0.297,
    "odds": {
     "1": null,
     "X": null,
