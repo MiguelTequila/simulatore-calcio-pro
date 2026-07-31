@@ -119,6 +119,46 @@ class FootballDataClient:
         return results
 
 
+
+def build_teams_from_matches(recent, fixtures):
+    """Ricostruisce le statistiche squadra dai risultati reali, quando la
+    classifica non e' disponibile (inizio stagione, coppe senza girone unico).
+    Usa dati che scarichiamo gia': nessuna chiamata API aggiuntiva."""
+    teams = {}
+
+    def slot(tid, name):
+        return teams.setdefault(tid, {"id": tid, "name": name, "shortName": name,
+                                      "crest": "", "played": 0, "won": 0, "draw": 0, "lost": 0,
+                                      "gf": 0, "ga": 0, "gd": 0, "points": 0,
+                                      "gf_pg": 0.0, "ga_pg": 0.0})
+
+    for m in recent or []:
+        hg, ag = m.get("homeGoals"), m.get("awayGoals")
+        if hg is None or ag is None:
+            continue
+        h = slot(m["homeId"], m["homeTeam"])
+        a = slot(m["awayId"], m["awayTeam"])
+        h["played"] += 1; a["played"] += 1
+        h["gf"] += hg; h["ga"] += ag
+        a["gf"] += ag; a["ga"] += hg
+        if hg > ag:   h["won"] += 1;  a["lost"] += 1; h["points"] += 3
+        elif hg == ag: h["draw"] += 1; a["draw"] += 1; h["points"] += 1; a["points"] += 1
+        else:          a["won"] += 1;  h["lost"] += 1; a["points"] += 3
+
+    # squadre presenti solo nel calendario (neopromosse, esordienti in coppa):
+    # entrano con played=0 e il modello applica la media di lega.
+    for f in fixtures or []:
+        slot(f["homeId"], f["homeTeam"])
+        slot(f["awayId"], f["awayTeam"])
+
+    for t in teams.values():
+        t["gd"] = t["gf"] - t["ga"]
+        if t["played"]:
+            t["gf_pg"] = round(t["gf"] / t["played"], 2)
+            t["ga_pg"] = round(t["ga"] / t["played"], 2)
+    return teams
+
+
 def fetch_all_data():
     client = FootballDataClient()
     output = {"updated": datetime.now(timezone.utc).isoformat(), "competitions": {}}
@@ -133,8 +173,17 @@ def fetch_all_data():
         recent = client.get_recent_matches(comp_id, days_back=180)
         upcoming = client.get_upcoming(comp_id, days_ahead=45)
 
+        source = "classifica"
         if not teams:
-            print(f"    [!] Nessun dato squadre")
+            # La classifica non c'e' (stagione non ancora avviata) o e' a zero
+            # partite giocate: ricostruiamo le statistiche dai risultati reali.
+            teams = build_teams_from_matches(recent, upcoming)
+            source = "risultati recenti"
+        if not teams:
+            print(f"    [!] Nessun dato squadre (ne' classifica ne' risultati)")
+            continue
+        if not upcoming:
+            print(f"    [!] Nessuna partita in calendario nei prossimi 45 giorni")
             continue
 
         for tid, tinfo in teams.items():
@@ -146,7 +195,7 @@ def fetch_all_data():
             "teams": teams, "recentMatches": recent, "fixtures": upcoming
         }
         all_matches.extend(recent)
-        print(f"    ✓ {len(teams)} squadre, {len(recent)} recenti, {len(upcoming)} upcoming")
+        print(f"    ✓ {len(teams)} squadre (fonte: {source}), {len(recent)} recenti, {len(upcoming)} in calendario")
 
     return output, all_matches
 
