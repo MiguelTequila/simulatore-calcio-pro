@@ -205,6 +205,7 @@ async function loadData() {
     removeUnusedOddsBoxes();
     renderGlossary();
     renderImportControl();
+    renderMultiCalc();
     renderCreditsBadge(allData.apiCredits);
     loadTrackRecord();
   } catch (e) {
@@ -1002,4 +1003,243 @@ function importCSV(text) {
   alert('Importate ' + added + ' righe.' +
         (skipped ? '\n' + skipped + ' gia\u0300 presenti (saltate).' : '') +
         (bad ? '\n' + bad + ' righe non leggibili (ignorate).' : ''));
+}
+
+
+// ===================== Calcolatore multipla e sistema =====================
+let multiEvents = [];
+let multiTypeTouched = false;
+
+function nCk(n, k) {
+  if (k < 0 || k > n) return 0;
+  let r = 1;
+  for (let i = 1; i <= k; i++) r = r * (n - k + i) / i;
+  return Math.round(r);
+}
+
+// polinomio simmetrico elementare: somma dei prodotti di tutti i sottoinsiemi di k quote
+function esym(arr, k) {
+  const e = new Array(k + 1).fill(0);
+  e[0] = 1;
+  for (const x of arr) {
+    for (let j = Math.min(k, e.length - 1); j >= 1; j--) e[j] += e[j - 1] * x;
+  }
+  return e[k];
+}
+
+// Enumera tutti gli scenari possibili (2^N) e calcola il ritorno atteso esatto.
+function computeSystem(events, K, unit, bonusPct) {
+  const N = events.length;
+  const nCombos = nCk(N, K);
+  const stake = nCombos * unit;
+  let ev = 0, pProfit = 0, pAnyReturn = 0;
+  const byWins = {};
+  for (let mask = 0; mask < (1 << N); mask++) {
+    let p = 1, wins = 0;
+    const winOdds = [];
+    for (let i = 0; i < N; i++) {
+      if (mask & (1 << i)) { p *= events[i].p; winOdds.push(events[i].odds); wins++; }
+      else p *= (1 - events[i].p);
+    }
+    let payout = wins >= K ? unit * esym(winOdds, K) : 0;
+    if (wins === N && bonusPct > 0) payout *= (1 + bonusPct);
+    ev += p * payout;
+    if (payout > stake + 1e-9) pProfit += p;
+    if (payout > 1e-9) pAnyReturn += p;
+    if (!byWins[wins]) byWins[wins] = {p: 0, pay: 0};
+    byWins[wins].p += p;
+    byWins[wins].pay += p * payout;
+  }
+  return {N, K, nCombos, stake, ev, net: ev - stake, roi: stake > 0 ? (ev - stake) / stake : 0,
+          pProfit, pAnyReturn, byWins,
+          totalOdds: events.reduce((a, e) => a * e.odds, 1),
+          pAll: events.reduce((a, e) => a * e.p, 1)};
+}
+
+function renderMultiCalc() {
+  if (document.getElementById('multiCard')) return;
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+  const sec = document.createElement('section');
+  sec.className = 'card';
+  sec.id = 'multiCard';
+  sec.innerHTML =
+    '<h2>\uD83C\uDFB0 Calcolatore multipla e sistema</h2>' +
+    '<p class="note">Inserisci gli eventi con la probabilit\u00E0 stimata dal modello e la quota offerta. ' +
+    'Il calcolo ti dice se la giocata ha senso <em>secondo il modello</em>, e quanto \u00E8 fragile a un suo errore.</p>' +
+    '<div id="multiRows"></div>' +
+    '<div class="multi-add">' +
+      '<button id="multiAddRow" class="btn-secondary">\u2795 Aggiungi evento</button>' +
+      '<button id="multiAddCurrent" class="btn-secondary">\uD83C\uDFAF Aggiungi partita selezionata</button>' +
+      '<button id="multiClear" class="btn-danger">\uD83D\uDDD1\uFE0F Svuota</button>' +
+    '</div>' +
+    '<div class="multi-params">' +
+      '<label>Tipo giocata<select id="multiType"></select></label>' +
+      '<label>Puntata per combinazione (\u20AC)<input type="number" id="multiStake" value="2" step="0.5" min="0.1"></label>' +
+      '<label>Bonus multipla (%)<input type="number" id="multiBonus" value="0" step="1" min="0" max="200"></label>' +
+    '</div>' +
+    '<div id="multiResult"></div>';
+  footer.parentNode.insertBefore(sec, footer);
+
+  document.getElementById('multiAddRow').addEventListener('click', () => { addMultiRow(); });
+  document.getElementById('multiAddCurrent').addEventListener('click', addCurrentToMulti);
+  document.getElementById('multiClear').addEventListener('click', () => { multiEvents = []; multiTypeTouched = false; renderMultiRows(); });
+  document.getElementById('multiType').addEventListener('change', () => {
+    multiTypeTouched = true;
+    recomputeMulti();
+  });
+  ['multiStake', 'multiBonus'].forEach(id => {
+    document.getElementById(id).addEventListener('change', recomputeMulti);
+    document.getElementById(id).addEventListener('input', recomputeMulti);
+  });
+  renderMultiRows();
+}
+
+function addMultiRow(prefill) {
+  if (multiEvents.length >= 12) { alert('Massimo 12 eventi.'); return; }
+  multiEvents.push(prefill || {label: 'Evento ' + (multiEvents.length + 1), p: 0.60, odds: 1.70});
+  renderMultiRows();
+}
+
+function addCurrentToMulti() {
+  if (!currentMatch || !currentMatch.prediction) {
+    alert('Seleziona prima una partita.');
+    return;
+  }
+  const p = currentMatch.prediction;
+  const o = currentMatch.odds || {};
+  const best = o.best || o;
+  const opts = [
+    ['1 (' + currentMatch.homeTeam + ')', p.p1, best['1']],
+    ['X (pareggio)', p.px, best['X']],
+    ['2 (' + currentMatch.awayTeam + ')', p.p2, best['2']],
+    ['Over 2.5', p.pOver25, best.over25],
+    ['Under 2.5', p.pUnder25, best.under25]
+  ];
+  let msg = 'Quale esito vuoi aggiungere?\n';
+  opts.forEach((o2, i) => { msg += (i + 1) + ') ' + o2[0] + ' \u2014 modello ' + (o2[1] * 100).toFixed(1) + '%\n'; });
+  const choice = prompt(msg + '\nScrivi il numero (1-5):', '1');
+  const i = parseInt(choice, 10) - 1;
+  if (isNaN(i) || i < 0 || i > 4) return;
+  addMultiRow({
+    label: currentMatch.homeTeam + '-' + currentMatch.awayTeam + ' \u00B7 ' + opts[i][0].split(' (')[0],
+    p: opts[i][1],
+    odds: opts[i][2] || Math.round((1 / opts[i][1]) * 100) / 100
+  });
+}
+
+function renderMultiRows() {
+  const box = document.getElementById('multiRows');
+  if (!box) return;
+  if (!multiEvents.length) {
+    box.innerHTML = '<p class="note">Nessun evento. Aggiungine almeno due.</p>';
+  } else {
+    let html = '<div class="multi-head"><span>Evento</span><span>Prob. modello %</span><span>Quota</span><span></span></div>';
+    multiEvents.forEach((e, i) => {
+      html += '<div class="multi-row">' +
+        '<input type="text" value="' + String(e.label).replace(/"/g, '&quot;') + '" data-i="' + i + '" data-f="label">' +
+        '<input type="number" value="' + (e.p * 100).toFixed(1) + '" step="0.1" min="1" max="99" data-i="' + i + '" data-f="p">' +
+        '<input type="number" value="' + e.odds + '" step="0.01" min="1.01" data-i="' + i + '" data-f="odds">' +
+        '<button class="row-del" data-i="' + i + '">\u2715</button></div>';
+    });
+    box.innerHTML = html;
+    box.querySelectorAll('input').forEach(inp => {
+      inp.addEventListener('input', ev => {
+        const i = +ev.target.dataset.i, f = ev.target.dataset.f;
+        if (f === 'label') multiEvents[i].label = ev.target.value;
+        else if (f === 'p') multiEvents[i].p = Math.min(0.99, Math.max(0.01, (parseFloat(ev.target.value) || 0) / 100));
+        else multiEvents[i].odds = Math.max(1.01, parseFloat(ev.target.value) || 1.01);
+        recomputeMulti();
+      });
+    });
+    box.querySelectorAll('.row-del').forEach(b => {
+      b.addEventListener('click', ev => { multiEvents.splice(+ev.target.dataset.i, 1); renderMultiRows(); });
+    });
+  }
+  // opzioni tipo giocata
+  const sel = document.getElementById('multiType');
+  const N = multiEvents.length;
+  const prev = sel.value;
+  sel.innerHTML = '';
+  for (let k = N; k >= 2; k--) {
+    const opt = document.createElement('option');
+    opt.value = k;
+    opt.textContent = (k === N) ? ('Multipla (' + N + '/' + N + ')') : ('Sistema ' + k + '/' + N + ' \u2014 ' + nCk(N, k) + ' combinazioni');
+    sel.appendChild(opt);
+  }
+  // Se l'utente non ha scelto esplicitamente un sistema, il default resta la multipla (N/N).
+  if (multiTypeTouched && prev && sel.querySelector('option[value="' + prev + '"]')) sel.value = prev;
+  else sel.value = String(N);
+  recomputeMulti();
+}
+
+function recomputeMulti() {
+  const out = document.getElementById('multiResult');
+  if (!out) return;
+  const N = multiEvents.length;
+  if (N < 2) { out.innerHTML = ''; return; }
+  const K = parseInt(document.getElementById('multiType').value, 10) || N;
+  const unit = parseFloat(document.getElementById('multiStake').value) || 1;
+  const bonus = (parseFloat(document.getElementById('multiBonus').value) || 0) / 100;
+
+  const r = computeSystem(multiEvents, K, unit, bonus);
+
+  // sensibilita': cosa succede se il modello sovrastima di 3 e 5 punti
+  const shift = d => computeSystem(multiEvents.map(e => ({p: Math.max(0.01, e.p - d), odds: e.odds})), K, unit, bonus).roi;
+  const roi3 = shift(0.03), roi5 = shift(0.05);
+  // margine del bookmaker implicito
+  const bookProb = multiEvents.reduce((a, e) => a * (1 / e.odds), 1); // prob. implicita nelle quote
+  const modelProb = r.pAll;                                          // prob. combinata del modello
+  const fairOdds = 1 / modelProb;                                    // quota "giusta" secondo il modello
+
+  const cls = r.roi > 0 ? 'stat-good' : 'stat-bad';
+  let html = '<div class="multi-summary">' +
+    '<div><span class="stat-label">Combinazioni</span><span class="stat-big">' + r.nCombos + '</span></div>' +
+    '<div><span class="stat-label">Puntata totale</span><span class="stat-big">' + r.stake.toFixed(2) + '\u20AC</span></div>' +
+    '<div><span class="stat-label">Quota totale</span><span class="stat-big">' + r.totalOdds.toFixed(2) + '</span></div>' +
+    '<div><span class="stat-label">Prob. tutti giusti</span><span class="stat-big">' + (r.pAll * 100).toFixed(2) + '%</span></div>' +
+    '<div><span class="stat-label">Prob. di rientrare</span><span class="stat-big">' + (r.pProfit * 100).toFixed(1) + '%</span></div>' +
+    '<div><span class="stat-label">Ritorno atteso</span><span class="stat-big">' + r.ev.toFixed(2) + '\u20AC</span></div>' +
+    '<div><span class="stat-label">Rendimento</span><span class="stat-big ' + cls + '">' + (r.roi >= 0 ? '+' : '') + (r.roi * 100).toFixed(1) + '%</span></div>' +
+    '</div>';
+
+  // Confronto modello vs bookmaker
+  html += '<div class="sub-card"><h3>\u2696\uFE0F Modello contro bookmaker</h3><div class="value-table">' +
+    '<div class="value-row value-head"><span>Fonte</span><span>Prob. che vadano tutti bene</span><span>Quota "giusta"</span></div>' +
+    '<div class="value-row"><span>Il tuo modello</span><span>' + (modelProb * 100).toFixed(2) + '%</span><span>' + (1 / modelProb).toFixed(2) + '</span></div>' +
+    '<div class="value-row"><span>Il bookmaker (quote offerte)</span><span>' + (bookProb * 100).toFixed(2) + '%</span><span>' + r.totalOdds.toFixed(2) + '</span></div>' +
+    '</div><p class="note">' +
+    (r.totalOdds >= fairOdds
+      ? 'La quota offerta (' + r.totalOdds.toFixed(2) + ') \u00E8 <strong>superiore</strong> a quella che il modello considera giusta (' + fairOdds.toFixed(2) + '): qui nasce il margine teorico.'
+      : 'La quota offerta (' + r.totalOdds.toFixed(2) + ') \u00E8 <strong>inferiore</strong> a quella giusta secondo il modello (' + fairOdds.toFixed(2) + '): stai pagando pi\u00F9 del dovuto.') +
+    ' Ricorda che il margine del banco si <strong>moltiplica</strong> a ogni evento aggiunto: ' +
+    'per questo le multiple lunghe sono il prodotto pi\u00F9 redditizio per il bookmaker.</p></div>';
+
+  // Sensibilita' all'errore del modello — il punto centrale
+  const flip3 = roi3 < 0 && r.roi > 0;
+  html += '<div class="sub-card"><h3>\uD83D\uDD0D Quanto regge se il modello sbaglia?</h3><div class="value-table">' +
+    '<div class="value-row value-head"><span>Ipotesi</span><span>Rendimento</span></div>' +
+    '<div class="value-row"><span>Probabilit\u00E0 esatte</span><span class="' + cls + '">' + (r.roi >= 0 ? '+' : '') + (r.roi * 100).toFixed(1) + '%</span></div>' +
+    '<div class="value-row"><span>Modello sovrastima di 3 punti</span><span class="' + (roi3 >= 0 ? 'stat-good' : 'stat-bad') + '">' + (roi3 >= 0 ? '+' : '') + (roi3 * 100).toFixed(1) + '%</span></div>' +
+    '<div class="value-row"><span>Modello sovrastima di 5 punti</span><span class="' + (roi5 >= 0 ? 'stat-good' : 'stat-bad') + '">' + (roi5 >= 0 ? '+' : '') + (roi5 * 100).toFixed(1) + '%</span></div>' +
+    '</div>';
+  if (flip3) {
+    html += '<p class="note hint" style="border-left-color:#e0a800">\u26A0\uFE0F Bastano <strong>3 punti</strong> di errore del modello per far diventare negativa questa giocata. ' +
+            'Finch\u00E9 la sezione "Verifica del modello" non conferma la calibrazione, quel margine \u00E8 teorico.</p>';
+  }
+  html += '</div>';
+
+  // Distribuzione degli esiti
+  html += '<div class="sub-card"><h3>\uD83D\uDCCA Cosa succede, esito per esito</h3><div class="value-table">' +
+    '<div class="value-row value-head"><span>Eventi indovinati</span><span>Probabilit\u00E0</span><span>Incasso medio</span></div>';
+  for (let w = N; w >= 0; w--) {
+    const b = r.byWins[w];
+    if (!b || b.p < 0.0005) continue;
+    const avg = b.p > 0 ? b.pay / b.p : 0;
+    html += '<div class="value-row ' + (avg > r.stake ? 'value-pos' : 'value-neg') + '">' +
+      '<span>' + w + ' su ' + N + '</span><span>' + (b.p * 100).toFixed(1) + '%</span><span>' + avg.toFixed(2) + '\u20AC</span></div>';
+  }
+  html += '</div><p class="note">Righe verdi = incasso superiore alla puntata di ' + r.stake.toFixed(2) + '\u20AC.</p></div>';
+
+  out.innerHTML = html;
 }

@@ -275,3 +275,16 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .gloss-item{display:flex;flex-direction:column;gap:.2rem;background:#141426;border-radius:8px;padding:.6rem .75rem}
 .gloss-term{font-weight:700;color:#7f9cff;font-size:.95rem}
 .gloss-desc{font-size:.88rem;line-height:1.5;opacity:.92}
+
+/* --- Calcolatore multipla e sistema --- */
+.multi-head,.multi-row{display:grid;grid-template-columns:2.2fr 1fr 1fr 32px;gap:.4rem;align-items:center;margin-bottom:.35rem}
+.multi-head{font-size:.72rem;text-transform:uppercase;opacity:.65;font-weight:600}
+.multi-row input{padding:.45rem;border-radius:6px;border:1px solid #333;background:#12121f;color:inherit;font-size:.9rem;width:100%}
+.row-del{background:#3a1a1a;color:#e08080;border:none;border-radius:6px;padding:.45rem;cursor:pointer;font-size:.85rem}
+.multi-add{display:flex;gap:.5rem;flex-wrap:wrap;margin:.7rem 0}
+.multi-add button{flex:1;min-width:130px}
+.multi-params{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin:.8rem 0}
+.multi-params label{display:flex;flex-direction:column;gap:.25rem;font-size:.78rem;opacity:.85}
+.multi-params input,.multi-params select{padding:.5rem;border-radius:6px;border:1px solid #333;background:#12121f;color:inherit;font-size:.95rem}
+.multi-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:.5rem;margin:.6rem 0}
+.multi-summary>div{background:#1a1a2e;border-radius:8px;padding:.55rem;display:flex;flex-direction:column;gap:.15rem;text-align:center}
