@@ -94,3 +94,19 @@ modello con il prezzo che paghi *tu*, non con la media dei bookmaker europei.
 ⚠️ Se compare l'avviso arancione **"Vantaggio anomalo"** (edge oltre il 25%),
 non puntare: significa che il modello ha troppi pochi dati (tipico a inizio
 stagione) e sta sbagliando lui, non il bookmaker.
+
+## ⬆️ Importare il registro da CSV
+Accanto a "Esporta CSV" trovi **⬆️ Importa CSV**. Serve a:
+- ripristinare il registro dopo aver svuotato la cache del browser;
+- portare le previsioni da un dispositivo all'altro (esporta sul PC, importa sul telefono);
+- unire più registri: le righe già presenti (stessa data + stesse squadre) vengono
+  saltate, quindi puoi reimportare lo stesso file senza creare doppioni.
+
+Il formato atteso è quello prodotto dall'export. Servono almeno le colonne
+**Data, Casa, Trasferta**; le altre (P1, PX, P2, Over25, GG, TopEsatto, LambdaH,
+LambdaA) sono facoltative. Funziona sia con il punto e virgola sia con la virgola.
+
+⚠️ Il registro vive **solo nel tuo browser**: importare righe NON le fa entrare
+nella sezione "Verifica del modello", che si basa sul registro automatico della
+pipeline. Il registro del browser è un blocco appunti tuo, non il metro di
+giudizio del modello.
