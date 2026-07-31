@@ -204,6 +204,7 @@ async function loadData() {
     populateCompetitions();
     removeUnusedOddsBoxes();
     renderGlossary();
+    renderImportControl();
     renderCreditsBadge(allData.apiCredits);
     loadTrackRecord();
   } catch (e) {
@@ -892,4 +893,113 @@ function renderInlineHints() {
     p.innerHTML = '\u2139\uFE0F <strong>\u03BB</strong> = gol attesi da ciascuna squadra. <strong>\u03C1</strong> = correzione sui risultati bassi (0-0, 1-1), tipici del calcio reale.';
     params.parentNode.insertBefore(p, params.nextSibling);
   }
+}
+
+
+// ===================== Importa registro da CSV =====================
+// Ripristina un registro esportato in precedenza (o dopo aver svuotato la cache),
+// e permette di unire registri salvati da dispositivi diversi.
+function renderImportControl() {
+  const actions = document.querySelector('.registry-actions');
+  if (!actions || document.getElementById('importBtn')) return;
+
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.csv,text/csv';
+  input.id = 'importFile';
+  input.style.display = 'none';
+
+  const btn = document.createElement('button');
+  btn.id = 'importBtn';
+  btn.className = 'btn-secondary';
+  btn.textContent = '\u2B06\uFE0F Importa CSV';
+  btn.addEventListener('click', () => input.click());
+
+  input.addEventListener('change', (ev) => {
+    const file = ev.target.files && ev.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => { importCSV(String(reader.result)); input.value = ''; };
+    reader.onerror = () => alert('Impossibile leggere il file.');
+    reader.readAsText(file, 'utf-8');
+  });
+
+  actions.insertBefore(btn, actions.firstChild.nextSibling);
+  actions.appendChild(input);
+}
+
+function parseCSVLine(line, sep) {
+  // gestisce i campi tra virgolette (nomi squadra con separatore dentro)
+  const out = []; let cur = ''; let q = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (q && line[i+1] === '"') { cur += '"'; i++; } else { q = !q; }
+    } else if (c === sep && !q) { out.push(cur); cur = ''; }
+    else { cur += c; }
+  }
+  out.push(cur);
+  return out.map(x => x.trim());
+}
+
+function importCSV(text) {
+  const lines = text.split(/\r?\n/).filter(l => l.trim().length);
+  if (lines.length < 2) { alert('Il file non contiene righe da importare.'); return; }
+
+  // separatore: ';' (formato esportato) oppure ',' se il file arriva da Excel inglese
+  const sep = (lines[0].split(';').length >= lines[0].split(',').length) ? ';' : ',';
+  const head = parseCSVLine(lines[0], sep).map(h => h.toLowerCase());
+  const idx = n => head.indexOf(n);
+  const iDate = idx('data'), iHome = idx('casa'), iAway = idx('trasferta');
+  if (iDate < 0 || iHome < 0 || iAway < 0) {
+    alert('Intestazioni non riconosciute. Servono almeno le colonne: Data; Casa; Trasferta.');
+    return;
+  }
+  const iP1 = idx('p1'), iPX = idx('px'), iP2 = idx('p2'),
+        iOv = idx('over25'), iGG = idx('gg'), iTop = idx('topesatto'),
+        iLH = idx('lambdah'), iLA = idx('lambdaa'), iSaved = idx('salvata');
+
+  // percentuali salvate come "45.9" -> 0.459 ; accetta anche la virgola decimale
+  const pct = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n/100 : null; };
+  const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n : null; };
+
+  // chiave anti-duplicati: stessa data + stesse squadre
+  const key = r => (r.date + '|' + (r.home||'').toLowerCase() + '|' + (r.away||'').toLowerCase());
+  const existing = new Set(registry.map(key));
+
+  let added = 0, skipped = 0, bad = 0;
+  for (let i = 1; i < lines.length; i++) {
+    const c = parseCSVLine(lines[i], sep);
+    if (c.length < 3) { bad++; continue; }
+    const entry = {
+      id: Date.now() + i,
+      date: c[iDate], home: c[iHome], away: c[iAway],
+      p1: iP1 >= 0 ? pct(c[iP1]) : null,
+      px: iPX >= 0 ? pct(c[iPX]) : null,
+      p2: iP2 >= 0 ? pct(c[iP2]) : null,
+      pOver: iOv >= 0 ? pct(c[iOv]) : null,
+      pGG: iGG >= 0 ? pct(c[iGG]) : null,
+      topExact: iTop >= 0 ? c[iTop] : '',
+      lambdaH: iLH >= 0 ? num(c[iLH]) : null,
+      lambdaA: iLA >= 0 ? num(c[iLA]) : null,
+      savedAt: (iSaved >= 0 && c[iSaved]) ? c[iSaved] : new Date().toISOString(),
+      imported: true
+    };
+    if (!entry.date || !entry.home || !entry.away) { bad++; continue; }
+    if (existing.has(key(entry))) { skipped++; continue; }
+    existing.add(key(entry));
+    registry.push(entry);
+    added++;
+  }
+
+  try {
+    localStorage.setItem('simRegistry', JSON.stringify(registry));
+  } catch (e) {
+    alert('Spazio del browser esaurito: esporta e ripulisci il registro prima di importare altro.');
+    return;
+  }
+  renderRegistry();
+  alert('Importate ' + added + ' righe.' +
+        (skipped ? '\n' + skipped + ' gia\u0300 presenti (saltate).' : '') +
+        (bad ? '\n' + bad + ' righe non leggibili (ignorate).' : ''));
 }
