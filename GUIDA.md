@@ -110,3 +110,37 @@ LambdaA) sono facoltative. Funziona sia con il punto e virgola sia con la virgol
 nella sezione "Verifica del modello", che si basa sul registro automatico della
 pipeline. Il registro del browser è un blocco appunti tuo, non il metro di
 giudizio del modello.
+
+## 🎰 Calcolatore multipla e sistema
+In fondo alla pagina. Serve a capire **prima di giocare** se una multipla o un
+sistema hanno senso secondo il modello — e quanto quel senso è fragile.
+
+1. Aggiungi gli eventi con **➕ Aggiungi evento**, oppure con
+   **🎯 Aggiungi partita selezionata** (prende probabilità e quota dalla partita
+   aperta, scegliendo il mercato). Massimo 12 eventi.
+2. Scegli **Multipla (N/N)** o un **Sistema K/N**: il menu mostra quante
+   combinazioni comporta e la puntata totale si aggiorna da sola.
+3. Imposta la puntata per combinazione e l'eventuale **bonus multipla**.
+
+Cosa leggi nei risultati:
+- **Prob. di rientrare** — quante volte su 100 incassi più di quanto hai puntato.
+  Nella multipla coincide con l'azzeccarle tutte; nel sistema è più alta, ma
+  l'incasso medio è più basso.
+- **Rendimento** — il guadagno atteso in percentuale sulla puntata, secondo il
+  modello. Verde = positivo, rosso = negativo.
+- **⚖️ Modello contro bookmaker** — la probabilità combinata secondo te e secondo
+  le quote, con le rispettive quote "giuste".
+- **🔍 Quanto regge se il modello sbaglia** — la parte più importante: mostra il
+  rendimento se il modello sovrastima di 3 e di 5 punti percentuali. Se bastano
+  3 punti per far diventare negativa la giocata, compare un avviso.
+- **📊 Cosa succede esito per esito** — probabilità e incasso medio per ogni
+  numero di eventi indovinati.
+
+⚠️ Il margine del bookmaker si **moltiplica** a ogni evento aggiunto: un 6% su
+ciascuno diventa circa il 35% su una multipla da 7. È il motivo per cui le
+multiple lunghe sono il prodotto più redditizio per il banco, ed è la ragione
+per cui i bonus multipla esistono.
+
+⚠️ Le probabilità che inserisci sono **stime del modello**, non certezze. Finché
+la sezione "Verifica del modello" non mostra una calibrazione decente su un
+numero sufficiente di partite, ogni rendimento positivo qui è teorico.
