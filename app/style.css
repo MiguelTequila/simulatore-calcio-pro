@@ -288,3 +288,21 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .multi-params input,.multi-params select{padding:.5rem;border-radius:6px;border:1px solid #333;background:#12121f;color:inherit;font-size:.95rem}
 .multi-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:.5rem;margin:.6rem 0}
 .multi-summary>div{background:#1a1a2e;border-radius:8px;padding:.55rem;display:flex;flex-direction:column;gap:.15rem;text-align:center}
+
+/* --- Registro simulazioni multiple --- */
+.multi-sim{background:#141426;border-radius:8px;padding:.7rem .8rem;margin:.55rem 0;border-left:3px solid #3d5af1}
+.sim-head{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.sim-head strong{flex:1;min-width:120px}
+.sim-tag{background:#1f2a5a;color:#9fb3ff;padding:.15rem .5rem;border-radius:20px;font-size:.72rem}
+.sim-date{font-size:.75rem;opacity:.6}
+.sim-meta{font-size:.82rem;opacity:.9;line-height:1.5}
+.sim-result{margin-top:.5rem;padding:.5rem .65rem;border-radius:6px;font-size:.9rem}
+.sim-events{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.ev-chip{font-size:.75rem;padding:.2rem .5rem;border-radius:20px;background:#1a1a2e}
+.ev-won{background:#123524;color:#8ee0ab}
+.ev-lost{background:#3a1a1a;color:#e0a0a0}
+.sim-settle{margin-top:.5rem;display:flex;flex-direction:column;gap:.3rem}
+.ev-check{font-size:.85rem;display:flex;align-items:center;gap:.4rem;cursor:pointer;padding:.25rem;border-radius:5px}
+.ev-check:hover{background:#1a1a2e}
+.ev-check em{opacity:.6;font-style:normal;font-size:.78rem}
+.sim-settle-btn{margin-top:.4rem;align-self:flex-start}

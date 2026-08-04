@@ -1009,6 +1009,8 @@ function importCSV(text) {
 // ===================== Calcolatore multipla e sistema =====================
 let multiEvents = [];
 let multiTypeTouched = false;
+let multiRegistry = JSON.parse(localStorage.getItem('simMultiRegistry') || '[]');
+let lastMultiResult = null;
 
 function nCk(n, k) {
   if (k < 0 || k > n) return 0;
@@ -1078,9 +1080,26 @@ function renderMultiCalc() {
       '<label>Puntata per combinazione (\u20AC)<input type="number" id="multiStake" value="2" step="0.5" min="0.1"></label>' +
       '<label>Bonus multipla (%)<input type="number" id="multiBonus" value="0" step="1" min="0" max="200"></label>' +
     '</div>' +
-    '<div id="multiResult"></div>';
+    '<div id="multiResult"></div>' +
+    '<div class="multi-add" id="multiSaveRow">' +
+      '<button id="multiSaveBtn" class="btn-primary">\uD83D\uDCBE Salva simulazione</button>' +
+      '<button id="multiExportBtn" class="btn-secondary">\u2B07\uFE0F Esporta CSV</button>' +
+      '<button id="multiImportBtn" class="btn-secondary">\u2B06\uFE0F Importa CSV</button>' +
+      '<input type="file" id="multiImportFile" accept=".csv,text/csv" style="display:none">' +
+    '</div>' +
+    '<div id="multiRegistryBox"></div>';
   footer.parentNode.insertBefore(sec, footer);
 
+  document.getElementById('multiSaveBtn').addEventListener('click', saveMultiSimulation);
+  document.getElementById('multiExportBtn').addEventListener('click', exportMultiCSV);
+  document.getElementById('multiImportBtn').addEventListener('click', () => document.getElementById('multiImportFile').click());
+  document.getElementById('multiImportFile').addEventListener('change', ev => {
+    const f = ev.target.files && ev.target.files[0];
+    if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => { importMultiCSV(String(rd.result)); ev.target.value = ''; };
+    rd.readAsText(f, 'utf-8');
+  });
   document.getElementById('multiAddRow').addEventListener('click', () => { addMultiRow(); });
   document.getElementById('multiAddCurrent').addEventListener('click', addCurrentToMulti);
   document.getElementById('multiClear').addEventListener('click', () => { multiEvents = []; multiTypeTouched = false; renderMultiRows(); });
@@ -1093,6 +1112,7 @@ function renderMultiCalc() {
     document.getElementById(id).addEventListener('input', recomputeMulti);
   });
   renderMultiRows();
+  renderMultiRegistry();
 }
 
 function addMultiRow(prefill) {
@@ -1183,6 +1203,8 @@ function recomputeMulti() {
   const bonus = (parseFloat(document.getElementById('multiBonus').value) || 0) / 100;
 
   const r = computeSystem(multiEvents, K, unit, bonus);
+  lastMultiResult = {r: r, K: K, unit: unit, bonus: bonus,
+                     events: multiEvents.map(e => ({label: e.label, p: e.p, odds: e.odds}))};
 
   // sensibilita': cosa succede se il modello sovrastima di 3 e 5 punti
   const shift = d => computeSystem(multiEvents.map(e => ({p: Math.max(0.01, e.p - d), odds: e.odds})), K, unit, bonus).roi;
@@ -1242,4 +1264,209 @@ function recomputeMulti() {
   html += '</div><p class="note">Righe verdi = incasso superiore alla puntata di ' + r.stake.toFixed(2) + '\u20AC.</p></div>';
 
   out.innerHTML = html;
+}
+
+
+// ============ Registro delle simulazioni multipla / sistema ============
+
+function persistMultiRegistry() {
+  try {
+    localStorage.setItem('simMultiRegistry', JSON.stringify(multiRegistry));
+    return true;
+  } catch (e) {
+    alert('Spazio del browser esaurito: esporta e ripulisci il registro.');
+    return false;
+  }
+}
+
+function saveMultiSimulation() {
+  if (!lastMultiResult || lastMultiResult.events.length < 2) {
+    alert('Aggiungi almeno due eventi prima di salvare.');
+    return;
+  }
+  const L = lastMultiResult, r = L.r;
+  const nome = prompt('Nome della simulazione (facoltativo):',
+                      'Schedina ' + new Date().toLocaleDateString('it-IT'));
+  if (nome === null) return;
+  multiRegistry.push({
+    id: Date.now(),
+    name: nome || ('Schedina ' + new Date().toLocaleDateString('it-IT')),
+    savedAt: new Date().toISOString(),
+    type: (L.K === L.events.length) ? ('Multipla ' + L.K + '/' + L.events.length)
+                                     : ('Sistema ' + L.K + '/' + L.events.length),
+    K: L.K, N: L.events.length,
+    unit: L.unit, bonus: L.bonus,
+    stake: r.stake, totalOdds: r.totalOdds,
+    pAll: r.pAll, pProfit: r.pProfit, ev: r.ev, roi: r.roi,
+    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null})),
+    settled: false, actualReturn: null
+  });
+  if (persistMultiRegistry()) renderMultiRegistry();
+}
+
+// Segna quali eventi sono andati bene e calcola l'incasso reale
+function settleMulti(id) {
+  const sim = multiRegistry.find(x => x.id === id);
+  if (!sim) return;
+  const box = document.getElementById('settle-' + id);
+  if (!box) return;
+  const won = [...box.querySelectorAll('input[type=checkbox]')].map(c => c.checked);
+  sim.events.forEach((e, i) => { e.won = won[i]; });
+  const winOdds = sim.events.filter(e => e.won).map(e => e.odds);
+  const nWins = winOdds.length;
+  let ret = nWins >= sim.K ? sim.unit * esym(winOdds, sim.K) : 0;
+  if (nWins === sim.N && sim.bonus > 0) ret *= (1 + sim.bonus);
+  sim.actualReturn = ret;
+  sim.nWins = nWins;
+  sim.settled = true;
+  if (persistMultiRegistry()) renderMultiRegistry();
+}
+
+function deleteMulti(id) {
+  if (!confirm('Eliminare questa simulazione?')) return;
+  multiRegistry = multiRegistry.filter(x => x.id !== id);
+  if (persistMultiRegistry()) renderMultiRegistry();
+}
+
+function renderMultiRegistry() {
+  const box = document.getElementById('multiRegistryBox');
+  if (!box) return;
+  if (!multiRegistry.length) {
+    box.innerHTML = '<p class="note">Nessuna simulazione salvata. Componi una giocata e premi \uD83D\uDCBE Salva simulazione.</p>';
+    return;
+  }
+  const settled = multiRegistry.filter(s => s.settled);
+  let html = '<h3>\uD83D\uDCD2 Simulazioni salvate</h3>';
+
+  if (settled.length) {
+    const stakeTot = settled.reduce((a, s) => a + s.stake, 0);
+    const retTot = settled.reduce((a, s) => a + (s.actualReturn || 0), 0);
+    const evTot = settled.reduce((a, s) => a + s.ev, 0);
+    const roiReal = stakeTot ? (retTot - stakeTot) / stakeTot : 0;
+    const roiAtt = stakeTot ? (evTot - stakeTot) / stakeTot : 0;
+    const cls = roiReal >= 0 ? 'stat-good' : 'stat-bad';
+    html += '<div class="multi-summary">' +
+      '<div><span class="stat-label">Giocate chiuse</span><span class="stat-big">' + settled.length + '</span></div>' +
+      '<div><span class="stat-label">Puntato</span><span class="stat-big">' + stakeTot.toFixed(2) + '\u20AC</span></div>' +
+      '<div><span class="stat-label">Incassato</span><span class="stat-big">' + retTot.toFixed(2) + '\u20AC</span></div>' +
+      '<div><span class="stat-label">Risultato</span><span class="stat-big ' + cls + '">' + (retTot - stakeTot >= 0 ? '+' : '') + (retTot - stakeTot).toFixed(2) + '\u20AC</span></div>' +
+      '<div><span class="stat-label">Rendimento reale</span><span class="stat-big ' + cls + '">' + (roiReal >= 0 ? '+' : '') + (roiReal * 100).toFixed(1) + '%</span></div>' +
+      '<div><span class="stat-label">Era previsto</span><span class="stat-big">' + (roiAtt >= 0 ? '+' : '') + (roiAtt * 100).toFixed(1) + '%</span></div>' +
+      '</div>';
+    if (settled.length < 20) {
+      html += '<p class="note hint">\u2139\uFE0F Con ' + settled.length + ' giocate chiuse questo confronto non dice ancora nulla: ' +
+              'le multiple hanno esiti molto volatili e servono decine di giocate perch\u00E9 il rendimento reale ' +
+              'si avvicini a quello previsto.</p>';
+    }
+  }
+
+  for (const s of multiRegistry.slice().reverse()) {
+    const d = new Date(s.savedAt).toLocaleDateString('it-IT');
+    html += '<div class="multi-sim">';
+    html += '<div class="sim-head"><strong>' + s.name + '</strong>' +
+            '<span class="sim-tag">' + s.type + '</span>' +
+            '<span class="sim-date">' + d + '</span>' +
+            '<button class="row-del" onclick="deleteMulti(' + s.id + ')">\u2715</button></div>';
+    html += '<div class="sim-meta">Puntata ' + s.stake.toFixed(2) + '\u20AC \u00B7 quota tot. ' + s.totalOdds.toFixed(2) +
+            ' \u00B7 prob. tutti giusti ' + (s.pAll * 100).toFixed(2) + '%' +
+            ' \u00B7 rendimento previsto <strong class="' + (s.roi >= 0 ? 'stat-good' : 'stat-bad') + '">' +
+            (s.roi >= 0 ? '+' : '') + (s.roi * 100).toFixed(1) + '%</strong></div>';
+
+    if (s.settled) {
+      const net = (s.actualReturn || 0) - s.stake;
+      html += '<div class="sim-result ' + (net >= 0 ? 'value-pos' : 'value-neg') + '">' +
+              'Esito: <strong>' + s.nWins + '/' + s.N + '</strong> \u00B7 incassato ' + (s.actualReturn || 0).toFixed(2) + '\u20AC \u00B7 ' +
+              '<strong>' + (net >= 0 ? '+' : '') + net.toFixed(2) + '\u20AC</strong></div>';
+      html += '<div class="sim-events">';
+      for (const e of s.events) {
+        html += '<span class="ev-chip ' + (e.won ? 'ev-won' : 'ev-lost') + '">' + (e.won ? '\u2713' : '\u2717') + ' ' + e.label + '</span>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="sim-settle" id="settle-' + s.id + '"><span class="note">Spunta gli eventi indovinati:</span>';
+      s.events.forEach((e, i) => {
+        html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"> ' + e.label +
+                ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em></label>';
+      });
+      html += '<button class="btn-primary sim-settle-btn" onclick="settleMulti(' + s.id + ')">\u2705 Registra esito</button></div>';
+    }
+    html += '</div>';
+  }
+  box.innerHTML = html;
+}
+
+// ---- Export / Import CSV delle simulazioni ----
+function exportMultiCSV() {
+  if (!multiRegistry.length) { alert('Nessuna simulazione da esportare.'); return; }
+  const rows = ['Nome;Salvata;Tipo;K;N;Puntata;QuotaTot;ProbTutti;RendPrevisto;Esito;Incassato;Eventi'];
+  for (const s of multiRegistry) {
+    const evStr = s.events.map(e =>
+      String(e.label).replace(/[;|]/g, ' ') + '|' + (e.p * 100).toFixed(1) + '|' + e.odds +
+      '|' + (e.won === null ? '' : (e.won ? '1' : '0'))).join('~');
+    rows.push([
+      '"' + String(s.name).replace(/"/g, '""') + '"', s.savedAt, s.type, s.K, s.N,
+      s.stake.toFixed(2), s.totalOdds.toFixed(3), (s.pAll * 100).toFixed(3), (s.roi * 100).toFixed(2),
+      s.settled ? (s.nWins + '/' + s.N) : '', s.settled ? (s.actualReturn || 0).toFixed(2) : '',
+      '"' + evStr + '"'
+    ].join(';'));
+  }
+  const blob = new Blob(['\ufeff' + rows.join('\n')], {type: 'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'simulazioni_multiple_' + new Date().toISOString().slice(0, 10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importMultiCSV(text) {
+  const lines = text.replace(/^\ufeff/, '').split(/\r?\n/).filter(l => l.trim());
+  if (lines.length < 2) { alert('File vuoto o non valido.'); return; }
+  const sep = (lines[0].split(';').length >= lines[0].split(',').length) ? ';' : ',';
+  const head = parseCSVLine(lines[0], sep).map(h => h.toLowerCase());
+  const ix = n => head.indexOf(n);
+  const iName = ix('nome'), iSaved = ix('salvata'), iK = ix('k'), iN = ix('n'),
+        iStake = ix('puntata'), iEv = ix('eventi'), iBonus = ix('bonus');
+  if (iEv < 0 || iK < 0) { alert('Intestazioni non riconosciute: servono almeno le colonne K ed Eventi.'); return; }
+
+  const exist = new Set(multiRegistry.map(s => s.savedAt + '|' + s.name));
+  let added = 0, skipped = 0, bad = 0;
+  for (let i = 1; i < lines.length; i++) {
+    const c = parseCSVLine(lines[i], sep);
+    try {
+      const events = String(c[iEv]).split('~').map(part => {
+        const f = part.split('|');
+        return {label: f[0], p: parseFloat(f[1]) / 100, odds: parseFloat(f[2]),
+                won: (f[3] === '' || f[3] === undefined) ? null : f[3] === '1'};
+      }).filter(e => isFinite(e.p) && isFinite(e.odds));
+      if (events.length < 2) { bad++; continue; }
+      const K = parseInt(c[iK], 10) || events.length;
+      const unit = iStake >= 0 ? (parseFloat(String(c[iStake]).replace(',', '.')) / nCk(events.length, K)) : 1;
+      const bonus = iBonus >= 0 ? (parseFloat(c[iBonus]) || 0) / 100 : 0;
+      const r = computeSystem(events, K, unit, bonus);
+      const savedAt = (iSaved >= 0 && c[iSaved]) ? c[iSaved] : new Date().toISOString();
+      const name = (iName >= 0 && c[iName]) ? c[iName] : ('Importata ' + (i));
+      if (exist.has(savedAt + '|' + name)) { skipped++; continue; }
+      exist.add(savedAt + '|' + name);
+      const allSettled = events.every(e => e.won !== null);
+      const winOdds = events.filter(e => e.won).map(e => e.odds);
+      let ret = null, nWins = null;
+      if (allSettled) {
+        nWins = winOdds.length;
+        ret = nWins >= K ? unit * esym(winOdds, K) : 0;
+        if (nWins === events.length && bonus > 0) ret *= (1 + bonus);
+      }
+      multiRegistry.push({
+        id: Date.now() + i, name: name, savedAt: savedAt,
+        type: (K === events.length) ? ('Multipla ' + K + '/' + events.length) : ('Sistema ' + K + '/' + events.length),
+        K: K, N: events.length, unit: unit, bonus: bonus,
+        stake: r.stake, totalOdds: r.totalOdds, pAll: r.pAll, pProfit: r.pProfit, ev: r.ev, roi: r.roi,
+        events: events, settled: allSettled, actualReturn: ret, nWins: nWins
+      });
+      added++;
+    } catch (e) { bad++; }
+  }
+  if (persistMultiRegistry()) renderMultiRegistry();
+  alert('Importate ' + added + ' simulazioni.' +
+        (skipped ? '\n' + skipped + ' gi\u00E0 presenti (saltate).' : '') +
+        (bad ? '\n' + bad + ' righe non leggibili.' : ''));
 }
