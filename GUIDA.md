@@ -144,3 +144,27 @@ per cui i bonus multipla esistono.
 ⚠️ Le probabilità che inserisci sono **stime del modello**, non certezze. Finché
 la sezione "Verifica del modello" non mostra una calibrazione decente su un
 numero sufficiente di partite, ogni rendimento positivo qui è teorico.
+
+## 💾 Salvare, chiudere ed esportare le simulazioni
+Sotto il calcolatore trovi tre pulsanti:
+
+- **💾 Salva simulazione** — memorizza la giocata composta (eventi, probabilità,
+  quote, tipo, puntata, rendimento previsto). Puoi darle un nome.
+- **⬇️ Esporta CSV / ⬆️ Importa CSV** — backup e trasferimento fra dispositivi.
+  Le simulazioni già presenti vengono saltate, quindi puoi reimportare lo stesso
+  file senza doppioni. Gli esiti già registrati vengono conservati.
+
+**Chiudere una giocata.** Ogni simulazione salvata mostra la lista degli eventi
+con una casella: spunta quelli indovinati e premi **✅ Registra esito**. L'app
+calcola l'incasso reale — corretto anche per i sistemi, dove basta indovinarne K
+per incassare — e lo confronta con il rendimento che era stato previsto.
+
+In cima al registro appare il riepilogo: **puntato, incassato, rendimento reale
+vs previsto**. È lì che scopri se le tue multiple funzionano davvero.
+
+⚠️ Questo registro è **separato** dalla sezione "Verifica del modello", ed è
+giusto così: qui i dati li inserisci tu, là arrivano automaticamente. Non
+mescolare le due misure — la seconda è l'unica che non può barare.
+
+⚠️ Le multiple hanno esiti molto volatili: con meno di 20-30 giocate chiuse il
+confronto tra rendimento reale e previsto non dice ancora nulla.
