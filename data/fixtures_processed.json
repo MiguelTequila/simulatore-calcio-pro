@@ -1,11 +1,11 @@
 {
-  "updated": "2026-08-04T17:27:04.155127+00:00",
+  "updated": "2026-08-05T17:15:42.181251+00:00",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
-    "remaining": "480",
-    "used": "20",
-    "checkedAt": "2026-08-04T17:27:04.155127+00:00",
+    "remaining": "476",
+    "used": "24",
+    "checkedAt": "2026-08-05T17:15:42.181251+00:00",
     "stale": false
   },
   "competitions": {
@@ -2677,6 +2677,461 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 560587,
+          "date": "2026-09-19",
+          "time": "11:30",
+          "matchday": 5,
+          "homeTeam": "Tottenham Hotspur FC",
+          "homeId": 73,
+          "awayTeam": "Aston Villa FC",
+          "awayId": 58,
+          "homeStats": {
+            "gf_pg": 1.26,
+            "ga_pg": 1.5,
+            "form": "WLDWW",
+            "elo": 1406.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 1.47,
+            "ga_pg": 1.29,
+            "form": "WWDLL",
+            "elo": 1467.0,
+            "played": 38
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.559,
+            "lambdaA": 1.883,
+            "rho": -0.075,
+            "lambdaHRaw": 1.559,
+            "lambdaARaw": 1.883,
+            "marketWeight": 0.25,
+            "p1": 0.3152,
+            "px": 0.2363,
+            "p2": 0.4485,
+            "pOver25": 0.668,
+            "pUnder25": 0.332,
+            "pGG": 0.6765,
+            "pNG": 0.3235,
+            "topExact": [
+              [
+                "1-1",
+                0.1011
+              ],
+              [
+                "1-2",
+                0.0885
+              ],
+              [
+                "2-1",
+                0.0733
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0391,
+              "1": 0.0961,
+              "2": 0.1968,
+              "3": 0.2177,
+              "4": 0.1873,
+              "5": 0.129,
+              "6": 0.074,
+              "7+": 0.06
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560584,
+          "date": "2026-09-19",
+          "time": "14:00",
+          "matchday": 5,
+          "homeTeam": "Everton FC",
+          "homeId": 62,
+          "awayTeam": "Ipswich Town FC",
+          "awayId": 349,
+          "homeStats": {
+            "gf_pg": 1.24,
+            "ga_pg": 1.32,
+            "form": "LLDDL",
+            "elo": 1486.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 0,
+            "ga_pg": 0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.378,
+            "lambdaA": 1.672,
+            "rho": -0.075,
+            "lambdaHRaw": 1.378,
+            "lambdaARaw": 1.672,
+            "marketWeight": 0.25,
+            "p1": 0.3089,
+            "px": 0.2544,
+            "p2": 0.4367,
+            "pOver25": 0.5878,
+            "pUnder25": 0.4122,
+            "pGG": 0.6156,
+            "pNG": 0.3844,
+            "topExact": [
+              [
+                "1-1",
+                0.1173
+              ],
+              [
+                "1-2",
+                0.0913
+              ],
+              [
+                "2-1",
+                0.0752
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0555,
+              "1": 0.1281,
+              "2": 0.2285,
+              "3": 0.224,
+              "4": 0.1709,
+              "5": 0.1042,
+              "6": 0.053,
+              "7+": 0.0357
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560585,
+          "date": "2026-09-19",
+          "time": "14:00",
+          "matchday": 5,
+          "homeTeam": "Leeds United FC",
+          "homeId": 341,
+          "awayTeam": "Crystal Palace FC",
+          "awayId": 354,
+          "homeStats": {
+            "gf_pg": 1.29,
+            "ga_pg": 1.47,
+            "form": "LWDWD",
+            "elo": 1517.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 1.08,
+            "ga_pg": 1.34,
+            "form": "LDLDL",
+            "elo": 1489.0,
+            "played": 38
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.733,
+            "lambdaA": 1.263,
+            "rho": -0.075,
+            "lambdaHRaw": 1.733,
+            "lambdaARaw": 1.263,
+            "marketWeight": 0.25,
+            "p1": 0.4761,
+            "px": 0.2525,
+            "p2": 0.2714,
+            "pOver25": 0.5759,
+            "pUnder25": 0.4241,
+            "pGG": 0.5987,
+            "pNG": 0.4013,
+            "topExact": [
+              [
+                "1-1",
+                0.1176
+              ],
+              [
+                "2-1",
+                0.0948
+              ],
+              [
+                "1-0",
+                0.0784
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0582,
+              "1": 0.1333,
+              "2": 0.2326,
+              "3": 0.2242,
+              "4": 0.1679,
+              "5": 0.1006,
+              "6": 0.0503,
+              "7+": 0.0329
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560586,
+          "date": "2026-09-19",
+          "time": "14:00",
+          "matchday": 5,
+          "homeTeam": "Brighton & Hove Albion FC",
+          "homeId": 397,
+          "awayTeam": "Arsenal FC",
+          "awayId": 57,
+          "homeStats": {
+            "gf_pg": 1.37,
+            "ga_pg": 1.21,
+            "form": "LLWLW",
+            "elo": 1546.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 1.87,
+            "ga_pg": 0.71,
+            "form": "WWWWW",
+            "elo": 1633.0,
+            "played": 38
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 0.938,
+            "lambdaA": 2.121,
+            "rho": -0.075,
+            "lambdaHRaw": 0.938,
+            "lambdaARaw": 2.121,
+            "marketWeight": 0.25,
+            "p1": 0.1495,
+            "px": 0.2128,
+            "p2": 0.6377,
+            "pOver25": 0.5891,
+            "pUnder25": 0.4109,
+            "pGG": 0.5424,
+            "pNG": 0.4576,
+            "topExact": [
+              [
+                "0-2",
+                0.1058
+              ],
+              [
+                "1-1",
+                0.1006
+              ],
+              [
+                "1-2",
+                0.0992
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0541,
+              "1": 0.1298,
+              "2": 0.227,
+              "3": 0.2243,
+              "4": 0.1715,
+              "5": 0.1049,
+              "6": 0.0535,
+              "7+": 0.035
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560588,
+          "date": "2026-09-19",
+          "time": "14:00",
+          "matchday": 5,
+          "homeTeam": "Newcastle United FC",
+          "homeId": 67,
+          "awayTeam": "Hull City AFC",
+          "awayId": 322,
+          "homeStats": {
+            "gf_pg": 1.39,
+            "ga_pg": 1.45,
+            "form": "LWDWL",
+            "elo": 1462.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 0,
+            "ga_pg": 0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.57,
+            "lambdaA": 1.851,
+            "rho": -0.075,
+            "lambdaHRaw": 1.57,
+            "lambdaARaw": 1.851,
+            "marketWeight": 0.25,
+            "p1": 0.3231,
+            "px": 0.2379,
+            "p2": 0.439,
+            "pOver25": 0.664,
+            "pUnder25": 0.336,
+            "pGG": 0.6745,
+            "pNG": 0.3255,
+            "topExact": [
+              [
+                "1-1",
+                0.1022
+              ],
+              [
+                "1-2",
+                0.088
+              ],
+              [
+                "2-1",
+                0.0746
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0398,
+              "1": 0.0976,
+              "2": 0.1985,
+              "3": 0.2183,
+              "4": 0.1867,
+              "5": 0.1277,
+              "6": 0.0728,
+              "7+": 0.0585
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560590,
+          "date": "2026-09-19",
+          "time": "14:00",
+          "matchday": 5,
+          "homeTeam": "Manchester City FC",
+          "homeId": 65,
+          "awayTeam": "Sunderland AFC",
+          "awayId": 71,
+          "homeStats": {
+            "gf_pg": 2.03,
+            "ga_pg": 0.92,
+            "form": "LDWWD",
+            "elo": 1589.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 1.11,
+            "ga_pg": 1.26,
+            "form": "WWDDL",
+            "elo": 1451.0,
+            "played": 38
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.653,
+            "lambdaA": 0.837,
+            "rho": -0.075,
+            "lambdaHRaw": 2.653,
+            "lambdaARaw": 0.837,
+            "marketWeight": 0.25,
+            "p1": 0.7529,
+            "px": 0.1577,
+            "p2": 0.0894,
+            "pOver25": 0.6753,
+            "pUnder25": 0.3247,
+            "pGG": 0.532,
+            "pNG": 0.468,
+            "topExact": [
+              [
+                "2-0",
+                0.108
+              ],
+              [
+                "3-0",
+                0.0955
+              ],
+              [
+                "2-1",
+                0.0904
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0358,
+              "1": 0.0969,
+              "2": 0.192,
+              "3": 0.2174,
+              "4": 0.1897,
+              "5": 0.1324,
+              "6": 0.077,
+              "7+": 0.0589
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 560589,
+          "date": "2026-09-19",
+          "time": "16:30",
+          "matchday": 5,
+          "homeTeam": "Nottingham Forest FC",
+          "homeId": 351,
+          "awayTeam": "Coventry City FC",
+          "awayId": 1076,
+          "homeStats": {
+            "gf_pg": 1.26,
+            "ga_pg": 1.34,
+            "form": "DLDWW",
+            "elo": 1532.0,
+            "played": 38
+          },
+          "awayStats": {
+            "gf_pg": 0,
+            "ga_pg": 0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.543,
+            "lambdaA": 1.637,
+            "rho": -0.075,
+            "lambdaHRaw": 1.543,
+            "lambdaARaw": 1.637,
+            "marketWeight": 0.25,
+            "p1": 0.3547,
+            "px": 0.2507,
+            "p2": 0.3946,
+            "pOver25": 0.6158,
+            "pUnder25": 0.3842,
+            "pGG": 0.6411,
+            "pNG": 0.3589,
+            "topExact": [
+              [
+                "1-1",
+                0.113
+              ],
+              [
+                "1-2",
+                0.086
+              ],
+              [
+                "2-1",
+                0.0811
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0495,
+              "1": 0.1165,
+              "2": 0.2182,
+              "3": 0.223,
+              "4": 0.1773,
+              "5": 0.1128,
+              "6": 0.0598,
+              "7+": 0.0429
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -5020,6 +5475,526 @@
               "5": 0.1547,
               "6": 0.1011,
               "7+": 0.0936
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559676,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "AJ Auxerre",
+          "homeId": 519,
+          "awayTeam": "Stade Brestois 29",
+          "awayId": 512,
+          "homeStats": {
+            "gf_pg": 1.43,
+            "ga_pg": 1.07,
+            "form": "WWWLD",
+            "elo": 1556.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 1.21,
+            "ga_pg": 1.57,
+            "form": "DLLLD",
+            "elo": 1451.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.274,
+            "lambdaA": 1.033,
+            "rho": -0.075,
+            "lambdaHRaw": 2.274,
+            "lambdaARaw": 1.033,
+            "marketWeight": 0.25,
+            "p1": 0.6454,
+            "px": 0.2019,
+            "p2": 0.1526,
+            "pOver25": 0.641,
+            "pUnder25": 0.359,
+            "pGG": 0.584,
+            "pNG": 0.416,
+            "topExact": [
+              [
+                "2-1",
+                0.0981
+              ],
+              [
+                "2-0",
+                0.0949
+              ],
+              [
+                "1-1",
+                0.0927
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0432,
+              "1": 0.1085,
+              "2": 0.2073,
+              "3": 0.2213,
+              "4": 0.1829,
+              "5": 0.121,
+              "6": 0.0667,
+              "7+": 0.0491
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559677,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "Le Mans FC",
+          "homeId": 535,
+          "awayTeam": "FC Lorient",
+          "awayId": 525,
+          "homeStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "awayStats": {
+            "gf_pg": 1.5,
+            "ga_pg": 1.43,
+            "form": "LWDLW",
+            "elo": 1483.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.912,
+            "lambdaA": 1.46,
+            "rho": -0.075,
+            "lambdaHRaw": 1.912,
+            "lambdaARaw": 1.46,
+            "marketWeight": 0.25,
+            "p1": 0.4751,
+            "px": 0.2364,
+            "p2": 0.2885,
+            "pOver25": 0.6545,
+            "pUnder25": 0.3455,
+            "pGG": 0.6614,
+            "pNG": 0.3386,
+            "topExact": [
+              [
+                "1-1",
+                0.1031
+              ],
+              [
+                "2-1",
+                0.0917
+              ],
+              [
+                "1-2",
+                0.07
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0415,
+              "1": 0.1015,
+              "2": 0.2025,
+              "3": 0.2195,
+              "4": 0.1851,
+              "5": 0.1248,
+              "6": 0.0701,
+              "7+": 0.055
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559678,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "OGC Nice",
+          "homeId": 522,
+          "awayTeam": "Lille OSC",
+          "awayId": 521,
+          "homeStats": {
+            "gf_pg": 0.71,
+            "ga_pg": 1.57,
+            "form": "DLDDD",
+            "elo": 1423.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 1.29,
+            "ga_pg": 0.5,
+            "form": "LWDWD",
+            "elo": 1586.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 0.512,
+            "lambdaA": 1.878,
+            "rho": -0.075,
+            "lambdaHRaw": 0.512,
+            "lambdaARaw": 1.878,
+            "marketWeight": 0.25,
+            "p1": 0.0862,
+            "px": 0.2167,
+            "p2": 0.6971,
+            "pOver25": 0.4274,
+            "pUnder25": 0.5726,
+            "pGG": 0.3462,
+            "pNG": 0.6538,
+            "topExact": [
+              [
+                "0-1",
+                0.1655
+              ],
+              [
+                "0-2",
+                0.1617
+              ],
+              [
+                "0-3",
+                0.1012
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0983,
+              "1": 0.2059,
+              "2": 0.2685,
+              "3": 0.2087,
+              "4": 0.1247,
+              "5": 0.0596,
+              "6": 0.0238,
+              "7+": 0.0106
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559679,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "Paris FC",
+          "homeId": 1045,
+          "awayTeam": "RC Strasbourg Alsace",
+          "awayId": 576,
+          "homeStats": {
+            "gf_pg": 1.5,
+            "ga_pg": 1.14,
+            "form": "WLWLW",
+            "elo": 1566.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 1.79,
+            "ga_pg": 1.57,
+            "form": "WWDLW",
+            "elo": 1528.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.21,
+            "lambdaA": 1.655,
+            "rho": -0.075,
+            "lambdaHRaw": 2.21,
+            "lambdaARaw": 1.655,
+            "marketWeight": 0.25,
+            "p1": 0.4991,
+            "px": 0.2158,
+            "p2": 0.2851,
+            "pOver25": 0.7408,
+            "pUnder25": 0.2592,
+            "pGG": 0.7257,
+            "pNG": 0.2743,
+            "topExact": [
+              [
+                "2-1",
+                0.0849
+              ],
+              [
+                "1-1",
+                0.0826
+              ],
+              [
+                "2-2",
+                0.0703
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0268,
+              "1": 0.0697,
+              "2": 0.1627,
+              "3": 0.2022,
+              "4": 0.1954,
+              "5": 0.151,
+              "6": 0.0973,
+              "7+": 0.0949
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559680,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "Toulouse FC",
+          "homeId": 511,
+          "awayTeam": "Le Havre AC",
+          "awayId": 533,
+          "homeStats": {
+            "gf_pg": 1.23,
+            "ga_pg": 1.77,
+            "form": "WWDLL",
+            "elo": 1473.0,
+            "played": 13
+          },
+          "awayStats": {
+            "gf_pg": 1.14,
+            "ga_pg": 1.36,
+            "form": "WLDDD",
+            "elo": 1475.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.638,
+            "lambdaA": 1.655,
+            "rho": -0.075,
+            "lambdaHRaw": 1.638,
+            "lambdaARaw": 1.655,
+            "marketWeight": 0.25,
+            "p1": 0.3737,
+            "px": 0.2458,
+            "p2": 0.3806,
+            "pOver25": 0.6389,
+            "pUnder25": 0.3611,
+            "pGG": 0.6591,
+            "pNG": 0.3409,
+            "topExact": [
+              [
+                "1-1",
+                0.1083
+              ],
+              [
+                "1-2",
+                0.0834
+              ],
+              [
+                "2-1",
+                0.0825
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0447,
+              "1": 0.1073,
+              "2": 0.2091,
+              "3": 0.2212,
+              "4": 0.1821,
+              "5": 0.1199,
+              "6": 0.0658,
+              "7+": 0.0499
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559681,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "Angers SCO",
+          "homeId": 532,
+          "awayTeam": "ES Troyes AC",
+          "awayId": 531,
+          "homeStats": {
+            "gf_pg": 0.57,
+            "ga_pg": 1.64,
+            "form": "DDLLD",
+            "elo": 1400.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 0.817,
+            "lambdaA": 1.965,
+            "rho": -0.075,
+            "lambdaHRaw": 0.817,
+            "lambdaARaw": 1.965,
+            "marketWeight": 0.25,
+            "p1": 0.1408,
+            "px": 0.2243,
+            "p2": 0.635,
+            "pOver25": 0.5258,
+            "pUnder25": 0.4742,
+            "pGG": 0.4875,
+            "pNG": 0.5125,
+            "topExact": [
+              [
+                "0-2",
+                0.1196
+              ],
+              [
+                "0-1",
+                0.1143
+              ],
+              [
+                "1-1",
+                0.107
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0694,
+              "1": 0.1575,
+              "2": 0.2473,
+              "3": 0.2224,
+              "4": 0.1547,
+              "5": 0.0861,
+              "6": 0.0399,
+              "7+": 0.0227
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559682,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "AS Monaco FC",
+          "homeId": 548,
+          "awayTeam": "Racing Club de Lens",
+          "awayId": 546,
+          "homeStats": {
+            "gf_pg": 2.0,
+            "ga_pg": 1.5,
+            "form": "LLWDD",
+            "elo": 1554.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 2.29,
+            "ga_pg": 1.36,
+            "form": "WLWDD",
+            "elo": 1564.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.309,
+            "lambdaA": 2.531,
+            "rho": -0.075,
+            "lambdaHRaw": 2.309,
+            "lambdaARaw": 2.531,
+            "marketWeight": 0.25,
+            "p1": 0.3645,
+            "px": 0.1943,
+            "p2": 0.4413,
+            "pOver25": 0.8601,
+            "pUnder25": 0.1399,
+            "pGG": 0.8318,
+            "pNG": 0.1682,
+            "topExact": [
+              [
+                "2-2",
+                0.068
+              ],
+              [
+                "1-2",
+                0.0589
+              ],
+              [
+                "2-3",
+                0.0574
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0115,
+              "1": 0.0316,
+              "2": 0.0968,
+              "3": 0.1505,
+              "4": 0.1821,
+              "5": 0.1763,
+              "6": 0.1422,
+              "7+": 0.209
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 559683,
+          "date": "2026-09-19",
+          "time": "15:00",
+          "matchday": 5,
+          "homeTeam": "Olympique Lyonnais",
+          "homeId": 523,
+          "awayTeam": "Stade Rennais FC 1901",
+          "awayId": 529,
+          "homeStats": {
+            "gf_pg": 1.43,
+            "ga_pg": 1.43,
+            "form": "LLWWW",
+            "elo": 1514.0,
+            "played": 14
+          },
+          "awayStats": {
+            "gf_pg": 2.07,
+            "ga_pg": 1.36,
+            "form": "LWLWW",
+            "elo": 1570.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.777,
+            "lambdaA": 2.324,
+            "rho": -0.075,
+            "lambdaHRaw": 1.777,
+            "lambdaARaw": 2.324,
+            "marketWeight": 0.25,
+            "p1": 0.2931,
+            "px": 0.2087,
+            "p2": 0.4982,
+            "pOver25": 0.7757,
+            "pUnder25": 0.2243,
+            "pGG": 0.7544,
+            "pNG": 0.2456,
+            "topExact": [
+              [
+                "1-2",
+                0.0797
+              ],
+              [
+                "1-1",
+                0.0737
+              ],
+              [
+                "2-2",
+                0.0708
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0217,
+              "1": 0.0578,
+              "2": 0.1448,
+              "3": 0.1909,
+              "4": 0.1958,
+              "5": 0.1606,
+              "6": 0.1098,
+              "7+": 0.1186
             },
             "value": null
           }
@@ -11600,6 +12575,266 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 558598,
+          "date": "2026-09-19",
+          "time": "13:00",
+          "matchday": 5,
+          "homeTeam": "Bologna FC 1909",
+          "homeId": 103,
+          "awayTeam": "Torino FC",
+          "awayId": 586,
+          "homeStats": {
+            "gf_pg": 1.13,
+            "ga_pg": 1.07,
+            "form": "DWWDL",
+            "elo": 1504.0,
+            "played": 15
+          },
+          "awayStats": {
+            "gf_pg": 1.47,
+            "ga_pg": 1.53,
+            "form": "DLWLD",
+            "elo": 1494.0,
+            "played": 15
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.789,
+            "lambdaA": 1.363,
+            "rho": -0.07,
+            "lambdaHRaw": 1.789,
+            "lambdaARaw": 1.363,
+            "marketWeight": 0.25,
+            "p1": 0.468,
+            "px": 0.2455,
+            "p2": 0.2865,
+            "pOver25": 0.6096,
+            "pUnder25": 0.3904,
+            "pGG": 0.6269,
+            "pNG": 0.3731,
+            "topExact": [
+              [
+                "1-1",
+                0.1117
+              ],
+              [
+                "2-1",
+                0.0933
+              ],
+              [
+                "1-2",
+                0.0711
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0501,
+              "1": 0.1203,
+              "2": 0.2199,
+              "3": 0.2234,
+              "4": 0.176,
+              "5": 0.1109,
+              "6": 0.0583,
+              "7+": 0.0411
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558589,
+          "date": "2026-09-19",
+          "time": "13:00",
+          "matchday": 5,
+          "homeTeam": "Udinese Calcio",
+          "homeId": 115,
+          "awayTeam": "Cagliari Calcio",
+          "awayId": 104,
+          "homeStats": {
+            "gf_pg": 1.27,
+            "ga_pg": 0.93,
+            "form": "LLWWD",
+            "elo": 1527.0,
+            "played": 15
+          },
+          "awayStats": {
+            "gf_pg": 0.8,
+            "ga_pg": 1.47,
+            "form": "WWLDW",
+            "elo": 1445.0,
+            "played": 15
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.952,
+            "lambdaA": 0.804,
+            "rho": -0.07,
+            "lambdaHRaw": 1.952,
+            "lambdaARaw": 0.804,
+            "marketWeight": 0.25,
+            "p1": 0.6361,
+            "px": 0.2241,
+            "p2": 0.1398,
+            "pOver25": 0.5197,
+            "pUnder25": 0.4803,
+            "pGG": 0.4811,
+            "pNG": 0.5189,
+            "topExact": [
+              [
+                "2-0",
+                0.1211
+              ],
+              [
+                "1-0",
+                0.1171
+              ],
+              [
+                "1-1",
+                0.1068
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0706,
+              "1": 0.1613,
+              "2": 0.2485,
+              "3": 0.2219,
+              "4": 0.1529,
+              "5": 0.0843,
+              "6": 0.0387,
+              "7+": 0.0218
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558593,
+          "date": "2026-09-19",
+          "time": "16:00",
+          "matchday": 5,
+          "homeTeam": "AS Roma",
+          "homeId": 100,
+          "awayTeam": "FC Internazionale Milano",
+          "awayId": 108,
+          "homeStats": {
+            "gf_pg": 2.13,
+            "ga_pg": 1.13,
+            "form": "WWWWW",
+            "elo": 1607.0,
+            "played": 15
+          },
+          "awayStats": {
+            "gf_pg": 2.47,
+            "ga_pg": 1.07,
+            "form": "DDWWD",
+            "elo": 1638.0,
+            "played": 15
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.263,
+            "lambdaA": 2.316,
+            "rho": -0.07,
+            "lambdaHRaw": 2.263,
+            "lambdaARaw": 2.316,
+            "marketWeight": 0.25,
+            "p1": 0.3901,
+            "px": 0.2009,
+            "p2": 0.409,
+            "pOver25": 0.8342,
+            "pUnder25": 0.1658,
+            "pGG": 0.8109,
+            "pNG": 0.1891,
+            "topExact": [
+              [
+                "2-2",
+                0.0709
+              ],
+              [
+                "1-2",
+                0.0626
+              ],
+              [
+                "2-1",
+                0.0612
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0141,
+              "1": 0.0397,
+              "2": 0.112,
+              "3": 0.1651,
+              "4": 0.189,
+              "5": 0.1731,
+              "6": 0.1321,
+              "7+": 0.175
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558594,
+          "date": "2026-09-19",
+          "time": "18:45",
+          "matchday": 5,
+          "homeTeam": "Venezia FC",
+          "homeId": 454,
+          "awayTeam": "SS Lazio",
+          "awayId": 110,
+          "homeStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "awayStats": {
+            "gf_pg": 1.13,
+            "ga_pg": 1.27,
+            "form": "WLLWD",
+            "elo": 1506.0,
+            "played": 15
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.826,
+            "lambdaA": 1.223,
+            "rho": -0.07,
+            "lambdaHRaw": 1.826,
+            "lambdaARaw": 1.223,
+            "marketWeight": 0.25,
+            "p1": 0.5075,
+            "px": 0.2442,
+            "p2": 0.2482,
+            "pOver25": 0.5876,
+            "pUnder25": 0.4124,
+            "pGG": 0.5995,
+            "pNG": 0.4005,
+            "topExact": [
+              [
+                "1-1",
+                0.1133
+              ],
+              [
+                "2-1",
+                0.0967
+              ],
+              [
+                "1-0",
+                0.0792
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0548,
+              "1": 0.1297,
+              "2": 0.2279,
+              "3": 0.2241,
+              "4": 0.1709,
+              "5": 0.1042,
+              "6": 0.053,
+              "7+": 0.0354
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -11634,103 +12869,103 @@
             "homeTeam": "Estoril",
             "awayTeam": "Famalicão",
             "commenceTime": "2026-08-07T19:15:00Z",
-            "n_books": 18,
-            "1": 3.07,
-            "X": 3.17,
-            "2": 2.276,
-            "over25": 1.897,
-            "under25": 1.819,
+            "n_books": 19,
+            "1": 2.979,
+            "X": 3.202,
+            "2": 2.324,
+            "over25": 1.895,
+            "under25": 1.834,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 3.28,
-              "X": 3.4,
-              "2": 2.38,
-              "over25": 1.93,
-              "under25": 1.9
+              "1": 3.1,
+              "X": 3.45,
+              "2": 2.42,
+              "over25": 1.94,
+              "under25": 1.93
             }
           },
           "prediction": {
-            "lambdaH": 1.163,
-            "lambdaA": 1.812,
+            "lambdaH": 1.17,
+            "lambdaA": 1.809,
             "rho": -0.08,
             "lambdaHRaw": 1.153,
             "lambdaARaw": 1.943,
             "marketWeight": 0.25,
-            "p1": 0.2354,
-            "px": 0.2478,
-            "p2": 0.5167,
-            "pOver25": 0.5711,
-            "pUnder25": 0.4289,
-            "pGG": 0.5838,
-            "pNG": 0.4162,
+            "p1": 0.2373,
+            "px": 0.2481,
+            "p2": 0.5146,
+            "pOver25": 0.5718,
+            "pUnder25": 0.4282,
+            "pGG": 0.5851,
+            "pNG": 0.4149,
             "topExact": [
               [
                 "1-1",
-                0.1162
+                0.1163
               ],
               [
                 "1-2",
-                0.0975
+                0.0974
               ],
               [
                 "0-1",
-                0.0839
+                0.0834
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0597,
-              "1": 0.1347,
-              "2": 0.2346,
+              "0": 0.0595,
+              "1": 0.1343,
+              "2": 0.2344,
               "3": 0.2242,
-              "4": 0.1667,
-              "5": 0.0992,
-              "6": 0.0492,
-              "7+": 0.0317
+              "4": 0.1669,
+              "5": 0.0995,
+              "6": 0.0494,
+              "7+": 0.0319
             },
             "value": {
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.5167,
-                  "odds": 2.38,
-                  "edge": 0.2299,
+                  "p": 0.5146,
+                  "odds": 2.42,
+                  "edge": 0.2454,
                   "kelly": 0.05
                 },
                 {
                   "market": "Over 2.5",
-                  "p": 0.5711,
-                  "odds": 1.93,
-                  "edge": 0.1021,
+                  "p": 0.5718,
+                  "odds": 1.94,
+                  "edge": 0.1093,
                   "kelly": 0.05
                 },
                 {
                   "market": "X",
-                  "p": 0.2478,
-                  "odds": 3.4,
-                  "edge": -0.1574,
+                  "p": 0.2481,
+                  "odds": 3.45,
+                  "edge": -0.1442,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.4289,
-                  "odds": 1.9,
-                  "edge": -0.185,
+                  "p": 0.4282,
+                  "odds": 1.93,
+                  "edge": -0.1736,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.2354,
-                  "odds": 3.28,
-                  "edge": -0.2278,
+                  "p": 0.2373,
+                  "odds": 3.1,
+                  "edge": -0.2644,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.5167,
-                "odds": 2.38,
-                "edge": 0.2299,
+                "p": 0.5146,
+                "odds": 2.42,
+                "edge": 0.2454,
                 "kelly": 0.05
               }
             }
@@ -11829,33 +13064,33 @@
             "awayTeam": "Arouca",
             "commenceTime": "2026-08-08T17:00:00Z",
             "n_books": 18,
-            "1": 1.839,
-            "X": 3.522,
-            "2": 3.948,
-            "over25": 1.865,
-            "under25": 1.846,
+            "1": 1.826,
+            "X": 3.528,
+            "2": 3.966,
+            "over25": 1.862,
+            "under25": 1.848,
             "gg": null,
             "ng": null,
             "best": {
               "1": 1.9,
-              "X": 3.95,
-              "2": 4.3,
+              "X": 3.9,
+              "2": 4.2,
               "over25": 1.92,
               "under25": 1.9
             }
           },
           "prediction": {
-            "lambdaH": 1.859,
+            "lambdaH": 1.861,
             "lambdaA": 1.635,
             "rho": -0.08,
             "lambdaHRaw": 1.936,
             "lambdaARaw": 1.834,
             "marketWeight": 0.25,
-            "p1": 0.4274,
+            "p1": 0.4279,
             "px": 0.2366,
-            "p2": 0.3359,
-            "pOver25": 0.6779,
-            "pUnder25": 0.3221,
+            "p2": 0.3355,
+            "pOver25": 0.678,
+            "pUnder25": 0.322,
             "pGG": 0.687,
             "pNG": 0.313,
             "topExact": [
@@ -11869,14 +13104,14 @@
               ],
               [
                 "1-2",
-                0.0756
+                0.0755
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0378,
               "1": 0.0914,
               "2": 0.1929,
-              "3": 0.2162,
+              "3": 0.2161,
               "4": 0.1889,
               "5": 0.132,
               "6": 0.0769,
@@ -11886,45 +13121,45 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.3359,
-                  "odds": 4.3,
-                  "edge": 0.4446,
+                  "p": 0.3355,
+                  "odds": 4.2,
+                  "edge": 0.4092,
                   "kelly": 0.05
                 },
                 {
                   "market": "Over 2.5",
-                  "p": 0.6779,
+                  "p": 0.678,
                   "odds": 1.92,
-                  "edge": 0.3015,
+                  "edge": 0.3018,
                   "kelly": 0.05
                 },
                 {
                   "market": "X",
                   "p": 0.2366,
-                  "odds": 3.95,
-                  "edge": -0.0652,
+                  "odds": 3.9,
+                  "edge": -0.0773,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.4274,
+                  "p": 0.4279,
                   "odds": 1.9,
-                  "edge": -0.1879,
+                  "edge": -0.187,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.3221,
+                  "p": 0.322,
                   "odds": 1.9,
-                  "edge": -0.388,
+                  "edge": -0.3882,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.3359,
-                "odds": 4.3,
-                "edge": 0.4446,
+                "p": 0.3355,
+                "odds": 4.2,
+                "edge": 0.4092,
                 "kelly": 0.05
               }
             }
@@ -12024,8 +13259,8 @@
             "commenceTime": "2026-08-09T17:00:00Z",
             "n_books": 17,
             "1": 1.173,
-            "X": 6.454,
-            "2": 13.681,
+            "X": 6.465,
+            "2": 13.68,
             "over25": 1.547,
             "under25": 2.35,
             "gg": null,
@@ -12046,7 +13281,7 @@
             "lambdaARaw": 0.471,
             "marketWeight": 0.25,
             "p1": 0.8585,
-            "px": 0.1069,
+            "px": 0.1068,
             "p2": 0.0347,
             "pOver25": 0.669,
             "pUnder25": 0.331,
@@ -12068,7 +13303,7 @@
             ],
             "totalGoalsDist": {
               "0": 0.0354,
-              "1": 0.1021,
+              "1": 0.102,
               "2": 0.1936,
               "3": 0.2193,
               "4": 0.1899,
@@ -12089,14 +13324,14 @@
                   "market": "1",
                   "p": 0.8585,
                   "odds": 1.21,
-                  "edge": 0.0387,
+                  "edge": 0.0388,
                   "kelly": 0.05
                 },
                 {
                   "market": "X",
-                  "p": 0.1069,
+                  "p": 0.1068,
                   "odds": 7.8,
-                  "edge": -0.1665,
+                  "edge": -0.1667,
                   "kelly": 0.0
                 },
                 {
@@ -12110,7 +13345,7 @@
                   "market": "2",
                   "p": 0.0347,
                   "odds": 16.5,
-                  "edge": -0.4277,
+                  "edge": -0.428,
                   "kelly": 0.0
                 }
               ],
@@ -12152,9 +13387,9 @@
             "awayTeam": "Braga",
             "commenceTime": "2026-08-09T19:30:00Z",
             "n_books": 18,
-            "1": 4.634,
-            "X": 3.581,
-            "2": 1.691,
+            "1": 4.645,
+            "X": 3.589,
+            "2": 1.699,
             "over25": 1.908,
             "under25": 1.805,
             "gg": null,
@@ -12169,18 +13404,18 @@
           },
           "prediction": {
             "lambdaH": 1.023,
-            "lambdaA": 2.154,
+            "lambdaA": 2.153,
             "rho": -0.08,
             "lambdaHRaw": 1.054,
             "lambdaARaw": 2.307,
             "marketWeight": 0.25,
-            "p1": 0.1626,
-            "px": 0.2136,
-            "p2": 0.6237,
+            "p1": 0.1627,
+            "px": 0.2137,
+            "p2": 0.6236,
             "pOver25": 0.6145,
             "pUnder25": 0.3855,
-            "pGG": 0.5734,
-            "pNG": 0.4266,
+            "pGG": 0.5735,
+            "pNG": 0.4265,
             "topExact": [
               [
                 "1-1",
@@ -12197,12 +13432,12 @@
             ],
             "totalGoalsDist": {
               "0": 0.0492,
-              "1": 0.118,
+              "1": 0.1181,
               "2": 0.2183,
               "3": 0.2233,
               "4": 0.1773,
               "5": 0.1127,
-              "6": 0.0597,
+              "6": 0.0596,
               "7+": 0.0415
             },
             "value": {
@@ -12211,28 +13446,28 @@
                   "market": "Over 2.5",
                   "p": 0.6145,
                   "odds": 1.96,
-                  "edge": 0.2045,
+                  "edge": 0.2044,
                   "kelly": 0.05
                 },
                 {
                   "market": "2",
-                  "p": 0.6237,
+                  "p": 0.6236,
                   "odds": 1.73,
-                  "edge": 0.0791,
+                  "edge": 0.0788,
                   "kelly": 0.05
                 },
                 {
                   "market": "1",
-                  "p": 0.1626,
+                  "p": 0.1627,
                   "odds": 5.2,
-                  "edge": -0.1544,
+                  "edge": -0.154,
                   "kelly": 0.0
                 },
                 {
                   "market": "X",
-                  "p": 0.2136,
+                  "p": 0.2137,
                   "odds": 3.75,
-                  "edge": -0.1988,
+                  "edge": -0.1987,
                   "kelly": 0.0
                 },
                 {
@@ -12247,7 +13482,7 @@
                 "market": "Over 2.5",
                 "p": 0.6145,
                 "odds": 1.96,
-                "edge": 0.2045,
+                "edge": 0.2044,
                 "kelly": 0.05
               }
             }
@@ -12281,15 +13516,15 @@
             "awayTeam": "Rio Ave FC",
             "commenceTime": "2026-08-09T19:30:00Z",
             "n_books": 18,
-            "1": 1.902,
-            "X": 3.402,
-            "2": 3.813,
-            "over25": 1.915,
-            "under25": 1.799,
+            "1": 1.915,
+            "X": 3.411,
+            "2": 3.788,
+            "over25": 1.925,
+            "under25": 1.793,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 2.02,
+              "1": 2.01,
               "X": 3.57,
               "2": 4.2,
               "over25": 1.99,
@@ -12297,23 +13532,23 @@
             }
           },
           "prediction": {
-            "lambdaH": 1.969,
-            "lambdaA": 1.0,
+            "lambdaH": 1.967,
+            "lambdaA": 1.001,
             "rho": -0.08,
             "lambdaHRaw": 2.102,
             "lambdaARaw": 0.986,
             "marketWeight": 0.25,
-            "p1": 0.5905,
-            "px": 0.231,
-            "p2": 0.1785,
-            "pOver25": 0.5694,
-            "pUnder25": 0.4306,
-            "pGG": 0.5519,
-            "pNG": 0.4481,
+            "p1": 0.59,
+            "px": 0.2312,
+            "p2": 0.1788,
+            "pOver25": 0.569,
+            "pUnder25": 0.431,
+            "pGG": 0.5518,
+            "pNG": 0.4482,
             "topExact": [
               [
                 "1-1",
-                0.1093
+                0.1094
               ],
               [
                 "2-1",
@@ -12325,58 +13560,58 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0595,
-              "1": 0.1364,
-              "2": 0.2347,
+              "0": 0.0596,
+              "1": 0.1366,
+              "2": 0.2348,
               "3": 0.2242,
-              "4": 0.1664,
-              "5": 0.0988,
-              "6": 0.0489,
-              "7+": 0.031
+              "4": 0.1663,
+              "5": 0.0987,
+              "6": 0.0488,
+              "7+": 0.0309
             },
             "value": {
               "rows": [
                 {
                   "market": "1",
-                  "p": 0.5905,
-                  "odds": 2.02,
-                  "edge": 0.1928,
+                  "p": 0.59,
+                  "odds": 2.01,
+                  "edge": 0.1859,
                   "kelly": 0.05
                 },
                 {
                   "market": "Over 2.5",
-                  "p": 0.5694,
+                  "p": 0.569,
                   "odds": 1.99,
-                  "edge": 0.1331,
+                  "edge": 0.1323,
                   "kelly": 0.05
                 },
                 {
                   "market": "X",
-                  "p": 0.231,
+                  "p": 0.2312,
                   "odds": 3.57,
-                  "edge": -0.1752,
+                  "edge": -0.1745,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.4306,
+                  "p": 0.431,
                   "odds": 1.85,
-                  "edge": -0.2034,
+                  "edge": -0.2026,
                   "kelly": 0.0
                 },
                 {
                   "market": "2",
-                  "p": 0.1785,
+                  "p": 0.1788,
                   "odds": 4.2,
-                  "edge": -0.2505,
+                  "edge": -0.2491,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "1",
-                "p": 0.5905,
-                "odds": 2.02,
-                "edge": 0.1928,
+                "p": 0.59,
+                "odds": 2.01,
+                "edge": 0.1859,
                 "kelly": 0.05
               }
             }
@@ -12410,9 +13645,9 @@
             "awayTeam": "Académico de Viseu",
             "commenceTime": "2026-08-09T19:30:00Z",
             "n_books": 13,
-            "1": 1.104,
-            "X": 8.425,
-            "2": 20.412,
+            "1": 1.106,
+            "X": 8.442,
+            "2": 20.078,
             "over25": 1.44,
             "under25": 2.72,
             "gg": null,
@@ -12420,37 +13655,37 @@
             "best": {
               "1": 1.13,
               "X": 10.0,
-              "2": 27.0,
+              "2": 26.0,
               "over25": 1.44,
               "under25": 2.72
             }
           },
           "prediction": {
             "lambdaH": 2.722,
-            "lambdaA": 0.782,
+            "lambdaA": 0.783,
             "rho": -0.08,
             "lambdaHRaw": 2.675,
             "lambdaARaw": 0.869,
             "marketWeight": 0.25,
-            "p1": 0.7742,
-            "px": 0.1487,
-            "p2": 0.0772,
+            "p1": 0.774,
+            "px": 0.1488,
+            "p2": 0.0773,
             "pOver25": 0.6778,
             "pUnder25": 0.3222,
-            "pGG": 0.5119,
-            "pNG": 0.4881,
+            "pGG": 0.5121,
+            "pNG": 0.4879,
             "topExact": [
               [
                 "2-0",
-                0.1122
+                0.1121
               ],
               [
                 "3-0",
-                0.1018
+                0.1017
               ],
               [
                 "2-1",
-                0.0877
+                0.0878
               ]
             ],
             "totalGoalsDist": {
@@ -12467,17 +13702,17 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.0772,
-                  "odds": 27.0,
-                  "edge": 1.0833,
-                  "kelly": 0.0208
+                  "p": 0.0773,
+                  "odds": 26.0,
+                  "edge": 1.0092,
+                  "kelly": 0.0202
                 },
                 {
                   "market": "X",
-                  "p": 0.1487,
+                  "p": 0.1488,
                   "odds": 10.0,
-                  "edge": 0.4867,
-                  "kelly": 0.027
+                  "edge": 0.4876,
+                  "kelly": 0.0271
                 },
                 {
                   "market": "Over 2.5",
@@ -12495,18 +13730,18 @@
                 },
                 {
                   "market": "1",
-                  "p": 0.7742,
+                  "p": 0.774,
                   "odds": 1.13,
-                  "edge": -0.1252,
+                  "edge": -0.1254,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.0772,
-                "odds": 27.0,
-                "edge": 1.0833,
-                "kelly": 0.0208
+                "p": 0.0773,
+                "odds": 26.0,
+                "edge": 1.0092,
+                "kelly": 0.0202
               }
             }
           }
@@ -12538,18 +13773,18 @@
             "homeTeam": "Santa Clara",
             "awayTeam": "Nacional",
             "commenceTime": "2026-08-10T19:15:00Z",
-            "n_books": 13,
-            "1": 1.898,
-            "X": 3.28,
-            "2": 3.938,
+            "n_books": 14,
+            "1": 1.901,
+            "X": 3.289,
+            "2": 3.982,
             "over25": 2.152,
             "under25": 1.657,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 1.95,
+              "1": 1.96,
               "X": 3.5,
-              "2": 4.2,
+              "2": 4.4,
               "over25": 2.2,
               "under25": 1.68
             }
@@ -12561,13 +13796,13 @@
             "lambdaHRaw": 1.296,
             "lambdaARaw": 1.122,
             "marketWeight": 0.25,
-            "p1": 0.4167,
+            "p1": 0.417,
             "px": 0.293,
-            "p2": 0.2903,
+            "p2": 0.29,
             "pOver25": 0.4352,
             "pUnder25": 0.5648,
-            "pGG": 0.4975,
-            "pNG": 0.5025,
+            "pGG": 0.4974,
+            "pNG": 0.5026,
             "topExact": [
               [
                 "1-1",
@@ -12575,7 +13810,7 @@
               ],
               [
                 "1-0",
-                0.109
+                0.1091
               ],
               [
                 "0-0",
@@ -12584,8 +13819,8 @@
             ],
             "totalGoalsDist": {
               "0": 0.0993,
-              "1": 0.1947,
-              "2": 0.2707,
+              "1": 0.1948,
+              "2": 0.2708,
               "3": 0.21,
               "4": 0.127,
               "5": 0.0614,
@@ -12596,46 +13831,46 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.2903,
-                  "odds": 4.2,
-                  "edge": 0.2194,
-                  "kelly": 0.0343
+                  "p": 0.29,
+                  "odds": 4.4,
+                  "edge": 0.276,
+                  "kelly": 0.0406
                 },
                 {
                   "market": "X",
                   "p": 0.293,
                   "odds": 3.5,
-                  "edge": 0.0255,
+                  "edge": 0.0254,
                   "kelly": 0.0051
                 },
                 {
                   "market": "Over 2.5",
                   "p": 0.4352,
                   "odds": 2.2,
-                  "edge": -0.0425,
+                  "edge": -0.0427,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
                   "p": 0.5648,
                   "odds": 1.68,
-                  "edge": -0.0512,
+                  "edge": -0.0511,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.4167,
-                  "odds": 1.95,
-                  "edge": -0.1875,
+                  "p": 0.417,
+                  "odds": 1.96,
+                  "edge": -0.1826,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.2903,
-                "odds": 4.2,
-                "edge": 0.2194,
-                "kelly": 0.0343
+                "p": 0.29,
+                "odds": 4.4,
+                "edge": 0.276,
+                "kelly": 0.0406
               }
             }
           }
@@ -17390,6 +18625,331 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 565808,
+          "date": "2026-09-19",
+          "time": "13:30",
+          "matchday": 4,
+          "homeTeam": "Hamburger SV",
+          "homeId": 7,
+          "awayTeam": "1. FC Köln",
+          "awayId": 1,
+          "homeStats": {
+            "gf_pg": 1.18,
+            "ga_pg": 1.59,
+            "form": "DWWLL",
+            "elo": 1445.0,
+            "played": 34
+          },
+          "awayStats": {
+            "gf_pg": 1.44,
+            "ga_pg": 1.85,
+            "form": "LLDLD",
+            "elo": 1445.0,
+            "played": 34
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.053,
+            "lambdaA": 1.755,
+            "rho": -0.06,
+            "lambdaHRaw": 2.053,
+            "lambdaARaw": 1.755,
+            "marketWeight": 0.25,
+            "p1": 0.4482,
+            "px": 0.2205,
+            "p2": 0.3313,
+            "pOver25": 0.732,
+            "pUnder25": 0.268,
+            "pGG": 0.7256,
+            "pNG": 0.2744,
+            "topExact": [
+              [
+                "1-1",
+                0.0849
+              ],
+              [
+                "2-1",
+                0.0822
+              ],
+              [
+                "2-2",
+                0.0722
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.027,
+              "1": 0.075,
+              "2": 0.166,
+              "3": 0.2046,
+              "4": 0.1948,
+              "5": 0.1484,
+              "6": 0.0942,
+              "7+": 0.0901
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 565809,
+          "date": "2026-09-19",
+          "time": "13:30",
+          "matchday": 4,
+          "homeTeam": "Borussia Mönchengladbach",
+          "homeId": 18,
+          "awayTeam": "1. FSV Mainz 05",
+          "awayId": 15,
+          "homeStats": {
+            "gf_pg": 1.24,
+            "ga_pg": 1.56,
+            "form": "WLWDD",
+            "elo": 1474.0,
+            "played": 34
+          },
+          "awayStats": {
+            "gf_pg": 1.29,
+            "ga_pg": 1.56,
+            "form": "WLWLD",
+            "elo": 1540.0,
+            "played": 34
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.772,
+            "lambdaA": 1.732,
+            "rho": -0.06,
+            "lambdaHRaw": 1.772,
+            "lambdaARaw": 1.732,
+            "marketWeight": 0.25,
+            "p1": 0.3912,
+            "px": 0.234,
+            "p2": 0.3749,
+            "pOver25": 0.6794,
+            "pUnder25": 0.3206,
+            "pGG": 0.6884,
+            "pNG": 0.3116,
+            "topExact": [
+              [
+                "1-1",
+                0.098
+              ],
+              [
+                "2-1",
+                0.0819
+              ],
+              [
+                "1-2",
+                0.08
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0357,
+              "1": 0.0945,
+              "2": 0.1904,
+              "3": 0.2159,
+              "4": 0.1891,
+              "5": 0.1325,
+              "6": 0.0773,
+              "7+": 0.0646
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 565810,
+          "date": "2026-09-19",
+          "time": "13:30",
+          "matchday": 4,
+          "homeTeam": "SV Werder Bremen",
+          "homeId": 12,
+          "awayTeam": "FC Augsburg",
+          "awayId": 16,
+          "homeStats": {
+            "gf_pg": 1.09,
+            "ga_pg": 1.76,
+            "form": "LLLDW",
+            "elo": 1462.0,
+            "played": 34
+          },
+          "awayStats": {
+            "gf_pg": 1.32,
+            "ga_pg": 1.79,
+            "form": "LWWDW",
+            "elo": 1502.0,
+            "played": 34
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.752,
+            "lambdaA": 1.993,
+            "rho": -0.06,
+            "lambdaHRaw": 1.752,
+            "lambdaARaw": 1.993,
+            "marketWeight": 0.25,
+            "p1": 0.3406,
+            "px": 0.2234,
+            "p2": 0.436,
+            "pOver25": 0.7218,
+            "pUnder25": 0.2782,
+            "pGG": 0.7187,
+            "pNG": 0.2813,
+            "topExact": [
+              [
+                "1-1",
+                0.0876
+              ],
+              [
+                "1-2",
+                0.0824
+              ],
+              [
+                "2-1",
+                0.0724
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0286,
+              "1": 0.0787,
+              "2": 0.1709,
+              "3": 0.2072,
+              "4": 0.194,
+              "5": 0.1453,
+              "6": 0.0907,
+              "7+": 0.0845
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 565811,
+          "date": "2026-09-19",
+          "time": "13:30",
+          "matchday": 4,
+          "homeTeam": "Eintracht Frankfurt",
+          "homeId": 19,
+          "awayTeam": "SC Freiburg",
+          "awayId": 17,
+          "homeStats": {
+            "gf_pg": 1.79,
+            "ga_pg": 1.91,
+            "form": "DLLDL",
+            "elo": 1487.0,
+            "played": 34
+          },
+          "awayStats": {
+            "gf_pg": 1.5,
+            "ga_pg": 1.68,
+            "form": "WLDLW",
+            "elo": 1478.0,
+            "played": 34
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.583,
+            "lambdaA": 2.239,
+            "rho": -0.06,
+            "lambdaHRaw": 2.583,
+            "lambdaARaw": 2.239,
+            "marketWeight": 0.25,
+            "p1": 0.4634,
+            "px": 0.1921,
+            "p2": 0.3445,
+            "pOver25": 0.8585,
+            "pUnder25": 0.1415,
+            "pGG": 0.8282,
+            "pNG": 0.1718,
+            "topExact": [
+              [
+                "2-2",
+                0.0678
+              ],
+              [
+                "2-1",
+                0.0606
+              ],
+              [
+                "3-2",
+                0.0584
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0109,
+              "1": 0.0335,
+              "2": 0.0971,
+              "3": 0.1516,
+              "4": 0.1827,
+              "5": 0.1762,
+              "6": 0.1416,
+              "7+": 0.2064
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 565806,
+          "date": "2026-09-19",
+          "time": "16:30",
+          "matchday": 4,
+          "homeTeam": "VfB Stuttgart",
+          "homeId": 10,
+          "awayTeam": "Borussia Dortmund",
+          "awayId": 4,
+          "homeStats": {
+            "gf_pg": 2.09,
+            "ga_pg": 1.44,
+            "form": "DWDDL",
+            "elo": 1560.0,
+            "played": 34
+          },
+          "awayStats": {
+            "gf_pg": 2.06,
+            "ga_pg": 1.0,
+            "form": "WWLWL",
+            "elo": 1586.0,
+            "played": 34
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.924,
+            "lambdaA": 2.395,
+            "rho": -0.06,
+            "lambdaHRaw": 1.924,
+            "lambdaARaw": 2.395,
+            "marketWeight": 0.25,
+            "p1": 0.3127,
+            "px": 0.2023,
+            "p2": 0.485,
+            "pOver25": 0.8043,
+            "pUnder25": 0.1957,
+            "pGG": 0.7795,
+            "pNG": 0.2205,
+            "topExact": [
+              [
+                "1-2",
+                0.0738
+              ],
+              [
+                "2-2",
+                0.071
+              ],
+              [
+                "1-1",
+                0.0653
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0171,
+              "1": 0.0503,
+              "2": 0.1284,
+              "3": 0.1795,
+              "4": 0.1938,
+              "5": 0.1674,
+              "6": 0.1205,
+              "7+": 0.143
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -17425,15 +18985,15 @@
             "awayTeam": "Excelsior",
             "commenceTime": "2026-08-07T18:00:00Z",
             "n_books": 20,
-            "1": 2.474,
-            "X": 3.537,
-            "2": 2.535,
-            "over25": 1.595,
-            "under25": 2.244,
+            "1": 2.48,
+            "X": 3.543,
+            "2": 2.552,
+            "over25": 1.607,
+            "under25": 2.248,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 2.6,
+              "1": 2.63,
               "X": 3.75,
               "2": 2.65,
               "over25": 1.65,
@@ -17442,18 +19002,18 @@
           },
           "prediction": {
             "lambdaH": 1.858,
-            "lambdaA": 1.618,
+            "lambdaA": 1.617,
             "rho": -0.07,
             "lambdaHRaw": 1.97,
             "lambdaARaw": 1.656,
             "marketWeight": 0.25,
-            "p1": 0.4315,
-            "px": 0.2353,
-            "p2": 0.3331,
-            "pOver25": 0.6744,
-            "pUnder25": 0.3256,
-            "pGG": 0.6831,
-            "pNG": 0.3169,
+            "p1": 0.4318,
+            "px": 0.2354,
+            "p2": 0.3329,
+            "pOver25": 0.6741,
+            "pUnder25": 0.3259,
+            "pGG": 0.6828,
+            "pNG": 0.3172,
             "topExact": [
               [
                 "1-1",
@@ -17470,58 +19030,58 @@
             ],
             "totalGoalsDist": {
               "0": 0.0375,
-              "1": 0.0946,
-              "2": 0.1935,
-              "3": 0.2167,
+              "1": 0.0947,
+              "2": 0.1937,
+              "3": 0.2168,
               "4": 0.1883,
               "5": 0.1309,
-              "6": 0.0759,
-              "7+": 0.0626
+              "6": 0.0758,
+              "7+": 0.0624
             },
             "value": {
               "rows": [
                 {
                   "market": "1",
-                  "p": 0.4315,
-                  "odds": 2.6,
-                  "edge": 0.122,
-                  "kelly": 0.0381
+                  "p": 0.4318,
+                  "odds": 2.63,
+                  "edge": 0.1355,
+                  "kelly": 0.0416
                 },
                 {
                   "market": "Over 2.5",
-                  "p": 0.6744,
+                  "p": 0.6741,
                   "odds": 1.65,
-                  "edge": 0.1128,
+                  "edge": 0.1123,
                   "kelly": 0.05
                 },
                 {
-                  "market": "2",
-                  "p": 0.3331,
-                  "odds": 2.65,
-                  "edge": -0.1172,
+                  "market": "X",
+                  "p": 0.2354,
+                  "odds": 3.75,
+                  "edge": -0.1173,
                   "kelly": 0.0
                 },
                 {
-                  "market": "X",
-                  "p": 0.2353,
-                  "odds": 3.75,
-                  "edge": -0.1175,
+                  "market": "2",
+                  "p": 0.3329,
+                  "odds": 2.65,
+                  "edge": -0.1179,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.3256,
+                  "p": 0.3259,
                   "odds": 2.3,
-                  "edge": -0.2512,
+                  "edge": -0.2505,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "1",
-                "p": 0.4315,
-                "odds": 2.6,
-                "edge": 0.122,
-                "kelly": 0.0381
+                "p": 0.4318,
+                "odds": 2.63,
+                "edge": 0.1355,
+                "kelly": 0.0416
               }
             }
           }
@@ -17619,39 +19179,39 @@
             "awayTeam": "Willem II",
             "commenceTime": "2026-08-08T16:45:00Z",
             "n_books": 20,
-            "1": 1.617,
-            "X": 4.045,
-            "2": 4.672,
-            "over25": 1.571,
-            "under25": 2.273,
+            "1": 1.62,
+            "X": 4.05,
+            "2": 4.708,
+            "over25": 1.586,
+            "under25": 2.279,
             "gg": null,
             "ng": null,
             "best": {
               "1": 1.68,
               "X": 4.3,
-              "2": 5.25,
-              "over25": 1.6,
+              "2": 5.5,
+              "over25": 1.62,
               "under25": 2.4
             }
           },
           "prediction": {
-            "lambdaH": 1.804,
-            "lambdaA": 1.514,
+            "lambdaH": 1.803,
+            "lambdaA": 1.513,
             "rho": -0.07,
             "lambdaHRaw": 1.745,
             "lambdaARaw": 1.656,
             "marketWeight": 0.25,
-            "p1": 0.4399,
+            "p1": 0.44,
             "px": 0.2412,
-            "p2": 0.3189,
-            "pOver25": 0.644,
-            "pUnder25": 0.356,
-            "pGG": 0.6584,
-            "pNG": 0.3416,
+            "p2": 0.3187,
+            "pOver25": 0.6436,
+            "pUnder25": 0.3564,
+            "pGG": 0.6581,
+            "pNG": 0.3419,
             "topExact": [
               [
                 "1-1",
-                0.1059
+                0.106
               ],
               [
                 "2-1",
@@ -17664,57 +19224,57 @@
             ],
             "totalGoalsDist": {
               "0": 0.0432,
-              "1": 0.1064,
-              "2": 0.2065,
+              "1": 0.1066,
+              "2": 0.2066,
               "3": 0.2207,
-              "4": 0.1831,
-              "5": 0.1215,
-              "6": 0.0672,
-              "7+": 0.0515
+              "4": 0.183,
+              "5": 0.1214,
+              "6": 0.0671,
+              "7+": 0.0513
             },
             "value": {
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.3189,
-                  "odds": 5.25,
-                  "edge": 0.6744,
+                  "p": 0.3187,
+                  "odds": 5.5,
+                  "edge": 0.7531,
                   "kelly": 0.05
+                },
+                {
+                  "market": "Over 2.5",
+                  "p": 0.6436,
+                  "odds": 1.62,
+                  "edge": 0.0426,
+                  "kelly": 0.0344
                 },
                 {
                   "market": "X",
                   "p": 0.2412,
                   "odds": 4.3,
-                  "edge": 0.037,
-                  "kelly": 0.0056
-                },
-                {
-                  "market": "Over 2.5",
-                  "p": 0.644,
-                  "odds": 1.6,
-                  "edge": 0.0303,
-                  "kelly": 0.0253
+                  "edge": 0.0373,
+                  "kelly": 0.0057
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.356,
+                  "p": 0.3564,
                   "odds": 2.4,
-                  "edge": -0.1455,
+                  "edge": -0.1446,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.4399,
+                  "p": 0.44,
                   "odds": 1.68,
-                  "edge": -0.261,
+                  "edge": -0.2608,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.3189,
-                "odds": 5.25,
-                "edge": 0.6744,
+                "p": 0.3187,
+                "odds": 5.5,
+                "edge": 0.7531,
                 "kelly": 0.05
               }
             }
@@ -17748,9 +19308,9 @@
             "awayTeam": "Fortuna Sittard",
             "commenceTime": "2026-08-08T18:00:00Z",
             "n_books": 20,
-            "1": 1.173,
-            "X": 7.498,
-            "2": 11.164,
+            "1": 1.175,
+            "X": 7.514,
+            "2": 11.231,
             "over25": 1.22,
             "under25": 4.053,
             "gg": null,
@@ -17770,7 +19330,7 @@
             "lambdaHRaw": 4.0,
             "lambdaARaw": 1.38,
             "marketWeight": 0.25,
-            "p1": 0.8085,
+            "p1": 0.8086,
             "px": 0.1098,
             "p2": 0.0817,
             "pOver25": 0.875,
@@ -17788,7 +19348,7 @@
               ],
               [
                 "2-1",
-                0.0605
+                0.0604
               ]
             ],
             "totalGoalsDist": {
@@ -17807,7 +19367,7 @@
                   "market": "2",
                   "p": 0.0817,
                   "odds": 14.5,
-                  "edge": 0.1847,
+                  "edge": 0.184,
                   "kelly": 0.0068
                 },
                 {
@@ -17819,23 +19379,23 @@
                 },
                 {
                   "market": "1",
-                  "p": 0.8085,
+                  "p": 0.8086,
                   "odds": 1.24,
                   "edge": 0.0026,
-                  "kelly": 0.0053
+                  "kelly": 0.0055
                 },
                 {
                   "market": "X",
                   "p": 0.1098,
                   "odds": 8.75,
-                  "edge": -0.0393,
+                  "edge": -0.0396,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
                   "p": 0.125,
                   "odds": 4.08,
-                  "edge": -0.49,
+                  "edge": -0.4899,
                   "kelly": 0.0
                 }
               ],
@@ -17843,7 +19403,7 @@
                 "market": "2",
                 "p": 0.0817,
                 "odds": 14.5,
-                "edge": 0.1847,
+                "edge": 0.184,
                 "kelly": 0.0068
               }
             }
@@ -17877,35 +19437,35 @@
             "awayTeam": "ADO Den Haag",
             "commenceTime": "2026-08-08T19:00:00Z",
             "n_books": 18,
-            "1": 1.441,
-            "X": 4.619,
-            "2": 6.108,
+            "1": 1.44,
+            "X": 4.618,
+            "2": 6.216,
             "over25": 1.48,
             "under25": 2.507,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 1.55,
-              "X": 5.0,
-              "2": 7.0,
+              "1": 1.49,
+              "X": 4.9,
+              "2": 7.5,
               "over25": 1.5,
               "under25": 2.51
             }
           },
           "prediction": {
-            "lambdaH": 2.031,
-            "lambdaA": 1.349,
+            "lambdaH": 2.032,
+            "lambdaA": 1.348,
             "rho": -0.07,
             "lambdaHRaw": 1.961,
             "lambdaARaw": 1.464,
             "marketWeight": 0.25,
-            "p1": 0.5254,
-            "px": 0.2278,
-            "p2": 0.2468,
+            "p1": 0.526,
+            "px": 0.2277,
+            "p2": 0.2463,
             "pOver25": 0.656,
             "pUnder25": 0.344,
-            "pGG": 0.6498,
-            "pNG": 0.3502,
+            "pGG": 0.6496,
+            "pNG": 0.3504,
             "topExact": [
               [
                 "1-1",
@@ -17913,20 +19473,20 @@
               ],
               [
                 "2-1",
-                0.0948
+                0.0949
               ],
               [
                 "2-0",
-                0.0703
+                0.0704
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0406,
               "1": 0.1021,
-              "2": 0.2012,
+              "2": 0.2013,
               "3": 0.2194,
               "4": 0.1854,
-              "5": 0.1254,
+              "5": 0.1253,
               "6": 0.0706,
               "7+": 0.0552
             },
@@ -17934,17 +19494,17 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.2468,
-                  "odds": 7.0,
-                  "edge": 0.7277,
+                  "p": 0.2463,
+                  "odds": 7.5,
+                  "edge": 0.8476,
                   "kelly": 0.05
                 },
                 {
                   "market": "X",
-                  "p": 0.2278,
-                  "odds": 5.0,
-                  "edge": 0.1388,
-                  "kelly": 0.0173
+                  "p": 0.2277,
+                  "odds": 4.9,
+                  "edge": 0.1156,
+                  "kelly": 0.0148
                 },
                 {
                   "market": "Over 2.5",
@@ -17957,22 +19517,22 @@
                   "market": "Under 2.5",
                   "p": 0.344,
                   "odds": 2.51,
-                  "edge": -0.1366,
+                  "edge": -0.1365,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.5254,
-                  "odds": 1.55,
-                  "edge": -0.1856,
+                  "p": 0.526,
+                  "odds": 1.49,
+                  "edge": -0.2163,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.2468,
-                "odds": 7.0,
-                "edge": 0.7277,
+                "p": 0.2463,
+                "odds": 7.5,
+                "edge": 0.8476,
                 "kelly": 0.05
               }
             }
@@ -18005,40 +19565,40 @@
             "homeTeam": "Sparta Rotterdam",
             "awayTeam": "Feyenoord",
             "commenceTime": "2026-08-09T10:15:00Z",
-            "n_books": 20,
-            "1": 4.421,
-            "X": 3.964,
-            "2": 1.663,
+            "n_books": 19,
+            "1": 4.407,
+            "X": 3.973,
+            "2": 1.669,
             "over25": 1.537,
             "under25": 2.413,
             "gg": null,
             "ng": null,
             "best": {
-              "1": 5.1,
+              "1": 5.0,
               "X": 4.3,
-              "2": 1.72,
+              "2": 1.74,
               "over25": 1.54,
               "under25": 2.42
             }
           },
           "prediction": {
             "lambdaH": 0.954,
-            "lambdaA": 2.541,
+            "lambdaA": 2.54,
             "rho": -0.07,
             "lambdaHRaw": 0.884,
             "lambdaARaw": 2.725,
             "marketWeight": 0.25,
-            "p1": 0.1156,
-            "px": 0.1736,
-            "p2": 0.7108,
+            "p1": 0.1157,
+            "px": 0.1737,
+            "p2": 0.7106,
             "pOver25": 0.6767,
             "pUnder25": 0.3233,
-            "pGG": 0.5712,
-            "pNG": 0.4288,
+            "pGG": 0.5714,
+            "pNG": 0.4286,
             "topExact": [
               [
                 "0-2",
-                0.0985
+                0.0984
               ],
               [
                 "1-2",
@@ -18046,7 +19606,7 @@
               ],
               [
                 "0-3",
-                0.0834
+                0.0833
               ]
             ],
             "totalGoalsDist": {
@@ -18063,9 +19623,9 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.7108,
-                  "odds": 1.72,
-                  "edge": 0.2227,
+                  "p": 0.7106,
+                  "odds": 1.74,
+                  "edge": 0.2364,
                   "kelly": 0.05
                 },
                 {
@@ -18073,35 +19633,35 @@
                   "p": 0.6767,
                   "odds": 1.54,
                   "edge": 0.0421,
-                  "kelly": 0.0389
+                  "kelly": 0.039
                 },
                 {
                   "market": "Under 2.5",
                   "p": 0.3233,
                   "odds": 2.42,
-                  "edge": -0.2175,
+                  "edge": -0.2176,
                   "kelly": 0.0
                 },
                 {
                   "market": "X",
-                  "p": 0.1736,
+                  "p": 0.1737,
                   "odds": 4.3,
-                  "edge": -0.2535,
+                  "edge": -0.2531,
                   "kelly": 0.0
                 },
                 {
                   "market": "1",
-                  "p": 0.1156,
-                  "odds": 5.1,
-                  "edge": -0.4107,
+                  "p": 0.1157,
+                  "odds": 5.0,
+                  "edge": -0.4214,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.7108,
-                "odds": 1.72,
-                "edge": 0.2227,
+                "p": 0.7106,
+                "odds": 1.74,
+                "edge": 0.2364,
                 "kelly": 0.05
               }
             }
@@ -18134,12 +19694,12 @@
             "homeTeam": "Groningen",
             "awayTeam": "FC Utrecht",
             "commenceTime": "2026-08-09T12:30:00Z",
-            "n_books": 19,
-            "1": 2.299,
-            "X": 3.363,
-            "2": 2.856,
-            "over25": 1.758,
-            "under25": 1.992,
+            "n_books": 18,
+            "1": 2.3,
+            "X": 3.378,
+            "2": 2.865,
+            "over25": 1.766,
+            "under25": 2.002,
             "gg": null,
             "ng": null,
             "best": {
@@ -18151,19 +19711,19 @@
             }
           },
           "prediction": {
-            "lambdaH": 1.55,
+            "lambdaH": 1.551,
             "lambdaA": 1.974,
             "rho": -0.07,
             "lambdaHRaw": 1.573,
             "lambdaARaw": 2.195,
             "marketWeight": 0.25,
-            "p1": 0.2992,
+            "p1": 0.2993,
             "px": 0.2301,
-            "p2": 0.4706,
-            "pOver25": 0.6832,
-            "pUnder25": 0.3168,
-            "pGG": 0.6845,
-            "pNG": 0.3155,
+            "p2": 0.4705,
+            "pOver25": 0.6833,
+            "pUnder25": 0.3167,
+            "pGG": 0.6846,
+            "pNG": 0.3154,
             "topExact": [
               [
                 "1-1",
@@ -18180,28 +19740,28 @@
             ],
             "totalGoalsDist": {
               "0": 0.0358,
-              "1": 0.0914,
+              "1": 0.0913,
               "2": 0.1896,
               "3": 0.2153,
               "4": 0.1897,
               "5": 0.1337,
-              "6": 0.0785,
-              "7+": 0.066
+              "6": 0.0786,
+              "7+": 0.0661
             },
             "value": {
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.4706,
+                  "p": 0.4705,
                   "odds": 3.0,
-                  "edge": 0.4119,
+                  "edge": 0.4116,
                   "kelly": 0.05
                 },
                 {
                   "market": "Over 2.5",
-                  "p": 0.6832,
+                  "p": 0.6833,
                   "odds": 1.82,
-                  "edge": 0.2434,
+                  "edge": 0.2436,
                   "kelly": 0.05
                 },
                 {
@@ -18213,24 +19773,24 @@
                 },
                 {
                   "market": "1",
-                  "p": 0.2992,
+                  "p": 0.2993,
                   "odds": 2.43,
-                  "edge": -0.2729,
+                  "edge": -0.2726,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
-                  "p": 0.3168,
+                  "p": 0.3167,
                   "odds": 2.04,
-                  "edge": -0.3537,
+                  "edge": -0.3539,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.4706,
+                "p": 0.4705,
                 "odds": 3.0,
-                "edge": 0.4119,
+                "edge": 0.4116,
                 "kelly": 0.05
               }
             }
@@ -18263,36 +19823,36 @@
             "homeTeam": "FC Zwolle",
             "awayTeam": "Ajax",
             "commenceTime": "2026-08-09T12:30:00Z",
-            "n_books": 20,
-            "1": 5.725,
-            "X": 4.468,
-            "2": 1.465,
+            "n_books": 19,
+            "1": 5.702,
+            "X": 4.473,
+            "2": 1.476,
             "over25": 1.46,
             "under25": 2.58,
             "gg": null,
             "ng": null,
             "best": {
               "1": 7.0,
-              "X": 4.8,
+              "X": 4.75,
               "2": 1.52,
               "over25": 1.47,
               "under25": 2.62
             }
           },
           "prediction": {
-            "lambdaH": 1.057,
-            "lambdaA": 2.632,
+            "lambdaH": 1.058,
+            "lambdaA": 2.63,
             "rho": -0.07,
             "lambdaHRaw": 1.056,
             "lambdaARaw": 2.765,
             "marketWeight": 0.25,
-            "p1": 0.1251,
-            "px": 0.1715,
-            "p2": 0.7034,
+            "p1": 0.1254,
+            "px": 0.1717,
+            "p2": 0.7029,
             "pOver25": 0.7109,
             "pUnder25": 0.2891,
-            "pGG": 0.6101,
-            "pNG": 0.3899,
+            "pGG": 0.6104,
+            "pNG": 0.3896,
             "topExact": [
               [
                 "1-2",
@@ -18300,11 +19860,11 @@
               ],
               [
                 "0-2",
-                0.0871
+                0.087
               ],
               [
                 "1-3",
-                0.0808
+                0.0807
               ]
             ],
             "totalGoalsDist": {
@@ -18321,9 +19881,9 @@
               "rows": [
                 {
                   "market": "2",
-                  "p": 0.7034,
+                  "p": 0.7029,
                   "odds": 1.52,
-                  "edge": 0.0691,
+                  "edge": 0.0685,
                   "kelly": 0.05
                 },
                 {
@@ -18331,35 +19891,35 @@
                   "p": 0.7109,
                   "odds": 1.47,
                   "edge": 0.0451,
-                  "kelly": 0.0479
+                  "kelly": 0.048
                 },
                 {
                   "market": "1",
-                  "p": 0.1251,
+                  "p": 0.1254,
                   "odds": 7.0,
-                  "edge": -0.1242,
+                  "edge": -0.1221,
                   "kelly": 0.0
                 },
                 {
                   "market": "X",
-                  "p": 0.1715,
-                  "odds": 4.8,
-                  "edge": -0.1768,
+                  "p": 0.1717,
+                  "odds": 4.75,
+                  "edge": -0.1846,
                   "kelly": 0.0
                 },
                 {
                   "market": "Under 2.5",
                   "p": 0.2891,
                   "odds": 2.62,
-                  "edge": -0.2426,
+                  "edge": -0.2427,
                   "kelly": 0.0
                 }
               ],
               "bestBet": {
                 "market": "2",
-                "p": 0.7034,
+                "p": 0.7029,
                 "odds": 1.52,
-                "edge": 0.0691,
+                "edge": 0.0685,
                 "kelly": 0.05
               }
             }
@@ -21416,6 +22976,266 @@
               "5": 0.1688,
               "6": 0.1212,
               "7+": 0.1334
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558889,
+          "date": "2026-09-19",
+          "time": "14:30",
+          "matchday": 7,
+          "homeTeam": "ADO Den Haag",
+          "homeId": 680,
+          "awayTeam": "SC Cambuur-Leeuwarden",
+          "awayId": 1909,
+          "homeStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "awayStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.702,
+            "lambdaA": 1.48,
+            "rho": -0.07,
+            "lambdaHRaw": 1.702,
+            "lambdaARaw": 1.48,
+            "marketWeight": 0.25,
+            "p1": 0.4232,
+            "px": 0.2483,
+            "p2": 0.3285,
+            "pOver25": 0.6161,
+            "pUnder25": 0.3839,
+            "pGG": 0.6388,
+            "pNG": 0.3612,
+            "topExact": [
+              [
+                "1-1",
+                0.1119
+              ],
+              [
+                "2-1",
+                0.089
+              ],
+              [
+                "1-2",
+                0.0774
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0488,
+              "1": 0.1175,
+              "2": 0.2175,
+              "3": 0.223,
+              "4": 0.1774,
+              "5": 0.1129,
+              "6": 0.0599,
+              "7+": 0.043
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558890,
+          "date": "2026-09-19",
+          "time": "16:45",
+          "matchday": 7,
+          "homeTeam": "Sparta Rotterdam",
+          "homeId": 6806,
+          "awayTeam": "SC Heerenveen",
+          "awayId": 673,
+          "homeStats": {
+            "gf_pg": 1.0,
+            "ga_pg": 2.15,
+            "form": "LLDLL",
+            "elo": 1398.0,
+            "played": 13
+          },
+          "awayStats": {
+            "gf_pg": 1.79,
+            "ga_pg": 1.57,
+            "form": "DLWWL",
+            "elo": 1539.0,
+            "played": 14
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.339,
+            "lambdaA": 2.969,
+            "rho": -0.07,
+            "lambdaHRaw": 1.339,
+            "lambdaARaw": 2.969,
+            "marketWeight": 0.25,
+            "p1": 0.1418,
+            "px": 0.1598,
+            "p2": 0.6984,
+            "pOver25": 0.8014,
+            "pUnder25": 0.1986,
+            "pGG": 0.7033,
+            "pNG": 0.2967,
+            "topExact": [
+              [
+                "1-2",
+                0.0803
+              ],
+              [
+                "1-3",
+                0.0795
+              ],
+              [
+                "0-2",
+                0.06
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0174,
+              "1": 0.0511,
+              "2": 0.1301,
+              "3": 0.1814,
+              "4": 0.1954,
+              "5": 0.1683,
+              "6": 0.1209,
+              "7+": 0.1354
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558887,
+          "date": "2026-09-19",
+          "time": "18:00",
+          "matchday": 7,
+          "homeTeam": "AFC Ajax",
+          "homeId": 678,
+          "awayTeam": "SBV Excelsior",
+          "awayId": 670,
+          "homeStats": {
+            "gf_pg": 1.62,
+            "ga_pg": 1.0,
+            "form": "DLDWW",
+            "elo": 1536.0,
+            "played": 13
+          },
+          "awayStats": {
+            "gf_pg": 1.62,
+            "ga_pg": 1.46,
+            "form": "WDWWD",
+            "elo": 1499.0,
+            "played": 13
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.196,
+            "lambdaA": 1.417,
+            "rho": -0.07,
+            "lambdaHRaw": 2.196,
+            "lambdaARaw": 1.417,
+            "marketWeight": 0.25,
+            "p1": 0.5456,
+            "px": 0.216,
+            "p2": 0.2384,
+            "pOver25": 0.6989,
+            "pUnder25": 0.3011,
+            "pGG": 0.679,
+            "pNG": 0.321,
+            "topExact": [
+              [
+                "2-1",
+                0.0923
+              ],
+              [
+                "1-1",
+                0.09
+              ],
+              [
+                "3-1",
+                0.0676
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0329,
+              "1": 0.0859,
+              "2": 0.1823,
+              "3": 0.2125,
+              "4": 0.1919,
+              "5": 0.1387,
+              "6": 0.0835,
+              "7+": 0.0724
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558886,
+          "date": "2026-09-19",
+          "time": "19:00",
+          "matchday": 7,
+          "homeTeam": "Willem II Tilburg",
+          "homeId": 672,
+          "awayTeam": "Fortuna Sittard",
+          "awayId": 1920,
+          "homeStats": {
+            "gf_pg": 0.0,
+            "ga_pg": 0.0,
+            "form": "",
+            "elo": 1500,
+            "played": 0
+          },
+          "awayStats": {
+            "gf_pg": 1.38,
+            "ga_pg": 2.08,
+            "form": "LWLLD",
+            "elo": 1428.0,
+            "played": 13
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.744,
+            "lambdaA": 1.289,
+            "rho": -0.07,
+            "lambdaHRaw": 2.744,
+            "lambdaARaw": 1.289,
+            "marketWeight": 0.25,
+            "p1": 0.6732,
+            "px": 0.1733,
+            "p2": 0.1536,
+            "pOver25": 0.765,
+            "pUnder25": 0.235,
+            "pGG": 0.682,
+            "pNG": 0.318,
+            "topExact": [
+              [
+                "2-1",
+                0.0866
+              ],
+              [
+                "3-1",
+                0.0792
+              ],
+              [
+                "1-1",
+                0.0676
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0223,
+              "1": 0.0632,
+              "2": 0.1496,
+              "3": 0.1952,
+              "4": 0.1968,
+              "5": 0.1587,
+              "6": 0.1067,
+              "7+": 0.1076
             },
             "value": null
           }
