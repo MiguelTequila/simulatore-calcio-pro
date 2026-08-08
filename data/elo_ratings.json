@@ -480,8 +480,8 @@
     "games": 16
   },
   "SBV Excelsior": {
-    "elo": 1499.0507139302179,
-    "games": 14
+    "elo": 1535.1129030995025,
+    "games": 15
   },
   "AFC Ajax": {
     "elo": 1536.0798084323092,
@@ -626,5 +626,9 @@
   "Cagliari Calcio": {
     "elo": 1444.7106854470971,
     "games": 15
+  },
+  "SC Cambuur-Leeuwarden": {
+    "elo": 1464.4124538656065,
+    "games": 1
   }
 }
