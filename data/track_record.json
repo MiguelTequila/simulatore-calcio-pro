@@ -1,7 +1,7 @@
 {
- "graded": 1,
- "pending": 376,
- "brier": 0.1877,
+ "graded": 12,
+ "pending": 365,
+ "brier": 0.22,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,39 +11,39 @@
   },
   {
    "bin": "10-20%",
-   "n": 0,
-   "avgPred": null,
-   "actualFreq": null
+   "n": 3,
+   "avgPred": 0.1618,
+   "actualFreq": 0.0
   },
   {
    "bin": "20-30%",
-   "n": 1,
-   "avgPred": 0.2329,
-   "actualFreq": 0.0
+   "n": 14,
+   "avgPred": 0.2467,
+   "actualFreq": 0.2143
   },
   {
    "bin": "30-40%",
-   "n": 2,
-   "avgPred": 0.3176,
-   "actualFreq": 0.5
+   "n": 16,
+   "avgPred": 0.3461,
+   "actualFreq": 0.4375
   },
   {
    "bin": "40-50%",
-   "n": 1,
-   "avgPred": 0.4537,
-   "actualFreq": 0.0
+   "n": 11,
+   "avgPred": 0.43,
+   "actualFreq": 0.5455
   },
   {
    "bin": "50-60%",
-   "n": 0,
-   "avgPred": null,
-   "actualFreq": null
+   "n": 6,
+   "avgPred": 0.5589,
+   "actualFreq": 0.5
   },
   {
    "bin": "60-70%",
-   "n": 1,
-   "avgPred": 0.6781,
-   "actualFreq": 1.0
+   "n": 10,
+   "avgPred": 0.6439,
+   "actualFreq": 0.5
   },
   {
    "bin": "70-80%",
@@ -65,11 +65,21 @@
   }
  ],
  "valueBets": {
-  "n": 1,
-  "wins": 0,
-  "profitUnits": -1.0,
-  "roi": -1.0,
+  "n": 9,
+  "wins": 1,
+  "profitUnits": -4.8,
+  "roi": -0.5333,
   "history": [
+   {
+    "date": "2026-08-07",
+    "match": "GD Estoril Praia - FC Famalicão",
+    "market": "2",
+    "odds": 2.58,
+    "edge": 0.321,
+    "won": false,
+    "pl": -1.0,
+    "cum": -1.0
+   },
    {
     "date": "2026-08-07",
     "match": "SC Cambuur-Leeuwarden - SBV Excelsior",
@@ -78,7 +88,77 @@
     "edge": 0.2523,
     "won": false,
     "pl": -1.0,
-    "cum": -1.0
+    "cum": -2.0
+   },
+   {
+    "date": "2026-08-08",
+    "match": "Vitória SC - FC Arouca",
+    "market": "2",
+    "odds": 4.2,
+    "edge": 0.3125,
+    "won": true,
+    "pl": 3.2,
+    "cum": 1.2
+   },
+   {
+    "date": "2026-08-08",
+    "match": "Go Ahead Eagles - Willem II Tilburg",
+    "market": "2",
+    "odds": 6.6,
+    "edge": 0.932,
+    "won": false,
+    "pl": -1.0,
+    "cum": 0.2
+   },
+   {
+    "date": "2026-08-08",
+    "match": "PSV - Fortuna Sittard",
+    "market": "2",
+    "odds": 18.5,
+    "edge": 2.2218,
+    "won": false,
+    "pl": -1.0,
+    "cum": -0.8
+   },
+   {
+    "date": "2026-08-08",
+    "match": "AZ - ADO Den Haag",
+    "market": "2",
+    "odds": 8.4,
+    "edge": 1.1513,
+    "won": false,
+    "pl": -1.0,
+    "cum": -1.8
+   },
+   {
+    "date": "2026-08-09",
+    "match": "Sparta Rotterdam - Feyenoord Rotterdam",
+    "market": "1",
+    "odds": 4.9,
+    "edge": 0.4757,
+    "won": false,
+    "pl": -1.0,
+    "cum": -2.8
+   },
+   {
+    "date": "2026-08-09",
+    "match": "FC Groningen - FC Utrecht",
+    "market": "2",
+    "odds": 3.15,
+    "edge": 0.125,
+    "won": false,
+    "pl": -1.0,
+    "cum": -3.8
+   },
+   {
+    "date": "2026-08-09",
+    "match": "PEC Zwolle - AFC Ajax",
+    "market": "1",
+    "odds": 6.8,
+    "edge": 1.0533,
+    "won": false,
+    "pl": -1.0,
+    "cum": -4.8
    }
   ]
  }

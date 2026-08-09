@@ -92,20 +92,20 @@
     "games": 15
   },
   "CF Estrela da Amadora": {
-    "elo": 1424.8157416006559,
-    "games": 15
+    "elo": 1463.4126181848244,
+    "games": 16
   },
   "FC Arouca": {
-    "elo": 1518.270753417827,
-    "games": 15
+    "elo": 1527.658916069261,
+    "games": 16
   },
   "CD Santa Clara": {
     "elo": 1485.8286978257852,
     "games": 15
   },
   "FC Famalicão": {
-    "elo": 1560.025254170095,
-    "games": 15
+    "elo": 1529.8742214670738,
+    "games": 16
   },
   "Sport Lisboa e Benfica": {
     "elo": 1623.003923042553,
@@ -256,8 +256,8 @@
     "games": 23
   },
   "Casa Pia AC": {
-    "elo": 1428.8695861331323,
-    "games": 15
+    "elo": 1452.9408483057948,
+    "games": 16
   },
   "CD Tondela": {
     "elo": 1432.490585963642,
@@ -268,8 +268,8 @@
     "games": 15
   },
   "GD Estoril Praia": {
-    "elo": 1424.0142246198138,
-    "games": 15
+    "elo": 1462.1455179278805,
+    "games": 16
   },
   "Rio Ave FC": {
     "elo": 1458.8316262018125,
@@ -376,12 +376,12 @@
     "games": 17
   },
   "Sporting Clube de Portugal": {
-    "elo": 1598.508860141887,
-    "games": 19
+    "elo": 1548.2496826864472,
+    "games": 20
   },
   "Vitória SC": {
-    "elo": 1498.7892536590955,
-    "games": 15
+    "elo": 1480.8710874692001,
+    "games": 16
   },
   "Paris Saint-Germain FC": {
     "elo": 1625.6104910379734,
@@ -484,40 +484,40 @@
     "games": 15
   },
   "AFC Ajax": {
-    "elo": 1536.0798084323092,
-    "games": 14
+    "elo": 1542.155236881593,
+    "games": 15
   },
   "Heracles Almelo": {
     "elo": 1314.5539176429602,
     "games": 14
   },
   "Fortuna Sittard": {
-    "elo": 1428.1603322781657,
-    "games": 14
+    "elo": 1471.3793964952395,
+    "games": 15
   },
   "PSV": {
-    "elo": 1640.387455884995,
-    "games": 14
+    "elo": 1562.8944975863408,
+    "games": 15
   },
   "Feyenoord Rotterdam": {
-    "elo": 1569.6543355180645,
-    "games": 14
+    "elo": 1549.87145854904,
+    "games": 15
   },
   "SC Heerenveen": {
     "elo": 1539.2203081365005,
     "games": 15
   },
   "FC Utrecht": {
-    "elo": 1592.252380533643,
-    "games": 15
+    "elo": 1531.2781008648778,
+    "games": 16
   },
   "FC Volendam": {
     "elo": 1437.858337987633,
     "games": 14
   },
   "Go Ahead Eagles": {
-    "elo": 1475.0065440775493,
-    "games": 15
+    "elo": 1511.3039254047287,
+    "games": 16
   },
   "Udinese Calcio": {
     "elo": 1527.3607881004416,
@@ -576,20 +576,20 @@
     "games": 15
   },
   "NEC": {
-    "elo": 1541.163860796213,
-    "games": 14
+    "elo": 1501.6752956231196,
+    "games": 15
   },
   "PEC Zwolle": {
-    "elo": 1409.4190568158683,
-    "games": 13
+    "elo": 1430.5941957424957,
+    "games": 14
   },
   "FC Twente '65": {
     "elo": 1579.923021835408,
     "games": 13
   },
   "Sparta Rotterdam": {
-    "elo": 1398.0989430844816,
-    "games": 13
+    "elo": 1434.0051807522332,
+    "games": 14
   },
   "Le Havre AC": {
     "elo": 1475.175141560834,
@@ -612,16 +612,16 @@
     "games": 15
   },
   "AZ": {
-    "elo": 1538.1219914343662,
-    "games": 13
+    "elo": 1537.3649815881922,
+    "games": 14
   },
   "Telstar 1963": {
-    "elo": 1543.5134986558023,
-    "games": 13
+    "elo": 1540.6633841028881,
+    "games": 14
   },
   "FC Groningen": {
-    "elo": 1512.3659249357636,
-    "games": 13
+    "elo": 1521.0310518698254,
+    "games": 14
   },
   "Cagliari Calcio": {
     "elo": 1444.7106854470971,
@@ -629,6 +629,18 @@
   },
   "SC Cambuur-Leeuwarden": {
     "elo": 1464.4124538656065,
+    "games": 1
+  },
+  "CS Marítimo": {
+    "elo": 1511.4939447607715,
+    "games": 1
+  },
+  "Willem II Tilburg": {
+    "elo": 1476.199346634046,
+    "games": 1
+  },
+  "ADO Den Haag": {
+    "elo": 1481.696014128991,
     "games": 1
   }
 }
