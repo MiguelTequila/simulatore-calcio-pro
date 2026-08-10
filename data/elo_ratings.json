@@ -88,8 +88,8 @@
     "games": 15
   },
   "Moreirense FC": {
-    "elo": 1422.1984115142868,
-    "games": 15
+    "elo": 1461.288171532235,
+    "games": 16
   },
   "CF Estrela da Amadora": {
     "elo": 1463.4126181848244,
@@ -108,16 +108,16 @@
     "games": 16
   },
   "Sport Lisboa e Benfica": {
-    "elo": 1623.003923042553,
-    "games": 17
+    "elo": 1555.9208098057968,
+    "games": 18
   },
   "FC Porto": {
-    "elo": 1619.6738764894724,
-    "games": 15
+    "elo": 1575.3247542820768,
+    "games": 16
   },
   "FC Alverca": {
-    "elo": 1492.0291067783164,
-    "games": 15
+    "elo": 1480.5267373518177,
+    "games": 16
   },
   "TSG 1899 Hoffenheim": {
     "elo": 1508.0813261632068,
@@ -264,20 +264,20 @@
     "games": 15
   },
   "Sporting Clube de Braga": {
-    "elo": 1560.4054724538448,
-    "games": 15
+    "elo": 1530.0137704518306,
+    "games": 16
   },
   "GD Estoril Praia": {
     "elo": 1462.1455179278805,
     "games": 16
   },
   "Rio Ave FC": {
-    "elo": 1458.8316262018125,
-    "games": 15
+    "elo": 1467.1663523617906,
+    "games": 16
   },
   "Gil Vicente FC": {
-    "elo": 1494.8012164858178,
-    "games": 15
+    "elo": 1509.6500689820245,
+    "games": 16
   },
   "FC St. Pauli 1910": {
     "elo": 1409.8414012602982,
@@ -504,8 +504,8 @@
     "games": 15
   },
   "SC Heerenveen": {
-    "elo": 1539.2203081365005,
-    "games": 15
+    "elo": 1533.565252598048,
+    "games": 16
   },
   "FC Utrecht": {
     "elo": 1531.2781008648778,
@@ -584,8 +584,8 @@
     "games": 14
   },
   "FC Twente '65": {
-    "elo": 1579.923021835408,
-    "games": 13
+    "elo": 1526.0064123879063,
+    "games": 14
   },
   "Sparta Rotterdam": {
     "elo": 1434.0051807522332,
@@ -641,6 +641,10 @@
   },
   "ADO Den Haag": {
     "elo": 1481.696014128991,
+    "games": 1
+  },
+  "Académico de Viseu FC": {
+    "elo": 1505.5811517154796,
     "games": 1
   }
 }
