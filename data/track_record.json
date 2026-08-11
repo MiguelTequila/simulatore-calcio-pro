@@ -1,7 +1,7 @@
 {
- "graded": 17,
- "pending": 360,
- "brier": 0.2245,
+ "graded": 18,
+ "pending": 359,
+ "brier": 0.2257,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,9 +17,9 @@
   },
   {
    "bin": "20-30%",
-   "n": 21,
-   "avgPred": 0.246,
-   "actualFreq": 0.2381
+   "n": 23,
+   "avgPred": 0.2487,
+   "actualFreq": 0.2609
   },
   {
    "bin": "30-40%",
@@ -29,15 +29,15 @@
   },
   {
    "bin": "40-50%",
-   "n": 17,
-   "avgPred": 0.4282,
-   "actualFreq": 0.5882
+   "n": 19,
+   "avgPred": 0.4302,
+   "actualFreq": 0.5263
   },
   {
    "bin": "50-60%",
-   "n": 11,
-   "avgPred": 0.5689,
-   "actualFreq": 0.4545
+   "n": 12,
+   "avgPred": 0.5674,
+   "actualFreq": 0.5
   },
   {
    "bin": "60-70%",
@@ -65,10 +65,10 @@
   }
  ],
  "valueBets": {
-  "n": 13,
+  "n": 14,
   "wins": 1,
-  "profitUnits": -8.8,
-  "roi": -0.6769,
+  "profitUnits": -9.8,
+  "roi": -0.7,
   "history": [
    {
     "date": "2026-08-07",
@@ -199,6 +199,16 @@
     "won": false,
     "pl": -1.0,
     "cum": -8.8
+   },
+   {
+    "date": "2026-08-10",
+    "match": "CD Santa Clara - CD Nacional",
+    "market": "2",
+    "odds": 5.2,
+    "edge": 0.5186,
+    "won": false,
+    "pl": -1.0,
+    "cum": -9.8
    }
   ]
  }
