@@ -1,7 +1,7 @@
 {
- "graded": 20,
- "pending": 357,
- "brier": 0.222,
+ "graded": 29,
+ "pending": 348,
+ "brier": 0.2057,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,39 +17,39 @@
   },
   {
    "bin": "20-30%",
-   "n": 27,
-   "avgPred": 0.2483,
-   "actualFreq": 0.2593
+   "n": 42,
+   "avgPred": 0.2461,
+   "actualFreq": 0.2143
   },
   {
    "bin": "30-40%",
-   "n": 22,
-   "avgPred": 0.3484,
-   "actualFreq": 0.3636
+   "n": 32,
+   "avgPred": 0.3449,
+   "actualFreq": 0.3125
   },
   {
    "bin": "40-50%",
-   "n": 20,
-   "avgPred": 0.4323,
-   "actualFreq": 0.55
+   "n": 29,
+   "avgPred": 0.4386,
+   "actualFreq": 0.5172
   },
   {
    "bin": "50-60%",
-   "n": 13,
-   "avgPred": 0.5657,
-   "actualFreq": 0.4615
+   "n": 17,
+   "avgPred": 0.5597,
+   "actualFreq": 0.5294
   },
   {
    "bin": "60-70%",
-   "n": 14,
-   "avgPred": 0.6401,
-   "actualFreq": 0.5714
+   "n": 19,
+   "avgPred": 0.6436,
+   "actualFreq": 0.6842
   },
   {
    "bin": "70-80%",
-   "n": 0,
-   "avgPred": null,
-   "actualFreq": null
+   "n": 2,
+   "avgPred": 0.7475,
+   "actualFreq": 1.0
   },
   {
    "bin": "80-90%",
@@ -65,10 +65,10 @@
   }
  ],
  "valueBets": {
-  "n": 14,
-  "wins": 1,
-  "profitUnits": -9.8,
-  "roi": -0.7,
+  "n": 22,
+  "wins": 3,
+  "profitUnits": -13.5,
+  "roi": -0.6136,
   "history": [
    {
     "date": "2026-08-07",
@@ -209,6 +209,86 @@
     "won": false,
     "pl": -1.0,
     "cum": -9.8
+   },
+   {
+    "date": "2026-08-15",
+    "match": "Deportivo Alavés - Getafe CF",
+    "market": "2",
+    "odds": 3.85,
+    "edge": 0.5451,
+    "won": false,
+    "pl": -1.0,
+    "cum": -10.8
+   },
+   {
+    "date": "2026-08-15",
+    "match": "Sevilla FC - Rayo Vallecano de Madrid",
+    "market": "2",
+    "odds": 3.3,
+    "edge": 0.6162,
+    "won": false,
+    "pl": -1.0,
+    "cum": -11.8
+   },
+   {
+    "date": "2026-08-15",
+    "match": "Willem II Tilburg - NEC",
+    "market": "1",
+    "odds": 5.6,
+    "edge": 0.5922,
+    "won": false,
+    "pl": -1.0,
+    "cum": -12.8
+   },
+   {
+    "date": "2026-08-15",
+    "match": "FC Utrecht - AZ",
+    "market": "Over 2.5",
+    "odds": 1.74,
+    "edge": 0.1146,
+    "won": true,
+    "pl": 0.74,
+    "cum": -12.06
+   },
+   {
+    "date": "2026-08-15",
+    "match": "SBV Excelsior - PSV",
+    "market": "1",
+    "odds": 6.75,
+    "edge": 2.0674,
+    "won": false,
+    "pl": -1.0,
+    "cum": -13.06
+   },
+   {
+    "date": "2026-08-15",
+    "match": "Fortuna Sittard - SC Cambuur-Leeuwarden",
+    "market": "2",
+    "odds": 5.2,
+    "edge": 0.1408,
+    "won": false,
+    "pl": -1.0,
+    "cum": -14.06
+   },
+   {
+    "date": "2026-08-16",
+    "match": "ADO Den Haag - FC Groningen",
+    "market": "2",
+    "odds": 2.56,
+    "edge": 0.1226,
+    "won": true,
+    "pl": 1.56,
+    "cum": -12.5
+   },
+   {
+    "date": "2026-08-16",
+    "match": "Feyenoord Rotterdam - Go Ahead Eagles",
+    "market": "2",
+    "odds": 8.0,
+    "edge": 1.5906,
+    "won": false,
+    "pl": -1.0,
+    "cum": -13.5
    }
   ]
  }
