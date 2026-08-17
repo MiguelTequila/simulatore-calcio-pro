@@ -48,12 +48,12 @@
     "games": 15
   },
   "Villarreal CF": {
-    "elo": 1560.2225289553544,
-    "games": 18
+    "elo": 1531.7125713489083,
+    "games": 19
   },
   "Levante UD": {
-    "elo": 1489.713950430412,
-    "games": 18
+    "elo": 1468.5399203333604,
+    "games": 19
   },
   "Valencia CF": {
     "elo": 1507.7641356932406,
@@ -80,44 +80,44 @@
     "games": 21
   },
   "CD Nacional": {
-    "elo": 1487.4713558066803,
-    "games": 16
+    "elo": 1505.368742072074,
+    "games": 17
   },
   "AVS": {
     "elo": 1443.4012839025254,
     "games": 15
   },
   "Moreirense FC": {
-    "elo": 1461.288171532235,
-    "games": 16
+    "elo": 1442.120261920818,
+    "games": 17
   },
   "CF Estrela da Amadora": {
-    "elo": 1463.4126181848244,
-    "games": 16
+    "elo": 1467.1252423208236,
+    "games": 17
   },
   "FC Arouca": {
-    "elo": 1527.658916069261,
-    "games": 16
+    "elo": 1546.8268256806782,
+    "games": 17
   },
   "CD Santa Clara": {
-    "elo": 1489.566338091735,
-    "games": 16
+    "elo": 1509.2310280545692,
+    "games": 17
   },
   "FC Famalicão": {
-    "elo": 1529.8742214670738,
-    "games": 16
+    "elo": 1510.106474941554,
+    "games": 17
   },
   "Sport Lisboa e Benfica": {
     "elo": 1555.9208098057968,
     "games": 18
   },
   "FC Porto": {
-    "elo": 1575.3247542820768,
-    "games": 16
+    "elo": 1596.3587177077372,
+    "games": 17
   },
   "FC Alverca": {
-    "elo": 1480.5267373518177,
-    "games": 16
+    "elo": 1476.8141132158185,
+    "games": 17
   },
   "TSG 1899 Hoffenheim": {
     "elo": 1508.0813261632068,
@@ -248,8 +248,8 @@
     "games": 17
   },
   "RCD Espanyol de Barcelona": {
-    "elo": 1401.5297127858673,
-    "games": 17
+    "elo": 1477.0819112747795,
+    "games": 18
   },
   "Real Madrid CF": {
     "elo": 1601.6826889709012,
@@ -268,12 +268,12 @@
     "games": 16
   },
   "GD Estoril Praia": {
-    "elo": 1462.1455179278805,
-    "games": 16
+    "elo": 1444.248131662487,
+    "games": 17
   },
   "Rio Ave FC": {
-    "elo": 1467.1663523617906,
-    "games": 16
+    "elo": 1446.1323889361302,
+    "games": 17
   },
   "Gil Vicente FC": {
     "elo": 1509.6500689820245,
@@ -484,8 +484,8 @@
     "games": 16
   },
   "AFC Ajax": {
-    "elo": 1542.155236881593,
-    "games": 15
+    "elo": 1538.816079089412,
+    "games": 16
   },
   "Heracles Almelo": {
     "elo": 1314.5539176429602,
@@ -504,8 +504,8 @@
     "games": 16
   },
   "SC Heerenveen": {
-    "elo": 1533.565252598048,
-    "games": 16
+    "elo": 1536.904410390229,
+    "games": 17
   },
   "FC Utrecht": {
     "elo": 1498.575251123432,
@@ -632,8 +632,8 @@
     "games": 2
   },
   "CS Marítimo": {
-    "elo": 1511.4939447607715,
-    "games": 1
+    "elo": 1531.2616912862911,
+    "games": 2
   },
   "Willem II Tilburg": {
     "elo": 1445.0277540683678,
@@ -644,7 +644,11 @@
     "games": 2
   },
   "Académico de Viseu FC": {
-    "elo": 1505.5811517154796,
+    "elo": 1485.9164617526453,
+    "games": 2
+  },
+  "Real Racing Club de Santander": {
+    "elo": 1498.3986931287689,
     "games": 1
   }
 }
