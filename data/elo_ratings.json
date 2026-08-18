@@ -108,8 +108,8 @@
     "games": 17
   },
   "Sport Lisboa e Benfica": {
-    "elo": 1555.9208098057968,
-    "games": 18
+    "elo": 1588.0010665639459,
+    "games": 19
   },
   "FC Porto": {
     "elo": 1596.3587177077372,
@@ -228,8 +228,8 @@
     "games": 17
   },
   "Elche CF": {
-    "elo": 1473.8715316601586,
-    "games": 17
+    "elo": 1490.4714570938913,
+    "games": 18
   },
   "Getafe CF": {
     "elo": 1499.5061328790125,
@@ -256,8 +256,8 @@
     "games": 23
   },
   "Casa Pia AC": {
-    "elo": 1452.9408483057948,
-    "games": 16
+    "elo": 1420.8605915476458,
+    "games": 17
   },
   "CD Tondela": {
     "elo": 1432.490585963642,
@@ -649,6 +649,10 @@
   },
   "Real Racing Club de Santander": {
     "elo": 1498.3986931287689,
+    "games": 1
+  },
+  "RC Deportivo La Coruña": {
+    "elo": 1496.4643087361878,
     "games": 1
   }
 }
