@@ -60,8 +60,8 @@
     "games": 17
   },
   "Club Atlético de Madrid": {
-    "elo": 1522.9521623793532,
-    "games": 25
+    "elo": 1530.2769975964984,
+    "games": 26
   },
   "Deportivo Alavés": {
     "elo": 1515.9262274080538,
@@ -653,6 +653,10 @@
   },
   "RC Deportivo La Coruña": {
     "elo": 1496.4643087361878,
+    "games": 1
+  },
+  "Málaga CF": {
+    "elo": 1481.1990835931783,
     "games": 1
   }
 }

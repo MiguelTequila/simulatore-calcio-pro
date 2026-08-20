@@ -1,7 +1,7 @@
 {
- "graded": 40,
- "pending": 337,
- "brier": 0.2095,
+ "graded": 41,
+ "pending": 336,
+ "brier": 0.2108,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,21 +17,21 @@
   },
   {
    "bin": "20-30%",
-   "n": 57,
-   "avgPred": 0.2478,
-   "actualFreq": 0.2281
+   "n": 58,
+   "avgPred": 0.2476,
+   "actualFreq": 0.2241
   },
   {
    "bin": "30-40%",
-   "n": 46,
-   "avgPred": 0.3465,
-   "actualFreq": 0.3043
+   "n": 48,
+   "avgPred": 0.3461,
+   "actualFreq": 0.3125
   },
   {
    "bin": "40-50%",
-   "n": 43,
-   "avgPred": 0.4351,
-   "actualFreq": 0.5116
+   "n": 44,
+   "avgPred": 0.4353,
+   "actualFreq": 0.5227
   },
   {
    "bin": "50-60%",
@@ -41,9 +41,9 @@
   },
   {
    "bin": "60-70%",
-   "n": 25,
-   "avgPred": 0.6424,
-   "actualFreq": 0.72
+   "n": 26,
+   "avgPred": 0.6426,
+   "actualFreq": 0.6923
   },
   {
    "bin": "70-80%",
