@@ -1,7 +1,7 @@
 {
   "Leeds United FC": {
-    "elo": 1517.020433896889,
-    "games": 15
+    "elo": 1527.7942329485488,
+    "games": 16
   },
   "Burnley FC": {
     "elo": 1365.7727185487354,
@@ -36,12 +36,12 @@
     "games": 15
   },
   "Sunderland AFC": {
-    "elo": 1450.9460806485313,
-    "games": 15
+    "elo": 1463.5070183870364,
+    "games": 16
   },
   "Arsenal FC": {
-    "elo": 1633.1927614100946,
-    "games": 22
+    "elo": 1584.4706199469488,
+    "games": 23
   },
   "Fulham FC": {
     "elo": 1488.6392286157236,
@@ -204,12 +204,12 @@
     "games": 15
   },
   "Crystal Palace FC": {
-    "elo": 1488.612552839808,
-    "games": 15
+    "elo": 1474.6428154655152,
+    "games": 16
   },
   "Manchester United FC": {
-    "elo": 1580.3696430392763,
-    "games": 15
+    "elo": 1517.8960843860275,
+    "games": 16
   },
   "Liverpool FC": {
     "elo": 1536.344132732001,
@@ -240,8 +240,8 @@
     "games": 19
   },
   "Real Betis Balompié": {
-    "elo": 1527.8710910039,
-    "games": 17
+    "elo": 1526.2187163976494,
+    "games": 18
   },
   "Real Oviedo": {
     "elo": 1462.164890801849,
@@ -356,12 +356,12 @@
     "games": 17
   },
   "Nottingham Forest FC": {
-    "elo": 1531.6984421882141,
-    "games": 15
+    "elo": 1496.5652050940027,
+    "games": 16
   },
   "Everton FC": {
-    "elo": 1485.5620291264397,
-    "games": 15
+    "elo": 1512.4444755176085,
+    "games": 16
   },
   "Manchester City FC": {
     "elo": 1588.6233864426943,
@@ -372,8 +372,8 @@
     "games": 18
   },
   "Real Sociedad de Fútbol": {
-    "elo": 1493.4498286207497,
-    "games": 17
+    "elo": 1484.4417434146756,
+    "games": 18
   },
   "Sporting Clube de Portugal": {
     "elo": 1558.4322478726647,
@@ -456,8 +456,8 @@
     "games": 15
   },
   "RC Strasbourg Alsace": {
-    "elo": 1528.2728064080432,
-    "games": 15
+    "elo": 1488.2157683166101,
+    "games": 16
   },
   "Torino FC": {
     "elo": 1493.5620265654268,
@@ -600,8 +600,8 @@
     "games": 14
   },
   "Olympique de Marseille": {
-    "elo": 1493.3494949517394,
-    "games": 14
+    "elo": 1522.595382363281,
+    "games": 15
   },
   "US Sassuolo Calcio": {
     "elo": 1474.916013431092,
@@ -657,6 +657,18 @@
   },
   "Málaga CF": {
     "elo": 1481.1990835931783,
+    "games": 1
+  },
+  "Coventry City FC": {
+    "elo": 1482.1257607580985,
+    "games": 1
+  },
+  "Hull City AFC": {
+    "elo": 1522.2887371336108,
+    "games": 1
+  },
+  "Ipswich Town FC": {
+    "elo": 1511.9660219372292,
     "games": 1
   }
 }
