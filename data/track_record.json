@@ -1,7 +1,7 @@
 {
- "graded": 73,
- "pending": 304,
- "brier": 0.2094,
+ "graded": 83,
+ "pending": 294,
+ "brier": 0.2113,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,45 +11,45 @@
   },
   {
    "bin": "10-20%",
-   "n": 18,
-   "avgPred": 0.1667,
-   "actualFreq": 0.0556
+   "n": 19,
+   "avgPred": 0.1683,
+   "actualFreq": 0.1053
   },
   {
    "bin": "20-30%",
-   "n": 104,
-   "avgPred": 0.2487,
-   "actualFreq": 0.2404
+   "n": 121,
+   "avgPred": 0.2492,
+   "actualFreq": 0.2314
   },
   {
    "bin": "30-40%",
-   "n": 77,
-   "avgPred": 0.3482,
-   "actualFreq": 0.3117
+   "n": 89,
+   "avgPred": 0.35,
+   "actualFreq": 0.3258
   },
   {
    "bin": "40-50%",
-   "n": 69,
-   "avgPred": 0.4429,
-   "actualFreq": 0.5652
+   "n": 77,
+   "avgPred": 0.4435,
+   "actualFreq": 0.5584
   },
   {
    "bin": "50-60%",
-   "n": 39,
-   "avgPred": 0.5591,
-   "actualFreq": 0.4359
+   "n": 43,
+   "avgPred": 0.5596,
+   "actualFreq": 0.4419
   },
   {
    "bin": "60-70%",
-   "n": 45,
-   "avgPred": 0.6449,
-   "actualFreq": 0.6667
+   "n": 51,
+   "avgPred": 0.6446,
+   "actualFreq": 0.6471
   },
   {
    "bin": "70-80%",
-   "n": 12,
+   "n": 14,
    "avgPred": 0.7375,
-   "actualFreq": 0.8333
+   "actualFreq": 0.8571
   },
   {
    "bin": "80-90%",
@@ -65,10 +65,10 @@
   }
  ],
  "valueBets": {
-  "n": 57,
-  "wins": 12,
-  "profitUnits": -19.31,
-  "roi": -0.3388,
+  "n": 65,
+  "wins": 13,
+  "profitUnits": -22.31,
+  "roi": -0.3432,
   "history": [
    {
     "date": "2026-08-07",
@@ -612,13 +612,93 @@
    },
    {
     "date": "2026-08-23",
+    "match": "Newcastle United FC - Liverpool FC",
+    "market": "1",
+    "odds": 4.06,
+    "edge": 0.4272,
+    "won": false,
+    "pl": -1.0,
+    "cum": -20.88
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Getafe CF - Real Racing Club de Santander",
+    "market": "Over 2.5",
+    "odds": 2.36,
+    "edge": 0.6471,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.88
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Elche CF - FC Barcelona",
+    "market": "1",
+    "odds": 9.6,
+    "edge": 1.4402,
+    "won": false,
+    "pl": -1.0,
+    "cum": -22.88
+   },
+   {
+    "date": "2026-08-23",
     "match": "Angers SCO - Lille OSC",
     "market": "2",
     "odds": 1.79,
     "edge": 0.2851,
     "won": true,
     "pl": 0.79,
-    "cum": -19.09
+    "cum": -22.09
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Le Havre AC - AS Monaco FC",
+    "market": "Over 2.5",
+    "odds": 1.66,
+    "edge": 0.1495,
+    "won": false,
+    "pl": -1.0,
+    "cum": -23.09
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Frosinone Calcio - Juventus FC",
+    "market": "1",
+    "odds": 8.5,
+    "edge": 1.7377,
+    "won": false,
+    "pl": -1.0,
+    "cum": -24.09
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Venezia FC - US Lecce",
+    "market": "2",
+    "odds": 5.0,
+    "edge": 0.4436,
+    "won": true,
+    "pl": 4.0,
+    "cum": -20.09
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Atalanta BC - US Sassuolo Calcio",
+    "market": "2",
+    "odds": 6.75,
+    "edge": 0.8136,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.09
+   },
+   {
+    "date": "2026-08-23",
+    "match": "Torino FC - AC Milan",
+    "market": "1",
+    "odds": 4.8,
+    "edge": 0.8225,
+    "won": false,
+    "pl": -1.0,
+    "cum": -22.09
    },
    {
     "date": "2026-08-23",
@@ -628,7 +708,7 @@
     "edge": 0.3016,
     "won": true,
     "pl": 0.78,
-    "cum": -18.31
+    "cum": -21.31
    },
    {
     "date": "2026-08-23",
@@ -638,7 +718,7 @@
     "edge": 1.9205,
     "won": false,
     "pl": -1.0,
-    "cum": -19.31
+    "cum": -22.31
    }
   ]
  }
