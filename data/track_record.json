@@ -1,7 +1,7 @@
 {
- "graded": 83,
- "pending": 294,
- "brier": 0.2113,
+ "graded": 93,
+ "pending": 302,
+ "brier": 0.2138,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,45 +11,45 @@
   },
   {
    "bin": "10-20%",
-   "n": 19,
-   "avgPred": 0.1683,
-   "actualFreq": 0.1053
+   "n": 23,
+   "avgPred": 0.1673,
+   "actualFreq": 0.087
   },
   {
    "bin": "20-30%",
-   "n": 121,
-   "avgPred": 0.2492,
-   "actualFreq": 0.2314
+   "n": 135,
+   "avgPred": 0.2503,
+   "actualFreq": 0.2296
   },
   {
    "bin": "30-40%",
-   "n": 89,
-   "avgPred": 0.35,
-   "actualFreq": 0.3258
+   "n": 98,
+   "avgPred": 0.3497,
+   "actualFreq": 0.3571
   },
   {
    "bin": "40-50%",
-   "n": 77,
-   "avgPred": 0.4435,
-   "actualFreq": 0.5584
+   "n": 86,
+   "avgPred": 0.4429,
+   "actualFreq": 0.5581
   },
   {
    "bin": "50-60%",
-   "n": 43,
-   "avgPred": 0.5596,
-   "actualFreq": 0.4419
+   "n": 49,
+   "avgPred": 0.5586,
+   "actualFreq": 0.4286
   },
   {
    "bin": "60-70%",
-   "n": 51,
-   "avgPred": 0.6446,
-   "actualFreq": 0.6471
+   "n": 57,
+   "avgPred": 0.6458,
+   "actualFreq": 0.6316
   },
   {
    "bin": "70-80%",
-   "n": 14,
-   "avgPred": 0.7375,
-   "actualFreq": 0.8571
+   "n": 16,
+   "avgPred": 0.7334,
+   "actualFreq": 0.8125
   },
   {
    "bin": "80-90%",
@@ -65,10 +65,10 @@
   }
  ],
  "valueBets": {
-  "n": 65,
+  "n": 75,
   "wins": 13,
-  "profitUnits": -22.31,
-  "roi": -0.3432,
+  "profitUnits": -32.31,
+  "roi": -0.4308,
   "history": [
    {
     "date": "2026-08-07",
@@ -642,13 +642,43 @@
    },
    {
     "date": "2026-08-23",
+    "match": "Vitória SC - CD Nacional",
+    "market": "2",
+    "odds": 5.5,
+    "edge": 1.4074,
+    "won": false,
+    "pl": -1.0,
+    "cum": -23.88
+   },
+   {
+    "date": "2026-08-23",
+    "match": "FC Porto - FC Arouca",
+    "market": "2",
+    "odds": 13.5,
+    "edge": 2.6257,
+    "won": false,
+    "pl": -1.0,
+    "cum": -24.88
+   },
+   {
+    "date": "2026-08-23",
+    "match": "CD Santa Clara - FC Famalicão",
+    "market": "Over 2.5",
+    "odds": 2.7,
+    "edge": 0.4604,
+    "won": false,
+    "pl": -1.0,
+    "cum": -25.88
+   },
+   {
+    "date": "2026-08-23",
     "match": "Angers SCO - Lille OSC",
     "market": "2",
     "odds": 1.79,
     "edge": 0.2851,
     "won": true,
     "pl": 0.79,
-    "cum": -22.09
+    "cum": -25.09
    },
    {
     "date": "2026-08-23",
@@ -658,7 +688,7 @@
     "edge": 0.1495,
     "won": false,
     "pl": -1.0,
-    "cum": -23.09
+    "cum": -26.09
    },
    {
     "date": "2026-08-23",
@@ -668,7 +698,7 @@
     "edge": 1.7377,
     "won": false,
     "pl": -1.0,
-    "cum": -24.09
+    "cum": -27.09
    },
    {
     "date": "2026-08-23",
@@ -678,7 +708,7 @@
     "edge": 0.4436,
     "won": true,
     "pl": 4.0,
-    "cum": -20.09
+    "cum": -23.09
    },
    {
     "date": "2026-08-23",
@@ -688,7 +718,7 @@
     "edge": 0.8136,
     "won": false,
     "pl": -1.0,
-    "cum": -21.09
+    "cum": -24.09
    },
    {
     "date": "2026-08-23",
@@ -698,7 +728,7 @@
     "edge": 0.8225,
     "won": false,
     "pl": -1.0,
-    "cum": -22.09
+    "cum": -25.09
    },
    {
     "date": "2026-08-23",
@@ -708,7 +738,7 @@
     "edge": 0.3016,
     "won": true,
     "pl": 0.78,
-    "cum": -21.31
+    "cum": -24.31
    },
    {
     "date": "2026-08-23",
@@ -718,7 +748,77 @@
     "edge": 1.9205,
     "won": false,
     "pl": -1.0,
-    "cum": -22.31
+    "cum": -25.31
+   },
+   {
+    "date": "2026-08-23",
+    "match": "SC Cambuur-Leeuwarden - Feyenoord Rotterdam",
+    "market": "1",
+    "odds": 11.5,
+    "edge": 0.4749,
+    "won": false,
+    "pl": -1.0,
+    "cum": -26.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "Fulham FC - Chelsea FC",
+    "market": "1",
+    "odds": 4.15,
+    "edge": 0.7342,
+    "won": false,
+    "pl": -1.0,
+    "cum": -27.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "CA Osasuna - Levante UD",
+    "market": "Over 2.5",
+    "odds": 2.24,
+    "edge": 0.5156,
+    "won": false,
+    "pl": -1.0,
+    "cum": -28.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "Málaga CF - RC Deportivo La Coruña",
+    "market": "Over 2.5",
+    "odds": 2.38,
+    "edge": 0.3764,
+    "won": false,
+    "pl": -1.0,
+    "cum": -29.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "Gil Vicente FC - Casa Pia AC",
+    "market": "Over 2.5",
+    "odds": 2.32,
+    "edge": 0.6429,
+    "won": false,
+    "pl": -1.0,
+    "cum": -30.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "Bologna FC 1909 - SS Lazio",
+    "market": "Over 2.5",
+    "odds": 2.52,
+    "edge": 0.4303,
+    "won": false,
+    "pl": -1.0,
+    "cum": -31.31
+   },
+   {
+    "date": "2026-08-24",
+    "match": "AS Roma - ACF Fiorentina",
+    "market": "2",
+    "odds": 5.4,
+    "edge": 0.4622,
+    "won": false,
+    "pl": -1.0,
+    "cum": -32.31
    }
   ]
  }
