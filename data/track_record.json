@@ -1,61 +1,61 @@
 {
- "graded": 94,
- "pending": 341,
- "brier": 0.2146,
+ "graded": 97,
+ "pending": 346,
+ "brier": 0.2141,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 1,
-   "avgPred": 0.0893,
+   "n": 2,
+   "avgPred": 0.089,
    "actualFreq": 0.0
   },
   {
    "bin": "10-20%",
-   "n": 23,
-   "avgPred": 0.1673,
-   "actualFreq": 0.087
+   "n": 26,
+   "avgPred": 0.1663,
+   "actualFreq": 0.1154
   },
   {
    "bin": "20-30%",
-   "n": 136,
-   "avgPred": 0.2503,
-   "actualFreq": 0.2279
+   "n": 138,
+   "avgPred": 0.2499,
+   "actualFreq": 0.2246
   },
   {
    "bin": "30-40%",
-   "n": 100,
-   "avgPred": 0.3499,
-   "actualFreq": 0.37
+   "n": 103,
+   "avgPred": 0.3495,
+   "actualFreq": 0.3689
   },
   {
    "bin": "40-50%",
-   "n": 87,
-   "avgPred": 0.4426,
-   "actualFreq": 0.5517
+   "n": 88,
+   "avgPred": 0.4428,
+   "actualFreq": 0.5455
   },
   {
    "bin": "50-60%",
-   "n": 49,
-   "avgPred": 0.5586,
-   "actualFreq": 0.4286
+   "n": 50,
+   "avgPred": 0.5593,
+   "actualFreq": 0.44
   },
   {
    "bin": "60-70%",
-   "n": 58,
-   "avgPred": 0.6451,
-   "actualFreq": 0.6207
+   "n": 60,
+   "avgPred": 0.6453,
+   "actualFreq": 0.6333
   },
   {
    "bin": "70-80%",
-   "n": 16,
-   "avgPred": 0.7334,
-   "actualFreq": 0.8125
+   "n": 17,
+   "avgPred": 0.7367,
+   "actualFreq": 0.8235
   },
   {
    "bin": "80-90%",
-   "n": 0,
-   "avgPred": null,
-   "actualFreq": null
+   "n": 1,
+   "avgPred": 0.843,
+   "actualFreq": 0.0
   },
   {
    "bin": "90-100%",
@@ -65,10 +65,10 @@
   }
  ],
  "valueBets": {
-  "n": 76,
+  "n": 77,
   "wins": 13,
-  "profitUnits": -33.31,
-  "roi": -0.4383,
+  "profitUnits": -34.31,
+  "roi": -0.4456,
   "history": [
    {
     "date": "2026-08-07",
@@ -829,6 +829,16 @@
     "won": false,
     "pl": -1.0,
     "cum": -33.31
+   },
+   {
+    "date": "2026-08-26",
+    "match": "Real Madrid CF - Real Sociedad de Fútbol",
+    "market": "2",
+    "odds": 14.5,
+    "edge": 1.8673,
+    "won": false,
+    "pl": -1.0,
+    "cum": -34.31
    }
   ]
  }
