@@ -1,74 +1,74 @@
 {
- "graded": 97,
- "pending": 346,
- "brier": 0.2141,
+ "graded": 103,
+ "pending": 340,
+ "brier": 0.2115,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 2,
-   "avgPred": 0.089,
+   "n": 3,
+   "avgPred": 0.0811,
    "actualFreq": 0.0
   },
   {
    "bin": "10-20%",
-   "n": 26,
-   "avgPred": 0.1663,
-   "actualFreq": 0.1154
+   "n": 30,
+   "avgPred": 0.1668,
+   "actualFreq": 0.1
   },
   {
    "bin": "20-30%",
-   "n": 138,
-   "avgPred": 0.2499,
-   "actualFreq": 0.2246
+   "n": 147,
+   "avgPred": 0.2496,
+   "actualFreq": 0.2245
   },
   {
    "bin": "30-40%",
-   "n": 103,
-   "avgPred": 0.3495,
-   "actualFreq": 0.3689
+   "n": 107,
+   "avgPred": 0.3491,
+   "actualFreq": 0.3738
   },
   {
    "bin": "40-50%",
-   "n": 88,
-   "avgPred": 0.4428,
-   "actualFreq": 0.5455
+   "n": 90,
+   "avgPred": 0.4438,
+   "actualFreq": 0.5444
   },
   {
    "bin": "50-60%",
-   "n": 50,
-   "avgPred": 0.5593,
-   "actualFreq": 0.44
+   "n": 53,
+   "avgPred": 0.5583,
+   "actualFreq": 0.4528
   },
   {
    "bin": "60-70%",
-   "n": 60,
-   "avgPred": 0.6453,
-   "actualFreq": 0.6333
+   "n": 64,
+   "avgPred": 0.6462,
+   "actualFreq": 0.625
   },
   {
    "bin": "70-80%",
-   "n": 17,
-   "avgPred": 0.7367,
-   "actualFreq": 0.8235
+   "n": 18,
+   "avgPred": 0.7355,
+   "actualFreq": 0.8333
   },
   {
    "bin": "80-90%",
-   "n": 1,
-   "avgPred": 0.843,
-   "actualFreq": 0.0
+   "n": 2,
+   "avgPred": 0.8226,
+   "actualFreq": 0.5
   },
   {
    "bin": "90-100%",
-   "n": 0,
-   "avgPred": null,
-   "actualFreq": null
+   "n": 1,
+   "avgPred": 0.9346,
+   "actualFreq": 1.0
   }
  ],
  "valueBets": {
-  "n": 77,
-  "wins": 13,
-  "profitUnits": -34.31,
-  "roi": -0.4456,
+  "n": 81,
+  "wins": 15,
+  "profitUnits": -29.41,
+  "roi": -0.3631,
   "history": [
    {
     "date": "2026-08-07",
@@ -839,6 +839,46 @@
     "won": false,
     "pl": -1.0,
     "cum": -34.31
+   },
+   {
+    "date": "2026-08-28",
+    "match": "Crystal Palace FC - Manchester City FC",
+    "market": "1",
+    "odds": 5.3,
+    "edge": 0.4314,
+    "won": false,
+    "pl": -1.0,
+    "cum": -35.31
+   },
+   {
+    "date": "2026-08-28",
+    "match": "Deportivo Alavés - Villarreal CF",
+    "market": "1",
+    "odds": 3.3,
+    "edge": 0.7153,
+    "won": true,
+    "pl": 2.3,
+    "cum": -33.01
+   },
+   {
+    "date": "2026-08-28",
+    "match": "AC Milan - Venezia FC",
+    "market": "2",
+    "odds": 10.0,
+    "edge": 1.0018,
+    "won": false,
+    "pl": -1.0,
+    "cum": -34.01
+   },
+   {
+    "date": "2026-08-28",
+    "match": "FC Groningen - Fortuna Sittard",
+    "market": "2",
+    "odds": 5.6,
+    "edge": 0.5175,
+    "won": true,
+    "pl": 4.6,
+    "cum": -29.41
    }
   ]
  }
