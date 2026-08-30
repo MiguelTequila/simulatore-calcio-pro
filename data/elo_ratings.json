@@ -1,7 +1,7 @@
 {
   "Leeds United FC": {
-    "elo": 1527.7942329485488,
-    "games": 16
+    "elo": 1524.4398672548623,
+    "games": 17
   },
   "Burnley FC": {
     "elo": 1365.7727185487354,
@@ -16,8 +16,8 @@
     "games": 17
   },
   "Brentford FC": {
-    "elo": 1518.8589032905438,
-    "games": 16
+    "elo": 1522.2132689842304,
+    "games": 17
   },
   "West Ham United FC": {
     "elo": 1516.3275452492983,
@@ -28,24 +28,24 @@
     "games": 21
   },
   "Brighton & Hove Albion FC": {
-    "elo": 1544.1107810130254,
-    "games": 16
+    "elo": 1527.5893642496924,
+    "games": 17
   },
   "Wolverhampton Wanderers FC": {
     "elo": 1412.4693909173125,
     "games": 15
   },
   "Sunderland AFC": {
-    "elo": 1463.5070183870364,
-    "games": 16
+    "elo": 1476.9863071258876,
+    "games": 17
   },
   "Arsenal FC": {
     "elo": 1584.4706199469488,
     "games": 23
   },
   "Fulham FC": {
-    "elo": 1473.3107445007754,
-    "games": 16
+    "elo": 1459.8314557619242,
+    "games": 17
   },
   "Villarreal CF": {
     "elo": 1520.820796328639,
@@ -80,8 +80,8 @@
     "games": 23
   },
   "CD Nacional": {
-    "elo": 1490.7614858231532,
-    "games": 18
+    "elo": 1470.7659440889963,
+    "games": 19
   },
   "AVS": {
     "elo": 1443.4012839025254,
@@ -92,8 +92,8 @@
     "games": 17
   },
   "CF Estrela da Amadora": {
-    "elo": 1467.1252423208236,
-    "games": 17
+    "elo": 1487.1207840549805,
+    "games": 18
   },
   "FC Arouca": {
     "elo": 1543.3220319781353,
@@ -128,12 +128,12 @@
     "games": 16
   },
   "SV Werder Bremen": {
-    "elo": 1462.4318465265785,
-    "games": 15
+    "elo": 1458.99252013866,
+    "games": 16
   },
   "FC Augsburg": {
-    "elo": 1502.3170142184829,
-    "games": 15
+    "elo": 1523.890282530358,
+    "games": 16
   },
   "FC Bayern München": {
     "elo": 1628.726550429372,
@@ -208,8 +208,8 @@
     "games": 17
   },
   "Manchester United FC": {
-    "elo": 1517.8960843860275,
-    "games": 16
+    "elo": 1540.2579101613862,
+    "games": 17
   },
   "Liverpool FC": {
     "elo": 1515.48877481246,
@@ -252,8 +252,8 @@
     "games": 19
   },
   "Real Madrid CF": {
-    "elo": 1583.251207148269,
-    "games": 25
+    "elo": 1599.6875966041496,
+    "games": 26
   },
   "Casa Pia AC": {
     "elo": 1406.840553444203,
@@ -296,8 +296,8 @@
     "games": 18
   },
   "SC Freiburg": {
-    "elo": 1477.8761075522657,
-    "games": 15
+    "elo": 1511.1614569007622,
+    "games": 16
   },
   "VfL Wolfsburg": {
     "elo": 1406.5135529432157,
@@ -352,8 +352,8 @@
     "games": 7
   },
   "Chelsea FC": {
-    "elo": 1467.784349114847,
-    "games": 18
+    "elo": 1484.30576587818,
+    "games": 19
   },
   "Nottingham Forest FC": {
     "elo": 1500.5283655357052,
@@ -440,8 +440,8 @@
     "games": 16
   },
   "OGC Nice": {
-    "elo": 1459.7228471271837,
-    "games": 16
+    "elo": 1442.412875667798,
+    "games": 17
   },
   "Stade Brestois 29": {
     "elo": 1479.3544887137552,
@@ -552,8 +552,8 @@
     "games": 16
   },
   "Stade Rennais FC 1901": {
-    "elo": 1539.3682401319513,
-    "games": 15
+    "elo": 1550.531767996083,
+    "games": 16
   },
   "FC Lorient": {
     "elo": 1493.0939801332852,
@@ -596,8 +596,8 @@
     "games": 15
   },
   "Paris FC": {
-    "elo": 1534.4439264375997,
-    "games": 15
+    "elo": 1551.7538978969853,
+    "games": 16
   },
   "Olympique de Marseille": {
     "elo": 1522.595382363281,
@@ -656,8 +656,8 @@
     "games": 2
   },
   "Málaga CF": {
-    "elo": 1478.9242297006667,
-    "games": 2
+    "elo": 1462.4878402447862,
+    "games": 3
   },
   "Coventry City FC": {
     "elo": 1464.9839179601952,
@@ -668,12 +668,12 @@
     "games": 2
   },
   "Ipswich Town FC": {
-    "elo": 1511.9660219372292,
-    "games": 1
+    "elo": 1489.6041961618705,
+    "games": 2
   },
   "Le Mans FC": {
-    "elo": 1495.959148578327,
-    "games": 1
+    "elo": 1484.7956207141951,
+    "games": 2
   },
   "ES Troyes AC": {
     "elo": 1498.529274759464,
@@ -697,6 +697,10 @@
   },
   "SV 07 Elversberg": {
     "elo": 1514.66517783022,
+    "games": 1
+  },
+  "FC Schalke 04": {
+    "elo": 1477.2682245788833,
     "games": 1
   }
 }

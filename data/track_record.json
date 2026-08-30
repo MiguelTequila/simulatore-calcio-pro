@@ -1,55 +1,55 @@
 {
- "graded": 124,
- "pending": 319,
- "brier": 0.2089,
+ "graded": 134,
+ "pending": 309,
+ "brier": 0.2063,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 3,
-   "avgPred": 0.0811,
+   "n": 4,
+   "avgPred": 0.0831,
    "actualFreq": 0.0
   },
   {
    "bin": "10-20%",
-   "n": 35,
-   "avgPred": 0.1682,
-   "actualFreq": 0.1143
+   "n": 36,
+   "avgPred": 0.1675,
+   "actualFreq": 0.1111
   },
   {
    "bin": "20-30%",
-   "n": 179,
+   "n": 193,
    "avgPred": 0.249,
-   "actualFreq": 0.2179
+   "actualFreq": 0.2124
   },
   {
    "bin": "30-40%",
-   "n": 136,
-   "avgPred": 0.3518,
-   "actualFreq": 0.3529
+   "n": 150,
+   "avgPred": 0.351,
+   "actualFreq": 0.34
   },
   {
    "bin": "40-50%",
-   "n": 101,
-   "avgPred": 0.4441,
-   "actualFreq": 0.5545
+   "n": 110,
+   "avgPred": 0.4446,
+   "actualFreq": 0.5636
   },
   {
    "bin": "50-60%",
-   "n": 61,
+   "n": 62,
    "avgPred": 0.5583,
-   "actualFreq": 0.4918
+   "actualFreq": 0.5
   },
   {
    "bin": "60-70%",
-   "n": 80,
-   "avgPred": 0.646,
-   "actualFreq": 0.6375
+   "n": 86,
+   "avgPred": 0.6461,
+   "actualFreq": 0.6395
   },
   {
    "bin": "70-80%",
-   "n": 21,
-   "avgPred": 0.7344,
-   "actualFreq": 0.8095
+   "n": 25,
+   "avgPred": 0.7366,
+   "actualFreq": 0.84
   },
   {
    "bin": "80-90%",
@@ -65,51 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 96,
-  "wins": 24,
-  "profitUnits": -16.31,
-  "roi": -0.1699,
+  "n": 104,
+  "wins": 27,
+  "profitUnits": -18.33,
+  "roi": -0.1763,
   "history": [
-   {
-    "date": "2026-08-07",
-    "match": "GD Estoril Praia - FC Famalicão",
-    "market": "2",
-    "odds": 2.58,
-    "edge": 0.321,
-    "won": false,
-    "pl": -1.0,
-    "cum": -1.0
-   },
-   {
-    "date": "2026-08-07",
-    "match": "SC Cambuur-Leeuwarden - SBV Excelsior",
-    "market": "1",
-    "odds": 2.76,
-    "edge": 0.2523,
-    "won": false,
-    "pl": -1.0,
-    "cum": -2.0
-   },
-   {
-    "date": "2026-08-08",
-    "match": "Vitória SC - FC Arouca",
-    "market": "2",
-    "odds": 4.2,
-    "edge": 0.3125,
-    "won": true,
-    "pl": 3.2,
-    "cum": 1.2
-   },
-   {
-    "date": "2026-08-08",
-    "match": "Go Ahead Eagles - Willem II Tilburg",
-    "market": "2",
-    "odds": 6.6,
-    "edge": 0.932,
-    "won": false,
-    "pl": -1.0,
-    "cum": 0.2
-   },
    {
     "date": "2026-08-08",
     "match": "PSV - Fortuna Sittard",
@@ -1029,6 +989,86 @@
     "won": false,
     "pl": -1.0,
     "cum": -16.31
+   },
+   {
+    "date": "2026-08-30",
+    "match": "Sunderland AFC - Fulham FC",
+    "market": "Over 2.5",
+    "odds": 2.12,
+    "edge": 0.4357,
+    "won": false,
+    "pl": -1.0,
+    "cum": -17.31
+   },
+   {
+    "date": "2026-08-30",
+    "match": "Leeds United FC - Brentford FC",
+    "market": "Over 2.5",
+    "odds": 2.0,
+    "edge": 0.2769,
+    "won": false,
+    "pl": -1.0,
+    "cum": -18.31
+   },
+   {
+    "date": "2026-08-30",
+    "match": "Manchester United FC - Ipswich Town FC",
+    "market": "2",
+    "odds": 8.5,
+    "edge": 1.8541,
+    "won": false,
+    "pl": -1.0,
+    "cum": -19.31
+   },
+   {
+    "date": "2026-08-30",
+    "match": "Real Madrid CF - Málaga CF",
+    "market": "2",
+    "odds": 30.0,
+    "edge": 1.6689,
+    "won": false,
+    "pl": -1.0,
+    "cum": -20.31
+   },
+   {
+    "date": "2026-08-30",
+    "match": "CD Nacional - CF Estrela da Amadora",
+    "market": "Over 2.5",
+    "odds": 2.1,
+    "edge": 0.3053,
+    "won": true,
+    "pl": 1.1,
+    "cum": -19.21
+   },
+   {
+    "date": "2026-08-30",
+    "match": "SC Freiburg - SV Werder Bremen",
+    "market": "2",
+    "odds": 4.16,
+    "edge": 0.2773,
+    "won": false,
+    "pl": -1.0,
+    "cum": -20.21
+   },
+   {
+    "date": "2026-08-30",
+    "match": "FC Augsburg - FC Schalke 04",
+    "market": "Over 2.5",
+    "odds": 1.77,
+    "edge": 0.1257,
+    "won": true,
+    "pl": 0.77,
+    "cum": -19.44
+   },
+   {
+    "date": "2026-08-30",
+    "match": "Paris FC - OGC Nice",
+    "market": "Over 2.5",
+    "odds": 2.11,
+    "edge": 0.1765,
+    "won": true,
+    "pl": 1.11,
+    "cum": -18.33
    }
   ]
  }
