@@ -1,8 +1,8 @@
 {
   "ratings": {
     "Leeds United FC": {
-      "elo": 1524.4398672548623,
-      "games": 17
+      "elo": 1527.5386277090674,
+      "games": 18
     },
     "Burnley FC": {
       "elo": 1365.7727185487354,
@@ -17,36 +17,36 @@
       "games": 17
     },
     "Brentford FC": {
-      "elo": 1522.2132689842304,
-      "games": 17
+      "elo": 1517.3008510119719,
+      "games": 18
     },
     "West Ham United FC": {
       "elo": 1516.3275452492983,
       "games": 15
     },
     "Newcastle United FC": {
-      "elo": 1505.060886480747,
-      "games": 21
+      "elo": 1502.8560410900172,
+      "games": 22
     },
     "Brighton & Hove Albion FC": {
-      "elo": 1527.5893642496924,
-      "games": 17
+      "elo": 1524.4906037954872,
+      "games": 18
     },
     "Wolverhampton Wanderers FC": {
       "elo": 1412.4693909173125,
       "games": 15
     },
     "Sunderland AFC": {
-      "elo": 1476.9863071258876,
-      "games": 17
+      "elo": 1481.898725098146,
+      "games": 18
     },
     "Arsenal FC": {
       "elo": 1597.8512832437416,
       "games": 24
     },
     "Fulham FC": {
-      "elo": 1459.8314557619242,
-      "games": 17
+      "elo": 1440.3518668329891,
+      "games": 18
     },
     "Villarreal CF": {
       "elo": 1520.820796328639,
@@ -61,16 +61,16 @@
       "games": 20
     },
     "Club Atlético de Madrid": {
-      "elo": 1554.6323232653165,
-      "games": 28
+      "elo": 1525.6302660763076,
+      "games": 29
     },
     "Deportivo Alavés": {
       "elo": 1531.763583174792,
       "games": 20
     },
     "Athletic Club": {
-      "elo": 1477.193070648876,
-      "games": 20
+      "elo": 1506.195127837885,
+      "games": 21
     },
     "CA Osasuna": {
       "elo": 1517.7859512879138,
@@ -89,12 +89,12 @@
       "games": 15
     },
     "Moreirense FC": {
-      "elo": 1459.485603293392,
-      "games": 18
+      "elo": 1453.111150257457,
+      "games": 19
     },
     "CF Estrela da Amadora": {
-      "elo": 1487.1207840549805,
-      "games": 18
+      "elo": 1484.5257018994942,
+      "games": 19
     },
     "FC Arouca": {
       "elo": 1543.3220319781353,
@@ -105,32 +105,32 @@
       "games": 19
     },
     "FC Famalicão": {
-      "elo": 1495.2672061241867,
-      "games": 19
+      "elo": 1497.862288279673,
+      "games": 20
     },
     "Sport Lisboa e Benfica": {
       "elo": 1594.5125609701129,
       "games": 20
     },
     "FC Porto": {
-      "elo": 1636.177690560737,
-      "games": 19
+      "elo": 1642.5521435966718,
+      "games": 20
     },
     "FC Alverca": {
       "elo": 1462.1474108116688,
       "games": 19
     },
     "TSG 1899 Hoffenheim": {
-      "elo": 1489.5746085057804,
-      "games": 16
+      "elo": 1473.7365579893537,
+      "games": 17
     },
     "VfB Stuttgart": {
-      "elo": 1511.9932193085453,
-      "games": 16
+      "elo": 1532.892438909027,
+      "games": 17
     },
     "SV Werder Bremen": {
-      "elo": 1458.99252013866,
-      "games": 16
+      "elo": 1485.887612404807,
+      "games": 17
     },
     "FC Augsburg": {
       "elo": 1523.890282530358,
@@ -145,12 +145,12 @@
       "games": 15
     },
     "1. FC Union Berlin": {
-      "elo": 1450.8825381059555,
-      "games": 16
+      "elo": 1432.0158691901688,
+      "games": 17
     },
     "1. FC Köln": {
-      "elo": 1486.9185381472607,
-      "games": 16
+      "elo": 1466.019318546779,
+      "games": 17
     },
     "Eintracht Frankfurt": {
       "elo": 1494.6493488207836,
@@ -161,12 +161,12 @@
       "games": 17
     },
     "Bayer 04 Leverkusen": {
-      "elo": 1521.2819993017354,
-      "games": 21
+      "elo": 1540.148668217522,
+      "games": 22
     },
     "RB Leipzig": {
-      "elo": 1566.1083524013172,
-      "games": 16
+      "elo": 1539.2132601351702,
+      "games": 17
     },
     "Botafogo FR": {
       "elo": 1526.3899979602193,
@@ -201,32 +201,32 @@
       "games": 7
     },
     "AFC Bournemouth": {
-      "elo": 1521.8767173890449,
-      "games": 17
+      "elo": 1524.0815627797747,
+      "games": 18
     },
     "Crystal Palace FC": {
-      "elo": 1448.046975771885,
-      "games": 17
+      "elo": 1467.52656470082,
+      "games": 18
     },
     "Manchester United FC": {
       "elo": 1540.2579101613862,
       "games": 17
     },
     "Liverpool FC": {
-      "elo": 1515.48877481246,
-      "games": 21
+      "elo": 1542.1794140532493,
+      "games": 22
     },
     "Aston Villa FC": {
       "elo": 1448.6953314207638,
       "games": 17
     },
     "Tottenham Hotspur FC": {
-      "elo": 1408.5138789664238,
-      "games": 19
+      "elo": 1415.289547246467,
+      "games": 20
     },
     "RC Celta de Vigo": {
-      "elo": 1437.150654029894,
-      "games": 20
+      "elo": 1441.9803296182938,
+      "games": 21
     },
     "Elche CF": {
       "elo": 1449.3781024343089,
@@ -241,8 +241,8 @@
       "games": 20
     },
     "Real Betis Balompié": {
-      "elo": 1515.4647501832324,
-      "games": 20
+      "elo": 1532.3490927866144,
+      "games": 21
     },
     "Real Oviedo": {
       "elo": 1462.164890801849,
@@ -253,8 +253,8 @@
       "games": 20
     },
     "Real Madrid CF": {
-      "elo": 1599.6875966041496,
-      "games": 26
+      "elo": 1582.8032540007675,
+      "games": 27
     },
     "Casa Pia AC": {
       "elo": 1389.475212071629,
@@ -289,16 +289,16 @@
       "games": 16
     },
     "Borussia Mönchengladbach": {
-      "elo": 1468.5451236956817,
-      "games": 16
+      "elo": 1451.6765248593015,
+      "games": 17
     },
     "Borussia Dortmund": {
-      "elo": 1558.0914169632135,
-      "games": 18
+      "elo": 1573.9294674796402,
+      "games": 19
     },
     "SC Freiburg": {
-      "elo": 1511.1614569007622,
-      "games": 16
+      "elo": 1529.7932739545201,
+      "games": 17
     },
     "VfL Wolfsburg": {
       "elo": 1406.5135529432157,
@@ -357,24 +357,24 @@
       "games": 19
     },
     "Nottingham Forest FC": {
-      "elo": 1500.5283655357052,
-      "games": 17
+      "elo": 1493.752697255662,
+      "games": 18
     },
     "Everton FC": {
       "elo": 1515.975754986608,
       "games": 17
     },
     "Manchester City FC": {
-      "elo": 1583.6766852407025,
-      "games": 19
+      "elo": 1591.9263715061445,
+      "games": 20
     },
     "Sevilla FC": {
       "elo": 1482.4761080993012,
       "games": 20
     },
     "Real Sociedad de Fútbol": {
-      "elo": 1480.397341984916,
-      "games": 20
+      "elo": 1475.5676663965162,
+      "games": 21
     },
     "Sporting Clube de Portugal": {
       "elo": 1599.9885984752977,
@@ -385,8 +385,8 @@
       "games": 19
     },
     "Paris Saint-Germain FC": {
-      "elo": 1561.886680502765,
-      "games": 26
+      "elo": 1542.947317412523,
+      "games": 27
     },
     "Galatasaray SK": {
       "elo": 1496.040171521547,
@@ -397,8 +397,8 @@
       "games": 20
     },
     "AS Monaco FC": {
-      "elo": 1562.3262749082646,
-      "games": 18
+      "elo": 1581.2656379985067,
+      "games": 19
     },
     "Atalanta BC": {
       "elo": 1532.0608461219217,
@@ -425,20 +425,20 @@
       "games": 20
     },
     "Olympique Lyonnais": {
-      "elo": 1528.5584550881767,
-      "games": 17
+      "elo": 1544.5075775456728,
+      "games": 18
     },
     "Lille OSC": {
-      "elo": 1561.9090921912345,
-      "games": 17
+      "elo": 1576.3646717754225,
+      "games": 18
     },
     "Toulouse FC": {
-      "elo": 1463.2676854950196,
-      "games": 16
+      "elo": 1448.8121059108316,
+      "games": 17
     },
     "AJ Auxerre": {
-      "elo": 1472.3172021749672,
-      "games": 17
+      "elo": 1456.3680797174711,
+      "games": 18
     },
     "OGC Nice": {
       "elo": 1442.412875667798,
@@ -461,16 +461,16 @@
       "games": 17
     },
     "Torino FC": {
-      "elo": 1464.3594129357416,
-      "games": 18
+      "elo": 1483.3084566593145,
+      "games": 19
     },
     "US Lecce": {
       "elo": 1482.952304351972,
       "games": 18
     },
     "Como 1907": {
-      "elo": 1572.0545867634291,
-      "games": 18
+      "elo": 1595.0518235555498,
+      "games": 19
     },
     "US Cremonese": {
       "elo": 1390.5776093495786,
@@ -501,8 +501,8 @@
       "games": 18
     },
     "Feyenoord Rotterdam": {
-      "elo": 1562.1462639617994,
-      "games": 18
+      "elo": 1590.159676661184,
+      "games": 19
     },
     "SC Heerenveen": {
       "elo": 1501.6182075667864,
@@ -549,48 +549,48 @@
       "games": 13
     },
     "Racing Club de Lens": {
-      "elo": 1538.3037970607559,
-      "games": 16
+      "elo": 1516.6248242840154,
+      "games": 17
     },
     "Stade Rennais FC 1901": {
       "elo": 1550.531767996083,
       "games": 16
     },
     "FC Lorient": {
-      "elo": 1474.3774864852357,
-      "games": 16
+      "elo": 1496.0564592619762,
+      "games": 17
     },
     "FC Nantes": {
       "elo": 1442.6222119455917,
       "games": 13
     },
     "Genoa CFC": {
-      "elo": 1444.3047281990948,
-      "games": 17
+      "elo": 1421.3074914069741,
+      "games": 18
     },
     "SSC Napoli": {
       "elo": 1536.0005788482836,
       "games": 17
     },
     "ACF Fiorentina": {
-      "elo": 1464.1373982154316,
-      "games": 17
+      "elo": 1445.1883544918587,
+      "games": 18
     },
     "NEC": {
-      "elo": 1555.7972137792212,
-      "games": 17
+      "elo": 1527.7838010798366,
+      "games": 18
     },
     "PEC Zwolle": {
-      "elo": 1429.691268906766,
-      "games": 17
+      "elo": 1433.8222527730734,
+      "games": 18
     },
     "FC Twente '65": {
       "elo": 1563.2920635834514,
       "games": 16
     },
     "Sparta Rotterdam": {
-      "elo": 1456.4713811469858,
-      "games": 17
+      "elo": 1452.3403972806784,
+      "games": 18
     },
     "Le Havre AC": {
       "elo": 1476.086608061167,
@@ -661,16 +661,16 @@
       "games": 3
     },
     "Coventry City FC": {
-      "elo": 1464.9839179601952,
-      "games": 2
+      "elo": 1456.7342316947531,
+      "games": 3
     },
     "Hull City AFC": {
       "elo": 1539.430579931514,
       "games": 2
     },
     "Ipswich Town FC": {
-      "elo": 1489.6041961618705,
-      "games": 2
+      "elo": 1462.9135569210812,
+      "games": 3
     },
     "Le Mans FC": {
       "elo": 1484.7956207141951,
@@ -693,12 +693,12 @@
       "games": 2
     },
     "SC Paderborn 07": {
-      "elo": 1503.8345892478246,
-      "games": 1
+      "elo": 1485.2027721940667,
+      "games": 2
     },
     "SV 07 Elversberg": {
-      "elo": 1514.66517783022,
-      "games": 1
+      "elo": 1531.5337766666003,
+      "games": 2
     },
     "FC Schalke 04": {
       "elo": 1477.2682245788833,
@@ -746,7 +746,6 @@
     540709,
     540710,
     540711,
-    567257,
     567258,
     567259,
     565776,
@@ -758,6 +757,12 @@
     565782,
     565783,
     565784,
+    565785,
+    565787,
+    565790,
+    565791,
+    565792,
+    565793,
     558214,
     558215,
     558216,
@@ -791,6 +796,10 @@
     558247,
     558248,
     558249,
+    558250,
+    558251,
+    558609,
+    558616,
     558619,
     558620,
     558621,
@@ -823,7 +832,7 @@
     537688,
     537689,
     537690,
-    537691,
+    537692,
     537693,
     542580,
     542581,
@@ -925,47 +934,50 @@
     542669,
     542670,
     542671,
+    542681,
     537713,
-    542673,
     542674,
-    567260,
-    542685,
+    542675,
+    567261,
+    567262,
     537714,
-    567263,
-    567264,
-    567265,
-    542688,
+    542679,
+    542680,
+    567257,
+    542691,
     537715,
-    567266,
-    567268,
-    567269,
-    567270,
-    537716,
-    567272,
-    567273,
-    542693,
+    567267,
     542694,
+    542695,
+    542696,
+    537716,
+    542698,
+    542699,
+    542700,
+    542701,
     537717,
-    542702,
-    567277,
-    567278,
-    542697,
+    542703,
+    567274,
+    542705,
+    542706,
     537718,
-    542707,
-    567283,
-    567284,
-    567285,
+    567275,
+    567279,
+    567280,
     537719,
-    567286,
+    567281,
     567287,
     567288,
     567289,
     537720,
     567290,
     542711,
+    567286,
     567291,
-    567292,
     537721,
+    567292,
+    567299,
+    567297,
     537722,
     537725,
     537726,
@@ -994,39 +1006,35 @@
     545928,
     542672,
     545929,
-    542675,
+    542673,
     542676,
     542677,
     542678,
-    542679,
-    542680,
-    542681,
     542682,
     542683,
     542684,
+    542685,
     542686,
     542687,
+    542688,
     542689,
     542690,
-    542691,
     542692,
-    542695,
-    542696,
+    542693,
+    542697,
     545954,
-    542698,
     545955,
-    542699,
-    542700,
     545957,
-    542701,
-    542703,
-    542705,
-    542706,
-    545964,
+    542702,
+    545959,
+    542707,
     542708,
     542709,
     542710,
-    545973,
+    559695,
+    559696,
+    559697,
+    559699,
     559702,
     559703,
     559704,
@@ -1045,7 +1053,6 @@
     559717,
     559718,
     559719,
-    545984,
     552052,
     552053,
     552054,
@@ -1078,19 +1085,26 @@
     552081,
     552082,
     552083,
-    567261,
-    567262,
+    567260,
+    567263,
     552092,
     552093,
     552094,
     552095,
     552096,
-    567267,
-    567274,
-    567275,
-    567279,
-    567280,
-    567281,
+    567264,
+    567265,
+    567266,
+    567268,
+    567269,
+    567270,
+    567272,
+    567273,
+    567277,
+    567278,
+    567283,
+    567284,
+    567285,
     560542,
     560543,
     560544,
@@ -1111,6 +1125,13 @@
     560559,
     560560,
     560561,
+    560562,
+    560563,
+    560564,
+    560565,
+    560566,
+    560568,
+    560571,
     544364,
     544421,
     544422,
@@ -1515,7 +1536,7 @@
     545889,
     545890,
     545891,
-    537692,
+    537691,
     545893,
     545894,
     545895,
@@ -1588,14 +1609,15 @@
     545953,
     545956,
     545958,
-    545959,
+    545961,
+    545962,
+    545963,
+    545964,
     545960,
     545965,
     545966,
     545969,
-    545961,
-    545962,
-    545963,
+    545973,
     545970,
     545967,
     545968,
@@ -1606,6 +1628,7 @@
     545975,
     545976,
     545978,
+    545984,
     545979,
     545980,
     545981,
@@ -1884,6 +1907,9 @@
     564655,
     564656,
     564657,
+    564663,
+    564667,
+    564682,
     556718,
     556719,
     556720,
@@ -1990,48 +2016,48 @@
     540671
   ],
   "last_date": {
-    "Leeds United FC": "2026-08-30",
+    "Leeds United FC": "2026-09-05",
     "Burnley FC": "2026-04-22",
     "Girona FC": "2026-04-25",
     "RCD Mallorca": "2026-04-25",
-    "Brentford FC": "2026-08-30",
+    "Brentford FC": "2026-09-05",
     "West Ham United FC": "2026-04-25",
-    "Newcastle United FC": "2026-08-29",
-    "Brighton & Hove Albion FC": "2026-08-30",
+    "Newcastle United FC": "2026-09-05",
+    "Brighton & Hove Albion FC": "2026-09-05",
     "Wolverhampton Wanderers FC": "2026-04-25",
-    "Sunderland AFC": "2026-08-30",
+    "Sunderland AFC": "2026-09-05",
     "Arsenal FC": "2026-08-31",
-    "Fulham FC": "2026-08-30",
+    "Fulham FC": "2026-09-05",
     "Villarreal CF": "2026-08-28",
     "Levante UD": "2026-08-29",
     "Valencia CF": "2026-08-30",
-    "Club Atlético de Madrid": "2026-08-29",
+    "Club Atlético de Madrid": "2026-09-05",
     "Deportivo Alavés": "2026-08-28",
-    "Athletic Club": "2026-08-30",
+    "Athletic Club": "2026-09-05",
     "CA Osasuna": "2026-08-31",
     "FC Barcelona": "2026-08-31",
     "CD Nacional": "2026-08-30",
     "AVS": "2026-04-26",
-    "Moreirense FC": "2026-08-30",
-    "CF Estrela da Amadora": "2026-08-30",
+    "Moreirense FC": "2026-09-04",
+    "CF Estrela da Amadora": "2026-09-05",
     "FC Arouca": "2026-08-29",
     "CD Santa Clara": "2026-08-29",
-    "FC Famalicão": "2026-08-30",
+    "FC Famalicão": "2026-09-05",
     "Sport Lisboa e Benfica": "2026-08-31",
-    "FC Porto": "2026-08-29",
+    "FC Porto": "2026-09-04",
     "FC Alverca": "2026-08-29",
-    "TSG 1899 Hoffenheim": "2026-08-29",
-    "VfB Stuttgart": "2026-08-28",
-    "SV Werder Bremen": "2026-08-30",
+    "TSG 1899 Hoffenheim": "2026-09-05",
+    "VfB Stuttgart": "2026-09-04",
+    "SV Werder Bremen": "2026-09-05",
     "FC Augsburg": "2026-08-30",
     "FC Bayern München": "2026-08-28",
     "1. FC Heidenheim 1846": "2026-04-25",
-    "1. FC Union Berlin": "2026-08-29",
-    "1. FC Köln": "2026-08-29",
+    "1. FC Union Berlin": "2026-09-05",
+    "1. FC Köln": "2026-09-04",
     "Eintracht Frankfurt": "2026-08-29",
     "Hamburger SV": "2026-08-29",
-    "Bayer 04 Leverkusen": "2026-08-29",
-    "RB Leipzig": "2026-08-29",
+    "Bayer 04 Leverkusen": "2026-09-05",
+    "RB Leipzig": "2026-09-05",
     "Botafogo FR": "2026-07-26",
     "Clube do Remo": "2026-07-26",
     "SE Palmeiras": "2026-07-26",
@@ -2040,20 +2066,20 @@
     "Coritiba FBC": "2026-07-26",
     "CA Paranaense": "2026-07-25",
     "Grêmio FBPA": "2026-07-26",
-    "AFC Bournemouth": "2026-08-29",
-    "Crystal Palace FC": "2026-08-28",
+    "AFC Bournemouth": "2026-09-05",
+    "Crystal Palace FC": "2026-09-05",
     "Manchester United FC": "2026-08-30",
-    "Liverpool FC": "2026-08-29",
+    "Liverpool FC": "2026-09-04",
     "Aston Villa FC": "2026-08-31",
-    "Tottenham Hotspur FC": "2026-08-29",
-    "RC Celta de Vigo": "2026-08-30",
+    "Tottenham Hotspur FC": "2026-09-05",
+    "RC Celta de Vigo": "2026-09-03",
     "Elche CF": "2026-08-28",
     "Getafe CF": "2026-08-31",
     "Rayo Vallecano de Madrid": "2026-08-31",
-    "Real Betis Balompié": "2026-08-29",
+    "Real Betis Balompié": "2026-09-04",
     "Real Oviedo": "2026-04-26",
     "RCD Espanyol de Barcelona": "2026-08-29",
-    "Real Madrid CF": "2026-08-30",
+    "Real Madrid CF": "2026-09-04",
     "Casa Pia AC": "2026-08-30",
     "CD Tondela": "2026-04-29",
     "Sporting Clube de Braga": "2026-08-31",
@@ -2062,9 +2088,9 @@
     "Gil Vicente FC": "2026-08-30",
     "FC St. Pauli 1910": "2026-04-25",
     "1. FSV Mainz 05": "2026-08-29",
-    "Borussia Mönchengladbach": "2026-08-29",
-    "Borussia Dortmund": "2026-08-29",
-    "SC Freiburg": "2026-08-30",
+    "Borussia Mönchengladbach": "2026-09-05",
+    "Borussia Dortmund": "2026-09-05",
+    "SC Freiburg": "2026-09-05",
     "VfL Wolfsburg": "2026-04-25",
     "Cruzeiro EC": "2026-07-26",
     "CA Mineiro": "2026-07-26",
@@ -2079,35 +2105,35 @@
     "Mirassol FC": "2026-07-25",
     "SC Corinthians Paulista": "2026-07-26",
     "Chelsea FC": "2026-08-30",
-    "Nottingham Forest FC": "2026-08-29",
+    "Nottingham Forest FC": "2026-09-05",
     "Everton FC": "2026-08-29",
-    "Manchester City FC": "2026-08-28",
+    "Manchester City FC": "2026-09-05",
     "Sevilla FC": "2026-08-29",
-    "Real Sociedad de Fútbol": "2026-08-29",
+    "Real Sociedad de Fútbol": "2026-09-03",
     "Sporting Clube de Portugal": "2026-08-28",
     "Vitória SC": "2026-08-31",
-    "Paris Saint-Germain FC": "2026-08-28",
+    "Paris Saint-Germain FC": "2026-09-04",
     "Galatasaray SK": "2026-03-18",
     "Juventus FC": "2026-08-29",
-    "AS Monaco FC": "2026-08-30",
+    "AS Monaco FC": "2026-09-04",
     "Atalanta BC": "2026-08-31",
     "Qarabağ Ağdam FK": "2026-02-24",
     "Club Brugge KV": "2026-02-24",
     "PAE Olympiakos SFP": "2026-02-24",
     "FK Bodø/Glimt": "2026-03-17",
     "FC Internazionale Milano": "2026-08-30",
-    "Olympique Lyonnais": "2026-08-29",
-    "Lille OSC": "2026-08-28",
-    "Toulouse FC": "2026-08-29",
-    "AJ Auxerre": "2026-08-29",
+    "Olympique Lyonnais": "2026-09-04",
+    "Lille OSC": "2026-09-03",
+    "Toulouse FC": "2026-09-03",
+    "AJ Auxerre": "2026-09-04",
     "OGC Nice": "2026-08-30",
     "Stade Brestois 29": "2026-08-29",
     "Angers SCO": "2026-08-29",
     "FC Metz": "2026-05-17",
     "RC Strasbourg Alsace": "2026-08-29",
-    "Torino FC": "2026-08-29",
+    "Torino FC": "2026-09-05",
     "US Lecce": "2026-08-31",
-    "Como 1907": "2026-08-30",
+    "Como 1907": "2026-09-04",
     "US Cremonese": "2026-05-24",
     "Parma Calcio 1913": "2026-08-29",
     "SBV Excelsior": "2026-08-29",
@@ -2115,7 +2141,7 @@
     "Heracles Almelo": "2026-05-17",
     "Fortuna Sittard": "2026-08-28",
     "PSV": "2026-08-30",
-    "Feyenoord Rotterdam": "2026-08-30",
+    "Feyenoord Rotterdam": "2026-09-05",
     "SC Heerenveen": "2026-08-30",
     "FC Utrecht": "2026-08-30",
     "FC Volendam": "2026-05-17",
@@ -2127,17 +2153,17 @@
     "Hellas Verona FC": "2026-05-24",
     "AC Pisa 1909": "2026-05-23",
     "NAC Breda": "2026-05-17",
-    "Racing Club de Lens": "2026-08-29",
+    "Racing Club de Lens": "2026-09-05",
     "Stade Rennais FC 1901": "2026-08-30",
-    "FC Lorient": "2026-08-29",
+    "FC Lorient": "2026-09-05",
     "FC Nantes": "2026-05-08",
-    "Genoa CFC": "2026-08-30",
+    "Genoa CFC": "2026-09-04",
     "SSC Napoli": "2026-08-30",
-    "ACF Fiorentina": "2026-08-29",
-    "NEC": "2026-08-29",
-    "PEC Zwolle": "2026-08-29",
+    "ACF Fiorentina": "2026-09-05",
+    "NEC": "2026-09-05",
+    "PEC Zwolle": "2026-09-04",
     "FC Twente '65": "2026-08-30",
-    "Sparta Rotterdam": "2026-08-29",
+    "Sparta Rotterdam": "2026-09-04",
     "Le Havre AC": "2026-08-29",
     "Paris FC": "2026-08-30",
     "Olympique de Marseille": "2026-08-30",
@@ -2155,16 +2181,16 @@
     "Real Racing Club de Santander": "2026-08-28",
     "RC Deportivo La Coruña": "2026-08-30",
     "Málaga CF": "2026-08-30",
-    "Coventry City FC": "2026-08-29",
+    "Coventry City FC": "2026-09-05",
     "Hull City AFC": "2026-08-29",
-    "Ipswich Town FC": "2026-08-30",
+    "Ipswich Town FC": "2026-09-04",
     "Le Mans FC": "2026-08-30",
     "ES Troyes AC": "2026-08-29",
     "AC Monza": "2026-08-29",
     "Frosinone Calcio": "2026-08-29",
     "Venezia FC": "2026-08-28",
-    "SC Paderborn 07": "2026-08-29",
-    "SV 07 Elversberg": "2026-08-29",
+    "SC Paderborn 07": "2026-09-05",
+    "SV 07 Elversberg": "2026-09-05",
     "FC Schalke 04": "2026-08-30"
   }
 }
