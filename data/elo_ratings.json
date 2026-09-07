@@ -52,8 +52,8 @@
     "games": 22
   },
   "Levante UD": {
-    "elo": 1500.9405454977662,
-    "games": 21
+    "elo": 1502.16071991267,
+    "games": 22
   },
   "Valencia CF": {
     "elo": 1441.6333519752093,
@@ -64,16 +64,16 @@
     "games": 29
   },
   "Deportivo Alavés": {
-    "elo": 1531.763583174792,
-    "games": 20
+    "elo": 1553.5061477328202,
+    "games": 21
   },
   "Athletic Club": {
     "elo": 1506.195127837885,
     "games": 21
   },
   "CA Osasuna": {
-    "elo": 1517.7859512879138,
-    "games": 20
+    "elo": 1496.0433867298857,
+    "games": 21
   },
   "FC Barcelona": {
     "elo": 1662.147058155103,
@@ -224,16 +224,16 @@
     "games": 20
   },
   "RC Celta de Vigo": {
-    "elo": 1441.9803296182938,
-    "games": 21
+    "elo": 1447.383225023535,
+    "games": 22
   },
   "Elche CF": {
     "elo": 1449.3781024343089,
     "games": 20
   },
   "Getafe CF": {
-    "elo": 1499.0944529064739,
-    "games": 20
+    "elo": 1493.6915575012326,
+    "games": 21
   },
   "Rayo Vallecano de Madrid": {
     "elo": 1493.885436178975,
@@ -248,16 +248,16 @@
     "games": 17
   },
   "RCD Espanyol de Barcelona": {
-    "elo": 1448.7164500417205,
-    "games": 20
+    "elo": 1447.2816438747248,
+    "games": 21
   },
   "Real Madrid CF": {
     "elo": 1582.8032540007675,
     "games": 27
   },
   "Casa Pia AC": {
-    "elo": 1389.475212071629,
-    "games": 19
+    "elo": 1395.972450273957,
+    "games": 20
   },
   "CD Tondela": {
     "elo": 1432.490585963642,
@@ -276,8 +276,8 @@
     "games": 20
   },
   "Gil Vicente FC": {
-    "elo": 1525.4293401942173,
-    "games": 18
+    "elo": 1503.9882368872866,
+    "games": 19
   },
   "FC St. Pauli 1910": {
     "elo": 1409.8414012602982,
@@ -368,8 +368,8 @@
     "games": 20
   },
   "Sevilla FC": {
-    "elo": 1482.4761080993012,
-    "games": 20
+    "elo": 1483.910914266297,
+    "games": 21
   },
   "Real Sociedad de Fútbol": {
     "elo": 1475.5676663965162,
@@ -380,8 +380,8 @@
     "games": 24
   },
   "Vitória SC": {
-    "elo": 1474.1869575066307,
-    "games": 19
+    "elo": 1467.6897193043026,
+    "games": 20
   },
   "Paris Saint-Germain FC": {
     "elo": 1542.947317412523,
@@ -392,8 +392,8 @@
     "games": 4
   },
   "Juventus FC": {
-    "elo": 1555.9605844447847,
-    "games": 20
+    "elo": 1551.6839998487194,
+    "games": 21
   },
   "AS Monaco FC": {
     "elo": 1581.2656379985067,
@@ -464,8 +464,8 @@
     "games": 19
   },
   "US Lecce": {
-    "elo": 1482.952304351972,
-    "games": 18
+    "elo": 1469.6582571160245,
+    "games": 19
   },
   "Como 1907": {
     "elo": 1595.0518235555498,
@@ -528,12 +528,12 @@
     "games": 19
   },
   "Bologna FC 1909": {
-    "elo": 1471.53553899063,
-    "games": 18
+    "elo": 1469.3365119556101,
+    "games": 19
   },
   "AC Milan": {
-    "elo": 1525.7843244453682,
-    "games": 18
+    "elo": 1530.0609090414334,
+    "games": 19
   },
   "Hellas Verona FC": {
     "elo": 1384.4934878807499,
@@ -596,16 +596,16 @@
     "games": 17
   },
   "Paris FC": {
-    "elo": 1551.7538978969853,
-    "games": 16
+    "elo": 1568.568408304049,
+    "games": 17
   },
   "Olympique de Marseille": {
-    "elo": 1504.4560690404232,
-    "games": 16
+    "elo": 1487.6415586333596,
+    "games": 17
   },
   "US Sassuolo Calcio": {
-    "elo": 1488.4801529821684,
-    "games": 17
+    "elo": 1490.6791800171882,
+    "games": 18
   },
   "SS Lazio": {
     "elo": 1532.2383186397187,
@@ -624,8 +624,8 @@
     "games": 18
   },
   "Cagliari Calcio": {
-    "elo": 1477.2813506627474,
-    "games": 17
+    "elo": 1490.575397898695,
+    "games": 18
   },
   "SC Cambuur-Leeuwarden": {
     "elo": 1402.6549995872415,
@@ -644,8 +644,8 @@
     "games": 5
   },
   "Académico de Viseu FC": {
-    "elo": 1467.377904788266,
-    "games": 4
+    "elo": 1488.8190080951968,
+    "games": 5
   },
   "Real Racing Club de Santander": {
     "elo": 1483.5755569462763,
@@ -656,8 +656,8 @@
     "games": 4
   },
   "Málaga CF": {
-    "elo": 1462.4878402447862,
-    "games": 3
+    "elo": 1461.2676658298824,
+    "games": 4
   },
   "Coventry City FC": {
     "elo": 1456.7342316947531,

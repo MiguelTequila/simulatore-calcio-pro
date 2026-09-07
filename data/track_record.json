@@ -1,7 +1,7 @@
 {
- "graded": 216,
- "pending": 338,
- "brier": 0.2039,
+ "graded": 226,
+ "pending": 328,
+ "brier": 0.2069,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,33 +17,33 @@
   },
   {
    "bin": "20-30%",
-   "n": 316,
-   "avgPred": 0.2455,
-   "actualFreq": 0.2152
+   "n": 333,
+   "avgPred": 0.2459,
+   "actualFreq": 0.2252
   },
   {
    "bin": "30-40%",
-   "n": 206,
-   "avgPred": 0.3493,
-   "actualFreq": 0.3544
+   "n": 215,
+   "avgPred": 0.3495,
+   "actualFreq": 0.3581
   },
   {
    "bin": "40-50%",
-   "n": 160,
-   "avgPred": 0.4444,
-   "actualFreq": 0.525
+   "n": 171,
+   "avgPred": 0.4445,
+   "actualFreq": 0.5263
   },
   {
    "bin": "50-60%",
-   "n": 110,
-   "avgPred": 0.5556,
-   "actualFreq": 0.5091
+   "n": 118,
+   "avgPred": 0.5553,
+   "actualFreq": 0.4831
   },
   {
    "bin": "60-70%",
-   "n": 115,
-   "avgPred": 0.6498,
-   "actualFreq": 0.6435
+   "n": 120,
+   "avgPred": 0.6494,
+   "actualFreq": 0.6333
   },
   {
    "bin": "70-80%",
@@ -65,101 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 165,
-  "wins": 54,
-  "profitUnits": -6.21,
-  "roi": -0.0376,
+  "n": 174,
+  "wins": 57,
+  "profitUnits": -6.45,
+  "roi": -0.0371,
   "history": [
-   {
-    "date": "2026-08-23",
-    "match": "Torino FC - AC Milan",
-    "market": "1",
-    "odds": 4.8,
-    "edge": 0.8225,
-    "won": false,
-    "pl": -1.0,
-    "cum": -25.09
-   },
-   {
-    "date": "2026-08-23",
-    "match": "Go Ahead Eagles - ADO Den Haag",
-    "market": "1",
-    "odds": 1.78,
-    "edge": 0.3016,
-    "won": true,
-    "pl": 0.78,
-    "cum": -24.31
-   },
-   {
-    "date": "2026-08-23",
-    "match": "PSV - FC Groningen",
-    "market": "2",
-    "odds": 8.5,
-    "edge": 1.9205,
-    "won": false,
-    "pl": -1.0,
-    "cum": -25.31
-   },
-   {
-    "date": "2026-08-23",
-    "match": "SC Cambuur-Leeuwarden - Feyenoord Rotterdam",
-    "market": "1",
-    "odds": 11.5,
-    "edge": 0.4749,
-    "won": false,
-    "pl": -1.0,
-    "cum": -26.31
-   },
-   {
-    "date": "2026-08-24",
-    "match": "Fulham FC - Chelsea FC",
-    "market": "1",
-    "odds": 4.15,
-    "edge": 0.7342,
-    "won": false,
-    "pl": -1.0,
-    "cum": -27.31
-   },
-   {
-    "date": "2026-08-24",
-    "match": "CA Osasuna - Levante UD",
-    "market": "Over 2.5",
-    "odds": 2.24,
-    "edge": 0.5156,
-    "won": false,
-    "pl": -1.0,
-    "cum": -28.31
-   },
-   {
-    "date": "2026-08-24",
-    "match": "Málaga CF - RC Deportivo La Coruña",
-    "market": "Over 2.5",
-    "odds": 2.38,
-    "edge": 0.3764,
-    "won": false,
-    "pl": -1.0,
-    "cum": -29.31
-   },
-   {
-    "date": "2026-08-24",
-    "match": "Gil Vicente FC - Casa Pia AC",
-    "market": "Over 2.5",
-    "odds": 2.32,
-    "edge": 0.6429,
-    "won": false,
-    "pl": -1.0,
-    "cum": -30.31
-   },
-   {
-    "date": "2026-08-24",
-    "match": "Bologna FC 1909 - SS Lazio",
-    "market": "Over 2.5",
-    "odds": 2.52,
-    "edge": 0.4303,
-    "won": false,
-    "pl": -1.0,
-    "cum": -31.31
-   },
    {
     "date": "2026-08-24",
     "match": "AS Roma - ACF Fiorentina",
@@ -992,13 +902,63 @@
    },
    {
     "date": "2026-09-06",
+    "match": "RCD Espanyol de Barcelona - Sevilla FC",
+    "market": "Over 2.5",
+    "odds": 2.26,
+    "edge": 0.5429,
+    "won": false,
+    "pl": -1.0,
+    "cum": -14.61
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Deportivo Alavés - CA Osasuna",
+    "market": "1",
+    "odds": 2.36,
+    "edge": 0.0628,
+    "won": true,
+    "pl": 1.36,
+    "cum": -13.25
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Málaga CF - Levante UD",
+    "market": "2",
+    "odds": 3.3,
+    "edge": 0.6982,
+    "won": false,
+    "pl": -1.0,
+    "cum": -14.25
+   },
+   {
+    "date": "2026-09-06",
     "match": "CD Santa Clara - Rio Ave FC",
     "market": "1",
     "odds": 1.92,
     "edge": 0.1955,
     "won": true,
     "pl": 0.92,
-    "cum": -12.69
+    "cum": -13.33
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Gil Vicente FC - Académico de Viseu FC",
+    "market": "Over 2.5",
+    "odds": 2.62,
+    "edge": 0.4576,
+    "won": false,
+    "pl": -1.0,
+    "cum": -14.33
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Vitória SC - Casa Pia AC",
+    "market": "2",
+    "odds": 7.4,
+    "edge": 0.5274,
+    "won": false,
+    "pl": -1.0,
+    "cum": -15.33
    },
    {
     "date": "2026-09-06",
@@ -1008,7 +968,7 @@
     "edge": 0.1812,
     "won": true,
     "pl": 0.79,
-    "cum": -11.9
+    "cum": -14.54
    },
    {
     "date": "2026-09-06",
@@ -1018,7 +978,17 @@
     "edge": 0.5789,
     "won": true,
     "pl": 2.7,
-    "cum": -9.2
+    "cum": -11.84
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Olympique de Marseille - Paris FC",
+    "market": "2",
+    "odds": 4.25,
+    "edge": 0.2532,
+    "won": true,
+    "pl": 3.25,
+    "cum": -8.59
    },
    {
     "date": "2026-09-06",
@@ -1028,7 +998,7 @@
     "edge": 0.6745,
     "won": false,
     "pl": -1.0,
-    "cum": -10.2
+    "cum": -9.59
    },
    {
     "date": "2026-09-06",
@@ -1038,7 +1008,7 @@
     "edge": 0.721,
     "won": false,
     "pl": -1.0,
-    "cum": -11.2
+    "cum": -10.59
    },
    {
     "date": "2026-09-06",
@@ -1048,7 +1018,27 @@
     "edge": 0.5862,
     "won": true,
     "pl": 1.88,
-    "cum": -9.32
+    "cum": -8.71
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Bologna FC 1909 - US Sassuolo Calcio",
+    "market": "Over 2.5",
+    "odds": 2.15,
+    "edge": 0.2578,
+    "won": true,
+    "pl": 1.15,
+    "cum": -7.56
+   },
+   {
+    "date": "2026-09-06",
+    "match": "Juventus FC - AC Milan",
+    "market": "2",
+    "odds": 3.9,
+    "edge": 0.4313,
+    "won": false,
+    "pl": -1.0,
+    "cum": -8.56
    },
    {
     "date": "2026-09-06",
@@ -1058,7 +1048,7 @@
     "edge": 0.2527,
     "won": true,
     "pl": 0.86,
-    "cum": -8.46
+    "cum": -7.7
    },
    {
     "date": "2026-09-06",
@@ -1068,7 +1058,17 @@
     "edge": 0.7848,
     "won": true,
     "pl": 2.25,
-    "cum": -6.21
+    "cum": -5.45
+   },
+   {
+    "date": "2026-09-07",
+    "match": "Cagliari Calcio - US Lecce",
+    "market": "Over 2.5",
+    "odds": 2.55,
+    "edge": 0.2852,
+    "won": false,
+    "pl": -1.0,
+    "cum": -6.45
    }
   ]
  }
