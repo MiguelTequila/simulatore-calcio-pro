@@ -1,7 +1,7 @@
 {
- "graded": 226,
- "pending": 328,
- "brier": 0.2069,
+ "graded": 232,
+ "pending": 336,
+ "brier": 0.2073,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,45 +11,45 @@
   },
   {
    "bin": "10-20%",
-   "n": 84,
-   "avgPred": 0.1632,
-   "actualFreq": 0.1429
+   "n": 85,
+   "avgPred": 0.1634,
+   "actualFreq": 0.1412
   },
   {
    "bin": "20-30%",
-   "n": 333,
-   "avgPred": 0.2459,
-   "actualFreq": 0.2252
+   "n": 340,
+   "avgPred": 0.2457,
+   "actualFreq": 0.2265
   },
   {
    "bin": "30-40%",
-   "n": 215,
-   "avgPred": 0.3495,
-   "actualFreq": 0.3581
+   "n": 223,
+   "avgPred": 0.3494,
+   "actualFreq": 0.3587
   },
   {
    "bin": "40-50%",
-   "n": 171,
-   "avgPred": 0.4445,
-   "actualFreq": 0.5263
+   "n": 178,
+   "avgPred": 0.4438,
+   "actualFreq": 0.5225
   },
   {
    "bin": "50-60%",
-   "n": 118,
-   "avgPred": 0.5553,
-   "actualFreq": 0.4831
+   "n": 121,
+   "avgPred": 0.556,
+   "actualFreq": 0.4793
   },
   {
    "bin": "60-70%",
-   "n": 120,
-   "avgPred": 0.6494,
-   "actualFreq": 0.6333
+   "n": 123,
+   "avgPred": 0.6488,
+   "actualFreq": 0.6341
   },
   {
    "bin": "70-80%",
-   "n": 61,
-   "avgPred": 0.7415,
-   "actualFreq": 0.8197
+   "n": 62,
+   "avgPred": 0.742,
+   "actualFreq": 0.8226
   },
   {
    "bin": "80-90%",
@@ -65,61 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 174,
-  "wins": 57,
-  "profitUnits": -6.45,
-  "roi": -0.0371,
+  "n": 179,
+  "wins": 59,
+  "profitUnits": -7.21,
+  "roi": -0.0403,
   "history": [
-   {
-    "date": "2026-08-24",
-    "match": "AS Roma - ACF Fiorentina",
-    "market": "2",
-    "odds": 5.4,
-    "edge": 0.4622,
-    "won": false,
-    "pl": -1.0,
-    "cum": -32.31
-   },
-   {
-    "date": "2026-08-25",
-    "match": "Valencia CF - Real Betis Balompié",
-    "market": "Over 2.5",
-    "odds": 2.26,
-    "edge": 0.3686,
-    "won": false,
-    "pl": -1.0,
-    "cum": -33.31
-   },
-   {
-    "date": "2026-08-26",
-    "match": "Real Madrid CF - Real Sociedad de Fútbol",
-    "market": "2",
-    "odds": 14.5,
-    "edge": 1.8673,
-    "won": false,
-    "pl": -1.0,
-    "cum": -34.31
-   },
-   {
-    "date": "2026-08-28",
-    "match": "Crystal Palace FC - Manchester City FC",
-    "market": "1",
-    "odds": 5.3,
-    "edge": 0.4314,
-    "won": false,
-    "pl": -1.0,
-    "cum": -35.31
-   },
-   {
-    "date": "2026-08-28",
-    "match": "Real Racing Club de Santander - Elche CF",
-    "market": "Over 2.5",
-    "odds": 1.88,
-    "edge": 0.2246,
-    "won": true,
-    "pl": 0.88,
-    "cum": -34.43
-   },
    {
     "date": "2026-08-28",
     "match": "Deportivo Alavés - Villarreal CF",
@@ -1062,13 +1012,63 @@
    },
    {
     "date": "2026-09-07",
+    "match": "Elche CF - Real Sociedad de Fútbol",
+    "market": "Over 2.5",
+    "odds": 1.83,
+    "edge": 0.1997,
+    "won": true,
+    "pl": 0.83,
+    "cum": -4.62
+   },
+   {
+    "date": "2026-09-07",
+    "match": "GD Estoril Praia - FC Arouca",
+    "market": "2",
+    "odds": 3.2,
+    "edge": 0.894,
+    "won": false,
+    "pl": -1.0,
+    "cum": -5.62
+   },
+   {
+    "date": "2026-09-07",
     "match": "Cagliari Calcio - US Lecce",
     "market": "Over 2.5",
     "odds": 2.55,
     "edge": 0.2852,
     "won": false,
     "pl": -1.0,
-    "cum": -6.45
+    "cum": -6.62
+   },
+   {
+    "date": "2026-09-07",
+    "match": "Udinese Calcio - SS Lazio",
+    "market": "Over 2.5",
+    "odds": 2.41,
+    "edge": 0.444,
+    "won": true,
+    "pl": 1.41,
+    "cum": -5.21
+   },
+   {
+    "date": "2026-09-08",
+    "match": "NEC - SBV Excelsior",
+    "market": "2",
+    "odds": 5.75,
+    "edge": 1.5908,
+    "won": false,
+    "pl": -1.0,
+    "cum": -6.21
+   },
+   {
+    "date": "2026-09-08",
+    "match": "Club Brugge KV - Aston Villa FC",
+    "market": "1",
+    "odds": 2.8,
+    "edge": 0.1575,
+    "won": false,
+    "pl": -1.0,
+    "cum": -7.21
    }
   ]
  }
