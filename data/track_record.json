@@ -1,61 +1,61 @@
 {
- "graded": 240,
- "pending": 352,
- "brier": 0.2067,
+ "graded": 247,
+ "pending": 372,
+ "brier": 0.2064,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 9,
-   "avgPred": 0.076,
-   "actualFreq": 0.1111
+   "n": 10,
+   "avgPred": 0.0748,
+   "actualFreq": 0.1
   },
   {
    "bin": "10-20%",
-   "n": 91,
-   "avgPred": 0.1625,
-   "actualFreq": 0.1538
+   "n": 92,
+   "avgPred": 0.1619,
+   "actualFreq": 0.1522
   },
   {
    "bin": "20-30%",
-   "n": 349,
-   "avgPred": 0.2457,
-   "actualFreq": 0.2206
+   "n": 358,
+   "avgPred": 0.2456,
+   "actualFreq": 0.2207
   },
   {
    "bin": "30-40%",
-   "n": 233,
-   "avgPred": 0.3499,
-   "actualFreq": 0.3562
+   "n": 243,
+   "avgPred": 0.3504,
+   "actualFreq": 0.3498
   },
   {
    "bin": "40-50%",
-   "n": 181,
-   "avgPred": 0.4439,
-   "actualFreq": 0.5249
+   "n": 186,
+   "avgPred": 0.4438,
+   "actualFreq": 0.5376
   },
   {
    "bin": "50-60%",
-   "n": 124,
-   "avgPred": 0.556,
-   "actualFreq": 0.4758
+   "n": 126,
+   "avgPred": 0.5562,
+   "actualFreq": 0.4683
   },
   {
    "bin": "60-70%",
-   "n": 129,
-   "avgPred": 0.6478,
-   "actualFreq": 0.6512
+   "n": 134,
+   "avgPred": 0.6468,
+   "actualFreq": 0.6493
   },
   {
    "bin": "70-80%",
-   "n": 63,
-   "avgPred": 0.7422,
-   "actualFreq": 0.8254
+   "n": 64,
+   "avgPred": 0.743,
+   "actualFreq": 0.8281
   },
   {
    "bin": "80-90%",
-   "n": 20,
-   "avgPred": 0.8345,
-   "actualFreq": 0.7
+   "n": 21,
+   "avgPred": 0.8339,
+   "actualFreq": 0.7143
   },
   {
    "bin": "90-100%",
@@ -65,41 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 185,
+  "n": 188,
   "wins": 60,
-  "profitUnits": -9.5,
-  "roi": -0.0514,
+  "profitUnits": -12.5,
+  "roi": -0.0665,
   "history": [
-   {
-    "date": "2026-08-29",
-    "match": "Tottenham Hotspur FC - Newcastle United FC",
-    "market": "2",
-    "odds": 3.2,
-    "edge": 0.3048,
-    "won": true,
-    "pl": 2.2,
-    "cum": -24.33
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Levante UD - Real Betis Balompié",
-    "market": "1",
-    "odds": 3.6,
-    "edge": 0.304,
-    "won": true,
-    "pl": 2.6,
-    "cum": -21.73
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Real Sociedad de Fútbol - RCD Espanyol de Barcelona",
-    "market": "2",
-    "odds": 4.5,
-    "edge": 1.2518,
-    "won": false,
-    "pl": -1.0,
-    "cum": -22.73
-   },
    {
     "date": "2026-08-29",
     "match": "FC Alverca - CD Santa Clara",
@@ -1052,13 +1022,23 @@
    },
    {
     "date": "2026-09-09",
+    "match": "Moreirense FC - Sport Lisboa e Benfica",
+    "market": "1",
+    "odds": 24.0,
+    "edge": 0.5394,
+    "won": false,
+    "pl": -1.0,
+    "cum": -8.5
+   },
+   {
+    "date": "2026-09-09",
     "match": "FC Barcelona - Feyenoord Rotterdam",
     "market": "2",
     "odds": 30.0,
     "edge": 4.763,
     "won": false,
     "pl": -1.0,
-    "cum": -8.5
+    "cum": -9.5
    },
    {
     "date": "2026-09-09",
@@ -1068,7 +1048,27 @@
     "edge": 1.8595,
     "won": false,
     "pl": -1.0,
-    "cum": -9.5
+    "cum": -10.5
+   },
+   {
+    "date": "2026-09-09",
+    "match": "SSC Napoli - Arsenal FC",
+    "market": "1",
+    "odds": 6.0,
+    "edge": 0.9723,
+    "won": false,
+    "pl": -1.0,
+    "cum": -11.5
+   },
+   {
+    "date": "2026-09-10",
+    "match": "PSV - FK Shakhtar Donetsk",
+    "market": "2",
+    "odds": 7.5,
+    "edge": 0.6757,
+    "won": false,
+    "pl": -1.0,
+    "cum": -12.5
    }
   ]
  }

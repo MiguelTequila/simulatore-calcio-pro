@@ -40,8 +40,8 @@
     "games": 18
   },
   "Arsenal FC": {
-    "elo": 1606.2836884706242,
-    "games": 25
+    "elo": 1621.5677817156447,
+    "games": 26
   },
   "Fulham FC": {
     "elo": 1440.3518668329891,
@@ -60,8 +60,8 @@
     "games": 21
   },
   "Club Atlético de Madrid": {
-    "elo": 1525.6302660763076,
-    "games": 29
+    "elo": 1513.3182639147403,
+    "games": 30
   },
   "Deportivo Alavés": {
     "elo": 1553.5061477328202,
@@ -88,8 +88,8 @@
     "games": 15
   },
   "Moreirense FC": {
-    "elo": 1453.111150257457,
-    "games": 19
+    "elo": 1431.7619495192585,
+    "games": 20
   },
   "CF Estrela da Amadora": {
     "elo": 1484.5257018994942,
@@ -108,8 +108,8 @@
     "games": 20
   },
   "Sport Lisboa e Benfica": {
-    "elo": 1621.2218936178754,
-    "games": 21
+    "elo": 1642.571094356074,
+    "games": 22
   },
   "FC Porto": {
     "elo": 1610.8473657163129,
@@ -212,8 +212,8 @@
     "games": 18
   },
   "Liverpool FC": {
-    "elo": 1542.1794140532493,
-    "games": 22
+    "elo": 1554.4914162148166,
+    "games": 23
   },
   "Aston Villa FC": {
     "elo": 1475.717349355201,
@@ -376,20 +376,20 @@
     "games": 22
   },
   "Sporting Clube de Portugal": {
-    "elo": 1611.8146400030448,
-    "games": 24
+    "elo": 1624.4498978796464,
+    "games": 25
   },
   "Vitória SC": {
     "elo": 1467.6897193043026,
     "games": 20
   },
   "Paris Saint-Germain FC": {
-    "elo": 1542.947317412523,
-    "games": 27
+    "elo": 1565.3130334420994,
+    "games": 28
   },
   "Galatasaray SK": {
-    "elo": 1496.040171521547,
-    "games": 4
+    "elo": 1485.384827884172,
+    "games": 5
   },
   "Juventus FC": {
     "elo": 1551.6839998487194,
@@ -496,8 +496,8 @@
     "games": 19
   },
   "PSV": {
-    "elo": 1655.5723902179047,
-    "games": 19
+    "elo": 1646.5901740477302,
+    "games": 20
   },
   "Feyenoord Rotterdam": {
     "elo": 1571.4110352549847,
@@ -524,8 +524,8 @@
     "games": 19
   },
   "AS Roma": {
-    "elo": 1615.3686525739454,
-    "games": 19
+    "elo": 1613.0652050725685,
+    "games": 20
   },
   "Bologna FC 1909": {
     "elo": 1469.3365119556101,
@@ -568,8 +568,8 @@
     "games": 18
   },
   "SSC Napoli": {
-    "elo": 1525.7275839408087,
-    "games": 18
+    "elo": 1510.4434906957881,
+    "games": 19
   },
   "ACF Fiorentina": {
     "elo": 1445.1883544918587,
@@ -713,6 +713,18 @@
   },
   "Viking FK": {
     "elo": 1482.588732592026,
+    "games": 1
+  },
+  "ŠK Slovan Bratislava": {
+    "elo": 1477.6342839704237,
+    "games": 1
+  },
+  "Fenerbahçe SK": {
+    "elo": 1502.303447501377,
+    "games": 1
+  },
+  "FK Shakhtar Donetsk": {
+    "elo": 1508.9822161701745,
     "games": 1
   }
 }
