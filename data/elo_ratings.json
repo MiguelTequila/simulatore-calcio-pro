@@ -92,8 +92,8 @@
     "games": 20
   },
   "CF Estrela da Amadora": {
-    "elo": 1484.5257018994942,
-    "games": 19
+    "elo": 1500.8458868228167,
+    "games": 20
   },
   "FC Arouca": {
     "elo": 1540.1901111449463,
@@ -136,8 +136,8 @@
     "games": 17
   },
   "FC Bayern München": {
-    "elo": 1624.8251971323768,
-    "games": 23
+    "elo": 1642.3142450746589,
+    "games": 24
   },
   "1. FC Heidenheim 1846": {
     "elo": 1438.8675780838582,
@@ -164,8 +164,8 @@
     "games": 22
   },
   "RB Leipzig": {
-    "elo": 1539.2132601351702,
-    "games": 17
+    "elo": 1520.5771383658073,
+    "games": 18
   },
   "Botafogo FR": {
     "elo": 1526.3899979602193,
@@ -208,8 +208,8 @@
     "games": 18
   },
   "Manchester United FC": {
-    "elo": 1542.1244983149606,
-    "games": 18
+    "elo": 1563.1570109181419,
+    "games": 19
   },
   "Liverpool FC": {
     "elo": 1554.4914162148166,
@@ -264,8 +264,8 @@
     "games": 15
   },
   "Sporting Clube de Braga": {
-    "elo": 1556.4793574939893,
-    "games": 18
+    "elo": 1540.1591725706667,
+    "games": 19
   },
   "GD Estoril Praia": {
     "elo": 1412.5560124036679,
@@ -416,8 +416,8 @@
     "games": 2
   },
   "FK Bodø/Glimt": {
-    "elo": 1539.8191453560107,
-    "games": 4
+    "elo": 1502.4205247357233,
+    "games": 5
   },
   "FC Internazionale Milano": {
     "elo": 1597.0652567825384,
@@ -468,8 +468,8 @@
     "games": 19
   },
   "Como 1907": {
-    "elo": 1595.0518235555498,
-    "games": 19
+    "elo": 1613.6879453249128,
+    "games": 20
   },
   "US Cremonese": {
     "elo": 1390.5776093495786,
@@ -548,8 +548,8 @@
     "games": 13
   },
   "Racing Club de Lens": {
-    "elo": 1516.6248242840154,
-    "games": 17
+    "elo": 1534.8382981641735,
+    "games": 18
   },
   "Stade Rennais FC 1901": {
     "elo": 1565.4210064894123,
@@ -725,6 +725,14 @@
   },
   "FK Shakhtar Donetsk": {
     "elo": 1508.9822161701745,
+    "games": 1
+  },
+  "Sabah FK": {
+    "elo": 1478.9674873968188,
+    "games": 1
+  },
+  "SK Slavia Praha": {
+    "elo": 1481.786526119842,
     "games": 1
   }
 }

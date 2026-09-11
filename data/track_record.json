@@ -1,7 +1,7 @@
 {
- "graded": 247,
- "pending": 372,
- "brier": 0.2064,
+ "graded": 252,
+ "pending": 368,
+ "brier": 0.2053,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,45 +11,45 @@
   },
   {
    "bin": "10-20%",
-   "n": 92,
-   "avgPred": 0.1619,
-   "actualFreq": 0.1522
+   "n": 93,
+   "avgPred": 0.1623,
+   "actualFreq": 0.1505
   },
   {
    "bin": "20-30%",
-   "n": 358,
-   "avgPred": 0.2456,
-   "actualFreq": 0.2207
+   "n": 367,
+   "avgPred": 0.2459,
+   "actualFreq": 0.218
   },
   {
    "bin": "30-40%",
-   "n": 243,
-   "avgPred": 0.3504,
-   "actualFreq": 0.3498
+   "n": 248,
+   "avgPred": 0.3506,
+   "actualFreq": 0.3468
   },
   {
    "bin": "40-50%",
-   "n": 186,
-   "avgPred": 0.4438,
-   "actualFreq": 0.5376
+   "n": 190,
+   "avgPred": 0.4441,
+   "actualFreq": 0.5368
   },
   {
    "bin": "50-60%",
-   "n": 126,
-   "avgPred": 0.5562,
-   "actualFreq": 0.4683
+   "n": 127,
+   "avgPred": 0.5565,
+   "actualFreq": 0.4724
   },
   {
    "bin": "60-70%",
-   "n": 134,
-   "avgPred": 0.6468,
-   "actualFreq": 0.6493
+   "n": 138,
+   "avgPred": 0.6465,
+   "actualFreq": 0.6594
   },
   {
    "bin": "70-80%",
-   "n": 64,
-   "avgPred": 0.743,
-   "actualFreq": 0.8281
+   "n": 65,
+   "avgPred": 0.7425,
+   "actualFreq": 0.8308
   },
   {
    "bin": "80-90%",
@@ -65,41 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 188,
-  "wins": 60,
-  "profitUnits": -12.5,
-  "roi": -0.0665,
+  "n": 191,
+  "wins": 61,
+  "profitUnits": -8.9,
+  "roi": -0.0466,
   "history": [
-   {
-    "date": "2026-08-29",
-    "match": "FC Alverca - CD Santa Clara",
-    "market": "2",
-    "odds": 3.0,
-    "edge": 0.5832,
-    "won": false,
-    "pl": -1.0,
-    "cum": -23.73
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Académico de Viseu FC - FC Porto",
-    "market": "1",
-    "odds": 12.5,
-    "edge": 1.5466,
-    "won": false,
-    "pl": -1.0,
-    "cum": -24.73
-   },
-   {
-    "date": "2026-08-29",
-    "match": "1. FSV Mainz 05 - SC Paderborn 07",
-    "market": "2",
-    "odds": 5.4,
-    "edge": 0.5311,
-    "won": false,
-    "pl": -1.0,
-    "cum": -25.73
-   },
    {
     "date": "2026-08-29",
     "match": "1. FC Union Berlin - Eintracht Frankfurt",
@@ -1062,13 +1032,43 @@
    },
    {
     "date": "2026-09-10",
+    "match": "CF Estrela da Amadora - Sporting Clube de Braga",
+    "market": "1",
+    "odds": 6.6,
+    "edge": 0.9534,
+    "won": true,
+    "pl": 5.6,
+    "cum": -5.9
+   },
+   {
+    "date": "2026-09-10",
     "match": "PSV - FK Shakhtar Donetsk",
     "market": "2",
     "odds": 7.5,
     "edge": 0.6757,
     "won": false,
     "pl": -1.0,
-    "cum": -12.5
+    "cum": -6.9
+   },
+   {
+    "date": "2026-09-10",
+    "match": "Manchester United FC - Sabah FK",
+    "market": "2",
+    "odds": 43.0,
+    "edge": 7.4031,
+    "won": false,
+    "pl": -1.0,
+    "cum": -7.9
+   },
+   {
+    "date": "2026-09-10",
+    "match": "Como 1907 - RB Leipzig",
+    "market": "2",
+    "odds": 5.0,
+    "edge": 0.3903,
+    "won": false,
+    "pl": -1.0,
+    "cum": -8.9
    }
   ]
  }
