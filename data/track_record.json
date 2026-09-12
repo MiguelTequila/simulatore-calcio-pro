@@ -1,61 +1,61 @@
 {
- "graded": 252,
- "pending": 368,
- "brier": 0.2053,
+ "graded": 273,
+ "pending": 350,
+ "brier": 0.2088,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 10,
-   "avgPred": 0.0748,
-   "actualFreq": 0.1
+   "n": 15,
+   "avgPred": 0.0743,
+   "actualFreq": 0.1333
   },
   {
    "bin": "10-20%",
-   "n": 93,
-   "avgPred": 0.1623,
-   "actualFreq": 0.1505
+   "n": 113,
+   "avgPred": 0.1627,
+   "actualFreq": 0.177
   },
   {
    "bin": "20-30%",
-   "n": 367,
-   "avgPred": 0.2459,
-   "actualFreq": 0.218
+   "n": 390,
+   "avgPred": 0.2457,
+   "actualFreq": 0.2256
   },
   {
    "bin": "30-40%",
-   "n": 248,
-   "avgPred": 0.3506,
-   "actualFreq": 0.3468
+   "n": 262,
+   "avgPred": 0.3503,
+   "actualFreq": 0.3588
   },
   {
    "bin": "40-50%",
-   "n": 190,
-   "avgPred": 0.4441,
-   "actualFreq": 0.5368
+   "n": 200,
+   "avgPred": 0.4446,
+   "actualFreq": 0.515
   },
   {
    "bin": "50-60%",
-   "n": 127,
-   "avgPred": 0.5565,
-   "actualFreq": 0.4724
+   "n": 132,
+   "avgPred": 0.5564,
+   "actualFreq": 0.4773
   },
   {
    "bin": "60-70%",
-   "n": 138,
-   "avgPred": 0.6465,
-   "actualFreq": 0.6594
+   "n": 151,
+   "avgPred": 0.6464,
+   "actualFreq": 0.6358
   },
   {
    "bin": "70-80%",
-   "n": 65,
-   "avgPred": 0.7425,
-   "actualFreq": 0.8308
+   "n": 71,
+   "avgPred": 0.7443,
+   "actualFreq": 0.831
   },
   {
    "bin": "80-90%",
-   "n": 21,
-   "avgPred": 0.8339,
-   "actualFreq": 0.7143
+   "n": 30,
+   "avgPred": 0.8377,
+   "actualFreq": 0.6667
   },
   {
    "bin": "90-100%",
@@ -65,171 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 191,
-  "wins": 61,
-  "profitUnits": -8.9,
-  "roi": -0.0466,
+  "n": 207,
+  "wins": 64,
+  "profitUnits": -17.72,
+  "roi": -0.0856,
   "history": [
-   {
-    "date": "2026-08-29",
-    "match": "1. FC Union Berlin - Eintracht Frankfurt",
-    "market": "Over 2.5",
-    "odds": 1.71,
-    "edge": 0.0884,
-    "won": true,
-    "pl": 0.71,
-    "cum": -25.02
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Borussia Dortmund - Hamburger SV",
-    "market": "2",
-    "odds": 10.5,
-    "edge": 1.2932,
-    "won": false,
-    "pl": -1.0,
-    "cum": -26.02
-   },
-   {
-    "date": "2026-08-29",
-    "match": "FC Lorient - ES Troyes AC",
-    "market": "2",
-    "odds": 4.6,
-    "edge": 0.4043,
-    "won": true,
-    "pl": 3.6,
-    "cum": -22.42
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Olympique Lyonnais - Le Havre AC",
-    "market": "2",
-    "odds": 7.6,
-    "edge": 0.806,
-    "won": false,
-    "pl": -1.0,
-    "cum": -23.42
-   },
-   {
-    "date": "2026-08-29",
-    "match": "AJ Auxerre - Angers SCO",
-    "market": "Over 2.5",
-    "odds": 2.08,
-    "edge": 0.4777,
-    "won": true,
-    "pl": 1.08,
-    "cum": -22.34
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Stade Brestois 29 - Toulouse FC",
-    "market": "Over 2.5",
-    "odds": 2.04,
-    "edge": 0.2769,
-    "won": true,
-    "pl": 1.04,
-    "cum": -21.3
-   },
-   {
-    "date": "2026-08-29",
-    "match": "US Sassuolo Calcio - Torino FC",
-    "market": "Over 2.5",
-    "odds": 2.12,
-    "edge": 0.254,
-    "won": true,
-    "pl": 1.12,
-    "cum": -20.18
-   },
-   {
-    "date": "2026-08-29",
-    "match": "AC Monza - Udinese Calcio",
-    "market": "Over 2.5",
-    "odds": 2.36,
-    "edge": 0.4468,
-    "won": true,
-    "pl": 1.36,
-    "cum": -18.82
-   },
-   {
-    "date": "2026-08-29",
-    "match": "ACF Fiorentina - Frosinone Calcio",
-    "market": "2",
-    "odds": 5.75,
-    "edge": 1.1245,
-    "won": true,
-    "pl": 4.75,
-    "cum": -14.07
-   },
-   {
-    "date": "2026-08-29",
-    "match": "Juventus FC - Parma Calcio 1913",
-    "market": "2",
-    "odds": 15.0,
-    "edge": 2.3667,
-    "won": false,
-    "pl": -1.0,
-    "cum": -15.07
-   },
-   {
-    "date": "2026-08-29",
-    "match": "SBV Excelsior - Sparta Rotterdam",
-    "market": "1",
-    "odds": 2.48,
-    "edge": 0.3587,
-    "won": true,
-    "pl": 1.48,
-    "cum": -13.59
-   },
-   {
-    "date": "2026-08-29",
-    "match": "AZ - Go Ahead Eagles",
-    "market": "2",
-    "odds": 7.6,
-    "edge": 0.3981,
-    "won": false,
-    "pl": -1.0,
-    "cum": -14.59
-   },
-   {
-    "date": "2026-08-29",
-    "match": "PEC Zwolle - NEC",
-    "market": "2",
-    "odds": 2.08,
-    "edge": 0.0857,
-    "won": true,
-    "pl": 1.08,
-    "cum": -13.51
-   },
-   {
-    "date": "2026-08-30",
-    "match": "Sunderland AFC - Fulham FC",
-    "market": "Over 2.5",
-    "odds": 2.12,
-    "edge": 0.4357,
-    "won": false,
-    "pl": -1.0,
-    "cum": -14.51
-   },
-   {
-    "date": "2026-08-30",
-    "match": "Leeds United FC - Brentford FC",
-    "market": "Over 2.5",
-    "odds": 2.0,
-    "edge": 0.2769,
-    "won": false,
-    "pl": -1.0,
-    "cum": -15.51
-   },
-   {
-    "date": "2026-08-30",
-    "match": "Manchester United FC - Ipswich Town FC",
-    "market": "2",
-    "odds": 8.5,
-    "edge": 1.8541,
-    "won": false,
-    "pl": -1.0,
-    "cum": -16.51
-   },
    {
     "date": "2026-08-30",
     "match": "Real Madrid CF - Málaga CF",
@@ -1069,6 +909,166 @@
     "won": false,
     "pl": -1.0,
     "cum": -8.9
+   },
+   {
+    "date": "2026-09-11",
+    "match": "1. FC Union Berlin - FC Schalke 04",
+    "market": "2",
+    "odds": 3.2,
+    "edge": 0.473,
+    "won": true,
+    "pl": 2.2,
+    "cum": -6.7
+   },
+   {
+    "date": "2026-09-11",
+    "match": "Sevilla FC - Valencia CF",
+    "market": "Over 2.5",
+    "odds": 2.4,
+    "edge": 0.5787,
+    "won": false,
+    "pl": -1.0,
+    "cum": -7.7
+   },
+   {
+    "date": "2026-09-11",
+    "match": "Venezia FC - ACF Fiorentina",
+    "market": "1",
+    "odds": 3.18,
+    "edge": 0.4777,
+    "won": false,
+    "pl": -1.0,
+    "cum": -8.7
+   },
+   {
+    "date": "2026-09-11",
+    "match": "AZ - Willem II Tilburg",
+    "market": "Over 2.5",
+    "odds": 1.26,
+    "edge": 0.0557,
+    "won": false,
+    "pl": -1.0,
+    "cum": -9.7
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Crystal Palace FC - Ipswich Town FC",
+    "market": "Over 2.5",
+    "odds": 1.9,
+    "edge": 0.4489,
+    "won": true,
+    "pl": 0.9,
+    "cum": -8.8
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Liverpool FC - Fulham FC",
+    "market": "Over 2.5",
+    "odds": 1.45,
+    "edge": 0.1014,
+    "won": false,
+    "pl": -1.0,
+    "cum": -9.8
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Aston Villa FC - Nottingham Forest FC",
+    "market": "Over 2.5",
+    "odds": 2.08,
+    "edge": 0.1441,
+    "won": true,
+    "pl": 1.08,
+    "cum": -8.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "AFC Bournemouth - Brentford FC",
+    "market": "2",
+    "odds": 2.8,
+    "edge": 0.2459,
+    "won": false,
+    "pl": -1.0,
+    "cum": -9.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Chelsea FC - Hull City AFC",
+    "market": "2",
+    "odds": 14.0,
+    "edge": 2.8185,
+    "won": false,
+    "pl": -1.0,
+    "cum": -10.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Borussia Dortmund - SC Paderborn 07",
+    "market": "2",
+    "odds": 13.0,
+    "edge": 1.5863,
+    "won": false,
+    "pl": -1.0,
+    "cum": -11.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "1. FSV Mainz 05 - Eintracht Frankfurt",
+    "market": "1",
+    "odds": 2.04,
+    "edge": 0.4208,
+    "won": false,
+    "pl": -1.0,
+    "cum": -12.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Real Racing Club de Santander - Deportivo Alavés",
+    "market": "2",
+    "odds": 3.0,
+    "edge": 0.7476,
+    "won": false,
+    "pl": -1.0,
+    "cum": -13.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "CA Osasuna - RCD Espanyol de Barcelona",
+    "market": "Over 2.5",
+    "odds": 2.34,
+    "edge": 0.4102,
+    "won": false,
+    "pl": -1.0,
+    "cum": -14.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "CD Nacional - FC Alverca",
+    "market": "1",
+    "odds": 2.8,
+    "edge": 0.3445,
+    "won": false,
+    "pl": -1.0,
+    "cum": -15.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "RC Strasbourg Alsace - AS Monaco FC",
+    "market": "Over 2.5",
+    "odds": 1.64,
+    "edge": 0.1435,
+    "won": false,
+    "pl": -1.0,
+    "cum": -16.72
+   },
+   {
+    "date": "2026-09-12",
+    "match": "Genoa CFC - Frosinone Calcio",
+    "market": "2",
+    "odds": 3.65,
+    "edge": 1.2539,
+    "won": false,
+    "pl": -1.0,
+    "cum": -17.72
    }
   ]
  }
