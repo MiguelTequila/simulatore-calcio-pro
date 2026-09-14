@@ -1,61 +1,61 @@
 {
- "graded": 302,
- "pending": 326,
- "brier": 0.2107,
+ "graded": 313,
+ "pending": 317,
+ "brier": 0.2109,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 19,
-   "avgPred": 0.0732,
-   "actualFreq": 0.1579
+   "n": 22,
+   "avgPred": 0.0749,
+   "actualFreq": 0.1364
   },
   {
    "bin": "10-20%",
-   "n": 140,
-   "avgPred": 0.1615,
-   "actualFreq": 0.1857
+   "n": 150,
+   "avgPred": 0.1609,
+   "actualFreq": 0.1867
   },
   {
    "bin": "20-30%",
-   "n": 422,
-   "avgPred": 0.246,
-   "actualFreq": 0.2346
+   "n": 433,
+   "avgPred": 0.2463,
+   "actualFreq": 0.2379
   },
   {
    "bin": "30-40%",
-   "n": 282,
-   "avgPred": 0.3502,
-   "actualFreq": 0.3546
+   "n": 288,
+   "avgPred": 0.35,
+   "actualFreq": 0.3576
   },
   {
    "bin": "40-50%",
-   "n": 218,
-   "avgPred": 0.4451,
-   "actualFreq": 0.5229
+   "n": 225,
+   "avgPred": 0.4452,
+   "actualFreq": 0.52
   },
   {
    "bin": "50-60%",
-   "n": 146,
-   "avgPred": 0.5557,
-   "actualFreq": 0.4589
+   "n": 151,
+   "avgPred": 0.5556,
+   "actualFreq": 0.457
   },
   {
    "bin": "60-70%",
-   "n": 160,
-   "avgPred": 0.6472,
-   "actualFreq": 0.6312
+   "n": 164,
+   "avgPred": 0.6475,
+   "actualFreq": 0.622
   },
   {
    "bin": "70-80%",
-   "n": 79,
-   "avgPred": 0.7449,
-   "actualFreq": 0.7975
+   "n": 86,
+   "avgPred": 0.7439,
+   "actualFreq": 0.7907
   },
   {
    "bin": "80-90%",
-   "n": 42,
-   "avgPred": 0.8339,
-   "actualFreq": 0.7143
+   "n": 44,
+   "avgPred": 0.8344,
+   "actualFreq": 0.7273
   },
   {
    "bin": "90-100%",
@@ -65,91 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 230,
-  "wins": 70,
-  "profitUnits": -23.92,
-  "roi": -0.104,
+  "n": 238,
+  "wins": 72,
+  "profitUnits": -23.77,
+  "roi": -0.0999,
   "history": [
-   {
-    "date": "2026-09-04",
-    "match": "FC Porto - Moreirense FC",
-    "market": "2",
-    "odds": 34.0,
-    "edge": 1.6681,
-    "won": false,
-    "pl": -1.0,
-    "cum": -17.43
-   },
-   {
-    "date": "2026-09-04",
-    "match": "VfB Stuttgart - 1. FC Köln",
-    "market": "2",
-    "odds": 6.0,
-    "edge": 1.625,
-    "won": false,
-    "pl": -1.0,
-    "cum": -18.43
-   },
-   {
-    "date": "2026-09-04",
-    "match": "Olympique Lyonnais - AJ Auxerre",
-    "market": "Over 2.5",
-    "odds": 1.74,
-    "edge": 0.2689,
-    "won": true,
-    "pl": 0.74,
-    "cum": -17.69
-   },
-   {
-    "date": "2026-09-04",
-    "match": "Genoa CFC - Como 1907",
-    "market": "1",
-    "odds": 6.2,
-    "edge": 0.6121,
-    "won": false,
-    "pl": -1.0,
-    "cum": -18.69
-   },
-   {
-    "date": "2026-09-04",
-    "match": "Sparta Rotterdam - PEC Zwolle",
-    "market": "1",
-    "odds": 2.0,
-    "edge": 0.1183,
-    "won": false,
-    "pl": -1.0,
-    "cum": -19.69
-   },
-   {
-    "date": "2026-09-05",
-    "match": "Newcastle United FC - AFC Bournemouth",
-    "market": "1",
-    "odds": 2.2,
-    "edge": 0.1328,
-    "won": false,
-    "pl": -1.0,
-    "cum": -20.69
-   },
-   {
-    "date": "2026-09-05",
-    "match": "Nottingham Forest FC - Tottenham Hotspur FC",
-    "market": "Over 2.5",
-    "odds": 2.02,
-    "edge": 0.3194,
-    "won": false,
-    "pl": -1.0,
-    "cum": -21.69
-   },
-   {
-    "date": "2026-09-05",
-    "match": "Manchester City FC - Coventry City FC",
-    "market": "2",
-    "odds": 18.0,
-    "edge": 0.8746,
-    "won": false,
-    "pl": -1.0,
-    "cum": -22.69
-   },
    {
     "date": "2026-09-05",
     "match": "Brentford FC - Sunderland AFC",
@@ -1002,13 +922,43 @@
    },
    {
     "date": "2026-09-13",
+    "match": "Getafe CF - RC Deportivo La Coruña",
+    "market": "2",
+    "odds": 3.65,
+    "edge": 0.7317,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.74
+   },
+   {
+    "date": "2026-09-13",
     "match": "Levante UD - FC Barcelona",
     "market": "1",
     "odds": 19.0,
     "edge": 0.3526,
     "won": false,
     "pl": -1.0,
-    "cum": -21.74
+    "cum": -22.74
+   },
+   {
+    "date": "2026-09-13",
+    "match": "Sport Lisboa e Benfica - Gil Vicente FC",
+    "market": "2",
+    "odds": 25.0,
+    "edge": 1.2519,
+    "won": false,
+    "pl": -1.0,
+    "cum": -23.74
+   },
+   {
+    "date": "2026-09-13",
+    "match": "FC Arouca - CD Santa Clara",
+    "market": "Over 2.5",
+    "odds": 2.4,
+    "edge": 0.0863,
+    "won": true,
+    "pl": 1.4,
+    "cum": -22.34
    },
    {
     "date": "2026-09-13",
@@ -1018,7 +968,7 @@
     "edge": 0.3881,
     "won": false,
     "pl": -1.0,
-    "cum": -22.74
+    "cum": -23.34
    },
    {
     "date": "2026-09-13",
@@ -1028,7 +978,17 @@
     "edge": 0.1878,
     "won": false,
     "pl": -1.0,
-    "cum": -23.74
+    "cum": -24.34
+   },
+   {
+    "date": "2026-09-13",
+    "match": "US Sassuolo Calcio - Juventus FC",
+    "market": "1",
+    "odds": 5.75,
+    "edge": 0.3539,
+    "won": true,
+    "pl": 4.75,
+    "cum": -19.59
    },
    {
     "date": "2026-09-13",
@@ -1038,7 +998,7 @@
     "edge": 0.5784,
     "won": true,
     "pl": 1.46,
-    "cum": -22.28
+    "cum": -18.13
    },
    {
     "date": "2026-09-13",
@@ -1048,7 +1008,7 @@
     "edge": 0.2945,
     "won": false,
     "pl": -1.0,
-    "cum": -23.28
+    "cum": -19.13
    },
    {
     "date": "2026-09-13",
@@ -1058,7 +1018,17 @@
     "edge": 0.7384,
     "won": false,
     "pl": -1.0,
-    "cum": -24.28
+    "cum": -20.13
+   },
+   {
+    "date": "2026-09-13",
+    "match": "PSV - Sparta Rotterdam",
+    "market": "2",
+    "odds": 15.0,
+    "edge": 0.2106,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.13
    },
    {
     "date": "2026-09-13",
@@ -1068,7 +1038,37 @@
     "edge": 0.0948,
     "won": true,
     "pl": 0.36,
-    "cum": -23.92
+    "cum": -20.77
+   },
+   {
+    "date": "2026-09-14",
+    "match": "Rio Ave FC - CF Estrela da Amadora",
+    "market": "2",
+    "odds": 2.76,
+    "edge": 0.753,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.77
+   },
+   {
+    "date": "2026-09-14",
+    "match": "Torino FC - AS Roma",
+    "market": "Over 2.5",
+    "odds": 1.82,
+    "edge": 0.3143,
+    "won": false,
+    "pl": -1.0,
+    "cum": -22.77
+   },
+   {
+    "date": "2026-09-14",
+    "match": "Como 1907 - Parma Calcio 1913",
+    "market": "2",
+    "odds": 17.5,
+    "edge": 0.5081,
+    "won": false,
+    "pl": -1.0,
+    "cum": -23.77
    }
   ]
  }

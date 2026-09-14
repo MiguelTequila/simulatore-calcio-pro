@@ -60,8 +60,8 @@
     "games": 22
   },
   "Club Atlético de Madrid": {
-    "elo": 1513.3182639147403,
-    "games": 30
+    "elo": 1544.927012840629,
+    "games": 31
   },
   "Deportivo Alavés": {
     "elo": 1537.2791008777767,
@@ -92,24 +92,24 @@
     "games": 20
   },
   "CF Estrela da Amadora": {
-    "elo": 1500.8458868228167,
-    "games": 20
+    "elo": 1500.522027521954,
+    "games": 21
   },
   "FC Arouca": {
-    "elo": 1540.1901111449463,
-    "games": 20
+    "elo": 1521.2696296186634,
+    "games": 21
   },
   "CD Santa Clara": {
-    "elo": 1541.0539393861673,
-    "games": 20
+    "elo": 1559.9744209124501,
+    "games": 21
   },
   "FC Famalicão": {
-    "elo": 1497.862288279673,
-    "games": 20
+    "elo": 1500.6691644082136,
+    "games": 21
   },
   "Sport Lisboa e Benfica": {
-    "elo": 1642.571094356074,
-    "games": 22
+    "elo": 1653.9235085236269,
+    "games": 23
   },
   "FC Porto": {
     "elo": 1627.4662194193995,
@@ -232,8 +232,8 @@
     "games": 22
   },
   "Getafe CF": {
-    "elo": 1493.6915575012326,
-    "games": 21
+    "elo": 1492.6630065824154,
+    "games": 22
   },
   "Rayo Vallecano de Madrid": {
     "elo": 1478.475480356399,
@@ -272,12 +272,12 @@
     "games": 20
   },
   "Rio Ave FC": {
-    "elo": 1428.8124108005072,
-    "games": 20
+    "elo": 1429.13627010137,
+    "games": 21
   },
   "Gil Vicente FC": {
-    "elo": 1503.9882368872866,
-    "games": 19
+    "elo": 1492.6358227197336,
+    "games": 20
   },
   "FC St. Pauli 1910": {
     "elo": 1409.8414012602982,
@@ -372,28 +372,28 @@
     "games": 22
   },
   "Real Sociedad de Fútbol": {
-    "elo": 1493.34755596411,
-    "games": 22
+    "elo": 1461.7388070382212,
+    "games": 23
   },
   "Sporting Clube de Portugal": {
-    "elo": 1624.4498978796464,
-    "games": 25
+    "elo": 1621.6430217511058,
+    "games": 26
   },
   "Vitória SC": {
     "elo": 1455.576817506525,
     "games": 21
   },
   "Paris Saint-Germain FC": {
-    "elo": 1565.3130334420994,
-    "games": 28
+    "elo": 1581.0455376270088,
+    "games": 29
   },
   "Galatasaray SK": {
     "elo": 1485.384827884172,
     "games": 5
   },
   "Juventus FC": {
-    "elo": 1551.6839998487194,
-    "games": 21
+    "elo": 1535.8679765858137,
+    "games": 22
   },
   "AS Monaco FC": {
     "elo": 1582.3977637522335,
@@ -444,8 +444,8 @@
     "games": 19
   },
   "Stade Brestois 29": {
-    "elo": 1494.5038943471145,
-    "games": 18
+    "elo": 1478.771390162205,
+    "games": 19
   },
   "Angers SCO": {
     "elo": 1449.9121934064929,
@@ -460,24 +460,24 @@
     "games": 19
   },
   "Torino FC": {
-    "elo": 1483.3084566593145,
-    "games": 19
+    "elo": 1463.7306050747115,
+    "games": 20
   },
   "US Lecce": {
     "elo": 1482.5838443042899,
     "games": 20
   },
   "Como 1907": {
-    "elo": 1613.6879453249128,
-    "games": 20
+    "elo": 1620.433636737071,
+    "games": 21
   },
   "US Cremonese": {
     "elo": 1390.5776093495786,
     "games": 16
   },
   "Parma Calcio 1913": {
-    "elo": 1449.3643402073637,
-    "games": 19
+    "elo": 1442.6186487952054,
+    "games": 20
   },
   "SBV Excelsior": {
     "elo": 1533.9865795282558,
@@ -496,8 +496,8 @@
     "games": 20
   },
   "PSV": {
-    "elo": 1646.5901740477302,
-    "games": 20
+    "elo": 1656.869954999712,
+    "games": 21
   },
   "Feyenoord Rotterdam": {
     "elo": 1599.997212121158,
@@ -524,8 +524,8 @@
     "games": 19
   },
   "AS Roma": {
-    "elo": 1613.0652050725685,
-    "games": 20
+    "elo": 1632.6430566571714,
+    "games": 21
   },
   "Bologna FC 1909": {
     "elo": 1458.0764629771365,
@@ -588,8 +588,8 @@
     "games": 19
   },
   "Sparta Rotterdam": {
-    "elo": 1452.3403972806784,
-    "games": 18
+    "elo": 1442.0606163286966,
+    "games": 19
   },
   "Le Havre AC": {
     "elo": 1453.6740807212432,
@@ -604,8 +604,8 @@
     "games": 18
   },
   "US Sassuolo Calcio": {
-    "elo": 1490.6791800171882,
-    "games": 18
+    "elo": 1506.4952032800938,
+    "games": 19
   },
   "SS Lazio": {
     "elo": 1547.2162866125834,
@@ -652,8 +652,8 @@
     "games": 5
   },
   "RC Deportivo La Coruña": {
-    "elo": 1536.3260156104172,
-    "games": 4
+    "elo": 1537.3545665292345,
+    "games": 5
   },
   "Málaga CF": {
     "elo": 1463.6047862787418,
