@@ -1,7 +1,7 @@
 {
   "Leeds United FC": {
-    "elo": 1527.5386277090674,
-    "games": 18
+    "elo": 1548.467422628452,
+    "games": 19
   },
   "Burnley FC": {
     "elo": 1365.7727185487354,
@@ -24,8 +24,8 @@
     "games": 15
   },
   "Newcastle United FC": {
-    "elo": 1502.8560410900172,
-    "games": 22
+    "elo": 1481.9272461706328,
+    "games": 23
   },
   "Brighton & Hove Albion FC": {
     "elo": 1556.2367378691806,
@@ -48,8 +48,8 @@
     "games": 19
   },
   "Villarreal CF": {
-    "elo": 1491.7116918455017,
-    "games": 23
+    "elo": 1475.5504812265797,
+    "games": 24
   },
   "Levante UD": {
     "elo": 1485.748143645527,
@@ -88,8 +88,8 @@
     "games": 15
   },
   "Moreirense FC": {
-    "elo": 1431.7619495192585,
-    "games": 20
+    "elo": 1455.0723852799779,
+    "games": 21
   },
   "CF Estrela da Amadora": {
     "elo": 1500.522027521954,
@@ -236,20 +236,20 @@
     "games": 22
   },
   "Rayo Vallecano de Madrid": {
-    "elo": 1478.475480356399,
-    "games": 22
+    "elo": 1491.5341441502126,
+    "games": 23
   },
   "Real Betis Balompié": {
-    "elo": 1553.2109292665564,
-    "games": 22
+    "elo": 1569.3721398854784,
+    "games": 23
   },
   "Real Oviedo": {
     "elo": 1462.164890801849,
     "games": 17
   },
   "RCD Espanyol de Barcelona": {
-    "elo": 1478.8707315296897,
-    "games": 22
+    "elo": 1465.812067735876,
+    "games": 23
   },
   "Real Madrid CF": {
     "elo": 1612.5426441275952,
@@ -264,12 +264,12 @@
     "games": 15
   },
   "Sporting Clube de Braga": {
-    "elo": 1540.1591725706667,
-    "games": 19
+    "elo": 1548.0987219818394,
+    "games": 20
   },
   "GD Estoril Praia": {
-    "elo": 1412.5560124036679,
-    "games": 20
+    "elo": 1404.6164629924951,
+    "games": 21
   },
   "Rio Ave FC": {
     "elo": 1429.13627010137,
@@ -420,8 +420,8 @@
     "games": 5
   },
   "FC Internazionale Milano": {
-    "elo": 1597.0652567825384,
-    "games": 22
+    "elo": 1611.2518621447543,
+    "games": 23
   },
   "Olympique Lyonnais": {
     "elo": 1548.5214473054461,
@@ -520,8 +520,8 @@
     "games": 21
   },
   "Udinese Calcio": {
-    "elo": 1511.1811426441718,
-    "games": 19
+    "elo": 1496.994537281956,
+    "games": 20
   },
   "AS Roma": {
     "elo": 1632.6430566571714,
@@ -632,8 +632,8 @@
     "games": 6
   },
   "CS Marítimo": {
-    "elo": 1486.7767364524511,
-    "games": 5
+    "elo": 1463.4663006917317,
+    "games": 6
   },
   "Willem II Tilburg": {
     "elo": 1428.5977608964956,
