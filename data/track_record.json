@@ -1,37 +1,37 @@
 {
- "graded": 319,
- "pending": 315,
- "brier": 0.2099,
+ "graded": 324,
+ "pending": 348,
+ "brier": 0.2095,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 22,
-   "avgPred": 0.0749,
-   "actualFreq": 0.1364
+   "n": 26,
+   "avgPred": 0.0744,
+   "actualFreq": 0.1538
   },
   {
    "bin": "10-20%",
-   "n": 153,
-   "avgPred": 0.1606,
-   "actualFreq": 0.183
+   "n": 159,
+   "avgPred": 0.1604,
+   "actualFreq": 0.1761
   },
   {
    "bin": "20-30%",
-   "n": 442,
-   "avgPred": 0.2461,
-   "actualFreq": 0.2376
+   "n": 445,
+   "avgPred": 0.2462,
+   "actualFreq": 0.2382
   },
   {
    "bin": "30-40%",
-   "n": 292,
-   "avgPred": 0.3497,
-   "actualFreq": 0.3527
+   "n": 294,
+   "avgPred": 0.3496,
+   "actualFreq": 0.3571
   },
   {
    "bin": "40-50%",
-   "n": 229,
+   "n": 230,
    "avgPred": 0.4449,
-   "actualFreq": 0.524
+   "actualFreq": 0.5217
   },
   {
    "bin": "50-60%",
@@ -41,21 +41,21 @@
   },
   {
    "bin": "60-70%",
-   "n": 168,
-   "avgPred": 0.6482,
-   "actualFreq": 0.631
+   "n": 171,
+   "avgPred": 0.6486,
+   "actualFreq": 0.6257
   },
   {
    "bin": "70-80%",
-   "n": 88,
-   "avgPred": 0.7444,
-   "actualFreq": 0.7955
+   "n": 90,
+   "avgPred": 0.7448,
+   "actualFreq": 0.7889
   },
   {
    "bin": "80-90%",
-   "n": 44,
-   "avgPred": 0.8344,
-   "actualFreq": 0.7273
+   "n": 48,
+   "avgPred": 0.8341,
+   "actualFreq": 0.75
   },
   {
    "bin": "90-100%",
@@ -65,51 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 242,
+  "n": 246,
   "wins": 74,
-  "profitUnits": -21.97,
-  "roi": -0.0908,
+  "profitUnits": -25.97,
+  "roi": -0.1056,
   "history": [
-   {
-    "date": "2026-09-05",
-    "match": "Villarreal CF - RC Deportivo La Coruña",
-    "market": "2",
-    "odds": 7.5,
-    "edge": 1.7119,
-    "won": true,
-    "pl": 6.5,
-    "cum": -18.22
-   },
-   {
-    "date": "2026-09-05",
-    "match": "FC Alverca - Sporting Clube de Braga",
-    "market": "Over 2.5",
-    "odds": 2.08,
-    "edge": 0.2413,
-    "won": true,
-    "pl": 1.08,
-    "cum": -17.14
-   },
-   {
-    "date": "2026-09-05",
-    "match": "CF Estrela da Amadora - FC Famalicão",
-    "market": "1",
-    "odds": 3.05,
-    "edge": 0.4338,
-    "won": false,
-    "pl": -1.0,
-    "cum": -18.14
-   },
-   {
-    "date": "2026-09-05",
-    "match": "SV Werder Bremen - RB Leipzig",
-    "market": "2",
-    "odds": 1.81,
-    "edge": 0.1173,
-    "won": false,
-    "pl": -1.0,
-    "cum": -19.14
-   },
    {
     "date": "2026-09-05",
     "match": "SC Paderborn 07 - SC Freiburg",
@@ -1062,13 +1022,53 @@
    },
    {
     "date": "2026-09-15",
+    "match": "AFC Ajax - Willem II Tilburg",
+    "market": "2",
+    "odds": 22.0,
+    "edge": 0.144,
+    "won": false,
+    "pl": -1.0,
+    "cum": -21.97
+   },
+   {
+    "date": "2026-09-15",
     "match": "Rayo Vallecano de Madrid - RCD Espanyol de Barcelona",
     "market": "2",
     "odds": 3.4,
     "edge": 0.8016,
     "won": false,
     "pl": -1.0,
-    "cum": -21.97
+    "cum": -22.97
+   },
+   {
+    "date": "2026-09-15",
+    "match": "Deportivo Alavés - Valencia CF",
+    "market": "Over 2.5",
+    "odds": 2.31,
+    "edge": 0.5845,
+    "won": false,
+    "pl": -1.0,
+    "cum": -23.97
+   },
+   {
+    "date": "2026-09-15",
+    "match": "Elche CF - Real Madrid CF",
+    "market": "1",
+    "odds": 16.0,
+    "edge": 0.2024,
+    "won": false,
+    "pl": -1.0,
+    "cum": -24.97
+   },
+   {
+    "date": "2026-09-16",
+    "match": "RC Deportivo La Coruña - Sevilla FC",
+    "market": "Over 2.5",
+    "odds": 2.38,
+    "edge": 0.5381,
+    "won": false,
+    "pl": -1.0,
+    "cum": -25.97
    }
   ]
  }
