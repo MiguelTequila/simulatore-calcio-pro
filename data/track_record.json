@@ -1,7 +1,7 @@
 {
- "graded": 326,
- "pending": 365,
- "brier": 0.2087,
+ "graded": 327,
+ "pending": 369,
+ "brier": 0.2086,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,27 +17,27 @@
   },
   {
    "bin": "20-30%",
-   "n": 446,
+   "n": 447,
    "avgPred": 0.2462,
-   "actualFreq": 0.2377
+   "actualFreq": 0.2371
   },
   {
    "bin": "30-40%",
-   "n": 294,
-   "avgPred": 0.3496,
-   "actualFreq": 0.3571
+   "n": 295,
+   "avgPred": 0.3495,
+   "actualFreq": 0.3559
   },
   {
    "bin": "40-50%",
-   "n": 231,
-   "avgPred": 0.445,
-   "actualFreq": 0.5238
+   "n": 233,
+   "avgPred": 0.4448,
+   "actualFreq": 0.5236
   },
   {
    "bin": "50-60%",
-   "n": 157,
-   "avgPred": 0.5552,
-   "actualFreq": 0.4522
+   "n": 158,
+   "avgPred": 0.5554,
+   "actualFreq": 0.4557
   },
   {
    "bin": "60-70%",
@@ -65,21 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 248,
+  "n": 249,
   "wins": 74,
-  "profitUnits": -27.97,
-  "roi": -0.1128,
+  "profitUnits": -28.97,
+  "roi": -0.1163,
   "history": [
-   {
-    "date": "2026-09-05",
-    "match": "OGC Nice - Le Mans FC",
-    "market": "2",
-    "odds": 4.8,
-    "edge": 0.4217,
-    "won": false,
-    "pl": -1.0,
-    "cum": -20.07
-   },
    {
     "date": "2026-09-05",
     "match": "ACF Fiorentina - Torino FC",
@@ -1062,13 +1052,23 @@
    },
    {
     "date": "2026-09-17",
+    "match": "Málaga CF - Villarreal CF",
+    "market": "1",
+    "odds": 3.65,
+    "edge": 0.1546,
+    "won": false,
+    "pl": -1.0,
+    "cum": -27.97
+   },
+   {
+    "date": "2026-09-17",
     "match": "Real Betis Balompié - Getafe CF",
     "market": "Over 2.5",
     "odds": 2.25,
     "edge": 0.1867,
     "won": false,
     "pl": -1.0,
-    "cum": -27.97
+    "cum": -28.97
    }
   ]
  }
