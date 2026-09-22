@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T20:09:03.830023+00:00",
+  "updated": "2026-09-22T19:18:47.699629+00:00",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
@@ -2612,6 +2612,71 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 560634,
+          "date": "2026-11-06",
+          "time": "20:00",
+          "matchday": 10,
+          "homeTeam": "Everton FC",
+          "homeId": 62,
+          "awayTeam": "Coventry City FC",
+          "awayId": 1076,
+          "homeStats": {
+            "gf_pg": 1.2,
+            "ga_pg": 0.6,
+            "form": "WDDDW",
+            "elo": 1524.0,
+            "played": 5
+          },
+          "awayStats": {
+            "gf_pg": 0.2,
+            "ga_pg": 2.0,
+            "form": "WLLLL",
+            "elo": 1448.0,
+            "played": 5
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.276,
+            "lambdaA": 0.579,
+            "rho": -0.075,
+            "lambdaHRaw": 2.276,
+            "lambdaARaw": 0.579,
+            "marketWeight": 0.25,
+            "p1": 0.7531,
+            "px": 0.1742,
+            "p2": 0.0727,
+            "pOver25": 0.5423,
+            "pUnder25": 0.4577,
+            "pGG": 0.3998,
+            "pNG": 0.6002,
+            "topExact": [
+              [
+                "2-0",
+                0.1495
+              ],
+              [
+                "1-0",
+                0.1257
+              ],
+              [
+                "3-0",
+                0.1134
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0634,
+              "1": 0.1534,
+              "2": 0.2409,
+              "3": 0.2238,
+              "4": 0.1597,
+              "5": 0.0912,
+              "6": 0.0434,
+              "7+": 0.0243
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -4958,6 +5023,71 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 559638,
+          "date": "2026-11-06",
+          "time": "19:45",
+          "matchday": 10,
+          "homeTeam": "Toulouse FC",
+          "homeId": 511,
+          "awayTeam": "RC Strasbourg Alsace",
+          "awayId": 576,
+          "homeStats": {
+            "gf_pg": 1.4,
+            "ga_pg": 1.8,
+            "form": "WDLDL",
+            "elo": 1467.0,
+            "played": 5
+          },
+          "awayStats": {
+            "gf_pg": 2.0,
+            "ga_pg": 2.0,
+            "form": "LDWWL",
+            "elo": 1528.0,
+            "played": 5
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.052,
+            "lambdaA": 2.258,
+            "rho": -0.075,
+            "lambdaHRaw": 2.052,
+            "lambdaARaw": 2.258,
+            "marketWeight": 0.25,
+            "p1": 0.358,
+            "px": 0.208,
+            "p2": 0.434,
+            "pOver25": 0.8031,
+            "pUnder25": 0.1969,
+            "pGG": 0.7847,
+            "pNG": 0.2153,
+            "topExact": [
+              [
+                "2-2",
+                0.0724
+              ],
+              [
+                "1-2",
+                0.0705
+              ],
+              [
+                "1-1",
+                0.0672
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0182,
+              "1": 0.0488,
+              "2": 0.1299,
+              "3": 0.1799,
+              "4": 0.1939,
+              "5": 0.1671,
+              "6": 0.12,
+              "7+": 0.1423
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -6331,74 +6461,9 @@
           }
         },
         {
-          "id": 564718,
-          "date": "2026-10-25",
-          "time": "00:00",
-          "matchday": 10,
-          "homeTeam": "Rayo Vallecano de Madrid",
-          "homeId": 87,
-          "awayTeam": "Elche CF",
-          "awayId": 285,
-          "homeStats": {
-            "gf_pg": 1.57,
-            "ga_pg": 2.29,
-            "form": "DWLWL",
-            "elo": 1492.0,
-            "played": 7
-          },
-          "awayStats": {
-            "gf_pg": 1.57,
-            "ga_pg": 2.43,
-            "form": "WLDLL",
-            "elo": 1458.0,
-            "played": 7
-          },
-          "odds": null,
-          "prediction": {
-            "lambdaH": 2.982,
-            "lambdaA": 2.28,
-            "rho": -0.065,
-            "lambdaHRaw": 2.982,
-            "lambdaARaw": 2.28,
-            "marketWeight": 0.25,
-            "p1": 0.5254,
-            "px": 0.1783,
-            "p2": 0.2963,
-            "pOver25": 0.8943,
-            "pUnder25": 0.1057,
-            "pGG": 0.8537,
-            "pNG": 0.1463,
-            "topExact": [
-              [
-                "2-2",
-                0.0608
-              ],
-              [
-                "3-2",
-                0.0604
-              ],
-              [
-                "2-1",
-                0.0533
-              ]
-            ],
-            "totalGoalsDist": {
-              "0": 0.0076,
-              "1": 0.023,
-              "2": 0.0751,
-              "3": 0.1277,
-              "4": 0.168,
-              "5": 0.1768,
-              "6": 0.155,
-              "7+": 0.2668
-            },
-            "value": null
-          }
-        },
-        {
           "id": 564719,
-          "date": "2026-10-25",
-          "time": "00:00",
+          "date": "2026-10-23",
+          "time": "19:00",
           "matchday": 10,
           "homeTeam": "Deportivo Alavés",
           "homeId": 263,
@@ -6461,139 +6526,139 @@
           }
         },
         {
-          "id": 564720,
-          "date": "2026-10-25",
-          "time": "00:00",
+          "id": 564718,
+          "date": "2026-10-24",
+          "time": "12:00",
           "matchday": 10,
-          "homeTeam": "Athletic Club",
-          "homeId": 77,
-          "awayTeam": "Getafe CF",
-          "awayId": 82,
+          "homeTeam": "Rayo Vallecano de Madrid",
+          "homeId": 87,
+          "awayTeam": "Elche CF",
+          "awayId": 285,
           "homeStats": {
-            "gf_pg": 1.17,
-            "ga_pg": 1.0,
-            "form": "DDWWL",
-            "elo": 1498.0,
-            "played": 6
+            "gf_pg": 1.57,
+            "ga_pg": 2.29,
+            "form": "DWLWL",
+            "elo": 1492.0,
+            "played": 7
           },
           "awayStats": {
-            "gf_pg": 0.57,
-            "ga_pg": 1.0,
-            "form": "WLDDL",
-            "elo": 1494.0,
+            "gf_pg": 1.57,
+            "ga_pg": 2.43,
+            "form": "WLDLL",
+            "elo": 1458.0,
             "played": 7
           },
           "odds": null,
           "prediction": {
-            "lambdaH": 1.433,
-            "lambdaA": 0.88,
+            "lambdaH": 2.982,
+            "lambdaA": 2.28,
             "rho": -0.065,
-            "lambdaHRaw": 1.433,
-            "lambdaARaw": 0.88,
+            "lambdaHRaw": 2.982,
+            "lambdaARaw": 2.28,
             "marketWeight": 0.25,
-            "p1": 0.4918,
-            "px": 0.2853,
-            "p2": 0.2229,
-            "pOver25": 0.4074,
-            "pUnder25": 0.5926,
-            "pGG": 0.4537,
-            "pNG": 0.5463,
+            "p1": 0.5254,
+            "px": 0.1783,
+            "p2": 0.2963,
+            "pOver25": 0.8943,
+            "pUnder25": 0.1057,
+            "pGG": 0.8537,
+            "pNG": 0.1463,
             "topExact": [
               [
-                "1-0",
-                0.1337
+                "2-2",
+                0.0608
               ],
               [
-                "1-1",
-                0.1329
+                "3-2",
+                0.0604
               ],
               [
-                "0-0",
-                0.107
+                "2-1",
+                0.0533
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.107,
-              "1": 0.2127,
-              "2": 0.2729,
-              "3": 0.2042,
-              "4": 0.1181,
-              "5": 0.0546,
-              "6": 0.0211,
-              "7+": 0.0095
+              "0": 0.0076,
+              "1": 0.023,
+              "2": 0.0751,
+              "3": 0.1277,
+              "4": 0.168,
+              "5": 0.1768,
+              "6": 0.155,
+              "7+": 0.2668
             },
             "value": null
           }
         },
         {
-          "id": 564721,
-          "date": "2026-10-25",
-          "time": "00:00",
+          "id": 564727,
+          "date": "2026-10-24",
+          "time": "14:15",
           "matchday": 10,
-          "homeTeam": "Sevilla FC",
-          "homeId": 559,
-          "awayTeam": "CA Osasuna",
-          "awayId": 79,
+          "homeTeam": "Real Racing Club de Santander",
+          "homeId": 5335,
+          "awayTeam": "RCD Espanyol de Barcelona",
+          "awayId": 80,
           "homeStats": {
-            "gf_pg": 1.43,
-            "ga_pg": 1.29,
-            "form": "LWWDL",
-            "elo": 1500.0,
+            "gf_pg": 1.57,
+            "ga_pg": 3.0,
+            "form": "LLWLW",
+            "elo": 1458.0,
             "played": 7
           },
           "awayStats": {
-            "gf_pg": 0.86,
-            "ga_pg": 1.86,
-            "form": "DLLLW",
-            "elo": 1445.0,
+            "gf_pg": 1.43,
+            "ga_pg": 1.43,
+            "form": "LLWDL",
+            "elo": 1435.0,
             "played": 7
           },
           "odds": null,
           "prediction": {
-            "lambdaH": 2.368,
-            "lambdaA": 1.123,
+            "lambdaH": 2.02,
+            "lambdaA": 2.674,
             "rho": -0.065,
-            "lambdaHRaw": 2.368,
-            "lambdaARaw": 1.123,
+            "lambdaHRaw": 2.02,
+            "lambdaARaw": 2.674,
             "marketWeight": 0.25,
-            "p1": 0.6437,
-            "px": 0.1954,
-            "p2": 0.1609,
-            "pOver25": 0.6764,
-            "pUnder25": 0.3236,
-            "pGG": 0.6165,
-            "pNG": 0.3835,
+            "p1": 0.2911,
+            "px": 0.1901,
+            "p2": 0.5188,
+            "pOver25": 0.846,
+            "pUnder25": 0.154,
+            "pGG": 0.8103,
+            "pNG": 0.1897,
             "topExact": [
               [
-                "2-1",
-                0.0962
+                "2-2",
+                0.0672
               ],
               [
-                "1-1",
-                0.0866
+                "1-2",
+                0.0666
               ],
               [
-                "2-0",
-                0.0857
+                "2-3",
+                0.0599
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0359,
-              "1": 0.0962,
-              "2": 0.1916,
-              "3": 0.2167,
-              "4": 0.1891,
-              "5": 0.1321,
-              "6": 0.0768,
-              "7+": 0.0617
+              "0": 0.0125,
+              "1": 0.0368,
+              "2": 0.1048,
+              "3": 0.1589,
+              "4": 0.1865,
+              "5": 0.1751,
+              "6": 0.137,
+              "7+": 0.1886
             },
             "value": null
           }
         },
         {
           "id": 564722,
-          "date": "2026-10-25",
-          "time": "00:00",
+          "date": "2026-10-24",
+          "time": "16:30",
           "matchday": 10,
           "homeTeam": "Valencia CF",
           "homeId": 95,
@@ -6656,74 +6721,9 @@
           }
         },
         {
-          "id": 564723,
-          "date": "2026-10-25",
-          "time": "00:00",
-          "matchday": 10,
-          "homeTeam": "FC Barcelona",
-          "homeId": 81,
-          "awayTeam": "Real Madrid CF",
-          "awayId": 86,
-          "homeStats": {
-            "gf_pg": 4.43,
-            "ga_pg": 1.0,
-            "form": "WWWWW",
-            "elo": 1724.0,
-            "played": 7
-          },
-          "awayStats": {
-            "gf_pg": 2.57,
-            "ga_pg": 1.14,
-            "form": "LWWLW",
-            "elo": 1608.0,
-            "played": 7
-          },
-          "odds": null,
-          "prediction": {
-            "lambdaH": 4.0,
-            "lambdaA": 1.812,
-            "rho": -0.065,
-            "lambdaHRaw": 4.0,
-            "lambdaARaw": 1.812,
-            "marketWeight": 0.25,
-            "p1": 0.7452,
-            "px": 0.1243,
-            "p2": 0.1305,
-            "pOver25": 0.9252,
-            "pUnder25": 0.0748,
-            "pGG": 0.8219,
-            "pNG": 0.1781,
-            "topExact": [
-              [
-                "3-1",
-                0.061
-              ],
-              [
-                "4-1",
-                0.061
-              ],
-              [
-                "3-2",
-                0.0552
-              ]
-            ],
-            "totalGoalsDist": {
-              "0": 0.0046,
-              "1": 0.0154,
-              "2": 0.0548,
-              "3": 0.1032,
-              "4": 0.15,
-              "5": 0.1743,
-              "6": 0.1689,
-              "7+": 0.3288
-            },
-            "value": null
-          }
-        },
-        {
           "id": 564724,
-          "date": "2026-10-25",
-          "time": "00:00",
+          "date": "2026-10-24",
+          "time": "19:00",
           "matchday": 10,
           "homeTeam": "Club Atlético de Madrid",
           "homeId": 78,
@@ -6786,9 +6786,74 @@
           }
         },
         {
+          "id": 564720,
+          "date": "2026-10-25",
+          "time": "13:00",
+          "matchday": 10,
+          "homeTeam": "Athletic Club",
+          "homeId": 77,
+          "awayTeam": "Getafe CF",
+          "awayId": 82,
+          "homeStats": {
+            "gf_pg": 1.17,
+            "ga_pg": 1.0,
+            "form": "DDWWL",
+            "elo": 1498.0,
+            "played": 6
+          },
+          "awayStats": {
+            "gf_pg": 0.57,
+            "ga_pg": 1.0,
+            "form": "WLDDL",
+            "elo": 1494.0,
+            "played": 7
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.433,
+            "lambdaA": 0.88,
+            "rho": -0.065,
+            "lambdaHRaw": 1.433,
+            "lambdaARaw": 0.88,
+            "marketWeight": 0.25,
+            "p1": 0.4918,
+            "px": 0.2853,
+            "p2": 0.2229,
+            "pOver25": 0.4074,
+            "pUnder25": 0.5926,
+            "pGG": 0.4537,
+            "pNG": 0.5463,
+            "topExact": [
+              [
+                "1-0",
+                0.1337
+              ],
+              [
+                "1-1",
+                0.1329
+              ],
+              [
+                "0-0",
+                0.107
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.107,
+              "1": 0.2127,
+              "2": 0.2729,
+              "3": 0.2042,
+              "4": 0.1181,
+              "5": 0.0546,
+              "6": 0.0211,
+              "7+": 0.0095
+            },
+            "value": null
+          }
+        },
+        {
           "id": 564725,
           "date": "2026-10-25",
-          "time": "00:00",
+          "time": "15:15",
           "matchday": 10,
           "homeTeam": "RC Celta de Vigo",
           "homeId": 558,
@@ -6853,7 +6918,7 @@
         {
           "id": 564726,
           "date": "2026-10-25",
-          "time": "00:00",
+          "time": "17:30",
           "matchday": 10,
           "homeTeam": "Real Sociedad de Fútbol",
           "homeId": 92,
@@ -6916,66 +6981,131 @@
           }
         },
         {
-          "id": 564727,
+          "id": 564723,
           "date": "2026-10-25",
-          "time": "00:00",
+          "time": "20:00",
           "matchday": 10,
-          "homeTeam": "Real Racing Club de Santander",
-          "homeId": 5335,
-          "awayTeam": "RCD Espanyol de Barcelona",
-          "awayId": 80,
+          "homeTeam": "FC Barcelona",
+          "homeId": 81,
+          "awayTeam": "Real Madrid CF",
+          "awayId": 86,
           "homeStats": {
-            "gf_pg": 1.57,
-            "ga_pg": 3.0,
-            "form": "LLWLW",
-            "elo": 1458.0,
+            "gf_pg": 4.43,
+            "ga_pg": 1.0,
+            "form": "WWWWW",
+            "elo": 1724.0,
             "played": 7
           },
           "awayStats": {
-            "gf_pg": 1.43,
-            "ga_pg": 1.43,
-            "form": "LLWDL",
-            "elo": 1435.0,
+            "gf_pg": 2.57,
+            "ga_pg": 1.14,
+            "form": "LWWLW",
+            "elo": 1608.0,
             "played": 7
           },
           "odds": null,
           "prediction": {
-            "lambdaH": 2.02,
-            "lambdaA": 2.674,
+            "lambdaH": 4.0,
+            "lambdaA": 1.812,
             "rho": -0.065,
-            "lambdaHRaw": 2.02,
-            "lambdaARaw": 2.674,
+            "lambdaHRaw": 4.0,
+            "lambdaARaw": 1.812,
             "marketWeight": 0.25,
-            "p1": 0.2911,
-            "px": 0.1901,
-            "p2": 0.5188,
-            "pOver25": 0.846,
-            "pUnder25": 0.154,
-            "pGG": 0.8103,
-            "pNG": 0.1897,
+            "p1": 0.7452,
+            "px": 0.1243,
+            "p2": 0.1305,
+            "pOver25": 0.9252,
+            "pUnder25": 0.0748,
+            "pGG": 0.8219,
+            "pNG": 0.1781,
             "topExact": [
               [
-                "2-2",
-                0.0672
+                "3-1",
+                0.061
               ],
               [
-                "1-2",
-                0.0666
+                "4-1",
+                0.061
               ],
               [
-                "2-3",
-                0.0599
+                "3-2",
+                0.0552
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0125,
-              "1": 0.0368,
-              "2": 0.1048,
-              "3": 0.1589,
-              "4": 0.1865,
-              "5": 0.1751,
-              "6": 0.137,
-              "7+": 0.1886
+              "0": 0.0046,
+              "1": 0.0154,
+              "2": 0.0548,
+              "3": 0.1032,
+              "4": 0.15,
+              "5": 0.1743,
+              "6": 0.1689,
+              "7+": 0.3288
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 564721,
+          "date": "2026-10-26",
+          "time": "20:00",
+          "matchday": 10,
+          "homeTeam": "Sevilla FC",
+          "homeId": 559,
+          "awayTeam": "CA Osasuna",
+          "awayId": 79,
+          "homeStats": {
+            "gf_pg": 1.43,
+            "ga_pg": 1.29,
+            "form": "LWWDL",
+            "elo": 1500.0,
+            "played": 7
+          },
+          "awayStats": {
+            "gf_pg": 0.86,
+            "ga_pg": 1.86,
+            "form": "DLLLW",
+            "elo": 1445.0,
+            "played": 7
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.368,
+            "lambdaA": 1.123,
+            "rho": -0.065,
+            "lambdaHRaw": 2.368,
+            "lambdaARaw": 1.123,
+            "marketWeight": 0.25,
+            "p1": 0.6437,
+            "px": 0.1954,
+            "p2": 0.1609,
+            "pOver25": 0.6764,
+            "pUnder25": 0.3236,
+            "pGG": 0.6165,
+            "pNG": 0.3835,
+            "topExact": [
+              [
+                "2-1",
+                0.0962
+              ],
+              [
+                "1-1",
+                0.0866
+              ],
+              [
+                "2-0",
+                0.0857
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0359,
+              "1": 0.0962,
+              "2": 0.1916,
+              "3": 0.2167,
+              "4": 0.1891,
+              "5": 0.1321,
+              "6": 0.0768,
+              "7+": 0.0617
             },
             "value": null
           }
@@ -10885,6 +11015,71 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 558537,
+          "date": "2026-11-06",
+          "time": "19:45",
+          "matchday": 11,
+          "homeTeam": "Venezia FC",
+          "homeId": 454,
+          "awayTeam": "Udinese Calcio",
+          "awayId": 115,
+          "homeStats": {
+            "gf_pg": 0.8,
+            "ga_pg": 2.6,
+            "form": "LLLLL",
+            "elo": 1395.0,
+            "played": 5
+          },
+          "awayStats": {
+            "gf_pg": 1.6,
+            "ga_pg": 2.2,
+            "form": "LLLWD",
+            "elo": 1479.0,
+            "played": 5
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.647,
+            "lambdaA": 2.582,
+            "rho": -0.07,
+            "lambdaHRaw": 1.647,
+            "lambdaARaw": 2.582,
+            "marketWeight": 0.25,
+            "p1": 0.2338,
+            "px": 0.193,
+            "p2": 0.5732,
+            "pOver25": 0.7925,
+            "pUnder25": 0.2075,
+            "pGG": 0.7503,
+            "pNG": 0.2497,
+            "topExact": [
+              [
+                "1-2",
+                0.0804
+              ],
+              [
+                "1-3",
+                0.0692
+              ],
+              [
+                "1-1",
+                0.0666
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.019,
+              "1": 0.0532,
+              "2": 0.1353,
+              "3": 0.1846,
+              "4": 0.1952,
+              "5": 0.1651,
+              "6": 0.1164,
+              "7+": 0.1312
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -12643,6 +12838,71 @@
               "5": 0.0397,
               "6": 0.0137,
               "7+": 0.0053
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 567353,
+          "date": "2026-11-06",
+          "time": "20:45",
+          "matchday": 11,
+          "homeTeam": "FC Famalicão",
+          "homeId": 5531,
+          "awayTeam": "FC Arouca",
+          "awayId": 712,
+          "homeStats": {
+            "gf_pg": 1.29,
+            "ga_pg": 1.0,
+            "form": "WDDDL",
+            "elo": 1530.0,
+            "played": 7
+          },
+          "awayStats": {
+            "gf_pg": 1.43,
+            "ga_pg": 1.0,
+            "form": "DLDWL",
+            "elo": 1528.0,
+            "played": 7
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.41,
+            "lambdaA": 1.276,
+            "rho": -0.08,
+            "lambdaHRaw": 1.41,
+            "lambdaARaw": 1.276,
+            "marketWeight": 0.25,
+            "p1": 0.392,
+            "px": 0.2779,
+            "p2": 0.33,
+            "pOver25": 0.5029,
+            "pUnder25": 0.4971,
+            "pGG": 0.5547,
+            "pNG": 0.4453,
+            "topExact": [
+              [
+                "1-1",
+                0.1324
+              ],
+              [
+                "2-1",
+                0.0865
+              ],
+              [
+                "1-0",
+                0.0863
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0779,
+              "1": 0.1634,
+              "2": 0.2557,
+              "3": 0.2202,
+              "4": 0.1479,
+              "5": 0.0794,
+              "6": 0.0356,
+              "7+": 0.0199
             },
             "value": null
           }
@@ -14992,6 +15252,71 @@
             },
             "value": null
           }
+        },
+        {
+          "id": 565852,
+          "date": "2026-11-06",
+          "time": "19:30",
+          "matchday": 9,
+          "homeTeam": "Hamburger SV",
+          "homeId": 7,
+          "awayTeam": "Borussia Mönchengladbach",
+          "awayId": 18,
+          "homeStats": {
+            "gf_pg": 0.5,
+            "ga_pg": 3.25,
+            "form": "WLLLD",
+            "elo": 1422.0,
+            "played": 4
+          },
+          "awayStats": {
+            "gf_pg": 1.5,
+            "ga_pg": 4.0,
+            "form": "LLLLW",
+            "elo": 1417.0,
+            "played": 4
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.474,
+            "lambdaA": 2.547,
+            "rho": -0.06,
+            "lambdaHRaw": 2.474,
+            "lambdaARaw": 2.547,
+            "marketWeight": 0.25,
+            "p1": 0.3928,
+            "px": 0.1897,
+            "p2": 0.4176,
+            "pOver25": 0.8761,
+            "pUnder25": 0.1239,
+            "pGG": 0.846,
+            "pNG": 0.154,
+            "topExact": [
+              [
+                "2-2",
+                0.0661
+              ],
+              [
+                "2-3",
+                0.0561
+              ],
+              [
+                "3-2",
+                0.0545
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0092,
+              "1": 0.0284,
+              "2": 0.0864,
+              "3": 0.1404,
+              "4": 0.1762,
+              "5": 0.177,
+              "6": 0.1481,
+              "7+": 0.2344
+            },
+            "value": null
+          }
         }
       ]
     },
@@ -17335,6 +17660,71 @@
               "5": 0.1797,
               "6": 0.1597,
               "7+": 0.2626
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558845,
+          "date": "2026-11-06",
+          "time": "19:00",
+          "matchday": 12,
+          "homeTeam": "Willem II Tilburg",
+          "homeId": 672,
+          "awayTeam": "PEC Zwolle",
+          "awayId": 684,
+          "homeStats": {
+            "gf_pg": 0.86,
+            "ga_pg": 2.86,
+            "form": "LLDLD",
+            "elo": 1399.0,
+            "played": 7
+          },
+          "awayStats": {
+            "gf_pg": 0.86,
+            "ga_pg": 2.86,
+            "form": "LLDLW",
+            "elo": 1390.0,
+            "played": 7
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 2.227,
+            "lambdaA": 1.943,
+            "rho": -0.07,
+            "lambdaHRaw": 2.227,
+            "lambdaARaw": 1.943,
+            "marketWeight": 0.25,
+            "p1": 0.4478,
+            "px": 0.2107,
+            "p2": 0.3415,
+            "pOver25": 0.7851,
+            "pUnder25": 0.2149,
+            "pGG": 0.7687,
+            "pNG": 0.2313,
+            "topExact": [
+              [
+                "2-1",
+                0.0747
+              ],
+              [
+                "2-2",
+                0.0725
+              ],
+              [
+                "1-1",
+                0.0718
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0202,
+              "1": 0.0552,
+              "2": 0.1394,
+              "3": 0.1873,
+              "4": 0.1953,
+              "5": 0.1629,
+              "6": 0.1132,
+              "7+": 0.1265
             },
             "value": null
           }

@@ -20171,7 +20171,7 @@
   "564718": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-24",
    "home": "Rayo Vallecano de Madrid",
    "away": "Elche CF",
    "p1": 0.5254,
@@ -20199,7 +20199,7 @@
   "564719": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-23",
    "home": "Deportivo Alavés",
    "away": "Málaga CF",
    "p1": 0.7558,
@@ -20255,7 +20255,7 @@
   "564721": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-26",
    "home": "Sevilla FC",
    "away": "CA Osasuna",
    "p1": 0.6437,
@@ -20283,7 +20283,7 @@
   "564722": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-24",
    "home": "Valencia CF",
    "away": "Villarreal CF",
    "p1": 0.1813,
@@ -20339,7 +20339,7 @@
   "564724": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-24",
    "home": "Club Atlético de Madrid",
    "away": "RC Deportivo La Coruña",
    "p1": 0.6193,
@@ -20423,7 +20423,7 @@
   "564727": {
    "comp": "PD",
    "compName": "La Liga",
-   "date": "2026-10-25",
+   "date": "2026-10-24",
    "home": "Real Racing Club de Santander",
    "away": "RCD Espanyol de Barcelona",
    "p1": 0.2911,
@@ -24127,6 +24127,174 @@
    "p2": 0.3168,
    "pOver25": 0.7241,
    "pUnder25": 0.2759,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "560634": {
+   "comp": "PL",
+   "compName": "Premier League",
+   "date": "2026-11-06",
+   "home": "Everton FC",
+   "away": "Coventry City FC",
+   "p1": 0.7531,
+   "px": 0.1742,
+   "p2": 0.0727,
+   "pOver25": 0.5423,
+   "pUnder25": 0.4577,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "559638": {
+   "comp": "FL1",
+   "compName": "Ligue 1",
+   "date": "2026-11-06",
+   "home": "Toulouse FC",
+   "away": "RC Strasbourg Alsace",
+   "p1": 0.358,
+   "px": 0.208,
+   "p2": 0.434,
+   "pOver25": 0.8031,
+   "pUnder25": 0.1969,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558537": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-11-06",
+   "home": "Venezia FC",
+   "away": "Udinese Calcio",
+   "p1": 0.2338,
+   "px": 0.193,
+   "p2": 0.5732,
+   "pOver25": 0.7925,
+   "pUnder25": 0.2075,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "567353": {
+   "comp": "PPL",
+   "compName": "Primeira Liga",
+   "date": "2026-11-06",
+   "home": "FC Famalicão",
+   "away": "FC Arouca",
+   "p1": 0.392,
+   "px": 0.2779,
+   "p2": 0.33,
+   "pOver25": 0.5029,
+   "pUnder25": 0.4971,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "565852": {
+   "comp": "BL1",
+   "compName": "Bundesliga",
+   "date": "2026-11-06",
+   "home": "Hamburger SV",
+   "away": "Borussia Mönchengladbach",
+   "p1": 0.3928,
+   "px": 0.1897,
+   "p2": 0.4176,
+   "pOver25": 0.8761,
+   "pUnder25": 0.1239,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
+   },
+   "bestBet": null,
+   "result": null
+  },
+  "558845": {
+   "comp": "DED",
+   "compName": "Eredivisie",
+   "date": "2026-11-06",
+   "home": "Willem II Tilburg",
+   "away": "PEC Zwolle",
+   "p1": 0.4478,
+   "px": 0.2107,
+   "p2": 0.3415,
+   "pOver25": 0.7851,
+   "pUnder25": 0.2149,
    "odds": {
     "1": null,
     "X": null,
