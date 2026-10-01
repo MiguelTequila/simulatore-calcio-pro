@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T20:21:38.234119+00:00",
+  "updated": "2026-10-01T20:36:27.895007+00:00",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
@@ -14008,6 +14008,71 @@
               "5": 0.1066,
               "6": 0.0548,
               "7+": 0.0372
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 567271,
+          "date": "2026-10-19",
+          "time": "19:15",
+          "matchday": 2,
+          "homeTeam": "Sporting Clube de Braga",
+          "homeId": 5613,
+          "awayTeam": "Gil Vicente FC",
+          "awayId": 5533,
+          "homeStats": {
+            "gf_pg": 1.17,
+            "ga_pg": 0.83,
+            "form": "DWLWW",
+            "elo": 1552.0,
+            "played": 6
+          },
+          "awayStats": {
+            "gf_pg": 0.83,
+            "ga_pg": 0.83,
+            "form": "DLLDW",
+            "elo": 1488.0,
+            "played": 6
+          },
+          "odds": null,
+          "prediction": {
+            "lambdaH": 1.341,
+            "lambdaA": 0.867,
+            "rho": -0.08,
+            "lambdaHRaw": 1.341,
+            "lambdaARaw": 0.867,
+            "marketWeight": 0.25,
+            "p1": 0.4677,
+            "px": 0.3005,
+            "p2": 0.2318,
+            "pOver25": 0.3795,
+            "pUnder25": 0.6205,
+            "pGG": 0.4384,
+            "pNG": 0.5616,
+            "topExact": [
+              [
+                "1-1",
+                0.138
+              ],
+              [
+                "1-0",
+                0.1372
+              ],
+              [
+                "0-0",
+                0.1201
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.1201,
+              "1": 0.2222,
+              "2": 0.2782,
+              "3": 0.1972,
+              "4": 0.1089,
+              "5": 0.0481,
+              "6": 0.0177,
+              "7+": 0.0075
             },
             "value": null
           }

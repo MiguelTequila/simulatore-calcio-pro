@@ -3621,35 +3621,29 @@
   "567271": {
    "comp": "PPL",
    "compName": "Primeira Liga",
-   "date": "2026-08-16",
+   "date": "2026-10-19",
    "home": "Sporting Clube de Braga",
    "away": "Gil Vicente FC",
-   "p1": 0.4663,
-   "px": 0.2493,
-   "p2": 0.2844,
-   "pOver25": 0.602,
-   "pUnder25": 0.398,
+   "p1": 0.4677,
+   "px": 0.3005,
+   "p2": 0.2318,
+   "pOver25": 0.3795,
+   "pUnder25": 0.6205,
    "odds": {
-    "1": 1.603,
-    "X": 3.736,
-    "2": 5.288,
-    "over25": 1.905,
-    "under25": 1.828
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
    },
    "bestOdds": {
-    "1": 1.67,
-    "X": 4.0,
-    "2": 6.0,
-    "over25": 2.0,
-    "under25": 1.87
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null
    },
-   "bestBet": {
-    "market": "2",
-    "p": 0.2844,
-    "odds": 6.0,
-    "edge": 0.7066,
-    "kelly": 0.05
-   },
+   "bestBet": null,
    "result": null
   },
   "567272": {
