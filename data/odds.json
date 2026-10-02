@@ -1,13 +1,1498 @@
 {
-  "updated": "2026-10-01T20:36:27.895007+00:00",
+  "updated": "2026-10-02T20:11:54.597254+00:00",
   "odds": {
     "PL": [],
-    "FL1": [],
-    "PD": [],
+    "FL1": [
+      {
+        "homeTeam": "RC Lens",
+        "awayTeam": "Lyon",
+        "commenceTime": "2026-10-09T18:45:00Z",
+        "n_books": 21,
+        "1": 2.2,
+        "X": 3.72,
+        "2": 2.981,
+        "over25": 1.543,
+        "under25": 2.46,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.3,
+          "X": 4.0,
+          "2": 3.21,
+          "over25": 1.57,
+          "under25": 2.52
+        }
+      },
+      {
+        "homeTeam": "Lille",
+        "awayTeam": "Le Havre",
+        "commenceTime": "2026-10-10T15:15:00Z",
+        "n_books": 21,
+        "1": 1.443,
+        "X": 4.516,
+        "2": 6.842,
+        "over25": 1.714,
+        "under25": 2.1,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.5,
+          "X": 4.8,
+          "2": 7.75,
+          "over25": 1.81,
+          "under25": 2.2
+        }
+      },
+      {
+        "homeTeam": "AS Monaco",
+        "awayTeam": "Toulouse",
+        "commenceTime": "2026-10-10T18:45:00Z",
+        "n_books": 21,
+        "1": 1.673,
+        "X": 4.025,
+        "2": 4.593,
+        "over25": 1.625,
+        "under25": 2.227,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.75,
+          "X": 4.3,
+          "2": 5.0,
+          "over25": 1.7,
+          "under25": 2.34
+        }
+      },
+      {
+        "homeTeam": "Brest",
+        "awayTeam": "Angers",
+        "commenceTime": "2026-10-10T18:45:00Z",
+        "n_books": 21,
+        "1": 1.879,
+        "X": 3.734,
+        "2": 3.822,
+        "over25": 1.753,
+        "under25": 2.034,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.96,
+          "X": 3.94,
+          "2": 4.0,
+          "over25": 1.83,
+          "under25": 2.15
+        }
+      },
+      {
+        "homeTeam": "Paris Saint Germain",
+        "awayTeam": "Le Mans FC",
+        "commenceTime": "2026-10-10T18:45:00Z",
+        "n_books": 21,
+        "1": 1.071,
+        "X": 12.412,
+        "2": 25.918,
+        "over25": 1.2,
+        "under25": 4.54,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.1,
+          "X": 17.0,
+          "2": 37.0,
+          "over25": 1.21,
+          "under25": 4.6
+        }
+      },
+      {
+        "homeTeam": "Lorient",
+        "awayTeam": "Paris FC",
+        "commenceTime": "2026-10-10T18:45:00Z",
+        "n_books": 21,
+        "1": 3.004,
+        "X": 3.362,
+        "2": 2.322,
+        "over25": 1.837,
+        "under25": 1.939,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.18,
+          "X": 3.6,
+          "2": 2.43,
+          "over25": 1.96,
+          "under25": 2.0
+        }
+      },
+      {
+        "homeTeam": "Nice",
+        "awayTeam": "Strasbourg",
+        "commenceTime": "2026-10-11T13:00:00Z",
+        "n_books": 20,
+        "1": 2.226,
+        "X": 3.588,
+        "2": 3.022,
+        "over25": 1.685,
+        "under25": 2.137,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.36,
+          "X": 3.85,
+          "2": 3.15,
+          "over25": 1.77,
+          "under25": 2.22
+        }
+      },
+      {
+        "homeTeam": "Rennes",
+        "awayTeam": "Auxerre",
+        "commenceTime": "2026-10-11T15:15:00Z",
+        "n_books": 21,
+        "1": 1.421,
+        "X": 4.906,
+        "2": 6.499,
+        "over25": 1.507,
+        "under25": 2.527,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.48,
+          "X": 5.25,
+          "2": 7.5,
+          "over25": 1.52,
+          "under25": 2.56
+        }
+      },
+      {
+        "homeTeam": "Troyes",
+        "awayTeam": "Marseille",
+        "commenceTime": "2026-10-11T18:45:00Z",
+        "n_books": 21,
+        "1": 3.864,
+        "X": 3.844,
+        "2": 1.845,
+        "over25": 1.562,
+        "under25": 2.352,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.1,
+          "X": 4.2,
+          "2": 1.93,
+          "over25": 1.65,
+          "under25": 2.45
+        }
+      },
+      {
+        "homeTeam": "Le Mans FC",
+        "awayTeam": "Toulouse",
+        "commenceTime": "2026-10-16T18:45:00Z",
+        "n_books": 18,
+        "1": 2.935,
+        "X": 3.274,
+        "2": 2.151,
+        "over25": 1.744,
+        "under25": 2.046,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.3,
+          "X": 3.57,
+          "2": 2.34,
+          "over25": 1.84,
+          "under25": 2.12
+        }
+      },
+      {
+        "homeTeam": "Strasbourg",
+        "awayTeam": "Paris Saint Germain",
+        "commenceTime": "2026-10-17T15:15:00Z",
+        "n_books": 18,
+        "1": 5.854,
+        "X": 4.907,
+        "2": 1.382,
+        "over25": 1.33,
+        "under25": 3.297,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 6.8,
+          "X": 5.7,
+          "2": 1.46,
+          "over25": 1.34,
+          "under25": 3.34
+        }
+      },
+      {
+        "homeTeam": "Lille",
+        "awayTeam": "Brest",
+        "commenceTime": "2026-10-17T18:45:00Z",
+        "n_books": 18,
+        "1": 1.561,
+        "X": 3.916,
+        "2": 4.836,
+        "over25": 1.661,
+        "under25": 2.181,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.66,
+          "X": 4.37,
+          "2": 5.5,
+          "over25": 1.74,
+          "under25": 2.27
+        }
+      },
+      {
+        "homeTeam": "Troyes",
+        "awayTeam": "RC Lens",
+        "commenceTime": "2026-10-17T18:45:00Z",
+        "n_books": 18,
+        "1": 3.751,
+        "X": 3.688,
+        "2": 1.756,
+        "over25": 1.578,
+        "under25": 2.41,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.3,
+          "X": 4.04,
+          "2": 1.87,
+          "over25": 1.64,
+          "under25": 2.46
+        }
+      },
+      {
+        "homeTeam": "Angers",
+        "awayTeam": "Marseille",
+        "commenceTime": "2026-10-18T13:00:00Z",
+        "n_books": 17,
+        "1": 3.02,
+        "X": 3.603,
+        "2": 2.151,
+        "over25": 1.59,
+        "under25": 2.317,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.21,
+          "X": 3.8,
+          "2": 2.28,
+          "over25": 1.68,
+          "under25": 2.38
+        }
+      },
+      {
+        "homeTeam": "Lorient",
+        "awayTeam": "AS Monaco",
+        "commenceTime": "2026-10-18T15:15:00Z",
+        "n_books": 17,
+        "1": 3.467,
+        "X": 3.412,
+        "2": 2.045,
+        "over25": 1.82,
+        "under25": 1.957,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.75,
+          "X": 3.58,
+          "2": 2.17,
+          "over25": 1.92,
+          "under25": 2.02
+        }
+      },
+      {
+        "homeTeam": "Le Havre",
+        "awayTeam": "Auxerre",
+        "commenceTime": "2026-10-18T15:15:00Z",
+        "n_books": 17,
+        "1": 2.368,
+        "X": 3.366,
+        "2": 2.839,
+        "over25": 1.851,
+        "under25": 1.924,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.52,
+          "X": 3.51,
+          "2": 3.0,
+          "over25": 1.94,
+          "under25": 2.0
+        }
+      },
+      {
+        "homeTeam": "Paris FC",
+        "awayTeam": "Rennes",
+        "commenceTime": "2026-10-18T15:15:00Z",
+        "n_books": 17,
+        "1": 2.231,
+        "X": 3.426,
+        "2": 3.021,
+        "over25": 1.642,
+        "under25": 2.217,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.37,
+          "X": 3.6,
+          "2": 3.29,
+          "over25": 1.72,
+          "under25": 2.3
+        }
+      },
+      {
+        "homeTeam": "Lyon",
+        "awayTeam": "Nice",
+        "commenceTime": "2026-10-18T18:45:00Z",
+        "n_books": 17,
+        "1": 1.636,
+        "X": 3.982,
+        "2": 4.816,
+        "over25": 1.684,
+        "under25": 2.149,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.71,
+          "X": 4.2,
+          "2": 5.25,
+          "over25": 1.78,
+          "under25": 2.25
+        }
+      }
+    ],
+    "PD": [
+      {
+        "homeTeam": "Málaga",
+        "awayTeam": "Espanyol",
+        "commenceTime": "2026-10-09T19:00:00Z",
+        "n_books": 20,
+        "1": 2.632,
+        "X": 3.216,
+        "2": 2.676,
+        "over25": 2.01,
+        "under25": 1.779,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.84,
+          "X": 3.4,
+          "2": 2.83,
+          "over25": 2.11,
+          "under25": 1.85
+        }
+      },
+      {
+        "homeTeam": "Rayo Vallecano",
+        "awayTeam": "Athletic Bilbao",
+        "commenceTime": "2026-10-10T12:00:00Z",
+        "n_books": 19,
+        "1": 2.963,
+        "X": 3.376,
+        "2": 2.342,
+        "over25": 1.867,
+        "under25": 1.909,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.12,
+          "X": 3.54,
+          "2": 2.46,
+          "over25": 1.96,
+          "under25": 1.99
+        }
+      },
+      {
+        "homeTeam": "Alavés",
+        "awayTeam": "Atlético Madrid",
+        "commenceTime": "2026-10-10T14:15:00Z",
+        "n_books": 18,
+        "1": 4.074,
+        "X": 3.674,
+        "2": 1.85,
+        "over25": 1.804,
+        "under25": 1.986,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.32,
+          "X": 3.84,
+          "2": 1.92,
+          "over25": 1.91,
+          "under25": 2.03
+        }
+      },
+      {
+        "homeTeam": "Barcelona",
+        "awayTeam": "Getafe",
+        "commenceTime": "2026-10-10T16:30:00Z",
+        "n_books": 19,
+        "1": 1.048,
+        "X": 14.89,
+        "2": 29.992,
+        "over25": 1.2,
+        "under25": 4.507,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.08,
+          "X": 20.0,
+          "2": 50.0,
+          "over25": 1.21,
+          "under25": 4.57
+        }
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Villarreal",
+        "commenceTime": "2026-10-10T19:00:00Z",
+        "n_books": 19,
+        "1": 1.323,
+        "X": 5.785,
+        "2": 7.574,
+        "over25": 1.293,
+        "under25": 3.55,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.37,
+          "X": 6.4,
+          "2": 8.5,
+          "over25": 1.3,
+          "under25": 3.6
+        }
+      },
+      {
+        "homeTeam": "Elche CF",
+        "awayTeam": "Celta Vigo",
+        "commenceTime": "2026-10-11T12:00:00Z",
+        "n_books": 19,
+        "1": 2.766,
+        "X": 3.208,
+        "2": 2.568,
+        "over25": 2.032,
+        "under25": 1.758,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.95,
+          "X": 3.33,
+          "2": 2.69,
+          "over25": 2.12,
+          "under25": 1.84
+        }
+      },
+      {
+        "homeTeam": "Real Sociedad",
+        "awayTeam": "Deportivo La Coruña",
+        "commenceTime": "2026-10-11T14:15:00Z",
+        "n_books": 18,
+        "1": 1.716,
+        "X": 3.791,
+        "2": 4.669,
+        "over25": 1.781,
+        "under25": 2.001,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.8,
+          "X": 4.0,
+          "2": 5.0,
+          "over25": 1.87,
+          "under25": 2.08
+        }
+      },
+      {
+        "homeTeam": "Real Betis",
+        "awayTeam": "CA Osasuna",
+        "commenceTime": "2026-10-11T16:30:00Z",
+        "n_books": 19,
+        "1": 1.653,
+        "X": 3.989,
+        "2": 4.853,
+        "over25": 1.745,
+        "under25": 2.047,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.73,
+          "X": 4.21,
+          "2": 5.2,
+          "over25": 1.83,
+          "under25": 2.14
+        }
+      },
+      {
+        "homeTeam": "Real Racing Club de Santander",
+        "awayTeam": "Valencia",
+        "commenceTime": "2026-10-11T19:00:00Z",
+        "n_books": 19,
+        "1": 2.162,
+        "X": 3.518,
+        "2": 3.176,
+        "over25": 1.715,
+        "under25": 2.089,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.31,
+          "X": 3.8,
+          "2": 3.4,
+          "over25": 1.79,
+          "under25": 2.2
+        }
+      },
+      {
+        "homeTeam": "Levante",
+        "awayTeam": "Sevilla",
+        "commenceTime": "2026-10-12T19:00:00Z",
+        "n_books": 19,
+        "1": 2.613,
+        "X": 3.271,
+        "2": 2.672,
+        "over25": 2.036,
+        "under25": 1.761,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.74,
+          "X": 3.41,
+          "2": 2.79,
+          "over25": 2.11,
+          "under25": 1.84
+        }
+      },
+      {
+        "homeTeam": "Deportivo La Coruña",
+        "awayTeam": "Levante",
+        "commenceTime": "2026-10-16T19:00:00Z",
+        "n_books": 15,
+        "1": 2.057,
+        "X": 3.426,
+        "2": 3.456,
+        "over25": 1.887,
+        "under25": 1.889,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.17,
+          "X": 3.62,
+          "2": 3.6,
+          "over25": 1.98,
+          "under25": 1.96
+        }
+      },
+      {
+        "homeTeam": "Espanyol",
+        "awayTeam": "Atlético Madrid",
+        "commenceTime": "2026-10-17T12:00:00Z",
+        "n_books": 15,
+        "1": 4.096,
+        "X": 3.67,
+        "2": 1.827,
+        "over25": 1.778,
+        "under25": 2.016,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.4,
+          "X": 3.84,
+          "2": 1.91,
+          "over25": 1.87,
+          "under25": 2.08
+        }
+      },
+      {
+        "homeTeam": "Villarreal",
+        "awayTeam": "Elche CF",
+        "commenceTime": "2026-10-17T14:15:00Z",
+        "n_books": 16,
+        "1": 1.448,
+        "X": 4.727,
+        "2": 6.055,
+        "over25": 1.48,
+        "under25": 2.63,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.51,
+          "X": 5.0,
+          "2": 6.73,
+          "over25": 1.51,
+          "under25": 2.7
+        }
+      },
+      {
+        "homeTeam": "Real Betis",
+        "awayTeam": "Barcelona",
+        "commenceTime": "2026-10-17T16:30:00Z",
+        "n_books": 16,
+        "1": 5.111,
+        "X": 5.17,
+        "2": 1.472,
+        "over25": 1.267,
+        "under25": 3.72,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 5.8,
+          "X": 6.0,
+          "2": 1.53,
+          "over25": 1.28,
+          "under25": 3.76
+        }
+      },
+      {
+        "homeTeam": "Valencia",
+        "awayTeam": "Athletic Bilbao",
+        "commenceTime": "2026-10-17T19:00:00Z",
+        "n_books": 16,
+        "1": 3.281,
+        "X": 3.243,
+        "2": 2.068,
+        "over25": 2.006,
+        "under25": 1.782,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.62,
+          "X": 3.58,
+          "2": 2.18,
+          "over25": 2.1,
+          "under25": 1.86
+        }
+      },
+      {
+        "homeTeam": "CA Osasuna",
+        "awayTeam": "Real Racing Club de Santander",
+        "commenceTime": "2026-10-18T12:00:00Z",
+        "n_books": 12,
+        "1": 1.848,
+        "X": 3.552,
+        "2": 3.988,
+        "over25": 1.736,
+        "under25": 2.11,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.95,
+          "X": 3.75,
+          "2": 4.32,
+          "over25": 1.81,
+          "under25": 2.17
+        }
+      },
+      {
+        "homeTeam": "Celta Vigo",
+        "awayTeam": "Alavés",
+        "commenceTime": "2026-10-18T14:15:00Z",
+        "n_books": 15,
+        "1": 1.981,
+        "X": 3.353,
+        "2": 3.711,
+        "over25": 2.103,
+        "under25": 1.706,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.08,
+          "X": 3.58,
+          "2": 3.94,
+          "over25": 2.19,
+          "under25": 1.79
+        }
+      },
+      {
+        "homeTeam": "Málaga",
+        "awayTeam": "Real Sociedad",
+        "commenceTime": "2026-10-18T16:30:00Z",
+        "n_books": 16,
+        "1": 3.131,
+        "X": 3.442,
+        "2": 2.174,
+        "over25": 1.753,
+        "under25": 2.03,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.3,
+          "X": 3.63,
+          "2": 2.29,
+          "over25": 1.86,
+          "under25": 2.1
+        }
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Sevilla",
+        "commenceTime": "2026-10-18T19:00:00Z",
+        "n_books": 16,
+        "1": 1.237,
+        "X": 6.226,
+        "2": 10.032,
+        "over25": 1.383,
+        "under25": 2.95,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.3,
+          "X": 7.2,
+          "2": 11.5,
+          "over25": 1.4,
+          "under25": 3.0
+        }
+      },
+      {
+        "homeTeam": "Getafe",
+        "awayTeam": "Rayo Vallecano",
+        "commenceTime": "2026-10-19T19:00:00Z",
+        "n_books": 16,
+        "1": 2.573,
+        "X": 3.069,
+        "2": 2.792,
+        "over25": 2.447,
+        "under25": 1.531,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.76,
+          "X": 3.21,
+          "2": 2.95,
+          "over25": 2.59,
+          "under25": 1.59
+        }
+      }
+    ],
     "SA": [],
-    "PPL": [],
-    "BL1": [],
-    "DED": [],
+    "PPL": [
+      {
+        "homeTeam": "Moreirense FC",
+        "awayTeam": "Gil Vicente",
+        "commenceTime": "2026-10-09T17:45:00Z",
+        "n_books": 11,
+        "1": 3.327,
+        "X": 3.056,
+        "2": 2.113,
+        "over25": 2.277,
+        "under25": 1.583,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.6,
+          "X": 3.22,
+          "2": 2.23,
+          "over25": 2.3,
+          "under25": 1.6
+        }
+      },
+      {
+        "homeTeam": "Braga",
+        "awayTeam": "Sporting Lisbon",
+        "commenceTime": "2026-10-09T19:15:00Z",
+        "n_books": 11,
+        "1": 3.216,
+        "X": 3.275,
+        "2": 2.077,
+        "over25": 1.934,
+        "under25": 1.824,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.6,
+          "X": 3.44,
+          "2": 2.15,
+          "over25": 1.99,
+          "under25": 1.85
+        }
+      },
+      {
+        "homeTeam": "Casa Pia",
+        "awayTeam": "Santa Clara",
+        "commenceTime": "2026-10-10T14:30:00Z",
+        "n_books": 11,
+        "1": 4.283,
+        "X": 3.115,
+        "2": 1.829,
+        "over25": 2.423,
+        "under25": 1.515,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.8,
+          "X": 3.31,
+          "2": 1.93,
+          "over25": 2.45,
+          "under25": 1.52
+        }
+      },
+      {
+        "homeTeam": "CS Maritimo",
+        "awayTeam": "FC Porto",
+        "commenceTime": "2026-10-10T17:00:00Z",
+        "n_books": 11,
+        "1": 8.16,
+        "X": 4.545,
+        "2": 1.319,
+        "over25": 1.738,
+        "under25": 2.002,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 10.5,
+          "X": 4.95,
+          "2": 1.36,
+          "over25": 1.75,
+          "under25": 2.05
+        }
+      },
+      {
+        "homeTeam": "Académico de Viseu",
+        "awayTeam": "Estoril",
+        "commenceTime": "2026-10-10T19:30:00Z",
+        "n_books": 11,
+        "1": 2.194,
+        "X": 3.298,
+        "2": 2.931,
+        "over25": 1.88,
+        "under25": 1.864,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.29,
+          "X": 3.4,
+          "2": 3.15,
+          "over25": 1.92,
+          "under25": 1.92
+        }
+      },
+      {
+        "homeTeam": "Rio Ave FC",
+        "awayTeam": "Nacional",
+        "commenceTime": "2026-10-11T14:30:00Z",
+        "n_books": 11,
+        "1": 2.147,
+        "X": 3.163,
+        "2": 3.152,
+        "over25": 2.065,
+        "under25": 1.705,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.22,
+          "X": 3.32,
+          "2": 3.42,
+          "over25": 2.08,
+          "under25": 1.72
+        }
+      },
+      {
+        "homeTeam": "Benfica",
+        "awayTeam": "Vitória SC",
+        "commenceTime": "2026-10-11T17:00:00Z",
+        "n_books": 11,
+        "1": 1.259,
+        "X": 5.08,
+        "2": 8.915,
+        "over25": 1.48,
+        "under25": 2.487,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.31,
+          "X": 5.9,
+          "2": 10.75,
+          "over25": 1.5,
+          "under25": 2.5
+        }
+      },
+      {
+        "homeTeam": "Arouca",
+        "awayTeam": "CF Estrela",
+        "commenceTime": "2026-10-11T19:30:00Z",
+        "n_books": 11,
+        "1": 2.085,
+        "X": 3.297,
+        "2": 3.148,
+        "over25": 1.89,
+        "under25": 1.86,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.17,
+          "X": 3.53,
+          "2": 3.4,
+          "over25": 1.91,
+          "under25": 1.93
+        }
+      },
+      {
+        "homeTeam": "Famalicão",
+        "awayTeam": "Alverca",
+        "commenceTime": "2026-10-12T19:15:00Z",
+        "n_books": 11,
+        "1": 1.776,
+        "X": 3.297,
+        "2": 4.279,
+        "over25": 1.998,
+        "under25": 1.74,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.85,
+          "X": 3.56,
+          "2": 5.02,
+          "over25": 2.02,
+          "under25": 1.77
+        }
+      }
+    ],
+    "BL1": [
+      {
+        "homeTeam": "Borussia Dortmund",
+        "awayTeam": "Werder Bremen",
+        "commenceTime": "2026-10-09T18:30:00Z",
+        "n_books": 21,
+        "1": 1.359,
+        "X": 5.385,
+        "2": 7.222,
+        "over25": 1.383,
+        "under25": 2.983,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.4,
+          "X": 5.77,
+          "2": 8.0,
+          "over25": 1.4,
+          "under25": 3.0
+        }
+      },
+      {
+        "homeTeam": "Augsburg",
+        "awayTeam": "Bayern Munich",
+        "commenceTime": "2026-10-10T13:30:00Z",
+        "n_books": 21,
+        "1": 9.796,
+        "X": 7.557,
+        "2": 1.211,
+        "over25": 1.167,
+        "under25": 5.137,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 12.5,
+          "X": 8.8,
+          "2": 1.24,
+          "over25": 1.18,
+          "under25": 5.5
+        }
+      },
+      {
+        "homeTeam": "FSV Mainz 05",
+        "awayTeam": "Bayer Leverkusen",
+        "commenceTime": "2026-10-10T13:30:00Z",
+        "n_books": 21,
+        "1": 2.875,
+        "X": 3.841,
+        "2": 2.202,
+        "over25": 1.463,
+        "under25": 2.683,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.01,
+          "X": 4.0,
+          "2": 2.31,
+          "over25": 1.5,
+          "under25": 2.8
+        }
+      },
+      {
+        "homeTeam": "Union Berlin",
+        "awayTeam": "Elversberg",
+        "commenceTime": "2026-10-10T13:30:00Z",
+        "n_books": 21,
+        "1": 2.204,
+        "X": 3.796,
+        "2": 2.896,
+        "over25": 1.555,
+        "under25": 2.389,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.35,
+          "X": 4.01,
+          "2": 3.07,
+          "over25": 1.63,
+          "under25": 2.49
+        }
+      },
+      {
+        "homeTeam": "TSG Hoffenheim",
+        "awayTeam": "Hamburger SV",
+        "commenceTime": "2026-10-10T13:30:00Z",
+        "n_books": 21,
+        "1": 1.418,
+        "X": 4.943,
+        "2": 6.45,
+        "over25": 1.397,
+        "under25": 2.92,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.49,
+          "X": 5.5,
+          "2": 7.0,
+          "over25": 1.42,
+          "under25": 3.0
+        }
+      },
+      {
+        "homeTeam": "SC Paderborn",
+        "awayTeam": "VfB Stuttgart",
+        "commenceTime": "2026-10-10T13:30:00Z",
+        "n_books": 21,
+        "1": 4.74,
+        "X": 4.543,
+        "2": 1.585,
+        "over25": 1.397,
+        "under25": 2.92,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 5.08,
+          "X": 4.83,
+          "2": 1.64,
+          "over25": 1.42,
+          "under25": 3.0
+        }
+      },
+      {
+        "homeTeam": "RB Leipzig",
+        "awayTeam": "Eintracht Frankfurt",
+        "commenceTime": "2026-10-10T16:30:00Z",
+        "n_books": 21,
+        "1": 1.522,
+        "X": 4.862,
+        "2": 4.991,
+        "over25": 1.297,
+        "under25": 3.517,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.58,
+          "X": 5.25,
+          "2": 5.4,
+          "over25": 1.3,
+          "under25": 3.6
+        }
+      },
+      {
+        "homeTeam": "1. FC Köln",
+        "awayTeam": "Borussia Monchengladbach",
+        "commenceTime": "2026-10-11T13:30:00Z",
+        "n_books": 21,
+        "1": 1.936,
+        "X": 3.984,
+        "2": 3.369,
+        "over25": 1.487,
+        "under25": 2.597,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.02,
+          "X": 4.25,
+          "2": 3.57,
+          "over25": 1.5,
+          "under25": 2.67
+        }
+      },
+      {
+        "homeTeam": "SC Freiburg",
+        "awayTeam": "FC Schalke 04",
+        "commenceTime": "2026-10-11T15:30:00Z",
+        "n_books": 21,
+        "1": 1.621,
+        "X": 4.034,
+        "2": 5.013,
+        "over25": 1.576,
+        "under25": 2.337,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.71,
+          "X": 4.4,
+          "2": 5.44,
+          "over25": 1.69,
+          "under25": 2.4
+        }
+      },
+      {
+        "homeTeam": "Eintracht Frankfurt",
+        "awayTeam": "1. FC Köln",
+        "commenceTime": "2026-10-16T18:30:00Z",
+        "n_books": 14,
+        "1": 1.919,
+        "X": 3.987,
+        "2": 3.28,
+        "over25": 1.397,
+        "under25": 2.95,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.0,
+          "X": 4.3,
+          "2": 3.52,
+          "over25": 1.4,
+          "under25": 3.0
+        }
+      },
+      {
+        "homeTeam": "Elversberg",
+        "awayTeam": "Augsburg",
+        "commenceTime": "2026-10-17T13:30:00Z",
+        "n_books": 14,
+        "1": 2.399,
+        "X": 3.701,
+        "2": 2.564,
+        "over25": 1.443,
+        "under25": 2.75,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.55,
+          "X": 4.0,
+          "2": 2.71,
+          "over25": 1.45,
+          "under25": 2.8
+        }
+      },
+      {
+        "homeTeam": "Union Berlin",
+        "awayTeam": "Borussia Dortmund",
+        "commenceTime": "2026-10-17T13:30:00Z",
+        "n_books": 14,
+        "1": 4.384,
+        "X": 4.094,
+        "2": 1.655,
+        "over25": 1.467,
+        "under25": 2.663,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.72,
+          "X": 4.45,
+          "2": 1.73,
+          "over25": 1.49,
+          "under25": 2.7
+        }
+      },
+      {
+        "homeTeam": "FC Schalke 04",
+        "awayTeam": "FSV Mainz 05",
+        "commenceTime": "2026-10-17T13:30:00Z",
+        "n_books": 14,
+        "1": 2.894,
+        "X": 3.528,
+        "2": 2.211,
+        "over25": 1.608,
+        "under25": 2.34,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.15,
+          "X": 3.72,
+          "2": 2.33,
+          "over25": 1.66,
+          "under25": 2.42
+        }
+      },
+      {
+        "homeTeam": "Hamburger SV",
+        "awayTeam": "VfB Stuttgart",
+        "commenceTime": "2026-10-17T13:30:00Z",
+        "n_books": 14,
+        "1": 3.671,
+        "X": 3.957,
+        "2": 1.814,
+        "over25": 1.37,
+        "under25": 3.05,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 4.08,
+          "X": 4.3,
+          "2": 1.9,
+          "over25": 1.38,
+          "under25": 3.1
+        }
+      },
+      {
+        "homeTeam": "Werder Bremen",
+        "awayTeam": "SC Paderborn",
+        "commenceTime": "2026-10-17T13:30:00Z",
+        "n_books": 14,
+        "1": 1.764,
+        "X": 3.949,
+        "2": 3.912,
+        "over25": 1.537,
+        "under25": 2.467,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.84,
+          "X": 4.3,
+          "2": 4.25,
+          "over25": 1.55,
+          "under25": 2.52
+        }
+      },
+      {
+        "homeTeam": "Bayern Munich",
+        "awayTeam": "RB Leipzig",
+        "commenceTime": "2026-10-17T16:30:00Z",
+        "n_books": 14,
+        "1": 1.231,
+        "X": 6.502,
+        "2": 9.2,
+        "over25": 1.173,
+        "under25": 4.97,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.27,
+          "X": 7.8,
+          "2": 11.5,
+          "over25": 1.18,
+          "under25": 5.01
+        }
+      },
+      {
+        "homeTeam": "Bayer Leverkusen",
+        "awayTeam": "SC Freiburg",
+        "commenceTime": "2026-10-18T13:30:00Z",
+        "n_books": 14,
+        "1": 1.626,
+        "X": 4.216,
+        "2": 4.389,
+        "over25": 1.467,
+        "under25": 2.637,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.7,
+          "X": 4.51,
+          "2": 4.83,
+          "over25": 1.49,
+          "under25": 2.67
+        }
+      },
+      {
+        "homeTeam": "Borussia Monchengladbach",
+        "awayTeam": "TSG Hoffenheim",
+        "commenceTime": "2026-10-18T15:30:00Z",
+        "n_books": 14,
+        "1": 3.364,
+        "X": 4.019,
+        "2": 1.876,
+        "over25": 1.397,
+        "under25": 2.917,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 3.69,
+          "X": 4.4,
+          "2": 1.95,
+          "over25": 1.4,
+          "under25": 3.0
+        }
+      }
+    ],
+    "DED": [
+      {
+        "homeTeam": "PSV Eindhoven",
+        "awayTeam": "Heerenveen",
+        "commenceTime": "2026-10-09T18:00:00Z",
+        "n_books": 18,
+        "1": 1.209,
+        "X": 6.809,
+        "2": 9.074,
+        "over25": 1.167,
+        "under25": 4.74,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.25,
+          "X": 7.5,
+          "2": 11.0,
+          "over25": 1.18,
+          "under25": 5.0
+        }
+      },
+      {
+        "homeTeam": "Go Ahead Eagles",
+        "awayTeam": "Sparta Rotterdam",
+        "commenceTime": "2026-10-10T14:30:00Z",
+        "n_books": 18,
+        "1": 1.74,
+        "X": 3.922,
+        "2": 3.921,
+        "over25": 1.397,
+        "under25": 2.803,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.83,
+          "X": 4.3,
+          "2": 4.37,
+          "over25": 1.4,
+          "under25": 2.85
+        }
+      },
+      {
+        "homeTeam": "Feyenoord",
+        "awayTeam": "AZ Alkmaar",
+        "commenceTime": "2026-10-10T16:45:00Z",
+        "n_books": 18,
+        "1": 1.795,
+        "X": 3.817,
+        "2": 3.766,
+        "over25": 1.407,
+        "under25": 2.72,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.92,
+          "X": 4.2,
+          "2": 4.25,
+          "over25": 1.42,
+          "under25": 2.79
+        }
+      },
+      {
+        "homeTeam": "Fortuna Sittard",
+        "awayTeam": "FC Twente Enschede",
+        "commenceTime": "2026-10-10T18:00:00Z",
+        "n_books": 18,
+        "1": 6.095,
+        "X": 4.851,
+        "2": 1.399,
+        "over25": 1.36,
+        "under25": 2.98,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 6.8,
+          "X": 5.25,
+          "2": 1.45,
+          "over25": 1.38,
+          "under25": 3.1
+        }
+      },
+      {
+        "homeTeam": "Ajax",
+        "awayTeam": "NEC Nijmegen",
+        "commenceTime": "2026-10-10T19:00:00Z",
+        "n_books": 18,
+        "1": 1.275,
+        "X": 5.538,
+        "2": 8.304,
+        "over25": 1.3,
+        "under25": 3.35,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.32,
+          "X": 6.5,
+          "2": 9.2,
+          "over25": 1.31,
+          "under25": 3.4
+        }
+      },
+      {
+        "homeTeam": "FC Utrecht",
+        "awayTeam": "Willem II",
+        "commenceTime": "2026-10-11T10:15:00Z",
+        "n_books": 18,
+        "1": 1.471,
+        "X": 4.436,
+        "2": 5.533,
+        "over25": 1.453,
+        "under25": 2.61,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.53,
+          "X": 4.9,
+          "2": 6.0,
+          "over25": 1.47,
+          "under25": 2.62
+        }
+      },
+      {
+        "homeTeam": "SC Telstar",
+        "awayTeam": "ADO Den Haag",
+        "commenceTime": "2026-10-11T12:30:00Z",
+        "n_books": 18,
+        "1": 1.953,
+        "X": 3.617,
+        "2": 3.348,
+        "over25": 1.545,
+        "under25": 2.342,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.02,
+          "X": 3.85,
+          "2": 3.6,
+          "over25": 1.56,
+          "under25": 2.4
+        }
+      },
+      {
+        "homeTeam": "FC Zwolle",
+        "awayTeam": "SC Cambuur",
+        "commenceTime": "2026-10-11T12:30:00Z",
+        "n_books": 18,
+        "1": 1.864,
+        "X": 3.791,
+        "2": 3.48,
+        "over25": 1.483,
+        "under25": 2.513,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 1.94,
+          "X": 4.2,
+          "2": 3.87,
+          "over25": 1.5,
+          "under25": 2.56
+        }
+      },
+      {
+        "homeTeam": "Excelsior",
+        "awayTeam": "Groningen",
+        "commenceTime": "2026-10-11T14:45:00Z",
+        "n_books": 18,
+        "1": 2.484,
+        "X": 3.501,
+        "2": 2.507,
+        "over25": 1.537,
+        "under25": 2.365,
+        "gg": null,
+        "ng": null,
+        "best": {
+          "1": 2.62,
+          "X": 3.75,
+          "2": 2.75,
+          "over25": 1.55,
+          "under25": 2.42
+        }
+      }
+    ],
     "CL": []
   }
 }
