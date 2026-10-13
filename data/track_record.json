@@ -1,7 +1,7 @@
 {
- "graded": 457,
- "pending": 398,
- "brier": 0.2127,
+ "graded": 459,
+ "pending": 402,
+ "brier": 0.2132,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,20 +17,20 @@
   },
   {
    "bin": "20-30%",
-   "n": 591,
-   "avgPred": 0.246,
-   "actualFreq": 0.2453
+   "n": 595,
+   "avgPred": 0.2459,
+   "actualFreq": 0.2471
   },
   {
    "bin": "30-40%",
-   "n": 385,
-   "avgPred": 0.349,
-   "actualFreq": 0.3558
+   "n": 387,
+   "avgPred": 0.3491,
+   "actualFreq": 0.3566
   },
   {
    "bin": "40-50%",
-   "n": 311,
-   "avgPred": 0.4459,
+   "n": 313,
+   "avgPred": 0.4458,
    "actualFreq": 0.5048
   },
   {
@@ -47,9 +47,9 @@
   },
   {
    "bin": "70-80%",
-   "n": 128,
-   "avgPred": 0.7451,
-   "actualFreq": 0.75
+   "n": 130,
+   "avgPred": 0.7452,
+   "actualFreq": 0.7385
   },
   {
    "bin": "80-90%",
@@ -65,21 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 347,
-  "wins": 108,
-  "profitUnits": -49.46,
-  "roi": -0.1425,
+  "n": 348,
+  "wins": 109,
+  "profitUnits": -46.76,
+  "roi": -0.1344,
   "history": [
-   {
-    "date": "2026-09-17",
-    "match": "Málaga CF - Villarreal CF",
-    "market": "1",
-    "odds": 3.65,
-    "edge": 0.1546,
-    "won": false,
-    "pl": -1.0,
-    "cum": -27.97
-   },
    {
     "date": "2026-09-17",
     "match": "Real Betis Balompié - Getafe CF",
@@ -1069,6 +1059,16 @@
     "won": false,
     "pl": -1.0,
     "cum": -49.46
+   },
+   {
+    "date": "2026-10-13",
+    "match": "Sabah FK - SK Slavia Praha",
+    "market": "1",
+    "odds": 3.7,
+    "edge": 0.3185,
+    "won": true,
+    "pl": 2.7,
+    "cum": -46.76
    }
   ]
  }
