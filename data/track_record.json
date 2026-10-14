@@ -1,61 +1,61 @@
 {
- "graded": 459,
- "pending": 402,
+ "graded": 469,
+ "pending": 425,
  "brier": 0.2132,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 42,
-   "avgPred": 0.0733,
-   "actualFreq": 0.0952
+   "n": 43,
+   "avgPred": 0.0738,
+   "actualFreq": 0.093
   },
   {
    "bin": "10-20%",
-   "n": 282,
-   "avgPred": 0.1598,
-   "actualFreq": 0.2199
+   "n": 289,
+   "avgPred": 0.1599,
+   "actualFreq": 0.2215
   },
   {
    "bin": "20-30%",
-   "n": 595,
-   "avgPred": 0.2459,
-   "actualFreq": 0.2471
+   "n": 609,
+   "avgPred": 0.2457,
+   "actualFreq": 0.2463
   },
   {
    "bin": "30-40%",
-   "n": 387,
-   "avgPred": 0.3491,
-   "actualFreq": 0.3566
+   "n": 396,
+   "avgPred": 0.3489,
+   "actualFreq": 0.3586
   },
   {
    "bin": "40-50%",
-   "n": 313,
+   "n": 314,
    "avgPred": 0.4458,
-   "actualFreq": 0.5048
+   "actualFreq": 0.5032
   },
   {
    "bin": "50-60%",
-   "n": 215,
-   "avgPred": 0.5533,
-   "actualFreq": 0.4651
+   "n": 219,
+   "avgPred": 0.5527,
+   "actualFreq": 0.4658
   },
   {
    "bin": "60-70%",
-   "n": 237,
-   "avgPred": 0.6494,
-   "actualFreq": 0.616
+   "n": 245,
+   "avgPred": 0.6495,
+   "actualFreq": 0.6163
   },
   {
    "bin": "70-80%",
-   "n": 130,
-   "avgPred": 0.7452,
-   "actualFreq": 0.7385
+   "n": 135,
+   "avgPred": 0.7457,
+   "actualFreq": 0.7333
   },
   {
    "bin": "80-90%",
-   "n": 90,
-   "avgPred": 0.8386,
-   "actualFreq": 0.7111
+   "n": 91,
+   "avgPred": 0.8383,
+   "actualFreq": 0.7143
   },
   {
    "bin": "90-100%",
@@ -65,71 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 348,
+  "n": 354,
   "wins": 109,
-  "profitUnits": -46.76,
-  "roi": -0.1344,
+  "profitUnits": -52.76,
+  "roi": -0.149,
   "history": [
-   {
-    "date": "2026-09-17",
-    "match": "Real Betis Balompié - Getafe CF",
-    "market": "Over 2.5",
-    "odds": 2.25,
-    "edge": 0.1867,
-    "won": false,
-    "pl": -1.0,
-    "cum": -28.97
-   },
-   {
-    "date": "2026-09-18",
-    "match": "Brentford FC - Chelsea FC",
-    "market": "1",
-    "odds": 2.66,
-    "edge": 0.4211,
-    "won": true,
-    "pl": 1.66,
-    "cum": -27.31
-   },
-   {
-    "date": "2026-09-18",
-    "match": "AC Monza - US Sassuolo Calcio",
-    "market": "Over 2.5",
-    "odds": 1.8,
-    "edge": 0.4416,
-    "won": true,
-    "pl": 0.8,
-    "cum": -26.51
-   },
-   {
-    "date": "2026-09-18",
-    "match": "FC Groningen - PEC Zwolle",
-    "market": "1",
-    "odds": 1.68,
-    "edge": 0.2184,
-    "won": true,
-    "pl": 0.68,
-    "cum": -25.83
-   },
-   {
-    "date": "2026-09-18",
-    "match": "RCD Espanyol de Barcelona - Elche CF",
-    "market": "Over 2.5",
-    "odds": 1.84,
-    "edge": 0.3661,
-    "won": true,
-    "pl": 0.84,
-    "cum": -24.99
-   },
-   {
-    "date": "2026-09-19",
-    "match": "Tottenham Hotspur FC - Aston Villa FC",
-    "market": "1",
-    "odds": 2.1,
-    "edge": 0.2048,
-    "won": false,
-    "pl": -1.0,
-    "cum": -25.99
-   },
    {
     "date": "2026-09-19",
     "match": "Everton FC - Ipswich Town FC",
@@ -942,13 +882,23 @@
    },
    {
     "date": "2026-10-11",
+    "match": "FC Arouca - CF Estrela da Amadora",
+    "market": "Over 2.5",
+    "odds": 1.92,
+    "edge": 0.341,
+    "won": false,
+    "pl": -1.0,
+    "cum": -54.86
+   },
+   {
+    "date": "2026-10-11",
     "match": "Rio Ave FC - CD Nacional",
     "market": "Over 2.5",
     "odds": 2.14,
     "edge": 0.2674,
     "won": true,
     "pl": 1.14,
-    "cum": -52.72
+    "cum": -53.72
    },
    {
     "date": "2026-10-11",
@@ -958,7 +908,7 @@
     "edge": 0.2564,
     "won": false,
     "pl": -1.0,
-    "cum": -53.72
+    "cum": -54.72
    },
    {
     "date": "2026-10-11",
@@ -968,7 +918,7 @@
     "edge": 0.1391,
     "won": false,
     "pl": -1.0,
-    "cum": -54.72
+    "cum": -55.72
    },
    {
     "date": "2026-10-11",
@@ -978,7 +928,7 @@
     "edge": 0.1051,
     "won": true,
     "pl": 1.36,
-    "cum": -53.36
+    "cum": -54.36
    },
    {
     "date": "2026-10-11",
@@ -988,7 +938,7 @@
     "edge": 0.3692,
     "won": false,
     "pl": -1.0,
-    "cum": -54.36
+    "cum": -55.36
    },
    {
     "date": "2026-10-11",
@@ -998,7 +948,7 @@
     "edge": 0.706,
     "won": true,
     "pl": 2.75,
-    "cum": -51.61
+    "cum": -52.61
    },
    {
     "date": "2026-10-11",
@@ -1008,7 +958,7 @@
     "edge": 0.4332,
     "won": false,
     "pl": -1.0,
-    "cum": -52.61
+    "cum": -53.61
    },
    {
     "date": "2026-10-12",
@@ -1018,7 +968,7 @@
     "edge": 0.458,
     "won": true,
     "pl": 1.18,
-    "cum": -51.43
+    "cum": -52.43
    },
    {
     "date": "2026-10-12",
@@ -1028,7 +978,7 @@
     "edge": 0.0527,
     "won": true,
     "pl": 0.61,
-    "cum": -50.82
+    "cum": -51.82
    },
    {
     "date": "2026-10-12",
@@ -1038,7 +988,7 @@
     "edge": 0.4904,
     "won": true,
     "pl": 1.22,
-    "cum": -49.6
+    "cum": -50.6
    },
    {
     "date": "2026-10-12",
@@ -1048,7 +998,7 @@
     "edge": 0.207,
     "won": true,
     "pl": 1.14,
-    "cum": -48.46
+    "cum": -49.46
    },
    {
     "date": "2026-10-12",
@@ -1058,7 +1008,7 @@
     "edge": 0.3658,
     "won": false,
     "pl": -1.0,
-    "cum": -49.46
+    "cum": -50.46
    },
    {
     "date": "2026-10-13",
@@ -1068,7 +1018,57 @@
     "edge": 0.3185,
     "won": true,
     "pl": 2.7,
-    "cum": -46.76
+    "cum": -47.76
+   },
+   {
+    "date": "2026-10-13",
+    "match": "Arsenal FC - Lille OSC",
+    "market": "2",
+    "odds": 16.5,
+    "edge": 2.0775,
+    "won": false,
+    "pl": -1.0,
+    "cum": -48.76
+   },
+   {
+    "date": "2026-10-13",
+    "match": "RB Leipzig - PSV",
+    "market": "2",
+    "odds": 4.25,
+    "edge": 0.9649,
+    "won": false,
+    "pl": -1.0,
+    "cum": -49.76
+   },
+   {
+    "date": "2026-10-13",
+    "match": "Villarreal CF - SSC Napoli",
+    "market": "2",
+    "odds": 3.5,
+    "edge": 0.3518,
+    "won": false,
+    "pl": -1.0,
+    "cum": -50.76
+   },
+   {
+    "date": "2026-10-14",
+    "match": "LASK Linz - Liverpool FC",
+    "market": "1",
+    "odds": 11.0,
+    "edge": 1.7607,
+    "won": false,
+    "pl": -1.0,
+    "cum": -51.76
+   },
+   {
+    "date": "2026-10-14",
+    "match": "Feyenoord Rotterdam - Como 1907",
+    "market": "2",
+    "odds": 1.95,
+    "edge": 0.2499,
+    "won": false,
+    "pl": -1.0,
+    "cum": -52.76
    }
   ]
  }
