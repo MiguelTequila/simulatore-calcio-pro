@@ -1,7 +1,7 @@
 {
- "graded": 469,
- "pending": 425,
- "brier": 0.2132,
+ "graded": 476,
+ "pending": 441,
+ "brier": 0.2125,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,51 +11,51 @@
   },
   {
    "bin": "10-20%",
-   "n": 289,
-   "avgPred": 0.1599,
-   "actualFreq": 0.2215
+   "n": 295,
+   "avgPred": 0.1601,
+   "actualFreq": 0.2237
   },
   {
    "bin": "20-30%",
-   "n": 609,
-   "avgPred": 0.2457,
-   "actualFreq": 0.2463
+   "n": 619,
+   "avgPred": 0.2458,
+   "actualFreq": 0.2423
   },
   {
    "bin": "30-40%",
-   "n": 396,
-   "avgPred": 0.3489,
-   "actualFreq": 0.3586
+   "n": 401,
+   "avgPred": 0.3491,
+   "actualFreq": 0.3566
   },
   {
    "bin": "40-50%",
-   "n": 314,
-   "avgPred": 0.4458,
-   "actualFreq": 0.5032
+   "n": 318,
+   "avgPred": 0.4457,
+   "actualFreq": 0.5063
   },
   {
    "bin": "50-60%",
-   "n": 219,
+   "n": 221,
    "avgPred": 0.5527,
-   "actualFreq": 0.4658
+   "actualFreq": 0.4706
   },
   {
    "bin": "60-70%",
-   "n": 245,
-   "avgPred": 0.6495,
-   "actualFreq": 0.6163
+   "n": 247,
+   "avgPred": 0.6494,
+   "actualFreq": 0.6154
   },
   {
    "bin": "70-80%",
-   "n": 135,
-   "avgPred": 0.7457,
-   "actualFreq": 0.7333
+   "n": 139,
+   "avgPred": 0.7454,
+   "actualFreq": 0.741
   },
   {
    "bin": "80-90%",
-   "n": 91,
-   "avgPred": 0.8383,
-   "actualFreq": 0.7143
+   "n": 93,
+   "avgPred": 0.8377,
+   "actualFreq": 0.7097
   },
   {
    "bin": "90-100%",
@@ -65,51 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 354,
-  "wins": 109,
-  "profitUnits": -52.76,
-  "roi": -0.149,
+  "n": 358,
+  "wins": 110,
+  "profitUnits": -54.97,
+  "roi": -0.1535,
   "history": [
-   {
-    "date": "2026-09-19",
-    "match": "Everton FC - Ipswich Town FC",
-    "market": "Over 2.5",
-    "odds": 1.81,
-    "edge": 0.2432,
-    "won": false,
-    "pl": -1.0,
-    "cum": -26.99
-   },
-   {
-    "date": "2026-09-19",
-    "match": "Newcastle United FC - Hull City AFC",
-    "market": "2",
-    "odds": 5.5,
-    "edge": 1.3541,
-    "won": false,
-    "pl": -1.0,
-    "cum": -27.99
-   },
-   {
-    "date": "2026-09-19",
-    "match": "Nottingham Forest FC - Coventry City FC",
-    "market": "Over 2.5",
-    "odds": 1.86,
-    "edge": 0.2153,
-    "won": false,
-    "pl": -1.0,
-    "cum": -28.99
-   },
-   {
-    "date": "2026-09-19",
-    "match": "Le Mans FC - FC Lorient",
-    "market": "Over 2.5",
-    "odds": 1.97,
-    "edge": 0.1758,
-    "won": true,
-    "pl": 0.97,
-    "cum": -28.02
-   },
    {
     "date": "2026-09-19",
     "match": "Paris FC - RC Strasbourg Alsace",
@@ -1069,6 +1029,46 @@
     "won": false,
     "pl": -1.0,
     "cum": -52.76
+   },
+   {
+    "date": "2026-10-14",
+    "match": "AS Roma - Real Madrid CF",
+    "market": "1",
+    "odds": 3.9,
+    "edge": 0.3274,
+    "won": false,
+    "pl": -1.0,
+    "cum": -53.76
+   },
+   {
+    "date": "2026-10-14",
+    "match": "FK Bodø/Glimt - Borussia Dortmund",
+    "market": "2",
+    "odds": 2.2,
+    "edge": 0.3675,
+    "won": false,
+    "pl": -1.0,
+    "cum": -54.76
+   },
+   {
+    "date": "2026-10-14",
+    "match": "Real Betis Balompié - FC Porto",
+    "market": "Over 2.5",
+    "odds": 1.79,
+    "edge": 0.2562,
+    "won": true,
+    "pl": 0.79,
+    "cum": -53.97
+   },
+   {
+    "date": "2026-10-14",
+    "match": "ŠK Slovan Bratislava - VfB Stuttgart",
+    "market": "1",
+    "odds": 10.0,
+    "edge": 0.1774,
+    "won": false,
+    "pl": -1.0,
+    "cum": -54.97
    }
   ]
  }
