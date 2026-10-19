@@ -1,61 +1,61 @@
 {
- "graded": 523,
- "pending": 408,
- "brier": 0.2131,
+ "graded": 531,
+ "pending": 400,
+ "brier": 0.2126,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 52,
-   "avgPred": 0.0738,
-   "actualFreq": 0.0962
+   "n": 53,
+   "avgPred": 0.0739,
+   "actualFreq": 0.1132
   },
   {
    "bin": "10-20%",
-   "n": 343,
-   "avgPred": 0.1604,
-   "actualFreq": 0.2157
+   "n": 348,
+   "avgPred": 0.1599,
+   "actualFreq": 0.2126
   },
   {
    "bin": "20-30%",
-   "n": 675,
-   "avgPred": 0.2457,
-   "actualFreq": 0.2504
+   "n": 686,
+   "avgPred": 0.2456,
+   "actualFreq": 0.2493
   },
   {
    "bin": "30-40%",
-   "n": 424,
-   "avgPred": 0.3487,
-   "actualFreq": 0.3608
+   "n": 428,
+   "avgPred": 0.3488,
+   "actualFreq": 0.3598
   },
   {
    "bin": "40-50%",
-   "n": 341,
-   "avgPred": 0.4463,
-   "actualFreq": 0.5073
+   "n": 347,
+   "avgPred": 0.4464,
+   "actualFreq": 0.5014
   },
   {
    "bin": "50-60%",
-   "n": 238,
-   "avgPred": 0.5527,
-   "actualFreq": 0.4622
+   "n": 244,
+   "avgPred": 0.5525,
+   "actualFreq": 0.4713
   },
   {
    "bin": "60-70%",
-   "n": 264,
-   "avgPred": 0.649,
-   "actualFreq": 0.6212
+   "n": 266,
+   "avgPred": 0.6487,
+   "actualFreq": 0.6241
   },
   {
    "bin": "70-80%",
-   "n": 162,
-   "avgPred": 0.7453,
-   "actualFreq": 0.6975
+   "n": 165,
+   "avgPred": 0.7458,
+   "actualFreq": 0.703
   },
   {
    "bin": "80-90%",
-   "n": 111,
-   "avgPred": 0.8383,
-   "actualFreq": 0.7297
+   "n": 113,
+   "avgPred": 0.8387,
+   "actualFreq": 0.7257
   },
   {
    "bin": "90-100%",
@@ -65,81 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 391,
-  "wins": 118,
-  "profitUnits": -73.25,
-  "roi": -0.1873,
+  "n": 398,
+  "wins": 122,
+  "profitUnits": -67.48,
+  "roi": -0.1695,
   "history": [
-   {
-    "date": "2026-09-20",
-    "match": "Vitória SC - Moreirense FC",
-    "market": "2",
-    "odds": 7.4,
-    "edge": 0.8309,
-    "won": false,
-    "pl": -1.0,
-    "cum": -32.26
-   },
-   {
-    "date": "2026-09-20",
-    "match": "FC Porto - Sport Lisboa e Benfica",
-    "market": "Over 2.5",
-    "odds": 1.98,
-    "edge": 0.289,
-    "won": true,
-    "pl": 0.98,
-    "cum": -31.28
-   },
-   {
-    "date": "2026-09-20",
-    "match": "CF Estrela da Amadora - Académico de Viseu FC",
-    "market": "Over 2.5",
-    "odds": 2.1,
-    "edge": 0.5703,
-    "won": false,
-    "pl": -1.0,
-    "cum": -32.28
-   },
-   {
-    "date": "2026-09-20",
-    "match": "GD Estoril Praia - Casa Pia AC",
-    "market": "Under 2.5",
-    "odds": 1.98,
-    "edge": 0.1703,
-    "won": false,
-    "pl": -1.0,
-    "cum": -33.28
-   },
-   {
-    "date": "2026-09-20",
-    "match": "FC Schalke 04 - SV 07 Elversberg",
-    "market": "2",
-    "odds": 3.7,
-    "edge": 0.3924,
-    "won": false,
-    "pl": -1.0,
-    "cum": -34.28
-   },
-   {
-    "date": "2026-09-20",
-    "match": "Feyenoord Rotterdam - FC Utrecht",
-    "market": "Over 2.5",
-    "odds": 1.29,
-    "edge": 0.1313,
-    "won": true,
-    "pl": 0.29,
-    "cum": -33.99
-   },
-   {
-    "date": "2026-09-20",
-    "match": "NEC - Go Ahead Eagles",
-    "market": "2",
-    "odds": 3.65,
-    "edge": 0.4298,
-    "won": false,
-    "pl": -1.0,
-    "cum": -34.99
-   },
    {
     "date": "2026-10-09",
     "match": "Borussia Dortmund - SV Werder Bremen",
@@ -972,13 +902,43 @@
    },
    {
     "date": "2026-10-18",
+    "match": "Olympique Lyonnais - OGC Nice",
+    "market": "1",
+    "odds": 1.99,
+    "edge": 0.2341,
+    "won": true,
+    "pl": 0.99,
+    "cum": -68.34
+   },
+   {
+    "date": "2026-10-18",
+    "match": "Real Madrid CF - Sevilla FC",
+    "market": "2",
+    "odds": 12.5,
+    "edge": 0.4759,
+    "won": false,
+    "pl": -1.0,
+    "cum": -69.34
+   },
+   {
+    "date": "2026-10-18",
+    "match": "Málaga CF - Real Sociedad de Fútbol",
+    "market": "2",
+    "odds": 2.29,
+    "edge": 0.1817,
+    "won": true,
+    "pl": 1.29,
+    "cum": -68.05
+   },
+   {
+    "date": "2026-10-18",
     "match": "CA Osasuna - Real Racing Club de Santander",
     "market": "2",
     "odds": 3.85,
     "edge": 0.4567,
     "won": false,
     "pl": -1.0,
-    "cum": -70.33
+    "cum": -69.05
    },
    {
     "date": "2026-10-18",
@@ -988,7 +948,17 @@
     "edge": 0.1353,
     "won": true,
     "pl": 0.81,
-    "cum": -69.52
+    "cum": -68.24
+   },
+   {
+    "date": "2026-10-18",
+    "match": "Juventus FC - SS Lazio",
+    "market": "2",
+    "odds": 6.0,
+    "edge": 1.1011,
+    "won": true,
+    "pl": 5.0,
+    "cum": -63.24
    },
    {
     "date": "2026-10-18",
@@ -998,7 +968,7 @@
     "edge": 0.4772,
     "won": true,
     "pl": 1.09,
-    "cum": -68.43
+    "cum": -62.15
    },
    {
     "date": "2026-10-18",
@@ -1008,7 +978,7 @@
     "edge": 0.3548,
     "won": true,
     "pl": 1.18,
-    "cum": -67.25
+    "cum": -60.97
    },
    {
     "date": "2026-10-18",
@@ -1018,7 +988,7 @@
     "edge": 0.3269,
     "won": false,
     "pl": -1.0,
-    "cum": -68.25
+    "cum": -61.97
    },
    {
     "date": "2026-10-18",
@@ -1028,7 +998,7 @@
     "edge": 0.1842,
     "won": false,
     "pl": -1.0,
-    "cum": -69.25
+    "cum": -62.97
    },
    {
     "date": "2026-10-18",
@@ -1038,7 +1008,7 @@
     "edge": 0.0949,
     "won": false,
     "pl": -1.0,
-    "cum": -70.25
+    "cum": -63.97
    },
    {
     "date": "2026-10-18",
@@ -1048,7 +1018,7 @@
     "edge": 0.3925,
     "won": false,
     "pl": -1.0,
-    "cum": -71.25
+    "cum": -64.97
    },
    {
     "date": "2026-10-18",
@@ -1058,7 +1028,7 @@
     "edge": 0.1325,
     "won": false,
     "pl": -1.0,
-    "cum": -72.25
+    "cum": -65.97
    },
    {
     "date": "2026-10-18",
@@ -1068,7 +1038,37 @@
     "edge": 0.2303,
     "won": false,
     "pl": -1.0,
-    "cum": -73.25
+    "cum": -66.97
+   },
+   {
+    "date": "2026-10-18",
+    "match": "NEC - Fortuna Sittard",
+    "market": "2",
+    "odds": 4.8,
+    "edge": 0.5791,
+    "won": false,
+    "pl": -1.0,
+    "cum": -67.97
+   },
+   {
+    "date": "2026-10-19",
+    "match": "AC Monza - Cagliari Calcio",
+    "market": "2",
+    "odds": 3.3,
+    "edge": 0.7997,
+    "won": false,
+    "pl": -1.0,
+    "cum": -68.97
+   },
+   {
+    "date": "2026-10-19",
+    "match": "Parma Calcio 1913 - Torino FC",
+    "market": "Over 2.5",
+    "odds": 2.49,
+    "edge": 0.3287,
+    "won": true,
+    "pl": 1.49,
+    "cum": -67.48
    }
   ]
  }
