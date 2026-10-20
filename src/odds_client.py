@@ -5,6 +5,15 @@ from datetime import datetime, timezone
 
 BASE_URL = "https://api.the-odds-api.com/v4"
 
+# Scarica anche le quote Goal/NoGoal (mercato "btts").
+# COSTO: ogni chiamata costa (numero di mercati x numero di regioni) crediti.
+# Con 2 mercati siamo a ~370-400 crediti/mese sui 500 gratuiti; con 3 mercati
+# si arriva a ~550-600 e si sfora. Metti True SOLO se sei disposto a:
+#   - ridurre ODDS_WINDOW_DAYS in update_data.py da 7 a 4, oppure
+#   - togliere qualche competizione da SPORT_KEYS.
+# Il badge in alto nell'app mostra sempre i crediti residui: controllalo.
+INCLUDE_BTTS = False
+
 # Solo le 6 leghe scelte (h2h + totals = 2 crediti a lega -> ~372/mese, sotto i 500)
 SPORT_KEYS = {
     "PL":  "soccer_epl",
@@ -26,7 +35,9 @@ class OddsAPIClient:
         if not self.api_key:
             print("[!] ODDSKEY non trovata")
 
-    def get_odds(self, sport_key, regions="eu", markets="h2h,totals"):
+    def get_odds(self, sport_key, regions="eu", markets=None):
+        if markets is None:
+            markets = "h2h,totals,btts" if INCLUDE_BTTS else "h2h,totals"
         if not self.api_key:
             return []
         url = f"{BASE_URL}/sports/{sport_key}/odds"
@@ -52,7 +63,7 @@ class OddsAPIClient:
 
     def parse_match_odds(self, event):
         home, away = event.get("home_team"), event.get("away_team")
-        acc = {"1": [], "X": [], "2": [], "over25": [], "under25": []}
+        acc = {"1": [], "X": [], "2": [], "over25": [], "under25": [], "gg": [], "ng": []}
         for bk in event.get("bookmakers", []):
             for market in bk.get("markets", []):
                 if market["key"] == "h2h":
@@ -66,6 +77,11 @@ class OddsAPIClient:
                         if o.get("point") == 2.5:
                             if o["name"].lower() == "over": acc["over25"].append(o["price"])
                             elif o["name"].lower() == "under": acc["under25"].append(o["price"])
+                elif market["key"] == "btts":
+                    for o in market["outcomes"]:
+                        n = o["name"].lower()
+                        if n == "yes": acc["gg"].append(o["price"])
+                        elif n == "no": acc["ng"].append(o["price"])
 
         def avg(v): return round(sum(v) / len(v), 3) if v else None
         def best(v): return round(max(v), 3) if v else None
@@ -74,9 +90,10 @@ class OddsAPIClient:
                "n_books": len(event.get("bookmakers", [])),
                "1": avg(acc["1"]), "X": avg(acc["X"]), "2": avg(acc["2"]),
                "over25": avg(acc["over25"]), "under25": avg(acc["under25"]),
-               "gg": None, "ng": None,
+               "gg": avg(acc["gg"]), "ng": avg(acc["ng"]),
                "best": {"1": best(acc["1"]), "X": best(acc["X"]), "2": best(acc["2"]),
-                        "over25": best(acc["over25"]), "under25": best(acc["under25"])}}
+                        "over25": best(acc["over25"]), "under25": best(acc["under25"]),
+                        "gg": best(acc["gg"]), "ng": best(acc["ng"])}}
         return rec
 
     def fetch_all_odds(self, active_comps=None):
