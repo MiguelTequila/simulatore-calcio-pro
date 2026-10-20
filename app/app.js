@@ -910,6 +910,13 @@ function renderImportControl() {
   input.id = 'importFile';
   input.style.display = 'none';
 
+  const pbtn = document.createElement('button');
+  pbtn.id = 'printRegistryBtn';
+  pbtn.className = 'btn-secondary';
+  pbtn.textContent = '\uD83D\uDDA8\uFE0F Stampa registro';
+  pbtn.addEventListener('click', printRegistry);
+  actions.appendChild(pbtn);
+
   const btn = document.createElement('button');
   btn.id = 'importBtn';
   btn.className = 'btn-secondary';
@@ -1085,12 +1092,14 @@ function renderMultiCalc() {
       '<button id="multiSaveBtn" class="btn-primary">\uD83D\uDCBE Salva simulazione</button>' +
       '<button id="multiExportBtn" class="btn-secondary">\u2B07\uFE0F Esporta CSV</button>' +
       '<button id="multiImportBtn" class="btn-secondary">\u2B06\uFE0F Importa CSV</button>' +
+      '<button id="multiPrintBtn" class="btn-secondary">\uD83D\uDDA8\uFE0F Stampa schedina</button>' +
       '<input type="file" id="multiImportFile" accept=".csv,text/csv" style="display:none">' +
     '</div>' +
     '<div id="multiRegistryBox"></div>';
   footer.parentNode.insertBefore(sec, footer);
 
   document.getElementById('multiSaveBtn').addEventListener('click', saveMultiSimulation);
+  document.getElementById('multiPrintBtn').addEventListener('click', printCurrentSlip);
   document.getElementById('multiExportBtn').addEventListener('click', exportMultiCSV);
   document.getElementById('multiImportBtn').addEventListener('click', () => document.getElementById('multiImportFile').click());
   document.getElementById('multiImportFile').addEventListener('change', ev => {
@@ -1366,6 +1375,7 @@ function renderMultiRegistry() {
     html += '<div class="sim-head"><strong>' + s.name + '</strong>' +
             '<span class="sim-tag">' + s.type + '</span>' +
             '<span class="sim-date">' + d + '</span>' +
+            '<button class="sim-print" onclick="printSavedSlip(' + s.id + ')" title="Stampa questa schedina">\uD83D\uDDA8\uFE0F</button>' +
             '<button class="row-del" onclick="deleteMulti(' + s.id + ')">\u2715</button></div>';
     html += '<div class="sim-meta">Puntata ' + s.stake.toFixed(2) + '\u20AC \u00B7 quota tot. ' + s.totalOdds.toFixed(2) +
             ' \u00B7 prob. tutti giusti ' + (s.pAll * 100).toFixed(2) + '%' +
@@ -1469,4 +1479,132 @@ function importMultiCSV(text) {
   alert('Importate ' + added + ' simulazioni.' +
         (skipped ? '\n' + skipped + ' gi\u00E0 presenti (saltate).' : '') +
         (bad ? '\n' + bad + ' righe non leggibili.' : ''));
+}
+
+
+// ===================== Stampa schedina =====================
+// Genera una pagina pulita, stampabile (o salvabile in PDF dal telefono).
+
+function ensurePrintArea() {
+  let a = document.getElementById('printArea');
+  if (!a) {
+    a = document.createElement('div');
+    a.id = 'printArea';
+    document.body.appendChild(a);
+  }
+  return a;
+}
+
+function printHeader(titolo, sottotitolo) {
+  return '<div class="pr-head">' +
+    '<div class="pr-title">\u26BD ' + titolo + '</div>' +
+    '<div class="pr-sub">' + sottotitolo + '</div>' +
+    '</div>';
+}
+
+function printFooter() {
+  const v = (typeof allData !== 'undefined' && allData && allData.modelVersion) ? (' \u00B7 modello v' + allData.modelVersion) : '';
+  return '<div class="pr-foot">' +
+    'Simulatore Predittivo Pro' + v +
+    ' \u00B7 stampato il ' + new Date().toLocaleString('it-IT') + '<br>' +
+    'Le probabilit\u00E0 sono stime statistiche, non certezze. Gioca solo ci\u00F2 che puoi permetterti di perdere.' +
+    '</div>';
+}
+
+function doPrint(html) {
+  const a = ensurePrintArea();
+  a.innerHTML = html;
+  document.body.classList.add('printing');
+  const cleanup = () => {
+    document.body.classList.remove('printing');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  setTimeout(() => { window.print(); setTimeout(cleanup, 1500); }, 60);
+}
+
+// --- Schedina multipla / sistema ---
+function buildSlipHTML(sim) {
+  const d = new Date(sim.savedAt).toLocaleDateString('it-IT');
+  let h = printHeader('Schedina', sim.name + ' \u00B7 ' + sim.type + ' \u00B7 ' + d);
+
+  h += '<table class="pr-table"><thead><tr>' +
+       '<th style="width:26px">#</th><th>Evento</th><th class="pr-r">Modello</th><th class="pr-r">Quota</th>' +
+       (sim.settled ? '<th class="pr-c">Esito</th>' : '<th class="pr-c">\u2713</th>') +
+       '</tr></thead><tbody>';
+  sim.events.forEach((e, i) => {
+    let esito = '<span class="pr-box"></span>';
+    if (sim.settled) esito = e.won ? '<strong>V</strong>' : 'P';
+    h += '<tr><td>' + (i + 1) + '</td><td>' + e.label + '</td>' +
+         '<td class="pr-r">' + (e.p * 100).toFixed(1) + '%</td>' +
+         '<td class="pr-r"><strong>' + e.odds.toFixed(2) + '</strong></td>' +
+         '<td class="pr-c">' + esito + '</td></tr>';
+  });
+  h += '</tbody></table>';
+
+  const combos = nCk(sim.N, sim.K);
+  h += '<table class="pr-kv"><tbody>' +
+    '<tr><td>Tipo giocata</td><td><strong>' + sim.type + '</strong>' + (combos > 1 ? ' (' + combos + ' combinazioni)' : '') + '</td></tr>' +
+    '<tr><td>Puntata per combinazione</td><td>' + sim.unit.toFixed(2) + ' \u20AC</td></tr>' +
+    '<tr><td>Puntata totale</td><td><strong>' + sim.stake.toFixed(2) + ' \u20AC</strong></td></tr>' +
+    '<tr><td>Quota totale</td><td>' + sim.totalOdds.toFixed(2) + '</td></tr>' +
+    (sim.bonus ? '<tr><td>Bonus multipla</td><td>+' + (sim.bonus * 100).toFixed(0) + '%</td></tr>' : '') +
+    '<tr><td>Vincita massima</td><td><strong>' + (sim.unit * sim.totalOdds * (1 + (sim.bonus || 0))).toFixed(2) + ' \u20AC</strong></td></tr>' +
+    '<tr><td>Probabilit\u00E0 tutti giusti</td><td>' + (sim.pAll * 100).toFixed(2) + '%</td></tr>' +
+    '<tr><td>Probabilit\u00E0 di rientrare</td><td>' + (sim.pProfit * 100).toFixed(1) + '%</td></tr>' +
+    '<tr><td>Rendimento previsto dal modello</td><td>' + (sim.roi >= 0 ? '+' : '') + (sim.roi * 100).toFixed(1) + '%</td></tr>' +
+    '</tbody></table>';
+
+  if (sim.settled) {
+    const net = (sim.actualReturn || 0) - sim.stake;
+    h += '<div class="pr-result">Esito finale: <strong>' + sim.nWins + '/' + sim.N + '</strong> \u00B7 ' +
+         'incassato ' + (sim.actualReturn || 0).toFixed(2) + ' \u20AC \u00B7 ' +
+         'risultato <strong>' + (net >= 0 ? '+' : '') + net.toFixed(2) + ' \u20AC</strong></div>';
+  } else {
+    h += '<div class="pr-note">Giocata non ancora chiusa. Spunta gli esiti a mano oppure registrali nell\u2019app.</div>';
+  }
+  return h + printFooter();
+}
+
+function printSavedSlip(id) {
+  const sim = multiRegistry.find(x => x.id === id);
+  if (!sim) return;
+  doPrint(buildSlipHTML(sim));
+}
+
+// Stampa la giocata attualmente composta nel calcolatore (senza doverla salvare)
+function printCurrentSlip() {
+  if (!lastMultiResult || lastMultiResult.events.length < 2) {
+    alert('Componi almeno due eventi nel calcolatore.');
+    return;
+  }
+  const L = lastMultiResult, r = L.r;
+  doPrint(buildSlipHTML({
+    name: 'Giocata in corso', savedAt: new Date().toISOString(),
+    type: (L.K === L.events.length) ? ('Multipla ' + L.K + '/' + L.events.length)
+                                     : ('Sistema ' + L.K + '/' + L.events.length),
+    K: L.K, N: L.events.length, unit: L.unit, bonus: L.bonus,
+    stake: r.stake, totalOdds: r.totalOdds, pAll: r.pAll, pProfit: r.pProfit, roi: r.roi,
+    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null})),
+    settled: false
+  }));
+}
+
+// --- Stampa del registro delle previsioni singole ---
+function printRegistry() {
+  if (!registry.length) { alert('Il registro \u00E8 vuoto.'); return; }
+  let h = printHeader('Registro previsioni', registry.length + ' previsioni salvate');
+  h += '<table class="pr-table"><thead><tr><th>Data</th><th>Partita</th>' +
+       '<th class="pr-r">1</th><th class="pr-r">X</th><th class="pr-r">2</th>' +
+       '<th class="pr-r">O2.5</th><th class="pr-c">Top</th><th class="pr-c">Esito</th></tr></thead><tbody>';
+  const pc = v => (v == null ? '\u2014' : (v * 100).toFixed(1) + '%');
+  for (const r of registry.slice().reverse()) {
+    h += '<tr><td>' + (r.date || '') + '</td><td>' + (r.home || '') + ' - ' + (r.away || '') + '</td>' +
+         '<td class="pr-r">' + pc(r.p1) + '</td><td class="pr-r">' + pc(r.px) + '</td>' +
+         '<td class="pr-r">' + pc(r.p2) + '</td><td class="pr-r">' + pc(r.pOver) + '</td>' +
+         '<td class="pr-c">' + (r.topExact || '') + '</td>' +
+         '<td class="pr-c"><span class="pr-box"></span></td></tr>';
+  }
+  h += '</tbody></table>';
+  doPrint(h + printFooter());
 }
