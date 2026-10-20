@@ -3,11 +3,49 @@ import math
 from scipy.stats import poisson
 from scipy.optimize import minimize
 
-LEAGUE_AVG_GF = {"PL": 1.52, "SA": 1.48, "PD": 1.55, "BL1": 1.58, "FL1": 1.42, "PPL": 1.45}
-LEAGUE_AVG_GA = {"PL": 1.20, "SA": 1.15, "PD": 1.18, "BL1": 1.22, "FL1": 1.18, "PPL": 1.20}
-LEAGUE_RHO    = {"PL": -0.075, "SA": -0.070, "PD": -0.065, "BL1": -0.060, "FL1": -0.075, "PPL": -0.080}
+# Versione del modello: cambiala a OGNI modifica che altera le previsioni.
+# Viene salvata in ogni predizione, cosi' il registro degli esiti puo' separare
+# i risultati del modello vecchio da quelli del nuovo invece di mescolarli.
+MODEL_VERSION = "2.0"
 
-DEFAULT_GF, DEFAULT_GA, DEFAULT_RHO = 1.48, 1.20, -0.07
+# Media gol per squadra per partita, usata come riferimento di lega.
+# NOTA IMPORTANTE: in un campionato la media dei gol FATTI e quella dei gol
+# SUBITI sono necessariamente IDENTICHE (ogni gol segnato da uno e' subito da
+# un altro). Tenere due costanti diverse gonfiava ogni lambda di circa il 25%.
+# Questi valori sono solo un ripiego: la media vera viene calcolata dai dati
+# con league_average() a ogni aggiornamento.
+LEAGUE_AVG = {"PL": 1.44, "SA": 1.48, "PD": 1.53, "BL1": 1.84,
+              "FL1": 1.52, "PPL": 1.37, "DED": 1.92, "CL": 2.04}
+LEAGUE_RHO = {"PL": -0.075, "SA": -0.070, "PD": -0.065, "BL1": -0.060,
+              "FL1": -0.075, "PPL": -0.080, "DED": -0.060, "CL": -0.065}
+
+DEFAULT_AVG, DEFAULT_RHO = 1.50, -0.07
+
+# Retrocompatibilita' con il vecchio codice che importava questi nomi
+LEAGUE_AVG_GF = LEAGUE_AVG
+LEAGUE_AVG_GA = LEAGUE_AVG
+DEFAULT_GF = DEFAULT_GA = DEFAULT_AVG
+
+
+def league_average(teams, league_id=None):
+    """Media gol/partita della lega, calcolata dai dati reali delle squadre.
+    Pesata sulle partite giocate. Se i dati non bastano usa la tabella di ripiego."""
+    tot_goals = 0.0
+    tot_games = 0
+    for t in (teams or {}).values():
+        pl = t.get("played") or 0
+        if pl <= 0:
+            continue
+        gf = t.get("gf_pg")
+        if gf is None:
+            continue
+        tot_goals += gf * pl
+        tot_games += pl
+    if tot_games >= 20:          # abbastanza dati per fidarsi
+        avg = tot_goals / tot_games
+        if 0.7 <= avg <= 3.5:    # sanita': fuori da questa fascia e' un dato sporco
+            return avg
+    return LEAGUE_AVG.get(league_id, DEFAULT_AVG)
 SHRINK_K = 5          # forza dello smorzamento a inizio stagione (partite "fittizie")
 MARKET_WEIGHT = 0.25  # quanto ci si fida del mercato in calibrazione (0 = solo modello)
 
@@ -55,9 +93,11 @@ def _shrink(rate, avg, played, k=SHRINK_K):
     return (rate * played + avg * k) / (played + k)
 
 
-def compute_lambdas(home_stats, away_stats, elo_h, elo_a, league_id, home_adv=0.15, form_w=0.08):
-    avg_gf = LEAGUE_AVG_GF.get(league_id, DEFAULT_GF)
-    avg_ga = LEAGUE_AVG_GA.get(league_id, DEFAULT_GA)
+def compute_lambdas(home_stats, away_stats, elo_h, elo_a, league_id,
+                    home_adv=0.11, form_w=0.08, league_avg=None):
+    # UN SOLO riferimento di lega per attacco e difesa (vedi nota in cima al file).
+    avg = league_avg if league_avg else LEAGUE_AVG.get(league_id, DEFAULT_AVG)
+    avg_gf = avg_ga = avg
 
     hp = home_stats.get("played", 0)
     ap = away_stats.get("played", 0)
@@ -79,8 +119,11 @@ def compute_lambdas(home_stats, away_stats, elo_h, elo_a, league_id, home_adv=0.
         sc = [fm.get(c.upper(), 0) for c in form[-5:]]
         return 1.0 + (sum(sc) / len(sc)) * form_w if sc else 1.0
 
+    # Il vantaggio del campo RIDISTRIBUISCE i gol fra le due squadre, non ne
+    # aggiunge: prima moltiplicava solo la casa, gonfiando il totale del 7,5%.
+    # A +/-11% si ottiene il rapporto casa/trasferta reale (circa 1,25).
     lam_h = avg_gf * ha * ad * ef_h * fb(home_stats.get("form", "")) * (1 + home_adv)
-    lam_a = avg_gf * aa * hd * ef_a * fb(away_stats.get("form", ""))
+    lam_a = avg_gf * aa * hd * ef_a * fb(away_stats.get("form", "")) * (1 - home_adv)
     return max(0.3, min(lam_h, 4.0)), max(0.3, min(lam_a, 3.5))
 
 
