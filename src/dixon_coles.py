@@ -195,6 +195,8 @@ def compute_value(pred, odds, kelly_cap=0.05, edge_min=0.03):
         "2": (pred["p2"], best.get("2")),
         "Over 2.5": (pred["p_over25"], best.get("over25")),
         "Under 2.5": (pred["p_under25"], best.get("under25")),
+        "Goal (GG)": (pred["p_gg"], best.get("gg")),
+        "NoGoal (NG)": (pred["p_ng"], best.get("ng")),
     }
     rows = []
     for name, (p, q) in markets.items():
