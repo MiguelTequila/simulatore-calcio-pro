@@ -1,7 +1,7 @@
 {
- "graded": 534,
- "pending": 417,
- "brier": 0.2129,
+ "graded": 536,
+ "pending": 415,
+ "brier": 0.2126,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,19 +17,19 @@
   },
   {
    "bin": "20-30%",
-   "n": 689,
+   "n": 692,
    "avgPred": 0.2457,
-   "actualFreq": 0.2511
+   "actualFreq": 0.2514
   },
   {
    "bin": "30-40%",
-   "n": 433,
-   "avgPred": 0.3488,
-   "actualFreq": 0.358
+   "n": 438,
+   "avgPred": 0.3486,
+   "actualFreq": 0.3539
   },
   {
    "bin": "40-50%",
-   "n": 351,
+   "n": 353,
    "avgPred": 0.4464,
    "actualFreq": 0.5014
   },
@@ -41,9 +41,9 @@
   },
   {
    "bin": "60-70%",
-   "n": 267,
-   "avgPred": 0.6486,
-   "actualFreq": 0.6217
+   "n": 271,
+   "avgPred": 0.649,
+   "actualFreq": 0.6273
   },
   {
    "bin": "70-80%",
@@ -65,21 +65,11 @@
   }
  ],
  "valueBets": {
-  "n": 401,
+  "n": 402,
   "wins": 123,
-  "profitUnits": -63.48,
-  "roi": -0.1583,
+  "profitUnits": -64.48,
+  "roi": -0.1604,
   "history": [
-   {
-    "date": "2026-10-09",
-    "match": "PSV - SC Heerenveen",
-    "market": "2",
-    "odds": 11.5,
-    "edge": 0.324,
-    "won": false,
-    "pl": -1.0,
-    "cum": -37.58
-   },
    {
     "date": "2026-10-10",
     "match": "Stade Brestois 29 - Angers SCO",
@@ -1069,6 +1059,16 @@
     "won": false,
     "pl": -1.0,
     "cum": -63.48
+   },
+   {
+    "date": "2026-10-20",
+    "match": "Sabah FK - Borussia Dortmund",
+    "market": "1",
+    "odds": 10.5,
+    "edge": 1.9504,
+    "won": false,
+    "pl": -1.0,
+    "cum": -64.48
    }
   ]
  }

@@ -292,8 +292,8 @@
     "games": 21
   },
   "Borussia Dortmund": {
-    "elo": 1585.323880266822,
-    "games": 25
+    "elo": 1600.3301485252775,
+    "games": 26
   },
   "SC Freiburg": {
     "elo": 1548.7853543545993,
@@ -720,19 +720,19 @@
     "games": 2
   },
   "Fenerbahçe SK": {
-    "elo": 1471.9487235575048,
-    "games": 2
+    "elo": 1468.5513753807395,
+    "games": 3
   },
   "FK Shakhtar Donetsk": {
     "elo": 1529.253419640999,
     "games": 2
   },
   "Sabah FK": {
-    "elo": 1498.7174592672934,
-    "games": 2
+    "elo": 1483.711191008838,
+    "games": 3
   },
   "SK Slavia Praha": {
-    "elo": 1462.0365542493673,
-    "games": 2
+    "elo": 1465.4339024261326,
+    "games": 3
   }
 }
