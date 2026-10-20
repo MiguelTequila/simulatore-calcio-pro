@@ -42,10 +42,13 @@ def log_predictions(log, comp_id, comp_name, fixtures):
             "home": fix["homeTeam"], "away": fix["awayTeam"],
             "p1": pred["p1"], "px": pred["px"], "p2": pred["p2"],
             "pOver25": pred["pOver25"], "pUnder25": pred["pUnder25"],
+            "pGG": pred.get("pGG"), "pNG": pred.get("pNG"),
             "odds": {"1": odds.get("1"), "X": odds.get("X"), "2": odds.get("2"),
-                     "over25": odds.get("over25"), "under25": odds.get("under25")},
+                     "over25": odds.get("over25"), "under25": odds.get("under25"),
+                     "gg": odds.get("gg"), "ng": odds.get("ng")},
             "bestOdds": {"1": best.get("1"), "X": best.get("X"), "2": best.get("2"),
-                         "over25": best.get("over25"), "under25": best.get("under25")},
+                         "over25": best.get("over25"), "under25": best.get("under25"),
+                         "gg": best.get("gg"), "ng": best.get("ng")},
             "bestBet": (pred.get("value") or {}).get("bestBet"),
             "result": None,
         }
@@ -80,6 +83,8 @@ def _bet_won(market, result):
     if market == "2": return result["outcome"] == "2"
     if market == "Over 2.5": return result["over25"]
     if market == "Under 2.5": return not result["over25"]
+    if market == "Goal (GG)": return result["gg"]
+    if market == "NoGoal (NG)": return not result["gg"]
     return False
 
 
@@ -94,6 +99,9 @@ def build_track_record(log):
         samples += [(e["p1"], r["outcome"] == "1"), (e["px"], r["outcome"] == "X"),
                     (e["p2"], r["outcome"] == "2"), (e["pOver25"], r["over25"]),
                     (e["pUnder25"], not r["over25"])]
+        # GG/NG: tracciati dal 20/10/2026, le previsioni precedenti non li hanno
+        if e.get("pGG") is not None:
+            samples += [(e["pGG"], r["gg"]), (e["pNG"], not r["gg"])]
     bins = []
     for lo in range(0, 100, 10):
         hi = lo + 10
