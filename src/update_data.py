@@ -5,7 +5,8 @@ from odds_client import OddsAPIClient
 from elo import load_state, update_ratings_incremental, save_state
 from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
-                         compute_value, LEAGUE_RHO, DEFAULT_RHO, MARKET_WEIGHT)
+                         compute_value, league_average, LEAGUE_RHO, DEFAULT_RHO,
+                         MARKET_WEIGHT, MODEL_VERSION)
 
 
 def merge_odds(fixtures, odds_data):
@@ -87,7 +88,7 @@ def build_output():
         if _cred["remaining"] is None:
             _cred["note"] = "nessuna chiamata effettuata (nessuna partita entro la finestra quote)"
 
-    output = {"updated": raw_data["updated"], "marketWeight": MARKET_WEIGHT,
+    output = {"updated": raw_data["updated"], "modelVersion": MODEL_VERSION, "marketWeight": MARKET_WEIGHT,
               "oddsWindowDays": ODDS_WINDOW_DAYS,
               "apiCredits": _cred,
               "competitions": {}}
@@ -99,6 +100,9 @@ def build_output():
             continue
         fixtures = merge_odds({comp_id: fixtures}, odds_data)[comp_id]
         rho = LEAGUE_RHO.get(comp_id, DEFAULT_RHO)
+        # media gol della lega ricalcolata dai dati veri di questa stagione
+        lg_avg = league_average(teams, comp_id)
+        print(f"    {comp_id}: media gol/partita della lega = {lg_avg:.3f}")
         processed = []
 
         for fix in fixtures:
@@ -109,7 +113,7 @@ def build_output():
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
 
-            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id)
+            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg)
             odds = fix.get("odds")
             lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
@@ -127,6 +131,7 @@ def build_output():
                 "prediction": {
                     "lambdaH": round(lam_h, 3), "lambdaA": round(lam_a, 3), "rho": rho,
                     "lambdaHRaw": round(raw_h, 3), "lambdaARaw": round(raw_a, 3),
+                    "modelVersion": MODEL_VERSION, "leagueAvg": round(lg_avg, 3),
                     "marketWeight": MARKET_WEIGHT,
                     "p1": round(pred["p1"], 4), "px": round(pred["px"], 4), "p2": round(pred["p2"], 4),
                     "pOver25": round(pred["p_over25"], 4), "pUnder25": round(pred["p_under25"], 4),
