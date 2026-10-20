@@ -28,7 +28,8 @@ function computeValueJS(pred, odds) {
   const src = odds.best || odds;
   const markets = {
     '1': [pred.p1, src['1']], 'X': [pred.px, src['X']], '2': [pred.p2, src['2']],
-    'Over 2.5': [pred.pOver25, src.over25], 'Under 2.5': [pred.pUnder25, src.under25]
+    'Over 2.5': [pred.pOver25, src.over25], 'Under 2.5': [pred.pUnder25, src.under25],
+    'Goal (GG)': [pred.pGG, src.gg], 'NoGoal (NG)': [pred.pNG, src.ng]
   };
   const rows = [];
   for (const m in markets) {
@@ -60,6 +61,32 @@ function renderValue(value) {
     return;
   }
   let html = '<h3>\uD83D\uDC8E Valore \u2014 modello vs quota migliore</h3>';
+
+  // Verdetto secco su questa partita, con le stesse regole del consigliere
+  if (typeof advisorVerdict === 'function') {
+    const pred = (currentMatch && currentMatch.prediction) || null;
+    let best = null;
+    for (const r of value.rows) {
+      const v = advisorVerdict(r.p, r.odds, pred);
+      if (v.ok && (!best || r.edge > best.row.edge)) best = {row: r, v: v};
+    }
+    if (best) {
+      const t = betTier(best.row.edge);
+      const unv = (best.row.market.indexOf('GG') >= 0 || best.row.market.indexOf('NG') >= 0);
+      html += '<div class="verdict yes"><strong>\u2705 GIOCA: ' + best.row.market + '</strong> @ ' + best.row.odds.toFixed(2) +
+              ' \u00B7 punta ' + ADVISOR.stake.toFixed(2) + ' \u20AC \u00B7 vantaggio +' + (best.row.edge * 100).toFixed(1) + '%' +
+              '<br><em>' + t.label + ' \u2014 ' + t.note +
+              (unv ? ' \u00B7 \u26A0\uFE0F mercato non ancora misurato dal registro' : '') + '</em></div>';
+    } else {
+      const motivi = {};
+      for (const r of value.rows) {
+        const v = advisorVerdict(r.p, r.odds, pred);
+        if (!v.ok) motivi[v.why] = true;
+      }
+      html += '<div class="verdict no"><strong>\u26D4 NON GIOCARE questa partita</strong><br><em>' +
+              Object.keys(motivi).join(' \u00B7 ') + '</em></div>';
+    }
+  }
   if (value.bestBet && value.bestBet.edge > 0.25) {
     const bb = value.bestBet;
     html += '<div class="best-bet warn">\u26A0\uFE0F Vantaggio anomalo su <strong>' + bb.market + '</strong> (' + (bb.edge*100).toFixed(0) + '%). ' +
@@ -204,6 +231,7 @@ async function loadData() {
     populateCompetitions();
     removeUnusedOddsBoxes();
     renderGlossary();
+    renderAdvisor();
     renderImportControl();
     renderMultiCalc();
     renderCreditsBadge(allData.apiCredits);
@@ -757,6 +785,8 @@ function renderOddsInput(fixture) {
       '<label>2<input type="number" step="0.01" id="uOdd2" placeholder="2" value="' + (o['2'] || '') + '"></label>' +
       '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
       '<label>Under 2.5<input type="number" step="0.01" id="uOddUnder" placeholder="U 2.5" value="' + (o.under25 || '') + '"></label>' +
+      '<label>Goal (GG)<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
+      '<label>NoGoal (NG)<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
     '</div>' +
     '<div class="manual-odds-actions">' +
       '<button id="applyOddsBtn" class="btn-primary">\uD83C\uDFAF Ricalcola con queste quote</button>' +
@@ -775,9 +805,10 @@ function applyManualOdds() {
   if (!currentMatch) return;
   const num = id => { const v = parseFloat(document.getElementById(id).value); return (v > 1) ? v : null; };
   const odds = {'1': num('uOdd1'), 'X': num('uOddX'), '2': num('uOdd2'),
-                over25: num('uOddOver'), under25: num('uOddUnder')};
-  const hasAny = odds['1'] || odds.over25;
-  if (!hasAny) { alert('Inserisci almeno la tripla 1-X-2 oppure Over/Under 2.5.'); return; }
+                over25: num('uOddOver'), under25: num('uOddUnder'),
+                gg: num('uOddGG'), ng: num('uOddNG')};
+  const hasAny = odds['1'] || odds.over25 || odds.gg;
+  if (!hasAny) { alert('Inserisci almeno la tripla 1-X-2, oppure Over/Under 2.5, oppure GG/NG.'); return; }
 
   const base = currentMatch._basePrediction || currentMatch.prediction;
   const rho = base.rho || RHO_DEFAULT;
@@ -1607,4 +1638,177 @@ function printRegistry() {
   }
   h += '</tbody></table>';
   doPrint(h + printFooter());
+}
+
+
+// ===================== CONSIGLIERE SCOMMESSE =====================
+// Applica le regole ricavate dalla calibrazione reale del modello:
+//  - solo probabilita' previste nella fascia in cui il modello e' risultato onesto
+//  - edge minimo alto (sotto quella soglia e' rumore, non valore)
+//  - niente previsioni "tappate" (lambda al tetto = estrapolazione fuori scala)
+// Lo scopo e' SCARTARE, non pescare: la selezione e' il punto debole del modello.
+
+const ADVISOR = {
+  pMin: 0.20,       // sotto: il modello sottostima, ma le quote lunghe hanno molto margine
+  pMax: 0.50,       // sopra: il modello si sopravvaluta (fino a -13% di rendimento reale)
+  edgeMin: 0.08,    // sotto l'8% e' rumore del modello
+  edgeMax: 0.25,    // sopra: errore del modello, non regalo del bookmaker
+  lamCapH: 4.0, lamCapA: 3.5,
+  stake: parseFloat(localStorage.getItem('advStake') || '2') || 2,
+  // Fasce di raccomandazione: piu' l'edge e' grande, piu' e' probabile che sia
+  // un errore del modello e non un regalo del bookmaker.
+  tierStrong: [0.08, 0.15],   // consigliata
+  tierWeak:   [0.15, 0.25]    // possibile, ma con cautela
+};
+
+function betTier(edge) {
+  if (edge >= ADVISOR.tierStrong[0] && edge < ADVISOR.tierStrong[1])
+    return {k: 'strong', label: '\u2B50 CONSIGLIATA', note: 'vantaggio nella fascia pi\u00F9 credibile'};
+  if (edge >= ADVISOR.tierWeak[0] && edge <= ADVISOR.tierWeak[1])
+    return {k: 'weak', label: '\u26A0\uFE0F POSSIBILE', note: 'vantaggio alto: potrebbe essere un errore del modello, valuta tu'};
+  return {k: 'no', label: '\u2014', note: ''};
+}
+
+function advisorVerdict(p, odds, pred) {
+  if (!odds || odds <= 1) return {ok: false, why: 'quote mancanti'};
+  const edge = p * odds - 1;
+  if (pred && (Math.abs(pred.lambdaH - ADVISOR.lamCapH) < 0.001 ||
+               Math.abs(pred.lambdaA - ADVISOR.lamCapA) < 0.001))
+    return {ok: false, why: 'previsione fuori scala', edge: edge};
+  if (p < ADVISOR.pMin) return {ok: false, why: 'probabilit\u00E0 troppo bassa', edge: edge};
+  if (p > ADVISOR.pMax) return {ok: false, why: 'fascia dove il modello si sopravvaluta', edge: edge};
+  if (edge < ADVISOR.edgeMin) return {ok: false, why: 'vantaggio sotto la soglia', edge: edge};
+  if (edge > ADVISOR.edgeMax) return {ok: false, why: 'vantaggio anomalo: errore del modello', edge: edge};
+  return {ok: true, why: 'nella fascia affidabile', edge: edge};
+}
+
+function scanAllFixtures() {
+  const out = {bets: [], examined: 0, noOdds: 0, reasons: {}};
+  if (typeof allData === 'undefined' || !allData || !allData.competitions) return out;
+  const markets = [
+    ['1', 'p1', '1'], ['X', 'px', 'X'], ['2', 'p2', '2'],
+    ['Over 2.5', 'pOver25', 'over25'], ['Under 2.5', 'pUnder25', 'under25'],
+    ['Goal (GG)', 'pGG', 'gg'], ['NoGoal (NG)', 'pNG', 'ng']
+  ];
+  for (const [cid, comp] of Object.entries(allData.competitions)) {
+    for (const f of (comp.fixtures || [])) {
+      const pred = f.prediction;
+      if (!pred) continue;
+      const o = f.odds;
+      const best = (o && o.best) ? o.best : o;
+      let hadOdds = false;
+      for (const [label, pk, ok] of markets) {
+        const p = pred[pk];
+        const q = best ? best[ok] : null;
+        if (q) hadOdds = true;
+        out.examined++;
+        const v = advisorVerdict(p, q, pred);
+        if (v.ok) {
+          out.bets.push({comp: comp.name, date: f.date, match: f.homeTeam + ' - ' + f.awayTeam,
+                         market: label, p: p, odds: q, edge: v.edge,
+                         unverified: (pk === 'pGG' || pk === 'pNG')});
+        } else {
+          out.reasons[v.why] = (out.reasons[v.why] || 0) + 1;
+        }
+      }
+      if (!hadOdds) out.noOdds++;
+    }
+  }
+  out.bets.sort((a, b) => b.edge - a.edge);
+  return out;
+}
+
+function renderAdvisor() {
+  let card = document.getElementById('advisorCard');
+  if (!card) {
+    card = document.createElement('section');
+    card.className = 'card';
+    card.id = 'advisorCard';
+    const sel = document.querySelector('.card');
+    if (sel && sel.parentNode) sel.parentNode.insertBefore(card, sel.nextSibling);
+    else document.querySelector('.container').appendChild(card);
+  }
+  const r = scanAllFixtures();
+
+  let html = '<h2>\uD83C\uDFAF Consigli \u2014 cosa vale la pena giocare</h2>';
+  html += '<p class="note">Regole ricavate dalla calibrazione reale del modello: si considera solo la fascia ' +
+          (ADVISOR.pMin * 100) + '-' + (ADVISOR.pMax * 100) + '% di probabilit\u00E0, dove le previsioni si sono dimostrate oneste, ' +
+          'con vantaggio tra il ' + (ADVISOR.edgeMin * 100).toFixed(0) + '% e il ' + (ADVISOR.edgeMax * 100).toFixed(0) + '%. ' +
+          'Tutto il resto viene scartato.</p>';
+
+  if (r.bets.length) {
+    const strong = r.bets.filter(b => betTier(b.edge).k === 'strong');
+    const top = strong.filter(b => !b.unverified)[0] || strong[0] || r.bets[0];
+    const t = betTier(top.edge);
+    const vinc = ADVISOR.stake * top.odds;
+    html += '<div class="adv-hero ' + t.k + '">' +
+      '<div class="hero-tag">' + t.label + '</div>' +
+      '<div class="hero-main">Gioca <strong>' + top.market + '</strong> su <strong>' + top.match + '</strong></div>' +
+      '<div class="hero-row">' +
+        '<span><em>Quota</em> ' + top.odds.toFixed(2) + '</span>' +
+        '<span><em>Punta</em> <strong>' + ADVISOR.stake.toFixed(2) + ' \u20AC</strong></span>' +
+        '<span><em>Se vince</em> ' + vinc.toFixed(2) + ' \u20AC</span>' +
+        '<span><em>Vantaggio</em> +' + (top.edge * 100).toFixed(1) + '%</span>' +
+      '</div>' +
+      '<div class="hero-why">Il modello d\u00E0 ' + (top.p * 100).toFixed(1) + '% a questo esito, il bookmaker ne prezza ' +
+        (100 / top.odds).toFixed(1) + '%. ' + t.note + '. ' +
+        'Data: ' + top.date + ' \u00B7 ' + top.comp +
+        (top.unverified ? '<br><strong>\u26A0\uFE0F Goal/NoGoal non \u00E8 ancora stato misurato dal registro</strong>: ' +
+          'non esistono dati di calibrazione su questo mercato, quindi il vantaggio indicato \u00E8 solo teorico.' : '') +
+        '</div>' +
+      '</div>';
+    html += '<div class="adv-stake"><label>Puntata fissa per giocata: ' +
+            '<input type="number" id="advStakeInput" value="' + ADVISOR.stake + '" step="0.5" min="0.5"> \u20AC</label></div>';
+  }
+
+  if (!r.bets.length) {
+    html += '<div class="adv-empty">\uD83D\uDEAB <strong>Oggi non c\u2019\u00E8 niente da giocare</strong><br>' +
+            'Su ' + r.examined + ' mercati esaminati, nessuno supera i filtri. ' +
+            '\u00C8 l\u2019esito pi\u00F9 frequente ed \u00E8 il funzionamento corretto: il mercato \u00E8 efficiente ' +
+            'e il modello non ha abbastanza vantaggio per giustificare una puntata.</div>';
+  } else {
+    html += '<div class="adv-count">' + r.bets.length + ' giocat' + (r.bets.length === 1 ? 'a' : 'e') +
+            ' nella fascia affidabile, su ' + r.examined + ' mercati esaminati</div>';
+    html += '<div class="value-table">' +
+      '<div class="value-row value-head"><span>Verdetto</span><span>Partita</span><span>Mercato</span>' +
+      '<span>Quota</span><span>Vantaggio</span><span>Punta</span></div>';
+    for (const b of r.bets.slice(0, 15)) {
+      const t = betTier(b.edge);
+      html += '<div class="value-row ' + (t.k === 'strong' ? 'value-pos' : 'tier-weak') + '">' +
+        '<span class="tier-' + t.k + '">' + t.label + '</span><span>' + b.match + '<br><em class="adv-date">' + b.date + '</em></span>' +
+        '<span><strong>' + b.market + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') +
+        '<br><em class="adv-date">modello ' + (b.p * 100).toFixed(0) + '%</em></span>' +
+        '<span>' + b.odds.toFixed(2) + '</span><span><strong>+' + (b.edge * 100).toFixed(1) + '%</strong></span>' +
+        '<span>' + (t.k === 'strong' ? ADVISOR.stake.toFixed(2) + ' \u20AC' : '\u2014') + '</span></div>';
+    }
+    html += '</div>';
+    html += '<p class="note hint">\u2139\uFE0F Puntata <strong>fissa</strong>, uguale per ogni giocata. ' +
+            'Non usare il \u00BD Kelly finch\u00E9 la calibrazione della versione attuale non \u00E8 confermata su almeno 150 partite: ' +
+            'Kelly presuppone probabilit\u00E0 corrette e amplifica l\u2019errore quando non lo sono.</p>';
+  }
+
+  // perche' sono state scartate: e' la parte informativa
+  const keys = Object.keys(r.reasons).sort((a, b) => r.reasons[b] - r.reasons[a]);
+  if (keys.length) {
+    html += '<details class="adv-details"><summary>Perch\u00E9 le altre sono state scartate</summary><div class="value-table">';
+    for (const k of keys) {
+      html += '<div class="value-row value-neg"><span>' + k + '</span><span>' + r.reasons[k] + ' mercati</span></div>';
+    }
+    html += '</div>';
+    if (r.noOdds) {
+      html += '<p class="note">' + r.noOdds + ' partite non hanno quote automatiche: aprile e inserisci le tue ' +
+              'nel riquadro \u201CQuote tue\u201D per farle valutare.</p>';
+    }
+    html += '</details>';
+  }
+  card.innerHTML = html;
+  const si = document.getElementById('advStakeInput');
+  if (si) si.addEventListener('change', function () {
+    const v = parseFloat(si.value);
+    if (v > 0) {
+      ADVISOR.stake = v;
+      try { localStorage.setItem('advStake', String(v)); } catch (e) {}
+      renderAdvisor();
+    }
+  });
 }
