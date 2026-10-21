@@ -28,8 +28,8 @@ function formatOdd(o) { return o ? o.toFixed(2) : '—'; }
 // i mercati mantengono il nome esteso, altrimenti le partite gia' archiviate
 // non verrebbero piu' riconosciute.
 const MARKET_CODE = {
-  'Goal (GG)': '6 GG', 'GG': '6 GG',
-  'NoGoal (NG)': '7 NG', 'NG': '7 NG'
+  'Goal (GG)': '6) Goal GG', 'GG': '6) Goal GG', 'Goal GG': '6) Goal GG',
+  'NoGoal (NG)': '7) NoGoal NG', 'NG': '7) NoGoal NG', 'NoGoal NG': '7) NoGoal NG'
 };
 function marketLabel(m) { return MARKET_CODE[m] || m; }
 
@@ -804,8 +804,8 @@ function renderOddsInput(fixture) {
       '<label>2<input type="number" step="0.01" id="uOdd2" placeholder="2" value="' + (o['2'] || '') + '"></label>' +
       '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
       '<label>Under 2.5<input type="number" step="0.01" id="uOddUnder" placeholder="U 2.5" value="' + (o.under25 || '') + '"></label>' +
-      '<label>6 Goal (GG)<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
-      '<label>7 NoGoal (NG)<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
+      '<label>6) Goal GG<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
+      '<label>7) NoGoal NG<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
     '</div>' +
     '<div class="manual-odds-actions">' +
       '<button id="applyOddsBtn" class="btn-primary">\uD83C\uDFAF Ricalcola con queste quote</button>' +
@@ -894,7 +894,7 @@ function removeUnusedOddsBoxes() {
   const gg = document.getElementById('oddGG');
   if (!gg || !gg.parentElement) return;
   const lab = gg.parentElement.querySelector('.odd-label');
-  if (lab) lab.textContent = '6 GG';
+  if (lab) lab.textContent = '6 GG';  // casella stretta: solo la sigla
   if (!document.getElementById('oddNG')) {
     const box = document.createElement('div');
     box.className = 'odd-box';
@@ -1207,8 +1207,8 @@ function addCurrentToMulti() {
     ['2 (' + currentMatch.awayTeam + ')', p.p2, best['2']],
     ['Over 2.5', p.pOver25, best.over25],
     ['Under 2.5', p.pUnder25, best.under25],
-    ['6 Goal (GG)', p.pGG, best.gg],
-    ['7 NoGoal (NG)', p.pNG, best.ng]
+    ['Goal GG', p.pGG, best.gg],
+    ['NoGoal NG', p.pNG, best.ng]
   ];
   let msg = 'Quale esito vuoi aggiungere?\n';
   opts.forEach((o2, i) => { msg += (i + 1) + ') ' + o2[0] + ' \u2014 modello ' + (o2[1] * 100).toFixed(1) + '%\n'; });
