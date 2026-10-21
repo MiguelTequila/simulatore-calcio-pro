@@ -142,9 +142,28 @@ def build_track_record(log):
         return round(sum((p - (1 if w else 0)) ** 2 for p, w in data) / len(data), 4) if data else None
 
     def bias_of(data):
-        """Scarto medio fra quanto il modello promette e quanto succede."""
+        """ATTENZIONE: su mercati complementari (1-X-2, Over/Under, GG/NG) questo
+        valore e' ZERO per costruzione, qualunque sia la bravura del modello:
+        le probabilita' sommano a 1 e succede sempre esattamente un esito.
+        Resta solo per compatibilita' con i registri gia' salvati."""
         if not data: return None
         return round(sum(p for p, _ in data) / len(data) - sum(1 for _, w in data if w) / len(data), 4)
+
+    def confidence_split(data):
+        """La misura che conta davvero: il modello sbaglia di piu' quando si
+        sbilancia o quando e' prudente? Separa i casi in cui promette oltre
+        il 50% da quelli sotto, e confronta promesso e avvenuto."""
+        out = {}
+        for key, sel in (("sicuro", lambda p: p >= 0.5), ("incerto", lambda p: p < 0.5)):
+            sub = [(p, w) for p, w in data if sel(p)]
+            if not sub:
+                out[key] = None
+                continue
+            pred = sum(p for p, _ in sub) / len(sub)
+            act = sum(1 for _, w in sub if w) / len(sub)
+            out[key] = {"n": len(sub), "pred": round(pred, 4),
+                        "actual": round(act, 4), "gap": round(act - pred, 4)}
+        return out
 
     bins = make_bins(samples)
     brier = brier_of(samples)
@@ -153,7 +172,8 @@ def build_track_record(log):
         if not data:
             continue
         groups.append({"group": name, "n": len(data), "brier": brier_of(data),
-                       "bias": bias_of(data), "calibration": make_bins(data)})
+                       "bias": bias_of(data), "confidence": confidence_split(data),
+                       "calibration": make_bins(data)})
 
     # --- verifica dell'edge: value bet giocate a quota registrata, puntata fissa 1 ---
     bets, profit, wins = [], 0.0, 0
