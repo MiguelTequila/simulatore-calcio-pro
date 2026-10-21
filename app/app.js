@@ -802,10 +802,10 @@ function renderOddsInput(fixture) {
       '<label>1<input type="number" step="0.01" id="uOdd1" placeholder="1" value="' + (o['1'] || '') + '"></label>' +
       '<label>X<input type="number" step="0.01" id="uOddX" placeholder="X" value="' + (o['X'] || '') + '"></label>' +
       '<label>2<input type="number" step="0.01" id="uOdd2" placeholder="2" value="' + (o['2'] || '') + '"></label>' +
-      '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
       '<label>Under 2.5<input type="number" step="0.01" id="uOddUnder" placeholder="U 2.5" value="' + (o.under25 || '') + '"></label>' +
-      '<label>6) Goal GG<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
-      '<label>7) NoGoal NG<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
+      '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
+      '<label>Goal GG<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
+      '<label>NoGoal NG<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
     '</div>' +
     '<div class="manual-odds-actions">' +
       '<button id="applyOddsBtn" class="btn-primary">\uD83C\uDFAF Ricalcola con queste quote</button>' +
