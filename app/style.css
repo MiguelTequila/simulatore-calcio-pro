@@ -390,3 +390,8 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
   .day-row{grid-template-columns:44px 1fr;grid-template-areas:"t m" ". p" ". v";row-gap:.2rem}
   .d-time{grid-area:t}.d-match{grid-area:m}.d-probs{grid-area:p}.d-verdict{grid-area:v}
 }
+
+/* ===== Calibrazione per mercato e CLV ===== */
+.group-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:.8rem 0 .5rem}
+#trackCard .value-row{grid-template-columns:1.3fr .9fr .8fr 1fr 1.3fr}
+#trackCard .sub-card .track-summary{margin:.5rem 0}
