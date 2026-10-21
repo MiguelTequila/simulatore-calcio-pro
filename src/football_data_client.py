@@ -40,26 +40,58 @@ class FootballDataClient:
             return None
 
     def get_standings(self, comp_id):
+        """Legge la classifica. Football-Data restituisce piu' tabelle
+        (TOTAL, HOME, AWAY): prima il codice le scorreva tutte sovrascrivendo,
+        quindi vinceva l'ultima. Ora si usa TOTAL come base e, quando ci sono,
+        si conservano anche i parziali in casa e in trasferta."""
         data = self._get(f"/competitions/{comp_id}/standings")
         if not data or "standings" not in data:
             return None
+        tables = data.get("standings", [])
+        by_type = {}
+        for t in tables:
+            by_type.setdefault((t.get("type") or "TOTAL").upper(), []).append(t)
+
+        def rows_of(kind):
+            out = []
+            for t in by_type.get(kind, []):
+                out.extend(t.get("table", []))
+            return out
+
+        base_rows = rows_of("TOTAL")
+        if not base_rows:                      # alcune coppe hanno una sola tabella
+            base_rows = [r for t in tables for r in t.get("table", [])]
+
         teams = {}
-        for table in data.get("standings", []):
-            for row in table.get("table", []):
-                t = row["team"]
-                tid = t["id"]
-                played = row.get("playedGames", 0)
-                if played == 0:
+        for row in base_rows:
+            t = row["team"]
+            tid = t["id"]
+            played = row.get("playedGames", 0)
+            if played == 0:
+                continue
+            gf, ga = row.get("goalsFor", 0), row.get("goalsAgainst", 0)
+            teams[tid] = {
+                "id": tid, "name": t["name"], "shortName": t.get("shortName", t["name"]),
+                "crest": t.get("crest", ""), "played": played,
+                "won": row.get("won", 0), "draw": row.get("draw", 0), "lost": row.get("lost", 0),
+                "gf": gf, "ga": ga,
+                "gd": row.get("goalDifference", 0), "points": row.get("points", 0),
+                "gf_pg": round(gf / played, 2), "ga_pg": round(ga / played, 2),
+            }
+
+        # Parziali casa/trasferta: servono al modello per distinguere le squadre
+        # che rendono molto in casa da quelle che crollano fuori.
+        for kind, suffix in (("HOME", "home"), ("AWAY", "away")):
+            for row in rows_of(kind):
+                tid = row["team"]["id"]
+                if tid not in teams:
                     continue
-                teams[tid] = {
-                    "id": tid, "name": t["name"], "shortName": t.get("shortName", t["name"]),
-                    "crest": t.get("crest", ""), "played": played,
-                    "won": row.get("won", 0), "draw": row.get("draw", 0), "lost": row.get("lost", 0),
-                    "gf": row.get("goalsFor", 0), "ga": row.get("goalsAgainst", 0),
-                    "gd": row.get("goalDifference", 0), "points": row.get("points", 0),
-                    "gf_pg": round(row.get("goalsFor", 0) / played, 2),
-                    "ga_pg": round(row.get("goalsAgainst", 0) / played, 2),
-                }
+                pl = row.get("playedGames", 0)
+                if pl == 0:
+                    continue
+                teams[tid]["played_" + suffix] = pl
+                teams[tid]["gf_pg_" + suffix] = round(row.get("goalsFor", 0) / pl, 3)
+                teams[tid]["ga_pg_" + suffix] = round(row.get("goalsAgainst", 0) / pl, 3)
         return teams
 
     def get_recent_matches(self, comp_id, days_back=60):
