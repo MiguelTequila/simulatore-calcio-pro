@@ -70,6 +70,20 @@
    "n": 1629,
    "brier": 0.1995,
    "bias": 0.0,
+   "confidence": {
+    "sicuro": {
+     "n": 266,
+     "pred": 0.635,
+     "actual": 0.5752,
+     "gap": -0.0599
+    },
+    "incerto": {
+     "n": 1363,
+     "pred": 0.2745,
+     "actual": 0.2861,
+     "gap": 0.0117
+    }
+   },
    "calibration": [
     {
      "bin": "0-10%",
@@ -138,6 +152,20 @@
    "n": 1086,
    "brier": 0.2309,
    "bias": 0.0,
+   "confidence": {
+    "sicuro": {
+     "n": 543,
+     "pred": 0.6844,
+     "actual": 0.628,
+     "gap": -0.0564
+    },
+    "incerto": {
+     "n": 543,
+     "pred": 0.3156,
+     "actual": 0.372,
+     "gap": 0.0564
+    }
+   },
    "calibration": [
     {
      "bin": "0-10%",
@@ -206,6 +234,20 @@
    "n": 18,
    "brier": 0.1566,
    "bias": 0.0,
+   "confidence": {
+    "sicuro": {
+     "n": 9,
+     "pred": 0.6908,
+     "actual": 0.7778,
+     "gap": 0.087
+    },
+    "incerto": {
+     "n": 9,
+     "pred": 0.3092,
+     "actual": 0.2222,
+     "gap": -0.087
+    }
+   },
    "calibration": [
     {
      "bin": "0-10%",
