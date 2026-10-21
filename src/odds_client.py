@@ -20,10 +20,20 @@ SPORT_KEYS = {
     "FL1": "soccer_france_ligue_one",
     "PD":  "soccer_spain_la_liga",
     "SA":  "soccer_italy_serie_a",
-    "PPL": "soccer_portugal_primeira_liga",
     "BL1": "soccer_germany_bundesliga",
     "DED": "soccer_netherlands_eredivisie",
     "CL":  "soccer_uefa_champs_league",
+    # Europa League e Conference NON sono nel piano gratuito di Football-Data:
+    # calendario e quote arrivano da qui, le statistiche delle squadre vengono
+    # prese dai campionati nazionali tramite team_match.
+    "EL":  "soccer_uefa_europa_league",
+    "ECL": "soccer_uefa_europa_conference_league",
+}
+
+# Competizioni che esistono SOLO grazie alle quote (niente Football-Data)
+ODDS_ONLY = {
+    "EL":  {"name": "Europa League", "country": "Europe"},
+    "ECL": {"name": "Conference League", "country": "Europe"},
 }
 
 
