@@ -8,10 +8,14 @@ COMPETITIONS = {
     "FL1": {"name": "Ligue 1", "country": "France"},
     "PD":  {"name": "La Liga", "country": "Spain"},
     "SA":  {"name": "Serie A", "country": "Italy"},
-    "PPL": {"name": "Primeira Liga", "country": "Portugal"},
     "BL1": {"name": "Bundesliga", "country": "Germany"},
     "DED": {"name": "Eredivisie", "country": "Netherlands"},
     "CL":  {"name": "Champions League", "country": "Europe"},
+    # SOLO STATISTICHE: non compare nell'elenco a tendina, ma le sue squadre
+    # (Porto, Benfica, Sporting, Braga) giocano le coppe europee e senza questi
+    # dati le loro partite in Champions/Europa League sarebbero cieche.
+    # Football-Data e' gratuito e senza quota mensile: questa riga non costa nulla.
+    "PPL": {"name": "Primeira Liga", "country": "Portugal", "statsOnly": True},
 }
 
 class FootballDataClient:
