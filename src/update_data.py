@@ -6,7 +6,7 @@ from odds_client import OddsAPIClient
 from elo import load_state, update_ratings_incremental, save_state
 from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
-                         compute_value, league_average, LEAGUE_RHO, DEFAULT_RHO,
+                         compute_value, league_average, league_home_away, stat_scale, LEAGUE_RHO, DEFAULT_RHO,
                          MARKET_WEIGHT, MODEL_VERSION)
 
 # ============================================================================
@@ -287,7 +287,12 @@ def build_output():
         rho = LEAGUE_RHO.get(comp_id, DEFAULT_RHO)
         # media gol della lega ricalcolata dai dati veri di questa stagione
         lg_avg = league_average(teams, comp_id)
-        print(f"    {comp_id}: media gol/partita della lega = {lg_avg:.3f}")
+        lg_ha = league_home_away(teams, lg_avg)
+        lg_scale = stat_scale(teams, lg_avg)
+        split = any(t.get("played_home") for t in teams.values())
+        print(f"    {comp_id}: media lega {lg_avg:.3f} | base casa {lg_ha[0]:.2f} "
+              f"trasferta {lg_ha[1]:.2f} | riscalatura {lg_scale:.3f} | "
+              f"parziali casa/trasferta: {'si' if split else 'no'}")
         processed = []
 
         for fix in fixtures:
@@ -298,7 +303,7 @@ def build_output():
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
 
-            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg)
+            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg, league_ha=lg_ha, scale=lg_scale)
             odds = fix.get("odds")
             lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
@@ -309,9 +314,13 @@ def build_output():
                 "matchday": fix.get("matchday"),
                 "homeTeam": hname, "homeId": hid, "awayTeam": aname, "awayId": aid,
                 "homeStats": {"gf_pg": hs.get("gf_pg", 0), "ga_pg": hs.get("ga_pg", 0),
-                              "form": hs.get("form", ""), "elo": round(eh, 0), "played": hs.get("played", 0)},
+                              "form": hs.get("form", ""), "elo": round(eh, 0), "played": hs.get("played", 0),
+                              "gf_pg_home": hs.get("gf_pg_home"), "ga_pg_home": hs.get("ga_pg_home"),
+                              "played_home": hs.get("played_home")},
                 "awayStats": {"gf_pg": ast.get("gf_pg", 0), "ga_pg": ast.get("ga_pg", 0),
-                              "form": ast.get("form", ""), "elo": round(ea, 0), "played": ast.get("played", 0)},
+                              "form": ast.get("form", ""), "elo": round(ea, 0), "played": ast.get("played", 0),
+                              "gf_pg_away": ast.get("gf_pg_away"), "ga_pg_away": ast.get("ga_pg_away"),
+                              "played_away": ast.get("played_away")},
                 "odds": odds,
                 "dataQuality": "full" if (hs.get("played") and ast.get("played")) else "partial",
                 "prediction": {
@@ -342,13 +351,15 @@ def build_output():
         pool = {i: f["homeStatsSrc"] for i, f in enumerate(comp["fixtures"]) if f["homeStatsSrc"]}
         pool.update({-i - 1: f["awayStatsSrc"] for i, f in enumerate(comp["fixtures"]) if f["awayStatsSrc"]})
         lg_avg = league_average(pool, comp_id)
+        lg_ha = league_home_away(pool, lg_avg)
+        lg_scale = stat_scale(pool, lg_avg)
         processed = []
         for fix in comp["fixtures"]:
             hs, ast = fix["homeStatsSrc"], fix["awayStatsSrc"]
             hname, aname = fix["homeTeam"], fix["awayTeam"]
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
-            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg)
+            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg, league_ha=lg_ha, scale=lg_scale)
             odds = fix.get("odds")
             lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
