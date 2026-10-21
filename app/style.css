@@ -359,3 +359,34 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .verdict.no{background:#2a1a1a;border-left:4px solid #8a4a4a;opacity:.95}
 .verdict em{opacity:.75;font-style:normal;font-size:.82rem}
 .unver{background:#5c3a12;color:#ffd79a;font-size:.65rem;padding:.1rem .35rem;border-radius:4px;white-space:nowrap}
+
+/* ===== Partite del giorno ===== */
+#todayCard .day-tabs{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.4rem;margin:.6rem 0}
+.day-tab{background:#1a1a2e;border:1px solid #2a2a44;color:inherit;border-radius:20px;
+  padding:.45rem .8rem;cursor:pointer;white-space:nowrap;font-size:.85rem}
+.day-tab.active{background:#1f2a5a;border-color:#3d5af1;font-weight:600}
+.day-n{opacity:.55;font-size:.75rem;margin-left:.2rem}
+.day-list{display:flex;flex-direction:column;gap:3px}
+.day-row{display:grid;grid-template-columns:52px 1fr 108px 150px;gap:.5rem;align-items:center;
+  padding:.5rem .6rem;border-radius:7px;background:#141426;font-size:.88rem}
+.day-row.play{background:#123524;border-left:3px solid #2ecc71}
+.day-row.maybe{background:#2a2412;border-left:3px solid #e0a800}
+.day-row.nodata,.day-row.noodds{opacity:.5}
+.d-time{font-variant-numeric:tabular-nums;opacity:.75;font-size:.82rem}
+.d-match strong{font-weight:600}
+.d-comp{display:block;opacity:.5;font-style:normal;font-size:.72rem;margin-top:1px}
+.d-probs{font-variant-numeric:tabular-nums;font-size:.8rem;opacity:.85;white-space:nowrap}
+.d-probs em{opacity:.45;font-style:normal;margin-right:1px}
+.vd{font-size:.76rem;padding:.2rem .45rem;border-radius:5px;white-space:nowrap;display:inline-block}
+.vd em{font-style:normal;opacity:.8}
+.vd.play{background:#1b5c38;color:#b9f5cf;font-weight:600}
+.vd.maybe{background:#5c4512;color:#ffe3a3}
+.vd.nodata,.vd.noodds{background:#2a2a3a;color:#8a8aa0;font-size:.7rem}
+.vd.skip{opacity:.3}
+.day-sum{margin-top:.7rem;padding:.6rem .8rem;border-radius:8px;font-size:.88rem;line-height:1.5}
+.day-sum.play{background:#123524;border-left:3px solid #2ecc71}
+.day-sum.none{background:#1a1a2e;border-left:3px solid #44445a;opacity:.85}
+@media(max-width:620px){
+  .day-row{grid-template-columns:44px 1fr;grid-template-areas:"t m" ". p" ". v";row-gap:.2rem}
+  .d-time{grid-area:t}.d-match{grid-area:m}.d-probs{grid-area:p}.d-verdict{grid-area:v}
+}
