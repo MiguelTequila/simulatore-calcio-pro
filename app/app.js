@@ -23,6 +23,16 @@ let registry = JSON.parse(localStorage.getItem('simRegistry') || '[]');
 function formatPct(p) { return (p * 100).toFixed(1) + '%'; }
 function formatOdd(o) { return o ? o.toFixed(2) : '—'; }
 
+// Codici dei mercati come sulla schedina: Goal = 6, NoGoal = 7.
+// E' solo l'etichetta mostrata: dentro il programma e nel registro degli esiti
+// i mercati mantengono il nome esteso, altrimenti le partite gia' archiviate
+// non verrebbero piu' riconosciute.
+const MARKET_CODE = {
+  'Goal (GG)': '6 GG', 'GG': '6 GG',
+  'NoGoal (NG)': '7 NG', 'NG': '7 NG'
+};
+function marketLabel(m) { return MARKET_CODE[m] || m; }
+
 function computeValueJS(pred, odds) {
   if (!odds) return null;
   const src = odds.best || odds;
@@ -73,7 +83,7 @@ function renderValue(value) {
     if (best) {
       const t = betTier(best.row.edge);
       const unv = (best.row.market.indexOf('GG') >= 0 || best.row.market.indexOf('NG') >= 0);
-      html += '<div class="verdict yes"><strong>\u2705 GIOCA: ' + best.row.market + '</strong> @ ' + best.row.odds.toFixed(2) +
+      html += '<div class="verdict yes"><strong>\u2705 GIOCA: ' + marketLabel(best.row.market) + '</strong> @ ' + best.row.odds.toFixed(2) +
               ' \u00B7 punta ' + ADVISOR.stake.toFixed(2) + ' \u20AC \u00B7 vantaggio +' + (best.row.edge * 100).toFixed(1) + '%' +
               '<br><em>' + t.label + ' \u2014 ' + t.note +
               (unv ? ' \u00B7 \u26A0\uFE0F mercato non ancora misurato dal registro' : '') + '</em></div>';
@@ -103,7 +113,7 @@ function renderValue(value) {
   html += '<div class="value-table"><div class="value-row value-head"><span>Mercato</span><span>Modello</span><span>Quota</span><span>Vantaggio</span><span>\u00BD Kelly</span></div>';
   for (const r of value.rows) {
     const cls = r.edge >= 0.03 ? ' value-pos' : (r.edge < 0 ? ' value-neg' : '');
-    html += '<div class="value-row' + cls + '"><span>' + r.market + '</span><span>' + (r.p*100).toFixed(1) + '%</span><span>' +
+    html += '<div class="value-row' + cls + '"><span>' + marketLabel(r.market) + '</span><span>' + (r.p*100).toFixed(1) + '%</span><span>' +
             r.odds.toFixed(2) + '</span><span>' + (r.edge*100).toFixed(1) + '%</span><span>' +
             (r.kelly>0 ? (r.kelly*100).toFixed(1)+'%' : '\u2014') + '</span></div>';
   }
@@ -319,6 +329,7 @@ function showMatchData(fixture) {
     document.getElementById('oddOver').textContent = formatOdd(odds.over25);
     document.getElementById('oddUnder').textContent = formatOdd(odds.under25);
     const _gg1 = document.getElementById('oddGG'); if (_gg1) _gg1.textContent = formatOdd(odds.gg);
+    const _ng1 = document.getElementById('oddNG'); if (_ng1) _ng1.textContent = formatOdd(odds.ng);
     document.getElementById('oddsNote').textContent = 'Quote recuperate automaticamente da The Odds API';
   } else {
     document.getElementById('odd1').textContent = '—';
@@ -328,6 +339,13 @@ function showMatchData(fixture) {
     document.getElementById('oddUnder').textContent = '—';
     const _gg2 = document.getElementById('oddGG'); if (_gg2) _gg2.textContent = '—';
     document.getElementById('oddsNote').textContent = 'Quote non disponibili per questa partita — il modello usa solo dati statistici';
+  }
+
+  // Se ci sono quote ma il valore non e' stato calcolato a monte, lo calcoliamo
+  // qui: altrimenti il consigliere proporrebbe una giocata che aprendo la
+  // partita risulterebbe "quote non disponibili".
+  if (fixture.prediction && !fixture.prediction.value && fixture.odds) {
+    fixture.prediction.value = computeValueJS(fixture.prediction, fixture.odds);
   }
 
   // Predizioni
@@ -786,8 +804,8 @@ function renderOddsInput(fixture) {
       '<label>2<input type="number" step="0.01" id="uOdd2" placeholder="2" value="' + (o['2'] || '') + '"></label>' +
       '<label>Over 2.5<input type="number" step="0.01" id="uOddOver" placeholder="O 2.5" value="' + (o.over25 || '') + '"></label>' +
       '<label>Under 2.5<input type="number" step="0.01" id="uOddUnder" placeholder="U 2.5" value="' + (o.under25 || '') + '"></label>' +
-      '<label>Goal (GG)<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
-      '<label>NoGoal (NG)<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
+      '<label>6 Goal (GG)<input type="number" step="0.01" id="uOddGG" placeholder="GG" value="' + (o.gg || '') + '"></label>' +
+      '<label>7 NoGoal (NG)<input type="number" step="0.01" id="uOddNG" placeholder="NG" value="' + (o.ng || '') + '"></label>' +
     '</div>' +
     '<div class="manual-odds-actions">' +
       '<button id="applyOddsBtn" class="btn-primary">\uD83C\uDFAF Ricalcola con queste quote</button>' +
@@ -843,6 +861,8 @@ function applyManualOdds() {
     document.getElementById('odd2').textContent = formatOdd(odds['2']);
     document.getElementById('oddOver').textContent = formatOdd(odds.over25);
     document.getElementById('oddUnder').textContent = formatOdd(odds.under25);
+    const _g = document.getElementById('oddGG'); if (_g) _g.textContent = formatOdd(odds.gg);
+    const _n = document.getElementById('oddNG'); if (_n) _n.textContent = formatOdd(odds.ng);
     document.getElementById('oddsNote').textContent = '\u270F\uFE0F Quote inserite manualmente da te';
   }
 }
@@ -867,9 +887,20 @@ function applyManualOdds() {
 
 // Il riquadro quota "GG" restava sempre vuoto: il mercato btts non viene
 // scaricato (costerebbe crediti e farebbe sforare il tetto gratuito).
+// Prima la casella GG restava sempre vuota e veniva tolta. Ora che Goal e
+// NoGoal sono mercati veri (quote automatiche o inserite a mano) le mostriamo
+// entrambe, numerate 6 e 7 come sulla schedina.
 function removeUnusedOddsBoxes() {
-  const el = document.getElementById('oddGG');
-  if (el && el.parentElement) el.parentElement.remove();
+  const gg = document.getElementById('oddGG');
+  if (!gg || !gg.parentElement) return;
+  const lab = gg.parentElement.querySelector('.odd-label');
+  if (lab) lab.textContent = '6 GG';
+  if (!document.getElementById('oddNG')) {
+    const box = document.createElement('div');
+    box.className = 'odd-box';
+    box.innerHTML = '<span class="odd-label">7 NG</span><span class="odd-val" id="oddNG">\u2014</span>';
+    gg.parentElement.parentNode.appendChild(box);
+  }
 }
 
 
@@ -1175,13 +1206,19 @@ function addCurrentToMulti() {
     ['X (pareggio)', p.px, best['X']],
     ['2 (' + currentMatch.awayTeam + ')', p.p2, best['2']],
     ['Over 2.5', p.pOver25, best.over25],
-    ['Under 2.5', p.pUnder25, best.under25]
+    ['Under 2.5', p.pUnder25, best.under25],
+    ['6 Goal (GG)', p.pGG, best.gg],
+    ['7 NoGoal (NG)', p.pNG, best.ng]
   ];
   let msg = 'Quale esito vuoi aggiungere?\n';
   opts.forEach((o2, i) => { msg += (i + 1) + ') ' + o2[0] + ' \u2014 modello ' + (o2[1] * 100).toFixed(1) + '%\n'; });
-  const choice = prompt(msg + '\nScrivi il numero (1-5):', '1');
+  const choice = prompt(msg + '\nScrivi il numero (1-' + opts.length + '):', '1');
   const i = parseInt(choice, 10) - 1;
-  if (isNaN(i) || i < 0 || i > 4) return;
+  if (isNaN(i) || i < 0 || i >= opts.length) return;
+  if (!opts[i][2]) {
+    alert('Per questo esito non c\u2019\u00E8 una quota. Inseriscila nel riquadro \u201CQuote tue\u201D e riprova.');
+    return;
+  }
   addMultiRow({
     label: currentMatch.homeTeam + '-' + currentMatch.awayTeam + ' \u00B7 ' + opts[i][0].split(' (')[0],
     p: opts[i][1],
@@ -1750,7 +1787,7 @@ function renderAdvisor() {
     const vinc = ADVISOR.stake * top.odds;
     html += '<div class="adv-hero ' + t.k + '">' +
       '<div class="hero-tag">' + t.label + '</div>' +
-      '<div class="hero-main">Gioca <strong>' + top.market + '</strong> su <strong>' + top.match + '</strong></div>' +
+      '<div class="hero-main">Gioca <strong>' + marketLabel(top.market) + '</strong> su <strong>' + top.match + '</strong></div>' +
       '<div class="hero-row">' +
         '<span><em>Quota</em> ' + top.odds.toFixed(2) + '</span>' +
         '<span><em>Punta</em> <strong>' + ADVISOR.stake.toFixed(2) + ' \u20AC</strong></span>' +
@@ -1783,7 +1820,7 @@ function renderAdvisor() {
       const t = betTier(b.edge);
       html += '<div class="value-row ' + (t.k === 'strong' ? 'value-pos' : 'tier-weak') + '">' +
         '<span class="tier-' + t.k + '">' + t.label + '</span><span>' + b.match + '<br><em class="adv-date">' + b.date + '</em></span>' +
-        '<span><strong>' + b.market + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') +
+        '<span><strong>' + marketLabel(b.market) + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') +
         '<br><em class="adv-date">modello ' + (b.p * 100).toFixed(0) + '%</em></span>' +
         '<span>' + b.odds.toFixed(2) + '</span><span><strong>+' + (b.edge * 100).toFixed(1) + '%</strong></span>' +
         '<span>' + (t.k === 'strong' ? ADVISOR.stake.toFixed(2) + ' \u20AC' : '\u2014') + '</span></div>';
@@ -1935,7 +1972,7 @@ function renderToday(selDate) {
   if (plays.length) {
     html += '<div class="day-sum play">\u2705 <strong>' + plays.length + '</strong> partit' +
             (plays.length === 1 ? 'a' : 'e') + ' da considerare in questa giornata \u2014 ' +
-            plays.slice(0, 3).map(x => '<strong>' + x.v.top.market + '</strong> in ' +
+            plays.slice(0, 3).map(x => '<strong>' + marketLabel(x.v.top.market) + '</strong> in ' +
               shortName(x.f.homeTeam) + '-' + shortName(x.f.awayTeam)).join(', ') +
             (plays.length > 3 ? ' e altre ' + (plays.length - 3) : '') + '</div>';
   } else {
@@ -1949,9 +1986,9 @@ function renderToday(selDate) {
 
 function verdictChip(v) {
   if (!v) return '';
-  if (v.k === 'play')   return '<span class="vd play">\u2B50 ' + v.top.market + ' @' + v.top.odds.toFixed(2) +
+  if (v.k === 'play')   return '<span class="vd play">\u2B50 ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) +
                                 ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
-  if (v.k === 'maybe')  return '<span class="vd maybe">\u26A0\uFE0F ' + v.top.market + ' @' + v.top.odds.toFixed(2) +
+  if (v.k === 'maybe')  return '<span class="vd maybe">\u26A0\uFE0F ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) +
                                 ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
   if (v.k === 'nodata') return '<span class="vd nodata">dati incompleti</span>';
   if (v.k === 'noodds') return '<span class="vd noodds">quote mancanti</span>';
