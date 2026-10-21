@@ -692,13 +692,33 @@ function renderTrackRecord(tr) {
   const roiPct = vb.roi != null ? (vb.roi * 100).toFixed(1) + '%' : '\u2014';
   const roiCls = vb.roi > 0 ? 'stat-good' : (vb.roi < 0 ? 'stat-bad' : '');
   let html = '<h2>\uD83D\uDCC8 Verifica del modello (esiti reali)</h2>';
+
+  // Riassunto in parole: i numeri qui sotto da soli non dicono nulla a chi
+  // non mastica statistica, e questa sezione serve proprio a decidere.
+  const nObs = (tr.groups || []).reduce((a, g) => a + g.n, 0) || 0;
+  const perso = -(vb.profitUnits || 0);
+  html += '<div class="plain-box">' +
+    '<p><strong>In parole povere.</strong> Il modello ha previsto <strong>' + tr.graded +
+      ' partite</strong> ormai giocate' + (nObs ? ' (' + nObs + ' previsioni verificate, perch\u00E9 di ogni partita si controllano pi\u00F9 esiti)' : '') +
+      '. Altre <strong>' + tr.pending + '</strong> sono ancora da giocare.</p>' +
+    (vb.n ? '<p>Puntando <strong>1&nbsp;\u20AC su ognuna</strong> delle ' + vb.n + ' giocate che aveva segnalato, avresti messo ' +
+       vb.n + '&nbsp;\u20AC sul tavolo e ne avresti ' + (perso > 0 ? '<strong class="stat-bad">persi ' + perso.toFixed(0) + '</strong>' :
+       '<strong class="stat-good">guadagnati ' + (-perso).toFixed(0) + '</strong>') + '&nbsp;\u20AC. ' +
+       'Cio\u00E8 ' + (vb.roi >= 0 ? 'guadagnati' : 'persi') + ' <strong>' + Math.abs(vb.roi * 100).toFixed(0) +
+       ' centesimi ogni euro giocato</strong>.</p>' : '') +
+    '<p>Il <strong>Brier score</strong> \u00E8 ' + (tr.brier != null ? tr.brier.toFixed(3) : '\u2014') +
+      ': misura quanto le probabilit\u00E0 sono azzeccate, pi\u00F9 basso \u00E8 meglio. ' +
+      'Tirare a caso darebbe circa 0,25' +
+      (tr.brier != null ? (tr.brier < 0.24 ? ', quindi il modello <strong>qualcosa ci capisce</strong>' : ', quindi il modello <strong>non sta aggiungendo molto</strong>') : '') + '.</p>' +
+    '</div>';
+
   html += '<div class="track-summary">' +
-    '<div><span class="stat-label">Partite valutate</span><span class="stat-big">' + tr.graded + '</span></div>' +
-    '<div><span class="stat-label">In attesa</span><span class="stat-big">' + tr.pending + '</span></div>' +
-    '<div><span class="stat-label">Brier score</span><span class="stat-big">' + (tr.brier != null ? tr.brier.toFixed(3) : '\u2014') + '</span></div>' +
-    '<div><span class="stat-label">Value bet</span><span class="stat-big">' + (vb.n || 0) + '</span></div>' +
-    '<div><span class="stat-label">P&amp;L (1u fissa)</span><span class="stat-big ' + roiCls + '">' + (vb.profitUnits >= 0 ? '+' : '') + (vb.profitUnits || 0).toFixed(2) + 'u</span></div>' +
-    '<div><span class="stat-label">ROI</span><span class="stat-big ' + roiCls + '">' + roiPct + '</span></div>' +
+    '<div><span class="stat-label">Partite valutate</span><span class="stat-big">' + tr.graded + '</span><span class="stat-hint">gi\u00E0 giocate e controllate</span></div>' +
+    '<div><span class="stat-label">In attesa</span><span class="stat-big">' + tr.pending + '</span><span class="stat-hint">previste, non ancora giocate</span></div>' +
+    '<div><span class="stat-label">Brier score</span><span class="stat-big">' + (tr.brier != null ? tr.brier.toFixed(3) : '\u2014') + '</span><span class="stat-hint">errore medio \u00B7 caso = 0,25</span></div>' +
+    '<div><span class="stat-label">Value bet</span><span class="stat-big">' + (vb.n || 0) + '</span><span class="stat-hint">giocate che aveva consigliato</span></div>' +
+    '<div><span class="stat-label">Risultato</span><span class="stat-big ' + roiCls + '">' + (vb.profitUnits >= 0 ? '+' : '') + (vb.profitUnits || 0).toFixed(0) + '\u20AC</span><span class="stat-hint">puntando 1\u20AC a giocata</span></div>' +
+    '<div><span class="stat-label">Rendimento</span><span class="stat-big ' + roiCls + '">' + roiPct + '</span><span class="stat-hint">guadagno per euro giocato</span></div>' +
     '</div>';
 
   // --- calibrazione separata per gruppo di mercati ---
@@ -706,23 +726,58 @@ function renderTrackRecord(tr) {
   // problema sta nei segni 1X2, nei gol (Over/Under) o nel Goal/NoGoal.
   if (tr.groups && tr.groups.length) {
     html += '<div class="sub-card"><h3>\uD83D\uDD0E Dove sbaglia il modello</h3>';
+    html += '<p class="note">La domanda giusta non \u00E8 "quanto sbaglia" ma <strong>quando</strong>. ' +
+            'Qui si confronta cosa promette con cosa succede davvero, separando i casi in cui ' +
+            'il modello <strong>si sbilancia</strong> (d\u00E0 oltre il 50%) da quelli in cui \u00E8 <strong>prudente</strong>.</p>';
     html += '<div class="value-table"><div class="value-row value-head">' +
-            '<span>Mercato</span><span>Osservazioni</span><span>Brier</span><span>Scarto medio</span><span>Giudizio</span></div>';
+            '<span>Mercato</span><span>Casi</span><span>Quando si sbilancia</span><span>Quando \u00E8 prudente</span><span>Giudizio</span></div>';
+    const trappole = [];
     for (const g of tr.groups) {
-      const b = g.bias == null ? 0 : g.bias;
+      const c = g.confidence || {};
+      const hi = c.sicuro, lo = c.incerto;
+      const fmt = x => x ? (x.pred * 100).toFixed(0) + '% \u2192 <strong>' + (x.actual * 100).toFixed(0) + '%</strong>' : '\u2014';
       let verdict, cls;
-      if (g.n < 60) { verdict = 'campione troppo piccolo'; cls = ''; }
-      else if (b > 0.03) { verdict = 'promette troppo'; cls = 'value-neg'; }
-      else if (b < -0.03) { verdict = 'troppo prudente'; cls = 'value-neg'; }
-      else { verdict = 'in equilibrio'; cls = 'value-pos'; }
+      if (g.n < 100) { verdict = 'troppo pochi dati'; cls = ''; }
+      else if (hi && hi.n >= 40 && hi.gap < -0.04) {
+        verdict = '\u26A0\uFE0F troppo sicuro di s\u00E9'; cls = 'value-neg';
+        trappole.push({g: g.group, gap: hi.gap, pred: hi.pred, act: hi.actual});
+      }
+      else if (hi && hi.n >= 40 && hi.gap > 0.04) { verdict = 'troppo prudente'; cls = ''; }
+      else { verdict = '\u2705 affidabile'; cls = 'value-pos'; }
       html += '<div class="value-row ' + cls + '"><span><strong>' + g.group + '</strong></span>' +
-        '<span>' + g.n + '</span><span>' + (g.brier != null ? g.brier.toFixed(3) : '\u2014') + '</span>' +
-        '<span>' + (b >= 0 ? '+' : '') + (b * 100).toFixed(1) + '%</span>' +
+        '<span>' + g.n + '</span><span>' + fmt(hi) + '</span><span>' + fmt(lo) + '</span>' +
         '<span>' + verdict + '</span></div>';
     }
-    html += '</div><p class="note">Lo <strong>scarto medio</strong> \u00E8 quanto il modello promette in pi\u00F9 ' +
-            'rispetto a quanto succede davvero. Sopra zero sovrastima, sotto zero sottostima. ' +
-            'Serve almeno un centinaio di osservazioni per fidarsi.</p>';
+    html += '</div>';
+    html += '<p class="note">Si legge cos\u00EC: <em>"64% \u2192 57%"</em> significa che quando il modello ' +
+            'promette il 64%, nella realt\u00E0 succede il 57% delle volte. Pi\u00F9 i due numeri sono vicini, ' +
+            'pi\u00F9 ci si pu\u00F2 fidare. Servono almeno un centinaio di casi per prendere sul serio il giudizio.</p>';
+
+    // Regole pratiche che escono da questi numeri, scritte senza gergo
+    html += '<div class="advice-box">';
+    html += '<div class="advice-title">\u26D4 Cosa NON giocare</div><ul>';
+    if (trappole.length) {
+      for (const t of trappole) {
+        html += '<li><strong>' + t.g + ' quando il modello \u00E8 molto sicuro</strong> (sopra il 50%): ' +
+                'promette ' + (t.pred * 100).toFixed(0) + '% ma la realt\u00E0 \u00E8 ' + (t.act * 100).toFixed(0) + '%. ' +
+                'Sono le quote basse che sembrano sicure e non lo sono: su 100 giocate cos\u00EC ne perderesti ' +
+                Math.round((1 - t.act) * 100) + ' invece delle ' + Math.round((1 - t.pred) * 100) + ' promesse.</li>';
+      }
+    } else {
+      html += '<li>Nessuna trappola evidente nei dati attuali. Resta comunque fuori dalle quote bassissime ' +
+              'finch\u00E9 il campione non cresce.</li>';
+    }
+    html += '<li><strong>Le multiple lunghe.</strong> Il margine del banco si moltiplica a ogni partita aggiunta: ' +
+            'su sette eventi diventa circa un terzo della posta.</li>';
+    html += '<li><strong>Tutto ci\u00F2 che il consigliere non segnala.</strong> Se non compare l\u00E0, ' +
+            'per il modello non c\u2019\u00E8 margine.</li>';
+    html += '</ul><div class="advice-title ok">\u2705 Cosa giocare</div><ul>';
+    html += '<li>Solo le giocate del riquadro <strong>\uD83C\uDFAF Consigli</strong>, una alla volta, mai in multipla.</li>';
+    html += '<li>Quelle marcate <strong>\u2B50 CONSIGLIATA</strong>: le <strong>\u26A0\uFE0F POSSIBILE</strong> hanno un ' +
+            'vantaggio cos\u00EC alto che di solito significa che il modello ha sbagliato, non che la quota \u00E8 regalata.</li>';
+    html += '<li><strong>Sempre la stessa cifra</strong> su ogni giocata, decisa prima e mai ritoccata.</li>';
+    html += '</ul></div>';
+
     html += '<div class="group-tabs">';
     tr.groups.forEach((g, i) => {
       html += '<button class="day-tab' + (i === 0 ? ' active' : '') + '" data-g="' + i + '">' + g.group + '</button>';
@@ -999,7 +1054,12 @@ const GLOSSARY = [
   ['\u03BB (lambda)', 'I gol attesi: \u03BB casa 1.60 significa che il modello si aspetta in media 1,60 gol dalla squadra di casa. Da questi due numeri nascono tutte le probabilit\u00E0.'],
   ['\u03C1 (rho)', 'Correzione Dixon-Coles sui risultati bassi (0-0, 1-0, 0-1, 1-1), che nel calcio reale capitano pi\u00F9 spesso di quanto direbbe una Poisson pura. \u00C8 sempre un numero negativo piccolo.'],
   ['Vantaggio (EV / edge)', 'Quanto guadagni in media per ogni euro puntato, SE il modello ha ragione. Si calcola: probabilit\u00E0 del modello \u00D7 quota \u2212 1. Esempio: il modello d\u00E0 40% e la quota \u00E8 3.00 \u2192 0,40 \u00D7 3,00 \u2212 1 = +20%. Sotto zero la quota \u00E8 pagata meno del giusto. Serve almeno +3% per essere segnalata.'],
-  ['\u00BD Kelly', 'Quanto puntare, in percentuale del tuo bankroll totale (non della singola giocata). Il criterio di Kelly massimizza la crescita nel lungo periodo; io mostro la met\u00E0 e non oltre il 5%, perch\u00E9 il Kelly pieno \u00E8 troppo aggressivo quando le probabilit\u00E0 sono stimate e non certe.'],
+  ['\u00BD Kelly', 'Quanto puntare, detto in soldi. \u00C8 una percentuale del <strong>bankroll</strong>, cio\u00E8 di tutto il denaro che hai destinato alle scommesse \u2014 non dell\u2019ultima vincita e non di quanto hai in tasca oggi. Esempio: bankroll 200 \u20AC, l\u2019app indica 3% \u2192 punti 6 \u20AC. Il criterio di Kelly dice quanto rischiare per far crescere il capitale il pi\u00F9 in fretta possibile senza bruciarlo: punta tanto quando il vantaggio \u00E8 grande e la quota alta, poco quando \u00E8 risicato. Io mostro <strong>la met\u00E0</strong> di quel numero e non vado mai oltre il 5%, perch\u00E9 la formula presuppone probabilit\u00E0 esatte, mentre le nostre sono stime: col Kelly pieno un modello che sbaglia di qualche punto ti svuota il conto. Regola pratica: scegli il bankroll all\u2019inizio, non cambiarlo dopo una vincita o una perdita, e se un numero ti sembra troppo alto punta meno \u2014 mai di pi\u00F9.'],
+  ['Partite valutate', 'Quante partite gi\u00E0 giocate il modello aveva previsto e di cui conosciamo il risultato. Di ogni partita si controllano pi\u00F9 esiti (1, X, 2, Over, Under, Goal, NoGoal), quindi le previsioni verificate sono molte di pi\u00F9 delle partite.'],
+  ['In attesa', 'Partite gi\u00E0 previste ma non ancora giocate. Si aggiungono alle valutate da sole, appena finiscono.'],
+  ['Value bet', 'Le giocate che il modello aveva segnalato come convenienti. Il numero accanto al risultato dice come sarebbero andate puntando sempre 1 \u20AC.'],
+  ['Risultato e Rendimento', 'Quanto avresti guadagnato o perso puntando 1 \u20AC su ogni giocata segnalata. Il rendimento \u00E8 lo stesso dato per euro giocato: \u221215% vuol dire 15 centesimi persi per ogni euro.'],
+  ['CLV', 'Il confronto fra la quota che avresti preso e quella poco prima del fischio d\u2019inizio. Se prendi 2,20 e la quota chiude a 2,00, hai fatto +10%: hai comprato a un prezzo migliore di quello finale. \u00C8 il segnale di vantaggio pi\u00F9 affidabile e si legge gi\u00E0 con 30-50 scommesse, mentre per il guadagno vero ne servono centinaia.'],
   ['Brier score', 'Errore medio delle probabilit\u00E0 sugli esiti gi\u00E0 avvenuti: pi\u00F9 basso \u00E8, meglio il modello prevede. Come riferimento, 0,25 equivale a tirare a caso su un evento 50/50.'],
   ['Calibrazione', 'Il controllo di onest\u00E0 del modello: quando dice 60%, l\u2019evento deve succedere circa il 60% delle volte. Nel grafico, barra blu = probabilit\u00E0 prevista, barra verde = frequenza reale. Simili = modello affidabile.'],
   ['Forma', 'Esiti delle ultime 5 partite ufficiali, dalla pi\u00F9 recente: W vittoria, D pareggio, L sconfitta.']
