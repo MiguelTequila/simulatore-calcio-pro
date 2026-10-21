@@ -28,8 +28,8 @@ function formatOdd(o) { return o ? o.toFixed(2) : '—'; }
 // i mercati mantengono il nome esteso, altrimenti le partite gia' archiviate
 // non verrebbero piu' riconosciute.
 const MARKET_CODE = {
-  'Goal (GG)': '6) Goal GG', 'GG': '6) Goal GG', 'Goal GG': '6) Goal GG',
-  'NoGoal (NG)': '7) NoGoal NG', 'NG': '7) NoGoal NG', 'NoGoal NG': '7) NoGoal NG'
+  'Goal (GG)': 'Goal GG', 'GG': 'Goal GG',
+  'NoGoal (NG)': 'NoGoal NG', 'NG': 'NoGoal NG'
 };
 function marketLabel(m) { return MARKET_CODE[m] || m; }
 
@@ -894,11 +894,11 @@ function removeUnusedOddsBoxes() {
   const gg = document.getElementById('oddGG');
   if (!gg || !gg.parentElement) return;
   const lab = gg.parentElement.querySelector('.odd-label');
-  if (lab) lab.textContent = '6 GG';  // casella stretta: solo la sigla
+  if (lab) lab.textContent = 'GG';
   if (!document.getElementById('oddNG')) {
     const box = document.createElement('div');
     box.className = 'odd-box';
-    box.innerHTML = '<span class="odd-label">7 NG</span><span class="odd-val" id="oddNG">\u2014</span>';
+    box.innerHTML = '<span class="odd-label">NG</span><span class="odd-val" id="oddNG">\u2014</span>';
     gg.parentElement.parentNode.appendChild(box);
   }
 }
