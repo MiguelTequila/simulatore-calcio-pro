@@ -701,8 +701,37 @@ function renderTrackRecord(tr) {
     '<div><span class="stat-label">ROI</span><span class="stat-big ' + roiCls + '">' + roiPct + '</span></div>' +
     '</div>';
 
-  // grafico di calibrazione: per ogni fascia, barra prevista vs barra reale
-  html += '<div class="sub-card"><h3>\uD83C\uDFAF Calibrazione \u2014 prevista vs realta\u0300</h3>';
+  // --- calibrazione separata per gruppo di mercati ---
+  // Mescolare esiti e gol nasconde dove il modello sbaglia: qui si vede se il
+  // problema sta nei segni 1X2, nei gol (Over/Under) o nel Goal/NoGoal.
+  if (tr.groups && tr.groups.length) {
+    html += '<div class="sub-card"><h3>\uD83D\uDD0E Dove sbaglia il modello</h3>';
+    html += '<div class="value-table"><div class="value-row value-head">' +
+            '<span>Mercato</span><span>Osservazioni</span><span>Brier</span><span>Scarto medio</span><span>Giudizio</span></div>';
+    for (const g of tr.groups) {
+      const b = g.bias == null ? 0 : g.bias;
+      let verdict, cls;
+      if (g.n < 60) { verdict = 'campione troppo piccolo'; cls = ''; }
+      else if (b > 0.03) { verdict = 'promette troppo'; cls = 'value-neg'; }
+      else if (b < -0.03) { verdict = 'troppo prudente'; cls = 'value-neg'; }
+      else { verdict = 'in equilibrio'; cls = 'value-pos'; }
+      html += '<div class="value-row ' + cls + '"><span><strong>' + g.group + '</strong></span>' +
+        '<span>' + g.n + '</span><span>' + (g.brier != null ? g.brier.toFixed(3) : '\u2014') + '</span>' +
+        '<span>' + (b >= 0 ? '+' : '') + (b * 100).toFixed(1) + '%</span>' +
+        '<span>' + verdict + '</span></div>';
+    }
+    html += '</div><p class="note">Lo <strong>scarto medio</strong> \u00E8 quanto il modello promette in pi\u00F9 ' +
+            'rispetto a quanto succede davvero. Sopra zero sovrastima, sotto zero sottostima. ' +
+            'Serve almeno un centinaio di osservazioni per fidarsi.</p>';
+    html += '<div class="group-tabs">';
+    tr.groups.forEach((g, i) => {
+      html += '<button class="day-tab' + (i === 0 ? ' active' : '') + '" data-g="' + i + '">' + g.group + '</button>';
+    });
+    html += '</div><div id="groupCalib"></div></div>';
+  }
+
+  // grafico di calibrazione complessivo
+  html += '<div class="sub-card"><h3>\uD83C\uDFAF Calibrazione \u2014 prevista vs realta\u0300 (tutti i mercati)</h3>';
   html += '<p class="note">Se il modello \u00E8 onesto, le due barre di ogni fascia sono simili: quando dice 60%, deve succedere ~60% delle volte. Con poche partite le differenze sono normali.</p>';
   html += '<div class="calib-chart">';
   for (const b of tr.calibration) {
@@ -717,6 +746,36 @@ function renderTrackRecord(tr) {
   }
   html += '</div><div class="calib-legend"><span><i class="dot pred-dot"></i> Prevista dal modello</span><span><i class="dot act-dot"></i> Frequenza reale</span></div></div>';
 
+  // --- CLV: la quota presa contro quella di chiusura ---
+  const cl = tr.clv;
+  if (cl && cl.n) {
+    const good = cl.avg > 0;
+    html += '<div class="sub-card"><h3>\u23F1\uFE0F CLV \u2014 contro la quota di chiusura</h3>';
+    html += '<div class="track-summary">' +
+      '<div><span class="stat-label">Confronti</span><span class="stat-big">' + cl.n + '</span></div>' +
+      '<div><span class="stat-label">CLV medio</span><span class="stat-big ' + (good ? 'stat-good' : 'stat-bad') + '">' +
+        (cl.avg >= 0 ? '+' : '') + (cl.avg * 100).toFixed(2) + '%</span></div>' +
+      '<div><span class="stat-label">Quote battute</span><span class="stat-big">' +
+        (cl.beatenPct * 100).toFixed(0) + '%</span></div>' +
+      '</div>';
+    html += '<p class="note">Confronta la quota che avresti preso con quella poco prima del fischio d\u2019inizio. ' +
+            'Un CLV medio positivo \u00E8 il segnale pi\u00F9 affidabile di vantaggio reale, e si legge gi\u00E0 con ' +
+            '30-50 scommesse invece che con centinaia. ' +
+            (cl.n < 30 ? '<strong>Con ' + cl.n + ' confronti non dice ancora nulla.</strong>' : '') + '</p>';
+    if (cl.history && cl.history.length) {
+      html += '<div class="value-table"><div class="value-row value-head">' +
+              '<span>Data</span><span>Partita</span><span>Mercato</span><span>Presa</span><span>Chiusura</span><span>CLV</span></div>';
+      for (const r of cl.history.slice(-10).reverse()) {
+        html += '<div class="value-row ' + (r.clv > 0 ? 'value-pos' : 'value-neg') + '">' +
+          '<span>' + r.date + '</span><span>' + r.match + '</span><span>' + marketLabel(r.market) + '</span>' +
+          '<span>' + r.taken.toFixed(2) + '</span><span>' + r.close.toFixed(2) + '</span>' +
+          '<span><strong>' + (r.clv >= 0 ? '+' : '') + (r.clv * 100).toFixed(1) + '%</strong></span></div>';
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
   // storico value bet
   if (vb.history && vb.history.length) {
     html += '<div class="sub-card"><h3>\uD83D\uDCB0 Storico value bet</h3><div class="value-table">';
@@ -729,6 +788,36 @@ function renderTrackRecord(tr) {
     html += '</div></div>';
   }
   card.innerHTML = html;
+
+  // grafico di calibrazione del gruppo selezionato
+  if (tr.groups && tr.groups.length) {
+    const draw = i => {
+      const box = document.getElementById('groupCalib');
+      if (!box) return;
+      box.innerHTML = calibChartHTML(tr.groups[i].calibration);
+      card.querySelectorAll('.group-tabs .day-tab').forEach((b, k) =>
+        b.classList.toggle('active', k === i));
+    };
+    card.querySelectorAll('.group-tabs .day-tab').forEach(b =>
+      b.addEventListener('click', () => draw(+b.dataset.g)));
+    draw(0);
+  }
+}
+
+// Disegna il grafico prevista-vs-reale per una serie di fasce
+function calibChartHTML(bins) {
+  let h = '<div class="calib-chart">';
+  for (const b of bins) {
+    const pred = b.avgPred != null ? b.avgPred * 100 : 0;
+    const act = b.actualFreq != null ? b.actualFreq * 100 : 0;
+    h += '<div class="calib-row">' +
+      '<span class="calib-label">' + b.bin + ' <em>(n=' + b.n + ')</em></span>' +
+      '<div class="calib-bars">' +
+        '<div class="calib-bar pred" style="width:' + pred.toFixed(0) + '%"><span>' + (b.avgPred != null ? pred.toFixed(0) + '%' : '\u2014') + '</span></div>' +
+        '<div class="calib-bar act" style="width:' + act.toFixed(0) + '%"><span>' + (b.actualFreq != null ? act.toFixed(0) + '%' : '\u2014') + '</span></div>' +
+      '</div></div>';
+  }
+  return h + '</div><div class="calib-legend"><span><i class="dot pred-dot"></i> Prevista dal modello</span><span><i class="dot act-dot"></i> Frequenza reale</span></div>';
 }
 
 
