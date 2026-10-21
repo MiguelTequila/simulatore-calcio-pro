@@ -231,6 +231,7 @@ async function loadData() {
     populateCompetitions();
     removeUnusedOddsBoxes();
     renderGlossary();
+    renderToday();
     renderAdvisor();
     renderImportControl();
     renderMultiCalc();
@@ -1697,6 +1698,12 @@ function scanAllFixtures() {
       const o = f.odds;
       const best = (o && o.best) ? o.best : o;
       let hadOdds = false;
+      // Senza statistiche vere su entrambe le squadre non c'e' nulla da
+      // confrontare: il modello starebbe usando una media di lega.
+      if (f.dataQuality && f.dataQuality !== 'full') {
+        out.reasons['dati squadra incompleti'] = (out.reasons['dati squadra incompleti'] || 0) + 1;
+        continue;
+      }
       for (const [label, pk, ok] of markets) {
         const p = pred[pk];
         const q = best ? best[ok] : null;
@@ -1811,4 +1818,150 @@ function renderAdvisor() {
       renderAdvisor();
     }
   });
+}
+
+
+// ===================== PARTITE DEL GIORNO =====================
+
+function ymd(d) {
+  const z = n => (n < 10 ? '0' : '') + n;
+  return d.getFullYear() + '-' + z(d.getMonth() + 1) + '-' + z(d.getDate());
+}
+
+// I dati di Football-Data e The Odds API sono in UTC: una partita delle 18:45
+// italiane risulta alle 16:45. Qui la riportiamo all'ora locale di chi guarda.
+function localDT(f) {
+  if (!f.date) return {date: '', time: f.time || ''};
+  if (!f.time) return {date: f.date, time: ''};
+  const d = new Date(f.date + 'T' + f.time + ':00Z');
+  if (isNaN(d.getTime())) return {date: f.date, time: f.time};
+  const z = n => (n < 10 ? '0' : '') + n;
+  return {date: ymd(d), time: z(d.getHours()) + ':' + z(d.getMinutes())};
+}
+
+function collectByDay() {
+  const days = {};
+  if (typeof allData === 'undefined' || !allData || !allData.competitions) return days;
+  for (const [cid, comp] of Object.entries(allData.competitions)) {
+    for (const f of (comp.fixtures || [])) {
+      if (!f.date) continue;
+      const lt = localDT(f);
+      (days[lt.date] = days[lt.date] || []).push({f: f, comp: comp.name, cid: cid, lt: lt});
+    }
+  }
+  for (const k in days) days[k].sort((a, b) => (a.lt.time || '').localeCompare(b.lt.time || ''));
+  return days;
+}
+
+// Verdetto sintetico su una partita: il miglior mercato che supera i filtri
+function matchVerdict(f) {
+  const pred = f.prediction;
+  if (!pred) return null;
+  if (f.dataQuality && f.dataQuality !== 'full')
+    return {k: 'nodata', text: 'dati incompleti'};
+  const best = (f.odds && f.odds.best) ? f.odds.best : f.odds;
+  if (!best) return {k: 'noodds', text: 'quote mancanti'};
+  const mk = [['1', pred.p1, best['1']], ['X', pred.px, best['X']], ['2', pred.p2, best['2']],
+              ['Over 2.5', pred.pOver25, best.over25], ['Under 2.5', pred.pUnder25, best.under25],
+              ['GG', pred.pGG, best.gg], ['NG', pred.pNG, best.ng]];
+  let top = null;
+  for (const [lab, p, q] of mk) {
+    if (!q || p == null) continue;
+    const v = advisorVerdict(p, q, pred);
+    if (v.ok && (!top || v.edge > top.edge)) top = {market: lab, p: p, odds: q, edge: v.edge};
+  }
+  if (!top) return {k: 'skip', text: 'niente da giocare'};
+  const t = betTier(top.edge);
+  return {k: t.k === 'strong' ? 'play' : 'maybe', text: top.market, top: top, tier: t};
+}
+
+function renderToday(selDate) {
+  let card = document.getElementById('todayCard');
+  if (!card) {
+    card = document.createElement('section');
+    card.className = 'card';
+    card.id = 'todayCard';
+    const first = document.querySelector('.container .card');
+    if (first) first.parentNode.insertBefore(card, first);
+  }
+  const days = collectByDay();
+  const keys = Object.keys(days).sort();
+  const today = ymd(new Date());
+  if (!keys.length) {
+    card.innerHTML = '<h2>\uD83D\uDCC5 Partite del giorno</h2><p class="note">Nessuna partita in calendario.</p>';
+    return;
+  }
+  // giorno scelto: quello richiesto, altrimenti oggi, altrimenti il primo utile
+  let day = selDate || (days[today] ? today : keys.find(k => k >= today) || keys[keys.length - 1]);
+
+  const label = d => {
+    if (d === today) return 'Oggi';
+    const t = new Date(today); t.setDate(t.getDate() + 1);
+    if (d === ymd(t)) return 'Domani';
+    const dt = new Date(d + 'T12:00:00');
+    return dt.toLocaleDateString('it-IT', {weekday: 'short', day: 'numeric', month: 'short'});
+  };
+
+  let html = '<h2>\uD83D\uDCC5 Partite del giorno</h2>';
+  html += '<div class="day-tabs">';
+  for (const k of keys.filter(k => k >= today).slice(0, 8)) {
+    const n = days[k].length;
+    html += '<button class="day-tab' + (k === day ? ' active' : '') + '" data-day="' + k + '">' +
+            label(k) + ' <span class="day-n">' + n + '</span></button>';
+  }
+  html += '</div>';
+
+  const list = days[day] || [];
+  const plays = [];
+  html += '<div class="day-list">';
+  for (const {f, comp, lt} of list) {
+    const v = matchVerdict(f);
+    const pred = f.prediction || {};
+    const cls = v ? v.k : 'skip';
+    if (v && (v.k === 'play' || v.k === 'maybe')) plays.push({f: f, comp: comp, v: v});
+    html += '<div class="day-row ' + cls + '" data-cid="' + f.id + '">' +
+      '<span class="d-time">' + (lt.time || '--:--') + '</span>' +
+      '<span class="d-match"><strong>' + f.homeTeam + '</strong> \u2013 <strong>' + f.awayTeam + '</strong>' +
+        '<em class="d-comp">' + comp + '</em></span>' +
+      '<span class="d-probs">' +
+        '<em>1</em> ' + ((pred.p1 || 0) * 100).toFixed(0) + ' &middot; ' +
+        '<em>X</em> ' + ((pred.px || 0) * 100).toFixed(0) + ' &middot; ' +
+        '<em>2</em> ' + ((pred.p2 || 0) * 100).toFixed(0) + '</span>' +
+      '<span class="d-verdict">' + verdictChip(v) + '</span>' +
+      '</div>';
+  }
+  html += '</div>';
+
+  if (plays.length) {
+    html += '<div class="day-sum play">\u2705 <strong>' + plays.length + '</strong> partit' +
+            (plays.length === 1 ? 'a' : 'e') + ' da considerare in questa giornata \u2014 ' +
+            plays.slice(0, 3).map(x => '<strong>' + x.v.top.market + '</strong> in ' +
+              shortName(x.f.homeTeam) + '-' + shortName(x.f.awayTeam)).join(', ') +
+            (plays.length > 3 ? ' e altre ' + (plays.length - 3) : '') + '</div>';
+  } else {
+    html += '<div class="day-sum none">\u26D4 Nessuna giocata consigliata in questa giornata.</div>';
+  }
+  card.innerHTML = html;
+
+  card.querySelectorAll('.day-tab').forEach(b =>
+    b.addEventListener('click', () => renderToday(b.dataset.day)));
+}
+
+function verdictChip(v) {
+  if (!v) return '';
+  if (v.k === 'play')   return '<span class="vd play">\u2B50 ' + v.top.market + ' @' + v.top.odds.toFixed(2) +
+                                ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
+  if (v.k === 'maybe')  return '<span class="vd maybe">\u26A0\uFE0F ' + v.top.market + ' @' + v.top.odds.toFixed(2) +
+                                ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
+  if (v.k === 'nodata') return '<span class="vd nodata">dati incompleti</span>';
+  if (v.k === 'noodds') return '<span class="vd noodds">quote mancanti</span>';
+  return '<span class="vd skip">\u2014</span>';
+}
+
+
+// Nome squadra accorciato per gli elenchi compatti
+function shortName(n) {
+  if (!n) return '';
+  const w = String(n).replace(/\b(FC|AFC|CF|SC|AC|SS|SSC|US|UD|CD|BC|KV|SV)\b/g, '').trim().split(/\s+/);
+  return w[0].length <= 3 && w.length > 1 ? w[0] + ' ' + w[1] : w[0];
 }
