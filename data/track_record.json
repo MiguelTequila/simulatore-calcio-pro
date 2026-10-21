@@ -64,6 +64,218 @@
    "actualFreq": 0.8
   }
  ],
+ "groups": [
+  {
+   "group": "1X2",
+   "n": 1629,
+   "brier": 0.1995,
+   "bias": 0.0,
+   "calibration": [
+    {
+     "bin": "0-10%",
+     "n": 50,
+     "avgPred": 0.0738,
+     "actualFreq": 0.1
+    },
+    {
+     "bin": "10-20%",
+     "n": 260,
+     "avgPred": 0.1594,
+     "actualFreq": 0.1769
+    },
+    {
+     "bin": "20-30%",
+     "n": 582,
+     "avgPred": 0.2439,
+     "actualFreq": 0.2423
+    },
+    {
+     "bin": "30-40%",
+     "n": 238,
+     "avgPred": 0.3459,
+     "actualFreq": 0.3613
+    },
+    {
+     "bin": "40-50%",
+     "n": 233,
+     "avgPred": 0.4493,
+     "actualFreq": 0.4807
+    },
+    {
+     "bin": "50-60%",
+     "n": 124,
+     "avgPred": 0.5457,
+     "actualFreq": 0.4839
+    },
+    {
+     "bin": "60-70%",
+     "n": 72,
+     "avgPred": 0.6508,
+     "actualFreq": 0.5556
+    },
+    {
+     "bin": "70-80%",
+     "n": 48,
+     "avgPred": 0.747,
+     "actualFreq": 0.7083
+    },
+    {
+     "bin": "80-90%",
+     "n": 21,
+     "avgPred": 0.8401,
+     "actualFreq": 0.8571
+    },
+    {
+     "bin": "90-100%",
+     "n": 1,
+     "avgPred": 0.9007,
+     "actualFreq": 1.0
+    }
+   ]
+  },
+  {
+   "group": "Over/Under",
+   "n": 1086,
+   "brier": 0.2309,
+   "bias": 0.0,
+   "calibration": [
+    {
+     "bin": "0-10%",
+     "n": 4,
+     "avgPred": 0.078,
+     "actualFreq": 0.25
+    },
+    {
+     "bin": "10-20%",
+     "n": 95,
+     "avgPred": 0.1613,
+     "actualFreq": 0.2947
+    },
+    {
+     "bin": "20-30%",
+     "n": 119,
+     "avgPred": 0.2546,
+     "actualFreq": 0.2941
+    },
+    {
+     "bin": "30-40%",
+     "n": 200,
+     "avgPred": 0.3519,
+     "actualFreq": 0.35
+    },
+    {
+     "bin": "40-50%",
+     "n": 125,
+     "avgPred": 0.4404,
+     "actualFreq": 0.544
+    },
+    {
+     "bin": "50-60%",
+     "n": 125,
+     "avgPred": 0.5596,
+     "actualFreq": 0.456
+    },
+    {
+     "bin": "60-70%",
+     "n": 200,
+     "avgPred": 0.6481,
+     "actualFreq": 0.65
+    },
+    {
+     "bin": "70-80%",
+     "n": 119,
+     "avgPred": 0.7454,
+     "actualFreq": 0.7059
+    },
+    {
+     "bin": "80-90%",
+     "n": 95,
+     "avgPred": 0.8387,
+     "actualFreq": 0.7053
+    },
+    {
+     "bin": "90-100%",
+     "n": 4,
+     "avgPred": 0.922,
+     "actualFreq": 0.75
+    }
+   ]
+  },
+  {
+   "group": "Goal/NoGoal",
+   "n": 18,
+   "brier": 0.1566,
+   "bias": 0.0,
+   "calibration": [
+    {
+     "bin": "0-10%",
+     "n": 0,
+     "avgPred": null,
+     "actualFreq": null
+    },
+    {
+     "bin": "10-20%",
+     "n": 1,
+     "avgPred": 0.1341,
+     "actualFreq": 0.0
+    },
+    {
+     "bin": "20-30%",
+     "n": 1,
+     "avgPred": 0.2298,
+     "actualFreq": 0.0
+    },
+    {
+     "bin": "30-40%",
+     "n": 7,
+     "avgPred": 0.3455,
+     "actualFreq": 0.2857
+    },
+    {
+     "bin": "40-50%",
+     "n": 0,
+     "avgPred": null,
+     "actualFreq": null
+    },
+    {
+     "bin": "50-60%",
+     "n": 0,
+     "avgPred": null,
+     "actualFreq": null
+    },
+    {
+     "bin": "60-70%",
+     "n": 7,
+     "avgPred": 0.6545,
+     "actualFreq": 0.7143
+    },
+    {
+     "bin": "70-80%",
+     "n": 1,
+     "avgPred": 0.7702,
+     "actualFreq": 1.0
+    },
+    {
+     "bin": "80-90%",
+     "n": 1,
+     "avgPred": 0.8659,
+     "actualFreq": 1.0
+    },
+    {
+     "bin": "90-100%",
+     "n": 0,
+     "avgPred": null,
+     "actualFreq": null
+    }
+   ]
+  }
+ ],
+ "clv": {
+  "n": 0,
+  "avg": null,
+  "beatenPct": null,
+  "history": []
+ },
  "valueBets": {
   "n": 406,
   "wins": 124,
