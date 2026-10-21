@@ -6,7 +6,7 @@ from scipy.optimize import minimize
 # Versione del modello: cambiala a OGNI modifica che altera le previsioni.
 # Viene salvata in ogni predizione, cosi' il registro degli esiti puo' separare
 # i risultati del modello vecchio da quelli del nuovo invece di mescolarli.
-MODEL_VERSION = "2.0"
+MODEL_VERSION = "3.0"
 
 # Media gol per squadra per partita, usata come riferimento di lega.
 # NOTA IMPORTANTE: in un campionato la media dei gol FATTI e quella dei gol
@@ -21,6 +21,26 @@ LEAGUE_RHO = {"PL": -0.075, "SA": -0.070, "PD": -0.065, "BL1": -0.060,
 
 DEFAULT_AVG, DEFAULT_RHO = 1.50, -0.07
 
+# Medie storiche di lungo periodo (gol per squadra per partita). Servono come
+# ancora quando la stagione e' appena iniziata: con poche giornate la media
+# osservata e' rumorosa e trascina tutto il modello.
+LEAGUE_PRIOR = {"PL": 1.42, "SA": 1.38, "PD": 1.33, "BL1": 1.60,
+                "FL1": 1.38, "DED": 1.60, "PPL": 1.35,
+                "CL": 1.56, "EL": 1.50, "ECL": 1.60}
+
+# Quanto pesa il priore, misurato in "partite-squadra". A 150, una lega con
+# 150 partite-squadra giocate pesa il priore al 50%; a stagione avanzata
+# l'effetto sparisce da solo.
+PRIOR_WEIGHT = 150
+
+# Competizioni di cui vediamo solo una PARTE delle squadre, e per giunta le
+# migliori (quelle dei campionati che seguiamo). La loro media calcolata e'
+# gonfiata per costruzione, quindi ci si affida quasi solo al priore.
+BIASED_SAMPLE = {"EL", "ECL"}
+
+# Vantaggio del campo di riferimento, usato se mancano i parziali casa/trasferta
+HOME_EDGE = 0.11
+
 # Retrocompatibilita' con il vecchio codice che importava questi nomi
 LEAGUE_AVG_GF = LEAGUE_AVG
 LEAGUE_AVG_GA = LEAGUE_AVG
@@ -28,24 +48,70 @@ DEFAULT_GF = DEFAULT_GA = DEFAULT_AVG
 
 
 def league_average(teams, league_id=None):
-    """Media gol/partita della lega, calcolata dai dati reali delle squadre.
-    Pesata sulle partite giocate. Se i dati non bastano usa la tabella di ripiego."""
-    tot_goals = 0.0
-    tot_games = 0
+    """Media gol/partita della lega. Non e' la media grezza osservata: viene
+    fusa con la media storica in proporzione alle partite davvero giocate.
+    Serve a non far decidere a tre giornate di Champions quanto si segna."""
+    prior = LEAGUE_PRIOR.get(league_id, LEAGUE_AVG.get(league_id, DEFAULT_AVG))
+    tot_goals, tot_games = 0.0, 0
     for t in (teams or {}).values():
         pl = t.get("played") or 0
-        if pl <= 0:
-            continue
         gf = t.get("gf_pg")
-        if gf is None:
+        if pl <= 0 or gf is None:
             continue
         tot_goals += gf * pl
         tot_games += pl
-    if tot_games >= 20:          # abbastanza dati per fidarsi
-        avg = tot_goals / tot_games
-        if 0.7 <= avg <= 3.5:    # sanita': fuori da questa fascia e' un dato sporco
-            return avg
-    return LEAGUE_AVG.get(league_id, DEFAULT_AVG)
+    if tot_games <= 0:
+        return prior
+    observed = tot_goals / tot_games
+    if not (0.6 <= observed <= 4.0):     # dato palesemente sporco
+        return prior
+    # campione distorto (vediamo solo le squadre forti): peso del priore molto alto
+    k = PRIOR_WEIGHT * 6 if league_id in BIASED_SAMPLE else PRIOR_WEIGHT
+    return (tot_goals + k * prior) / (tot_games + k)
+
+
+def league_observed(teams):
+    """Media grezza osservata, senza smorzamento. Serve a riportare le
+    statistiche delle squadre sulla stessa scala della media smorzata:
+    altrimenti, abbassando solo il riferimento, OGNI squadra risulterebbe
+    sopra la media e i gol previsti salirebbero invece di scendere."""
+    g, n = 0.0, 0
+    for t in (teams or {}).values():
+        pl = t.get("played") or 0
+        gf = t.get("gf_pg")
+        if pl > 0 and gf is not None:
+            g += gf * pl; n += pl
+    return (g / n) if n else None
+
+
+def stat_scale(teams, league_avg):
+    """Fattore per riportare le medie squadra sulla scala della lega smorzata."""
+    obs = league_observed(teams)
+    if not obs or obs <= 0 or not league_avg:
+        return 1.0
+    f = league_avg / obs
+    return max(0.6, min(f, 1.4))      # protezione contro dati assurdi
+
+
+def league_home_away(teams, league_avg):
+    """Media gol di chi gioca in casa e di chi gioca fuori, misurata dai
+    parziali della classifica. Se non ci sono, si usa il vantaggio campo fisso."""
+    hg = ag = 0.0
+    hp = ap = 0
+    for t in (teams or {}).values():
+        ph, pa = t.get("played_home") or 0, t.get("played_away") or 0
+        if ph and t.get("gf_pg_home") is not None:
+            hg += t["gf_pg_home"] * ph; hp += ph
+        if pa and t.get("gf_pg_away") is not None:
+            ag += t["gf_pg_away"] * pa; ap += pa
+    if hp >= 40 and ap >= 40:
+        h, a = hg / hp, ag / ap
+        tot = h + a
+        if tot > 0 and 0.9 <= (h / a) <= 1.9:
+            # riscalati sulla media di lega smorzata, per non reintrodurre il rumore
+            f = (2 * league_avg) / tot
+            return h * f, a * f
+    return league_avg * (1 + HOME_EDGE), league_avg * (1 - HOME_EDGE)
 SHRINK_K = 5          # forza dello smorzamento a inizio stagione (partite "fittizie")
 MARKET_WEIGHT = 0.25  # quanto ci si fida del mercato in calibrazione (0 = solo modello)
 
@@ -93,21 +159,46 @@ def _shrink(rate, avg, played, k=SHRINK_K):
     return (rate * played + avg * k) / (played + k)
 
 
+def _blend(rate, n, fallback, k=4):
+    """Fonde una statistica parziale (casa o trasferta, meta' campione) con un
+    valore di riserva, in proporzione alle partite su cui e' calcolata."""
+    if rate is None or not n:
+        return fallback
+    return (rate * n + fallback * k) / (n + k)
+
+
 def compute_lambdas(home_stats, away_stats, elo_h, elo_a, league_id,
-                    home_adv=0.11, form_w=0.08, league_avg=None):
-    # UN SOLO riferimento di lega per attacco e difesa (vedi nota in cima al file).
+                    home_adv=HOME_EDGE, form_w=0.08, league_avg=None, league_ha=None,
+                    scale=1.0):
+    """Gol attesi delle due squadre.
+
+    Quando la classifica fornisce i parziali, si usano i gol fatti IN CASA
+    dalla squadra di casa e quelli subiti IN TRASFERTA dall'ospite: cosi' le
+    squadre-fortezza e quelle che crollano fuori non vengono piu' appiattite
+    su un vantaggio del campo uguale per tutti."""
     avg = league_avg if league_avg else LEAGUE_AVG.get(league_id, DEFAULT_AVG)
-    avg_gf = avg_ga = avg
+    if league_ha:
+        h_base, a_base = league_ha
+    else:
+        h_base, a_base = avg * (1 + home_adv), avg * (1 - home_adv)
 
-    hp = home_stats.get("played", 0)
-    ap = away_stats.get("played", 0)
-    h_gf = _shrink(home_stats.get("gf_pg"), avg_gf, hp)
-    h_ga = _shrink(home_stats.get("ga_pg"), avg_ga, hp)
-    a_gf = _shrink(away_stats.get("gf_pg"), avg_gf, ap)
-    a_ga = _shrink(away_stats.get("ga_pg"), avg_ga, ap)
+    hp = home_stats.get("played", 0) or 0
+    ap = away_stats.get("played", 0) or 0
+    def sc(v):
+        return None if v is None else v * scale
+    # medie complessive, riportate sulla scala della lega smorzata e poi
+    # avvicinate alla media se la squadra ha giocato poco
+    h_gf_tot = _shrink(sc(home_stats.get("gf_pg")), avg, hp)
+    h_ga_tot = _shrink(sc(home_stats.get("ga_pg")), avg, hp)
+    a_gf_tot = _shrink(sc(away_stats.get("gf_pg")), avg, ap)
+    a_ga_tot = _shrink(sc(away_stats.get("ga_pg")), avg, ap)
 
-    ha, hd = h_gf / avg_gf, h_ga / avg_ga
-    aa, ad = a_gf / avg_gf, a_ga / avg_ga
+    # riporto la media complessiva nel contesto giusto (in casa si segna di piu')
+    sh, sa = h_base / avg, a_base / avg
+    h_gf = _blend(sc(home_stats.get("gf_pg_home")), home_stats.get("played_home"), h_gf_tot * sh)
+    h_ga = _blend(sc(home_stats.get("ga_pg_home")), home_stats.get("played_home"), h_ga_tot * sa)
+    a_gf = _blend(sc(away_stats.get("gf_pg_away")), away_stats.get("played_away"), a_gf_tot * sa)
+    a_ga = _blend(sc(away_stats.get("ga_pg_away")), away_stats.get("played_away"), a_ga_tot * sh)
 
     diff = elo_h - elo_a
     ef_h = 1.0 + (diff / 400) * 0.3
@@ -119,11 +210,9 @@ def compute_lambdas(home_stats, away_stats, elo_h, elo_a, league_id,
         sc = [fm.get(c.upper(), 0) for c in form[-5:]]
         return 1.0 + (sum(sc) / len(sc)) * form_w if sc else 1.0
 
-    # Il vantaggio del campo RIDISTRIBUISCE i gol fra le due squadre, non ne
-    # aggiunge: prima moltiplicava solo la casa, gonfiando il totale del 7,5%.
-    # A +/-11% si ottiene il rapporto casa/trasferta reale (circa 1,25).
-    lam_h = avg_gf * ha * ad * ef_h * fb(home_stats.get("form", "")) * (1 + home_adv)
-    lam_a = avg_gf * aa * hd * ef_a * fb(away_stats.get("form", "")) * (1 - home_adv)
+    # attacco di chi gioca in casa x difesa di chi gioca fuori, sulla base giusta
+    lam_h = (h_gf * a_ga / h_base) * ef_h * fb(home_stats.get("form", ""))
+    lam_a = (a_gf * h_ga / a_base) * ef_a * fb(away_stats.get("form", ""))
     return max(0.3, min(lam_h, 4.0)), max(0.3, min(lam_a, 3.5))
 
 
