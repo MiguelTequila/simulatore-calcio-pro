@@ -50,8 +50,22 @@ def log_predictions(log, comp_id, comp_name, fixtures):
                          "over25": best.get("over25"), "under25": best.get("under25"),
                          "gg": best.get("gg"), "ng": best.get("ng")},
             "bestBet": (pred.get("value") or {}).get("bestBet"),
+            "modelVersion": pred.get("modelVersion"),
             "result": None,
         }
+        # CLV: conserviamo la PRIMA quota vista e la prima bet segnalata.
+        # L'ultima registrazione prima della partita fa da quota di chiusura:
+        # il confronto fra le due dice se stiamo battendo il mercato, e lo dice
+        # con poche decine di scommesse invece che con centinaia.
+        if existing:
+            entry["firstOdds"] = existing.get("firstOdds") or existing.get("bestOdds")
+            entry["firstBet"] = existing.get("firstBet") or existing.get("bestBet")
+            entry["firstSeen"] = existing.get("firstSeen")
+        if not entry.get("firstOdds"):
+            entry["firstOdds"] = entry["bestOdds"]
+            entry["firstBet"] = entry["bestBet"]
+            from datetime import datetime, timezone
+            entry["firstSeen"] = datetime.now(timezone.utc).isoformat()
         log["predictions"][mid] = entry
 
 
@@ -92,31 +106,54 @@ def build_track_record(log):
     """Calibrazione (prob. prevista vs frequenza reale) + P&L delle value bet."""
     graded = [e for e in log["predictions"].values() if e.get("result")]
 
-    # --- calibrazione su tutti i mercati principali ---
-    samples = []  # (p_prevista, esito 0/1)
+    # --- calibrazione, divisa anche per gruppo di mercati ---
+    # Mescolare esiti e gol nascondeva dove il modello sbaglia davvero:
+    # ora 1X2, Over/Under e Goal/NoGoal si leggono separatamente.
+    samples = []            # (p_prevista, esito 0/1) su tutto
+    by_group = {"1X2": [], "Over/Under": [], "Goal/NoGoal": []}
     for e in graded:
         r = e["result"]
-        samples += [(e["p1"], r["outcome"] == "1"), (e["px"], r["outcome"] == "X"),
-                    (e["p2"], r["outcome"] == "2"), (e["pOver25"], r["over25"]),
-                    (e["pUnder25"], not r["over25"])]
-        # GG/NG: tracciati dal 20/10/2026, le previsioni precedenti non li hanno
+        g1 = [(e["p1"], r["outcome"] == "1"), (e["px"], r["outcome"] == "X"),
+              (e["p2"], r["outcome"] == "2")]
+        g2 = [(e["pOver25"], r["over25"]), (e["pUnder25"], not r["over25"])]
+        g3 = []
         if e.get("pGG") is not None:
-            samples += [(e["pGG"], r["gg"]), (e["pNG"], not r["gg"])]
-    bins = []
-    for lo in range(0, 100, 10):
-        hi = lo + 10
-        inbin = [(p, w) for p, w in samples if lo / 100 <= p < hi / 100 or (hi == 100 and p == 1)]
-        if inbin:
-            avg_p = sum(p for p, _ in inbin) / len(inbin)
-            freq = sum(1 for _, w in inbin if w) / len(inbin)
-        else:
-            avg_p, freq = None, None
-        bins.append({"bin": f"{lo}-{hi}%", "n": len(inbin),
-                     "avgPred": round(avg_p, 4) if avg_p is not None else None,
-                     "actualFreq": round(freq, 4) if freq is not None else None})
+            g3 = [(e["pGG"], r["gg"]), (e["pNG"], not r["gg"])]
+        by_group["1X2"] += g1
+        by_group["Over/Under"] += g2
+        by_group["Goal/NoGoal"] += g3
+        samples += g1 + g2 + g3
+    def make_bins(data):
+        out = []
+        for lo in range(0, 100, 10):
+            hi = lo + 10
+            inbin = [(p, w) for p, w in data if lo / 100 <= p < hi / 100 or (hi == 100 and p == 1)]
+            if inbin:
+                avg_p = sum(p for p, _ in inbin) / len(inbin)
+                freq = sum(1 for _, w in inbin if w) / len(inbin)
+            else:
+                avg_p, freq = None, None
+            out.append({"bin": f"{lo}-{hi}%", "n": len(inbin),
+                        "avgPred": round(avg_p, 4) if avg_p is not None else None,
+                        "actualFreq": round(freq, 4) if freq is not None else None})
+        return out
 
-    # Brier score complessivo (piu' basso = meglio; 0.25 = tirare a caso su eventi 50/50)
-    brier = round(sum((p - (1 if w else 0)) ** 2 for p, w in samples) / len(samples), 4) if samples else None
+    def brier_of(data):
+        return round(sum((p - (1 if w else 0)) ** 2 for p, w in data) / len(data), 4) if data else None
+
+    def bias_of(data):
+        """Scarto medio fra quanto il modello promette e quanto succede."""
+        if not data: return None
+        return round(sum(p for p, _ in data) / len(data) - sum(1 for _, w in data if w) / len(data), 4)
+
+    bins = make_bins(samples)
+    brier = brier_of(samples)
+    groups = []
+    for name, data in by_group.items():
+        if not data:
+            continue
+        groups.append({"group": name, "n": len(data), "brier": brier_of(data),
+                       "bias": bias_of(data), "calibration": make_bins(data)})
 
     # --- verifica dell'edge: value bet giocate a quota registrata, puntata fissa 1 ---
     bets, profit, wins = [], 0.0, 0
@@ -131,6 +168,31 @@ def build_track_record(log):
         bets.append({"date": e["date"], "match": f'{e["home"]} - {e["away"]}',
                      "market": bb["market"], "odds": bb["odds"], "edge": bb["edge"],
                      "won": won, "pl": round(pl, 3)})
+    # --- CLV: la quota presa contro quella di chiusura ---
+    # Se batti sistematicamente la linea di chiusura hai un vantaggio reale,
+    # e lo si capisce con 30-50 scommesse invece che con centinaia.
+    clv_rows, clv_sum, clv_pos = [], 0.0, 0
+    for e in graded:
+        fb_ = e.get("firstBet")
+        if not fb_:
+            continue
+        mkey = {"1": "1", "X": "X", "2": "2", "Over 2.5": "over25",
+                "Under 2.5": "under25", "Goal (GG)": "gg", "NoGoal (NG)": "ng"}.get(fb_["market"])
+        close = (e.get("bestOdds") or {}).get(mkey)
+        taken = fb_.get("odds")
+        if not close or not taken or close <= 1 or taken <= 1:
+            continue
+        clv = taken / close - 1
+        clv_sum += clv
+        clv_pos += 1 if clv > 0 else 0
+        clv_rows.append({"date": e["date"], "match": f'{e["home"]} - {e["away"]}',
+                         "market": fb_["market"], "taken": round(taken, 3),
+                         "close": round(close, 3), "clv": round(clv, 4)})
+    clv_rows.sort(key=lambda x: x["date"])
+    clv = {"n": len(clv_rows), "avg": round(clv_sum / len(clv_rows), 4) if clv_rows else None,
+           "beatenPct": round(clv_pos / len(clv_rows), 4) if clv_rows else None,
+           "history": clv_rows[-50:]}
+
     bets.sort(key=lambda b: b["date"])
     cum = 0.0
     for b in bets:
@@ -140,7 +202,7 @@ def build_track_record(log):
     n_bets = len(bets)
     track = {
         "graded": len(graded), "pending": len(log["predictions"]) - len(graded),
-        "brier": brier, "calibration": bins,
+        "brier": brier, "calibration": bins, "groups": groups, "clv": clv,
         "valueBets": {"n": n_bets, "wins": wins,
                        "profitUnits": round(profit, 3),
                        "roi": round(profit / n_bets, 4) if n_bets else None,
