@@ -430,7 +430,7 @@ function renderRegistry() {
   let html = `<table>
     <thead><tr>
       <th>Data</th><th>Partita</th><th>1</th><th>X</th><th>2</th>
-      <th>O2.5</th><th>GG</th><th>Top</th><th>λH</th><th>λA</th>
+      <th>O2.5</th><th>GG</th><th>Top</th><th>λH</th><th>λA</th><th></th>
     </tr></thead><tbody>`;
 
   for (const r of registry.slice().reverse()) {
@@ -445,11 +445,23 @@ function renderRegistry() {
       <td>${r.topExact || '—'}</td>
       <td>${r.lambdaH}</td>
       <td>${r.lambdaA}</td>
+      <td><button class="row-del reg-del" data-id="${r.id}" title="Elimina questa riga">\u2715</button></td>
     </tr>`;
   }
 
   html += '</tbody></table>';
   el.innerHTML = html;
+
+  // Cancellazione della singola previsione: prima si poteva solo svuotare tutto.
+  el.querySelectorAll('.reg-del').forEach(b => b.addEventListener('click', () => {
+    const id = b.dataset.id;
+    const row = registry.find(x => String(x.id) === String(id));
+    if (!row) return;
+    if (!confirm('Eliminare questa previsione?\n\n' + row.home + ' - ' + row.away + ' (' + row.date + ')')) return;
+    registry = registry.filter(x => String(x.id) !== String(id));
+    try { localStorage.setItem('simRegistry', JSON.stringify(registry)); } catch (e) {}
+    renderRegistry();
+  }));
 }
 
 function saveToRegistry() {
@@ -993,7 +1005,15 @@ function applyManualOdds() {
   };
   pred.value = computeValueJS(pred, odds);
   currentMatch.prediction = pred;
-  currentMatch.odds = Object.assign({}, currentMatch.odds || {}, odds);
+  // Le quote vanno scritte sia al livello esterno sia dentro "best": il
+  // calcolatore e il consigliere leggono "best", e prima le quote inserite a
+  // mano non ci arrivavano. Si copiano solo i campi davvero compilati, per non
+  // cancellare con dei vuoti quelle gia' scaricate.
+  const filled = {};
+  for (const k in odds) if (odds[k] != null) filled[k] = odds[k];
+  const prevBest = (currentMatch.odds && currentMatch.odds.best) || {};
+  currentMatch.odds = Object.assign({}, currentMatch.odds || {}, filled,
+                                    {best: Object.assign({}, prevBest, filled)});
   showPrediction(pred);
 
   // aggiorna anche il riquadro quote in alto
@@ -1226,6 +1246,9 @@ function importCSV(text) {
 
 
 // ===================== Calcolatore multipla e sistema =====================
+// Ordinamento della tabella dei consigli. Di default per vantaggio decrescente.
+let advSort = {key: 'edge', dir: -1};
+
 let multiEvents = [];
 let multiTypeTouched = false;
 let multiRegistry = JSON.parse(localStorage.getItem('simMultiRegistry') || '[]');
@@ -1349,15 +1372,17 @@ function addCurrentToMulti() {
   }
   const p = currentMatch.prediction;
   const o = currentMatch.odds || {};
-  const best = o.best || o;
+  const b = o.best || {};
+  // quota migliore disponibile, con ripiego sul livello esterno
+  const q = k => b[k] != null ? b[k] : o[k];
   const opts = [
-    ['1 (' + currentMatch.homeTeam + ')', p.p1, best['1']],
-    ['X (pareggio)', p.px, best['X']],
-    ['2 (' + currentMatch.awayTeam + ')', p.p2, best['2']],
-    ['Over 2.5', p.pOver25, best.over25],
-    ['Under 2.5', p.pUnder25, best.under25],
-    ['Goal GG', p.pGG, best.gg],
-    ['NoGoal NG', p.pNG, best.ng]
+    ['1 (' + currentMatch.homeTeam + ')', p.p1, q('1')],
+    ['X (pareggio)', p.px, q('X')],
+    ['2 (' + currentMatch.awayTeam + ')', p.p2, q('2')],
+    ['Over 2.5', p.pOver25, q('over25')],
+    ['Under 2.5', p.pUnder25, q('under25')],
+    ['Goal GG', p.pGG, q('gg')],
+    ['NoGoal NG', p.pNG, q('ng')]
   ];
   let msg = 'Quale esito vuoi aggiungere?\n';
   opts.forEach((o2, i) => { msg += (i + 1) + ') ' + o2[0] + ' \u2014 modello ' + (o2[1] * 100).toFixed(1) + '%\n'; });
@@ -1387,7 +1412,7 @@ function renderMultiRows() {
         '<input type="text" value="' + String(e.label).replace(/"/g, '&quot;') + '" data-i="' + i + '" data-f="label">' +
         '<input type="number" value="' + (e.p * 100).toFixed(1) + '" step="0.1" min="1" max="99" data-i="' + i + '" data-f="p">' +
         '<input type="number" value="' + e.odds + '" step="0.01" min="1.01" data-i="' + i + '" data-f="odds">' +
-        '<button class="row-del" data-i="' + i + '">\u2715</button></div>';
+        '<button class="row-del" data-i="' + i + '" title="Elimina questo evento">\u2715</button></div>';
     });
     box.innerHTML = html;
     box.querySelectorAll('input').forEach(inp => {
@@ -1600,9 +1625,9 @@ function renderMultiRegistry() {
     html += '<div class="sim-head"><strong>' + s.name + '</strong>' +
             '<span class="sim-tag">' + s.type + '</span>' +
             '<span class="sim-date">' + d + '</span>' +
-            (s.settled ? '<button class="sim-fix" onclick="reopenMulti(' + s.id + ')" title="Correggi l\u2019esito">\u270F\uFE0F</button>' : '') +
-            '<button class="sim-print" onclick="printSavedSlip(' + s.id + ')" title="Stampa questa schedina">\uD83D\uDDA8\uFE0F</button>' +
-            '<button class="row-del" onclick="deleteMulti(' + s.id + ')">\u2715</button></div>';
+            (s.settled ? '<button class="sim-fix" data-act="fix" data-id="' + s.id + '" title="Correggi l\u2019esito">\u270F\uFE0F</button>' : '') +
+            '<button class="sim-print" data-act="print" data-id="' + s.id + '" title="Stampa questa schedina">\uD83D\uDDA8\uFE0F</button>' +
+            '<button class="row-del" data-act="del" data-id="' + s.id + '" title="Elimina questa simulazione">\u2715</button></div>';
     html += '<div class="sim-meta">Puntata ' + s.stake.toFixed(2) + '\u20AC \u00B7 quota tot. ' + s.totalOdds.toFixed(2) +
             ' \u00B7 prob. tutti giusti ' + (s.pAll * 100).toFixed(2) + '%' +
             ' \u00B7 rendimento previsto <strong class="' + (s.roi >= 0 ? 'stat-good' : 'stat-bad') + '">' +
@@ -1624,11 +1649,19 @@ function renderMultiRegistry() {
         html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"' + (e.won ? ' checked' : '') + '> ' + e.label +
                 ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em></label>';
       });
-      html += '<button class="btn-primary sim-settle-btn" onclick="settleMulti(' + s.id + ')">\u2705 Registra esito</button></div>';
+      html += '<button class="btn-primary sim-settle-btn" data-act="settle" data-id="' + s.id + '">\u2705 Registra esito</button></div>';
     }
     html += '</div>';
   }
   box.innerHTML = html;
+
+  // Gestori agganciati qui invece che in linea nell'HTML: cosi' non dipendono
+  // dal fatto che le funzioni siano globali e funzionano in ogni contesto.
+  const act = {fix: reopenMulti, print: printSavedSlip, del: deleteMulti, settle: settleMulti};
+  box.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', () => {
+    const fn = act[b.dataset.act];
+    if (fn) fn(Number(b.dataset.id));
+  }));
 }
 
 // ---- Export / Import CSV delle simulazioni ----
@@ -1919,6 +1952,13 @@ function scanAllFixtures() {
   return out;
 }
 
+// Intestazione di colonna cliccabile, con la freccetta del verso attuale
+function sortHead(key, label) {
+  const on = advSort.key === key;
+  const arrow = on ? (advSort.dir === -1 ? ' \u25BC' : ' \u25B2') : '';
+  return '<span class="sort-head' + (on ? ' on' : '') + '" data-sort="' + key + '">' + label + arrow + '</span>';
+}
+
 function renderAdvisor() {
   let card = document.getElementById('advisorCard');
   if (!card) {
@@ -1971,16 +2011,22 @@ function renderAdvisor() {
     html += '<div class="adv-count">' + r.bets.length + ' giocat' + (r.bets.length === 1 ? 'a' : 'e') +
             ' nella fascia affidabile, su ' + r.examined + ' mercati esaminati</div>';
     html += '<div class="value-table">' +
-      '<div class="value-row value-head"><span>Verdetto</span><span>Partita</span><span>Mercato</span>' +
-      '<span>Quota</span><span>Vantaggio</span><span>Punta</span></div>';
-    for (const b of r.bets.slice(0, 15)) {
+      '<div class="value-row value-head">' +
+        '<span>Verdetto</span><span>Partita</span><span>Mercato</span>' +
+        sortHead('p', 'Modello') + sortHead('odds', 'Quota') + sortHead('edge', 'Vantaggio') +
+      '</div>';
+    const sorted = r.bets.slice().sort((a, b) => {
+      const k = advSort.key;
+      return (a[k] - b[k]) * advSort.dir;
+    });
+    for (const b of sorted.slice(0, 20)) {
       const t = betTier(b.edge);
       html += '<div class="value-row ' + (t.k === 'strong' ? 'value-pos' : 'tier-weak') + '">' +
         '<span class="tier-' + t.k + '">' + t.label + '</span><span>' + b.match + '<br><em class="adv-date">' + b.date + '</em></span>' +
-        '<span><strong>' + marketLabel(b.market) + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') +
-        '<br><em class="adv-date">modello ' + (b.p * 100).toFixed(0) + '%</em></span>' +
-        '<span>' + b.odds.toFixed(2) + '</span><span><strong>+' + (b.edge * 100).toFixed(1) + '%</strong></span>' +
-        '<span>' + (t.k === 'strong' ? ADVISOR.stake.toFixed(2) + ' \u20AC' : '\u2014') + '</span></div>';
+        '<span><strong>' + marketLabel(b.market) + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') + '</span>' +
+        '<span><strong>' + (b.p * 100).toFixed(1) + '%</strong></span>' +
+        '<span>' + b.odds.toFixed(2) + '</span>' +
+        '<span><strong>+' + (b.edge * 100).toFixed(1) + '%</strong></span></div>';
     }
     html += '</div>';
     html += '<p class="note hint">\u2139\uFE0F Puntata <strong>fissa</strong>, uguale per ogni giocata. ' +
@@ -2003,6 +2049,13 @@ function renderAdvisor() {
     html += '</details>';
   }
   card.innerHTML = html;
+  // clic sulle intestazioni: stesso campo = inverte il verso, campo nuovo = decrescente
+  card.querySelectorAll('.sort-head').forEach(h => h.addEventListener('click', () => {
+    const k = h.dataset.sort;
+    if (advSort.key === k) advSort.dir = -advSort.dir;
+    else { advSort.key = k; advSort.dir = -1; }
+    renderAdvisor();
+  }));
   const si = document.getElementById('advStakeInput');
   if (si) si.addEventListener('change', function () {
     const v = parseFloat(si.value);
