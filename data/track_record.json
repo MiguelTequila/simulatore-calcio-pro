@@ -1,61 +1,61 @@
 {
- "graded": 545,
- "pending": 466,
- "brier": 0.2114,
+ "graded": 553,
+ "pending": 469,
+ "brier": 0.2117,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 54,
+   "n": 55,
    "avgPred": 0.0741,
-   "actualFreq": 0.1111
+   "actualFreq": 0.1273
   },
   {
    "bin": "10-20%",
-   "n": 356,
+   "n": 364,
    "avgPred": 0.1598,
-   "actualFreq": 0.2079
+   "actualFreq": 0.206
   },
   {
    "bin": "20-30%",
-   "n": 706,
-   "avgPred": 0.2458,
-   "actualFreq": 0.2507
+   "n": 719,
+   "avgPred": 0.2459,
+   "actualFreq": 0.2503
   },
   {
    "bin": "30-40%",
-   "n": 449,
-   "avgPred": 0.3487,
-   "actualFreq": 0.3519
+   "n": 458,
+   "avgPred": 0.3488,
+   "actualFreq": 0.3537
   },
   {
    "bin": "40-50%",
-   "n": 360,
-   "avgPred": 0.4463,
-   "actualFreq": 0.5028
+   "n": 364,
+   "avgPred": 0.4465,
+   "actualFreq": 0.5055
   },
   {
    "bin": "50-60%",
-   "n": 249,
-   "avgPred": 0.5527,
-   "actualFreq": 0.4699
+   "n": 253,
+   "avgPred": 0.5528,
+   "actualFreq": 0.4704
   },
   {
    "bin": "60-70%",
-   "n": 283,
+   "n": 289,
    "avgPred": 0.6488,
-   "actualFreq": 0.6325
+   "actualFreq": 0.6298
   },
   {
    "bin": "70-80%",
-   "n": 168,
-   "avgPred": 0.746,
-   "actualFreq": 0.7083
+   "n": 177,
+   "avgPred": 0.7457,
+   "actualFreq": 0.7062
   },
   {
    "bin": "80-90%",
-   "n": 117,
-   "avgPred": 0.8392,
-   "actualFreq": 0.735
+   "n": 119,
+   "avgPred": 0.8386,
+   "actualFreq": 0.7311
   },
   {
    "bin": "90-100%",
@@ -67,77 +67,77 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1635,
+   "n": 1659,
    "brier": 0.1995,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 266,
-     "pred": 0.635,
-     "actual": 0.5752,
-     "gap": -0.0599
+     "n": 271,
+     "pred": 0.6361,
+     "actual": 0.5756,
+     "gap": -0.0604
     },
     "incerto": {
-     "n": 1369,
-     "pred": 0.2747,
-     "actual": 0.2863,
-     "gap": 0.0116
+     "n": 1388,
+     "pred": 0.2742,
+     "actual": 0.286,
+     "gap": 0.0118
     }
    },
    "calibration": [
     {
      "bin": "0-10%",
-     "n": 50,
-     "avgPred": 0.0738,
-     "actualFreq": 0.1
+     "n": 51,
+     "avgPred": 0.0737,
+     "actualFreq": 0.1176
     },
     {
      "bin": "10-20%",
-     "n": 260,
-     "avgPred": 0.1594,
-     "actualFreq": 0.1769
+     "n": 267,
+     "avgPred": 0.1592,
+     "actualFreq": 0.176
     },
     {
      "bin": "20-30%",
-     "n": 586,
-     "avgPred": 0.244,
-     "actualFreq": 0.2423
+     "n": 591,
+     "avgPred": 0.2439,
+     "actualFreq": 0.2403
     },
     {
      "bin": "30-40%",
-     "n": 238,
-     "avgPred": 0.3459,
-     "actualFreq": 0.3613
+     "n": 243,
+     "avgPred": 0.3461,
+     "actualFreq": 0.3621
     },
     {
      "bin": "40-50%",
-     "n": 235,
-     "avgPred": 0.4495,
-     "actualFreq": 0.4809
+     "n": 236,
+     "avgPred": 0.4496,
+     "actualFreq": 0.4831
     },
     {
      "bin": "50-60%",
-     "n": 124,
-     "avgPred": 0.5457,
-     "actualFreq": 0.4839
+     "n": 125,
+     "avgPred": 0.5461,
+     "actualFreq": 0.488
     },
     {
      "bin": "60-70%",
-     "n": 72,
-     "avgPred": 0.6508,
-     "actualFreq": 0.5556
+     "n": 74,
+     "avgPred": 0.6507,
+     "actualFreq": 0.5541
     },
     {
      "bin": "70-80%",
-     "n": 48,
-     "avgPred": 0.747,
-     "actualFreq": 0.7083
+     "n": 49,
+     "avgPred": 0.7472,
+     "actualFreq": 0.7143
     },
     {
      "bin": "80-90%",
-     "n": 21,
-     "avgPred": 0.8401,
-     "actualFreq": 0.8571
+     "n": 22,
+     "avgPred": 0.8383,
+     "actualFreq": 0.8182
     },
     {
      "bin": "90-100%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1090,
-   "brier": 0.2305,
+   "n": 1106,
+   "brier": 0.2302,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 545,
-     "pred": 0.6842,
-     "actual": 0.6294,
-     "gap": -0.0548
+     "n": 553,
+     "pred": 0.6847,
+     "actual": 0.6293,
+     "gap": -0.0555
     },
     "incerto": {
-     "n": 545,
-     "pred": 0.3158,
-     "actual": 0.3706,
-     "gap": 0.0548
+     "n": 553,
+     "pred": 0.3153,
+     "actual": 0.3707,
+     "gap": 0.0555
     }
    },
    "calibration": [
@@ -175,51 +175,51 @@
     },
     {
      "bin": "10-20%",
-     "n": 95,
-     "avgPred": 0.1613,
-     "actualFreq": 0.2947
+     "n": 96,
+     "avgPred": 0.1617,
+     "actualFreq": 0.2917
     },
     {
      "bin": "20-30%",
-     "n": 119,
-     "avgPred": 0.2546,
-     "actualFreq": 0.2941
+     "n": 124,
+     "avgPred": 0.2544,
+     "actualFreq": 0.2903
     },
     {
      "bin": "30-40%",
-     "n": 202,
+     "n": 203,
      "avgPred": 0.3521,
-     "actualFreq": 0.3465
+     "actualFreq": 0.3498
     },
     {
      "bin": "40-50%",
-     "n": 125,
-     "avgPred": 0.4404,
-     "actualFreq": 0.544
+     "n": 126,
+     "avgPred": 0.4403,
+     "actualFreq": 0.5476
     },
     {
      "bin": "50-60%",
-     "n": 125,
-     "avgPred": 0.5596,
-     "actualFreq": 0.456
+     "n": 126,
+     "avgPred": 0.5597,
+     "actualFreq": 0.4524
     },
     {
      "bin": "60-70%",
-     "n": 202,
+     "n": 203,
      "avgPred": 0.6479,
-     "actualFreq": 0.6535
+     "actualFreq": 0.6502
     },
     {
      "bin": "70-80%",
-     "n": 119,
-     "avgPred": 0.7454,
-     "actualFreq": 0.7059
+     "n": 124,
+     "avgPred": 0.7456,
+     "actualFreq": 0.7097
     },
     {
      "bin": "80-90%",
-     "n": 95,
-     "avgPred": 0.8387,
-     "actualFreq": 0.7053
+     "n": 96,
+     "avgPred": 0.8383,
+     "actualFreq": 0.7083
     },
     {
      "bin": "90-100%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 22,
-   "brier": 0.1515,
+   "n": 38,
+   "brier": 0.2065,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 11,
-     "pred": 0.682,
-     "actual": 0.8182,
-     "gap": 0.1362
+     "n": 19,
+     "pred": 0.6683,
+     "actual": 0.6842,
+     "gap": 0.0159
     },
     "incerto": {
-     "n": 11,
-     "pred": 0.318,
-     "actual": 0.1818,
-     "gap": -0.1362
+     "n": 19,
+     "pred": 0.3317,
+     "actual": 0.3158,
+     "gap": -0.0159
     }
    },
    "calibration": [
@@ -263,39 +263,39 @@
     },
     {
      "bin": "20-30%",
-     "n": 1,
-     "avgPred": 0.2298,
-     "actualFreq": 0.0
+     "n": 4,
+     "avgPred": 0.2689,
+     "actualFreq": 0.5
     },
     {
      "bin": "30-40%",
-     "n": 9,
-     "avgPred": 0.3483,
-     "actualFreq": 0.2222
+     "n": 12,
+     "avgPred": 0.3465,
+     "actualFreq": 0.25
     },
     {
      "bin": "40-50%",
-     "n": 0,
-     "avgPred": null,
-     "actualFreq": null
+     "n": 2,
+     "avgPred": 0.4669,
+     "actualFreq": 0.5
     },
     {
      "bin": "50-60%",
-     "n": 0,
-     "avgPred": null,
-     "actualFreq": null
+     "n": 2,
+     "avgPred": 0.5331,
+     "actualFreq": 0.5
     },
     {
      "bin": "60-70%",
-     "n": 9,
-     "avgPred": 0.6517,
-     "actualFreq": 0.7778
+     "n": 12,
+     "avgPred": 0.6535,
+     "actualFreq": 0.75
     },
     {
      "bin": "70-80%",
-     "n": 1,
-     "avgPred": 0.7702,
-     "actualFreq": 1.0
+     "n": 4,
+     "avgPred": 0.7311,
+     "actualFreq": 0.5
     },
     {
      "bin": "80-90%",
@@ -313,9 +313,9 @@
   }
  ],
  "clv": {
-  "n": 2,
-  "avg": -0.0109,
-  "beatenPct": 0.0,
+  "n": 5,
+  "avg": 0.0021,
+  "beatenPct": 0.2,
   "history": [
    {
     "date": "2026-10-21",
@@ -332,45 +332,39 @@
     "taken": 1.7,
     "close": 1.71,
     "clv": -0.0058
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Real Madrid CF - RB Leipzig",
+    "market": "2",
+    "taken": 12.0,
+    "close": 12.0,
+    "clv": 0.0
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Aston Villa FC - Viking FK",
+    "market": "2",
+    "taken": 12.9,
+    "close": 12.5,
+    "clv": 0.032
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Real Betis Balompié - Feyenoord Rotterdam",
+    "market": "Over 2.5",
+    "taken": 1.35,
+    "close": 1.35,
+    "clv": 0.0
    }
   ]
  },
  "valueBets": {
-  "n": 408,
+  "n": 411,
   "wins": 125,
-  "profitUnits": -61.76,
-  "roi": -0.1514,
+  "profitUnits": -64.76,
+  "roi": -0.1576,
   "history": [
-   {
-    "date": "2026-10-10",
-    "match": "1. FC Union Berlin - SV 07 Elversberg",
-    "market": "2",
-    "odds": 2.94,
-    "edge": 0.9146,
-    "won": false,
-    "pl": -1.0,
-    "cum": -43.29
-   },
-   {
-    "date": "2026-10-10",
-    "match": "Arsenal FC - Leeds United FC",
-    "market": "2",
-    "odds": 9.0,
-    "edge": 1.1785,
-    "won": false,
-    "pl": -1.0,
-    "cum": -44.29
-   },
-   {
-    "date": "2026-10-10",
-    "match": "Chelsea FC - AFC Bournemouth",
-    "market": "2",
-    "odds": 4.83,
-    "edge": 0.5445,
-    "won": false,
-    "pl": -1.0,
-    "cum": -45.29
-   },
    {
     "date": "2026-10-10",
     "match": "Ipswich Town FC - Fulham FC",
@@ -1340,6 +1334,36 @@
     "won": false,
     "pl": -1.0,
     "cum": -61.76
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Real Madrid CF - RB Leipzig",
+    "market": "2",
+    "odds": 12.0,
+    "edge": 0.676,
+    "won": false,
+    "pl": -1.0,
+    "cum": -62.76
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Aston Villa FC - Viking FK",
+    "market": "2",
+    "odds": 12.5,
+    "edge": 0.2853,
+    "won": false,
+    "pl": -1.0,
+    "cum": -63.76
+   },
+   {
+    "date": "2026-10-21",
+    "match": "Real Betis Balompié - Feyenoord Rotterdam",
+    "market": "2",
+    "odds": 5.1,
+    "edge": 0.0936,
+    "won": false,
+    "pl": -1.0,
+    "cum": -64.76
    }
   ]
  }
