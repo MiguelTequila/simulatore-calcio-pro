@@ -405,3 +405,10 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .advice-title.ok{color:#7fe0a0;margin-top:1rem}
 .advice-box ul{margin:.2rem 0 .2rem 1.1rem;padding:0}
 .advice-box li{margin:.35rem 0;line-height:1.55;font-size:.88rem}
+
+/* ===== Correzione esito e caselle piu' comode da toccare ===== */
+.sim-fix{background:#2a2412;color:#ffd79a;border:none;border-radius:6px;padding:.45rem;cursor:pointer;font-size:.85rem}
+.ev-check{padding:.55rem .4rem;border:1px solid #23233a;border-radius:7px;background:#12121f;margin-bottom:.1rem}
+.ev-check input[type=checkbox]{width:22px;height:22px;flex:0 0 22px;accent-color:#2ecc71;cursor:pointer}
+.ev-check:active{background:#1c1c30}
+.settle-hint{font-size:.78rem;opacity:.7;margin:.3rem 0 .45rem;line-height:1.45}
