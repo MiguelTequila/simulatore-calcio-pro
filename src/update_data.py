@@ -238,15 +238,32 @@ def build_output():
     # competizioni che giocano entro ODDS_WINDOW_DAYS. Le fixture restano a 45 giorni
     # (quelle costano Football-Data, che e' gratis), ma i crediti Odds si spendono
     # solo dove servono davvero.
-    ODDS_WINDOW_DAYS = 7
+    # Finestra diversa per tipo di competizione. I campionati giocano ogni
+    # settimana e conviene avere le quote con anticipo; le coppe giocano poche
+    # volte al mese, quindi chiederle tutti i giorni e' denaro buttato: 60
+    # crediti al mese per Europa League e Conference davano 2 partite usabili
+    # a testa, perche' delle loro squadre ne conosciamo troppo poche.
+    ODDS_WINDOW_DAYS = 7          # campionati nazionali
+    CUP_WINDOW_DAYS = 3           # Champions, Europa League, Conference
+    CUPS = {"CL", "EL", "ECL"}
     from datetime import datetime as _dt, timedelta as _td
-    _limit = (_dt.now() + _td(days=ODDS_WINDOW_DAYS)).strftime("%Y-%m-%d")
+
+    def _limit_for(cid):
+        days = CUP_WINDOW_DAYS if cid in CUPS else ODDS_WINDOW_DAYS
+        return (_dt.now() + _td(days=days)).strftime("%Y-%m-%d")
+
     active = [cid for cid, c in raw_data["competitions"].items()
-              if not COMPETITIONS.get(cid, {}).get("statsOnly")          # la Primeira Liga serve
-              and any(f.get("date", "9999") <= _limit for f in c.get("fixtures", []))]  # solo per le statistiche
-    # Europa League e Conference non esistono in Football-Data: senza questa riga
-    # non finirebbero mai fra le competizioni attive e non verrebbero scaricate.
-    active += [cid for cid in ODDS_ONLY if cid not in active]
+              if not COMPETITIONS.get(cid, {}).get("statsOnly")
+              and any(f.get("date", "9999") <= _limit_for(cid) for f in c.get("fixtures", []))]
+
+    # Europa League e Conference non esistono in Football-Data: non sappiamo in
+    # anticipo quando giocano, quindi le chiediamo solo di giovedi' e venerdi',
+    # gli unici giorni in cui quelle coppe scendono in campo.
+    _wd = _dt.now().weekday()          # 0 = lunedi'
+    if _wd in (3, 4):
+        active += [cid for cid in ODDS_ONLY if cid not in active]
+    else:
+        print(f"    (Europa League e Conference saltate: si chiedono solo giovedi' e venerdi')")
     odds_client = OddsAPIClient()
     odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds(active_comps=active)}
     with open("data/odds.json", "w", encoding="utf-8") as f:
