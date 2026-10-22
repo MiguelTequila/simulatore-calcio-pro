@@ -2,16 +2,16 @@ name: Update Football Data
 
 on:
   schedule:
-    # UNA volta al giorno, 16:00 UTC = 18:00 ora di Roma (17:00 in inverno).
-    - cron: '0 16 * * *'
+    # Solo mercoledi'-domenica alle 16:00 UTC (18:00 ora di Roma).
+    # Lunedi' e martedi' non si gioca quasi nulla: aggiornare in quei giorni
+    # consumava crediti dell'API delle quote senza aggiungere informazione.
+    - cron: '0 16 * * 3,4,5,6,0'
   workflow_dispatch:
-  # NIENTE trigger "push": con quello ogni commit fatto a mano lanciava un run,
-  # generando mail di fallimento a raffica e sprecando crediti API.
 
 permissions:
   contents: write
 
-# Un solo run alla volta: due run contemporanei litigano sul push e uno fallisce.
+# Un solo run alla volta: due run contemporanei litigano sul push.
 concurrency:
   group: update-data
   cancel-in-progress: false
@@ -46,8 +46,6 @@ jobs:
             exit 0
           fi
           git commit -m "Auto-update data"
-          # Se nel frattempo hai committato dal telefono, riallinea e ritenta
-          # invece di far fallire il run (era la causa delle mail di errore).
           for i in 1 2 3; do
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
             echo "Push non riuscito (tentativo $i), riprovo tra 5s..."
