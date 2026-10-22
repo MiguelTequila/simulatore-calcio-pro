@@ -14,6 +14,11 @@ BASE_URL = "https://api.the-odds-api.com/v4"
 # Il badge in alto nell'app mostra sempre i crediti residui: controllalo.
 INCLUDE_BTTS = False
 
+# Blocco di sicurezza: sotto questa soglia di crediti residui si smette di
+# chiamare l'API per il resto del giro. Serve a non restare a secco a meta'
+# mese senza accorgersene, e a lasciare un margine per i giri manuali.
+CREDIT_FLOOR = 25
+
 # Solo le 6 leghe scelte (h2h + totals = 2 crediti a lega -> ~372/mese, sotto i 500)
 SPORT_KEYS = {
     "PL":  "soccer_epl",
@@ -42,6 +47,7 @@ class OddsAPIClient:
         self.api_key = os.environ.get("ODDSKEY", "")
         self.credits_remaining = None
         self.credits_used = None
+        self.halted = False          # True se il blocco di sicurezza e' scattato
         if not self.api_key:
             print("[!] ODDSKEY non trovata")
 
@@ -60,6 +66,13 @@ class OddsAPIClient:
             if rem is not None:
                 self.credits_remaining = rem
                 self.credits_used = used
+                try:
+                    if int(rem) < CREDIT_FLOOR:
+                        self.halted = True
+                        print(f"    [!] CREDITI QUASI ESAURITI: {rem} rimasti. "
+                              f"Stop alle chiamate per non restare a secco.")
+                except ValueError:
+                    pass
                 print(f"    crediti Odds API rimasti: {rem} (usati: {used})")
             if r.status_code == 429:
                 print(f"[!] Rate limit {sport_key}")
@@ -111,6 +124,10 @@ class OddsAPIClient:
         (risparmio crediti: le coppe giocano poche settimane)."""
         all_odds = {}
         for comp_id, sport_key in SPORT_KEYS.items():
+            if self.halted:
+                print(f"[→] Quote {comp_id}: saltate (crediti sotto la soglia di sicurezza)")
+                all_odds[comp_id] = []
+                continue
             if active_comps is not None and comp_id not in active_comps:
                 print(f"[→] Quote {comp_id}: saltate (nessuna partita in calendario)")
                 all_odds[comp_id] = []
