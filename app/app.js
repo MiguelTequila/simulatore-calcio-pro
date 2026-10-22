@@ -1538,6 +1538,13 @@ function settleMulti(id) {
   const box = document.getElementById('settle-' + id);
   if (!box) return;
   const won = [...box.querySelectorAll('input[type=checkbox]')].map(c => c.checked);
+  const nOk = won.filter(Boolean).length;
+  // Senza questo controllo bastava premere il pulsante senza spuntare niente
+  // per archiviare la giocata come persa, in silenzio e senza poterla correggere.
+  if (nOk === 0 && !confirm('Non hai spuntato nessun evento.\n\nVuoi davvero registrare la giocata come PERSA (0 su ' +
+                            sim.N + ')?\n\nSe invece gli eventi sono usciti, annulla e spunta le caselle.')) {
+    return;
+  }
   sim.events.forEach((e, i) => { e.won = won[i]; });
   const winOdds = sim.events.filter(e => e.won).map(e => e.odds);
   const nWins = winOdds.length;
@@ -1593,6 +1600,7 @@ function renderMultiRegistry() {
     html += '<div class="sim-head"><strong>' + s.name + '</strong>' +
             '<span class="sim-tag">' + s.type + '</span>' +
             '<span class="sim-date">' + d + '</span>' +
+            (s.settled ? '<button class="sim-fix" onclick="reopenMulti(' + s.id + ')" title="Correggi l\u2019esito">\u270F\uFE0F</button>' : '') +
             '<button class="sim-print" onclick="printSavedSlip(' + s.id + ')" title="Stampa questa schedina">\uD83D\uDDA8\uFE0F</button>' +
             '<button class="row-del" onclick="deleteMulti(' + s.id + ')">\u2715</button></div>';
     html += '<div class="sim-meta">Puntata ' + s.stake.toFixed(2) + '\u20AC \u00B7 quota tot. ' + s.totalOdds.toFixed(2) +
@@ -1611,9 +1619,9 @@ function renderMultiRegistry() {
       }
       html += '</div>';
     } else {
-      html += '<div class="sim-settle" id="settle-' + s.id + '"><span class="note">Spunta gli eventi indovinati:</span>';
+      html += '<div class="sim-settle" id="settle-' + s.id + '"><div class="settle-hint">\u2611\uFE0F <strong>Tocca le caselle degli eventi usciti</strong>, poi premi Registra esito. Se non ne spunti nessuno la giocata risulta persa.</div>';
       s.events.forEach((e, i) => {
-        html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"> ' + e.label +
+        html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"' + (e.won ? ' checked' : '') + '> ' + e.label +
                 ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em></label>';
       });
       html += '<button class="btn-primary sim-settle-btn" onclick="settleMulti(' + s.id + ')">\u2705 Registra esito</button></div>';
@@ -2150,4 +2158,17 @@ function shortName(n) {
   if (!n) return '';
   const w = String(n).replace(/\b(FC|AFC|CF|SC|AC|SS|SSC|US|UD|CD|BC|KV|SV)\b/g, '').trim().split(/\s+/);
   return w[0].length <= 3 && w.length > 1 ? w[0] + ' ' + w[1] : w[0];
+}
+
+
+// Riapre una giocata gia' chiusa per correggere l'esito: capita di premere
+// "Registra esito" prima di aver spuntato le caselle, e prima non c'era modo
+// di rimediare se non cancellando tutto.
+function reopenMulti(id) {
+  const sim = multiRegistry.find(x => x.id === id);
+  if (!sim) return;
+  sim.settled = false;
+  sim.actualReturn = null;
+  sim.nWins = null;
+  if (persistMultiRegistry()) renderMultiRegistry();
 }
