@@ -1,55 +1,55 @@
 {
- "graded": 553,
+ "graded": 562,
  "pending": 471,
- "brier": 0.2117,
+ "brier": 0.212,
  "calibration": [
   {
    "bin": "0-10%",
-   "n": 55,
-   "avgPred": 0.0741,
-   "actualFreq": 0.1273
+   "n": 56,
+   "avgPred": 0.0744,
+   "actualFreq": 0.125
   },
   {
    "bin": "10-20%",
-   "n": 364,
-   "avgPred": 0.1598,
-   "actualFreq": 0.206
+   "n": 370,
+   "avgPred": 0.1597,
+   "actualFreq": 0.2081
   },
   {
    "bin": "20-30%",
-   "n": 719,
+   "n": 728,
    "avgPred": 0.2459,
-   "actualFreq": 0.2503
+   "actualFreq": 0.25
   },
   {
    "bin": "30-40%",
-   "n": 458,
-   "avgPred": 0.3488,
-   "actualFreq": 0.3537
+   "n": 469,
+   "avgPred": 0.3486,
+   "actualFreq": 0.3539
   },
   {
    "bin": "40-50%",
-   "n": 364,
-   "avgPred": 0.4465,
-   "actualFreq": 0.5055
+   "n": 376,
+   "avgPred": 0.4469,
+   "actualFreq": 0.5053
   },
   {
    "bin": "50-60%",
-   "n": 253,
-   "avgPred": 0.5528,
-   "actualFreq": 0.4704
+   "n": 266,
+   "avgPred": 0.5523,
+   "actualFreq": 0.4737
   },
   {
    "bin": "60-70%",
-   "n": 289,
-   "avgPred": 0.6488,
-   "actualFreq": 0.6298
+   "n": 298,
+   "avgPred": 0.6491,
+   "actualFreq": 0.6275
   },
   {
    "bin": "70-80%",
-   "n": 177,
-   "avgPred": 0.7457,
-   "actualFreq": 0.7062
+   "n": 179,
+   "avgPred": 0.7455,
+   "actualFreq": 0.7039
   },
   {
    "bin": "80-90%",
@@ -67,71 +67,71 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1659,
-   "brier": 0.1995,
+   "n": 1686,
+   "brier": 0.1998,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 271,
-     "pred": 0.6361,
-     "actual": 0.5756,
-     "gap": -0.0604
+     "n": 277,
+     "pred": 0.636,
+     "actual": 0.574,
+     "gap": -0.062
     },
     "incerto": {
-     "n": 1388,
-     "pred": 0.2742,
+     "n": 1409,
+     "pred": 0.2738,
      "actual": 0.286,
-     "gap": 0.0118
+     "gap": 0.0122
     }
    },
    "calibration": [
     {
      "bin": "0-10%",
-     "n": 51,
-     "avgPred": 0.0737,
-     "actualFreq": 0.1176
+     "n": 52,
+     "avgPred": 0.0741,
+     "actualFreq": 0.1154
     },
     {
      "bin": "10-20%",
-     "n": 267,
-     "avgPred": 0.1592,
-     "actualFreq": 0.176
+     "n": 273,
+     "avgPred": 0.1591,
+     "actualFreq": 0.1795
     },
     {
      "bin": "20-30%",
-     "n": 591,
-     "avgPred": 0.2439,
-     "actualFreq": 0.2403
+     "n": 600,
+     "avgPred": 0.244,
+     "actualFreq": 0.24
     },
     {
      "bin": "30-40%",
-     "n": 243,
-     "avgPred": 0.3461,
-     "actualFreq": 0.3621
+     "n": 246,
+     "avgPred": 0.3459,
+     "actualFreq": 0.3618
     },
     {
      "bin": "40-50%",
-     "n": 236,
+     "n": 238,
      "avgPred": 0.4496,
-     "actualFreq": 0.4831
+     "actualFreq": 0.4832
     },
     {
      "bin": "50-60%",
-     "n": 125,
-     "avgPred": 0.5461,
-     "actualFreq": 0.488
+     "n": 128,
+     "avgPred": 0.5465,
+     "actualFreq": 0.4922
     },
     {
      "bin": "60-70%",
-     "n": 74,
-     "avgPred": 0.6507,
-     "actualFreq": 0.5541
+     "n": 75,
+     "avgPred": 0.6509,
+     "actualFreq": 0.5467
     },
     {
      "bin": "70-80%",
-     "n": 49,
-     "avgPred": 0.7472,
-     "actualFreq": 0.7143
+     "n": 51,
+     "avgPred": 0.7466,
+     "actualFreq": 0.7059
     },
     {
      "bin": "80-90%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1106,
-   "brier": 0.2302,
+   "n": 1124,
+   "brier": 0.2303,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 553,
-     "pred": 0.6847,
-     "actual": 0.6293,
-     "gap": -0.0555
+     "n": 562,
+     "pred": 0.6835,
+     "actual": 0.6281,
+     "gap": -0.0554
     },
     "incerto": {
-     "n": 553,
-     "pred": 0.3153,
-     "actual": 0.3707,
-     "gap": 0.0555
+     "n": 562,
+     "pred": 0.3165,
+     "actual": 0.3719,
+     "gap": 0.0554
     }
    },
    "calibration": [
@@ -187,27 +187,27 @@
     },
     {
      "bin": "30-40%",
-     "n": 203,
-     "avgPred": 0.3521,
-     "actualFreq": 0.3498
+     "n": 208,
+     "avgPred": 0.3516,
+     "actualFreq": 0.351
     },
     {
      "bin": "40-50%",
-     "n": 126,
-     "avgPred": 0.4403,
-     "actualFreq": 0.5476
+     "n": 130,
+     "avgPred": 0.4412,
+     "actualFreq": 0.5462
     },
     {
      "bin": "50-60%",
-     "n": 126,
-     "avgPred": 0.5597,
-     "actualFreq": 0.4524
+     "n": 130,
+     "avgPred": 0.5588,
+     "actualFreq": 0.4538
     },
     {
      "bin": "60-70%",
-     "n": 203,
-     "avgPred": 0.6479,
-     "actualFreq": 0.6502
+     "n": 208,
+     "avgPred": 0.6484,
+     "actualFreq": 0.649
     },
     {
      "bin": "70-80%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 38,
-   "brier": 0.2065,
+   "n": 56,
+   "brier": 0.2119,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 19,
-     "pred": 0.6683,
-     "actual": 0.6842,
-     "gap": 0.0159
+     "n": 28,
+     "pred": 0.638,
+     "actual": 0.6429,
+     "gap": 0.0049
     },
     "incerto": {
-     "n": 19,
-     "pred": 0.3317,
-     "actual": 0.3158,
-     "gap": -0.0159
+     "n": 28,
+     "pred": 0.362,
+     "actual": 0.3571,
+     "gap": -0.0049
     }
    },
    "calibration": [
@@ -269,27 +269,27 @@
     },
     {
      "bin": "30-40%",
-     "n": 12,
-     "avgPred": 0.3465,
-     "actualFreq": 0.25
+     "n": 15,
+     "avgPred": 0.3508,
+     "actualFreq": 0.2667
     },
     {
      "bin": "40-50%",
-     "n": 2,
-     "avgPred": 0.4669,
+     "n": 8,
+     "avgPred": 0.4582,
      "actualFreq": 0.5
     },
     {
      "bin": "50-60%",
-     "n": 2,
-     "avgPred": 0.5331,
+     "n": 8,
+     "avgPred": 0.5418,
      "actualFreq": 0.5
     },
     {
      "bin": "60-70%",
-     "n": 12,
-     "avgPred": 0.6535,
-     "actualFreq": 0.75
+     "n": 15,
+     "avgPred": 0.6492,
+     "actualFreq": 0.7333
     },
     {
      "bin": "70-80%",
@@ -313,9 +313,9 @@
   }
  ],
  "clv": {
-  "n": 5,
-  "avg": 0.0021,
-  "beatenPct": 0.2,
+  "n": 6,
+  "avg": 0.0017,
+  "beatenPct": 0.1667,
   "history": [
    {
     "date": "2026-10-21",
@@ -356,25 +356,23 @@
     "taken": 1.35,
     "close": 1.35,
     "clv": 0.0
+   },
+   {
+    "date": "2026-10-23",
+    "match": "Ipswich Town FC - Nottingham Forest FC",
+    "market": "1",
+    "taken": 3.35,
+    "close": 3.35,
+    "clv": 0.0
    }
   ]
  },
  "valueBets": {
-  "n": 411,
+  "n": 412,
   "wins": 125,
-  "profitUnits": -64.76,
-  "roi": -0.1576,
+  "profitUnits": -65.76,
+  "roi": -0.1596,
   "history": [
-   {
-    "date": "2026-10-10",
-    "match": "Ipswich Town FC - Fulham FC",
-    "market": "Over 2.5",
-    "odds": 1.81,
-    "edge": 0.2073,
-    "won": true,
-    "pl": 0.81,
-    "cum": -44.48
-   },
    {
     "date": "2026-10-10",
     "match": "Aston Villa FC - Brentford FC",
@@ -1364,6 +1362,16 @@
     "won": false,
     "pl": -1.0,
     "cum": -64.76
+   },
+   {
+    "date": "2026-10-23",
+    "match": "Ipswich Town FC - Nottingham Forest FC",
+    "market": "1",
+    "odds": 3.35,
+    "edge": 0.4334,
+    "won": false,
+    "pl": -1.0,
+    "cum": -65.76
    }
   ]
  }
