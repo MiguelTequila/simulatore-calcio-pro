@@ -4,18 +4,23 @@ from datetime import datetime, timedelta, timezone
 BASE_URL = "https://api.football-data.org/v4"
 
 COMPETITIONS = {
-    "PL":  {"name": "Premier League", "country": "England"},
-    "FL1": {"name": "Ligue 1", "country": "France"},
-    "PD":  {"name": "La Liga", "country": "Spain"},
+    # ===== STAGIONE DI PROVA 2026/27: SOLO SERIE A =====
+    # Un campionato solo per tutto il resto della stagione. Serve a misurare il
+    # modello su una calibrazione pulita invece di mescolare otto tornei con
+    # medie gol e vantaggi casalinghi diversi.
     "SA":  {"name": "Serie A", "country": "Italy"},
-    "BL1": {"name": "Bundesliga", "country": "Germany"},
-    "DED": {"name": "Eredivisie", "country": "Netherlands"},
-    "CL":  {"name": "Champions League", "country": "Europe"},
-    # SOLO STATISTICHE: non compare nell'elenco a tendina, ma le sue squadre
-    # (Porto, Benfica, Sporting, Braga) giocano le coppe europee e senza questi
-    # dati le loro partite in Champions/Europa League sarebbero cieche.
-    # Football-Data e' gratuito e senza quota mensile: questa riga non costa nulla.
-    "PPL": {"name": "Primeira Liga", "country": "Portugal", "statsOnly": True},
+
+    # ----- SOSPESE: togli il cancelletto alla riga per riattivarne una -----
+    # Ogni riga riattivata costa 3 crediti The Odds API per ogni giro del
+    # workflow (3 mercati x 1 regione). Con un giro al giorno fanno 90
+    # crediti al mese a competizione, sui 500 gratuiti.
+    # "PL":  {"name": "Premier League", "country": "England"},
+    # "FL1": {"name": "Ligue 1", "country": "France"},
+    # "PD":  {"name": "La Liga", "country": "Spain"},
+    # "BL1": {"name": "Bundesliga", "country": "Germany"},
+    # "DED": {"name": "Eredivisie", "country": "Netherlands"},
+    # "CL":  {"name": "Champions League", "country": "Europe"},
+    # "PPL": {"name": "Primeira Liga", "country": "Portugal", "statsOnly": True},
 }
 
 class FootballDataClient:
