@@ -234,3 +234,20 @@ def build_track_record(log):
 def save_track(track):
     with open(TRACK_FILE, "w", encoding="utf-8") as f:
         json.dump(track, f, ensure_ascii=False, indent=1)
+
+
+def build_results(log):
+    """Estrae i soli risultati delle partite gia' giocate, in forma compatta.
+    Finiscono dentro track_record.json (che l'app scarica comunque) sotto la
+    chiave "results", cosi' l'app verifica DA SOLA le schedine simulate invece
+    di costringere a spuntare gli esiti a mano. Il registro completo pesa
+    centinaia di KB: questo estratto sta in poche decine."""
+    out = {}
+    for mid, e in (log.get("predictions") or {}).items():
+        r = e.get("result")
+        if not r:
+            continue
+        out[str(mid)] = {"h": r["hg"], "a": r["ag"], "o": r["outcome"],
+                         "ov": bool(r["over25"]), "gg": bool(r["gg"]),
+                         "d": e.get("date", ""), "n": (e.get("home", "") + " - " + e.get("away", ""))[:48]}
+    return out
