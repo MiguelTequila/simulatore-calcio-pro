@@ -2,10 +2,13 @@ name: Update Football Data
 
 on:
   schedule:
-    # Solo mercoledi'-domenica alle 16:00 UTC (18:00 ora di Roma).
-    # Lunedi' e martedi' non si gioca quasi nulla: aggiornare in quei giorni
-    # consumava crediti dell'API delle quote senza aggiungere informazione.
-    - cron: '0 16 * * 3,4,5,6,0'
+    # Ogni giorno alle 17:00 UTC (18:00 ora di Roma in inverno).
+    # Con la sola Serie A un giro costa 3 crediti The Odds API: 90 al mese sui
+    # 500 gratuiti. Il giro giornaliero serve a due cose: le quote sono sempre
+    # fresche, e il confronto fra la quota presa e quella di chiusura (il CLV
+    # nella sezione "Verifica del modello") diventa affidabile, perche' abbiamo
+    # un'istantanea al giorno invece di cinque alla settimana.
+    - cron: '0 17 * * *'
   workflow_dispatch:
 
 permissions:
