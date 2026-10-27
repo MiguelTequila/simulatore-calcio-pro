@@ -1,7 +1,7 @@
 {
- "graded": 608,
- "pending": 434,
- "brier": 0.2137,
+ "graded": 611,
+ "pending": 432,
+ "brier": 0.2136,
  "calibration": [
   {
    "bin": "0-10%",
@@ -11,39 +11,39 @@
   },
   {
    "bin": "10-20%",
-   "n": 392,
-   "avgPred": 0.1593,
-   "actualFreq": 0.2092
+   "n": 394,
+   "avgPred": 0.1592,
+   "actualFreq": 0.2081
   },
   {
    "bin": "20-30%",
-   "n": 796,
-   "avgPred": 0.2462,
-   "actualFreq": 0.2563
+   "n": 799,
+   "avgPred": 0.2461,
+   "actualFreq": 0.2553
   },
   {
    "bin": "30-40%",
-   "n": 527,
-   "avgPred": 0.3495,
-   "actualFreq": 0.3567
+   "n": 530,
+   "avgPred": 0.3496,
+   "actualFreq": 0.3585
   },
   {
    "bin": "40-50%",
-   "n": 428,
-   "avgPred": 0.447,
-   "actualFreq": 0.4836
+   "n": 433,
+   "avgPred": 0.4471,
+   "actualFreq": 0.4827
   },
   {
    "bin": "50-60%",
-   "n": 319,
+   "n": 324,
    "avgPred": 0.5522,
-   "actualFreq": 0.4984
+   "actualFreq": 0.5
   },
   {
    "bin": "60-70%",
-   "n": 336,
+   "n": 339,
    "avgPred": 0.6486,
-   "actualFreq": 0.622
+   "actualFreq": 0.6224
   },
   {
    "bin": "70-80%",
@@ -67,21 +67,21 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1824,
-   "brier": 0.2008,
+   "n": 1833,
+   "brier": 0.2004,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 302,
-     "pred": 0.6361,
-     "actual": 0.5695,
-     "gap": -0.0665
+     "n": 304,
+     "pred": 0.6362,
+     "actual": 0.5724,
+     "gap": -0.0639
     },
     "incerto": {
-     "n": 1522,
-     "pred": 0.2733,
-     "actual": 0.2865,
-     "gap": 0.0132
+     "n": 1529,
+     "pred": 0.2731,
+     "actual": 0.2858,
+     "gap": 0.0127
     }
    },
    "calibration": [
@@ -93,21 +93,21 @@
     },
     {
      "bin": "10-20%",
-     "n": 294,
-     "avgPred": 0.1587,
-     "actualFreq": 0.1837
+     "n": 296,
+     "avgPred": 0.1585,
+     "actualFreq": 0.1824
     },
     {
      "bin": "20-30%",
-     "n": 649,
-     "avgPred": 0.2442,
-     "actualFreq": 0.245
+     "n": 652,
+     "avgPred": 0.2441,
+     "actualFreq": 0.2439
     },
     {
      "bin": "30-40%",
-     "n": 274,
-     "avgPred": 0.347,
-     "actualFreq": 0.3577
+     "n": 276,
+     "avgPred": 0.3471,
+     "actualFreq": 0.3587
     },
     {
      "bin": "40-50%",
@@ -123,9 +123,9 @@
     },
     {
      "bin": "60-70%",
-     "n": 83,
-     "avgPred": 0.651,
-     "actualFreq": 0.5542
+     "n": 85,
+     "avgPred": 0.6513,
+     "actualFreq": 0.5647
     },
     {
      "bin": "70-80%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1216,
-   "brier": 0.2309,
+   "n": 1222,
+   "brier": 0.231,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 608,
-     "pred": 0.6805,
-     "actual": 0.6299,
-     "gap": -0.0505
+     "n": 611,
+     "pred": 0.68,
+     "actual": 0.6301,
+     "gap": -0.0499
     },
     "incerto": {
-     "n": 608,
-     "pred": 0.3195,
-     "actual": 0.3701,
-     "gap": 0.0505
+     "n": 611,
+     "pred": 0.32,
+     "actual": 0.3699,
+     "gap": 0.0499
     }
    },
    "calibration": [
@@ -187,27 +187,27 @@
     },
     {
      "bin": "30-40%",
-     "n": 222,
-     "avgPred": 0.352,
-     "actualFreq": 0.3649
+     "n": 223,
+     "avgPred": 0.3521,
+     "actualFreq": 0.3677
     },
     {
      "bin": "40-50%",
-     "n": 149,
-     "avgPred": 0.4406,
-     "actualFreq": 0.5034
+     "n": 151,
+     "avgPred": 0.4404,
+     "actualFreq": 0.4967
     },
     {
      "bin": "50-60%",
-     "n": 149,
-     "avgPred": 0.5594,
-     "actualFreq": 0.4966
+     "n": 151,
+     "avgPred": 0.5596,
+     "actualFreq": 0.5033
     },
     {
      "bin": "60-70%",
-     "n": 222,
-     "avgPred": 0.648,
-     "actualFreq": 0.6351
+     "n": 223,
+     "avgPred": 0.6479,
+     "actualFreq": 0.6323
     },
     {
      "bin": "70-80%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 148,
-   "brier": 0.2306,
+   "n": 154,
+   "brier": 0.2321,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 74,
-     "pred": 0.6183,
-     "actual": 0.6351,
-     "gap": 0.0169
+     "n": 77,
+     "pred": 0.615,
+     "actual": 0.6234,
+     "gap": 0.0084
     },
     "incerto": {
-     "n": 74,
-     "pred": 0.3817,
-     "actual": 0.3649,
-     "gap": -0.0169
+     "n": 77,
+     "pred": 0.385,
+     "actual": 0.3766,
+     "gap": -0.0084
     }
    },
    "calibration": [
@@ -275,15 +275,15 @@
     },
     {
      "bin": "40-50%",
-     "n": 31,
-     "avgPred": 0.4565,
-     "actualFreq": 0.4194
+     "n": 34,
+     "avgPred": 0.4573,
+     "actualFreq": 0.4412
     },
     {
      "bin": "50-60%",
-     "n": 31,
-     "avgPred": 0.5435,
-     "actualFreq": 0.5806
+     "n": 34,
+     "avgPred": 0.5427,
+     "actualFreq": 0.5588
     },
     {
      "bin": "60-70%",
@@ -1374,5 +1374,5506 @@
     "cum": -62.0
    }
   ]
+ },
+ "results": {
+  "560542": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-21",
+   "n": "Arsenal FC - Coventry City FC"
+  },
+  "560543": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Hull City AFC - Manchester United FC"
+  },
+  "560544": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Ipswich Town FC - Sunderland AFC"
+  },
+  "560545": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Nottingham Forest FC - Leeds United FC"
+  },
+  "560546": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Everton FC - Crystal Palace FC"
+  },
+  "560547": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Brentford FC - Tottenham Hotspur FC"
+  },
+  "560548": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Manchester City FC - AFC Bournemouth"
+  },
+  "560549": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Brighton & Hove Albion FC - Aston Villa FC"
+  },
+  "560550": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Newcastle United FC - Liverpool FC"
+  },
+  "560551": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-24",
+   "n": "Fulham FC - Chelsea FC"
+  },
+  "560555": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-28",
+   "n": "Crystal Palace FC - Manchester City FC"
+  },
+  "560552": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Liverpool FC - Nottingham Forest FC"
+  },
+  "560560": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "AFC Bournemouth - Everton FC"
+  },
+  "560561": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "Coventry City FC - Hull City AFC"
+  },
+  "560558": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "Tottenham Hotspur FC - Newcastle United FC"
+  },
+  "560554": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Sunderland AFC - Fulham FC"
+  },
+  "560556": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Chelsea FC - Brighton & Hove Albion FC"
+  },
+  "560559": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Leeds United FC - Brentford FC"
+  },
+  "560553": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Manchester United FC - Ipswich Town FC"
+  },
+  "560557": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-31",
+   "n": "Aston Villa FC - Arsenal FC"
+  },
+  "560566": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-04",
+   "n": "Ipswich Town FC - Liverpool FC"
+  },
+  "560571": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Newcastle United FC - AFC Bournemouth"
+  },
+  "560562": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Nottingham Forest FC - Tottenham Hotspur FC"
+  },
+  "560563": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Manchester City FC - Coventry City FC"
+  },
+  "560564": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Brighton & Hove Albion FC - Leeds United FC"
+  },
+  "560565": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Brentford FC - Sunderland AFC"
+  },
+  "560568": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Fulham FC - Crystal Palace FC"
+  },
+  "560569": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Hull City AFC - Aston Villa FC"
+  },
+  "560567": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Everton FC - Manchester United FC"
+  },
+  "560570": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Arsenal FC - Chelsea FC"
+  },
+  "560572": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Crystal Palace FC - Ipswich Town FC"
+  },
+  "560573": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Liverpool FC - Fulham FC"
+  },
+  "560574": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Aston Villa FC - Nottingham Forest FC"
+  },
+  "560576": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "AFC Bournemouth - Brentford FC"
+  },
+  "560581": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Chelsea FC - Hull City AFC"
+  },
+  "560575": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Tottenham Hotspur FC - Everton FC"
+  },
+  "560577": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Sunderland AFC - Arsenal FC"
+  },
+  "564634": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-15",
+   "n": "Deportivo Alavés - Getafe CF"
+  },
+  "564633": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "Sevilla FC - Rayo Vallecano de Madrid"
+  },
+  "564629": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "Real Racing Club de Santander - Villarreal CF"
+  },
+  "564632": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-16",
+   "n": "RCD Espanyol de Barcelona - Levante UD"
+  },
+  "564636": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-27",
+   "n": "RC Celta de Vigo - CA Osasuna"
+  },
+  "564635": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-17",
+   "n": "RC Deportivo La Coruña - Elche CF"
+  },
+  "564628": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-19",
+   "n": "Club Atlético de Madrid - Málaga CF"
+  },
+  "564638": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-20",
+   "n": "Rayo Vallecano de Madrid - Deportivo Alavés"
+  },
+  "564647": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-21",
+   "n": "Real Betis Balompié - Real Sociedad de Fútbol"
+  },
+  "564641": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Athletic Club - Sevilla FC"
+  },
+  "564643": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Valencia CF - RC Celta de Vigo"
+  },
+  "564645": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "RCD Espanyol de Barcelona - Real Madrid CF"
+  },
+  "564646": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Club Atlético de Madrid - Villarreal CF"
+  },
+  "564644": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Getafe CF - Real Racing Club de Santander"
+  },
+  "564642": {
+   "h": 0,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Elche CF - FC Barcelona"
+  },
+  "564639": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-24",
+   "n": "CA Osasuna - Levante UD"
+  },
+  "564640": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-24",
+   "n": "Málaga CF - RC Deportivo La Coruña"
+  },
+  "564637": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-25",
+   "n": "Valencia CF - Real Betis Balompié"
+  },
+  "564631": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-26",
+   "n": "Real Madrid CF - Real Sociedad de Fútbol"
+  },
+  "564630": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-27",
+   "n": "FC Barcelona - Athletic Club"
+  },
+  "564654": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-28",
+   "n": "Real Racing Club de Santander - Elche CF"
+  },
+  "564648": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-28",
+   "n": "Deportivo Alavés - Villarreal CF"
+  },
+  "564655": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Levante UD - Real Betis Balompié"
+  },
+  "564653": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Real Sociedad de Fútbol - RCD Espanyol de Barcel"
+  },
+  "564649": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Sevilla FC - Club Atlético de Madrid"
+  },
+  "564656": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Real Madrid CF - Málaga CF"
+  },
+  "564651": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "RC Deportivo La Coruña - Valencia CF"
+  },
+  "564652": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "RC Celta de Vigo - Athletic Club"
+  },
+  "564657": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-31",
+   "n": "CA Osasuna - Getafe CF"
+  },
+  "564650": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-31",
+   "n": "FC Barcelona - Rayo Vallecano de Madrid"
+  },
+  "564658": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-07",
+   "n": "Elche CF - Real Sociedad de Fútbol"
+  },
+  "564659": {
+   "h": 0,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "Valencia CF - FC Barcelona"
+  },
+  "564660": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Rayo Vallecano de Madrid - Real Racing Club de S"
+  },
+  "564661": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "RCD Espanyol de Barcelona - Sevilla FC"
+  },
+  "564662": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Villarreal CF - RC Deportivo La Coruña"
+  },
+  "564663": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Athletic Club - Club Atlético de Madrid"
+  },
+  "564664": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Deportivo Alavés - CA Osasuna"
+  },
+  "564665": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-07",
+   "n": "Getafe CF - RC Celta de Vigo"
+  },
+  "564666": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "Málaga CF - Levante UD"
+  },
+  "564667": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-04",
+   "n": "Real Betis Balompié - Real Madrid CF"
+  },
+  "567264": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-07",
+   "n": "GD Estoril Praia - FC Famalicão"
+  },
+  "567263": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-08",
+   "n": "CS Marítimo - Casa Pia AC"
+  },
+  "567258": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-08",
+   "n": "Vitória SC - FC Arouca"
+  },
+  "567260": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-08",
+   "n": "CF Estrela da Amadora - Sporting Clube de Portug"
+  },
+  "567265": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-09",
+   "n": "FC Porto - FC Alverca"
+  },
+  "567259": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-09",
+   "n": "Moreirense FC - Sporting Clube de Braga"
+  },
+  "567261": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-09",
+   "n": "Gil Vicente FC - Rio Ave FC"
+  },
+  "567262": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-09",
+   "n": "Sport Lisboa e Benfica - Académico de Viseu FC"
+  },
+  "567257": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-10",
+   "n": "CD Santa Clara - CD Nacional"
+  },
+  "567268": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-14",
+   "n": "Sporting Clube de Portugal - Vitória SC"
+  },
+  "567266": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "FC Alverca - CF Estrela da Amadora"
+  },
+  "567273": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-15",
+   "n": "Académico de Viseu FC - CD Santa Clara"
+  },
+  "567274": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-15",
+   "n": "Rio Ave FC - FC Porto"
+  },
+  "567269": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "FC Famalicão - CS Marítimo"
+  },
+  "567270": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-16",
+   "n": "CD Nacional - GD Estoril Praia"
+  },
+  "567267": {
+   "h": 0,
+   "a": 7,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-17",
+   "n": "Casa Pia AC - Sport Lisboa e Benfica"
+  },
+  "567271": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-19",
+   "n": "Sporting Clube de Braga - Gil Vicente FC"
+  },
+  "567272": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-16",
+   "n": "FC Arouca - Moreirense FC"
+  },
+  "567275": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Sporting Clube de Portugal - FC Alverca"
+  },
+  "567276": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-10",
+   "n": "CF Estrela da Amadora - Sporting Clube de Braga"
+  },
+  "567277": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-24",
+   "n": "Gil Vicente FC - Casa Pia AC"
+  },
+  "567278": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Vitória SC - CD Nacional"
+  },
+  "567279": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "GD Estoril Praia - Rio Ave FC"
+  },
+  "567280": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "FC Porto - FC Arouca"
+  },
+  "567281": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "CD Santa Clara - FC Famalicão"
+  },
+  "567282": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-09",
+   "n": "Moreirense FC - Sport Lisboa e Benfica"
+  },
+  "567283": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "CS Marítimo - Académico de Viseu FC"
+  },
+  "567284": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "FC Famalicão - Gil Vicente FC"
+  },
+  "567285": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "FC Alverca - CD Santa Clara"
+  },
+  "567286": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "CD Nacional - CF Estrela da Amadora"
+  },
+  "567287": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "FC Arouca - CS Marítimo"
+  },
+  "567288": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-31",
+   "n": "Sport Lisboa e Benfica - GD Estoril Praia"
+  },
+  "567289": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "Académico de Viseu FC - FC Porto"
+  },
+  "567290": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Casa Pia AC - Moreirense FC"
+  },
+  "567291": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-28",
+   "n": "Rio Ave FC - Sporting Clube de Portugal"
+  },
+  "567292": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-31",
+   "n": "Sporting Clube de Braga - Vitória SC"
+  },
+  "567296": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "FC Alverca - Sporting Clube de Braga"
+  },
+  "567297": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "CF Estrela da Amadora - FC Famalicão"
+  },
+  "567298": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Sporting Clube de Portugal - CD Nacional"
+  },
+  "567299": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "FC Porto - Moreirense FC"
+  },
+  "567300": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "CD Santa Clara - Rio Ave FC"
+  },
+  "567301": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "Gil Vicente FC - Académico de Viseu FC"
+  },
+  "567293": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "CS Marítimo - Sport Lisboa e Benfica"
+  },
+  "567294": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "Vitória SC - Casa Pia AC"
+  },
+  "567295": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-07",
+   "n": "GD Estoril Praia - FC Arouca"
+  },
+  "565776": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-28",
+   "n": "FC Bayern München - VfB Stuttgart"
+  },
+  "565777": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "RB Leipzig - Borussia Mönchengladbach"
+  },
+  "565778": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "1. FSV Mainz 05 - SC Paderborn 07"
+  },
+  "565779": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "1. FC Union Berlin - Eintracht Frankfurt"
+  },
+  "565780": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "SV 07 Elversberg - Bayer 04 Leverkusen"
+  },
+  "565783": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "1. FC Köln - TSG 1899 Hoffenheim"
+  },
+  "565781": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "Borussia Dortmund - Hamburger SV"
+  },
+  "565784": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "SC Freiburg - SV Werder Bremen"
+  },
+  "565782": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "FC Augsburg - FC Schalke 04"
+  },
+  "565791": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "VfB Stuttgart - 1. FC Köln"
+  },
+  "565785": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "SV Werder Bremen - RB Leipzig"
+  },
+  "565787": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "TSG 1899 Hoffenheim - Borussia Dortmund"
+  },
+  "565790": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Bayer 04 Leverkusen - 1. FC Union Berlin"
+  },
+  "565792": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Borussia Mönchengladbach - SV 07 Elversberg"
+  },
+  "565793": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "SC Paderborn 07 - SC Freiburg"
+  },
+  "565789": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "FC Schalke 04 - FC Bayern München"
+  },
+  "565788": {
+   "h": 0,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-06",
+   "n": "Hamburger SV - 1. FSV Mainz 05"
+  },
+  "565786": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Eintracht Frankfurt - FC Augsburg"
+  },
+  "565797": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-11",
+   "n": "1. FC Union Berlin - FC Schalke 04"
+  },
+  "565794": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "TSG 1899 Hoffenheim - VfB Stuttgart"
+  },
+  "565795": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Borussia Dortmund - SC Paderborn 07"
+  },
+  "565796": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "FC Augsburg - Bayer 04 Leverkusen"
+  },
+  "565801": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "1. FSV Mainz 05 - Eintracht Frankfurt"
+  },
+  "565802": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "SC Freiburg - Borussia Mönchengladbach"
+  },
+  "565798": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "1. FC Köln - SV Werder Bremen"
+  },
+  "560578": {
+   "h": 0,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "Coventry City FC - Brighton & Hove Albion FC"
+  },
+  "560580": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "Manchester United FC - Manchester City FC"
+  },
+  "564668": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "Getafe CF - RC Deportivo La Coruña"
+  },
+  "564669": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-11",
+   "n": "Sevilla FC - Valencia CF"
+  },
+  "564670": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Real Racing Club de Santander - Deportivo Alavés"
+  },
+  "564671": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "Villarreal CF - Real Betis Balompié"
+  },
+  "564672": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "RC Celta de Vigo - Málaga CF"
+  },
+  "564673": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "CA Osasuna - RCD Espanyol de Barcelona"
+  },
+  "564674": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "Real Sociedad de Fútbol - Club Atlético de Madri"
+  },
+  "564675": {
+   "h": 2,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "Levante UD - FC Barcelona"
+  },
+  "564676": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Athletic Club - Elche CF"
+  },
+  "564677": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Real Madrid CF - Rayo Vallecano de Madrid"
+  },
+  "567302": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "Moreirense FC - CS Marítimo"
+  },
+  "567303": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "Rio Ave FC - CF Estrela da Amadora"
+  },
+  "567304": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "Sport Lisboa e Benfica - Gil Vicente FC"
+  },
+  "567305": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "FC Famalicão - Sporting Clube de Portugal"
+  },
+  "567306": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "CD Nacional - FC Alverca"
+  },
+  "567307": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Casa Pia AC - FC Porto"
+  },
+  "567308": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-14",
+   "n": "Sporting Clube de Braga - GD Estoril Praia"
+  },
+  "567309": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Académico de Viseu FC - Vitória SC"
+  },
+  "567310": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "FC Arouca - CD Santa Clara"
+  },
+  "565799": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "RB Leipzig - Hamburger SV"
+  },
+  "565800": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "SV 07 Elversberg - FC Bayern München"
+  },
+  "560579": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "Leeds United FC - Newcastle United FC"
+  },
+  "559715": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-21",
+   "n": "Olympique de Marseille - RC Strasbourg Alsace"
+  },
+  "559712": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Racing Club de Lens - AJ Auxerre"
+  },
+  "559711": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Le Mans FC - Stade Brestois 29"
+  },
+  "559714": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "ES Troyes AC - Paris FC"
+  },
+  "559716": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "OGC Nice - FC Lorient"
+  },
+  "559718": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Toulouse FC - Olympique Lyonnais"
+  },
+  "559717": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Angers SCO - Lille OSC"
+  },
+  "559719": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Le Havre AC - AS Monaco FC"
+  },
+  "559713": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Paris Saint-Germain FC - Stade Rennais FC 1901"
+  },
+  "559702": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-28",
+   "n": "Lille OSC - Paris Saint-Germain FC"
+  },
+  "559704": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "RC Strasbourg Alsace - Racing Club de Lens"
+  },
+  "559705": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "FC Lorient - ES Troyes AC"
+  },
+  "559706": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Olympique Lyonnais - Le Havre AC"
+  },
+  "559708": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "AJ Auxerre - Angers SCO"
+  },
+  "559710": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "Stade Brestois 29 - Toulouse FC"
+  },
+  "559707": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Paris FC - OGC Nice"
+  },
+  "559709": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Stade Rennais FC 1901 - Le Mans FC"
+  },
+  "559703": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "AS Monaco FC - Olympique de Marseille"
+  },
+  "559693": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "Le Havre AC - Stade Brestois 29"
+  },
+  "559694": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Olympique de Marseille - Paris FC"
+  },
+  "559695": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Racing Club de Lens - FC Lorient"
+  },
+  "559696": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-03",
+   "n": "Toulouse FC - Lille OSC"
+  },
+  "559697": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "Paris Saint-Germain FC - AS Monaco FC"
+  },
+  "559698": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Angers SCO - Stade Rennais FC 1901"
+  },
+  "559699": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "Olympique Lyonnais - AJ Auxerre"
+  },
+  "559700": {
+   "h": 2,
+   "a": 6,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "ES Troyes AC - RC Strasbourg Alsace"
+  },
+  "559701": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "OGC Nice - Le Mans FC"
+  },
+  "559689": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-11",
+   "n": "Stade Rennais FC 1901 - Olympique de Marseille"
+  },
+  "559687": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "RC Strasbourg Alsace - AS Monaco FC"
+  },
+  "559684": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "FC Lorient - Toulouse FC"
+  },
+  "559688": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "AJ Auxerre - OGC Nice"
+  },
+  "559690": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Le Havre AC - Angers SCO"
+  },
+  "559692": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "Paris FC - Olympique Lyonnais"
+  },
+  "559685": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "Lille OSC - ES Troyes AC"
+  },
+  "559686": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "Le Mans FC - Racing Club de Lens"
+  },
+  "559691": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "Stade Brestois 29 - Paris Saint-Germain FC"
+  },
+  "558629": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Udinese Calcio - Como 1907"
+  },
+  "558632": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "FC Internazionale Milano - AC Monza"
+  },
+  "558631": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Genoa CFC - SSC Napoli"
+  },
+  "558636": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Parma Calcio 1913 - Cagliari Calcio"
+  },
+  "558635": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Frosinone Calcio - Juventus FC"
+  },
+  "558637": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-23",
+   "n": "Venezia FC - US Lecce"
+  },
+  "558633": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Atalanta BC - US Sassuolo Calcio"
+  },
+  "558634": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Torino FC - AC Milan"
+  },
+  "558630": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-24",
+   "n": "Bologna FC 1909 - SS Lazio"
+  },
+  "558638": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-24",
+   "n": "AS Roma - ACF Fiorentina"
+  },
+  "558625": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-28",
+   "n": "AC Milan - Venezia FC"
+  },
+  "558620": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "US Sassuolo Calcio - Torino FC"
+  },
+  "558624": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "AC Monza - Udinese Calcio"
+  },
+  "558627": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "ACF Fiorentina - Frosinone Calcio"
+  },
+  "558619": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-29",
+   "n": "Juventus FC - Parma Calcio 1913"
+  },
+  "558626": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "SSC Napoli - Como 1907"
+  },
+  "558622": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "SS Lazio - Genoa CFC"
+  },
+  "558623": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Cagliari Calcio - FC Internazionale Milano"
+  },
+  "558621": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-31",
+   "n": "US Lecce - AS Roma"
+  },
+  "558628": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-31",
+   "n": "Atalanta BC - Bologna FC 1909"
+  },
+  "558609": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "Genoa CFC - Como 1907"
+  },
+  "558616": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "ACF Fiorentina - Torino FC"
+  },
+  "558614": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "FC Internazionale Milano - SSC Napoli"
+  },
+  "558611": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "AS Roma - Atalanta BC"
+  },
+  "558612": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Parma Calcio 1913 - AC Monza"
+  },
+  "558615": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Frosinone Calcio - Venezia FC"
+  },
+  "558613": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Bologna FC 1909 - US Sassuolo Calcio"
+  },
+  "558618": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Juventus FC - AC Milan"
+  },
+  "558610": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-07",
+   "n": "Cagliari Calcio - US Lecce"
+  },
+  "558617": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-07",
+   "n": "Udinese Calcio - SS Lazio"
+  },
+  "558606": {
+   "h": 2,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-11",
+   "n": "Venezia FC - ACF Fiorentina"
+  },
+  "558604": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Genoa CFC - Frosinone Calcio"
+  },
+  "558608": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "US Sassuolo Calcio - Juventus FC"
+  },
+  "558607": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Atalanta BC - Cagliari Calcio"
+  },
+  "558603": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-14",
+   "n": "Torino FC - AS Roma"
+  },
+  "558602": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "Como 1907 - Parma Calcio 1913"
+  },
+  "558605": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "US Lecce - AC Monza"
+  },
+  "558599": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "SSC Napoli - Bologna FC 1909"
+  },
+  "558600": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "SS Lazio - AC Milan"
+  },
+  "558601": {
+   "h": 5,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-14",
+   "n": "FC Internazionale Milano - Udinese Calcio"
+  },
+  "558214": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-07",
+   "n": "SC Cambuur-Leeuwarden - SBV Excelsior"
+  },
+  "558215": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-08",
+   "n": "NEC - Telstar 1963"
+  },
+  "558216": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-08",
+   "n": "Go Ahead Eagles - Willem II Tilburg"
+  },
+  "558217": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-08",
+   "n": "PSV - Fortuna Sittard"
+  },
+  "558218": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-08",
+   "n": "AZ - ADO Den Haag"
+  },
+  "558219": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-09",
+   "n": "Sparta Rotterdam - Feyenoord Rotterdam"
+  },
+  "558220": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-09",
+   "n": "FC Groningen - FC Utrecht"
+  },
+  "558221": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-09",
+   "n": "PEC Zwolle - AFC Ajax"
+  },
+  "558222": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-09",
+   "n": "SC Heerenveen - FC Twente '65"
+  },
+  "558223": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-14",
+   "n": "Telstar 1963 - Sparta Rotterdam"
+  },
+  "558224": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "Willem II Tilburg - NEC"
+  },
+  "558225": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "FC Utrecht - AZ"
+  },
+  "558226": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "SBV Excelsior - PSV"
+  },
+  "558227": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-15",
+   "n": "Fortuna Sittard - SC Cambuur-Leeuwarden"
+  },
+  "558228": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "ADO Den Haag - FC Groningen"
+  },
+  "558229": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "Feyenoord Rotterdam - Go Ahead Eagles"
+  },
+  "558230": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "FC Twente '65 - PEC Zwolle"
+  },
+  "558231": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-16",
+   "n": "AFC Ajax - SC Heerenveen"
+  },
+  "558232": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "Fortuna Sittard - AZ"
+  },
+  "558234": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-22",
+   "n": "Sparta Rotterdam - FC Utrecht"
+  },
+  "558233": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-08",
+   "n": "NEC - SBV Excelsior"
+  },
+  "558235": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-08-22",
+   "n": "SC Heerenveen - PEC Zwolle"
+  },
+  "558236": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "Go Ahead Eagles - ADO Den Haag"
+  },
+  "558237": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "PSV - FC Groningen"
+  },
+  "558238": {
+   "h": 2,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-23",
+   "n": "SC Cambuur-Leeuwarden - Feyenoord Rotterdam"
+  },
+  "558241": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-28",
+   "n": "FC Groningen - Fortuna Sittard"
+  },
+  "558242": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "SBV Excelsior - Sparta Rotterdam"
+  },
+  "558243": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "AZ - Go Ahead Eagles"
+  },
+  "558244": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-29",
+   "n": "PEC Zwolle - NEC"
+  },
+  "558245": {
+   "h": 1,
+   "a": 6,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "FC Utrecht - PSV"
+  },
+  "558246": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Willem II Tilburg - SC Heerenveen"
+  },
+  "558247": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "Feyenoord Rotterdam - ADO Den Haag"
+  },
+  "558248": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-08-30",
+   "n": "Telstar 1963 - AFC Ajax"
+  },
+  "558249": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-08-30",
+   "n": "SC Cambuur-Leeuwarden - FC Twente '65"
+  },
+  "558250": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-04",
+   "n": "Sparta Rotterdam - PEC Zwolle"
+  },
+  "558251": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "NEC - Feyenoord Rotterdam"
+  },
+  "558252": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "FC Utrecht - Go Ahead Eagles"
+  },
+  "558253": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-05",
+   "n": "AFC Ajax - PSV"
+  },
+  "558254": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-05",
+   "n": "Willem II Tilburg - SBV Excelsior"
+  },
+  "558255": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "FC Groningen - FC Twente '65"
+  },
+  "558256": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "SC Heerenveen - AZ"
+  },
+  "558257": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "Telstar 1963 - SC Cambuur-Leeuwarden"
+  },
+  "558258": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-06",
+   "n": "ADO Den Haag - Fortuna Sittard"
+  },
+  "558239": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-09",
+   "n": "FC Twente '65 - Telstar 1963"
+  },
+  "558899": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-11",
+   "n": "AZ - Willem II Tilburg"
+  },
+  "558898": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "FC Twente '65 - ADO Den Haag"
+  },
+  "558897": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Go Ahead Eagles - FC Groningen"
+  },
+  "558896": {
+   "h": 1,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-12",
+   "n": "Fortuna Sittard - AFC Ajax"
+  },
+  "558895": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "SC Heerenveen - Telstar 1963"
+  },
+  "558894": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "SBV Excelsior - FC Utrecht"
+  },
+  "558892": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-12",
+   "n": "SC Cambuur-Leeuwarden - NEC"
+  },
+  "558893": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-13",
+   "n": "PSV - Sparta Rotterdam"
+  },
+  "558891": {
+   "h": 0,
+   "a": 7,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-13",
+   "n": "PEC Zwolle - Feyenoord Rotterdam"
+  },
+  "558240": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-15",
+   "n": "AFC Ajax - Willem II Tilburg"
+  },
+  "564678": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-15",
+   "n": "Rayo Vallecano de Madrid - RCD Espanyol de Barce"
+  },
+  "564679": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-16",
+   "n": "RC Deportivo La Coruña - Sevilla FC"
+  },
+  "564680": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-15",
+   "n": "Deportivo Alavés - Valencia CF"
+  },
+  "564681": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-15",
+   "n": "Elche CF - Real Madrid CF"
+  },
+  "564682": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-03",
+   "n": "Real Sociedad de Fútbol - RC Celta de Vigo"
+  },
+  "564683": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-17",
+   "n": "Málaga CF - Villarreal CF"
+  },
+  "564684": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-16",
+   "n": "Club Atlético de Madrid - CA Osasuna"
+  },
+  "564685": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Levante UD - Athletic Club"
+  },
+  "564686": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-17",
+   "n": "Real Betis Balompié - Getafe CF"
+  },
+  "564687": {
+   "h": 7,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-16",
+   "n": "FC Barcelona - Real Racing Club de Santander"
+  },
+  "560591": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-18",
+   "n": "Brentford FC - Chelsea FC"
+  },
+  "558596": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-18",
+   "n": "AC Monza - US Sassuolo Calcio"
+  },
+  "565804": {
+   "h": 7,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-18",
+   "n": "FC Bayern München - 1. FC Union Berlin"
+  },
+  "558888": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-18",
+   "n": "FC Groningen - PEC Zwolle"
+  },
+  "560587": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Tottenham Hotspur FC - Aston Villa FC"
+  },
+  "560584": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Everton FC - Ipswich Town FC"
+  },
+  "560585": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Leeds United FC - Crystal Palace FC"
+  },
+  "560586": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Brighton & Hove Albion FC - Arsenal FC"
+  },
+  "560588": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Newcastle United FC - Hull City AFC"
+  },
+  "560590": {
+   "h": 5,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Manchester City FC - Sunderland AFC"
+  },
+  "560589": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Nottingham Forest FC - Coventry City FC"
+  },
+  "559676": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "AJ Auxerre - Stade Brestois 29"
+  },
+  "559677": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Le Mans FC - FC Lorient"
+  },
+  "559678": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "OGC Nice - Lille OSC"
+  },
+  "559679": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Paris FC - RC Strasbourg Alsace"
+  },
+  "559680": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Toulouse FC - Le Havre AC"
+  },
+  "559681": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Angers SCO - ES Troyes AC"
+  },
+  "559682": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-18",
+   "n": "AS Monaco FC - Racing Club de Lens"
+  },
+  "559683": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Olympique Lyonnais - Stade Rennais FC 1901"
+  },
+  "558598": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Bologna FC 1909 - Torino FC"
+  },
+  "558589": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Udinese Calcio - Cagliari Calcio"
+  },
+  "558593": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "AS Roma - FC Internazionale Milano"
+  },
+  "558594": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Venezia FC - SS Lazio"
+  },
+  "565808": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Hamburger SV - 1. FC Köln"
+  },
+  "565809": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Borussia Mönchengladbach - 1. FSV Mainz 05"
+  },
+  "565810": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "SV Werder Bremen - FC Augsburg"
+  },
+  "565811": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Eintracht Frankfurt - SC Freiburg"
+  },
+  "565806": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "VfB Stuttgart - Borussia Dortmund"
+  },
+  "558889": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "ADO Den Haag - SC Cambuur-Leeuwarden"
+  },
+  "558890": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Sparta Rotterdam - SC Heerenveen"
+  },
+  "558887": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "AFC Ajax - SBV Excelsior"
+  },
+  "558886": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Willem II Tilburg - Fortuna Sittard"
+  },
+  "560582": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "AFC Bournemouth - Liverpool FC"
+  },
+  "560583": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Fulham FC - Manchester United FC"
+  },
+  "559675": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Olympique de Marseille - Paris Saint-Germain FC"
+  },
+  "564688": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Club Atlético de Madrid - Real Madrid CF"
+  },
+  "564689": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Valencia CF - Real Sociedad de Fútbol"
+  },
+  "564690": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Sevilla FC - FC Barcelona"
+  },
+  "564691": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "Athletic Club - Deportivo Alavés"
+  },
+  "564692": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-18",
+   "n": "RCD Espanyol de Barcelona - Elche CF"
+  },
+  "564693": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "CA Osasuna - Rayo Vallecano de Madrid"
+  },
+  "564694": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "RC Celta de Vigo - Real Racing Club de Santander"
+  },
+  "564695": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "RC Deportivo La Coruña - Real Betis Balompié"
+  },
+  "564696": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Villarreal CF - Levante UD"
+  },
+  "564697": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Getafe CF - Málaga CF"
+  },
+  "558591": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "ACF Fiorentina - SSC Napoli"
+  },
+  "558592": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Frosinone Calcio - Como 1907"
+  },
+  "558590": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Parma Calcio 1913 - Genoa CFC"
+  },
+  "558595": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Juventus FC - Atalanta BC"
+  },
+  "558597": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "AC Milan - US Lecce"
+  },
+  "567311": {
+   "h": 0,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "CD Nacional - FC Famalicão"
+  },
+  "567312": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Gil Vicente FC - CS Marítimo"
+  },
+  "567313": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-19",
+   "n": "Sporting Clube de Portugal - FC Arouca"
+  },
+  "567314": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "CD Santa Clara - Sporting Clube de Braga"
+  },
+  "567315": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "Vitória SC - Moreirense FC"
+  },
+  "567316": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "FC Porto - Sport Lisboa e Benfica"
+  },
+  "567317": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "CF Estrela da Amadora - Académico de Viseu FC"
+  },
+  "567318": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-19",
+   "n": "FC Alverca - Rio Ave FC"
+  },
+  "567319": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "GD Estoril Praia - Casa Pia AC"
+  },
+  "565807": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Bayer 04 Leverkusen - RB Leipzig"
+  },
+  "565805": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "FC Schalke 04 - SV 07 Elversberg"
+  },
+  "565803": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "SC Paderborn 07 - TSG 1899 Hoffenheim"
+  },
+  "558885": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "Feyenoord Rotterdam - FC Utrecht"
+  },
+  "558883": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "NEC - Go Ahead Eagles"
+  },
+  "558884": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-20",
+   "n": "AZ - Telstar 1963"
+  },
+  "558882": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-20",
+   "n": "FC Twente '65 - PSV"
+  },
+  "559666": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Stade Brestois 29 - Angers SCO"
+  },
+  "559667": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Stade Rennais FC 1901 - AJ Auxerre"
+  },
+  "559668": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "FC Lorient - Paris FC"
+  },
+  "559669": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-09",
+   "n": "Racing Club de Lens - Olympique Lyonnais"
+  },
+  "559670": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "OGC Nice - RC Strasbourg Alsace"
+  },
+  "559671": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "ES Troyes AC - Olympique de Marseille"
+  },
+  "559672": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Paris Saint-Germain FC - Le Mans FC"
+  },
+  "559673": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "AS Monaco FC - Toulouse FC"
+  },
+  "559674": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "Lille OSC - Le Havre AC"
+  },
+  "565812": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "1. FSV Mainz 05 - Bayer 04 Leverkusen"
+  },
+  "565813": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "SC Paderborn 07 - VfB Stuttgart"
+  },
+  "565814": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "1. FC Köln - Borussia Mönchengladbach"
+  },
+  "565815": {
+   "h": 6,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "RB Leipzig - Eintracht Frankfurt"
+  },
+  "565816": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "SC Freiburg - FC Schalke 04"
+  },
+  "565817": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "1. FC Union Berlin - SV 07 Elversberg"
+  },
+  "565818": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "TSG 1899 Hoffenheim - Hamburger SV"
+  },
+  "565819": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "FC Augsburg - FC Bayern München"
+  },
+  "565820": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-09",
+   "n": "Borussia Dortmund - SV Werder Bremen"
+  },
+  "560593": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Arsenal FC - Leeds United FC"
+  },
+  "560592": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "Sunderland AFC - Brighton & Hove Albion FC"
+  },
+  "560595": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Chelsea FC - AFC Bournemouth"
+  },
+  "560599": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Ipswich Town FC - Fulham FC"
+  },
+  "560601": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Aston Villa FC - Brentford FC"
+  },
+  "560600": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Manchester United FC - Tottenham Hotspur FC"
+  },
+  "564699": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Deportivo Alavés - Club Atlético de Madrid"
+  },
+  "564700": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "FC Barcelona - Getafe CF"
+  },
+  "564701": {
+   "h": 5,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Real Betis Balompié - CA Osasuna"
+  },
+  "564702": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "Real Madrid CF - Villarreal CF"
+  },
+  "564703": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "Elche CF - RC Celta de Vigo"
+  },
+  "564704": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-12",
+   "n": "Levante UD - Sevilla FC"
+  },
+  "564705": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Real Racing Club de Santander - Valencia CF"
+  },
+  "564706": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-09",
+   "n": "Málaga CF - RCD Espanyol de Barcelona"
+  },
+  "564707": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Real Sociedad de Fútbol - RC Deportivo La Coruña"
+  },
+  "558579": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-12",
+   "n": "Atalanta BC - Venezia FC"
+  },
+  "558580": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "US Sassuolo Calcio - AC Milan"
+  },
+  "558581": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "US Lecce - Bologna FC 1909"
+  },
+  "558582": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "FC Internazionale Milano - Parma Calcio 1913"
+  },
+  "558583": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "SS Lazio - AC Monza"
+  },
+  "558584": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Cagliari Calcio - Juventus FC"
+  },
+  "558585": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "Como 1907 - AS Roma"
+  },
+  "558586": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "SSC Napoli - Frosinone Calcio"
+  },
+  "558587": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-12",
+   "n": "Torino FC - Udinese Calcio"
+  },
+  "558588": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Genoa CFC - ACF Fiorentina"
+  },
+  "567320": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "Sport Lisboa e Benfica - Vitória SC"
+  },
+  "567321": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "Casa Pia AC - CD Santa Clara"
+  },
+  "567322": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Académico de Viseu FC - GD Estoril Praia"
+  },
+  "567323": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "CS Marítimo - FC Porto"
+  },
+  "567324": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "FC Arouca - CF Estrela da Amadora"
+  },
+  "567325": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-12",
+   "n": "FC Famalicão - FC Alverca"
+  },
+  "567326": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-09",
+   "n": "Sporting Clube de Braga - Sporting Clube de Port"
+  },
+  "567327": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-09",
+   "n": "Moreirense FC - Gil Vicente FC"
+  },
+  "567328": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Rio Ave FC - CD Nacional"
+  },
+  "558881": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-09",
+   "n": "PSV - SC Heerenveen"
+  },
+  "558879": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-10",
+   "n": "Feyenoord Rotterdam - AZ"
+  },
+  "558880": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Go Ahead Eagles - Sparta Rotterdam"
+  },
+  "558877": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "Fortuna Sittard - FC Twente '65"
+  },
+  "558878": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-10",
+   "n": "AFC Ajax - NEC"
+  },
+  "560594": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Hull City AFC - Everton FC"
+  },
+  "560596": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Crystal Palace FC - Nottingham Forest FC"
+  },
+  "560598": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "Liverpool FC - Manchester City FC"
+  },
+  "560597": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-12",
+   "n": "Coventry City FC - Newcastle United FC"
+  },
+  "558876": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "FC Utrecht - Willem II Tilburg"
+  },
+  "558874": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-11",
+   "n": "PEC Zwolle - SC Cambuur-Leeuwarden"
+  },
+  "558875": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "Telstar 1963 - ADO Den Haag"
+  },
+  "558873": {
+   "h": 1,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-11",
+   "n": "SBV Excelsior - FC Groningen"
+  },
+  "575323": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-08",
+   "n": "Club Brugge KV - Aston Villa FC"
+  },
+  "575324": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-08",
+   "n": "PAE AEK - LASK Linz"
+  },
+  "575325": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-08",
+   "n": "Real Madrid CF - FC Internazionale Milano"
+  },
+  "575326": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-08",
+   "n": "FC Porto - Manchester City FC"
+  },
+  "575327": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-08",
+   "n": "Borussia Dortmund - Villarreal CF"
+  },
+  "575328": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-08",
+   "n": "Lille OSC - Real Betis Balompié"
+  },
+  "575329": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-09",
+   "n": "FC Barcelona - Feyenoord Rotterdam"
+  },
+  "575330": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-09",
+   "n": "VfB Stuttgart - Viking FK"
+  },
+  "575331": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-09",
+   "n": "Liverpool FC - Club Atlético de Madrid"
+  },
+  "575332": {
+   "h": 6,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-09",
+   "n": "Paris Saint-Germain FC - ŠK Slovan Bratislava"
+  },
+  "575333": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-09-09",
+   "n": "SSC Napoli - Arsenal FC"
+  },
+  "575334": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-09",
+   "n": "Sporting Clube de Portugal - Galatasaray SK"
+  },
+  "575335": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-10",
+   "n": "Fenerbahçe SK - AS Roma"
+  },
+  "575336": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-09-10",
+   "n": "PSV - FK Shakhtar Donetsk"
+  },
+  "575337": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-10",
+   "n": "FC Bayern München - FK Bodø/Glimt"
+  },
+  "575338": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-09-10",
+   "n": "Manchester United FC - Sabah FK"
+  },
+  "575339": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-10",
+   "n": "Como 1907 - RB Leipzig"
+  },
+  "575340": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-09-10",
+   "n": "SK Slavia Praha - Racing Club de Lens"
+  },
+  "575341": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-13",
+   "n": "Racing Club de Lens - Sporting Clube de Portugal"
+  },
+  "575342": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-13",
+   "n": "Sabah FK - SK Slavia Praha"
+  },
+  "575343": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-13",
+   "n": "FC Internazionale Milano - Club Brugge KV"
+  },
+  "575344": {
+   "h": 1,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-13",
+   "n": "Galatasaray SK - FC Barcelona"
+  },
+  "575345": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-13",
+   "n": "Club Atlético de Madrid - Manchester United FC"
+  },
+  "575346": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-13",
+   "n": "Arsenal FC - Lille OSC"
+  },
+  "575347": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-13",
+   "n": "Viking FK - FC Bayern München"
+  },
+  "575348": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-13",
+   "n": "RB Leipzig - PSV"
+  },
+  "575349": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-13",
+   "n": "Villarreal CF - SSC Napoli"
+  },
+  "575350": {
+   "h": 3,
+   "a": 6,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "LASK Linz - Liverpool FC"
+  },
+  "575351": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "Feyenoord Rotterdam - Como 1907"
+  },
+  "575352": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "AS Roma - Real Madrid CF"
+  },
+  "575353": {
+   "h": 2,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "Manchester City FC - Paris Saint-Germain FC"
+  },
+  "575354": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-14",
+   "n": "FK Bodø/Glimt - Borussia Dortmund"
+  },
+  "575355": {
+   "h": 6,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-14",
+   "n": "Aston Villa FC - Fenerbahçe SK"
+  },
+  "575356": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "Real Betis Balompié - FC Porto"
+  },
+  "575357": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-14",
+   "n": "FK Shakhtar Donetsk - PAE AEK"
+  },
+  "575358": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-14",
+   "n": "ŠK Slovan Bratislava - VfB Stuttgart"
+  },
+  "559657": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "FC Lorient - AS Monaco FC"
+  },
+  "559658": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Paris FC - Stade Rennais FC 1901"
+  },
+  "559659": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "ES Troyes AC - Racing Club de Lens"
+  },
+  "559660": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Lille OSC - Stade Brestois 29"
+  },
+  "559661": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-16",
+   "n": "Le Mans FC - Toulouse FC"
+  },
+  "559662": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "RC Strasbourg Alsace - Paris Saint-Germain FC"
+  },
+  "559663": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Le Havre AC - AJ Auxerre"
+  },
+  "559664": {
+   "h": 2,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Angers SCO - Olympique de Marseille"
+  },
+  "559665": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Olympique Lyonnais - OGC Nice"
+  },
+  "565821": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "1. FC Union Berlin - Borussia Dortmund"
+  },
+  "565822": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Hamburger SV - VfB Stuttgart"
+  },
+  "565823": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "SV Werder Bremen - SC Paderborn 07"
+  },
+  "565824": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "SV 07 Elversberg - FC Augsburg"
+  },
+  "565825": {
+   "h": 6,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "FC Bayern München - RB Leipzig"
+  },
+  "565826": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Borussia Mönchengladbach - TSG 1899 Hoffenheim"
+  },
+  "565827": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Bayer 04 Leverkusen - SC Freiburg"
+  },
+  "565828": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-16",
+   "n": "Eintracht Frankfurt - 1. FC Köln"
+  },
+  "565829": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "FC Schalke 04 - 1. FSV Mainz 05"
+  },
+  "558872": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-16",
+   "n": "SC Heerenveen - SBV Excelsior"
+  },
+  "560603": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Everton FC - Chelsea FC"
+  },
+  "560602": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Fulham FC - Hull City AFC"
+  },
+  "560610": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Manchester City FC - Ipswich Town FC"
+  },
+  "560611": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Brentford FC - Liverpool FC"
+  },
+  "560607": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Newcastle United FC - Aston Villa FC"
+  },
+  "564708": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Villarreal CF - Elche CF"
+  },
+  "564709": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Real Madrid CF - Sevilla FC"
+  },
+  "564710": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "RCD Espanyol de Barcelona - Club Atlético de Mad"
+  },
+  "564711": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Valencia CF - Athletic Club"
+  },
+  "564712": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "RC Celta de Vigo - Deportivo Alavés"
+  },
+  "564713": {
+   "h": 2,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Real Betis Balompié - FC Barcelona"
+  },
+  "564714": {
+   "h": 2,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Málaga CF - Real Sociedad de Fútbol"
+  },
+  "564715": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "CA Osasuna - Real Racing Club de Santander"
+  },
+  "564716": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-16",
+   "n": "RC Deportivo La Coruña - Levante UD"
+  },
+  "564717": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-19",
+   "n": "Getafe CF - Rayo Vallecano de Madrid"
+  },
+  "558569": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "AC Milan - Atalanta BC"
+  },
+  "558570": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "Juventus FC - SS Lazio"
+  },
+  "558571": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Bologna FC 1909 - FC Internazionale Milano"
+  },
+  "558572": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "AS Roma - Genoa CFC"
+  },
+  "558573": {
+   "h": 4,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-16",
+   "n": "Frosinone Calcio - US Sassuolo Calcio"
+  },
+  "558574": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "Udinese Calcio - US Lecce"
+  },
+  "558575": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-17",
+   "n": "Venezia FC - SSC Napoli"
+  },
+  "558576": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-19",
+   "n": "AC Monza - Cagliari Calcio"
+  },
+  "558577": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "ACF Fiorentina - Como 1907"
+  },
+  "558578": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-19",
+   "n": "Parma Calcio 1913 - Torino FC"
+  },
+  "560604": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "AFC Bournemouth - Sunderland AFC"
+  },
+  "560605": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "Leeds United FC - Manchester United FC"
+  },
+  "560609": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "Brighton & Hove Albion FC - Crystal Palace FC"
+  },
+  "560608": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-18",
+   "n": "Nottingham Forest FC - Arsenal FC"
+  },
+  "558871": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "ADO Den Haag - PSV"
+  },
+  "558869": {
+   "h": 3,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Telstar 1963 - Feyenoord Rotterdam"
+  },
+  "558868": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-17",
+   "n": "Sparta Rotterdam - Willem II Tilburg"
+  },
+  "558867": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "PEC Zwolle - Go Ahead Eagles"
+  },
+  "558865": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "SC Cambuur-Leeuwarden - AZ"
+  },
+  "558866": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "FC Twente '65 - FC Utrecht"
+  },
+  "558864": {
+   "h": 2,
+   "a": 5,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "FC Groningen - AFC Ajax"
+  },
+  "558870": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-18",
+   "n": "NEC - Fortuna Sittard"
+  },
+  "560606": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-19",
+   "n": "Tottenham Hotspur FC - Coventry City FC"
+  },
+  "575359": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "Sabah FK - Borussia Dortmund"
+  },
+  "575360": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "Fenerbahçe SK - SK Slavia Praha"
+  },
+  "575361": {
+   "h": 5,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "Manchester City FC - PAE AEK"
+  },
+  "575362": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "VfB Stuttgart - Club Atlético de Madrid"
+  },
+  "575363": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "Liverpool FC - Villarreal CF"
+  },
+  "575364": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-20",
+   "n": "AS Roma - ŠK Slovan Bratislava"
+  },
+  "575365": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-20",
+   "n": "FC Porto - PSV"
+  },
+  "575366": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "SSC Napoli - FK Bodø/Glimt"
+  },
+  "575367": {
+   "h": 4,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-20",
+   "n": "Paris Saint-Germain FC - FC Barcelona"
+  },
+  "575368": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Como 1907 - Manchester United FC"
+  },
+  "575369": {
+   "h": 2,
+   "a": 4,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Lille OSC - Galatasaray SK"
+  },
+  "575370": {
+   "h": 4,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Real Madrid CF - RB Leipzig"
+  },
+  "575371": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-21",
+   "n": "FC Internazionale Milano - FK Shakhtar Donetsk"
+  },
+  "575372": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "FC Bayern München - Arsenal FC"
+  },
+  "575373": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-21",
+   "n": "Club Brugge KV - Racing Club de Lens"
+  },
+  "575374": {
+   "h": 3,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Aston Villa FC - Viking FK"
+  },
+  "575375": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-21",
+   "n": "Sporting Clube de Portugal - LASK Linz"
+  },
+  "575376": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-21",
+   "n": "Real Betis Balompié - Feyenoord Rotterdam"
+  },
+  "560620": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "Ipswich Town FC - Nottingham Forest FC"
+  },
+  "559654": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "Stade Brestois 29 - OGC Nice"
+  },
+  "558567": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "Torino FC - AC Monza"
+  },
+  "567329": {
+   "h": 5,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-23",
+   "n": "Vitória SC - CS Marítimo"
+  },
+  "565830": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "1. FSV Mainz 05 - SV Werder Bremen"
+  },
+  "565831": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "1. FC Köln - FC Schalke 04"
+  },
+  "565832": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "RB Leipzig - SV 07 Elversberg"
+  },
+  "565833": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "VfB Stuttgart - Borussia Mönchengladbach"
+  },
+  "565834": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "SC Paderborn 07 - Hamburger SV"
+  },
+  "565835": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "TSG 1899 Hoffenheim - Bayer 04 Leverkusen"
+  },
+  "565836": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "SC Freiburg - FC Bayern München"
+  },
+  "565837": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Borussia Dortmund - Eintracht Frankfurt"
+  },
+  "565838": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "FC Augsburg - 1. FC Union Berlin"
+  },
+  "558863": {
+   "h": 3,
+   "a": 2,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "Go Ahead Eagles - Telstar 1963"
+  },
+  "560614": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "Aston Villa FC - Manchester City FC"
+  },
+  "560616": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Arsenal FC - Everton FC"
+  },
+  "560618": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Coventry City FC - Fulham FC"
+  },
+  "560617": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Chelsea FC - Tottenham Hotspur FC"
+  },
+  "564718": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Rayo Vallecano de Madrid - Elche CF"
+  },
+  "564719": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-23",
+   "n": "Deportivo Alavés - Málaga CF"
+  },
+  "564720": {
+   "h": 4,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Athletic Club - Getafe CF"
+  },
+  "564722": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "Valencia CF - Villarreal CF"
+  },
+  "564724": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Club Atlético de Madrid - RC Deportivo La Coruña"
+  },
+  "564725": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "RC Celta de Vigo - Real Betis Balompié"
+  },
+  "564727": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "Real Racing Club de Santander - RCD Espanyol de "
+  },
+  "558560": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Cagliari Calcio - Bologna FC 1909"
+  },
+  "558561": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Como 1907 - US Sassuolo Calcio"
+  },
+  "558564": {
+   "h": 3,
+   "a": 3,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "SSC Napoli - AS Roma"
+  },
+  "558565": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "SS Lazio - Parma Calcio 1913"
+  },
+  "567337": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "CF Estrela da Amadora - Casa Pia AC"
+  },
+  "567333": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "FC Alverca - FC Arouca"
+  },
+  "567335": {
+   "h": 0,
+   "a": 1,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-24",
+   "n": "Gil Vicente FC - FC Porto"
+  },
+  "558862": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "FC Utrecht - PEC Zwolle"
+  },
+  "558861": {
+   "h": 1,
+   "a": 6,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "Willem II Tilburg - SC Cambuur-Leeuwarden"
+  },
+  "558860": {
+   "h": 2,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "ADO Den Haag - SC Heerenveen"
+  },
+  "560612": {
+   "h": 2,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Liverpool FC - Brighton & Hove Albion FC"
+  },
+  "560613": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Crystal Palace FC - Newcastle United FC"
+  },
+  "560615": {
+   "h": 0,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Manchester United FC - AFC Bournemouth"
+  },
+  "560619": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "Hull City AFC - Brentford FC"
+  },
+  "560621": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Sunderland AFC - Leeds United FC"
+  },
+  "559655": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Toulouse FC - ES Troyes AC"
+  },
+  "559652": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-24",
+   "n": "Racing Club de Lens - Paris FC"
+  },
+  "559650": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "AS Monaco FC - Lille OSC"
+  },
+  "559649": {
+   "h": 4,
+   "a": 3,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "Olympique de Marseille - Le Havre AC"
+  },
+  "559651": {
+   "h": 3,
+   "a": 0,
+   "o": "1",
+   "ov": true,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Stade Rennais FC 1901 - RC Strasbourg Alsace"
+  },
+  "559653": {
+   "h": 0,
+   "a": 0,
+   "o": "X",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Angers SCO - FC Lorient"
+  },
+  "559656": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "AJ Auxerre - Le Mans FC"
+  },
+  "558563": {
+   "h": 2,
+   "a": 1,
+   "o": "1",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "FC Internazionale Milano - ACF Fiorentina"
+  },
+  "558562": {
+   "h": 4,
+   "a": 4,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "Atalanta BC - Frosinone Calcio"
+  },
+  "558568": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Genoa CFC - Venezia FC"
+  },
+  "558566": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "US Lecce - Juventus FC"
+  },
+  "558559": {
+   "h": 0,
+   "a": 2,
+   "o": "2",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Udinese Calcio - AC Milan"
+  },
+  "567336": {
+   "h": 1,
+   "a": 3,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "GD Estoril Praia - Moreirense FC"
+  },
+  "558859": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-10-25",
+   "n": "Fortuna Sittard - SBV Excelsior"
+  },
+  "558857": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "NEC - FC Groningen"
+  },
+  "558858": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "PSV - Feyenoord Rotterdam"
+  },
+  "558856": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-25",
+   "n": "Sparta Rotterdam - AFC Ajax"
+  },
+  "558556": {
+   "h": 2,
+   "a": 6,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-27",
+   "n": "US Sassuolo Calcio - SS Lazio"
+  }
  }
 }
