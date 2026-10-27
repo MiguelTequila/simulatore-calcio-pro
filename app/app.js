@@ -681,9 +681,13 @@ function renderCreditsBadge(credits) {
 async function loadTrackRecord() {
   try {
     const res = await fetch('data/track_record.json?t=' + Date.now());
-    if (!res.ok) return;
-    renderTrackRecord(await res.json());
-  } catch (e) { /* file non ancora generato: ok */ }
+    if (!res.ok) { realResults = {}; return; }
+    const tr = await res.json();
+    // lo stesso file porta i risultati veri: li uso per verificare le schedine
+    realResults = tr.results || {};
+    renderTrackRecord(tr);
+    renderMultiRegistry();
+  } catch (e) { realResults = {}; }
 }
 
 function renderTrackRecord(tr) {
@@ -1393,10 +1397,15 @@ function addCurrentToMulti() {
     alert('Per questo esito non c\u2019\u00E8 una quota. Inseriscila nel riquadro \u201CQuote tue\u201D e riprova.');
     return;
   }
+  const mkeys = ['1', 'X', '2', 'Over 2.5', 'Under 2.5', 'Goal GG', 'NoGoal NG'];
   addMultiRow({
     label: currentMatch.homeTeam + '-' + currentMatch.awayTeam + ' \u00B7 ' + opts[i][0].split(' (')[0],
     p: opts[i][1],
-    odds: opts[i][2] || Math.round((1 / opts[i][1]) * 100) / 100
+    odds: opts[i][2] || Math.round((1 / opts[i][1]) * 100) / 100,
+    // Riferimento alla partita vera: serve a verificare l'esito da solo,
+    // invece di costringere a spuntare le caselle a mano.
+    fixtureId: String(currentMatch.id),
+    marketKey: mkeys[i]
   });
 }
 
@@ -1456,7 +1465,8 @@ function recomputeMulti() {
 
   const r = computeSystem(multiEvents, K, unit, bonus);
   lastMultiResult = {r: r, K: K, unit: unit, bonus: bonus,
-                     events: multiEvents.map(e => ({label: e.label, p: e.p, odds: e.odds}))};
+                     events: multiEvents.map(e => ({label: e.label, p: e.p, odds: e.odds,
+                                                    fixtureId: e.fixtureId, marketKey: e.marketKey}))};
 
   // sensibilita': cosa succede se il modello sovrastima di 3 e 5 punti
   const shift = d => computeSystem(multiEvents.map(e => ({p: Math.max(0.01, e.p - d), odds: e.odds})), K, unit, bonus).roi;
@@ -1550,7 +1560,8 @@ function saveMultiSimulation() {
     unit: L.unit, bonus: L.bonus,
     stake: r.stake, totalOdds: r.totalOdds,
     pAll: r.pAll, pProfit: r.pProfit, ev: r.ev, roi: r.roi,
-    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null})),
+    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null,
+                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null})),
     settled: false, actualReturn: null
   });
   if (persistMultiRegistry()) renderMultiRegistry();
@@ -1640,15 +1651,30 @@ function renderMultiRegistry() {
               '<strong>' + (net >= 0 ? '+' : '') + net.toFixed(2) + '\u20AC</strong></div>';
       html += '<div class="sim-events">';
       for (const e of s.events) {
-        html += '<span class="ev-chip ' + (e.won ? 'ev-won' : 'ev-lost') + '">' + (e.won ? '\u2713' : '\u2717') + ' ' + e.label + '</span>';
+        const ro = realOutcome(e);
+        html += '<span class="ev-chip ' + (e.won ? 'ev-won' : 'ev-lost') + '">' + (e.won ? '\u2713' : '\u2717') + ' ' + e.label +
+                (ro ? ' <em>(' + ro.score + ')</em>' : '') + '</span>';
       }
       html += '</div>';
     } else {
       html += '<div class="sim-settle" id="settle-' + s.id + '"><div class="settle-hint">\u2611\uFE0F <strong>Tocca le caselle degli eventi usciti</strong>, poi premi Registra esito. Se non ne spunti nessuno la giocata risulta persa.</div>';
+      let verificabili = 0;
       s.events.forEach((e, i) => {
-        html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"' + (e.won ? ' checked' : '') + '> ' + e.label +
-                ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em></label>';
+        const ro = realOutcome(e);
+        if (ro && ro.won !== null) verificabili++;
+        const segno = (ro && ro.won !== null)
+          ? ' <span class="real-res ' + (ro.won ? 'ok' : 'ko') + '">finita ' + ro.score + ' \u2192 ' +
+            (ro.won ? '\u2713 uscito' : '\u2717 non uscito') + '</span>'
+          : (e.fixtureId ? ' <span class="real-res wait">non ancora giocata</span>'
+                         : ' <span class="real-res wait">da spuntare a mano</span>');
+        html += '<label class="ev-check"><input type="checkbox" data-i="' + i + '"' +
+                ((e.won === true || (ro && ro.won === true && e.won === null)) ? ' checked' : '') + '> ' +
+                e.label + ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em>' + segno + '</label>';
       });
+      if (verificabili) {
+        html += '<button class="btn-primary sim-auto" data-act="auto" data-id="' + s.id + '">\u26A1 Verifica dai risultati reali (' +
+                verificabili + '/' + s.events.length + ')</button>';
+      }
       html += '<button class="btn-primary sim-settle-btn" data-act="settle" data-id="' + s.id + '">\u2705 Registra esito</button></div>';
     }
     html += '</div>';
@@ -1657,7 +1683,8 @@ function renderMultiRegistry() {
 
   // Gestori agganciati qui invece che in linea nell'HTML: cosi' non dipendono
   // dal fatto che le funzioni siano globali e funzionano in ogni contesto.
-  const act = {fix: reopenMulti, print: printSavedSlip, del: deleteMulti, settle: settleMulti};
+  const act = {fix: reopenMulti, print: printSavedSlip, del: deleteMulti,
+               settle: settleMulti, auto: autoSettle};
   box.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', () => {
     const fn = act[b.dataset.act];
     if (fn) fn(Number(b.dataset.id));
@@ -1844,7 +1871,8 @@ function printCurrentSlip() {
                                      : ('Sistema ' + L.K + '/' + L.events.length),
     K: L.K, N: L.events.length, unit: L.unit, bonus: L.bonus,
     stake: r.stake, totalOdds: r.totalOdds, pAll: r.pAll, pProfit: r.pProfit, roi: r.roi,
-    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null})),
+    events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null,
+                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null})),
     settled: false
   }));
 }
@@ -2223,5 +2251,68 @@ function reopenMulti(id) {
   sim.settled = false;
   sim.actualReturn = null;
   sim.nWins = null;
+  if (persistMultiRegistry()) renderMultiRegistry();
+}
+
+
+// ===================== Risultati reali per la verifica automatica =====================
+let realResults = null;
+
+// I risultati veri arrivano insieme al track record (loadTrackRecord), cosi'
+// l'app scarica un file solo invece di due.
+
+// Dato un mercato e il risultato vero, l'evento e' uscito o no?
+function marketWon(marketKey, r) {
+  if (!r) return null;
+  switch (marketKey) {
+    case '1': return r.o === '1';
+    case 'X': return r.o === 'X';
+    case '2': return r.o === '2';
+    case 'Over 2.5': return !!r.ov;
+    case 'Under 2.5': return !r.ov;
+    case 'Goal GG': return !!r.gg;
+    case 'NoGoal NG': return !r.gg;
+    default: return null;
+  }
+}
+
+// Esito reale di un evento, se la partita e' stata giocata e l'evento e' agganciato
+function realOutcome(ev) {
+  if (!ev || !ev.fixtureId || !ev.marketKey || !realResults) return null;
+  const r = realResults[ev.fixtureId];
+  if (!r) return null;
+  return {won: marketWon(ev.marketKey, r), score: r.h + '-' + r.a, date: r.d};
+}
+
+// Spunta le caselle in base ai risultati veri e registra l'esito
+function autoSettle(id) {
+  const sim = multiRegistry.find(x => x.id === id);
+  if (!sim) return;
+  let noti = 0, ignoti = [];
+  sim.events.forEach(e => {
+    const ro = realOutcome(e);
+    if (ro && ro.won !== null) { e.won = ro.won; noti++; }
+    else ignoti.push(e.label);
+  });
+  if (noti === 0) {
+    alert('Nessuno degli eventi \u00E8 agganciato a una partita gi\u00E0 giocata.\n\n' +
+          'La verifica automatica funziona sugli eventi aggiunti con "\uD83C\uDFAF Aggiungi partita selezionata", ' +
+          'una volta che la partita \u00E8 finita e i dati sono stati aggiornati.');
+    return;
+  }
+  if (ignoti.length && !confirm('Verificati automaticamente ' + noti + ' eventi su ' + sim.events.length + '.\n\n' +
+      'Non verificabili (scritti a mano o partita non ancora giocata):\n\u2022 ' + ignoti.join('\n\u2022 ') +
+      '\n\nProcedo considerando questi come NON usciti?')) {
+    renderMultiRegistry();
+    return;
+  }
+  sim.events.forEach(e => { if (e.won !== true) e.won = false; });
+  const winOdds = sim.events.filter(e => e.won).map(e => e.odds);
+  const nWins = winOdds.length;
+  let ret = nWins >= sim.K ? sim.unit * esym(winOdds, sim.K) : 0;
+  if (nWins === sim.N && sim.bonus > 0) ret *= (1 + sim.bonus);
+  sim.actualReturn = ret;
+  sim.nWins = nWins;
+  sim.settled = true;
   if (persistMultiRegistry()) renderMultiRegistry();
 }
