@@ -4,7 +4,7 @@ from football_data_client import fetch_all_data, COMPETITIONS
 from odds_client import ODDS_ONLY
 from odds_client import OddsAPIClient
 from elo import load_state, update_ratings_incremental, save_state
-from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track
+from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track, build_results
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
                          compute_value, league_average, league_home_away, stat_scale, LEAGUE_RHO, DEFAULT_RHO,
                          MARKET_WEIGHT, MODEL_VERSION)
@@ -244,7 +244,7 @@ def build_output():
     # crediti al mese per Europa League e Conference davano 2 partite usabili
     # a testa, perche' delle loro squadre ne conosciamo troppo poche.
     ODDS_WINDOW_DAYS = 7          # campionati nazionali
-    CUP_WINDOW_DAYS = 3           # Champions, Europa League, Conference
+    CUP_WINDOW_DAYS = 3           # coppe europee, se riattivate
     CUPS = {"CL", "EL", "ECL"}
     from datetime import datetime as _dt, timedelta as _td
 
@@ -256,14 +256,12 @@ def build_output():
               if not COMPETITIONS.get(cid, {}).get("statsOnly")
               and any(f.get("date", "9999") <= _limit_for(cid) for f in c.get("fixtures", []))]
 
-    # Europa League e Conference non esistono in Football-Data: non sappiamo in
-    # anticipo quando giocano, quindi le chiediamo solo di giovedi' e venerdi',
-    # gli unici giorni in cui quelle coppe scendono in campo.
-    _wd = _dt.now().weekday()          # 0 = lunedi'
-    if _wd in (3, 4):
+    # Le competizioni che vivono solo di quote (ODDS_ONLY) si chiedono di
+    # giovedi' e venerdi', gli unici giorni in cui quelle coppe giocano.
+    # Nella stagione di prova ODDS_ONLY e' vuoto, quindi questo blocco non fa
+    # nulla: resta pronto per quando riattiverai Europa League o Conference.
+    if ODDS_ONLY and _dt.now().weekday() in (3, 4):
         active += [cid for cid in ODDS_ONLY if cid not in active]
-    else:
-        print(f"    (Europa League e Conference saltate: si chiedono solo giovedi' e venerdi')")
     odds_client = OddsAPIClient()
     odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds(active_comps=active)}
     with open("data/odds.json", "w", encoding="utf-8") as f:
@@ -417,7 +415,9 @@ def build_output():
         log_predictions(plog, comp_id, comp["name"], comp["fixtures"])
     save_log(plog)
     track = build_track_record(plog)
+    track["results"] = build_results(plog)
     save_track(track)
+    print(f"    risultati reali disponibili all'app: {len(track['results'])}")
     print(f"    {n_rec} risultati agganciati | {track['graded']} valutate, {track['pending']} in attesa | value bet: {track['valueBets']['n']} (P&L {track['valueBets']['profitUnits']:+.2f} u)")
 
     with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
