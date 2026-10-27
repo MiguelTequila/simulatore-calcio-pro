@@ -5,14 +5,15 @@ from datetime import datetime, timezone
 
 BASE_URL = "https://api.the-odds-api.com/v4"
 
-# Scarica anche le quote Goal/NoGoal (mercato "btts").
+# Scarica anche le quote Goal/NoGoal (mercato "btts"), cosi' GG e NG non vanno
+# piu' digitati a mano nel riquadro "Quote tue".
 # COSTO: ogni chiamata costa (numero di mercati x numero di regioni) crediti.
-# Con 2 mercati siamo a ~370-400 crediti/mese sui 500 gratuiti; con 3 mercati
-# si arriva a ~550-600 e si sfora. Metti True SOLO se sei disposto a:
-#   - ridurre ODDS_WINDOW_DAYS in update_data.py da 7 a 4, oppure
-#   - togliere qualche competizione da SPORT_KEYS.
+# Con la sola Serie A: 3 mercati x 1 regione = 3 crediti per giro, un giro al
+# giorno = circa 90 crediti al mese sui 500 gratuiti. Largo margine.
+# Se riattivi altre competizioni, ricontrolla il conto: 3 crediti a
+# competizione per giro, quindi 5 competizioni con giro giornaliero fanno 450.
 # Il badge in alto nell'app mostra sempre i crediti residui: controllalo.
-INCLUDE_BTTS = False
+INCLUDE_BTTS = True
 
 # Blocco di sicurezza: sotto questa soglia di crediti residui si smette di
 # chiamare l'API per il resto del giro. Serve a non restare a secco a meta'
@@ -21,24 +22,28 @@ CREDIT_FLOOR = 25
 
 # Solo le 6 leghe scelte (h2h + totals = 2 crediti a lega -> ~372/mese, sotto i 500)
 SPORT_KEYS = {
-    "PL":  "soccer_epl",
-    "FL1": "soccer_france_ligue_one",
-    "PD":  "soccer_spain_la_liga",
+    # Stagione di prova: solo Serie A. Riattivando una riga qui va riattivata
+    # anche la competizione corrispondente in football_data_client.COMPETITIONS,
+    # altrimenti le quote arrivano ma non ci sono squadre su cui applicarle.
     "SA":  "soccer_italy_serie_a",
-    "BL1": "soccer_germany_bundesliga",
-    "DED": "soccer_netherlands_eredivisie",
-    "CL":  "soccer_uefa_champs_league",
-    # Europa League e Conference NON sono nel piano gratuito di Football-Data:
-    # calendario e quote arrivano da qui, le statistiche delle squadre vengono
-    # prese dai campionati nazionali tramite team_match.
-    "EL":  "soccer_uefa_europa_league",
-    "ECL": "soccer_uefa_europa_conference_league",
+    # "PL":  "soccer_epl",
+    # "FL1": "soccer_france_ligue_one",
+    # "PD":  "soccer_spain_la_liga",
+    # "BL1": "soccer_germany_bundesliga",
+    # "DED": "soccer_netherlands_eredivisie",
+    # "CL":  "soccer_uefa_champs_league",
+    # "EL":  "soccer_uefa_europa_league",
+    # "ECL": "soccer_uefa_europa_conference_league",
 }
 
 # Competizioni che esistono SOLO grazie alle quote (niente Football-Data)
+# Competizioni che esistono SOLO grazie alle quote (niente Football-Data).
+# Vuoto nella stagione di prova: Europa League e Conference costavano 6 crediti
+# a giro e restituivano pochissime partite usabili, perche' delle loro squadre
+# conoscevamo le statistiche di troppo poche.
 ODDS_ONLY = {
-    "EL":  {"name": "Europa League", "country": "Europe"},
-    "ECL": {"name": "Conference League", "country": "Europe"},
+    # "EL":  {"name": "Europa League", "country": "Europe"},
+    # "ECL": {"name": "Conference League", "country": "Europe"},
 }
 
 
