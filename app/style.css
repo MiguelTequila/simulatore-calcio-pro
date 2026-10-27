@@ -425,3 +425,11 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .row-del:hover,.row-del:active{background:#5c2020;color:#fff}
 .registry-table td:last-child{text-align:center;padding:2px}
 .reg-del{min-width:30px;min-height:30px;padding:.25rem .45rem;font-size:.85rem}
+
+/* ===== Verifica dai risultati reali ===== */
+.real-res{font-size:.72rem;padding:.1rem .4rem;border-radius:4px;white-space:nowrap;margin-left:.3rem}
+.real-res.ok{background:#123524;color:#8ee0ab}
+.real-res.ko{background:#3a1a1a;color:#e0a0a0}
+.real-res.wait{background:#2a2a3a;color:#8a8aa0}
+.sim-auto{margin-top:.5rem;width:100%}
+.ev-chip em{opacity:.7;font-style:normal}
