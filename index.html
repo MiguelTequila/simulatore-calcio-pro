@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚽ Simulatore Predittivo Pro</title>
-  <link rel="stylesheet" href="app/style.css">
+  <!-- Il foglio di stile e il codice si caricano con un numero diverso ogni
+       volta (?v=...). Senza questo il telefono riusava la copia vecchia tenuta
+       in memoria e le modifiche appena messe su GitHub non si vedevano: si
+       continuava a usare il programma di prima credendo fosse quello nuovo. -->
+  <script>document.write('<link rel="stylesheet" href="app/style.css?v=' + Date.now() + '">');</script>
+  <noscript><link rel="stylesheet" href="app/style.css"></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -184,10 +189,10 @@
 
     <footer>
       <p>⚽ Simulatore Predittivo Pro — Modello Dixon-Coles con Elo dinamico</p>
-      <p class="small">Dati da Football-Data.org & The Odds API · Aggiornamento automatico ogni 6h via GitHub Actions</p>
+      <p class="small">Dati da Football-Data.org & The Odds API · Aggiornamento automatico ogni giorno alle 18:00 via GitHub Actions</p>
     </footer>
   </div>
 
-  <script src="app/app.js"></script>
+  <script>document.write('<scr' + 'ipt src="app/app.js?v=' + Date.now() + '"><\/scr' + 'ipt>');</script>
 </body>
 </html>
