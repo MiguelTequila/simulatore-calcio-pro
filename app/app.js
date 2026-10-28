@@ -1405,7 +1405,10 @@ function addCurrentToMulti() {
     // Riferimento alla partita vera: serve a verificare l'esito da solo,
     // invece di costringere a spuntare le caselle a mano.
     fixtureId: String(currentMatch.id),
-    marketKey: mkeys[i]
+    marketKey: mkeys[i],
+    // Nome della partita a parte: serve per etichettare la casella del
+    // punteggio nel pannello esiti, dove un'etichetta sola non basta.
+    matchName: currentMatch.homeTeam + ' - ' + currentMatch.awayTeam
   });
 }
 
@@ -1466,7 +1469,8 @@ function recomputeMulti() {
   const r = computeSystem(multiEvents, K, unit, bonus);
   lastMultiResult = {r: r, K: K, unit: unit, bonus: bonus,
                      events: multiEvents.map(e => ({label: e.label, p: e.p, odds: e.odds,
-                                                    fixtureId: e.fixtureId, marketKey: e.marketKey}))};
+                                                    fixtureId: e.fixtureId, marketKey: e.marketKey,
+                                                    matchName: e.matchName}))};
 
   // sensibilita': cosa succede se il modello sovrastima di 3 e 5 punti
   const shift = d => computeSystem(multiEvents.map(e => ({p: Math.max(0.01, e.p - d), odds: e.odds})), K, unit, bonus).roi;
@@ -1561,7 +1565,12 @@ function saveMultiSimulation() {
     stake: r.stake, totalOdds: r.totalOdds,
     pAll: r.pAll, pProfit: r.pProfit, ev: r.ev, roi: r.roi,
     events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null,
-                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null})),
+                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null,
+                                matchName: e.matchName || null})),
+    // Punteggi scritti a mano, per partita: {idPartita: "2-1"}. Hanno la
+    // precedenza sui risultati scaricati, cosi' non serve aspettare il giro
+    // automatico delle 18:00 per verificare una schedina di stasera.
+    manualScores: {},
     settled: false, actualReturn: null
   });
   if (persistMultiRegistry()) renderMultiRegistry();
@@ -1651,16 +1660,34 @@ function renderMultiRegistry() {
               '<strong>' + (net >= 0 ? '+' : '') + net.toFixed(2) + '\u20AC</strong></div>';
       html += '<div class="sim-events">';
       for (const e of s.events) {
-        const ro = realOutcome(e);
+        const ro = outcomeFor(e, s);
         html += '<span class="ev-chip ' + (e.won ? 'ev-won' : 'ev-lost') + '">' + (e.won ? '\u2713' : '\u2717') + ' ' + e.label +
                 (ro ? ' <em>(' + ro.score + ')</em>' : '') + '</span>';
       }
       html += '</div>';
     } else {
-      html += '<div class="sim-settle" id="settle-' + s.id + '"><div class="settle-hint">\u2611\uFE0F <strong>Tocca le caselle degli eventi usciti</strong>, poi premi Registra esito. Se non ne spunti nessuno la giocata risulta persa.</div>';
+      html += '<div class="sim-settle" id="settle-' + s.id + '"><div class="settle-hint">\u2611\uFE0F <strong>Scrivi i punteggi</strong> qui sotto e le caselle si spuntano da sole. Oppure spuntale a mano. Se non ne spunti nessuna la giocata risulta persa.</div>';
+
+      // Caselle per scrivere il punteggio a mano, una per partita (non per
+      // evento: due esiti sulla stessa partita condividono il punteggio).
+      const fxs = fixturesOf(s);
+      if (fxs.length) {
+        html += '<div class="score-box"><div class="score-hint">Punteggio finale, casa-ospiti \u2014 serve solo se la partita \u00E8 finita ma il sito non l\u2019ha ancora aggiornato.</div>';
+        fxs.forEach(f => {
+          const scritto = (s.manualScores && s.manualScores[f.id]) || '';
+          const scaricato = (realResults && realResults[f.id]) ? (realResults[f.id].h + '-' + realResults[f.id].a) : '';
+          html += '<label class="score-row"><span>' + f.nome + '</span>' +
+                  '<input class="ev-score" type="text" inputmode="numeric" maxlength="7" placeholder="' +
+                  (scaricato || '2-1') + '" value="' + scritto + '" data-id="' + s.id + '" data-fx="' + f.id + '">' +
+                  (scaricato && !scritto ? '<em class="score-src">dal sito</em>' : '') +
+                  (scritto ? '<em class="score-src mano">a mano</em>' : '') + '</label>';
+        });
+        html += '</div>';
+      }
+
       let verificabili = 0;
       s.events.forEach((e, i) => {
-        const ro = realOutcome(e);
+        const ro = outcomeFor(e, s);
         if (ro && ro.won !== null) verificabili++;
         const segno = (ro && ro.won !== null)
           ? ' <span class="real-res ' + (ro.won ? 'ok' : 'ko') + '">finita ' + ro.score + ' \u2192 ' +
@@ -1672,7 +1699,7 @@ function renderMultiRegistry() {
                 e.label + ' <em>(' + (e.p * 100).toFixed(0) + '% \u00B7 ' + e.odds.toFixed(2) + ')</em>' + segno + '</label>';
       });
       if (verificabili) {
-        html += '<button class="btn-primary sim-auto" data-act="auto" data-id="' + s.id + '">\u26A1 Verifica dai risultati reali (' +
+        html += '<button class="btn-primary sim-auto" data-act="auto" data-id="' + s.id + '">\u26A1 Verifica dai punteggi (' +
                 verificabili + '/' + s.events.length + ')</button>';
       }
       html += '<button class="btn-primary sim-settle-btn" data-act="settle" data-id="' + s.id + '">\u2705 Registra esito</button></div>';
@@ -1689,6 +1716,14 @@ function renderMultiRegistry() {
     const fn = act[b.dataset.act];
     if (fn) fn(Number(b.dataset.id));
   }));
+
+  // Caselle del punteggio: si salva quando esci dalla casella o premi Invio,
+  // non a ogni tasto, altrimenti il pannello si ridisegna sotto le dita.
+  box.querySelectorAll('.ev-score').forEach(inp => {
+    const salva = () => setManualScore(Number(inp.dataset.id), inp.dataset.fx, inp.value);
+    inp.addEventListener('change', salva);
+    inp.addEventListener('keydown', ev => { if (ev.key === 'Enter') { ev.preventDefault(); salva(); } });
+  });
 }
 
 // ---- Export / Import CSV delle simulazioni ----
@@ -1872,7 +1907,9 @@ function printCurrentSlip() {
     K: L.K, N: L.events.length, unit: L.unit, bonus: L.bonus,
     stake: r.stake, totalOdds: r.totalOdds, pAll: r.pAll, pProfit: r.pProfit, roi: r.roi,
     events: L.events.map(e => ({label: e.label, p: e.p, odds: e.odds, won: null,
-                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null})),
+                                fixtureId: e.fixtureId || null, marketKey: e.marketKey || null,
+                                matchName: e.matchName || null})),
+    manualScores: {},
     settled: false
   }));
 }
@@ -2276,12 +2313,61 @@ function marketWon(marketKey, r) {
   }
 }
 
-// Esito reale di un evento, se la partita e' stata giocata e l'evento e' agganciato
-function realOutcome(ev) {
-  if (!ev || !ev.fixtureId || !ev.marketKey || !realResults) return null;
-  const r = realResults[ev.fixtureId];
+// Legge un punteggio scritto a mano: "2-1", "2 - 1", "2:1", "21" no.
+// Restituisce lo stesso oggetto dei risultati scaricati, cosi' il resto del
+// programma non deve sapere da dove arriva il punteggio.
+function parseScore(txt) {
+  const m = String(txt || '').trim().match(/^(\d{1,2})\s*[-:\s]\s*(\d{1,2})$/);
+  if (!m) return null;
+  const h = parseInt(m[1], 10), a = parseInt(m[2], 10);
+  if (h > 30 || a > 30) return null;
+  return {h: h, a: a, o: (h > a ? '1' : (h < a ? '2' : 'X')),
+          ov: (h + a) > 2.5, gg: (h > 0 && a > 0), manuale: true};
+}
+
+// Esito di un evento. Ordine di precedenza:
+//   1) il punteggio che hai scritto a mano in questa schedina
+//   2) il risultato scaricato con il track record
+// Il punteggio a mano vince, perche' lo scrivi quando il giro automatico non
+// e' ancora passato: appena passa, i due coincidono comunque.
+function outcomeFor(ev, sim) {
+  if (!ev || !ev.marketKey) return null;
+  let r = null, manuale = false;
+  if (sim && sim.manualScores && ev.fixtureId && sim.manualScores[ev.fixtureId]) {
+    r = parseScore(sim.manualScores[ev.fixtureId]);
+    manuale = !!r;
+  }
+  if (!r && ev.fixtureId && realResults) r = realResults[ev.fixtureId] || null;
   if (!r) return null;
-  return {won: marketWon(ev.marketKey, r), score: r.h + '-' + r.a, date: r.d};
+  return {won: marketWon(ev.marketKey, r), score: r.h + '-' + r.a,
+          date: r.d || '', manuale: manuale};
+}
+
+// Compatibilita': le chiamate senza schedina leggono solo i risultati scaricati
+function realOutcome(ev) { return outcomeFor(ev, null); }
+
+// Le partite distinte presenti in una schedina, con quanti eventi ognuna
+function fixturesOf(sim) {
+  const out = [];
+  (sim.events || []).forEach(e => {
+    if (!e.fixtureId || !e.marketKey) return;
+    let f = out.find(x => x.id === e.fixtureId);
+    if (!f) { f = {id: e.fixtureId, nome: e.matchName || e.label.split(' \u00B7 ')[0], n: 0}; out.push(f); }
+    f.n++;
+  });
+  return out;
+}
+
+// Salva il punteggio scritto a mano e ricalcola subito le spunte
+function setManualScore(id, fixtureId, txt) {
+  const sim = multiRegistry.find(x => x.id === id);
+  if (!sim) return;
+  if (!sim.manualScores) sim.manualScores = {};
+  const t = String(txt || '').trim();
+  if (!t) delete sim.manualScores[fixtureId];
+  else if (!parseScore(t)) { alert('Scrivi il punteggio come 2-1 (casa-ospiti).'); return; }
+  else sim.manualScores[fixtureId] = t;
+  if (persistMultiRegistry()) renderMultiRegistry();
 }
 
 // Spunta le caselle in base ai risultati veri e registra l'esito
@@ -2290,14 +2376,15 @@ function autoSettle(id) {
   if (!sim) return;
   let noti = 0, ignoti = [];
   sim.events.forEach(e => {
-    const ro = realOutcome(e);
+    const ro = outcomeFor(e, sim);
     if (ro && ro.won !== null) { e.won = ro.won; noti++; }
     else ignoti.push(e.label);
   });
   if (noti === 0) {
-    alert('Nessuno degli eventi \u00E8 agganciato a una partita gi\u00E0 giocata.\n\n' +
-          'La verifica automatica funziona sugli eventi aggiunti con "\uD83C\uDFAF Aggiungi partita selezionata", ' +
-          'una volta che la partita \u00E8 finita e i dati sono stati aggiornati.');
+    alert('Nessun punteggio disponibile per questi eventi.\n\n' +
+          'Scrivi i punteggi nelle caselle qui sopra, oppure aspetta il giro automatico delle 18:00.\n\n' +
+          'Gli eventi scritti a mano nel calcolatore non si possono verificare dal punteggio: ' +
+          'non sono legati a nessuna partita. Per quelli usa le caselle da spuntare.');
     return;
   }
   if (ignoti.length && !confirm('Verificati automaticamente ' + noti + ' eventi su ' + sim.events.length + '.\n\n' +
