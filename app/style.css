@@ -433,3 +433,14 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .real-res.wait{background:#2a2a3a;color:#8a8aa0}
 .sim-auto{margin-top:.5rem;width:100%}
 .ev-chip em{opacity:.7;font-style:normal}
+
+/* Punteggi scritti a mano nel pannello esiti della schedina */
+.score-box{margin:.5rem 0 .6rem;padding:.5rem .6rem;background:#1a2336;border:1px solid #2c3a55;border-radius:7px}
+.score-hint{font-size:.74rem;color:#9aa6bd;margin-bottom:.45rem;line-height:1.35}
+.score-row{display:flex;align-items:center;gap:.5rem;margin:.3rem 0;font-size:.82rem;flex-wrap:wrap}
+.score-row>span{flex:1 1 9rem;min-width:0}
+.score-row input.ev-score{width:4.8rem;flex:0 0 auto;padding:.34rem .4rem;font-size:.9rem;text-align:center;
+  background:#0f172a;color:#e8edf7;border:1px solid #3a4a6b;border-radius:5px}
+.score-row input.ev-score:focus{outline:none;border-color:#5b8cff}
+.score-src{flex:0 0 auto;font-size:.68rem;color:#7b8699;font-style:normal}
+.score-src.mano{color:#d4b35a}
