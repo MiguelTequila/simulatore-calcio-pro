@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-28T21:29:03.678762+00:00",
+  "updated": "2026-10-29T21:30:42.357837+00:00",
   "modelVersion": "3.0",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
     "remaining": "0",
     "used": "500",
-    "checkedAt": "2026-10-28T21:29:03.678762+00:00",
+    "checkedAt": "2026-10-29T21:30:42.357837+00:00",
     "stale": false
   },
   "competitions": {
@@ -14,154 +14,6 @@
       "name": "Serie A",
       "country": "Italy",
       "fixtures": [
-        {
-          "id": 558558,
-          "date": "2026-10-29",
-          "time": "17:30",
-          "matchday": 9,
-          "homeTeam": "Frosinone Calcio",
-          "homeId": 470,
-          "awayTeam": "US Lecce",
-          "awayId": 5890,
-          "homeStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
-            "gf_pg_home": null,
-            "ga_pg_home": null,
-            "played_home": null
-          },
-          "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
-            "gf_pg_away": null,
-            "ga_pg_away": null,
-            "played_away": null
-          },
-          "odds": null,
-          "dataQuality": "full",
-          "prediction": {
-            "lambdaH": 2.337,
-            "lambdaA": 1.022,
-            "rho": -0.07,
-            "lambdaHRaw": 2.337,
-            "lambdaARaw": 1.022,
-            "modelVersion": "3.0",
-            "leagueAvg": 1.476,
-            "marketWeight": 0.25,
-            "p1": 0.6603,
-            "px": 0.1949,
-            "p2": 0.1448,
-            "pOver25": 0.6513,
-            "pUnder25": 0.3487,
-            "pGG": 0.5838,
-            "pNG": 0.4162,
-            "topExact": [
-              [
-                "2-1",
-                0.0973
-              ],
-              [
-                "2-0",
-                0.0953
-              ],
-              [
-                "1-1",
-                0.0891
-              ]
-            ],
-            "totalGoalsDist": {
-              "0": 0.0407,
-              "1": 0.1055,
-              "2": 0.2026,
-              "3": 0.2203,
-              "4": 0.185,
-              "5": 0.1242,
-              "6": 0.0696,
-              "7+": 0.0522
-            },
-            "value": null
-          }
-        },
-        {
-          "id": 558551,
-          "date": "2026-10-29",
-          "time": "19:45",
-          "matchday": 9,
-          "homeTeam": "ACF Fiorentina",
-          "homeId": 99,
-          "awayTeam": "Atalanta BC",
-          "awayId": 102,
-          "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
-            "form": "LLLDW",
-            "elo": 1431.0,
-            "played": 8,
-            "gf_pg_home": null,
-            "ga_pg_home": null,
-            "played_home": null
-          },
-          "awayStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
-            "form": "DLWLL",
-            "elo": 1487.0,
-            "played": 8,
-            "gf_pg_away": null,
-            "ga_pg_away": null,
-            "played_away": null
-          },
-          "odds": null,
-          "dataQuality": "full",
-          "prediction": {
-            "lambdaH": 1.417,
-            "lambdaA": 1.89,
-            "rho": -0.07,
-            "lambdaHRaw": 1.417,
-            "lambdaARaw": 1.89,
-            "modelVersion": "3.0",
-            "leagueAvg": 1.476,
-            "marketWeight": 0.25,
-            "p1": 0.2827,
-            "px": 0.2376,
-            "p2": 0.4797,
-            "pOver25": 0.6415,
-            "pUnder25": 0.3585,
-            "pGG": 0.6497,
-            "pNG": 0.3503,
-            "topExact": [
-              [
-                "1-1",
-                0.1051
-              ],
-              [
-                "1-2",
-                0.0928
-              ],
-              [
-                "2-1",
-                0.0696
-              ]
-            ],
-            "totalGoalsDist": {
-              "0": 0.0436,
-              "1": 0.1076,
-              "2": 0.2074,
-              "3": 0.221,
-              "4": 0.1827,
-              "5": 0.1208,
-              "6": 0.0665,
-              "7+": 0.0505
-            },
-            "value": null
-          }
-        },
         {
           "id": 558539,
           "date": "2026-10-31",
@@ -184,8 +36,8 @@
           "awayStats": {
             "gf_pg": 1.78,
             "ga_pg": 2.44,
-            "form": "LWLWL",
-            "elo": 1474.0,
+            "form": "LLWLW",
+            "elo": 1445.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -194,44 +46,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.163,
-            "lambdaA": 1.235,
+            "lambdaH": 2.187,
+            "lambdaA": 1.196,
             "rho": -0.07,
-            "lambdaHRaw": 2.163,
-            "lambdaARaw": 1.235,
+            "lambdaHRaw": 2.187,
+            "lambdaARaw": 1.196,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5784,
-            "px": 0.2164,
-            "p2": 0.2052,
-            "pOver25": 0.6591,
-            "pUnder25": 0.3409,
-            "pGG": 0.6336,
-            "pNG": 0.3664,
+            "p1": 0.5921,
+            "px": 0.2136,
+            "p2": 0.1944,
+            "pOver25": 0.6563,
+            "pUnder25": 0.3437,
+            "pGG": 0.6253,
+            "pNG": 0.3747,
             "topExact": [
               [
                 "2-1",
-                0.0968
+                0.0973
               ],
               [
                 "1-1",
-                0.0958
+                0.0952
               ],
               [
                 "2-0",
-                0.0784
+                0.0814
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0398,
-              "1": 0.1014,
-              "2": 0.1997,
-              "3": 0.2191,
-              "4": 0.1861,
-              "5": 0.1264,
-              "6": 0.0716,
-              "7+": 0.0559
+              "0": 0.0402,
+              "1": 0.1026,
+              "2": 0.2009,
+              "3": 0.2195,
+              "4": 0.1856,
+              "5": 0.1256,
+              "6": 0.0708,
+              "7+": 0.0548
             },
             "value": null
           }
@@ -268,44 +120,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.71,
-            "lambdaA": 2.651,
+            "lambdaH": 0.706,
+            "lambdaA": 2.622,
             "rho": -0.07,
-            "lambdaHRaw": 0.71,
-            "lambdaARaw": 2.651,
+            "lambdaHRaw": 0.706,
+            "lambdaARaw": 2.622,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.0718,
-            "px": 0.148,
-            "p2": 0.7802,
-            "pOver25": 0.6507,
-            "pUnder25": 0.3493,
-            "pGG": 0.477,
-            "pNG": 0.523,
+            "p1": 0.0728,
+            "px": 0.1502,
+            "p2": 0.777,
+            "pOver25": 0.6442,
+            "pUnder25": 0.3558,
+            "pGG": 0.4742,
+            "pNG": 0.5258,
             "topExact": [
               [
                 "0-2",
-                0.1226
+                0.1239
               ],
               [
                 "0-3",
-                0.1084
+                0.1083
               ],
               [
                 "0-1",
-                0.0879
+                0.0899
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0395,
-              "1": 0.1081,
-              "2": 0.2017,
-              "3": 0.2209,
-              "4": 0.1856,
-              "5": 0.1248,
-              "6": 0.0699,
-              "7+": 0.0495
+              "0": 0.0407,
+              "1": 0.1107,
+              "2": 0.2044,
+              "3": 0.2216,
+              "4": 0.1844,
+              "5": 0.1227,
+              "6": 0.0681,
+              "7+": 0.0475
             },
             "value": null
           }
@@ -342,44 +194,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.507,
-            "lambdaA": 1.947,
+            "lambdaH": 1.494,
+            "lambdaA": 1.928,
             "rho": -0.07,
-            "lambdaHRaw": 1.507,
-            "lambdaARaw": 1.947,
+            "lambdaHRaw": 1.494,
+            "lambdaARaw": 1.928,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.294,
-            "px": 0.2325,
-            "p2": 0.4735,
-            "pOver25": 0.6702,
-            "pUnder25": 0.3298,
-            "pGG": 0.6737,
-            "pNG": 0.3263,
+            "p1": 0.2941,
+            "px": 0.2339,
+            "p2": 0.472,
+            "pOver25": 0.6642,
+            "pUnder25": 0.3358,
+            "pGG": 0.6692,
+            "pNG": 0.3308,
             "topExact": [
               [
                 "1-1",
-                0.0994
+                0.1007
               ],
               [
                 "1-2",
-                0.0904
+                0.0907
               ],
               [
                 "2-1",
-                0.07
+                0.0703
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0382,
-              "1": 0.0963,
-              "2": 0.1953,
-              "3": 0.2174,
-              "4": 0.1877,
-              "5": 0.1297,
-              "6": 0.0746,
-              "7+": 0.0608
+              "0": 0.0393,
+              "1": 0.0986,
+              "2": 0.1979,
+              "3": 0.2183,
+              "4": 0.1867,
+              "5": 0.1278,
+              "6": 0.0729,
+              "7+": 0.0585
             },
             "value": null
           }
@@ -416,25 +268,25 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.847,
-            "lambdaA": 0.456,
+            "lambdaH": 2.818,
+            "lambdaA": 0.454,
             "rho": -0.07,
-            "lambdaHRaw": 2.847,
-            "lambdaARaw": 0.456,
+            "lambdaHRaw": 2.818,
+            "lambdaARaw": 0.454,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8561,
-            "px": 0.1101,
-            "p2": 0.0339,
-            "pOver25": 0.638,
-            "pUnder25": 0.362,
-            "pGG": 0.3481,
-            "pNG": 0.6519,
+            "p1": 0.8534,
+            "px": 0.1121,
+            "p2": 0.0345,
+            "pOver25": 0.6318,
+            "pUnder25": 0.3682,
+            "pGG": 0.3464,
+            "pNG": 0.6536,
             "topExact": [
               [
                 "2-0",
-                0.1504
+                0.1519
               ],
               [
                 "3-0",
@@ -442,18 +294,18 @@
               ],
               [
                 "1-0",
-                0.1022
+                0.1044
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0405,
-              "1": 0.1158,
-              "2": 0.2057,
-              "3": 0.2228,
-              "4": 0.184,
-              "5": 0.1216,
-              "6": 0.0669,
-              "7+": 0.0426
+              "0": 0.0417,
+              "1": 0.1183,
+              "2": 0.2082,
+              "3": 0.2233,
+              "4": 0.1827,
+              "5": 0.1195,
+              "6": 0.0652,
+              "7+": 0.0411
             },
             "value": null
           }
@@ -468,11 +320,11 @@
           "awayTeam": "Torino FC",
           "awayId": 586,
           "homeStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -490,44 +342,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.108,
-            "lambdaA": 1.342,
+            "lambdaH": 2.395,
+            "lambdaA": 1.282,
             "rho": -0.07,
-            "lambdaHRaw": 2.108,
-            "lambdaARaw": 1.342,
+            "lambdaHRaw": 2.395,
+            "lambdaARaw": 1.282,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5433,
-            "px": 0.222,
-            "p2": 0.2347,
-            "pOver25": 0.6692,
-            "pUnder25": 0.3308,
-            "pGG": 0.6551,
-            "pNG": 0.3449,
+            "p1": 0.6137,
+            "px": 0.1989,
+            "p2": 0.1874,
+            "pOver25": 0.7097,
+            "pUnder25": 0.2903,
+            "pGG": 0.6619,
+            "pNG": 0.3381,
             "topExact": [
               [
-                "1-1",
-                0.0963
-              ],
-              [
                 "2-1",
-                0.0948
+                0.0933
               ],
               [
-                "2-0",
-                0.0706
+                "1-1",
+                0.0834
+              ],
+              [
+                "3-1",
+                0.0745
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0381,
-              "1": 0.0971,
-              "2": 0.1955,
-              "3": 0.2176,
-              "4": 0.1877,
-              "5": 0.1295,
-              "6": 0.0745,
-              "7+": 0.06
+              "0": 0.0308,
+              "1": 0.0824,
+              "2": 0.1771,
+              "3": 0.2103,
+              "4": 0.1933,
+              "5": 0.1422,
+              "6": 0.0871,
+              "7+": 0.0767
             },
             "value": null
           }
@@ -564,44 +416,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.614,
-            "lambdaA": 0.539,
+            "lambdaH": 2.588,
+            "lambdaA": 0.537,
             "rho": -0.07,
-            "lambdaHRaw": 2.614,
-            "lambdaARaw": 0.539,
+            "lambdaHRaw": 2.588,
+            "lambdaARaw": 0.537,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.812,
-            "px": 0.1369,
-            "p2": 0.0511,
-            "pOver25": 0.6081,
-            "pUnder25": 0.3919,
-            "pGG": 0.3903,
-            "pNG": 0.6097,
+            "p1": 0.8092,
+            "px": 0.139,
+            "p2": 0.0518,
+            "pOver25": 0.6021,
+            "pUnder25": 0.3979,
+            "pGG": 0.3882,
+            "pNG": 0.6118,
             "topExact": [
               [
                 "2-0",
-                0.1467
+                0.148
               ],
               [
                 "3-0",
-                0.1279
+                0.1276
               ],
               [
                 "1-0",
-                0.108
+                0.11
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0472,
-              "1": 0.1269,
-              "2": 0.2177,
-              "3": 0.2244,
-              "4": 0.1769,
-              "5": 0.1116,
-              "6": 0.0586,
-              "7+": 0.0365
+              "0": 0.0485,
+              "1": 0.1294,
+              "2": 0.22,
+              "3": 0.2246,
+              "4": 0.1755,
+              "5": 0.1097,
+              "6": 0.0571,
+              "7+": 0.0352
             },
             "value": null
           }
@@ -616,11 +468,11 @@
           "awayTeam": "Genoa CFC",
           "awayId": 107,
           "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -628,8 +480,8 @@
           "awayStats": {
             "gf_pg": 0.89,
             "ga_pg": 1.44,
-            "form": "WLWLD",
-            "elo": 1430.0,
+            "form": "WWLWL",
+            "elo": 1458.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -638,44 +490,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.291,
-            "lambdaA": 1.006,
+            "lambdaH": 1.182,
+            "lambdaA": 1.197,
             "rho": -0.07,
-            "lambdaHRaw": 1.291,
-            "lambdaARaw": 1.006,
+            "lambdaHRaw": 1.182,
+            "lambdaARaw": 1.197,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.4211,
-            "px": 0.2985,
-            "p2": 0.2805,
-            "pOver25": 0.4032,
-            "pUnder25": 0.5968,
-            "pGG": 0.4691,
-            "pNG": 0.5309,
+            "p1": 0.348,
+            "px": 0.2965,
+            "p2": 0.3555,
+            "pOver25": 0.4246,
+            "pUnder25": 0.5754,
+            "pGG": 0.4929,
+            "pNG": 0.5071,
             "topExact": [
               [
                 "1-1",
-                0.1397
-              ],
-              [
-                "1-0",
-                0.1207
+                0.1403
               ],
               [
                 "0-0",
-                0.1097
+                0.1019
+              ],
+              [
+                "0-1",
+                0.1018
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.1097,
-              "1": 0.2127,
-              "2": 0.2744,
-              "3": 0.2032,
-              "4": 0.1167,
-              "5": 0.0536,
-              "6": 0.0205,
-              "7+": 0.0092
+              "0": 0.1019,
+              "1": 0.2021,
+              "2": 0.2714,
+              "3": 0.2079,
+              "4": 0.1236,
+              "5": 0.0588,
+              "6": 0.0233,
+              "7+": 0.011
             },
             "value": null
           }
@@ -692,8 +544,8 @@
           "homeStats": {
             "gf_pg": 1.22,
             "ga_pg": 1.11,
-            "form": "WLDWL",
-            "elo": 1549.0,
+            "form": "LWLDW",
+            "elo": 1522.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -702,8 +554,8 @@
           "awayStats": {
             "gf_pg": 1.89,
             "ga_pg": 1.22,
-            "form": "DLWDW",
-            "elo": 1522.0,
+            "form": "WDLWD",
+            "elo": 1551.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -712,44 +564,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.239,
-            "lambdaA": 1.212,
+            "lambdaH": 1.178,
+            "lambdaA": 1.254,
             "rho": -0.07,
-            "lambdaHRaw": 1.239,
-            "lambdaARaw": 1.212,
+            "lambdaHRaw": 1.178,
+            "lambdaARaw": 1.254,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3607,
-            "px": 0.2913,
-            "p2": 0.3479,
-            "pOver25": 0.4434,
-            "pUnder25": 0.5566,
-            "pGG": 0.5079,
-            "pNG": 0.4921,
+            "p1": 0.3354,
+            "px": 0.2924,
+            "p2": 0.3723,
+            "pOver25": 0.4387,
+            "pUnder25": 0.5613,
+            "pGG": 0.5038,
+            "pNG": 0.4962,
             "topExact": [
               [
                 "1-1",
-                0.1385
-              ],
-              [
-                "1-0",
-                0.0978
+                0.1389
               ],
               [
                 "0-1",
-                0.0955
+                0.1011
+              ],
+              [
+                "0-0",
+                0.0969
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0953,
-              "1": 0.1932,
-              "2": 0.268,
-              "3": 0.2116,
-              "4": 0.1296,
-              "5": 0.0635,
-              "6": 0.026,
-              "7+": 0.0128
+              "0": 0.0969,
+              "1": 0.1955,
+              "2": 0.2689,
+              "3": 0.2107,
+              "4": 0.1281,
+              "5": 0.0623,
+              "6": 0.0253,
+              "7+": 0.0123
             },
             "value": null
           }
@@ -774,11 +626,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
             "form": "LLLDW",
             "elo": 1431.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -786,44 +638,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.048,
-            "lambdaA": 1.425,
+            "lambdaH": 2.018,
+            "lambdaA": 1.469,
             "rho": -0.07,
-            "lambdaHRaw": 2.048,
-            "lambdaARaw": 1.425,
+            "lambdaHRaw": 2.018,
+            "lambdaARaw": 1.469,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5128,
-            "px": 0.2264,
-            "p2": 0.2607,
-            "pOver25": 0.6737,
-            "pUnder25": 0.3263,
-            "pGG": 0.6677,
-            "pNG": 0.3323,
+            "p1": 0.4971,
+            "px": 0.2283,
+            "p2": 0.2746,
+            "pOver25": 0.6763,
+            "pUnder25": 0.3237,
+            "pGG": 0.6737,
+            "pNG": 0.3263,
             "topExact": [
               [
                 "1-1",
-                0.097
+                0.0972
               ],
               [
                 "2-1",
-                0.0928
+                0.0916
               ],
               [
                 "2-2",
-                0.0662
+                0.0673
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0374,
-              "1": 0.0952,
-              "2": 0.1937,
-              "3": 0.2169,
-              "4": 0.1883,
-              "5": 0.1308,
-              "6": 0.0757,
-              "7+": 0.0619
+              "0": 0.037,
+              "1": 0.0941,
+              "2": 0.1926,
+              "3": 0.2165,
+              "4": 0.1887,
+              "5": 0.1316,
+              "6": 0.0765,
+              "7+": 0.0631
             },
             "value": null
           }
@@ -838,11 +690,11 @@
           "awayTeam": "Parma Calcio 1913",
           "awayId": 112,
           "homeStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
+            "gf_pg": 1.78,
+            "ga_pg": 1.89,
             "form": "DLWLL",
             "elo": 1487.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -860,44 +712,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.892,
-            "lambdaA": 0.793,
+            "lambdaH": 1.902,
+            "lambdaA": 0.795,
             "rho": -0.07,
-            "lambdaHRaw": 1.892,
-            "lambdaARaw": 0.793,
+            "lambdaHRaw": 1.902,
+            "lambdaARaw": 0.795,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.626,
-            "px": 0.2305,
-            "p2": 0.1435,
-            "pOver25": 0.5024,
-            "pUnder25": 0.4976,
-            "pGG": 0.4722,
-            "pNG": 0.5278,
+            "p1": 0.6275,
+            "px": 0.2295,
+            "p2": 0.143,
+            "pOver25": 0.5052,
+            "pUnder25": 0.4948,
+            "pGG": 0.4737,
+            "pNG": 0.5263,
             "topExact": [
               [
                 "2-0",
-                0.1222
-              ],
-              [
-                "1-0",
                 0.122
               ],
               [
+                "1-0",
+                0.1212
+              ],
+              [
                 "1-1",
-                0.1096
+                0.1092
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0754,
-              "1": 0.1689,
-              "2": 0.2533,
-              "3": 0.2203,
-              "4": 0.1479,
-              "5": 0.0794,
-              "6": 0.0355,
-              "7+": 0.0193
+              "0": 0.0746,
+              "1": 0.1677,
+              "2": 0.2525,
+              "3": 0.2206,
+              "4": 0.1487,
+              "5": 0.0802,
+              "6": 0.036,
+              "7+": 0.0197
             },
             "value": null
           }
@@ -934,44 +786,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.136,
-            "lambdaA": 1.195,
+            "lambdaH": 1.128,
+            "lambdaA": 1.185,
             "rho": -0.07,
-            "lambdaHRaw": 1.136,
-            "lambdaARaw": 1.195,
+            "lambdaHRaw": 1.128,
+            "lambdaARaw": 1.185,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3355,
-            "px": 0.2998,
-            "p2": 0.3647,
-            "pOver25": 0.4122,
-            "pUnder25": 0.5878,
-            "pGG": 0.4827,
-            "pNG": 0.5173,
+            "p1": 0.3353,
+            "px": 0.3011,
+            "p2": 0.3636,
+            "pOver25": 0.4075,
+            "pUnder25": 0.5925,
+            "pGG": 0.4789,
+            "pNG": 0.5211,
             "topExact": [
               [
                 "1-1",
-                0.1412
-              ],
-              [
-                "0-1",
-                0.1069
+                0.1415
               ],
               [
                 "0-0",
-                0.1064
+                0.1082
+              ],
+              [
+                "0-1",
+                0.108
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.1064,
-              "1": 0.2081,
-              "2": 0.2733,
-              "3": 0.2052,
-              "4": 0.1196,
-              "5": 0.0558,
-              "6": 0.0217,
-              "7+": 0.01
+              "0": 0.1082,
+              "1": 0.2103,
+              "2": 0.274,
+              "3": 0.2041,
+              "4": 0.1181,
+              "5": 0.0546,
+              "6": 0.0211,
+              "7+": 0.0096
             },
             "value": null
           }
@@ -996,11 +848,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -1008,44 +860,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.881,
-            "lambdaA": 1.035,
+            "lambdaH": 2.153,
+            "lambdaA": 0.966,
             "rho": -0.07,
-            "lambdaHRaw": 1.881,
-            "lambdaARaw": 1.035,
+            "lambdaHRaw": 2.153,
+            "lambdaARaw": 0.966,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5637,
-            "px": 0.2384,
-            "p2": 0.1979,
-            "pOver25": 0.5574,
-            "pUnder25": 0.4426,
+            "p1": 0.6378,
+            "px": 0.2098,
+            "p2": 0.1524,
+            "pOver25": 0.6022,
+            "pUnder25": 0.3978,
             "pGG": 0.5539,
             "pNG": 0.4461,
             "topExact": [
               [
-                "1-1",
-                0.1129
+                "2-0",
+                0.1026
               ],
               [
                 "2-1",
-                0.0992
+                0.0991
               ],
               [
-                "2-0",
-                0.0958
+                "1-1",
+                0.0986
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0616,
-              "1": 0.1432,
-              "2": 0.2378,
+              "0": 0.0507,
+              "1": 0.1252,
+              "2": 0.2218,
               "3": 0.2239,
-              "4": 0.1633,
-              "5": 0.0952,
-              "6": 0.0463,
-              "7+": 0.0287
+              "4": 0.1746,
+              "5": 0.1089,
+              "6": 0.0566,
+              "7+": 0.0382
             },
             "value": null
           }
@@ -1070,11 +922,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -1082,44 +934,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.099,
-            "lambdaA": 1.655,
+            "lambdaH": 1.052,
+            "lambdaA": 1.88,
             "rho": -0.07,
-            "lambdaHRaw": 1.099,
-            "lambdaARaw": 1.655,
+            "lambdaHRaw": 1.052,
+            "lambdaARaw": 1.88,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2446,
-            "px": 0.2604,
-            "p2": 0.495,
-            "pOver25": 0.5194,
-            "pUnder25": 0.4806,
-            "pGG": 0.5476,
-            "pNG": 0.4524,
+            "p1": 0.2017,
+            "px": 0.2387,
+            "p2": 0.5597,
+            "pOver25": 0.5611,
+            "pUnder25": 0.4389,
+            "pGG": 0.5587,
+            "pNG": 0.4413,
             "topExact": [
               [
                 "1-1",
-                0.124
-              ],
-              [
-                "0-1",
-                0.0973
+                0.1128
               ],
               [
                 "1-2",
-                0.0959
+                0.0992
+              ],
+              [
+                "0-2",
+                0.0943
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0718,
-              "1": 0.1591,
-              "2": 0.2496,
-              "3": 0.2217,
-              "4": 0.1527,
-              "5": 0.0841,
-              "6": 0.0386,
-              "7+": 0.0223
+              "0": 0.0607,
+              "1": 0.1416,
+              "2": 0.2366,
+              "3": 0.224,
+              "4": 0.1642,
+              "5": 0.0963,
+              "6": 0.0471,
+              "7+": 0.0295
             },
             "value": null
           }
@@ -1156,44 +1008,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.774,
-            "lambdaA": 1.394,
+            "lambdaH": 0.77,
+            "lambdaA": 1.382,
             "rho": -0.07,
-            "lambdaHRaw": 0.774,
-            "lambdaARaw": 1.394,
+            "lambdaHRaw": 0.77,
+            "lambdaARaw": 1.382,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1995,
-            "px": 0.2927,
-            "p2": 0.5078,
-            "pOver25": 0.3686,
-            "pUnder25": 0.6314,
-            "pGG": 0.4138,
-            "pNG": 0.5862,
+            "p1": 0.2001,
+            "px": 0.2944,
+            "p2": 0.5055,
+            "pOver25": 0.3643,
+            "pUnder25": 0.6357,
+            "pGG": 0.4108,
+            "pNG": 0.5892,
             "topExact": [
               [
                 "0-1",
-                0.1509
+                0.152
               ],
               [
                 "1-1",
-                0.1321
+                0.1324
               ],
               [
                 "0-0",
-                0.1231
+                0.1249
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.1231,
-              "1": 0.2308,
-              "2": 0.2775,
-              "3": 0.1943,
-              "4": 0.1053,
-              "5": 0.0457,
-              "6": 0.0165,
-              "7+": 0.0068
+              "0": 0.1249,
+              "1": 0.2329,
+              "2": 0.2779,
+              "3": 0.1931,
+              "4": 0.1039,
+              "5": 0.0447,
+              "6": 0.016,
+              "7+": 0.0066
             },
             "value": null
           }
@@ -1230,25 +1082,25 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 3.75,
-            "lambdaA": 0.758,
+            "lambdaH": 3.707,
+            "lambdaA": 0.753,
             "rho": -0.07,
-            "lambdaHRaw": 3.75,
-            "lambdaARaw": 0.758,
+            "lambdaHRaw": 3.707,
+            "lambdaARaw": 0.753,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8837,
-            "px": 0.0804,
-            "p2": 0.0359,
-            "pOver25": 0.8206,
-            "pUnder25": 0.1794,
-            "pGG": 0.5207,
-            "pNG": 0.4793,
+            "p1": 0.8813,
+            "px": 0.0821,
+            "p2": 0.0366,
+            "pOver25": 0.8153,
+            "pUnder25": 0.1847,
+            "pGG": 0.5178,
+            "pNG": 0.4822,
             "topExact": [
               [
                 "3-0",
-                0.1006
+                0.1018
               ],
               [
                 "4-0",
@@ -1256,18 +1108,18 @@
               ],
               [
                 "2-0",
-                0.0805
+                0.0824
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0137,
-              "1": 0.047,
-              "2": 0.1186,
-              "3": 0.1748,
-              "4": 0.197,
-              "5": 0.1777,
-              "6": 0.1335,
-              "7+": 0.1376
+              "0": 0.0143,
+              "1": 0.0488,
+              "2": 0.1216,
+              "3": 0.1773,
+              "4": 0.1977,
+              "5": 0.1763,
+              "6": 0.131,
+              "7+": 0.133
             },
             "value": null
           }
@@ -1284,8 +1136,8 @@
           "homeStats": {
             "gf_pg": 1.89,
             "ga_pg": 1.22,
-            "form": "DLWDW",
-            "elo": 1522.0,
+            "form": "WDLWD",
+            "elo": 1551.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -1304,44 +1156,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.172,
-            "lambdaA": 1.813,
+            "lambdaH": 1.192,
+            "lambdaA": 1.76,
             "rho": -0.07,
-            "lambdaHRaw": 1.172,
-            "lambdaARaw": 1.813,
+            "lambdaHRaw": 1.192,
+            "lambdaARaw": 1.76,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2383,
-            "px": 0.2456,
-            "p2": 0.5161,
-            "pOver25": 0.5732,
-            "pUnder25": 0.4268,
-            "pGG": 0.5851,
-            "pNG": 0.4149,
+            "p1": 0.2509,
+            "px": 0.2501,
+            "p2": 0.499,
+            "pOver25": 0.5656,
+            "pUnder25": 0.4344,
+            "pGG": 0.5841,
+            "pNG": 0.4159,
             "topExact": [
               [
                 "1-1",
-                0.115
+                0.1173
               ],
               [
                 "1-2",
-                0.0974
+                0.0965
               ],
               [
                 "0-1",
-                0.0842
+                0.0843
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0581,
-              "1": 0.1359,
-              "2": 0.2328,
-              "3": 0.2242,
-              "4": 0.1673,
-              "5": 0.0999,
-              "6": 0.0497,
-              "7+": 0.0322
+              "0": 0.06,
+              "1": 0.139,
+              "2": 0.2354,
+              "3": 0.2241,
+              "4": 0.1653,
+              "5": 0.0976,
+              "6": 0.048,
+              "7+": 0.0306
             },
             "value": null
           }
@@ -1358,8 +1210,8 @@
           "homeStats": {
             "gf_pg": 0.89,
             "ga_pg": 1.44,
-            "form": "WLWLD",
-            "elo": 1430.0,
+            "form": "WWLWL",
+            "elo": 1458.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -1378,44 +1230,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.931,
-            "lambdaA": 1.661,
+            "lambdaH": 0.961,
+            "lambdaA": 1.614,
             "rho": -0.07,
-            "lambdaHRaw": 0.931,
-            "lambdaARaw": 1.661,
+            "lambdaHRaw": 0.961,
+            "lambdaARaw": 1.614,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2024,
-            "px": 0.2601,
-            "p2": 0.5374,
-            "pOver25": 0.4794,
-            "pUnder25": 0.5206,
-            "pGG": 0.4988,
-            "pNG": 0.5012,
+            "p1": 0.2165,
+            "px": 0.2653,
+            "p2": 0.5182,
+            "pOver25": 0.4752,
+            "pUnder25": 0.5248,
+            "pGG": 0.5029,
+            "pNG": 0.4971,
             "topExact": [
               [
                 "1-1",
-                0.1239
+                0.1264
               ],
               [
                 "0-1",
-                0.1163
+                0.1147
               ],
               [
                 "0-2",
-                0.1034
+                0.0992
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.083,
-              "1": 0.1779,
-              "2": 0.2597,
-              "3": 0.2174,
-              "4": 0.1409,
-              "5": 0.073,
-              "6": 0.0315,
-              "7+": 0.0166
+              "0": 0.0844,
+              "1": 0.1796,
+              "2": 0.2608,
+              "3": 0.2168,
+              "4": 0.1396,
+              "5": 0.0719,
+              "6": 0.0309,
+              "7+": 0.0161
             },
             "value": null
           }
@@ -1432,19 +1284,19 @@
           "homeStats": {
             "gf_pg": 1.78,
             "ga_pg": 2.44,
-            "form": "LWLWL",
-            "elo": 1474.0,
+            "form": "LLWLW",
+            "elo": 1445.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
+            "gf_pg": 1.78,
+            "ga_pg": 1.89,
             "form": "DLWLL",
             "elo": 1487.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -1452,44 +1304,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.965,
-            "lambdaA": 1.885,
+            "lambdaH": 1.919,
+            "lambdaA": 1.934,
             "rho": -0.07,
-            "lambdaHRaw": 1.965,
-            "lambdaARaw": 1.885,
+            "lambdaHRaw": 1.919,
+            "lambdaARaw": 1.934,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.4044,
-            "px": 0.2226,
-            "p2": 0.373,
-            "pOver25": 0.7387,
-            "pUnder25": 0.2613,
-            "pGG": 0.7346,
-            "pNG": 0.2654,
+            "p1": 0.3858,
+            "px": 0.2227,
+            "p2": 0.3915,
+            "pOver25": 0.7391,
+            "pUnder25": 0.2609,
+            "pGG": 0.7352,
+            "pNG": 0.2648,
             "topExact": [
               [
                 "1-1",
-                0.0845
-              ],
-              [
-                "2-1",
-                0.0776
+                0.0844
               ],
               [
                 "1-2",
-                0.0744
+                0.0763
+              ],
+              [
+                "2-1",
+                0.0757
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0268,
-              "1": 0.071,
-              "2": 0.1635,
-              "3": 0.2027,
-              "4": 0.1951,
-              "5": 0.1503,
-              "6": 0.0964,
-              "7+": 0.0941
+              "1": 0.0709,
+              "2": 0.1633,
+              "3": 0.2026,
+              "4": 0.1952,
+              "5": 0.1504,
+              "6": 0.0966,
+              "7+": 0.0943
             },
             "value": null
           }
@@ -1526,44 +1378,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.898,
-            "lambdaA": 1.258,
+            "lambdaH": 1.882,
+            "lambdaA": 1.248,
             "rho": -0.07,
-            "lambdaHRaw": 1.898,
-            "lambdaARaw": 1.258,
+            "lambdaHRaw": 1.882,
+            "lambdaARaw": 1.248,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5161,
-            "px": 0.2382,
+            "p1": 0.5147,
+            "px": 0.2396,
             "p2": 0.2457,
-            "pOver25": 0.6106,
-            "pUnder25": 0.3894,
-            "pGG": 0.6156,
-            "pNG": 0.3844,
+            "pOver25": 0.6049,
+            "pUnder25": 0.3951,
+            "pGG": 0.6114,
+            "pNG": 0.3886,
             "topExact": [
               [
                 "1-1",
-                0.1089
+                0.11
               ],
               [
                 "2-1",
-                0.0966
+                0.0967
               ],
               [
                 "2-0",
-                0.0768
+                0.0775
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0497,
-              "1": 0.1202,
-              "2": 0.2194,
-              "3": 0.2233,
-              "4": 0.1763,
-              "5": 0.1113,
-              "6": 0.0585,
-              "7+": 0.0412
+              "0": 0.051,
+              "1": 0.1226,
+              "2": 0.2215,
+              "3": 0.2236,
+              "4": 0.175,
+              "5": 0.1095,
+              "6": 0.0571,
+              "7+": 0.0397
             },
             "value": null
           }
@@ -1578,11 +1430,11 @@
           "awayTeam": "Juventus FC",
           "awayId": 109,
           "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
             "form": "LLLDW",
             "elo": 1431.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -1590,8 +1442,8 @@
           "awayStats": {
             "gf_pg": 1.22,
             "ga_pg": 1.11,
-            "form": "WLDWL",
-            "elo": 1549.0,
+            "form": "LWLDW",
+            "elo": 1522.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -1600,44 +1452,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.975,
-            "lambdaA": 1.631,
+            "lambdaH": 1.03,
+            "lambdaA": 1.578,
             "rho": -0.07,
-            "lambdaHRaw": 0.975,
-            "lambdaARaw": 1.631,
+            "lambdaHRaw": 1.03,
+            "lambdaARaw": 1.578,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2175,
-            "px": 0.2636,
-            "p2": 0.519,
-            "pOver25": 0.4828,
-            "pUnder25": 0.5172,
-            "pGG": 0.509,
-            "pNG": 0.491,
+            "p1": 0.2392,
+            "px": 0.2687,
+            "p2": 0.4921,
+            "pOver25": 0.4834,
+            "pUnder25": 0.5166,
+            "pGG": 0.5186,
+            "pNG": 0.4814,
             "topExact": [
               [
                 "1-1",
-                0.1257
+                0.1282
               ],
               [
                 "0-1",
-                0.1123
+                0.1079
               ],
               [
-                "0-2",
-                0.0983
+                "1-2",
+                0.0945
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0821,
-              "1": 0.1761,
+              "1": 0.1755,
               "2": 0.259,
-              "3": 0.2178,
-              "4": 0.1419,
-              "5": 0.0739,
-              "6": 0.0321,
-              "7+": 0.0171
+              "3": 0.2179,
+              "4": 0.142,
+              "5": 0.0741,
+              "6": 0.0322,
+              "7+": 0.0172
             },
             "value": null
           }
@@ -1674,44 +1526,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.097,
-            "lambdaA": 0.57,
+            "lambdaH": 2.078,
+            "lambdaA": 0.567,
             "rho": -0.07,
-            "lambdaHRaw": 2.097,
-            "lambdaARaw": 0.57,
+            "lambdaHRaw": 2.078,
+            "lambdaARaw": 0.567,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.7248,
-            "px": 0.1927,
-            "p2": 0.0825,
-            "pOver25": 0.4976,
-            "pUnder25": 0.5024,
-            "pGG": 0.3868,
-            "pNG": 0.6132,
+            "p1": 0.722,
+            "px": 0.1947,
+            "p2": 0.0833,
+            "pOver25": 0.4921,
+            "pUnder25": 0.5079,
+            "pGG": 0.3843,
+            "pNG": 0.6157,
             "topExact": [
               [
                 "2-0",
-                0.153
+                0.1535
               ],
               [
                 "1-0",
-                0.1401
+                0.1419
               ],
               [
                 "3-0",
-                0.107
+                0.1064
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0754,
-              "1": 0.1739,
-              "2": 0.2532,
-              "3": 0.2199,
-              "4": 0.1467,
-              "5": 0.0782,
-              "6": 0.0348,
-              "7+": 0.018
+              "0": 0.077,
+              "1": 0.1764,
+              "2": 0.2546,
+              "3": 0.2193,
+              "4": 0.145,
+              "5": 0.0767,
+              "6": 0.0338,
+              "7+": 0.0173
             },
             "value": null
           }
@@ -1736,11 +1588,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -1748,44 +1600,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.96,
-            "lambdaA": 0.625,
+            "lambdaH": 3.379,
+            "lambdaA": 0.584,
             "rho": -0.07,
-            "lambdaHRaw": 2.96,
-            "lambdaARaw": 0.625,
+            "lambdaHRaw": 3.379,
+            "lambdaARaw": 0.584,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8355,
-            "px": 0.1167,
-            "p2": 0.0477,
-            "pOver25": 0.6911,
-            "pUnder25": 0.3089,
-            "pGG": 0.4439,
-            "pNG": 0.5561,
+            "p1": 0.8818,
+            "px": 0.0868,
+            "p2": 0.0315,
+            "pOver25": 0.7508,
+            "pUnder25": 0.2492,
+            "pGG": 0.4293,
+            "pNG": 0.5707,
             "topExact": [
               [
-                "2-0",
-                0.1229
+                "3-0",
+                0.1251
               ],
               [
-                "3-0",
-                0.1213
+                "2-0",
+                0.111
               ],
               [
                 "4-0",
-                0.0897
+                0.1057
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0317,
-              "1": 0.0933,
-              "2": 0.1839,
-              "3": 0.2154,
-              "4": 0.193,
-              "5": 0.1384,
-              "6": 0.0827,
-              "7+": 0.0616
+              "0": 0.0221,
+              "1": 0.0717,
+              "2": 0.1554,
+              "3": 0.2017,
+              "4": 0.1998,
+              "5": 0.1583,
+              "6": 0.1046,
+              "7+": 0.0864
             },
             "value": null
           }
@@ -1822,44 +1674,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.558,
-            "lambdaA": 2.355,
+            "lambdaH": 0.556,
+            "lambdaA": 2.33,
             "rho": -0.07,
-            "lambdaHRaw": 0.558,
-            "lambdaARaw": 2.355,
+            "lambdaHRaw": 0.556,
+            "lambdaARaw": 2.33,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.0656,
-            "px": 0.1634,
-            "p2": 0.771,
-            "pOver25": 0.5557,
-            "pUnder25": 0.4443,
-            "pGG": 0.3921,
-            "pNG": 0.6079,
+            "p1": 0.0666,
+            "px": 0.1657,
+            "p2": 0.7676,
+            "pOver25": 0.5496,
+            "pUnder25": 0.4504,
+            "pGG": 0.3901,
+            "pNG": 0.6099,
             "topExact": [
               [
                 "0-2",
-                0.151
+                0.1519
               ],
               [
                 "0-1",
-                0.1233
+                0.1253
               ],
               [
                 "0-3",
-                0.1185
+                0.1179
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0595,
-              "1": 0.1486,
-              "2": 0.2361,
-              "3": 0.2244,
-              "4": 0.1634,
-              "5": 0.0952,
-              "6": 0.0462,
-              "7+": 0.0264
+              "0": 0.061,
+              "1": 0.1513,
+              "2": 0.2381,
+              "3": 0.2242,
+              "4": 0.1618,
+              "5": 0.0934,
+              "6": 0.0449,
+              "7+": 0.0254
             },
             "value": null
           }
@@ -1876,8 +1728,8 @@
           "homeStats": {
             "gf_pg": 1.89,
             "ga_pg": 1.22,
-            "form": "DLWDW",
-            "elo": 1522.0,
+            "form": "WDLWD",
+            "elo": 1551.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -1896,44 +1748,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.93,
-            "lambdaA": 1.147,
+            "lambdaH": 1.953,
+            "lambdaA": 1.112,
             "rho": -0.07,
-            "lambdaHRaw": 1.93,
-            "lambdaARaw": 1.147,
+            "lambdaHRaw": 1.953,
+            "lambdaARaw": 1.112,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5486,
-            "px": 0.2351,
-            "p2": 0.2163,
-            "pOver25": 0.5934,
-            "pUnder25": 0.4066,
-            "pGG": 0.5903,
-            "pNG": 0.4097,
+            "p1": 0.5618,
+            "px": 0.2326,
+            "p2": 0.2056,
+            "pOver25": 0.5908,
+            "pUnder25": 0.4092,
+            "pGG": 0.5828,
+            "pNG": 0.4172,
             "topExact": [
               [
                 "1-1",
-                0.1093
+                0.1085
               ],
               [
                 "2-1",
-                0.0986
+                0.099
               ],
               [
                 "2-0",
-                0.086
+                0.0891
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0533,
-              "1": 0.1277,
-              "2": 0.2256,
-              "3": 0.224,
-              "4": 0.1723,
-              "5": 0.106,
-              "6": 0.0544,
-              "7+": 0.0366
+              "0": 0.0538,
+              "1": 0.129,
+              "2": 0.2265,
+              "3": 0.2241,
+              "4": 0.1717,
+              "5": 0.1052,
+              "6": 0.0538,
+              "7+": 0.0359
             },
             "value": null
           }
@@ -1950,8 +1802,8 @@
           "homeStats": {
             "gf_pg": 1.22,
             "ga_pg": 1.11,
-            "form": "WLDWL",
-            "elo": 1549.0,
+            "form": "LWLDW",
+            "elo": 1522.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -1970,44 +1822,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.957,
-            "lambdaA": 0.562,
+            "lambdaH": 1.903,
+            "lambdaA": 0.573,
             "rho": -0.07,
-            "lambdaHRaw": 1.957,
-            "lambdaARaw": 0.562,
+            "lambdaHRaw": 1.903,
+            "lambdaARaw": 0.573,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.6999,
-            "px": 0.2093,
-            "p2": 0.0908,
-            "pOver25": 0.4605,
-            "pUnder25": 0.5395,
-            "pGG": 0.3754,
-            "pNG": 0.6246,
+            "p1": 0.6862,
+            "px": 0.217,
+            "p2": 0.0968,
+            "pOver25": 0.4496,
+            "pUnder25": 0.5504,
+            "pGG": 0.3774,
+            "pNG": 0.6226,
             "topExact": [
               [
-                "2-0",
-                0.1543
-              ],
-              [
                 "1-0",
-                0.1516
+                0.1537
               ],
               [
-                "3-0",
-                0.1007
+                "2-0",
+                0.1524
+              ],
+              [
+                "1-1",
+                0.0982
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0868,
-              "1": 0.1907,
-              "2": 0.262,
-              "3": 0.2148,
-              "4": 0.1352,
-              "5": 0.0681,
-              "6": 0.0286,
-              "7+": 0.0138
+              "0": 0.0906,
+              "1": 0.1955,
+              "2": 0.2644,
+              "3": 0.2129,
+              "4": 0.1318,
+              "5": 0.0653,
+              "6": 0.0269,
+              "7+": 0.0127
             },
             "value": null
           }
@@ -2044,44 +1896,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.957,
-            "lambdaA": 0.789,
+            "lambdaH": 1.939,
+            "lambdaA": 0.784,
             "rho": -0.07,
-            "lambdaHRaw": 1.957,
-            "lambdaARaw": 0.789,
+            "lambdaHRaw": 1.939,
+            "lambdaARaw": 0.784,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.6409,
-            "px": 0.2229,
-            "p2": 0.1362,
-            "pOver25": 0.5171,
-            "pUnder25": 0.4829,
-            "pGG": 0.4755,
-            "pNG": 0.5245,
+            "p1": 0.6385,
+            "px": 0.2247,
+            "p2": 0.1368,
+            "pOver25": 0.5115,
+            "pUnder25": 0.4885,
+            "pGG": 0.472,
+            "pNG": 0.528,
             "topExact": [
               [
                 "2-0",
-                0.123
+                0.1236
               ],
               [
                 "1-0",
-                0.1188
+                0.1205
               ],
               [
                 "1-1",
-                0.1062
+                0.1069
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0712,
-              "1": 0.1625,
-              "2": 0.2492,
-              "3": 0.2217,
-              "4": 0.1522,
-              "5": 0.0836,
-              "6": 0.0383,
-              "7+": 0.0213
+              "0": 0.0728,
+              "1": 0.1651,
+              "2": 0.2507,
+              "3": 0.2212,
+              "4": 0.1506,
+              "5": 0.082,
+              "6": 0.0372,
+              "7+": 0.0205
             },
             "value": null
           }
@@ -2108,8 +1960,8 @@
           "awayStats": {
             "gf_pg": 0.89,
             "ga_pg": 1.44,
-            "form": "WLWLD",
-            "elo": 1430.0,
+            "form": "WWLWL",
+            "elo": 1458.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -2118,44 +1970,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.472,
-            "lambdaA": 1.288,
+            "lambdaH": 1.429,
+            "lambdaA": 1.325,
             "rho": -0.07,
-            "lambdaHRaw": 1.472,
-            "lambdaARaw": 1.288,
+            "lambdaHRaw": 1.429,
+            "lambdaARaw": 1.325,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.4065,
-            "px": 0.2705,
-            "p2": 0.3229,
-            "pOver25": 0.5209,
-            "pUnder25": 0.4791,
-            "pGG": 0.5664,
-            "pNG": 0.4336,
+            "p1": 0.3878,
+            "px": 0.2717,
+            "p2": 0.3404,
+            "pOver25": 0.5195,
+            "pUnder25": 0.4805,
+            "pGG": 0.5668,
+            "pNG": 0.4332,
             "topExact": [
               [
                 "1-1",
-                0.1284
+                0.129
               ],
               [
                 "2-1",
-                0.0883
+                0.0862
               ],
               [
                 "1-0",
-                0.0847
+                0.0825
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0717,
-              "1": 0.1579,
-              "2": 0.2495,
-              "3": 0.2218,
-              "4": 0.1531,
-              "5": 0.0845,
-              "6": 0.0389,
-              "7+": 0.0226
+              "0": 0.0721,
+              "1": 0.1585,
+              "2": 0.2499,
+              "3": 0.2217,
+              "4": 0.1527,
+              "5": 0.0841,
+              "6": 0.0386,
+              "7+": 0.0224
             },
             "value": null
           }
@@ -2180,11 +2032,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -2192,44 +2044,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.057,
-            "lambdaA": 1.399,
+            "lambdaH": 1.964,
+            "lambdaA": 1.592,
             "rho": -0.07,
-            "lambdaHRaw": 2.057,
-            "lambdaARaw": 1.399,
+            "lambdaHRaw": 1.964,
+            "lambdaARaw": 1.592,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5203,
-            "px": 0.2259,
-            "p2": 0.2539,
-            "pOver25": 0.6704,
-            "pUnder25": 0.3296,
-            "pGG": 0.663,
-            "pNG": 0.337,
+            "p1": 0.4601,
+            "px": 0.23,
+            "p2": 0.3099,
+            "pOver25": 0.6889,
+            "pUnder25": 0.3111,
+            "pGG": 0.6908,
+            "pNG": 0.3092,
             "topExact": [
               [
                 "1-1",
-                0.0973
+                0.0957
               ],
               [
                 "2-1",
-                0.0935
+                0.0878
               ],
               [
-                "2-0",
-                0.0669
+                "1-2",
+                0.0712
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.038,
-              "1": 0.0965,
-              "2": 0.1951,
-              "3": 0.2174,
-              "4": 0.1878,
-              "5": 0.1298,
-              "6": 0.0748,
-              "7+": 0.0606
+              "0": 0.0349,
+              "1": 0.0892,
+              "2": 0.187,
+              "3": 0.2143,
+              "4": 0.1905,
+              "5": 0.1354,
+              "6": 0.0803,
+              "7+": 0.0685
             },
             "value": null
           }
@@ -2244,11 +2096,11 @@
           "awayTeam": "FC Internazionale Milano",
           "awayId": 108,
           "homeStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
+            "gf_pg": 1.78,
+            "ga_pg": 1.89,
             "form": "DLWLL",
             "elo": 1487.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -2266,21 +2118,21 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.222,
-            "lambdaA": 2.659,
+            "lambdaH": 1.23,
+            "lambdaA": 2.652,
             "rho": -0.07,
-            "lambdaHRaw": 1.222,
-            "lambdaARaw": 2.659,
+            "lambdaHRaw": 1.23,
+            "lambdaARaw": 2.652,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1501,
-            "px": 0.1768,
-            "p2": 0.6731,
-            "pOver25": 0.7424,
-            "pUnder25": 0.2576,
-            "pGG": 0.6605,
-            "pNG": 0.3395,
+            "p1": 0.152,
+            "px": 0.1776,
+            "p2": 0.6703,
+            "pOver25": 0.7426,
+            "pUnder25": 0.2574,
+            "pGG": 0.6623,
+            "pNG": 0.3377,
             "topExact": [
               [
                 "1-2",
@@ -2288,22 +2140,22 @@
               ],
               [
                 "1-3",
-                0.0795
+                0.0793
               ],
               [
                 "0-2",
-                0.0733
+                0.0729
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0255,
-              "1": 0.0711,
-              "2": 0.161,
-              "3": 0.2022,
+              "1": 0.071,
+              "2": 0.1609,
+              "3": 0.2021,
               "4": 0.1962,
-              "5": 0.1523,
-              "6": 0.0985,
-              "7+": 0.0932
+              "5": 0.1524,
+              "6": 0.0986,
+              "7+": 0.0933
             },
             "value": null
           }
@@ -2320,19 +2172,19 @@
           "homeStats": {
             "gf_pg": 1.78,
             "ga_pg": 2.44,
-            "form": "LWLWL",
-            "elo": 1474.0,
+            "form": "LLWLW",
+            "elo": 1445.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
             "form": "LLLDW",
             "elo": 1431.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -2340,44 +2192,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.408,
-            "lambdaA": 1.388,
+            "lambdaH": 2.321,
+            "lambdaA": 1.464,
             "rho": -0.07,
-            "lambdaHRaw": 2.408,
-            "lambdaARaw": 1.388,
+            "lambdaHRaw": 2.321,
+            "lambdaARaw": 1.464,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5935,
-            "px": 0.2003,
-            "p2": 0.2061,
-            "pOver25": 0.7296,
-            "pUnder25": 0.2704,
-            "pGG": 0.688,
-            "pNG": 0.312,
+            "p1": 0.5609,
+            "px": 0.2076,
+            "p2": 0.2315,
+            "pOver25": 0.7279,
+            "pUnder25": 0.2721,
+            "pGG": 0.6984,
+            "pNG": 0.3016,
             "topExact": [
               [
                 "2-1",
-                0.0907
+                0.0898
               ],
               [
                 "1-1",
-                0.0806
+                0.0828
               ],
               [
                 "3-1",
-                0.0728
+                0.0695
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0278,
-              "1": 0.075,
-              "2": 0.1676,
-              "3": 0.2055,
-              "4": 0.195,
-              "5": 0.1481,
-              "6": 0.0937,
-              "7+": 0.0874
+              "0": 0.0282,
+              "1": 0.0754,
+              "2": 0.1686,
+              "3": 0.2058,
+              "4": 0.1948,
+              "5": 0.1474,
+              "6": 0.093,
+              "7+": 0.0869
             },
             "value": null
           }
@@ -2414,44 +2266,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.799,
-            "lambdaA": 1.672,
+            "lambdaH": 0.794,
+            "lambdaA": 1.656,
             "rho": -0.07,
-            "lambdaHRaw": 0.799,
-            "lambdaARaw": 1.672,
+            "lambdaHRaw": 0.794,
+            "lambdaARaw": 1.656,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1692,
-            "px": 0.2571,
-            "p2": 0.5737,
-            "pOver25": 0.4484,
-            "pUnder25": 0.5516,
-            "pGG": 0.4546,
-            "pNG": 0.5454,
+            "p1": 0.17,
+            "px": 0.2589,
+            "p2": 0.5711,
+            "pOver25": 0.4432,
+            "pUnder25": 0.5568,
+            "pGG": 0.4514,
+            "pNG": 0.5486,
             "topExact": [
               [
                 "0-1",
-                0.1335
+                0.135
               ],
               [
                 "1-1",
-                0.1208
+                0.1214
               ],
               [
                 "0-2",
-                0.1182
+                0.1184
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0925,
-              "1": 0.1931,
-              "2": 0.266,
-              "3": 0.2125,
-              "4": 0.1313,
-              "5": 0.0649,
-              "6": 0.0267,
-              "7+": 0.013
+              "0": 0.0942,
+              "1": 0.1955,
+              "2": 0.267,
+              "3": 0.2116,
+              "4": 0.1296,
+              "5": 0.0635,
+              "6": 0.0259,
+              "7+": 0.0125
             },
             "value": null
           }
@@ -2466,11 +2318,11 @@
           "awayTeam": "Parma Calcio 1913",
           "awayId": 112,
           "homeStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -2488,44 +2340,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.346,
-            "lambdaA": 0.689,
+            "lambdaH": 2.663,
+            "lambdaA": 0.659,
             "rho": -0.07,
-            "lambdaHRaw": 2.346,
-            "lambdaARaw": 0.689,
+            "lambdaHRaw": 2.663,
+            "lambdaARaw": 0.659,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.7388,
-            "px": 0.1748,
-            "p2": 0.0864,
-            "pOver25": 0.5832,
-            "pUnder25": 0.4168,
-            "pGG": 0.4553,
-            "pNG": 0.5447,
+            "p1": 0.7927,
+            "px": 0.143,
+            "p2": 0.0643,
+            "pOver25": 0.6429,
+            "pUnder25": 0.3571,
+            "pGG": 0.4533,
+            "pNG": 0.5467,
             "topExact": [
               [
                 "2-0",
-                0.1328
-              ],
-              [
-                "1-0",
-                0.1077
+                0.1287
               ],
               [
                 "3-0",
-                0.1038
+                0.1142
+              ],
+              [
+                "1-0",
+                0.0922
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0537,
-              "1": 0.1355,
-              "2": 0.2276,
-              "3": 0.2247,
-              "4": 0.1704,
-              "5": 0.1034,
-              "6": 0.0523,
-              "7+": 0.0324
+              "0": 0.0408,
+              "1": 0.1117,
+              "2": 0.2047,
+              "3": 0.2218,
+              "4": 0.1842,
+              "5": 0.1224,
+              "6": 0.0678,
+              "7+": 0.0466
             },
             "value": null
           }
@@ -2562,44 +2414,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.027,
-            "lambdaA": 2.144,
+            "lambdaH": 1.02,
+            "lambdaA": 2.123,
             "rho": -0.07,
-            "lambdaHRaw": 1.027,
-            "lambdaARaw": 2.144,
+            "lambdaHRaw": 1.02,
+            "lambdaARaw": 2.123,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1652,
-            "px": 0.2128,
-            "p2": 0.622,
-            "pOver25": 0.6134,
-            "pUnder25": 0.3866,
-            "pGG": 0.573,
-            "pNG": 0.427,
+            "p1": 0.1662,
+            "px": 0.2146,
+            "p2": 0.6192,
+            "pOver25": 0.6073,
+            "pUnder25": 0.3927,
+            "pGG": 0.5692,
+            "pNG": 0.4308,
             "topExact": [
               [
-                "1-2",
-                0.0992
+                "1-1",
+                0.1002
               ],
               [
-                "1-1",
-                0.099
+                "1-2",
+                0.0994
               ],
               [
                 "0-2",
-                0.0966
+                0.0974
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0485,
-              "1": 0.1203,
-              "2": 0.2178,
-              "3": 0.2234,
-              "4": 0.1771,
-              "5": 0.1123,
-              "6": 0.0594,
-              "7+": 0.0413
+              "0": 0.0498,
+              "1": 0.1228,
+              "2": 0.2201,
+              "3": 0.2237,
+              "4": 0.1757,
+              "5": 0.1104,
+              "6": 0.0578,
+              "7+": 0.0397
             },
             "value": null
           }
@@ -2626,8 +2478,8 @@
           "awayStats": {
             "gf_pg": 0.89,
             "ga_pg": 1.44,
-            "form": "WLWLD",
-            "elo": 1430.0,
+            "form": "WWLWL",
+            "elo": 1458.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -2636,21 +2488,21 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.906,
-            "lambdaA": 0.648,
+            "lambdaH": 2.825,
+            "lambdaA": 0.671,
             "rho": -0.07,
-            "lambdaHRaw": 2.906,
-            "lambdaARaw": 0.648,
+            "lambdaHRaw": 2.825,
+            "lambdaARaw": 0.671,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8251,
-            "px": 0.1226,
-            "p2": 0.0524,
-            "pOver25": 0.686,
-            "pUnder25": 0.314,
-            "pGG": 0.4545,
-            "pNG": 0.5455,
+            "p1": 0.811,
+            "px": 0.1306,
+            "p2": 0.0584,
+            "pOver25": 0.6757,
+            "pUnder25": 0.3243,
+            "pGG": 0.4636,
+            "pNG": 0.5364,
             "topExact": [
               [
                 "2-0",
@@ -2658,22 +2510,22 @@
               ],
               [
                 "3-0",
-                0.1182
+                0.1149
               ],
               [
-                "4-0",
-                0.0859
+                "1-0",
+                0.0823
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0327,
-              "1": 0.095,
-              "2": 0.1863,
-              "3": 0.2162,
-              "4": 0.1921,
-              "5": 0.1366,
-              "6": 0.0809,
-              "7+": 0.0602
+              "0": 0.0346,
+              "1": 0.0988,
+              "2": 0.1909,
+              "3": 0.2178,
+              "4": 0.1903,
+              "5": 0.1331,
+              "6": 0.0775,
+              "7+": 0.0569
             },
             "value": null
           }
@@ -2698,11 +2550,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
             "form": "LLLDW",
             "elo": 1431.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -2710,44 +2562,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.544,
-            "lambdaA": 1.26,
+            "lambdaH": 1.524,
+            "lambdaA": 1.299,
             "rho": -0.07,
-            "lambdaHRaw": 1.544,
-            "lambdaARaw": 1.26,
+            "lambdaHRaw": 1.524,
+            "lambdaARaw": 1.299,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.431,
-            "px": 0.2663,
-            "p2": 0.3027,
-            "pOver25": 0.5314,
-            "pUnder25": 0.4686,
-            "pGG": 0.5716,
-            "pNG": 0.4284,
+            "p1": 0.4174,
+            "px": 0.2664,
+            "p2": 0.3163,
+            "pOver25": 0.536,
+            "pUnder25": 0.464,
+            "pGG": 0.577,
+            "pNG": 0.423,
             "topExact": [
               [
                 "1-1",
-                0.1261
+                0.1259
               ],
               [
                 "2-1",
-                0.091
+                0.0897
               ],
               [
                 "1-0",
-                0.0853
+                0.0823
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0688,
-              "1": 0.1534,
-              "2": 0.2464,
-              "3": 0.2226,
-              "4": 0.1561,
-              "5": 0.0875,
-              "6": 0.0409,
-              "7+": 0.0243
+              "0": 0.0677,
+              "1": 0.1513,
+              "2": 0.2451,
+              "3": 0.2229,
+              "4": 0.1573,
+              "5": 0.0888,
+              "6": 0.0418,
+              "7+": 0.0251
             },
             "value": null
           }
@@ -2774,8 +2626,8 @@
           "awayStats": {
             "gf_pg": 1.89,
             "ga_pg": 1.22,
-            "form": "DLWDW",
-            "elo": 1522.0,
+            "form": "WDLWD",
+            "elo": 1551.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -2784,44 +2636,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.24,
-            "lambdaA": 2.198,
+            "lambdaH": 1.201,
+            "lambdaA": 2.219,
             "rho": -0.07,
-            "lambdaHRaw": 1.24,
-            "lambdaARaw": 2.198,
+            "lambdaHRaw": 1.201,
+            "lambdaARaw": 2.219,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2021,
-            "px": 0.2136,
-            "p2": 0.5843,
-            "pOver25": 0.6669,
-            "pUnder25": 0.3331,
-            "pGG": 0.6378,
-            "pNG": 0.3622,
+            "p1": 0.1918,
+            "px": 0.211,
+            "p2": 0.5972,
+            "pOver25": 0.6635,
+            "pUnder25": 0.3365,
+            "pGG": 0.6292,
+            "pNG": 0.3708,
             "topExact": [
               [
                 "1-2",
-                0.0964
+                0.0969
               ],
               [
                 "1-1",
-                0.0939
+                0.0935
               ],
               [
                 "0-2",
-                0.0777
+                0.0807
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0383,
-              "1": 0.0984,
-              "2": 0.1964,
-              "3": 0.218,
-              "4": 0.1874,
-              "5": 0.1289,
-              "6": 0.0738,
-              "7+": 0.0587
+              "0": 0.0389,
+              "1": 0.0998,
+              "2": 0.1978,
+              "3": 0.2185,
+              "4": 0.1869,
+              "5": 0.1278,
+              "6": 0.0729,
+              "7+": 0.0573
             },
             "value": null
           }
@@ -2848,8 +2700,8 @@
           "awayStats": {
             "gf_pg": 1.78,
             "ga_pg": 2.44,
-            "form": "LWLWL",
-            "elo": 1474.0,
+            "form": "LLWLW",
+            "elo": 1445.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -2858,44 +2710,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 3.667,
-            "lambdaA": 0.895,
+            "lambdaH": 3.695,
+            "lambdaA": 0.866,
             "rho": -0.07,
-            "lambdaHRaw": 3.667,
-            "lambdaARaw": 0.895,
+            "lambdaHRaw": 3.695,
+            "lambdaARaw": 0.866,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8571,
-            "px": 0.0935,
-            "p2": 0.0495,
-            "pOver25": 0.8275,
-            "pUnder25": 0.1725,
-            "pGG": 0.5784,
-            "pNG": 0.4216,
+            "p1": 0.8638,
+            "px": 0.0902,
+            "p2": 0.0461,
+            "pOver25": 0.8272,
+            "pUnder25": 0.1728,
+            "pGG": 0.567,
+            "pNG": 0.433,
             "topExact": [
               [
                 "3-0",
-                0.0888
+                0.091
               ],
               [
                 "4-0",
-                0.0814
+                0.0841
               ],
               [
                 "3-1",
-                0.0795
+                0.0789
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0133,
-              "1": 0.0443,
-              "2": 0.1149,
-              "3": 0.171,
-              "4": 0.195,
-              "5": 0.1779,
-              "6": 0.1353,
-              "7+": 0.1483
+              "0": 0.0132,
+              "1": 0.0445,
+              "2": 0.115,
+              "3": 0.1712,
+              "4": 0.1953,
+              "5": 0.1782,
+              "6": 0.1355,
+              "7+": 0.1471
             },
             "value": null
           }
@@ -2922,8 +2774,8 @@
           "awayStats": {
             "gf_pg": 1.22,
             "ga_pg": 1.11,
-            "form": "WLDWL",
-            "elo": 1549.0,
+            "form": "LWLDW",
+            "elo": 1522.0,
             "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
@@ -2932,44 +2784,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.687,
-            "lambdaA": 0.757,
+            "lambdaH": 1.705,
+            "lambdaA": 0.735,
             "rho": -0.07,
-            "lambdaHRaw": 1.687,
-            "lambdaARaw": 0.757,
+            "lambdaHRaw": 1.705,
+            "lambdaARaw": 0.735,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5883,
-            "px": 0.2541,
-            "p2": 0.1575,
-            "pOver25": 0.4415,
-            "pUnder25": 0.5585,
-            "pGG": 0.4403,
-            "pNG": 0.5597,
+            "p1": 0.5984,
+            "px": 0.2512,
+            "p2": 0.1504,
+            "pOver25": 0.4406,
+            "pUnder25": 0.5594,
+            "pGG": 0.4336,
+            "pNG": 0.5664,
             "topExact": [
               [
                 "1-0",
-                0.1388
+                0.141
               ],
               [
                 "2-0",
-                0.1236
+                0.1267
               ],
               [
                 "1-1",
-                0.1187
+                0.1169
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0946,
-              "1": 0.1968,
-              "2": 0.2671,
-              "3": 0.2113,
-              "4": 0.1291,
-              "5": 0.0631,
-              "6": 0.0257,
-              "7+": 0.0123
+              "0": 0.0948,
+              "1": 0.1974,
+              "2": 0.2672,
+              "3": 0.2111,
+              "4": 0.1288,
+              "5": 0.0629,
+              "6": 0.0256,
+              "7+": 0.0122
             },
             "value": null
           }
@@ -2984,21 +2836,21 @@
           "awayTeam": "Atalanta BC",
           "awayId": 102,
           "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
+            "gf_pg": 1.78,
+            "ga_pg": 1.89,
             "form": "DLWLL",
             "elo": 1487.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -3006,44 +2858,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.465,
-            "lambdaA": 1.51,
+            "lambdaH": 1.379,
+            "lambdaA": 1.752,
             "rho": -0.07,
-            "lambdaHRaw": 1.465,
-            "lambdaARaw": 1.51,
+            "lambdaHRaw": 1.379,
+            "lambdaARaw": 1.752,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3603,
-            "px": 0.26,
-            "p2": 0.3797,
-            "pOver25": 0.5711,
-            "pUnder25": 0.4289,
-            "pGG": 0.6069,
-            "pNG": 0.3931,
+            "p1": 0.2962,
+            "px": 0.2478,
+            "p2": 0.4561,
+            "pOver25": 0.6054,
+            "pUnder25": 0.3946,
+            "pGG": 0.6258,
+            "pNG": 0.3742,
             "topExact": [
               [
                 "1-1",
-                0.1209
+                0.1129
               ],
               [
                 "1-2",
-                0.0853
+                0.0925
               ],
               [
                 "2-1",
-                0.0828
+                0.0728
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.059,
-              "1": 0.1361,
-              "2": 0.2339,
-              "3": 0.2241,
-              "4": 0.1667,
-              "5": 0.0992,
-              "6": 0.0492,
-              "7+": 0.032
+              "0": 0.0511,
+              "1": 0.122,
+              "2": 0.2215,
+              "3": 0.2235,
+              "4": 0.175,
+              "5": 0.1096,
+              "6": 0.0572,
+              "7+": 0.04
             },
             "value": null
           }
@@ -3080,44 +2932,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.92,
-            "lambdaA": 1.632,
+            "lambdaH": 0.914,
+            "lambdaA": 1.617,
             "rho": -0.07,
-            "lambdaHRaw": 0.92,
-            "lambdaARaw": 1.632,
+            "lambdaHRaw": 0.914,
+            "lambdaARaw": 1.617,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2038,
-            "px": 0.2633,
-            "p2": 0.5328,
-            "pOver25": 0.4693,
-            "pUnder25": 0.5307,
-            "pGG": 0.492,
-            "pNG": 0.508,
+            "p1": 0.2045,
+            "px": 0.2651,
+            "p2": 0.5304,
+            "pOver25": 0.4639,
+            "pUnder25": 0.5361,
+            "pGG": 0.4884,
+            "pNG": 0.5116,
             "topExact": [
               [
                 "1-1",
-                0.1252
+                0.1259
               ],
               [
                 "0-1",
-                0.119
+                0.1205
               ],
               [
                 "0-2",
-                0.1038
+                0.1041
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0861,
-              "1": 0.1825,
-              "2": 0.262,
-              "3": 0.2159,
-              "4": 0.1378,
-              "5": 0.0703,
-              "6": 0.0299,
-              "7+": 0.0154
+              "0": 0.0878,
+              "1": 0.185,
+              "2": 0.2632,
+              "3": 0.2151,
+              "4": 0.1361,
+              "5": 0.0689,
+              "6": 0.0291,
+              "7+": 0.0148
             },
             "value": null
           }
@@ -3154,44 +3006,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.01,
-            "lambdaA": 1.893,
+            "lambdaH": 1.004,
+            "lambdaA": 1.874,
             "rho": -0.07,
-            "lambdaHRaw": 1.01,
-            "lambdaARaw": 1.893,
+            "lambdaHRaw": 1.004,
+            "lambdaARaw": 1.874,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1909,
-            "px": 0.2368,
-            "p2": 0.5722,
-            "pOver25": 0.5544,
-            "pUnder25": 0.4456,
-            "pGG": 0.5474,
-            "pNG": 0.4526,
+            "p1": 0.1918,
+            "px": 0.2386,
+            "p2": 0.5697,
+            "pOver25": 0.5485,
+            "pUnder25": 0.4515,
+            "pGG": 0.5436,
+            "pNG": 0.4564,
             "topExact": [
               [
                 "1-1",
-                0.1123
+                0.1133
               ],
               [
                 "1-2",
-                0.0993
+                0.0992
               ],
               [
                 "0-2",
-                0.0983
+                0.0989
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0623,
-              "1": 0.1447,
-              "2": 0.2387,
-              "3": 0.2239,
-              "4": 0.1625,
-              "5": 0.0943,
-              "6": 0.0456,
-              "7+": 0.0281
+              "0": 0.0637,
+              "1": 0.1472,
+              "2": 0.2406,
+              "3": 0.2236,
+              "4": 0.1609,
+              "5": 0.0926,
+              "6": 0.0444,
+              "7+": 0.027
             },
             "value": null
           }
@@ -3208,8 +3060,8 @@
           "homeStats": {
             "gf_pg": 1.78,
             "ga_pg": 2.44,
-            "form": "LWLWL",
-            "elo": 1474.0,
+            "form": "LLWLW",
+            "elo": 1445.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -3228,21 +3080,21 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.107,
-            "lambdaA": 2.382,
+            "lambdaH": 1.07,
+            "lambdaA": 2.402,
             "rho": -0.07,
-            "lambdaHRaw": 1.107,
-            "lambdaARaw": 2.382,
+            "lambdaHRaw": 1.07,
+            "lambdaARaw": 2.402,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1561,
-            "px": 0.1944,
-            "p2": 0.6494,
-            "pOver25": 0.6759,
-            "pUnder25": 0.3241,
-            "pGG": 0.6129,
-            "pNG": 0.3871,
+            "p1": 0.1476,
+            "px": 0.1913,
+            "p2": 0.6611,
+            "pOver25": 0.6729,
+            "pUnder25": 0.3271,
+            "pGG": 0.603,
+            "pNG": 0.397,
             "topExact": [
               [
                 "1-2",
@@ -3250,22 +3102,22 @@
               ],
               [
                 "0-2",
-                0.0869
+                0.0899
               ],
               [
                 "1-1",
-                0.0864
+                0.0857
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0363,
-              "1": 0.0956,
-              "2": 0.1921,
-              "3": 0.2168,
-              "4": 0.1891,
-              "5": 0.1319,
-              "6": 0.0767,
-              "7+": 0.0614
+              "0": 0.0368,
+              "1": 0.097,
+              "2": 0.1934,
+              "3": 0.2174,
+              "4": 0.1887,
+              "5": 0.131,
+              "6": 0.0758,
+              "7+": 0.06
             },
             "value": null
           }
@@ -3280,11 +3132,11 @@
           "awayTeam": "FC Internazionale Milano",
           "awayId": 108,
           "homeStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -3302,44 +3154,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.528,
-            "lambdaA": 2.326,
+            "lambdaH": 1.741,
+            "lambdaA": 2.221,
             "rho": -0.07,
-            "lambdaHRaw": 1.528,
-            "lambdaARaw": 2.326,
+            "lambdaHRaw": 1.741,
+            "lambdaARaw": 2.221,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.2435,
-            "px": 0.2079,
-            "p2": 0.5486,
-            "pOver25": 0.7388,
-            "pUnder25": 0.2612,
-            "pGG": 0.7115,
-            "pNG": 0.2885,
+            "p1": 0.3013,
+            "px": 0.2138,
+            "p2": 0.4849,
+            "pOver25": 0.7555,
+            "pUnder25": 0.2445,
+            "pGG": 0.74,
+            "pNG": 0.26,
             "topExact": [
               [
                 "1-2",
-                0.0879
+                0.0819
               ],
               [
                 "1-1",
-                0.0809
+                0.0789
               ],
               [
-                "1-3",
-                0.0681
+                "2-2",
+                0.0713
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0266,
-              "1": 0.0714,
-              "2": 0.1632,
-              "3": 0.2029,
-              "4": 0.1954,
-              "5": 0.1506,
-              "6": 0.0967,
-              "7+": 0.0933
+              "0": 0.0243,
+              "1": 0.0653,
+              "2": 0.1549,
+              "3": 0.1977,
+              "4": 0.1958,
+              "5": 0.1551,
+              "6": 0.1024,
+              "7+": 0.1044
             },
             "value": null
           }
@@ -3356,19 +3208,19 @@
           "homeStats": {
             "gf_pg": 1.89,
             "ga_pg": 1.22,
-            "form": "DLWDW",
-            "elo": 1522.0,
+            "form": "WDLWD",
+            "elo": 1551.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -3376,44 +3228,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.141,
-            "lambdaA": 0.873,
+            "lambdaH": 2.499,
+            "lambdaA": 0.796,
             "rho": -0.07,
-            "lambdaHRaw": 2.141,
-            "lambdaARaw": 0.873,
+            "lambdaHRaw": 2.499,
+            "lambdaARaw": 0.796,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.6577,
-            "px": 0.2069,
-            "p2": 0.1353,
-            "pOver25": 0.5793,
-            "pUnder25": 0.4207,
-            "pGG": 0.5203,
-            "pNG": 0.4797,
+            "p1": 0.7389,
+            "px": 0.1677,
+            "p2": 0.0934,
+            "pOver25": 0.6381,
+            "pUnder25": 0.3619,
+            "pGG": 0.5089,
+            "pNG": 0.4911,
             "topExact": [
               [
                 "2-0",
-                0.1127
+                0.1162
               ],
               [
-                "1-0",
-                0.0988
+                "3-0",
+                0.0968
               ],
               [
                 "2-1",
-                0.0984
+                0.0925
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0556,
-              "1": 0.1353,
-              "2": 0.2298,
-              "3": 0.2244,
-              "4": 0.1691,
-              "5": 0.102,
-              "6": 0.0512,
-              "7+": 0.0326
+              "0": 0.0424,
+              "1": 0.1123,
+              "2": 0.2072,
+              "3": 0.2219,
+              "4": 0.1829,
+              "5": 0.1205,
+              "6": 0.0662,
+              "7+": 0.0466
             },
             "value": null
           }
@@ -3430,8 +3282,8 @@
           "homeStats": {
             "gf_pg": 0.89,
             "ga_pg": 1.44,
-            "form": "WLWLD",
-            "elo": 1430.0,
+            "form": "WWLWL",
+            "elo": 1458.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -3450,44 +3302,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.128,
-            "lambdaA": 1.357,
+            "lambdaH": 1.163,
+            "lambdaA": 1.318,
             "rho": -0.07,
-            "lambdaHRaw": 1.128,
-            "lambdaARaw": 1.357,
+            "lambdaHRaw": 1.163,
+            "lambdaARaw": 1.318,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3022,
-            "px": 0.2867,
-            "p2": 0.4111,
-            "pOver25": 0.4522,
-            "pUnder25": 0.5478,
-            "pGG": 0.5111,
-            "pNG": 0.4889,
+            "p1": 0.3188,
+            "px": 0.2882,
+            "p2": 0.393,
+            "pOver25": 0.4513,
+            "pUnder25": 0.5487,
+            "pGG": 0.5124,
+            "pNG": 0.4876,
             "topExact": [
               [
                 "1-1",
-                0.1365
+                0.1372
               ],
               [
                 "0-1",
-                0.1042
+                0.1013
               ],
               [
                 "0-0",
-                0.0923
+                0.0926
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0923,
-              "1": 0.1893,
-              "2": 0.2662,
-              "3": 0.2131,
-              "4": 0.1324,
-              "5": 0.0658,
-              "6": 0.0272,
-              "7+": 0.0137
+              "0": 0.0926,
+              "1": 0.1896,
+              "2": 0.2665,
+              "3": 0.213,
+              "4": 0.1321,
+              "5": 0.0656,
+              "6": 0.0271,
+              "7+": 0.0136
             },
             "value": null
           }
@@ -3512,11 +3364,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 1.75,
-            "ga_pg": 1.88,
+            "gf_pg": 1.78,
+            "ga_pg": 1.89,
             "form": "DLWLL",
             "elo": 1487.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -3524,44 +3376,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 3.033,
-            "lambdaA": 0.823,
+            "lambdaH": 3.026,
+            "lambdaA": 0.829,
             "rho": -0.07,
-            "lambdaHRaw": 3.033,
-            "lambdaARaw": 0.823,
+            "lambdaHRaw": 3.026,
+            "lambdaARaw": 0.829,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.8062,
-            "px": 0.1266,
-            "p2": 0.0671,
+            "p1": 0.8043,
+            "px": 0.1275,
+            "p2": 0.0682,
             "pOver25": 0.7367,
             "pUnder25": 0.2633,
-            "pGG": 0.5373,
-            "pNG": 0.4627,
+            "pGG": 0.5397,
+            "pNG": 0.4603,
             "topExact": [
               [
                 "3-0",
-                0.0996
+                0.099
               ],
               [
                 "2-0",
-                0.0985
+                0.0981
               ],
               [
                 "3-1",
-                0.082
+                0.0821
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0252,
               "1": 0.0751,
-              "2": 0.163,
+              "2": 0.1631,
               "3": 0.2047,
               "4": 0.1973,
-              "5": 0.1522,
+              "5": 0.1521,
               "6": 0.0978,
-              "7+": 0.0846
+              "7+": 0.0847
             },
             "value": null
           }
@@ -3578,8 +3430,8 @@
           "homeStats": {
             "gf_pg": 1.22,
             "ga_pg": 1.11,
-            "form": "WLDWL",
-            "elo": 1549.0,
+            "form": "LWLDW",
+            "elo": 1522.0,
             "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
@@ -3598,44 +3450,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.837,
-            "lambdaA": 0.693,
+            "lambdaH": 1.786,
+            "lambdaA": 0.705,
             "rho": -0.07,
-            "lambdaHRaw": 1.837,
-            "lambdaARaw": 0.693,
+            "lambdaHRaw": 1.786,
+            "lambdaARaw": 0.705,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.6398,
-            "px": 0.2327,
-            "p2": 0.1275,
-            "pOver25": 0.4636,
-            "pUnder25": 0.5364,
-            "pGG": 0.4275,
-            "pNG": 0.5725,
+            "p1": 0.6254,
+            "px": 0.2396,
+            "p2": 0.135,
+            "pOver25": 0.4537,
+            "pUnder25": 0.5463,
+            "pGG": 0.4284,
+            "pNG": 0.5716,
             "topExact": [
               [
                 "1-0",
-                0.1393
+                0.1407
               ],
               [
                 "2-0",
-                0.1344
+                0.1322
               ],
               [
                 "1-1",
-                0.1086
+                0.1116
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0868,
-              "1": 0.1874,
-              "2": 0.2622,
-              "3": 0.2152,
-              "4": 0.1361,
-              "5": 0.0689,
-              "6": 0.0291,
-              "7+": 0.0144
+              "0": 0.0901,
+              "1": 0.1918,
+              "2": 0.2644,
+              "3": 0.2135,
+              "4": 0.133,
+              "5": 0.0663,
+              "6": 0.0275,
+              "7+": 0.0134
             },
             "value": null
           }
@@ -3672,44 +3524,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.313,
-            "lambdaA": 0.576,
+            "lambdaH": 2.29,
+            "lambdaA": 0.573,
             "rho": -0.07,
-            "lambdaHRaw": 2.313,
-            "lambdaARaw": 0.576,
+            "lambdaHRaw": 2.29,
+            "lambdaARaw": 0.573,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.7602,
-            "px": 0.1692,
-            "p2": 0.0706,
-            "pOver25": 0.5503,
-            "pUnder25": 0.4497,
-            "pGG": 0.3996,
-            "pNG": 0.6004,
+            "p1": 0.7572,
+            "px": 0.1714,
+            "p2": 0.0714,
+            "pOver25": 0.5444,
+            "pUnder25": 0.4556,
+            "pGG": 0.3973,
+            "pNG": 0.6027,
             "topExact": [
               [
                 "2-0",
-                0.1492
+                0.15
               ],
               [
                 "1-0",
-                0.1238
+                0.1258
               ],
               [
                 "3-0",
-                0.1151
+                0.1146
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.061,
-              "1": 0.1507,
-              "2": 0.238,
-              "3": 0.2242,
-              "4": 0.1619,
-              "5": 0.0936,
-              "6": 0.0451,
-              "7+": 0.0256
+              "0": 0.0625,
+              "1": 0.1533,
+              "2": 0.2398,
+              "3": 0.2239,
+              "4": 0.1603,
+              "5": 0.0918,
+              "6": 0.0438,
+              "7+": 0.0246
             },
             "value": null
           }
@@ -3746,44 +3598,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.284,
-            "lambdaA": 1.584,
+            "lambdaH": 1.274,
+            "lambdaA": 1.569,
             "rho": -0.07,
-            "lambdaHRaw": 1.284,
-            "lambdaARaw": 1.584,
+            "lambdaHRaw": 1.274,
+            "lambdaARaw": 1.569,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3017,
-            "px": 0.2625,
-            "p2": 0.4358,
-            "pOver25": 0.5464,
-            "pUnder25": 0.4536,
-            "pGG": 0.5827,
-            "pNG": 0.4173,
+            "p1": 0.302,
+            "px": 0.2639,
+            "p2": 0.434,
+            "pOver25": 0.5406,
+            "pUnder25": 0.4594,
+            "pGG": 0.5784,
+            "pNG": 0.4216,
             "topExact": [
               [
                 "1-1",
-                0.1237
+                0.1246
               ],
               [
                 "1-2",
-                0.0916
+                0.0914
               ],
               [
                 "0-1",
-                0.0819
+                0.0833
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0649,
-              "1": 0.1468,
-              "2": 0.2418,
-              "3": 0.2234,
-              "4": 0.1602,
-              "5": 0.0919,
-              "6": 0.0439,
-              "7+": 0.027
+              "0": 0.0664,
+              "1": 0.1494,
+              "2": 0.2436,
+              "3": 0.2232,
+              "4": 0.1586,
+              "5": 0.0902,
+              "6": 0.0427,
+              "7+": 0.0259
             },
             "value": null
           }
@@ -3798,11 +3650,11 @@
           "awayTeam": "Cagliari Calcio",
           "awayId": 104,
           "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 2.38,
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
             "form": "LLLDW",
             "elo": 1431.0,
-            "played": 8,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -3820,44 +3672,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.225,
-            "lambdaA": 1.243,
+            "lambdaH": 1.265,
+            "lambdaA": 1.227,
             "rho": -0.07,
-            "lambdaHRaw": 1.225,
-            "lambdaARaw": 1.243,
+            "lambdaHRaw": 1.265,
+            "lambdaARaw": 1.227,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.3507,
-            "px": 0.2902,
-            "p2": 0.3592,
-            "pOver25": 0.448,
-            "pUnder25": 0.552,
-            "pGG": 0.5116,
-            "pNG": 0.4884,
+            "p1": 0.3648,
+            "px": 0.2885,
+            "p2": 0.3467,
+            "pOver25": 0.4541,
+            "pUnder25": 0.5459,
+            "pGG": 0.5163,
+            "pNG": 0.4837,
             "topExact": [
               [
                 "1-1",
-                0.1381
-              ],
-              [
-                "0-1",
-                0.0963
+                0.1374
               ],
               [
                 "1-0",
-                0.0948
+                0.0957
+              ],
+              [
+                "0-1",
+                0.0925
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0938,
-              "1": 0.1911,
-              "2": 0.2672,
-              "3": 0.2124,
-              "4": 0.1311,
-              "5": 0.0647,
-              "6": 0.0266,
-              "7+": 0.0132
+              "0": 0.0917,
+              "1": 0.1882,
+              "2": 0.2659,
+              "3": 0.2134,
+              "4": 0.133,
+              "5": 0.0663,
+              "6": 0.0275,
+              "7+": 0.0139
             },
             "value": null
           }
@@ -3882,11 +3734,11 @@
             "played_home": null
           },
           "awayStats": {
-            "gf_pg": 2.12,
-            "ga_pg": 1.62,
-            "form": "DWLWD",
-            "elo": 1544.0,
-            "played": 8,
+            "gf_pg": 2.44,
+            "ga_pg": 1.56,
+            "form": "WDWLW",
+            "elo": 1561.0,
+            "played": 9,
             "gf_pg_away": null,
             "ga_pg_away": null,
             "played_away": null
@@ -3894,44 +3746,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.092,
-            "lambdaA": 2.117,
+            "lambdaH": 1.044,
+            "lambdaA": 2.402,
             "rho": -0.07,
-            "lambdaHRaw": 1.092,
-            "lambdaARaw": 2.117,
+            "lambdaHRaw": 1.044,
+            "lambdaARaw": 2.402,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.1815,
-            "px": 0.2172,
-            "p2": 0.6013,
-            "pOver25": 0.6214,
-            "pUnder25": 0.3786,
-            "pGG": 0.5909,
-            "pNG": 0.4091,
+            "p1": 0.1427,
+            "px": 0.1901,
+            "p2": 0.6673,
+            "pOver25": 0.6679,
+            "pUnder25": 0.3321,
+            "pGG": 0.5946,
+            "pNG": 0.4054,
             "topExact": [
               [
-                "1-1",
-                0.1001
-              ],
-              [
                 "1-2",
-                0.099
+                0.0963
               ],
               [
                 "0-2",
-                0.0907
+                0.0923
+              ],
+              [
+                "1-1",
+                0.0858
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.047,
-              "1": 0.1167,
-              "2": 0.2149,
-              "3": 0.2228,
-              "4": 0.1788,
-              "5": 0.1148,
-              "6": 0.0614,
-              "7+": 0.0437
+              "0": 0.0376,
+              "1": 0.099,
+              "2": 0.1955,
+              "3": 0.2181,
+              "4": 0.1879,
+              "5": 0.1295,
+              "6": 0.0744,
+              "7+": 0.058
             },
             "value": null
           }
@@ -3968,29 +3820,29 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.495,
-            "lambdaA": 0.709,
+            "lambdaH": 1.483,
+            "lambdaA": 0.705,
             "rho": -0.07,
-            "lambdaHRaw": 1.495,
-            "lambdaARaw": 0.709,
+            "lambdaHRaw": 1.483,
+            "lambdaARaw": 0.705,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.5526,
-            "px": 0.2787,
-            "p2": 0.1687,
-            "pOver25": 0.3783,
-            "pUnder25": 0.6217,
-            "pGG": 0.4022,
-            "pNG": 0.5978,
+            "p1": 0.5506,
+            "px": 0.2803,
+            "p2": 0.1691,
+            "pOver25": 0.374,
+            "pUnder25": 0.626,
+            "pGG": 0.3993,
+            "pNG": 0.6007,
             "topExact": [
               [
                 "1-0",
-                0.1568
+                0.1581
               ],
               [
                 "1-1",
-                0.1252
+                0.1255
               ],
               [
                 "2-0",
@@ -3998,14 +3850,14 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.1186,
-              "1": 0.2269,
-              "2": 0.2763,
-              "3": 0.197,
-              "4": 0.1085,
-              "5": 0.0478,
-              "6": 0.0176,
-              "7+": 0.0074
+              "0": 0.1204,
+              "1": 0.229,
+              "2": 0.2767,
+              "3": 0.1958,
+              "4": 0.1071,
+              "5": 0.0469,
+              "6": 0.0171,
+              "7+": 0.0071
             },
             "value": null
           }
@@ -4020,11 +3872,11 @@
           "awayTeam": "US Sassuolo Calcio",
           "awayId": 471,
           "homeStats": {
-            "gf_pg": 1.12,
-            "ga_pg": 1.75,
-            "form": "LWLLW",
-            "elo": 1454.0,
-            "played": 8,
+            "gf_pg": 1.11,
+            "ga_pg": 2.11,
+            "form": "LLWLL",
+            "elo": 1436.0,
+            "played": 9,
             "gf_pg_home": null,
             "ga_pg_home": null,
             "played_home": null
@@ -4042,44 +3894,44 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.838,
-            "lambdaA": 1.311,
+            "lambdaH": 1.714,
+            "lambdaA": 1.501,
             "rho": -0.07,
-            "lambdaHRaw": 1.838,
-            "lambdaARaw": 1.311,
+            "lambdaHRaw": 1.714,
+            "lambdaARaw": 1.501,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.4906,
-            "px": 0.2426,
-            "p2": 0.2668,
-            "pOver25": 0.609,
-            "pUnder25": 0.391,
-            "pGG": 0.6213,
-            "pNG": 0.3787,
+            "p1": 0.4217,
+            "px": 0.2469,
+            "p2": 0.3314,
+            "pOver25": 0.6231,
+            "pUnder25": 0.3769,
+            "pGG": 0.6443,
+            "pNG": 0.3557,
             "topExact": [
               [
                 "1-1",
-                0.1107
+                0.1106
               ],
               [
                 "2-1",
-                0.0951
+                0.0886
               ],
               [
-                "2-0",
-                0.0725
+                "1-2",
+                0.0776
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0502,
-              "1": 0.1207,
-              "2": 0.2201,
-              "3": 0.2234,
-              "4": 0.1759,
-              "5": 0.1107,
-              "6": 0.0581,
-              "7+": 0.0409
+              "0": 0.0474,
+              "1": 0.1147,
+              "2": 0.2149,
+              "3": 0.2225,
+              "4": 0.1789,
+              "5": 0.115,
+              "6": 0.0616,
+              "7+": 0.045
             },
             "value": null
           }
@@ -4116,44 +3968,340 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.912,
-            "lambdaA": 0.803,
+            "lambdaH": 1.895,
+            "lambdaA": 0.798,
             "rho": -0.07,
-            "lambdaHRaw": 1.912,
-            "lambdaARaw": 0.803,
+            "lambdaHRaw": 1.895,
+            "lambdaARaw": 0.798,
             "modelVersion": "3.0",
-            "leagueAvg": 1.476,
+            "leagueAvg": 1.488,
             "marketWeight": 0.25,
-            "p1": 0.6279,
-            "px": 0.2286,
-            "p2": 0.1435,
-            "pOver25": 0.5098,
-            "pUnder25": 0.4902,
-            "pGG": 0.4776,
-            "pNG": 0.5224,
+            "p1": 0.6255,
+            "px": 0.2303,
+            "p2": 0.1442,
+            "pOver25": 0.5043,
+            "pUnder25": 0.4957,
+            "pGG": 0.4742,
+            "pNG": 0.5258,
             "topExact": [
               [
                 "2-0",
-                0.1211
+                0.1216
               ],
               [
                 "1-0",
-                0.1195
+                0.1212
               ],
               [
                 "1-1",
-                0.1088
+                0.1096
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0733,
-              "1": 0.1656,
-              "2": 0.2513,
-              "3": 0.221,
-              "4": 0.15,
-              "5": 0.0815,
-              "6": 0.0369,
-              "7+": 0.0203
+              "0": 0.0749,
+              "1": 0.1681,
+              "2": 0.2528,
+              "3": 0.2205,
+              "4": 0.1484,
+              "5": 0.0799,
+              "6": 0.0359,
+              "7+": 0.0196
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558498,
+          "date": "2026-12-13",
+          "time": "11:30",
+          "matchday": 15,
+          "homeTeam": "SS Lazio",
+          "homeId": 110,
+          "awayTeam": "AS Roma",
+          "awayId": 100,
+          "homeStats": {
+            "gf_pg": 2.44,
+            "ga_pg": 0.78,
+            "form": "WWWWW",
+            "elo": 1640.0,
+            "played": 9,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 2.56,
+            "ga_pg": 0.89,
+            "form": "WDWDD",
+            "elo": 1640.0,
+            "played": 9,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 1.734,
+            "lambdaA": 1.292,
+            "rho": -0.07,
+            "lambdaHRaw": 1.734,
+            "lambdaARaw": 1.292,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.488,
+            "marketWeight": 0.25,
+            "p1": 0.4705,
+            "px": 0.2509,
+            "p2": 0.2786,
+            "pOver25": 0.5822,
+            "pUnder25": 0.4178,
+            "pGG": 0.6046,
+            "pNG": 0.3954,
+            "topExact": [
+              [
+                "1-1",
+                0.1164
+              ],
+              [
+                "2-1",
+                0.0943
+              ],
+              [
+                "1-0",
+                0.0766
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0562,
+              "1": 0.1317,
+              "2": 0.2299,
+              "3": 0.2241,
+              "4": 0.1695,
+              "5": 0.1026,
+              "6": 0.0517,
+              "7+": 0.0343
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558495,
+          "date": "2026-12-13",
+          "time": "14:00",
+          "matchday": 15,
+          "homeTeam": "FC Internazionale Milano",
+          "homeId": 108,
+          "awayTeam": "Torino FC",
+          "awayId": 586,
+          "homeStats": {
+            "gf_pg": 2.78,
+            "ga_pg": 1.11,
+            "form": "WWWWD",
+            "elo": 1649.0,
+            "played": 9,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 1.56,
+            "ga_pg": 1.56,
+            "form": "LWWWD",
+            "elo": 1497.0,
+            "played": 9,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 2.894,
+            "lambdaA": 0.973,
+            "rho": -0.07,
+            "lambdaHRaw": 2.894,
+            "lambdaARaw": 0.973,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.488,
+            "marketWeight": 0.25,
+            "p1": 0.7596,
+            "px": 0.1465,
+            "p2": 0.0939,
+            "pOver25": 0.7392,
+            "pUnder25": 0.2608,
+            "pGG": 0.5913,
+            "pNG": 0.4087,
+            "topExact": [
+              [
+                "2-0",
+                0.0885
+              ],
+              [
+                "2-1",
+                0.0861
+              ],
+              [
+                "3-0",
+                0.0854
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0253,
+              "1": 0.0734,
+              "2": 0.1621,
+              "3": 0.2036,
+              "4": 0.1968,
+              "5": 0.1522,
+              "6": 0.0981,
+              "7+": 0.0883
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558493,
+          "date": "2026-12-13",
+          "time": "17:00",
+          "matchday": 15,
+          "homeTeam": "Parma Calcio 1913",
+          "homeId": 112,
+          "awayTeam": "ACF Fiorentina",
+          "awayId": 99,
+          "homeStats": {
+            "gf_pg": 0.56,
+            "ga_pg": 1.67,
+            "form": "DLLLW",
+            "elo": 1408.0,
+            "played": 9,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 1.22,
+            "ga_pg": 2.33,
+            "form": "LLLDW",
+            "elo": 1431.0,
+            "played": 9,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 1.201,
+            "lambdaA": 1.155,
+            "rho": -0.07,
+            "lambdaHRaw": 1.201,
+            "lambdaARaw": 1.155,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.488,
+            "marketWeight": 0.25,
+            "p1": 0.3622,
+            "px": 0.298,
+            "p2": 0.3398,
+            "pOver25": 0.4189,
+            "pUnder25": 0.5811,
+            "pGG": 0.4882,
+            "pNG": 0.5118,
+            "topExact": [
+              [
+                "1-1",
+                0.1407
+              ],
+              [
+                "1-0",
+                0.1046
+              ],
+              [
+                "0-0",
+                0.104
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.104,
+              "1": 0.2049,
+              "2": 0.2723,
+              "3": 0.2067,
+              "4": 0.1218,
+              "5": 0.0574,
+              "6": 0.0225,
+              "7+": 0.0105
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558489,
+          "date": "2026-12-13",
+          "time": "19:45",
+          "matchday": 15,
+          "homeTeam": "SSC Napoli",
+          "homeId": 113,
+          "awayTeam": "AC Milan",
+          "awayId": 98,
+          "homeStats": {
+            "gf_pg": 1.89,
+            "ga_pg": 1.22,
+            "form": "WDLWD",
+            "elo": 1551.0,
+            "played": 9,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 2.0,
+            "ga_pg": 1.22,
+            "form": "LWWDW",
+            "elo": 1549.0,
+            "played": 9,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 1.618,
+            "lambdaA": 1.365,
+            "rho": -0.07,
+            "lambdaHRaw": 1.618,
+            "lambdaARaw": 1.365,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.488,
+            "marketWeight": 0.25,
+            "p1": 0.4269,
+            "px": 0.2574,
+            "p2": 0.3157,
+            "pOver25": 0.5729,
+            "pUnder25": 0.4271,
+            "pGG": 0.6048,
+            "pNG": 0.3952,
+            "topExact": [
+              [
+                "1-1",
+                0.1197
+              ],
+              [
+                "2-1",
+                0.0905
+              ],
+              [
+                "1-2",
+                0.0764
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0585,
+              "1": 0.1354,
+              "2": 0.2332,
+              "3": 0.2241,
+              "4": 0.1672,
+              "5": 0.0997,
+              "6": 0.0496,
+              "7+": 0.0323
             },
             "value": null
           }
