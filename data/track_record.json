@@ -1,6 +1,6 @@
 {
- "graded": 619,
- "pending": 431,
+ "graded": 620,
+ "pending": 432,
  "brier": 0.2135,
  "calibration": [
   {
@@ -17,21 +17,21 @@
   },
   {
    "bin": "20-30%",
-   "n": 807,
+   "n": 809,
    "avgPred": 0.2463,
-   "actualFreq": 0.2565
+   "actualFreq": 0.2571
   },
   {
    "bin": "30-40%",
-   "n": 538,
+   "n": 540,
    "avgPred": 0.3496,
-   "actualFreq": 0.355
+   "actualFreq": 0.3537
   },
   {
    "bin": "40-50%",
-   "n": 446,
+   "n": 447,
    "avgPred": 0.4475,
-   "actualFreq": 0.4843
+   "actualFreq": 0.4832
   },
   {
    "bin": "50-60%",
@@ -41,9 +41,9 @@
   },
   {
    "bin": "60-70%",
-   "n": 346,
-   "avgPred": 0.6487,
-   "actualFreq": 0.6243
+   "n": 348,
+   "avgPred": 0.6486,
+   "actualFreq": 0.6264
   },
   {
    "bin": "70-80%",
@@ -67,8 +67,8 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1857,
-   "brier": 0.2001,
+   "n": 1860,
+   "brier": 0.2002,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
@@ -78,10 +78,10 @@
      "gap": -0.0627
     },
     "incerto": {
-     "n": 1549,
-     "pred": 0.2729,
-     "actual": 0.2853,
-     "gap": 0.0125
+     "n": 1552,
+     "pred": 0.273,
+     "actual": 0.2854,
+     "gap": 0.0124
     }
    },
    "calibration": [
@@ -99,9 +99,9 @@
     },
     {
      "bin": "20-30%",
-     "n": 659,
+     "n": 661,
      "avgPred": 0.2443,
-     "actualFreq": 0.2443
+     "actualFreq": 0.2451
     },
     {
      "bin": "30-40%",
@@ -111,9 +111,9 @@
     },
     {
      "bin": "40-50%",
-     "n": 251,
-     "avgPred": 0.4498,
-     "actualFreq": 0.4821
+     "n": 252,
+     "avgPred": 0.4499,
+     "actualFreq": 0.4802
     },
     {
      "bin": "50-60%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1238,
-   "brier": 0.2311,
+   "n": 1240,
+   "brier": 0.2309,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 619,
+     "n": 620,
      "pred": 0.6789,
-     "actual": 0.6284,
-     "gap": -0.0505
+     "actual": 0.629,
+     "gap": -0.0498
     },
     "incerto": {
-     "n": 619,
+     "n": 620,
      "pred": 0.3211,
-     "actual": 0.3716,
-     "gap": 0.0505
+     "actual": 0.371,
+     "gap": 0.0498
     }
    },
    "calibration": [
@@ -187,9 +187,9 @@
     },
     {
      "bin": "30-40%",
-     "n": 226,
+     "n": 227,
      "avgPred": 0.3521,
-     "actualFreq": 0.3628
+     "actualFreq": 0.3612
     },
     {
      "bin": "40-50%",
@@ -205,9 +205,9 @@
     },
     {
      "bin": "60-70%",
-     "n": 226,
+     "n": 227,
      "avgPred": 0.6479,
-     "actualFreq": 0.6372
+     "actualFreq": 0.6388
     },
     {
      "bin": "70-80%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 170,
-   "brier": 0.2325,
+   "n": 172,
+   "brier": 0.2312,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 85,
-     "pred": 0.6111,
-     "actual": 0.6235,
-     "gap": 0.0124
+     "n": 86,
+     "pred": 0.6116,
+     "actual": 0.6279,
+     "gap": 0.0163
     },
     "incerto": {
-     "n": 85,
-     "pred": 0.3889,
-     "actual": 0.3765,
-     "gap": -0.0124
+     "n": 86,
+     "pred": 0.3884,
+     "actual": 0.3721,
+     "gap": -0.0163
     }
    },
    "calibration": [
@@ -269,9 +269,9 @@
     },
     {
      "bin": "30-40%",
-     "n": 33,
-     "avgPred": 0.3536,
-     "actualFreq": 0.303
+     "n": 34,
+     "avgPred": 0.3535,
+     "actualFreq": 0.2941
     },
     {
      "bin": "40-50%",
@@ -287,9 +287,9 @@
     },
     {
      "bin": "60-70%",
-     "n": 33,
-     "avgPred": 0.6464,
-     "actualFreq": 0.697
+     "n": 34,
+     "avgPred": 0.6465,
+     "actualFreq": 0.7059
     },
     {
      "bin": "70-80%",
@@ -6946,6 +6946,15 @@
    "gg": true,
    "d": "2026-10-29",
    "n": "Frosinone Calcio - US Lecce"
+  },
+  "558551": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-10-29",
+   "n": "ACF Fiorentina - Atalanta BC"
   }
  }
 }
