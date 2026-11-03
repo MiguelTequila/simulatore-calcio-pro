@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-02T23:46:23.069855+00:00",
+  "updated": "2026-11-03T22:11:26.159809+00:00",
   "modelVersion": "3.0",
   "marketWeight": 0.25,
   "oddsWindowDays": 7,
   "apiCredits": {
     "remaining": "500",
     "used": "0",
-    "checkedAt": "2026-11-02T23:46:23.069855+00:00",
+    "checkedAt": "2026-11-03T22:11:26.159809+00:00",
     "stale": false
   },
   "competitions": {
@@ -3710,6 +3710,154 @@
               "5": 0.1035,
               "6": 0.0524,
               "7+": 0.0339
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558482,
+          "date": "2026-12-18",
+          "time": "17:30",
+          "matchday": 16,
+          "homeTeam": "Frosinone Calcio",
+          "homeId": 470,
+          "awayTeam": "SS Lazio",
+          "awayId": 110,
+          "homeStats": {
+            "gf_pg": 2.4,
+            "ga_pg": 1.4,
+            "form": "WWDWL",
+            "elo": 1577.0,
+            "played": 10,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 2.4,
+            "ga_pg": 0.8,
+            "form": "WWWWW",
+            "elo": 1646.0,
+            "played": 10,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 1.46,
+            "lambdaA": 1.87,
+            "rho": -0.07,
+            "lambdaHRaw": 1.46,
+            "lambdaARaw": 1.87,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.5,
+            "marketWeight": 0.25,
+            "p1": 0.2955,
+            "px": 0.2382,
+            "p2": 0.4662,
+            "pOver25": 0.6461,
+            "pUnder25": 0.3539,
+            "pGG": 0.6561,
+            "pNG": 0.3439,
+            "topExact": [
+              [
+                "1-1",
+                0.1047
+              ],
+              [
+                "1-2",
+                0.0915
+              ],
+              [
+                "2-1",
+                0.0714
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0427,
+              "1": 0.1057,
+              "2": 0.2055,
+              "3": 0.2205,
+              "4": 0.1835,
+              "5": 0.1222,
+              "6": 0.0678,
+              "7+": 0.0521
+            },
+            "value": null
+          }
+        },
+        {
+          "id": 558486,
+          "date": "2026-12-18",
+          "time": "19:45",
+          "matchday": 16,
+          "homeTeam": "US Lecce",
+          "homeId": 5890,
+          "awayTeam": "FC Internazionale Milano",
+          "awayId": 108,
+          "homeStats": {
+            "gf_pg": 1.1,
+            "ga_pg": 2.1,
+            "form": "LLLWL",
+            "elo": 1418.0,
+            "played": 10,
+            "gf_pg_home": null,
+            "ga_pg_home": null,
+            "played_home": null
+          },
+          "awayStats": {
+            "gf_pg": 2.6,
+            "ga_pg": 1.3,
+            "form": "LWWWW",
+            "elo": 1623.0,
+            "played": 10,
+            "gf_pg_away": null,
+            "ga_pg_away": null,
+            "played_away": null
+          },
+          "odds": null,
+          "dataQuality": "full",
+          "prediction": {
+            "lambdaH": 0.937,
+            "lambdaA": 2.788,
+            "rho": -0.07,
+            "lambdaHRaw": 0.937,
+            "lambdaARaw": 2.788,
+            "modelVersion": "3.0",
+            "leagueAvg": 1.5,
+            "marketWeight": 0.25,
+            "p1": 0.0955,
+            "px": 0.1523,
+            "p2": 0.7522,
+            "pOver25": 0.7165,
+            "pUnder25": 0.2835,
+            "pGG": 0.5748,
+            "pNG": 0.4252,
+            "topExact": [
+              [
+                "0-2",
+                0.0945
+              ],
+              [
+                "1-2",
+                0.0885
+              ],
+              [
+                "0-3",
+                0.0878
+              ]
+            ],
+            "totalGoalsDist": {
+              "0": 0.0288,
+              "1": 0.0817,
+              "2": 0.1731,
+              "3": 0.2094,
+              "4": 0.195,
+              "5": 0.1453,
+              "6": 0.0902,
+              "7+": 0.0767
             },
             "value": null
           }

@@ -45121,6 +45121,98 @@
    },
    "firstBet": null,
    "firstSeen": "2026-10-30T21:21:15.271163+00:00"
+  },
+  "558482": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-12-18",
+   "home": "Frosinone Calcio",
+   "away": "SS Lazio",
+   "p1": 0.2955,
+   "px": 0.2382,
+   "p2": 0.4662,
+   "pOver25": 0.6461,
+   "pUnder25": 0.3539,
+   "pGG": 0.6561,
+   "pNG": 0.3439,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "bestBet": null,
+   "modelVersion": "3.0",
+   "result": null,
+   "firstOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "firstBet": null,
+   "firstSeen": "2026-11-03T22:11:48.165484+00:00"
+  },
+  "558486": {
+   "comp": "SA",
+   "compName": "Serie A",
+   "date": "2026-12-18",
+   "home": "US Lecce",
+   "away": "FC Internazionale Milano",
+   "p1": 0.0955,
+   "px": 0.1523,
+   "p2": 0.7522,
+   "pOver25": 0.7165,
+   "pUnder25": 0.2835,
+   "pGG": 0.5748,
+   "pNG": 0.4252,
+   "odds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "bestOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "bestBet": null,
+   "modelVersion": "3.0",
+   "result": null,
+   "firstOdds": {
+    "1": null,
+    "X": null,
+    "2": null,
+    "over25": null,
+    "under25": null,
+    "gg": null,
+    "ng": null
+   },
+   "firstBet": null,
+   "firstSeen": "2026-11-03T22:11:48.165502+00:00"
   }
  }
 }
