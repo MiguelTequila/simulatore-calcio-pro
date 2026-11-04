@@ -381,6 +381,92 @@ def build_track_record(log):
         },
     }
 
+    # --- OSSERVAZIONE: big match contro il resto -------------------------
+    # Non cambia NESSUNA previsione: conta soltanto. Serve a far maturare da
+    # sola l'unica ipotesi che, nei dati, punta a un errore che il mercato
+    # commette insieme al modello (e quindi l'unica che potrebbe dare un
+    # vantaggio invece che solo accuratezza): nelle partite fra squadre forti
+    # entrambi sovrastimano l'Over 2.5 di circa dieci punti.
+    # Al 4 nov 2026 il segnale valeva 0.68-1.75 volte l'errore tipico: troppo
+    # poco per giocarci. Qui si accumula finche' non supera 2, o finche' non
+    # si spegne.
+    BIG_FRAZIONE = 3.0        # "forte" = il terzo di squadre piu' forti
+    BIG_MIN_PARTITE = 4       # partite minime per giudicare una squadra
+
+    def forza_squadre(sub):
+        """Forza di ogni squadra secondo il MERCATO: probabilita' implicita
+        media di vittoria nelle sue partite. Si usa il mercato e non il
+        modello di proposito: serve un metro indipendente da cio' che stiamo
+        misurando, altrimenti il modello si giudicherebbe da solo."""
+        acc = {}
+        for e in sub:
+            o = e.get("odds") or {}
+            q1, qx, q2 = o.get("1"), o.get("X"), o.get("2")
+            if not (q1 and qx and q2):
+                continue
+            tot = 1 / q1 + 1 / qx + 1 / q2
+            acc.setdefault(e["home"], []).append((1 / q1) / tot)
+            acc.setdefault(e["away"], []).append((1 / q2) / tot)
+        return {t: sum(v) / len(v) for t, v in acc.items() if len(v) >= BIG_MIN_PARTITE}
+
+    def segnale(valori):
+        """Quante volte l'errore tipico vale il risultato medio. Sotto 2 e'
+        indistinguibile dal caso, e va detto a chiare lettere."""
+        n = len(valori)
+        if n < 2:
+            return None
+        media = sum(valori) / n
+        var = sum((x - media) ** 2 for x in valori) / (n - 1)
+        if var <= 0:
+            return None
+        return round(media / ((var ** 0.5) / (n ** 0.5)), 2)
+
+    def gruppo_big(sub, e_big):
+        sel = [e for e in sub if e.get("pOver25") is not None]
+        if not sel:
+            return None
+        prev = sum(e["pOver25"] for e in sel) / len(sel)
+        reale = sum(1 for e in sel if e["result"]["over25"]) / len(sel)
+        # errore tipico della frequenza osservata, in punti percentuali
+        err = ((max(reale * (1 - reale), 0.01) / len(sel)) ** 0.5)
+        # e se avessi puntato Under 2.5 su tutte?
+        esiti = []
+        for e in sel:
+            q = (e.get("bestOdds") or {}).get("under25")
+            if not q or q <= 1:
+                continue
+            esiti.append((q - 1) if not e["result"]["over25"] else -1.0)
+        pl = sum(esiti) if esiti else None
+        return {"big": e_big, "n": len(sel),
+                "predOver": round(prev, 4), "actualOver": round(reale, 4),
+                "gap": round(reale - prev, 4), "err": round(err, 4),
+                "under": {"n": len(esiti),
+                          "profitUnits": round(pl, 3) if pl is not None else None,
+                          "roi": round(pl / len(esiti), 4) if esiti else None,
+                          "signal": segnale(esiti)}}
+
+    forze = forza_squadre(graded)
+    big_match = None
+    if len(forze) >= 10:
+        ordinate = sorted(forze.values(), reverse=True)
+        soglia = ordinate[int(len(ordinate) / BIG_FRAZIONE)]
+        def e_forte(t):
+            return forze.get(t, 0) >= soglia
+        bb = [e for e in graded if e_forte(e["home"]) and e_forte(e["away"])]
+        altre = [e for e in graded if not (e_forte(e["home"]) and e_forte(e["away"]))]
+        g_bb, g_al = gruppo_big(bb, True), gruppo_big(altre, False)
+        pronto = None
+        if g_bb and g_al:
+            dif = g_bb["gap"] - g_al["gap"]
+            err = (g_bb["err"] ** 2 + g_al["err"] ** 2) ** 0.5
+            volte = round(abs(dif) / err, 2) if err else None
+            pronto = {"differenza": round(dif, 4), "errore": round(err, 4),
+                      "volteErrore": volte,
+                      "usabile": bool(volte and volte >= 2.0)}
+        big_match = {"soglia": round(soglia, 4), "squadreValutate": len(forze),
+                     "squadreForti": sum(1 for t in forze if e_forte(t)),
+                     "gruppi": [g for g in (g_bb, g_al) if g], "verdetto": pronto}
+
     per_ver = {}
     for e in graded:
         per_ver.setdefault(e.get("modelVersion") or "sconosciuta", []).append(e)
@@ -401,6 +487,7 @@ def build_track_record(log):
                        "history": bets[-100:]},
         "byVersion": by_version,
         "hitRate": hit,
+        "bigMatch": big_match,
     }
     return track
 
