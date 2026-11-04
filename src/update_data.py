@@ -10,7 +10,8 @@ from track_record import (load_log, save_log, log_predictions, reconcile_results
                           write_json, prune_log)
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
                          compute_value, league_average, league_home_away, stat_scale, LEAGUE_RHO, DEFAULT_RHO,
-                         MARKET_WEIGHT, MODEL_VERSION)
+                         MARKET_WEIGHT, MODEL_VERSION,
+                         fit_dixon_coles, lambdas_from_fit)
 
 # ============================================================================
 # RICONOSCIMENTO SQUADRE FRA FONTI DIVERSE
@@ -310,6 +311,20 @@ def build_output():
         print(f"    {comp_id}: media lega {lg_avg:.3f} | base casa {lg_ha[0]:.2f} "
               f"trasferta {lg_ha[1]:.2f} | riscalatura {lg_scale:.3f} | "
               f"parziali casa/trasferta: {'si' if split else 'no'}")
+
+        # Stima a massima verosimiglianza dai risultati veri della stagione.
+        # Se non riesce (poche partite, dati mancanti) si continua col metodo
+        # vecchio: meglio una previsione peggiore che nessuna previsione.
+        fit = fit_dixon_coles(comp_data.get("recentMatches") or [])
+        if fit:
+            rho = fit["rho"]
+            att = sorted(fit["attack"].items(), key=lambda kv: -kv[1])
+            print(f"    stima: {fit['n']} partite, {fit['teams']} squadre, "
+                  f"vantaggio campo {fit['home']:+.3f}, rho {fit['rho']:+.3f} | "
+                  f"attacco migliore {att[0][0]} {att[0][1]:+.2f}, "
+                  f"peggiore {att[-1][0]} {att[-1][1]:+.2f}")
+        else:
+            print(f"    stima non riuscita: si usa il metodo a medie stagionali")
         processed = []
 
         for fix in fixtures:
@@ -320,7 +335,16 @@ def build_output():
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
 
-            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg, league_ha=lg_ha, scale=lg_scale)
+            # Prima la stima; si ripiega sulle medie quando una delle due
+            # squadre non era nei dati (neopromossa, poche partite giocate).
+            _mle = lambdas_from_fit(fit, hname, aname)
+            if _mle:
+                raw_h, raw_a = _mle
+                lam_src = "stima"
+            else:
+                raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg,
+                                               league_ha=lg_ha, scale=lg_scale)
+                lam_src = "medie"
             odds = fix.get("odds")
             lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
@@ -344,6 +368,7 @@ def build_output():
                     "lambdaH": round(lam_h, 3), "lambdaA": round(lam_a, 3), "rho": rho,
                     "lambdaHRaw": round(raw_h, 3), "lambdaARaw": round(raw_a, 3),
                     "modelVersion": MODEL_VERSION, "leagueAvg": round(lg_avg, 3),
+                    "lambdaSource": lam_src,
                     "marketWeight": MARKET_WEIGHT,
                     "p1": round(pred["p1"], 4), "px": round(pred["px"], 4), "p2": round(pred["p2"], 4),
                     "pOver25": round(pred["p_over25"], 4), "pUnder25": round(pred["p_under25"], 4),
@@ -376,7 +401,16 @@ def build_output():
             hname, aname = fix["homeTeam"], fix["awayTeam"]
             eh = elo_ratings.get(hname, {}).get("elo", 1500)
             ea = elo_ratings.get(aname, {}).get("elo", 1500)
-            raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg, league_ha=lg_ha, scale=lg_scale)
+            # Prima la stima; si ripiega sulle medie quando una delle due
+            # squadre non era nei dati (neopromossa, poche partite giocate).
+            _mle = lambdas_from_fit(fit, hname, aname)
+            if _mle:
+                raw_h, raw_a = _mle
+                lam_src = "stima"
+            else:
+                raw_h, raw_a = compute_lambdas(hs, ast, eh, ea, comp_id, league_avg=lg_avg,
+                                               league_ha=lg_ha, scale=lg_scale)
+                lam_src = "medie"
             odds = fix.get("odds")
             lam_h, lam_a = calibrate_with_odds(raw_h, raw_a, odds, rho=rho, weight=MARKET_WEIGHT)
             pred = dixon_coles_matrix(lam_h, lam_a, rho, max_goals=7)
@@ -398,6 +432,7 @@ def build_output():
                     "lambdaH": round(lam_h, 3), "lambdaA": round(lam_a, 3), "rho": rho,
                     "lambdaHRaw": round(raw_h, 3), "lambdaARaw": round(raw_a, 3),
                     "modelVersion": MODEL_VERSION, "leagueAvg": round(lg_avg, 3),
+                    "lambdaSource": lam_src,
                     "marketWeight": MARKET_WEIGHT,
                     "p1": round(pred["p1"], 4), "px": round(pred["px"], 4), "p2": round(pred["p2"], 4),
                     "pOver25": round(pred["p_over25"], 4), "pUnder25": round(pred["p_under25"], 4),
