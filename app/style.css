@@ -485,3 +485,21 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .hit-verdict{font-size:.76rem;margin-top:.3rem;padding:.3rem .45rem;border-radius:5px;line-height:1.4}
 .hit-verdict.ok{background:#123524;color:#8ee0ab}
 .hit-verdict.ko{background:#3a1a1a;color:#e0a8a8}
+
+/* Osservazione big match: accumula lo storico senza decidere nulla */
+.bm-table{margin:.45rem 0 .6rem}
+.bm-row{padding:.45rem .55rem;border-radius:7px;background:#1a2336;margin-bottom:.4rem;
+  border-left:3px solid #2c3a55}
+.bm-row.bm-big{border-left-color:#5b8cff}
+.bm-name{font-size:.84rem;font-weight:600;color:#cdd7ea;margin-bottom:.25rem}
+.bm-cells{display:flex;flex-wrap:wrap;gap:.3rem .9rem;font-size:.78rem;color:#cdd7ea}
+.bm-cells em{color:#8a93a8;font-style:normal;font-size:.72rem;margin-right:.2rem}
+.bm-under{font-size:.75rem;color:#9aa6bd;margin-top:.3rem;line-height:1.4}
+.bm-verdict{padding:.55rem .6rem;border-radius:7px;font-size:.79rem;line-height:1.5}
+.bm-verdict.wait{background:#2a2a3a;border:1px solid #3d3d52;color:#c3c9d8}
+.bm-verdict.ok{background:#123524;border:1px solid #2a6b45;color:#bfe8cf}
+.bm-vhead{font-weight:600;margin-bottom:.35rem}
+.bm-prog{background:#0f172a;border-radius:3px;height:.45rem;overflow:hidden;margin:.3rem 0 .4rem}
+.bm-prog>i{display:block;height:100%;background:#5b8cff;border-radius:3px}
+.bm-verdict.ok .bm-prog>i{background:#4ec97f}
+.bm-vnote{color:#9aa6bd;font-size:.75rem}
