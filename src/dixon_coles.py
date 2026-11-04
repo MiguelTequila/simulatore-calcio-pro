@@ -6,7 +6,11 @@ from scipy.optimize import minimize
 # Versione del modello: cambiala a OGNI modifica che altera le previsioni.
 # Viene salvata in ogni predizione, cosi' il registro degli esiti puo' separare
 # i risultati del modello vecchio da quelli del nuovo invece di mescolarli.
-MODEL_VERSION = "3.0"
+# 4.0 (4 nov 2026): attacco e difesa di ogni squadra stimati a massima
+# verosimiglianza dai risultati veri, con decadimento temporale e un freno
+# forte, invece del rapporto fra medie stagionali. Peso del mercato 0.25 -> 0.60.
+# Fascia di vantaggio 8-25% -> 3-8% con tetto duro al 25%.
+MODEL_VERSION = "4.0"
 
 # Media gol per squadra per partita, usata come riferimento di lega.
 # NOTA IMPORTANTE: in un campionato la media dei gol FATTI e quella dei gol
@@ -128,6 +132,127 @@ MARKET_WEIGHT = 0.60
 # oltre 12 punti, il suo Brier e' 0.2939 contro 0.2376 del mercato. Nel
 # registro vecchio risultavano "vantaggi" fino a +208% su quote 28.00.
 EDGE_BROKEN = 0.25
+
+
+# ======================= Stima a massima verosimiglianza =======================
+# Il metodo vecchio ricavava i gol attesi da un rapporto fra medie stagionali:
+#   gol_casa = (gol fatti in casa x gol subiti fuori dall'ospite) / base_lega
+# Funziona, ma butta via l'informazione della singola partita e non tiene conto
+# di CHI hai incontrato: segnare 3 gol al Napoli e 3 al Lecce contano uguale.
+# Da qui si stimano invece attacco e difesa di ogni squadra, il vantaggio del
+# campo e rho tutti insieme, massimizzando la probabilita' dei risultati
+# realmente avvenuti, con le partite recenti che pesano piu' delle vecchie.
+
+FIT_XI = 0.0045       # decadimento temporale: a 154 giorni una partita pesa meta'
+# Freno sui parametri di attacco e difesa. Il valore sembra enorme e lo e':
+# serve a dire che con 40-100 partite le forze delle singole squadre stimate
+# dai gol sono quasi tutte rumore. Verifica in avanti nel tempo, scegliendo il
+# valore solo sul primo periodo e misurando sul secondo (mai usato per la
+# scelta): Brier 0.1978 contro 0.2089 del metodo vecchio, il 5.3% in meno.
+# Il risultato tiene per ogni freno fra 4 e 40, quindi non e un numero fortunato.
+# Senza freno (0.02) la stima PERDEVA contro il metodo vecchio: 0.2256 contro
+# 0.2061. Da rialzare col crescere delle partite in archivio.
+FIT_RIDGE = 4.0
+FIT_MIN_MATCHES = 30  # sotto questa soglia non si stima: si usa il metodo vecchio
+
+
+def _dc_loglik(par, idx, dati, pesi, ridge):
+    """Verosimiglianza negativa (da minimizzare) del modello Dixon-Coles."""
+    import math as _m
+    n = len(idx)
+    att = par[:n]
+    dif = par[n:2 * n]
+    gamma, rho = par[2 * n], par[2 * n + 1]
+    # vincolo di identificabilita': la media degli attacchi e' zero, altrimenti
+    # si puo' aggiungere la stessa costante a tutti gli attacchi e togliere
+    # dalle difese senza cambiare niente, e l'ottimizzatore gira a vuoto
+    m_att = sum(att) / n
+    tot = 0.0
+    for (ih, ia, hg, ag), w in zip(dati, pesi):
+        lh = _m.exp(att[ih] - m_att + dif[ia] + gamma)
+        la = _m.exp(att[ia] - m_att + dif[ih])
+        if lh <= 0 or la <= 0 or lh > 8 or la > 8:
+            return 1e6
+        t = tau(hg, ag, lh, la, rho)
+        if t <= 0:
+            return 1e6
+        tot += w * (_m.log(t) + hg * _m.log(lh) - lh + ag * _m.log(la) - la)
+    pen = ridge * (sum(a * a for a in att) + sum(d * d for d in dif))
+    return -tot + pen
+
+
+def fit_dixon_coles(matches, oggi=None, xi=FIT_XI, ridge=FIT_RIDGE,
+                    min_matches=FIT_MIN_MATCHES):
+    """Stima attacco e difesa per squadra, vantaggio del campo e rho dai
+    risultati veri. matches: lista di dict con homeTeam, awayTeam,
+    homeGoals, awayGoals, date. Restituisce None se i dati non bastano."""
+    from datetime import date as _date
+    buone = [m for m in (matches or [])
+             if m.get("homeGoals") is not None and m.get("awayGoals") is not None
+             and m.get("homeTeam") and m.get("awayTeam")]
+    if len(buone) < min_matches:
+        return None
+    squadre = sorted({m["homeTeam"] for m in buone} | {m["awayTeam"] for m in buone})
+    idx = {t: i for i, t in enumerate(squadre)}
+    n = len(squadre)
+
+    if oggi is None:
+        oggi = _date.today()
+    elif isinstance(oggi, str):
+        oggi = _date.fromisoformat(oggi)
+
+    dati, pesi = [], []
+    for m in buone:
+        try:
+            g = (oggi - _date.fromisoformat(str(m["date"])[:10])).days
+        except Exception:
+            g = 0
+        pesi.append(math.exp(-xi * max(0, g)))
+        dati.append((idx[m["homeTeam"]], idx[m["awayTeam"]],
+                     int(m["homeGoals"]), int(m["awayGoals"])))
+
+    par0 = [0.0] * n + [0.0] * n + [0.25, DEFAULT_RHO]
+    # Il tetto su rho e un filo sopra zero di proposito. La teoria dice che
+    # deve essere negativo (i risultati bassi capitano piu del previsto) e in
+    # media lo e: su tutto il backtest viene -0.0524. Ma su una singola lega a
+    # 100 partite puo uscire leggermente positivo, ed e rumore del campione,
+    # non un errore: vincolarlo a <= 0 peggiorava il Brier fuori campione
+    # (0.1981 contro 0.1978). Meglio lasciare parlare i dati.
+    limiti = [(-1.5, 1.5)] * n + [(-1.5, 1.5)] * n + [(-0.2, 0.8), (-0.25, 0.05)]
+    try:
+        res = minimize(_dc_loglik, par0, args=(idx, dati, pesi, ridge),
+                       method="L-BFGS-B", bounds=limiti,
+                       options={"maxiter": 600, "ftol": 1e-7})
+    except Exception as e:
+        print(f"[!] stima non riuscita: {e}")
+        return None
+    if not res.success and res.nit < 5:
+        return None
+
+    par = res.x
+    att = par[:n]
+    dif = par[n:2 * n]
+    m_att = sum(att) / n
+    return {"attack": {t: float(att[idx[t]] - m_att) for t in squadre},
+            "defence": {t: float(dif[idx[t]]) for t in squadre},
+            "home": float(par[2 * n]), "rho": float(par[2 * n + 1]),
+            "n": len(buone), "teams": n, "xi": xi,
+            "pesoEffettivo": round(sum(pesi), 1)}
+
+
+def lambdas_from_fit(fit, home, away, cap_h=4.0, cap_a=3.5):
+    """Gol attesi dalla stima. None se una delle due squadre non c'era nei
+    dati di addestramento (neopromossa, squadra di coppa): in quel caso chi
+    chiama ripiega sul metodo vecchio invece di inventare un numero."""
+    if not fit:
+        return None
+    a_h, d_h = fit["attack"].get(home), fit["defence"].get(home)
+    a_a, d_a = fit["attack"].get(away), fit["defence"].get(away)
+    if None in (a_h, d_h, a_a, d_a):
+        return None
+    lh = math.exp(a_h + d_a + fit["home"])
+    la = math.exp(a_a + d_h)
+    return max(0.3, min(lh, cap_h)), max(0.3, min(la, cap_a))
 
 
 def tau(x, y, lam_h, lam_a, rho):
