@@ -468,3 +468,20 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 /* Avviso quando i gol attesi vengono dal metodo di ripiego */
 .lam-fallback{background:#3a2a16;color:#d4b35a;font-size:.7rem;padding:.1rem .4rem;
   border-radius:4px;cursor:help;white-space:nowrap}
+
+/* Tabellone dei successi per mercato, con le regole di confronto */
+.hit-group{margin:.55rem 0 .8rem}
+.hit-title{font-size:.86rem;font-weight:600;color:#cdd7ea;margin-bottom:.3rem}
+.hit-n{font-weight:400;color:#8a93a8;font-size:.74rem}
+.hit-row{display:grid;grid-template-columns:minmax(8rem,1fr) minmax(3rem,7rem) 3.4rem 4rem;
+  gap:.45rem;align-items:center;font-size:.78rem;padding:.17rem 0;color:#9aa6bd}
+.hit-row.hit-me{color:#e8edf7;font-weight:600}
+.hit-lab{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hit-bar{background:#1e293b;border-radius:3px;height:.6rem;overflow:hidden}
+.hit-bar>i{display:block;height:100%;background:#3f4f6e;border-radius:3px}
+.hit-me .hit-bar>i{background:#5b8cff}
+.hit-val{text-align:right}
+.hit-abs{text-align:right;color:#8a93a8;font-size:.72rem}
+.hit-verdict{font-size:.76rem;margin-top:.3rem;padding:.3rem .45rem;border-radius:5px;line-height:1.4}
+.hit-verdict.ok{background:#123524;color:#8ee0ab}
+.hit-verdict.ko{background:#3a1a1a;color:#e0a8a8}
