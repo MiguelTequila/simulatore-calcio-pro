@@ -113,7 +113,21 @@ def league_home_away(teams, league_avg):
             return h * f, a * f
     return league_avg * (1 + HOME_EDGE), league_avg * (1 - HOME_EDGE)
 SHRINK_K = 5          # forza dello smorzamento a inizio stagione (partite "fittizie")
-MARKET_WEIGHT = 0.25  # quanto ci si fida del mercato in calibrazione (0 = solo modello)
+# Quanto ci si fida del mercato in calibrazione (0 = solo modello, 1 = solo quote).
+# Alzato da 0.25 a 0.60 il 2026-11-04 sulla base di una verifica fuori campione:
+# tarando sulle partite fino al 12 settembre e misurando su 225 partite
+# successive, il Brier scende da 0.2244 a circa 0.2104 man mano che il peso
+# sale, in modo regolare. Il mercato da solo fa 0.2059: il modello, su quei
+# dati, non aggiungeva accuratezza. A 0.60 si tiene la voce del modello senza
+# buttare via il consenso di venti operatori. Da rivedere quando il registro
+# diviso per versione avra' abbastanza partite della versione nuova.
+MARKET_WEIGHT = 0.60
+
+# Oltre questo vantaggio il modello non sta trovando un'occasione: si sta
+# rompendo. Verifica fuori campione: dove il modello dissente dal mercato di
+# oltre 12 punti, il suo Brier e' 0.2939 contro 0.2376 del mercato. Nel
+# registro vecchio risultavano "vantaggi" fino a +208% su quote 28.00.
+EDGE_BROKEN = 0.25
 
 
 def tau(x, y, lam_h, lam_a, rho):
@@ -288,7 +302,7 @@ def price_set(odds):
     return prezzi, fonte
 
 
-def compute_value(pred, odds, kelly_cap=0.05, edge_min=0.03):
+def compute_value(pred, odds, kelly_cap=0.05, edge_min=0.03, edge_max=EDGE_BROKEN):
     """Confronta prob. del modello con la quota che puoi GIOCARE davvero.
     edge = p_modello * quota - 1. Kelly mostrato a meta' (piu' prudente),
     limitato a kelly_cap del bankroll."""
@@ -313,10 +327,16 @@ def compute_value(pred, odds, kelly_cap=0.05, edge_min=0.03):
         half_kelly = min(kelly_cap, kelly_fraction(p, q) / 2)
         rows.append({"market": name, "p": round(p, 4), "odds": round(q, 3),
                      "edge": round(edge, 4), "kelly": round(half_kelly, 4),
-                     "oddsFrom": fonte.get(chiave)})
+                     "oddsFrom": fonte.get(chiave),
+                     # Vantaggio assurdo = errore del modello, non occasione.
+                     # Resta in tabella per trasparenza, ma non viene proposto
+                     # e non entra nel conto delle value bet.
+                     "broken": edge > edge_max})
     rows.sort(key=lambda r: r["edge"], reverse=True)
-    bet = rows[0] if rows and rows[0]["edge"] >= edge_min else None
-    return {"rows": rows, "bestBet": bet}
+    sani = [r for r in rows if not r["broken"]]
+    bet = sani[0] if sani and sani[0]["edge"] >= edge_min else None
+    return {"rows": rows, "bestBet": bet,
+            "brokenCount": sum(1 for r in rows if r["broken"])}
 
 
 if __name__ == "__main__":
