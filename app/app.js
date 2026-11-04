@@ -421,6 +421,16 @@ function showPrediction(pred) {
   document.getElementById('lambdaA').textContent = (pred.lambdaA || 0).toFixed(2);
   document.getElementById('rhoVal').textContent = (pred.rho || 0).toFixed(3);
 
+  // Da dove vengono i gol attesi. "medie" e' il ripiego: succede con le
+  // neopromosse o a inizio stagione, quando la stima non ha abbastanza
+  // partite di quelle due squadre. La previsione e' piu' grossolana.
+  const le = document.getElementById('lamSrc');
+  if (le) {
+    if (pred.lambdaSource === 'medie') {
+      le.innerHTML = '<span class="lam-fallback" title="Non c\u2019erano abbastanza partite di queste due squadre per la stima: si e\u2019 usato il metodo a medie stagionali, meno preciso">previsione grossolana (medie stagionali)</span>';
+    } else { le.textContent = ''; }
+  }
+
   renderValue(pred.value);
 }
 
@@ -1151,6 +1161,7 @@ const GLOSSARY = [
   ['Calibrazione', 'Il controllo di onest\u00E0 del modello: quando dice 60%, l\u2019evento deve succedere circa il 60% delle volte. Nel grafico, barra blu = probabilit\u00E0 prevista, barra verde = frequenza reale. Simili = modello affidabile.'],
   ['Forma', 'Esiti delle ultime 5 partite ufficiali, dalla pi\u00F9 recente: W vittoria, D pareggio, L sconfitta.'],
   ['Quota usata e l\u2019asterisco *', 'Il vantaggio si calcola sulla quota che puoi <strong>giocare davvero</strong>, non sulla migliore del mondo. Il programma prende quella dei bookmaker italiani disponibili (Unibet IT, Codere IT). Quando per quell\u2019esito non ce l\u2019hanno, usa la migliore del mercato e mette un <span class="q-mkt">*</span> accanto al numero: quella quota esiste, ma su un operatore che probabilmente non usi, quindi il vantaggio mostrato \u00E8 ottimistico. <strong>Eurobet non \u00E8 nel catalogo dei dati</strong>: per avere il vantaggio esatto sulle sue quote, scrivile nel riquadro \u201CQuote tue\u201D \u2014 diventano loro la quota giocabile e tutto si ricalcola.'],
+  ['Come nascono i gol attesi', 'Dalla versione 4.0 attacco e difesa di ogni squadra, il vantaggio del campo e \u03C1 vengono <strong>stimati dai risultati veri</strong> della stagione, dando pi\u00F9 peso alle partite recenti: cos\u00EC segnare tre gol a una squadra forte conta pi\u00F9 che segnarne tre a una debole. Il metodo precedente usava solo le medie di gol fatti e subiti, e non guardava chi avevi incontrato. Verifica in avanti nel tempo: errore 0,1978 contro 0,2089, il 5,3% in meno. Quando una delle due squadre ha giocato troppo poco (neopromossa, inizio stagione) la stima non si applica e compare l\u2019avviso <em>previsione grossolana</em>: in quel caso si torna alle medie.'],
   ['Media e quota migliore', 'Sono due cose diverse e servono a due scopi. La <strong>media</strong> di tutti i bookmaker \u00E8 il consenso del mercato e viene usata per correggere il modello: venti operatori insieme stimano le probabilit\u00E0 meglio di uno solo. La <strong>quota giocabile</strong> serve solo a misurare se conviene puntare. Non si usa un bookmaker solo per entrambe le cose, altrimenti il modello viene tirato verso quel bookmaker e poi si cerca il vantaggio contro lo stesso bookmaker: il confronto si annulla da solo.']
 ];
 
