@@ -314,6 +314,73 @@ def build_track_record(log):
                         "avg": round(sum(cs) / len(cs), 4) if cs else None,
                         "beatenPct": round(cpos / len(cs), 4) if cs else None}}
 
+    # --- tabellone dei successi: quante ne azzecca, per mercato ---
+    # Da solo un numero di successi non dice niente: azzeccare il 61% su
+    # Goal/NoGoal sembra tanto finche' non si scopre che "sempre Goal" fa lo
+    # stesso senza nessun modello. Quindi accanto a ogni riga del modello
+    # stanno le regole di confronto che non usano intelligenza.
+    def conta(sub, scelta, vero):
+        n = c = 0
+        for e in sub:
+            s = scelta(e)
+            if s is None:
+                continue
+            n += 1
+            c += 1 if s == vero(e) else 0
+        return {"n": n, "hit": c, "pct": round(c / n, 4) if n else None}
+
+    def favorito_1x2(e):
+        """Chi il bookmaker ritiene piu' probabile: la quota piu' bassa."""
+        o = e.get("odds") or {}
+        q = [o.get("1"), o.get("X"), o.get("2")]
+        if None in q or not all(q):
+            return None
+        return ["1", "X", "2"][min(range(3), key=lambda i: q[i])]
+
+    def favorito_ou(e):
+        o = e.get("odds") or {}
+        qo, qu = o.get("over25"), o.get("under25")
+        if not (qo and qu):
+            return None
+        return qo < qu          # quota piu' bassa = esito che il bookmaker ritiene piu' probabile
+
+    def modello_1x2(e):
+        ps = [e.get("p1"), e.get("px"), e.get("p2")]
+        if None in ps:
+            return None
+        return ["1", "X", "2"][max(range(3), key=lambda i: ps[i])]
+
+    vero_1x2 = lambda e: e["result"]["outcome"]
+    vero_ou = lambda e: bool(e["result"]["over25"])
+    vero_gg = lambda e: bool(e["result"]["gg"])
+
+    # Confronto a PARITA' di partite: si contano solo quelle dove tutte le
+    # righe sono calcolabili. Contare il modello su 630 partite e il favorito
+    # su 421 darebbe un confronto falsato e rassicurante.
+    sub12 = [e for e in graded if favorito_1x2(e) and modello_1x2(e)]
+    subou = [e for e in graded
+             if favorito_ou(e) is not None and e.get("pOver25") is not None]
+    subgg = [e for e in graded if e.get("pGG") is not None]
+    hit = {
+        "1X2": {
+            "modello": conta(sub12, modello_1x2, vero_1x2),
+            "favorito": conta(sub12, favorito_1x2, vero_1x2),
+            "sempreCasa": conta(sub12, lambda e: "1", vero_1x2),
+            "sempreX": conta(sub12, lambda e: "X", vero_1x2),
+        },
+        "Over/Under 2.5": {
+            "modello": conta(subou, lambda e: (e.get("pOver25") or 0) > 0.5, vero_ou),
+            "favorito": conta(subou, favorito_ou, vero_ou),
+            "sempreOver": conta(subou, lambda e: True, vero_ou),
+            "sempreUnder": conta(subou, lambda e: False, vero_ou),
+        },
+        "Goal/NoGoal": {
+            "modello": conta(subgg, lambda e: (e.get("pGG") or 0) > 0.5, vero_gg),
+            "sempreGoal": conta(subgg, lambda e: True, vero_gg),
+            "sempreNoGoal": conta(subgg, lambda e: False, vero_gg),
+        },
+    }
+
     per_ver = {}
     for e in graded:
         per_ver.setdefault(e.get("modelVersion") or "sconosciuta", []).append(e)
@@ -333,6 +400,7 @@ def build_track_record(log):
                        "roi": round(profit / n_bets, 4) if n_bets else None,
                        "history": bets[-100:]},
         "byVersion": by_version,
+        "hitRate": hit,
     }
     return track
 
