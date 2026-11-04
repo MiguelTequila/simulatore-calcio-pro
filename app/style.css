@@ -464,3 +464,7 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .tr-vrow>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .tr-per{color:#8a93a8;font-size:.74rem;white-space:nowrap}
 .tr-thin{background:#3a2a16;color:#d4b35a;font-size:.66rem;padding:.05rem .3rem;border-radius:4px;cursor:help}
+
+/* Avviso quando i gol attesi vengono dal metodo di ripiego */
+.lam-fallback{background:#3a2a16;color:#d4b35a;font-size:.7rem;padding:.1rem .4rem;
+  border-radius:4px;cursor:help;white-space:nowrap}
