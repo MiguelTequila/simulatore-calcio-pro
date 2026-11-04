@@ -743,6 +743,60 @@ function renderTrackRecord(tr) {
   const roiCls = vb.roi > 0 ? 'stat-good' : (vb.roi < 0 ? 'stat-bad' : '');
   let html = '<h2>\uD83D\uDCC8 Verifica del modello (esiti reali)</h2>';
 
+  // --- tabellone dei successi: quante ne azzecca, con i confronti ---
+  if (tr.hitRate) {
+    const ETI = {modello: 'il modello', favorito: 'il favorito del bookmaker',
+                 sempreCasa: 'sempre la squadra di casa', sempreX: 'sempre pareggio',
+                 sempreOver: 'sempre Over, senza modello', sempreUnder: 'sempre Under, senza modello',
+                 sempreGoal: 'sempre Goal, senza modello', sempreNoGoal: 'sempre NoGoal, senza modello'};
+    html += '<h3 class="tr-sub">Quante ne azzecca</h3>';
+    html += '<p class="note">Scegliendo sempre l\u2019esito che il modello ritiene pi\u00F9 probabile. ' +
+            'Le righe grigie sono regole <strong>senza nessun modello</strong>, messe l\u00EC per confronto: ' +
+            'un numero di successi da solo non dice niente, conta solo se batte queste. ' +
+            'Tutte le righe di un gruppo sono contate sulle stesse partite.</p>';
+    for (const [gruppo, dati] of Object.entries(tr.hitRate)) {
+      const voci = Object.entries(dati).filter(([, v]) => v && v.n)
+                     .sort((a, b) => (b[1].pct || 0) - (a[1].pct || 0));
+      if (!voci.length) continue;
+      const mod = dati.modello;
+      html += '<div class="hit-group"><div class="hit-title">' + gruppo +
+              (mod && mod.n ? ' <span class="hit-n">su ' + mod.n + ' partite</span>' : '') + '</div>';
+      const max = voci[0][1].pct || 1;
+      for (const [chiave, v] of voci) {
+        const io = chiave === 'modello';
+        const pct = (v.pct || 0) * 100;
+        html += '<div class="hit-row' + (io ? ' hit-me' : '') + '">' +
+                '<span class="hit-lab">' + (ETI[chiave] || chiave) + '</span>' +
+                '<span class="hit-bar"><i style="width:' + (pct / max * 100).toFixed(1) + '%"></i></span>' +
+                '<span class="hit-val">' + pct.toFixed(1) + '%</span>' +
+                '<span class="hit-abs">' + v.hit + '/' + v.n + '</span></div>';
+      }
+      // verdetto in una riga: il modello batte il miglior confronto o no?
+      if (mod && mod.pct != null) {
+        const altri = voci.filter(([k]) => k !== 'modello');
+        if (altri.length) {
+          const best = altri[0];
+          const d = (mod.pct - (best[1].pct || 0)) * 100;
+          html += '<div class="hit-verdict ' + (d >= 0 ? 'ok' : 'ko') + '">' +
+                  (d >= 0
+                    ? 'Il modello batte la miglior alternativa (' + (ETI[best[0]] || best[0]) +
+                      ') di ' + d.toFixed(1) + ' punti.'
+                    : 'Il modello <strong>perde</strong> contro ' + (ETI[best[0]] || best[0]) +
+                      ' di ' + Math.abs(d).toFixed(1) + ' punti: su questo mercato non aggiunge niente.') +
+                  '</div>';
+        }
+      }
+      html += '</div>';
+    }
+    html += '<p class="note"><strong>Perch\u00E9 questo tabellone non \u00E8 l\u2019obiettivo.</strong> ' +
+            'Azzeccarne tante e guadagnare sono cose diverse: una scommessa che vince il 60% delle volte ' +
+            'a quota 1,60 va in pari, una che vince il 40% a quota 3,00 guadagna il 20%. ' +
+            'Non conta vincere spesso, conta vincere <strong>pi\u00F9 spesso di quanto dica la quota</strong>. ' +
+            'Il modo pi\u00F9 sicuro di alzare questi numeri \u00E8 appiattirsi sul favorito del bookmaker, ' +
+            'ed \u00E8 esattamente la strategia che perde soldi per via del margine. ' +
+            'Serve a capire se il modello sa qualcosa, non a decidere cosa giocare.</p>';
+  }
+
   // --- numeri divisi per versione del modello ---
   // Senza questa divisione una versione nuova resta sepolta sotto centinaia di
   // previsioni della vecchia e nessuna modifica e' misurabile.
