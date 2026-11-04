@@ -68,11 +68,15 @@ function computeValueJS(pred, odds) {
     const b = q - 1;
     const edge = p * q - 1;
     const kelly = b > 0 ? Math.min(0.05, Math.max(0, (p * q - 1) / b) / 2) : 0;
-    rows.push({ market: m, p, odds: q, edge, kelly, oddsFrom: ps.fonte[markets[m][1]] });
+    rows.push({ market: m, p, odds: q, edge, kelly, oddsFrom: ps.fonte[markets[m][1]],
+                // vantaggio assurdo = errore del modello, non occasione:
+                // resta in tabella per trasparenza ma non viene proposto
+                broken: edge > ADVISOR.edgeBroken });
   }
   rows.sort((a, b) => b.edge - a.edge);
-  const bet = rows.length && rows[0].edge >= 0.03 ? rows[0] : null;
-  return { rows, bestBet: bet };
+  const sani = rows.filter(r => !r.broken);
+  const bet = sani.length && sani[0].edge >= ADVISOR.edgeMin && sani[0].edge <= ADVISOR.edgeMax ? sani[0] : null;
+  return { rows, bestBet: bet, brokenCount: rows.length - sani.length };
 }
 
 function renderValue(value) {
@@ -728,6 +732,39 @@ function renderTrackRecord(tr) {
   const roiPct = vb.roi != null ? (vb.roi * 100).toFixed(1) + '%' : '\u2014';
   const roiCls = vb.roi > 0 ? 'stat-good' : (vb.roi < 0 ? 'stat-bad' : '');
   let html = '<h2>\uD83D\uDCC8 Verifica del modello (esiti reali)</h2>';
+
+  // --- numeri divisi per versione del modello ---
+  // Senza questa divisione una versione nuova resta sepolta sotto centinaia di
+  // previsioni della vecchia e nessuna modifica e' misurabile.
+  if (tr.byVersion && tr.byVersion.length) {
+    html += '<h3 class="tr-sub">Per versione del modello</h3>';
+    html += '<p class="note">Ogni modifica al modello cambia versione. Confronta solo righe della stessa versione: ' +
+            'mescolarle nascondeva se un cambiamento aveva funzionato. ' +
+            '<strong>Errore</strong> \u00E8 il Brier: pi\u00F9 basso \u00E8, meglio il modello azzecca le percentuali.</p>';
+    html += '<div class="tr-vtable"><div class="tr-vrow tr-vhead"><span>Versione</span><span>Partite</span>' +
+            '<span>Errore</span><span>Giocate</span><span>Risultato</span><span>Periodo</span></div>';
+    for (const m of tr.byVersion) {
+      const v = m.valueBets || {}, pl = v.profitUnits;
+      const cls = pl > 0 ? 'stat-good' : (pl < 0 ? 'stat-bad' : '');
+      const nome = (m.version === 'sconosciuta')
+        ? '<em>prima del conteggio</em>' : m.version;
+      const poche = m.n < 100 ? ' <span class="tr-thin" title="Sotto le 100 partite i numeri sono rumore: non trarne conclusioni">pochi dati</span>' : '';
+      html += '<div class="tr-vrow"><span>' + nome + poche + '</span>' +
+              '<span>' + m.n + '</span>' +
+              '<span>' + (m.brier != null ? m.brier.toFixed(4) : '\u2014') + '</span>' +
+              '<span>' + (v.n || 0) + '</span>' +
+              '<span class="' + cls + '">' + (pl != null ? (pl >= 0 ? '+' : '') + pl.toFixed(1) + ' u' : '\u2014') + '</span>' +
+              '<span class="tr-per">' + (m.dal || '?') + ' \u2192 ' + (m.al || '?') + '</span></div>';
+    }
+    html += '</div>';
+    const att = tr.byVersion[0];
+    if (att && att.n < 100) {
+      html += '<p class="note"><strong>La versione in uso ha ' + att.n + ' partite valutate.</strong> ' +
+              'Servono circa 100 partite per dire qualcosa di solido sulla calibrazione, e diverse centinaia ' +
+              'per il guadagno. Con la sola Serie A sono circa 40 partite al mese: i numeri di questa riga ' +
+              'diventano leggibili verso gennaio. Tutto quello che c\u2019\u00E8 sotto mescola ancora le versioni.</p>';
+    }
+  }
 
   // Riassunto in parole: i numeri qui sotto da soli non dicono nulla a chi
   // non mastica statistica, e questa sezione serve proprio a decidere.
@@ -1971,17 +2008,30 @@ function printRegistry() {
 //  - niente previsioni "tappate" (lambda al tetto = estrapolazione fuori scala)
 // Lo scopo e' SCARTARE, non pescare: la selezione e' il punto debole del modello.
 
+// Soglie riviste il 2026-11-04 su una verifica FUORI CAMPIONE: parametri
+// scelti sulle partite fino al 12 settembre, risultati misurati sulle 225
+// successive, mai usate per la scelta. Cosa diceva la verifica:
+//   - dove il modello dissente dal mercato di 0-6 punti, i due sono pari
+//     (Brier 0.1724 contro 0.1728);
+//   - dove dissente di 6-12 punti vince il mercato (0.2090 contro 0.2227);
+//   - oltre 12 punti vince il mercato di molto (0.2376 contro 0.2939).
+// Un vantaggio dell'8% nasce solo da un dissenso grande, cioe' esattamente
+// dove il modello sbaglia: la vecchia fascia 8-25% selezionava gli errori del
+// modello, non le occasioni. Confermato dai soldi: quella fascia ha perso in
+// ogni configurazione provata.
 const ADVISOR = {
-  pMin: 0.20,       // sotto: il modello sottostima, ma le quote lunghe hanno molto margine
-  pMax: 0.50,       // sopra: il modello si sopravvaluta (fino a -13% di rendimento reale)
-  edgeMin: 0.08,    // sotto l'8% e' rumore del modello
-  edgeMax: 0.25,    // sopra: errore del modello, non regalo del bookmaker
+  pMin: 0.20,       // sotto: quote lunghe, troppo margine del bookmaker
+  pMax: 0.50,       // sopra: il modello si sopravvaluta
+  edgeMin: 0.03,    // sotto: la quota e' pagata il giusto, non c'e' niente da prendere
+  edgeMax: 0.08,    // sopra: dissenso grande dal mercato, cioe' zona di errore
+  edgeBroken: 0.25, // oltre: il modello si e' rotto (nel registro vecchio: +208%)
   lamCapH: 4.0, lamCapA: 3.5,
   stake: parseFloat(localStorage.getItem('advStake') || '2') || 2,
-  // Fasce di raccomandazione: piu' l'edge e' grande, piu' e' probabile che sia
-  // un errore del modello e non un regalo del bookmaker.
-  tierStrong: [0.08, 0.15],   // consigliata
-  tierWeak:   [0.15, 0.25]    // possibile, ma con cautela
+  // Dentro la fascia buona, le due metà: la parte bassa e' quella dove modello
+  // e mercato quasi concordano, ed e' l'unica dove il modello ha mostrato
+  // (debolissima) informazione.
+  tierStrong: [0.03, 0.055],
+  tierWeak:   [0.055, 0.08]
 };
 
 function betTier(edge) {
@@ -2000,8 +2050,9 @@ function advisorVerdict(p, odds, pred) {
     return {ok: false, why: 'previsione fuori scala', edge: edge};
   if (p < ADVISOR.pMin) return {ok: false, why: 'probabilit\u00E0 troppo bassa', edge: edge};
   if (p > ADVISOR.pMax) return {ok: false, why: 'fascia dove il modello si sopravvaluta', edge: edge};
-  if (edge < ADVISOR.edgeMin) return {ok: false, why: 'vantaggio sotto la soglia', edge: edge};
-  if (edge > ADVISOR.edgeMax) return {ok: false, why: 'vantaggio anomalo: errore del modello', edge: edge};
+  if (edge < ADVISOR.edgeMin) return {ok: false, why: 'quota pagata il giusto', edge: edge};
+  if (edge > ADVISOR.edgeBroken) return {ok: false, why: 'vantaggio assurdo: il modello si \u00E8 rotto', edge: edge};
+  if (edge > ADVISOR.edgeMax) return {ok: false, why: 'dissenso troppo grande dal mercato: zona di errore', edge: edge};
   return {ok: true, why: 'nella fascia affidabile', edge: edge};
 }
 
@@ -2070,10 +2121,19 @@ function renderAdvisor() {
   const r = scanAllFixtures();
 
   let html = '<h2>\uD83C\uDFAF Consigli \u2014 cosa vale la pena giocare</h2>';
-  html += '<p class="note">Regole ricavate dalla calibrazione reale del modello: si considera solo la fascia ' +
-          (ADVISOR.pMin * 100) + '-' + (ADVISOR.pMax * 100) + '% di probabilit\u00E0, dove le previsioni si sono dimostrate oneste, ' +
-          'con vantaggio tra il ' + (ADVISOR.edgeMin * 100).toFixed(0) + '% e il ' + (ADVISOR.edgeMax * 100).toFixed(0) + '%. ' +
-          'Tutto il resto viene scartato.</p>';
+  html += '<div class="honest-warn"><strong>Leggi questo prima di puntare.</strong> ' +
+          'Alla verifica del 4 novembre 2026 questo modello <strong>non ha un vantaggio dimostrato</strong>. ' +
+          'Su 1.125 previsioni mai usate per tararlo, il mercato indovina meglio di lui ' +
+          '(errore 0,206 contro 0,224) e il registro segna 416 giocate con 62 unit\u00E0 perse, ' +
+          'rendimento \u221215%. La quota di chiusura \u00E8 stata battuta 1 volta su 6. ' +
+          'Finch\u00E9 questi numeri non migliorano, tratta i consigli come un esercizio, ' +
+          'non come un suggerimento di scommessa.</div>';
+  html += '<p class="note">Si considera solo la fascia ' +
+          (ADVISOR.pMin * 100) + '-' + (ADVISOR.pMax * 100) + '% di probabilit\u00E0, con vantaggio tra il ' +
+          (ADVISOR.edgeMin * 100).toFixed(0) + '% e il ' + (ADVISOR.edgeMax * 100).toFixed(0) + '%. ' +
+          'La fascia alta (oltre l\u2019' + (ADVISOR.edgeMax * 100).toFixed(0) + '%) \u00E8 stata <strong>tolta</strong> il 4 novembre: ' +
+          'un vantaggio grande nasce solo da un forte dissenso col mercato, ed \u00E8 misurato che in quella zona ' +
+          'ha ragione il mercato. Si selezionavano gli errori del modello, non le occasioni.</p>';
 
   if (r.bets.length) {
     const strong = r.bets.filter(b => betTier(b.edge).k === 'strong');
