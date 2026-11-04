@@ -444,3 +444,8 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .score-row input.ev-score:focus{outline:none;border-color:#5b8cff}
 .score-src{flex:0 0 auto;font-size:.68rem;color:#7b8699;font-style:normal}
 .score-src.mano{color:#d4b35a}
+
+/* Asterisco sulle quote non giocabili sui bookmaker italiani */
+.q-mkt{color:#d4883a;font-weight:700;cursor:help}
+.odds-note{font-size:.74rem;color:#9aa6bd;margin-top:.4rem;line-height:1.4}
+.odds-note .q-mkt{margin-right:.2rem}
