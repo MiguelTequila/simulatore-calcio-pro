@@ -8,8 +8,11 @@ from scipy.optimize import minimize
 # i risultati del modello vecchio da quelli del nuovo invece di mescolarli.
 # 4.0 (4 nov 2026): attacco e difesa di ogni squadra stimati a massima
 # verosimiglianza dai risultati veri, con decadimento temporale e un freno
-# forte, invece del rapporto fra medie stagionali. Peso del mercato 0.25 -> 0.60.
-# Fascia di vantaggio 8-25% -> 3-8% con tetto duro al 25%.
+# forte, invece del rapporto fra medie stagionali. La differenza fra le squadre
+# viene dalla stima, la somma dei gol dalla media di lega. Peso del mercato
+# 0.25 -> 0.60. Fascia di vantaggio 8-25% -> 3-8%, tetto duro al 25%.
+# Verifica sul periodo mai usato per tarare: 1X2 0.2014 contro 0.2089,
+# Over/Under 0.2455 contro 0.2671.
 MODEL_VERSION = "4.0"
 
 # Media gol per squadra per partita, usata come riferimento di lega.
@@ -155,6 +158,18 @@ FIT_XI = 0.0045       # decadimento temporale: a 154 giorni una partita pesa met
 FIT_RIDGE = 4.0
 FIT_MIN_MATCHES = 30  # sotto questa soglia non si stima: si usa il metodo vecchio
 
+# Quanto la SOMMA dei gol attesi viene tirata verso la media della lega.
+# L'1-X-2 dipende dalla DIFFERENZA fra i due attacchi, Over/Under dalla SOMMA.
+# La stima azzecca bene la differenza ma sulla somma era peggio del metodo
+# vecchio (0.2587 contro 0.2546): quanti gol si faranno in totale, da 40-100
+# partite, non si sa. Tirando la somma verso la media della lega e lasciando
+# intatta la differenza si guadagna su Over/Under senza perdere sull'1-X-2.
+# Verifica sul secondo periodo, mai usato per la scelta:
+#   1X2        0.2014 contro 0.2089 del metodo vecchio
+#   Over/Under 0.2455 contro 0.2671
+# Stabile per ogni valore fra 0.70 e 1.00, quindi non e un punto fortunato.
+FIT_SUM_SHRINK = 0.85
+
 
 def _dc_loglik(par, idx, dati, pesi, ridge):
     """Verosimiglianza negativa (da minimizzare) del modello Dixon-Coles."""
@@ -201,6 +216,8 @@ def fit_dixon_coles(matches, oggi=None, xi=FIT_XI, ridge=FIT_RIDGE,
     elif isinstance(oggi, str):
         oggi = _date.fromisoformat(oggi)
 
+    # Media dei gol a partita nei dati di addestramento, pesata come la
+    # verosimiglianza: e' il punto verso cui si tira la somma dei gol attesi.
     dati, pesi = [], []
     for m in buone:
         try:
@@ -233,17 +250,25 @@ def fit_dixon_coles(matches, oggi=None, xi=FIT_XI, ridge=FIT_RIDGE,
     att = par[:n]
     dif = par[n:2 * n]
     m_att = sum(att) / n
+    tot_pesi = sum(pesi) or 1.0
+    media_gol = sum(w * (d[2] + d[3]) for d, w in zip(dati, pesi)) / tot_pesi
     return {"attack": {t: float(att[idx[t]] - m_att) for t in squadre},
             "defence": {t: float(dif[idx[t]]) for t in squadre},
             "home": float(par[2 * n]), "rho": float(par[2 * n + 1]),
             "n": len(buone), "teams": n, "xi": xi,
-            "pesoEffettivo": round(sum(pesi), 1)}
+            "mediaGol": float(media_gol),
+            "pesoEffettivo": round(tot_pesi, 1)}
 
 
-def lambdas_from_fit(fit, home, away, cap_h=4.0, cap_a=3.5):
+def lambdas_from_fit(fit, home, away, cap_h=4.0, cap_a=3.5,
+                     sum_shrink=FIT_SUM_SHRINK):
     """Gol attesi dalla stima. None se una delle due squadre non c'era nei
     dati di addestramento (neopromossa, squadra di coppa): in quel caso chi
-    chiama ripiega sul metodo vecchio invece di inventare un numero."""
+    chiama ripiega sul metodo vecchio invece di inventare un numero.
+
+    La DIFFERENZA fra i due numeri viene dalla stima e decide l'1-X-2.
+    La SOMMA viene tirata verso la media gol della lega e decide Over/Under:
+    vedi FIT_SUM_SHRINK per il perche' e per i numeri della verifica."""
     if not fit:
         return None
     a_h, d_h = fit["attack"].get(home), fit["defence"].get(home)
@@ -252,6 +277,11 @@ def lambdas_from_fit(fit, home, away, cap_h=4.0, cap_a=3.5):
         return None
     lh = math.exp(a_h + d_a + fit["home"])
     la = math.exp(a_a + d_h)
+    media = fit.get("mediaGol")
+    if media and 0.0 < sum_shrink <= 1.0:
+        dif_gol = lh - la
+        somma = (1 - sum_shrink) * (lh + la) + sum_shrink * media
+        lh, la = (somma + dif_gol) / 2.0, (somma - dif_gol) / 2.0
     return max(0.3, min(lh, cap_h)), max(0.3, min(la, cap_a))
 
 
