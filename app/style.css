@@ -449,3 +449,18 @@ h2.collapsible .chev{font-size:.9rem;opacity:.7}
 .q-mkt{color:#d4883a;font-weight:700;cursor:help}
 .odds-note{font-size:.74rem;color:#9aa6bd;margin-top:.4rem;line-height:1.4}
 .odds-note .q-mkt{margin-right:.2rem}
+
+/* Avviso di onestà sul consigliere: il modello non ha un vantaggio dimostrato */
+.honest-warn{background:#3a2a16;border:1px solid #6b4f22;border-left:4px solid #d4883a;
+  border-radius:7px;padding:.6rem .7rem;margin:.5rem 0 .7rem;font-size:.82rem;line-height:1.5;color:#e8d9bf}
+.honest-warn strong{color:#ffd79a}
+
+/* Tabella del registro divisa per versione del modello */
+.tr-sub{font-size:.95rem;margin:.9rem 0 .3rem;color:#cdd7ea}
+.tr-vtable{font-size:.8rem;margin:.4rem 0 .6rem;overflow-x:auto}
+.tr-vrow{display:grid;grid-template-columns:minmax(7rem,1.4fr) 4rem 4.6rem 4rem 5rem minmax(10rem,1fr);
+  gap:.4rem;padding:.35rem .2rem;border-bottom:1px solid #2a3449;align-items:center}
+.tr-vhead{font-weight:600;color:#9aa6bd;border-bottom:1px solid #3a4a6b}
+.tr-vrow>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.tr-per{color:#8a93a8;font-size:.74rem;white-space:nowrap}
+.tr-thin{background:#3a2a16;color:#d4b35a;font-size:.66rem;padding:.05rem .3rem;border-radius:4px;cursor:help}
