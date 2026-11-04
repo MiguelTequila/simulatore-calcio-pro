@@ -33,22 +33,42 @@ const MARKET_CODE = {
 };
 function marketLabel(m) { return MARKET_CODE[m] || m; }
 
+// Quale quota usare per misurare il valore.
+// Prima scelta: i bookmaker su cui giochi davvero (quelle che il programma
+// chiama "giocabili"). Se per quell'esito non ce l'hanno, si usa la migliore
+// del mercato, ma viene marcata con un asterisco: potresti non prenderla.
+// Le medie di tutti i bookmaker non si toccano: servono alla calibrazione.
+const MKTKEY = ['1', 'X', '2', 'over25', 'under25', 'gg', 'ng'];
+function priceSet(o) {
+  const play = (o && o.playable) || {};
+  const best = (o && o.best) ? o.best : (o || {});
+  const prezzi = {}, fonte = {};
+  for (const k of MKTKEY) {
+    if (play[k]) { prezzi[k] = play[k]; fonte[k] = 'giocabile'; }
+    else if (best[k]) { prezzi[k] = best[k]; fonte[k] = 'mercato'; }
+    else if (o && o[k]) { prezzi[k] = o[k]; fonte[k] = 'mercato'; }
+  }
+  return {prezzi: prezzi, fonte: fonte};
+}
+// Marchio da mostrare accanto a una quota che non e' giocabile sui tuoi book
+function oddsMark(from) { return from === 'mercato' ? '<span class="q-mkt" title="Quota non disponibile sui bookmaker italiani: e\u2019 la migliore del mercato, potresti non trovarla">*</span>' : ''; }
+
 function computeValueJS(pred, odds) {
   if (!odds) return null;
-  const src = odds.best || odds;
+  const ps = priceSet(odds);
   const markets = {
-    '1': [pred.p1, src['1']], 'X': [pred.px, src['X']], '2': [pred.p2, src['2']],
-    'Over 2.5': [pred.pOver25, src.over25], 'Under 2.5': [pred.pUnder25, src.under25],
-    'Goal (GG)': [pred.pGG, src.gg], 'NoGoal (NG)': [pred.pNG, src.ng]
+    '1': [pred.p1, '1'], 'X': [pred.px, 'X'], '2': [pred.p2, '2'],
+    'Over 2.5': [pred.pOver25, 'over25'], 'Under 2.5': [pred.pUnder25, 'under25'],
+    'Goal (GG)': [pred.pGG, 'gg'], 'NoGoal (NG)': [pred.pNG, 'ng']
   };
   const rows = [];
   for (const m in markets) {
-    const p = markets[m][0], q = markets[m][1];
+    const p = markets[m][0], q = ps.prezzi[markets[m][1]];
     if (!q || q <= 1 || p == null) continue;
     const b = q - 1;
     const edge = p * q - 1;
     const kelly = b > 0 ? Math.min(0.05, Math.max(0, (p * q - 1) / b) / 2) : 0;
-    rows.push({ market: m, p, odds: q, edge, kelly });
+    rows.push({ market: m, p, odds: q, edge, kelly, oddsFrom: ps.fonte[markets[m][1]] });
   }
   rows.sort((a, b) => b.edge - a.edge);
   const bet = rows.length && rows[0].edge >= 0.03 ? rows[0] : null;
@@ -83,7 +103,7 @@ function renderValue(value) {
     if (best) {
       const t = betTier(best.row.edge);
       const unv = (best.row.market.indexOf('GG') >= 0 || best.row.market.indexOf('NG') >= 0);
-      html += '<div class="verdict yes"><strong>\u2705 GIOCA: ' + marketLabel(best.row.market) + '</strong> @ ' + best.row.odds.toFixed(2) +
+      html += '<div class="verdict yes"><strong>\u2705 GIOCA: ' + marketLabel(best.row.market) + '</strong> @ ' + best.row.odds.toFixed(2) + oddsMark(best.row.oddsFrom) +
               ' \u00B7 punta ' + ADVISOR.stake.toFixed(2) + ' \u20AC \u00B7 vantaggio +' + (best.row.edge * 100).toFixed(1) + '%' +
               '<br><em>' + t.label + ' \u2014 ' + t.note +
               (unv ? ' \u00B7 \u26A0\uFE0F mercato non ancora misurato dal registro' : '') + '</em></div>';
@@ -104,7 +124,7 @@ function renderValue(value) {
             '(inizio stagione, poche partite giocate), non che la quota sia regalata. Nessuna puntata consigliata.</div>';
   } else if (value.bestBet) {
     const bb = value.bestBet;
-    html += '<div class="best-bet">\u2705 Bet di valore: <strong>' + bb.market + '</strong> @ ' + bb.odds.toFixed(2) +
+    html += '<div class="best-bet">\u2705 Bet di valore: <strong>' + bb.market + '</strong> @ ' + bb.odds.toFixed(2) + oddsMark(bb.oddsFrom) +
             ' \u00B7 vantaggio <strong>' + (bb.edge*100).toFixed(1) + '%</strong>' +
             ' \u00B7 puntata (\u00BD Kelly) <strong>' + (bb.kelly*100).toFixed(1) + '%</strong> del bankroll</div>';
   } else {
@@ -114,7 +134,7 @@ function renderValue(value) {
   for (const r of value.rows) {
     const cls = r.edge >= 0.03 ? ' value-pos' : (r.edge < 0 ? ' value-neg' : '');
     html += '<div class="value-row' + cls + '"><span>' + marketLabel(r.market) + '</span><span>' + (r.p*100).toFixed(1) + '%</span><span>' +
-            r.odds.toFixed(2) + '</span><span>' + (r.edge*100).toFixed(1) + '%</span><span>' +
+            r.odds.toFixed(2) + oddsMark(r.oddsFrom) + '</span><span>' + (r.edge*100).toFixed(1) + '%</span><span>' +
             (r.kelly>0 ? (r.kelly*100).toFixed(1)+'%' : '\u2014') + '</span></div>';
   }
   html += '</div><p class="note hint">\u2139\uFE0F <strong>Vantaggio (EV)</strong> = probabilit\u00E0 del modello \u00D7 quota \u2212 1: quanto guadagni in media per ogni euro giocato se il modello ha ragione. Esempio: 40% con quota 3.00 \u2192 +20%. Sotto zero la quota \u00E8 pagata meno del giusto.<br>\u2139\uFE0F <strong>\u00BD Kelly</strong> = quota del <em>bankroll totale</em> da puntare, gi\u00E0 dimezzata e tappata al 5% per prudenza. Gioca solo ci\u00F2 che puoi permetterti di perdere.</p>';
@@ -1016,8 +1036,14 @@ function applyManualOdds() {
   const filled = {};
   for (const k in odds) if (odds[k] != null) filled[k] = odds[k];
   const prevBest = (currentMatch.odds && currentMatch.odds.best) || {};
+  const prevPlay = (currentMatch.odds && currentMatch.odds.playable) || {};
+  // Le quote che scrivi tu sono, per definizione, quelle che puoi giocare:
+  // vanno anche fra le "giocabili", cosi' il vantaggio si calcola su di esse.
+  // E' la strada per Eurobet, che The Odds API non copre.
   currentMatch.odds = Object.assign({}, currentMatch.odds || {}, filled,
-                                    {best: Object.assign({}, prevBest, filled)});
+                                    {best: Object.assign({}, prevBest, filled),
+                                     playable: Object.assign({}, prevPlay, filled),
+                                     playableBooks: ['quote tue']});
   showPrediction(pred);
 
   // aggiorna anche il riquadro quote in alto
@@ -1086,7 +1112,9 @@ const GLOSSARY = [
   ['CLV', 'Il confronto fra la quota che avresti preso e quella poco prima del fischio d\u2019inizio. Se prendi 2,20 e la quota chiude a 2,00, hai fatto +10%: hai comprato a un prezzo migliore di quello finale. \u00C8 il segnale di vantaggio pi\u00F9 affidabile e si legge gi\u00E0 con 30-50 scommesse, mentre per il guadagno vero ne servono centinaia.'],
   ['Brier score', 'Errore medio delle probabilit\u00E0 sugli esiti gi\u00E0 avvenuti: pi\u00F9 basso \u00E8, meglio il modello prevede. Come riferimento, 0,25 equivale a tirare a caso su un evento 50/50.'],
   ['Calibrazione', 'Il controllo di onest\u00E0 del modello: quando dice 60%, l\u2019evento deve succedere circa il 60% delle volte. Nel grafico, barra blu = probabilit\u00E0 prevista, barra verde = frequenza reale. Simili = modello affidabile.'],
-  ['Forma', 'Esiti delle ultime 5 partite ufficiali, dalla pi\u00F9 recente: W vittoria, D pareggio, L sconfitta.']
+  ['Forma', 'Esiti delle ultime 5 partite ufficiali, dalla pi\u00F9 recente: W vittoria, D pareggio, L sconfitta.'],
+  ['Quota usata e l\u2019asterisco *', 'Il vantaggio si calcola sulla quota che puoi <strong>giocare davvero</strong>, non sulla migliore del mondo. Il programma prende quella dei bookmaker italiani disponibili (Unibet IT, Codere IT). Quando per quell\u2019esito non ce l\u2019hanno, usa la migliore del mercato e mette un <span class="q-mkt">*</span> accanto al numero: quella quota esiste, ma su un operatore che probabilmente non usi, quindi il vantaggio mostrato \u00E8 ottimistico. <strong>Eurobet non \u00E8 nel catalogo dei dati</strong>: per avere il vantaggio esatto sulle sue quote, scrivile nel riquadro \u201CQuote tue\u201D \u2014 diventano loro la quota giocabile e tutto si ricalcola.'],
+  ['Media e quota migliore', 'Sono due cose diverse e servono a due scopi. La <strong>media</strong> di tutti i bookmaker \u00E8 il consenso del mercato e viene usata per correggere il modello: venti operatori insieme stimano le probabilit\u00E0 meglio di uno solo. La <strong>quota giocabile</strong> serve solo a misurare se conviene puntare. Non si usa un bookmaker solo per entrambe le cose, altrimenti il modello viene tirato verso quel bookmaker e poi si cerca il vantaggio contro lo stesso bookmaker: il confronto si annulla da solo.']
 ];
 
 function renderGlossary() {
@@ -1376,9 +1404,11 @@ function addCurrentToMulti() {
   }
   const p = currentMatch.prediction;
   const o = currentMatch.odds || {};
-  const b = o.best || {};
-  // quota migliore disponibile, con ripiego sul livello esterno
-  const q = k => b[k] != null ? b[k] : o[k];
+  // La quota che metti in schedina e' quella che puoi giocare davvero,
+  // non la migliore del mercato: altrimenti la multipla promette un incasso
+  // a un prezzo che il tuo bookmaker non ti fa.
+  const ps = priceSet(o);
+  const q = k => ps.prezzi[k] != null ? ps.prezzi[k] : o[k];
   const opts = [
     ['1 (' + currentMatch.homeTeam + ')', p.p1, q('1')],
     ['X (pareggio)', p.px, q('X')],
@@ -1988,7 +2018,8 @@ function scanAllFixtures() {
       const pred = f.prediction;
       if (!pred) continue;
       const o = f.odds;
-      const best = (o && o.best) ? o.best : o;
+      const ps = priceSet(o);
+      const best = ps.prezzi;
       let hadOdds = false;
       // Senza statistiche vere su entrambe le squadre non c'e' nulla da
       // confrontare: il modello starebbe usando una media di lega.
@@ -2005,6 +2036,8 @@ function scanAllFixtures() {
         if (v.ok) {
           out.bets.push({comp: comp.name, date: f.date, match: f.homeTeam + ' - ' + f.awayTeam,
                          market: label, p: p, odds: q, edge: v.edge,
+                         // da dove viene la quota: serve all'asterisco in tabella
+                         oddsFrom: ps.fonte[ok],
                          unverified: (pk === 'pGG' || pk === 'pNG')});
         } else {
           out.reasons[v.why] = (out.reasons[v.why] || 0) + 1;
@@ -2051,7 +2084,7 @@ function renderAdvisor() {
       '<div class="hero-tag">' + t.label + '</div>' +
       '<div class="hero-main">Gioca <strong>' + marketLabel(top.market) + '</strong> su <strong>' + top.match + '</strong></div>' +
       '<div class="hero-row">' +
-        '<span><em>Quota</em> ' + top.odds.toFixed(2) + '</span>' +
+        '<span><em>Quota</em> ' + top.odds.toFixed(2) + oddsMark(top.oddsFrom) + '</span>' +
         '<span><em>Punta</em> <strong>' + ADVISOR.stake.toFixed(2) + ' \u20AC</strong></span>' +
         '<span><em>Se vince</em> ' + vinc.toFixed(2) + ' \u20AC</span>' +
         '<span><em>Vantaggio</em> +' + (top.edge * 100).toFixed(1) + '%</span>' +
@@ -2090,7 +2123,7 @@ function renderAdvisor() {
         '<span class="tier-' + t.k + '">' + t.label + '</span><span>' + b.match + '<br><em class="adv-date">' + b.date + '</em></span>' +
         '<span><strong>' + marketLabel(b.market) + '</strong>' + (b.unverified ? ' <span class="unver">non misurato</span>' : '') + '</span>' +
         '<span><strong>' + (b.p * 100).toFixed(1) + '%</strong></span>' +
-        '<span>' + b.odds.toFixed(2) + '</span>' +
+        '<span>' + b.odds.toFixed(2) + oddsMark(b.oddsFrom) + '</span>' +
         '<span><strong>+' + (b.edge * 100).toFixed(1) + '%</strong></span></div>';
     }
     html += '</div>';
@@ -2171,16 +2204,19 @@ function matchVerdict(f) {
   if (!pred) return null;
   if (f.dataQuality && f.dataQuality !== 'full')
     return {k: 'nodata', text: 'dati incompleti'};
-  const best = (f.odds && f.odds.best) ? f.odds.best : f.odds;
-  if (!best) return {k: 'noodds', text: 'quote mancanti'};
-  const mk = [['1', pred.p1, best['1']], ['X', pred.px, best['X']], ['2', pred.p2, best['2']],
-              ['Over 2.5', pred.pOver25, best.over25], ['Under 2.5', pred.pUnder25, best.under25],
-              ['GG', pred.pGG, best.gg], ['NG', pred.pNG, best.ng]];
+  const ps = priceSet(f.odds);
+  const best = ps.prezzi;
+  if (!Object.keys(best).length) return {k: 'noodds', text: 'quote mancanti'};
+  const mk = [['1', pred.p1, '1'], ['X', pred.px, 'X'], ['2', pred.p2, '2'],
+              ['Over 2.5', pred.pOver25, 'over25'], ['Under 2.5', pred.pUnder25, 'under25'],
+              ['GG', pred.pGG, 'gg'], ['NG', pred.pNG, 'ng']];
   let top = null;
-  for (const [lab, p, q] of mk) {
+  for (const [lab, p, kk] of mk) {
+    const q = best[kk];
     if (!q || p == null) continue;
     const v = advisorVerdict(p, q, pred);
-    if (v.ok && (!top || v.edge > top.edge)) top = {market: lab, p: p, odds: q, edge: v.edge};
+    if (v.ok && (!top || v.edge > top.edge))
+      top = {market: lab, p: p, odds: q, edge: v.edge, oddsFrom: ps.fonte[kk]};
   }
   if (!top) return {k: 'skip', text: 'niente da giocare'};
   const t = betTier(top.edge);
@@ -2261,9 +2297,9 @@ function renderToday(selDate) {
 
 function verdictChip(v) {
   if (!v) return '';
-  if (v.k === 'play')   return '<span class="vd play">\u2B50 ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) +
+  if (v.k === 'play')   return '<span class="vd play">\u2B50 ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) + oddsMark(v.top.oddsFrom) +
                                 ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
-  if (v.k === 'maybe')  return '<span class="vd maybe">\u26A0\uFE0F ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) +
+  if (v.k === 'maybe')  return '<span class="vd maybe">\u26A0\uFE0F ' + marketLabel(v.top.market) + ' @' + v.top.odds.toFixed(2) + oddsMark(v.top.oddsFrom) +
                                 ' <em>+' + (v.top.edge * 100).toFixed(0) + '%</em></span>';
   if (v.k === 'nodata') return '<span class="vd nodata">dati incompleti</span>';
   if (v.k === 'noodds') return '<span class="vd noodds">quote mancanti</span>';
