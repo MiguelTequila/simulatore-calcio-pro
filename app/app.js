@@ -797,6 +797,59 @@ function renderTrackRecord(tr) {
             'Serve a capire se il modello sa qualcosa, non a decidere cosa giocare.</p>';
   }
 
+  // --- osservazione big match: si accumula, non decide niente ---
+  if (tr.bigMatch && tr.bigMatch.gruppi && tr.bigMatch.gruppi.length) {
+    const bm = tr.bigMatch, v = bm.verdetto;
+    html += '<h3 class="tr-sub">Osservazione: big match contro il resto</h3>';
+    html += '<p class="note">Nelle partite fra squadre forti, modello <strong>e mercato</strong> ' +
+            'sovrastimano l\u2019Over 2.5. \u00C8 l\u2019unico errore noto che il bookmaker commette ' +
+            'insieme a noi, quindi l\u2019unico che potrebbe dare un vantaggio invece che solo accuratezza. ' +
+            'Questa sezione <strong>conta e non decide</strong>: non cambia nessuna previsione n\u00E9 nessun consiglio. ' +
+            '\u201CForte\u201D = fra le ' + bm.squadreForti + ' squadre pi\u00F9 forti su ' + bm.squadreValutate +
+            ', misurato sulle <em>quote</em> e non sul modello, per non farlo giudicare da s\u00E9.</p>';
+    html += '<div class="bm-table">';
+    for (const g of bm.gruppi) {
+      const u = g.under || {};
+      const gap = g.gap * 100, err = g.err * 100;
+      html += '<div class="bm-row' + (g.big ? ' bm-big' : '') + '">' +
+              '<div class="bm-name">' + (g.big ? 'big contro big' : 'tutte le altre') +
+              ' <span class="hit-n">' + g.n + ' partite</span></div>' +
+              '<div class="bm-cells">' +
+              '<span><em>Over previsto</em> ' + (g.predOver * 100).toFixed(1) + '%</span>' +
+              '<span><em>avvenuto</em> ' + (g.actualOver * 100).toFixed(1) + '%</span>' +
+              '<span class="' + (gap < -5 ? 'stat-bad' : '') + '"><em>scarto</em> ' +
+                (gap >= 0 ? '+' : '') + gap.toFixed(1) + ' \u00B1 ' + err.toFixed(1) + '</span>' +
+              '</div>';
+      if (u.n) {
+        const cls = u.profitUnits > 0 ? 'stat-good' : (u.profitUnits < 0 ? 'stat-bad' : '');
+        html += '<div class="bm-under">Puntando Under 2.5 su tutte: ' + u.n + ' giocate, ' +
+                '<span class="' + cls + '">' + (u.profitUnits >= 0 ? '+' : '') + u.profitUnits.toFixed(2) + ' u' +
+                ' (' + ((u.roi || 0) * 100 >= 0 ? '+' : '') + ((u.roi || 0) * 100).toFixed(1) + '%)</span>' +
+                ' \u00B7 segnale <strong>' + (u.signal != null ? u.signal : '\u2014') + '\u00D7</strong> l\u2019errore</div>';
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    if (v) {
+      const volte = v.volteErrore || 0;
+      const pct = Math.min(100, volte / 2 * 100);
+      html += '<div class="bm-verdict ' + (v.usabile ? 'ok' : 'wait') + '">' +
+              '<div class="bm-vhead">' + (v.usabile
+                ? '\u2705 Il segnale ha superato la soglia: ' + volte + '\u00D7 l\u2019errore tipico.'
+                : '\u23F3 Non ancora utilizzabile: ' + volte + '\u00D7 l\u2019errore tipico, serve 2\u00D7.') + '</div>' +
+              '<div class="bm-prog"><i style="width:' + pct.toFixed(0) + '%"></i></div>' +
+              '<div class="bm-vnote">Lo scarto fra i due gruppi \u00E8 di ' +
+              (v.differenza * 100).toFixed(1) + ' punti con un errore tipico di ' +
+              (v.errore * 100).toFixed(1) + '. ' +
+              (v.usabile
+                ? 'Da qui si pu\u00F2 ragionare su una correzione, sempre prudente.'
+                : 'Sotto 2\u00D7 uno scarto di questa misura nasce dal caso abbastanza spesso da non potersene fidare: ' +
+                  'un moltiplicatore tarato adesso sarebbe un numero inventato con la faccia di una misura. ' +
+                  'La barra si riempie da sola a ogni giornata.') +
+              '</div></div>';
+    }
+  }
+
   // --- numeri divisi per versione del modello ---
   // Senza questa divisione una versione nuova resta sepolta sotto centinaia di
   // previsioni della vecchia e nessuna modifica e' misurabile.
