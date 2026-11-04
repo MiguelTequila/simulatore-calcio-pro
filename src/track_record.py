@@ -20,10 +20,55 @@ def load_log():
         return {"predictions": {}}
 
 
+def write_json(path, dati, indent=1):
+    """Scrittura ATOMICA: prima su un file di lavoro, poi rinomina.
+    Senza questo, un giro interrotto a metà (GitHub Actions che va in timeout,
+    disco pieno, errore dopo la open) lasciava un JSON troncato: il sito lo
+    leggeva, non riusciva ad analizzarlo e restava vuoto, e per capirlo
+    bisognava guardare il file a mano. La rinomina sullo stesso disco è
+    un'operazione indivisibile: o c'è il file vecchio intero, o il nuovo
+    intero, mai mezzo file."""
+    d = os.path.dirname(os.path.abspath(path))
+    os.makedirs(d, exist_ok=True)
+    tmp = path + ".tmp"
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(dati, f, ensure_ascii=False, indent=indent)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    except Exception:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        raise
+
+
+# Quante previsioni gia' valutate tenere nel registro, in giorni.
+# A 40 partite al mese il registro cresce di circa 30 KB al mese, e viene
+# riscritto a ogni giro: senza un limite la cronologia del repository gonfia
+# per sempre. 550 giorni tengono due stagioni, abbastanza per qualunque
+# confronto fra versioni del modello.
+PRUNE_AFTER_DAYS = 550
+
+
+def prune_log(log, oggi=None):
+    """Toglie le previsioni valutate troppo vecchie. Le partite non ancora
+    giocate non si toccano mai, qualunque sia la data."""
+    from datetime import date, timedelta
+    oggi = oggi or date.today()
+    limite = (oggi - timedelta(days=PRUNE_AFTER_DAYS)).isoformat()
+    prima = len(log.get("predictions") or {})
+    log["predictions"] = {
+        k: v for k, v in (log.get("predictions") or {}).items()
+        if not v.get("result") or (v.get("date") or "9999") >= limite
+    }
+    return prima - len(log["predictions"])
+
+
 def save_log(log):
-    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-    with open(LOG_FILE, "w", encoding="utf-8") as f:
-        json.dump(log, f, ensure_ascii=False, indent=1)
+    write_json(LOG_FILE, log, indent=1)
 
 
 def log_predictions(log, comp_id, comp_name, fixtures):
@@ -220,6 +265,66 @@ def build_track_record(log):
         b["cum"] = round(cum, 3)
 
     n_bets = len(bets)
+
+    # --- lo stesso conto, diviso per VERSIONE del modello ---
+    # Finche' tutto finiva in un calderone unico, nessuna modifica al modello
+    # era misurabile: una versione nuova e migliore restava sepolta sotto
+    # centinaia di previsioni della vecchia. Da qui in avanti ogni versione ha
+    # i suoi numeri, e si vede se un cambiamento ha funzionato o no.
+    def metriche(sub):
+        camp = []
+        for e in sub:
+            r = e["result"]
+            camp += [(e["p1"], r["outcome"] == "1"), (e["px"], r["outcome"] == "X"),
+                     (e["p2"], r["outcome"] == "2"),
+                     (e["pOver25"], r["over25"]), (e["pUnder25"], not r["over25"])]
+            if e.get("pGG") is not None:
+                camp += [(e["pGG"], r["gg"]), (e["pNG"], not r["gg"])]
+        prof = wn = 0.0
+        nb = 0
+        for e in sub:
+            bb = e.get("bestBet")
+            if not bb:
+                continue
+            nb += 1
+            won = _bet_won(bb["market"], e["result"])
+            prof += (bb["odds"] - 1) if won else -1.0
+            wn += 1 if won else 0
+        cs, cpos = [], 0
+        for e in sub:
+            fb_ = e.get("firstBet")
+            if not fb_:
+                continue
+            mk = {"1": "1", "X": "X", "2": "2", "Over 2.5": "over25",
+                  "Under 2.5": "under25", "Goal (GG)": "gg", "NoGoal (NG)": "ng"}.get(fb_["market"])
+            cl = (e.get("bestOdds") or {}).get(mk)
+            tk = fb_.get("odds")
+            if not cl or not tk or cl <= 1 or tk <= 1:
+                continue
+            c = tk / cl - 1
+            cs.append(c)
+            cpos += 1 if c > 0 else 0
+        date = sorted(e.get("date", "") for e in sub)
+        return {"n": len(sub), "nPrev": len(camp), "brier": brier_of(camp),
+                "confidence": confidence_split(camp), "calibration": make_bins(camp),
+                "dal": date[0] if date else None, "al": date[-1] if date else None,
+                "valueBets": {"n": nb, "wins": int(wn), "profitUnits": round(prof, 3),
+                              "roi": round(prof / nb, 4) if nb else None},
+                "clv": {"n": len(cs),
+                        "avg": round(sum(cs) / len(cs), 4) if cs else None,
+                        "beatenPct": round(cpos / len(cs), 4) if cs else None}}
+
+    per_ver = {}
+    for e in graded:
+        per_ver.setdefault(e.get("modelVersion") or "sconosciuta", []).append(e)
+    by_version = []
+    for v, sub in per_ver.items():
+        m = metriche(sub)
+        m["version"] = v
+        by_version.append(m)
+    # la versione con le previsioni piu' recenti per prima: e' quella che conta
+    by_version.sort(key=lambda m: (m["al"] or ""), reverse=True)
+
     track = {
         "graded": len(graded), "pending": len(log["predictions"]) - len(graded),
         "brier": brier, "calibration": bins, "groups": groups, "clv": clv,
@@ -227,13 +332,13 @@ def build_track_record(log):
                        "profitUnits": round(profit, 3),
                        "roi": round(profit / n_bets, 4) if n_bets else None,
                        "history": bets[-100:]},
+        "byVersion": by_version,
     }
     return track
 
 
 def save_track(track):
-    with open(TRACK_FILE, "w", encoding="utf-8") as f:
-        json.dump(track, f, ensure_ascii=False, indent=1)
+    write_json(TRACK_FILE, track, indent=1)
 
 
 def build_results(log):
