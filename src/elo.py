@@ -32,10 +32,26 @@ def load_state():
 
 
 def save_state(state):
+    """Scrittura atomica: file di lavoro e poi rinomina. Un Elo troncato
+    farebbe ripartire tutte le squadre da 1500, buttando via la memoria
+    accumulata per mesi. La copia di questa funzione sta anche in
+    track_record.py: duplicata di proposito, per non aggiungere un file nuovo
+    al repository."""
     state["processed"] = state["processed"][-MAX_PROCESSED:]
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
-    with open(STATE_FILE, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    tmp = STATE_FILE + ".tmp"
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(state, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, STATE_FILE)
+    except Exception:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        raise
 
 
 def _regress(elo, factor=GAP_REGRESS_FACTOR):
