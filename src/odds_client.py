@@ -15,6 +15,15 @@ BASE_URL = "https://api.the-odds-api.com/v4"
 # Il badge in alto nell'app mostra sempre i crediti residui: controllalo.
 INCLUDE_BTTS = True
 
+# Bookmaker su cui scommetti davvero. Il valore di una giocata si calcola su
+# QUESTE quote, non sulla migliore del mercato: una quota che non puoi giocare
+# gonfia il vantaggio e ti fa sembrare buona una scommessa che non lo e'.
+# Eurobet NON e' nel catalogo di The Odds API: gli unici bookmaker italiani
+# disponibili sono questi due. Per aggiungerne o togliere, modifica la riga.
+# Lista completa: https://the-odds-api.com/sports-odds-data/bookmaker-apis.html
+# Lasciandola vuota si torna a usare la migliore quota del mercato.
+BOOK_PREF = ("unibet_it", "codere_it")
+
 # Blocco di sicurezza: sotto questa soglia di crediti residui si smette di
 # chiamare l'API per il resto del giro. Serve a non restare a secco a meta'
 # mese senza accorgersene, e a lasciare un margine per i giri manuali.
@@ -91,25 +100,36 @@ class OddsAPIClient:
 
     def parse_match_odds(self, event):
         home, away = event.get("home_team"), event.get("away_team")
-        acc = {"1": [], "X": [], "2": [], "over25": [], "under25": [], "gg": [], "ng": []}
+        MKT = ("1", "X", "2", "over25", "under25", "gg", "ng")
+        acc = {k: [] for k in MKT}       # tutti i bookmaker: media e quota migliore
+        pref = {k: [] for k in MKT}      # solo i bookmaker su cui giochi
+        libri_pref = []
         for bk in event.get("bookmakers", []):
+            e_pref = bk.get("key") in BOOK_PREF
+            if e_pref:
+                libri_pref.append(bk.get("title") or bk.get("key"))
             for market in bk.get("markets", []):
+                def metti(chiave, prezzo):
+                    acc[chiave].append(prezzo)
+                    if e_pref:
+                        pref[chiave].append(prezzo)
+
                 if market["key"] == "h2h":
                     for o in market["outcomes"]:
                         n, price = o["name"], o["price"]
-                        if n == home: acc["1"].append(price)
-                        elif n == away: acc["2"].append(price)
-                        elif n.lower() in ("draw", "x"): acc["X"].append(price)
+                        if n == home: metti("1", price)
+                        elif n == away: metti("2", price)
+                        elif n.lower() in ("draw", "x"): metti("X", price)
                 elif market["key"] == "totals":
                     for o in market["outcomes"]:
                         if o.get("point") == 2.5:
-                            if o["name"].lower() == "over": acc["over25"].append(o["price"])
-                            elif o["name"].lower() == "under": acc["under25"].append(o["price"])
+                            if o["name"].lower() == "over": metti("over25", o["price"])
+                            elif o["name"].lower() == "under": metti("under25", o["price"])
                 elif market["key"] == "btts":
                     for o in market["outcomes"]:
                         n = o["name"].lower()
-                        if n == "yes": acc["gg"].append(o["price"])
-                        elif n == "no": acc["ng"].append(o["price"])
+                        if n == "yes": metti("gg", o["price"])
+                        elif n == "no": metti("ng", o["price"])
 
         def avg(v): return round(sum(v) / len(v), 3) if v else None
         def best(v): return round(max(v), 3) if v else None
@@ -121,7 +141,14 @@ class OddsAPIClient:
                "gg": avg(acc["gg"]), "ng": avg(acc["ng"]),
                "best": {"1": best(acc["1"]), "X": best(acc["X"]), "2": best(acc["2"]),
                         "over25": best(acc["over25"]), "under25": best(acc["under25"]),
-                        "gg": best(acc["gg"]), "ng": best(acc["ng"])}}
+                        "gg": best(acc["gg"]), "ng": best(acc["ng"])},
+               # Quota giocabile: la migliore fra i bookmaker di BOOK_PREF.
+               # Su questa si calcola il vantaggio, perche' e' quella che puoi
+               # prendere davvero. Le medie di tutti i bookmaker restano e
+               # servono alla calibrazione: il consenso di venti operatori e'
+               # una stima di probabilita' molto migliore di quella di uno solo.
+               "playable": {k: best(pref[k]) for k in MKT} if BOOK_PREF else {},
+               "playableBooks": sorted(set(libri_pref))}
         return rec
 
     def fetch_all_odds(self, active_comps=None):
