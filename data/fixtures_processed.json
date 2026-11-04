@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-04T13:26:35.883019+00:00",
+  "updated": "2026-11-04T22:22:38.268902+00:00",
   "modelVersion": "4.0",
   "marketWeight": 0.6,
   "oddsWindowDays": 7,
   "apiCredits": {
     "remaining": "500",
     "used": "0",
-    "checkedAt": "2026-11-04T13:26:35.883019+00:00",
+    "checkedAt": "2026-11-04T22:22:38.268902+00:00",
     "stale": false
   },
   "competitions": {
