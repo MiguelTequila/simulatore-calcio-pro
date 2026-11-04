@@ -4,7 +4,10 @@ from football_data_client import fetch_all_data, COMPETITIONS
 from odds_client import ODDS_ONLY
 from odds_client import OddsAPIClient
 from elo import load_state, update_ratings_incremental, save_state
-from track_record import load_log, save_log, log_predictions, reconcile_results, build_track_record, save_track, build_results
+from track_record import PRUNE_AFTER_DAYS as PRUNE_DAYS
+from track_record import (load_log, save_log, log_predictions, reconcile_results,
+                          build_track_record, save_track, build_results,
+                          write_json, prune_log)
 from dixon_coles import (compute_lambdas, calibrate_with_odds, dixon_coles_matrix,
                          compute_value, league_average, league_home_away, stat_scale, LEAGUE_RHO, DEFAULT_RHO,
                          MARKET_WEIGHT, MODEL_VERSION)
@@ -222,9 +225,9 @@ def build_output():
             print("[=] Dati precedenti CONSERVATI: nessuna modifica al file.")
         else:
             os.makedirs("data", exist_ok=True)
-            with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
-                json.dump({"updated": raw_data["updated"], "competitions": {},
-                           "error": "nessun dato disponibile al primo avvio"}, f)
+            write_json("data/fixtures_processed.json",
+                       {"updated": raw_data["updated"], "competitions": {},
+                        "error": "nessun dato disponibile al primo avvio"}, indent=None)
         return
 
     print("\n[2/5] Aggiorno Elo (persistente)...")
@@ -264,8 +267,7 @@ def build_output():
         active += [cid for cid in ODDS_ONLY if cid not in active]
     odds_client = OddsAPIClient()
     odds_data = {"updated": raw_data["updated"], "odds": odds_client.fetch_all_odds(active_comps=active)}
-    with open("data/odds.json", "w", encoding="utf-8") as f:
-        json.dump(odds_data, f, ensure_ascii=False, indent=2)
+    write_json("data/odds.json", odds_data, indent=2)
 
     print("\n[4/5] Calcolo predizioni + valore...")
     # Crediti: se in questo giro non abbiamo interrogato l'API (nessuna partita
@@ -413,6 +415,9 @@ def build_output():
     n_rec = reconcile_results(plog, raw_data["competitions"])
     for comp_id, comp in output["competitions"].items():
         log_predictions(plog, comp_id, comp["name"], comp["fixtures"])
+    n_tolte = prune_log(plog)
+    if n_tolte:
+        print(f"    registro sfoltito: {n_tolte} previsioni oltre i {PRUNE_DAYS} giorni")
     save_log(plog)
     track = build_track_record(plog)
     track["results"] = build_results(plog)
@@ -420,10 +425,8 @@ def build_output():
     print(f"    risultati reali disponibili all'app: {len(track['results'])}")
     print(f"    {n_rec} risultati agganciati | {track['graded']} valutate, {track['pending']} in attesa | value bet: {track['valueBets']['n']} (P&L {track['valueBets']['profitUnits']:+.2f} u)")
 
-    with open("data/fixtures_processed.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-    with open("data/elo_ratings.json", "w", encoding="utf-8") as f:
-        json.dump(elo_ratings, f, ensure_ascii=False, indent=2)
+    write_json("data/fixtures_processed.json", output, indent=2)
+    write_json("data/elo_ratings.json", elo_ratings, indent=2)
 
     print("\n" + "=" * 60)
     print("COMPLETATO!")
