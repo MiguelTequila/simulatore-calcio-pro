@@ -271,30 +271,49 @@ def kelly_fraction(p, dec_odds):
     return max(0.0, (p * dec_odds - 1) / b)
 
 
+def price_set(odds):
+    """Quale quota usare per misurare il valore.
+    Prima scelta: i bookmaker su cui giochi davvero (BOOK_PREF in odds_client).
+    Se per quell'esito non ce l'hanno, si usa la migliore del mercato, ma la
+    riga viene marcata: potresti non riuscire a prenderla.
+    Le medie di tutti i bookmaker NON si toccano: servono alla calibrazione."""
+    play = odds.get("playable") or {}
+    best = odds.get("best") or odds
+    prezzi, fonte = {}, {}
+    for k in ("1", "X", "2", "over25", "under25", "gg", "ng"):
+        if play.get(k):
+            prezzi[k], fonte[k] = play[k], "giocabile"
+        elif best.get(k):
+            prezzi[k], fonte[k] = best[k], "mercato"
+    return prezzi, fonte
+
+
 def compute_value(pred, odds, kelly_cap=0.05, edge_min=0.03):
-    """Confronta prob. del modello con la quota MIGLIORE disponibile.
+    """Confronta prob. del modello con la quota che puoi GIOCARE davvero.
     edge = p_modello * quota - 1. Kelly mostrato a meta' (piu' prudente),
     limitato a kelly_cap del bankroll."""
     if not odds:
         return None
-    best = odds.get("best", odds)  # se non c'e' 'best', usa le quote medie
+    prezzi, fonte = price_set(odds)
     markets = {
-        "1": (pred["p1"], best.get("1")),
-        "X": (pred["px"], best.get("X")),
-        "2": (pred["p2"], best.get("2")),
-        "Over 2.5": (pred["p_over25"], best.get("over25")),
-        "Under 2.5": (pred["p_under25"], best.get("under25")),
-        "Goal (GG)": (pred["p_gg"], best.get("gg")),
-        "NoGoal (NG)": (pred["p_ng"], best.get("ng")),
+        "1": (pred["p1"], "1"),
+        "X": (pred["px"], "X"),
+        "2": (pred["p2"], "2"),
+        "Over 2.5": (pred["p_over25"], "over25"),
+        "Under 2.5": (pred["p_under25"], "under25"),
+        "Goal (GG)": (pred["p_gg"], "gg"),
+        "NoGoal (NG)": (pred["p_ng"], "ng"),
     }
     rows = []
-    for name, (p, q) in markets.items():
+    for name, (p, chiave) in markets.items():
+        q = prezzi.get(chiave)
         if not q or q <= 1:
             continue
         edge = p * q - 1
         half_kelly = min(kelly_cap, kelly_fraction(p, q) / 2)
         rows.append({"market": name, "p": round(p, 4), "odds": round(q, 3),
-                     "edge": round(edge, 4), "kelly": round(half_kelly, 4)})
+                     "edge": round(edge, 4), "kelly": round(half_kelly, 4),
+                     "oddsFrom": fonte.get(chiave)})
     rows.sort(key=lambda r: r["edge"], reverse=True)
     bet = rows[0] if rows and rows[0]["edge"] >= edge_min else None
     return {"rows": rows, "bestBet": bet}
