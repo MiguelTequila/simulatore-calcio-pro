@@ -1,7 +1,7 @@
 {
- "graded": 631,
- "pending": 431,
- "brier": 0.2131,
+ "graded": 634,
+ "pending": 428,
+ "brier": 0.2134,
  "calibration": [
   {
    "bin": "0-10%",
@@ -17,33 +17,33 @@
   },
   {
    "bin": "20-30%",
-   "n": 820,
-   "avgPred": 0.2464,
+   "n": 824,
+   "avgPred": 0.2463,
    "actualFreq": 0.2573
   },
   {
    "bin": "30-40%",
-   "n": 556,
-   "avgPred": 0.3496,
-   "actualFreq": 0.3525
+   "n": 560,
+   "avgPred": 0.3497,
+   "actualFreq": 0.3554
   },
   {
    "bin": "40-50%",
-   "n": 459,
-   "avgPred": 0.4476,
-   "actualFreq": 0.4815
+   "n": 465,
+   "avgPred": 0.4473,
+   "actualFreq": 0.4796
   },
   {
    "bin": "50-60%",
-   "n": 346,
-   "avgPred": 0.5516,
-   "actualFreq": 0.5029
+   "n": 351,
+   "avgPred": 0.552,
+   "actualFreq": 0.5043
   },
   {
    "bin": "60-70%",
-   "n": 361,
-   "avgPred": 0.6486,
-   "actualFreq": 0.6288
+   "n": 363,
+   "avgPred": 0.6483,
+   "actualFreq": 0.6253
   },
   {
    "bin": "70-80%",
@@ -67,21 +67,21 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1893,
-   "brier": 0.1995,
+   "n": 1902,
+   "brier": 0.1997,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 315,
-     "pred": 0.6383,
-     "actual": 0.5778,
-     "gap": -0.0606
+     "n": 316,
+     "pred": 0.6381,
+     "actual": 0.5759,
+     "gap": -0.0621
     },
     "incerto": {
-     "n": 1578,
-     "pred": 0.2724,
-     "actual": 0.2845,
-     "gap": 0.0121
+     "n": 1586,
+     "pred": 0.2726,
+     "actual": 0.285,
+     "gap": 0.0124
     }
    },
    "calibration": [
@@ -99,27 +99,27 @@
     },
     {
      "bin": "20-30%",
-     "n": 671,
-     "avgPred": 0.2444,
+     "n": 675,
+     "avgPred": 0.2443,
      "actualFreq": 0.2444
     },
     {
      "bin": "30-40%",
-     "n": 284,
-     "avgPred": 0.3472,
-     "actualFreq": 0.3556
+     "n": 286,
+     "avgPred": 0.347,
+     "actualFreq": 0.3566
     },
     {
      "bin": "40-50%",
-     "n": 254,
+     "n": 256,
      "avgPred": 0.4498,
-     "actualFreq": 0.4803
+     "actualFreq": 0.4805
     },
     {
      "bin": "50-60%",
-     "n": 141,
+     "n": 142,
      "avgPred": 0.5465,
-     "actualFreq": 0.4823
+     "actualFreq": 0.4789
     },
     {
      "bin": "60-70%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1262,
-   "brier": 0.2308,
+   "n": 1268,
+   "brier": 0.2311,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 631,
-     "pred": 0.6778,
-     "actual": 0.6307,
-     "gap": -0.0471
+     "n": 634,
+     "pred": 0.6774,
+     "actual": 0.6293,
+     "gap": -0.0481
     },
     "incerto": {
-     "n": 631,
-     "pred": 0.3222,
-     "actual": 0.3693,
-     "gap": 0.0471
+     "n": 634,
+     "pred": 0.3226,
+     "actual": 0.3707,
+     "gap": 0.0481
     }
    },
    "calibration": [
@@ -187,27 +187,27 @@
     },
     {
      "bin": "30-40%",
-     "n": 232,
-     "avgPred": 0.352,
-     "actualFreq": 0.3578
+     "n": 233,
+     "avgPred": 0.3522,
+     "actualFreq": 0.3605
     },
     {
      "bin": "40-50%",
-     "n": 160,
-     "avgPred": 0.4412,
+     "n": 162,
+     "avgPred": 0.4408,
      "actualFreq": 0.4938
     },
     {
      "bin": "50-60%",
-     "n": 160,
-     "avgPred": 0.5588,
+     "n": 162,
+     "avgPred": 0.5592,
      "actualFreq": 0.5062
     },
     {
      "bin": "60-70%",
-     "n": 232,
-     "avgPred": 0.648,
-     "actualFreq": 0.6422
+     "n": 233,
+     "avgPred": 0.6478,
+     "actualFreq": 0.6395
     },
     {
      "bin": "70-80%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 194,
-   "brier": 0.2304,
+   "n": 200,
+   "brier": 0.2305,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 97,
-     "pred": 0.6097,
-     "actual": 0.6186,
-     "gap": 0.0088
+     "n": 100,
+     "pred": 0.6093,
+     "actual": 0.62,
+     "gap": 0.0107
     },
     "incerto": {
-     "n": 97,
-     "pred": 0.3903,
-     "actual": 0.3814,
-     "gap": -0.0088
+     "n": 100,
+     "pred": 0.3907,
+     "actual": 0.38,
+     "gap": -0.0107
     }
    },
    "calibration": [
@@ -269,27 +269,27 @@
     },
     {
      "bin": "30-40%",
-     "n": 40,
-     "avgPred": 0.3531,
-     "actualFreq": 0.3
+     "n": 41,
+     "avgPred": 0.3541,
+     "actualFreq": 0.3171
     },
     {
      "bin": "40-50%",
-     "n": 45,
-     "avgPred": 0.4579,
-     "actualFreq": 0.4444
+     "n": 47,
+     "avgPred": 0.4558,
+     "actualFreq": 0.4255
     },
     {
      "bin": "50-60%",
-     "n": 45,
-     "avgPred": 0.5421,
-     "actualFreq": 0.5556
+     "n": 47,
+     "avgPred": 0.5442,
+     "actualFreq": 0.5745
     },
     {
      "bin": "60-70%",
-     "n": 40,
-     "avgPred": 0.6469,
-     "actualFreq": 0.7
+     "n": 41,
+     "avgPred": 0.6459,
+     "actualFreq": 0.6829
     },
     {
      "bin": "70-80%",
@@ -1377,21 +1377,21 @@
  },
  "byVersion": [
   {
-   "n": 1,
-   "nPrev": 7,
-   "brier": 0.173,
+   "n": 4,
+   "nPrev": 28,
+   "brier": 0.2373,
    "confidence": {
     "sicuro": {
-     "n": 2,
-     "pred": 0.5873,
-     "actual": 1.0,
-     "gap": 0.4127
+     "n": 9,
+     "pred": 0.5876,
+     "actual": 0.5556,
+     "gap": -0.032
     },
     "incerto": {
-     "n": 5,
-     "pred": 0.3651,
-     "actual": 0.2,
-     "gap": -0.1651
+     "n": 19,
+     "pred": 0.3533,
+     "actual": 0.3684,
+     "gap": 0.0152
     }
    },
    "calibration": [
@@ -1409,33 +1409,33 @@
     },
     {
      "bin": "20-30%",
-     "n": 1,
-     "avgPred": 0.2314,
-     "actualFreq": 0.0
+     "n": 5,
+     "avgPred": 0.2272,
+     "actualFreq": 0.2
     },
     {
      "bin": "30-40%",
-     "n": 1,
-     "avgPred": 0.3582,
-     "actualFreq": 0.0
+     "n": 5,
+     "avgPred": 0.36,
+     "actualFreq": 0.6
     },
     {
      "bin": "40-50%",
-     "n": 3,
-     "avgPred": 0.412,
+     "n": 9,
+     "avgPred": 0.4196,
      "actualFreq": 0.3333
     },
     {
      "bin": "50-60%",
-     "n": 2,
-     "avgPred": 0.5873,
-     "actualFreq": 1.0
+     "n": 7,
+     "avgPred": 0.583,
+     "actualFreq": 0.7143
     },
     {
      "bin": "60-70%",
-     "n": 0,
-     "avgPred": null,
-     "actualFreq": null
+     "n": 2,
+     "avgPred": 0.6037,
+     "actualFreq": 0.0
     },
     {
      "bin": "70-80%",
@@ -1457,7 +1457,7 @@
     }
    ],
    "dal": "2026-11-06",
-   "al": "2026-11-06",
+   "al": "2026-11-07",
    "valueBets": {
     "n": 0,
     "wins": 0,
@@ -1709,19 +1709,19 @@
   },
   "Goal/NoGoal": {
    "modello": {
-    "n": 97,
-    "hit": 60,
-    "pct": 0.6186
+    "n": 100,
+    "hit": 62,
+    "pct": 0.62
    },
    "sempreGoal": {
-    "n": 97,
-    "hit": 56,
-    "pct": 0.5773
+    "n": 100,
+    "hit": 58,
+    "pct": 0.58
    },
    "sempreNoGoal": {
-    "n": 97,
-    "hit": 41,
-    "pct": 0.4227
+    "n": 100,
+    "hit": 42,
+    "pct": 0.42
    }
   }
  },
@@ -1746,11 +1746,11 @@
    },
    {
     "big": false,
-    "n": 577,
-    "predOver": 0.6656,
-    "actualOver": 0.6326,
-    "gap": -0.033,
-    "err": 0.0201,
+    "n": 580,
+    "predOver": 0.6652,
+    "actualOver": 0.631,
+    "gap": -0.0342,
+    "err": 0.02,
     "under": {
      "n": 372,
      "profitUnits": -55.59,
@@ -1760,9 +1760,9 @@
    }
   ],
   "verdetto": {
-   "differenza": -0.1185,
+   "differenza": -0.1173,
    "errore": 0.0709,
-   "volteErrore": 1.67,
+   "volteErrore": 1.65,
    "usabile": false
   }
  },
@@ -7445,6 +7445,33 @@
    "gg": true,
    "d": "2026-11-06",
    "n": "Venezia FC - Udinese Calcio"
+  },
+  "558532": {
+   "h": 1,
+   "a": 1,
+   "o": "X",
+   "ov": false,
+   "gg": true,
+   "d": "2026-11-07",
+   "n": "Torino FC - US Lecce"
+  },
+  "558534": {
+   "h": 1,
+   "a": 0,
+   "o": "1",
+   "ov": false,
+   "gg": false,
+   "d": "2026-11-07",
+   "n": "Cagliari Calcio - Frosinone Calcio"
+  },
+  "558535": {
+   "h": 1,
+   "a": 2,
+   "o": "2",
+   "ov": true,
+   "gg": true,
+   "d": "2026-11-07",
+   "n": "Parma Calcio 1913 - Bologna FC 1909"
   }
  }
 }
