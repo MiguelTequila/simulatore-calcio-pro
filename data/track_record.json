@@ -1,6 +1,6 @@
 {
- "graded": 639,
- "pending": 423,
+ "graded": 640,
+ "pending": 422,
  "brier": 0.2134,
  "calibration": [
   {
@@ -17,33 +17,33 @@
   },
   {
    "bin": "20-30%",
-   "n": 829,
+   "n": 830,
    "avgPred": 0.2462,
-   "actualFreq": 0.2569
+   "actualFreq": 0.2578
   },
   {
    "bin": "30-40%",
-   "n": 570,
-   "avgPred": 0.3499,
-   "actualFreq": 0.3561
+   "n": 573,
+   "avgPred": 0.3501,
+   "actualFreq": 0.3543
   },
   {
    "bin": "40-50%",
-   "n": 472,
+   "n": 473,
    "avgPred": 0.4469,
-   "actualFreq": 0.4809
+   "actualFreq": 0.4799
   },
   {
    "bin": "50-60%",
-   "n": 355,
-   "avgPred": 0.5525,
-   "actualFreq": 0.5042
+   "n": 356,
+   "avgPred": 0.5526,
+   "actualFreq": 0.5056
   },
   {
    "bin": "60-70%",
-   "n": 368,
-   "avgPred": 0.648,
-   "actualFreq": 0.6223
+   "n": 369,
+   "avgPred": 0.6479,
+   "actualFreq": 0.6233
   },
   {
    "bin": "70-80%",
@@ -67,8 +67,8 @@
  "groups": [
   {
    "group": "1X2",
-   "n": 1917,
-   "brier": 0.1995,
+   "n": 1920,
+   "brier": 0.1997,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
@@ -78,9 +78,9 @@
      "gap": -0.0616
     },
     "incerto": {
-     "n": 1600,
-     "pred": 0.2728,
-     "actual": 0.285,
+     "n": 1603,
+     "pred": 0.2729,
+     "actual": 0.2851,
      "gap": 0.0122
     }
    },
@@ -99,15 +99,15 @@
     },
     {
      "bin": "20-30%",
-     "n": 679,
+     "n": 680,
      "avgPred": 0.2442,
-     "actualFreq": 0.2445
+     "actualFreq": 0.2456
     },
     {
      "bin": "30-40%",
-     "n": 291,
-     "avgPred": 0.3471,
-     "actualFreq": 0.354
+     "n": 293,
+     "avgPred": 0.3473,
+     "actualFreq": 0.3515
     },
     {
      "bin": "40-50%",
@@ -149,21 +149,21 @@
   },
   {
    "group": "Over/Under",
-   "n": 1278,
-   "brier": 0.2315,
+   "n": 1280,
+   "brier": 0.2314,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 639,
-     "pred": 0.6769,
-     "actual": 0.6275,
-     "gap": -0.0493
+     "n": 640,
+     "pred": 0.6767,
+     "actual": 0.6281,
+     "gap": -0.0486
     },
     "incerto": {
-     "n": 639,
-     "pred": 0.3231,
-     "actual": 0.3725,
-     "gap": 0.0493
+     "n": 640,
+     "pred": 0.3233,
+     "actual": 0.3719,
+     "gap": 0.0486
     }
    },
    "calibration": [
@@ -193,15 +193,15 @@
     },
     {
      "bin": "40-50%",
-     "n": 165,
-     "avgPred": 0.4403,
-     "actualFreq": 0.497
+     "n": 166,
+     "avgPred": 0.4401,
+     "actualFreq": 0.494
     },
     {
      "bin": "50-60%",
-     "n": 165,
-     "avgPred": 0.5597,
-     "actualFreq": 0.503
+     "n": 166,
+     "avgPred": 0.5599,
+     "actualFreq": 0.506
     },
     {
      "bin": "60-70%",
@@ -231,21 +231,21 @@
   },
   {
    "group": "Goal/NoGoal",
-   "n": 210,
-   "brier": 0.2305,
+   "n": 212,
+   "brier": 0.2298,
    "bias": 0.0,
    "confidence": {
     "sicuro": {
-     "n": 105,
+     "n": 106,
      "pred": 0.6105,
-     "actual": 0.619,
-     "gap": 0.0085
+     "actual": 0.6226,
+     "gap": 0.0122
     },
     "incerto": {
-     "n": 105,
+     "n": 106,
      "pred": 0.3895,
-     "actual": 0.381,
-     "gap": -0.0085
+     "actual": 0.3774,
+     "gap": -0.0122
     }
    },
    "calibration": [
@@ -269,9 +269,9 @@
     },
     {
      "bin": "30-40%",
-     "n": 44,
-     "avgPred": 0.3563,
-     "actualFreq": 0.3409
+     "n": 45,
+     "avgPred": 0.3571,
+     "actualFreq": 0.3333
     },
     {
      "bin": "40-50%",
@@ -287,9 +287,9 @@
     },
     {
      "bin": "60-70%",
-     "n": 44,
-     "avgPred": 0.6437,
-     "actualFreq": 0.6591
+     "n": 45,
+     "avgPred": 0.6429,
+     "actualFreq": 0.6667
     },
     {
      "bin": "70-80%",
@@ -1377,21 +1377,21 @@
  },
  "byVersion": [
   {
-   "n": 9,
-   "nPrev": 63,
-   "brier": 0.2272,
+   "n": 10,
+   "nPrev": 70,
+   "brier": 0.2266,
    "confidence": {
     "sicuro": {
-     "n": 20,
-     "pred": 0.6197,
-     "actual": 0.55,
-     "gap": -0.0697
+     "n": 22,
+     "pred": 0.6175,
+     "actual": 0.5909,
+     "gap": -0.0266
     },
     "incerto": {
-     "n": 43,
-     "pred": 0.3397,
-     "actual": 0.3721,
-     "gap": 0.0324
+     "n": 48,
+     "pred": 0.342,
+     "actual": 0.3542,
+     "gap": 0.0122
     }
    },
    "calibration": [
@@ -1409,33 +1409,33 @@
     },
     {
      "bin": "20-30%",
-     "n": 10,
-     "avgPred": 0.2312,
-     "actualFreq": 0.2
+     "n": 11,
+     "avgPred": 0.2311,
+     "actualFreq": 0.2727
     },
     {
      "bin": "30-40%",
-     "n": 15,
-     "avgPred": 0.3629,
-     "actualFreq": 0.4667
+     "n": 18,
+     "avgPred": 0.3671,
+     "actualFreq": 0.3889
     },
     {
      "bin": "40-50%",
-     "n": 16,
-     "avgPred": 0.4218,
-     "actualFreq": 0.4375
+     "n": 17,
+     "avgPred": 0.4214,
+     "actualFreq": 0.4118
     },
     {
      "bin": "50-60%",
-     "n": 11,
+     "n": 12,
      "avgPred": 0.586,
-     "actualFreq": 0.6364
+     "actualFreq": 0.6667
     },
     {
      "bin": "60-70%",
-     "n": 7,
-     "avgPred": 0.6172,
-     "actualFreq": 0.2857
+     "n": 8,
+     "avgPred": 0.6157,
+     "actualFreq": 0.375
     },
     {
      "bin": "70-80%",
@@ -1709,19 +1709,19 @@
   },
   "Goal/NoGoal": {
    "modello": {
-    "n": 105,
-    "hit": 65,
-    "pct": 0.619
+    "n": 106,
+    "hit": 66,
+    "pct": 0.6226
    },
    "sempreGoal": {
-    "n": 105,
-    "hit": 60,
-    "pct": 0.5714
+    "n": 106,
+    "hit": 61,
+    "pct": 0.5755
    },
    "sempreNoGoal": {
-    "n": 105,
+    "n": 106,
     "hit": 45,
-    "pct": 0.4286
+    "pct": 0.4245
    }
   }
  },
@@ -1746,11 +1746,11 @@
    },
    {
     "big": false,
-    "n": 585,
-    "predOver": 0.6647,
-    "actualOver": 0.6291,
-    "gap": -0.0357,
-    "err": 0.02,
+    "n": 586,
+    "predOver": 0.6646,
+    "actualOver": 0.6297,
+    "gap": -0.0349,
+    "err": 0.0199,
     "under": {
      "n": 372,
      "profitUnits": -55.59,
@@ -1760,9 +1760,9 @@
    }
   ],
   "verdetto": {
-   "differenza": -0.1158,
+   "differenza": -0.1166,
    "errore": 0.0709,
-   "volteErrore": 1.63,
+   "volteErrore": 1.65,
    "usabile": false
   }
  },
@@ -7517,6 +7517,15 @@
    "gg": false,
    "d": "2026-11-08",
    "n": "FC Internazionale Milano - Como 1907"
+  },
+  "558529": {
+   "h": 2,
+   "a": 2,
+   "o": "X",
+   "ov": true,
+   "gg": true,
+   "d": "2026-11-08",
+   "n": "ACF Fiorentina - Juventus FC"
   }
  }
 }
