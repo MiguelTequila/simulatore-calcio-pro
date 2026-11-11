@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T22:07:26.892004+00:00",
+  "updated": "2026-11-11T23:16:37.499258+00:00",
   "modelVersion": "4.0",
   "marketWeight": 0.6,
   "oddsWindowDays": 7,
@@ -55,8 +55,8 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.5694,
-            "px": 0.2136,
+            "p1": 0.5693,
+            "px": 0.2137,
             "p2": 0.217,
             "pOver25": 0.5632,
             "pUnder25": 0.4368,
@@ -121,26 +121,26 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.398,
-            "lambdaA": 0.71,
+            "lambdaH": 2.397,
+            "lambdaA": 0.711,
             "rho": 0.05,
-            "lambdaHRaw": 2.398,
-            "lambdaARaw": 0.71,
+            "lambdaHRaw": 2.397,
+            "lambdaARaw": 0.711,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.7513,
-            "px": 0.1529,
-            "p2": 0.0957,
+            "p1": 0.751,
+            "px": 0.1531,
+            "p2": 0.0959,
             "pOver25": 0.5992,
             "pUnder25": 0.4008,
-            "pGG": 0.4583,
-            "pNG": 0.5417,
+            "pGG": 0.4586,
+            "pNG": 0.5414,
             "topExact": [
               [
                 "2-0",
-                0.1289
+                0.1288
               ],
               [
                 "1-0",
@@ -148,7 +148,7 @@
               ],
               [
                 "3-0",
-                0.103
+                0.1029
               ]
             ],
             "totalGoalsDist": {
@@ -196,22 +196,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 0.973,
-            "lambdaA": 2.039,
+            "lambdaH": 0.974,
+            "lambdaA": 2.038,
             "rho": 0.05,
-            "lambdaHRaw": 0.973,
-            "lambdaARaw": 2.039,
+            "lambdaHRaw": 0.974,
+            "lambdaARaw": 2.038,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.1775,
-            "px": 0.1978,
-            "p2": 0.6247,
-            "pOver25": 0.579,
-            "pUnder25": 0.421,
-            "pGG": 0.5361,
-            "pNG": 0.4639,
+            "p1": 0.1779,
+            "px": 0.198,
+            "p2": 0.6241,
+            "pOver25": 0.5789,
+            "pUnder25": 0.4211,
+            "pGG": 0.5364,
+            "pNG": 0.4636,
             "topExact": [
               [
                 "0-1",
@@ -219,7 +219,7 @@
               ],
               [
                 "0-2",
-                0.1024
+                0.1023
               ],
               [
                 "1-2",
@@ -280,7 +280,7 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.5792,
+            "p1": 0.5791,
             "px": 0.2087,
             "p2": 0.2121,
             "pOver25": 0.5807,
@@ -355,7 +355,7 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.5716,
+            "p1": 0.5715,
             "px": 0.2127,
             "p2": 0.2157,
             "pOver25": 0.5661,
@@ -421,22 +421,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.134,
-            "lambdaA": 0.917,
+            "lambdaH": 2.133,
+            "lambdaA": 0.918,
             "rho": 0.05,
-            "lambdaHRaw": 2.134,
-            "lambdaARaw": 0.917,
+            "lambdaHRaw": 2.133,
+            "lambdaARaw": 0.918,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6568,
-            "px": 0.1874,
-            "p2": 0.1558,
+            "p1": 0.6566,
+            "px": 0.1875,
+            "p2": 0.1559,
             "pOver25": 0.5874,
             "pUnder25": 0.4126,
-            "pGG": 0.5245,
-            "pNG": 0.4755,
+            "pGG": 0.5246,
+            "pNG": 0.4754,
             "topExact": [
               [
                 "2-0",
@@ -496,18 +496,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.514,
+            "lambdaH": 1.515,
             "lambdaA": 1.52,
             "rho": 0.05,
-            "lambdaHRaw": 1.514,
+            "lambdaHRaw": 1.515,
             "lambdaARaw": 1.52,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3835,
+            "p1": 0.3837,
             "px": 0.2304,
-            "p2": 0.3861,
+            "p2": 0.3859,
             "pOver25": 0.5843,
             "pUnder25": 0.4157,
             "pGG": 0.6038,
@@ -580,13 +580,13 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4922,
+            "p1": 0.4923,
             "px": 0.2204,
-            "p2": 0.2875,
-            "pOver25": 0.6021,
-            "pUnder25": 0.3979,
-            "pGG": 0.6058,
-            "pNG": 0.3942,
+            "p2": 0.2874,
+            "pOver25": 0.602,
+            "pUnder25": 0.398,
+            "pGG": 0.6057,
+            "pNG": 0.3943,
             "topExact": [
               [
                 "1-1",
@@ -603,7 +603,7 @@
             ],
             "totalGoalsDist": {
               "0": 0.0391,
-              "1": 0.1487,
+              "1": 0.1488,
               "2": 0.2101,
               "3": 0.2237,
               "4": 0.1743,
@@ -646,26 +646,26 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.194,
-            "lambdaA": 1.921,
+            "lambdaH": 1.195,
+            "lambdaA": 1.92,
             "rho": 0.05,
-            "lambdaHRaw": 1.194,
-            "lambdaARaw": 1.921,
+            "lambdaHRaw": 1.195,
+            "lambdaARaw": 1.92,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2403,
-            "px": 0.2118,
-            "p2": 0.548,
+            "p1": 0.2408,
+            "px": 0.2119,
+            "p2": 0.5474,
             "pOver25": 0.6017,
             "pUnder25": 0.3983,
-            "pGG": 0.5897,
-            "pNG": 0.4103,
+            "pGG": 0.5899,
+            "pNG": 0.4101,
             "topExact": [
               [
                 "1-2",
-                0.0979
+                0.0978
               ],
               [
                 "1-1",
@@ -682,8 +682,8 @@
               "2": 0.2104,
               "3": 0.2238,
               "4": 0.1742,
-              "5": 0.1086,
-              "6": 0.0564,
+              "5": 0.1085,
+              "6": 0.0563,
               "7+": 0.0388
             },
             "value": null
@@ -721,22 +721,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.668,
-            "lambdaA": 1.492,
+            "lambdaH": 1.669,
+            "lambdaA": 1.491,
             "rho": 0.05,
-            "lambdaHRaw": 1.668,
-            "lambdaARaw": 1.492,
+            "lambdaHRaw": 1.669,
+            "lambdaARaw": 1.491,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4254,
+            "p1": 0.4257,
             "px": 0.2245,
-            "p2": 0.3501,
-            "pOver25": 0.6116,
-            "pUnder25": 0.3884,
-            "pGG": 0.6236,
-            "pNG": 0.3764,
+            "p2": 0.3498,
+            "pOver25": 0.6115,
+            "pUnder25": 0.3885,
+            "pGG": 0.6235,
+            "pNG": 0.3765,
             "topExact": [
               [
                 "1-1",
@@ -752,14 +752,14 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0371,
+              "0": 0.0372,
               "1": 0.1447,
               "2": 0.2066,
               "3": 0.2232,
               "4": 0.1764,
               "5": 0.1115,
               "6": 0.0587,
-              "7+": 0.0418
+              "7+": 0.0417
             },
             "value": null
           }
@@ -796,22 +796,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.246,
-            "lambdaA": 1.715,
+            "lambdaH": 1.247,
+            "lambdaA": 1.714,
             "rho": 0.05,
-            "lambdaHRaw": 1.246,
-            "lambdaARaw": 1.715,
+            "lambdaHRaw": 1.247,
+            "lambdaARaw": 1.714,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2841,
+            "p1": 0.2844,
             "px": 0.2266,
-            "p2": 0.4893,
+            "p2": 0.4889,
             "pOver25": 0.5679,
             "pUnder25": 0.4321,
-            "pGG": 0.5787,
-            "pNG": 0.4213,
+            "pGG": 0.5788,
+            "pNG": 0.4212,
             "topExact": [
               [
                 "1-1",
@@ -871,17 +871,17 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.043,
+            "lambdaH": 2.042,
             "lambdaA": 0.988,
             "rho": 0.05,
-            "lambdaHRaw": 2.043,
+            "lambdaHRaw": 2.042,
             "lambdaARaw": 0.988,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6219,
-            "px": 0.1979,
+            "p1": 0.6218,
+            "px": 0.198,
             "p2": 0.1802,
             "pOver25": 0.5831,
             "pUnder25": 0.4169,
@@ -894,7 +894,7 @@
               ],
               [
                 "2-0",
-                0.1009
+                0.1008
               ],
               [
                 "2-1",
@@ -946,22 +946,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.21,
-            "lambdaA": 1.819,
+            "lambdaH": 1.211,
+            "lambdaA": 1.818,
             "rho": 0.05,
-            "lambdaHRaw": 1.21,
-            "lambdaARaw": 1.819,
+            "lambdaHRaw": 1.211,
+            "lambdaARaw": 1.818,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2591,
-            "px": 0.2193,
-            "p2": 0.5216,
+            "p1": 0.2595,
+            "px": 0.2194,
+            "p2": 0.5211,
             "pOver25": 0.5831,
             "pUnder25": 0.4169,
-            "pGG": 0.5826,
-            "pNG": 0.4174,
+            "pGG": 0.5828,
+            "pNG": 0.4172,
             "topExact": [
               [
                 "1-1",
@@ -969,7 +969,7 @@
               ],
               [
                 "1-2",
-                0.0969
+                0.0968
               ],
               [
                 "0-1",
@@ -977,12 +977,12 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.043,
+              "0": 0.0431,
               "1": 0.1572,
               "2": 0.2167,
               "3": 0.2242,
               "4": 0.1698,
-              "5": 0.1029,
+              "5": 0.1028,
               "6": 0.0519,
               "7+": 0.0344
             },
@@ -1022,21 +1022,21 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 2.17,
-            "lambdaA": 0.892,
+            "lambdaA": 0.893,
             "rho": 0.05,
             "lambdaHRaw": 2.17,
-            "lambdaARaw": 0.892,
+            "lambdaARaw": 0.893,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6696,
+            "p1": 0.6694,
             "px": 0.1832,
-            "p2": 0.1473,
+            "p2": 0.1474,
             "pOver25": 0.5899,
             "pUnder25": 0.4101,
-            "pGG": 0.5183,
-            "pNG": 0.4817,
+            "pGG": 0.5184,
+            "pNG": 0.4816,
             "topExact": [
               [
                 "2-0",
@@ -1096,18 +1096,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.447,
-            "lambdaA": 1.644,
+            "lambdaH": 1.448,
+            "lambdaA": 1.643,
             "rho": 0.05,
-            "lambdaHRaw": 1.447,
-            "lambdaARaw": 1.644,
+            "lambdaHRaw": 1.448,
+            "lambdaARaw": 1.643,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.344,
+            "p1": 0.3444,
             "px": 0.227,
-            "p2": 0.4291,
+            "p2": 0.4287,
             "pOver25": 0.5968,
             "pUnder25": 0.4032,
             "pGG": 0.6116,
@@ -1127,12 +1127,12 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.04,
-              "1": 0.1513,
+              "0": 0.0401,
+              "1": 0.1514,
               "2": 0.2118,
               "3": 0.2238,
               "4": 0.173,
-              "5": 0.107,
+              "5": 0.1069,
               "6": 0.0551,
               "7+": 0.0379
             },
@@ -1171,22 +1171,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.159,
-            "lambdaA": 1.938,
+            "lambdaH": 1.16,
+            "lambdaA": 1.936,
             "rho": 0.05,
-            "lambdaHRaw": 1.159,
-            "lambdaARaw": 1.938,
+            "lambdaHRaw": 1.16,
+            "lambdaARaw": 1.936,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2302,
-            "px": 0.2102,
-            "p2": 0.5596,
+            "p1": 0.2307,
+            "px": 0.2103,
+            "p2": 0.5591,
             "pOver25": 0.5977,
             "pUnder25": 0.4023,
-            "pGG": 0.5821,
-            "pNG": 0.4179,
+            "pGG": 0.5823,
+            "pNG": 0.4177,
             "topExact": [
               [
                 "1-2",
@@ -1194,11 +1194,11 @@
               ],
               [
                 "1-1",
-                0.0965
+                0.0966
               ],
               [
                 "0-1",
-                0.0928
+                0.0927
               ]
             ],
             "totalGoalsDist": {
@@ -1246,30 +1246,30 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.787,
-            "lambdaA": 0.448,
+            "lambdaH": 2.785,
+            "lambdaA": 0.449,
             "rho": 0.05,
-            "lambdaHRaw": 2.787,
-            "lambdaARaw": 0.448,
+            "lambdaHRaw": 2.785,
+            "lambdaARaw": 0.449,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.8572,
-            "px": 0.1021,
-            "p2": 0.0407,
-            "pOver25": 0.6243,
-            "pUnder25": 0.3757,
-            "pGG": 0.3362,
-            "pNG": 0.6638,
+            "p1": 0.8568,
+            "px": 0.1023,
+            "p2": 0.0409,
+            "pOver25": 0.6242,
+            "pUnder25": 0.3758,
+            "pGG": 0.3369,
+            "pNG": 0.6631,
             "topExact": [
               [
                 "2-0",
-                0.1541
+                0.154
               ],
               [
                 "3-0",
-                0.1431
+                0.1429
               ],
               [
                 "1-0",
@@ -1278,7 +1278,7 @@
             ],
             "totalGoalsDist": {
               "0": 0.0372,
-              "1": 0.1333,
+              "1": 0.1334,
               "2": 0.2052,
               "3": 0.2239,
               "4": 0.181,
@@ -1335,8 +1335,8 @@
             "p2": 0.2493,
             "pOver25": 0.5645,
             "pUnder25": 0.4355,
-            "pGG": 0.5647,
-            "pNG": 0.4353,
+            "pGG": 0.5648,
+            "pNG": 0.4352,
             "topExact": [
               [
                 "1-1",
@@ -1396,22 +1396,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.547,
+            "lambdaH": 1.548,
             "lambdaA": 1.501,
             "rho": 0.05,
-            "lambdaHRaw": 1.547,
+            "lambdaHRaw": 1.548,
             "lambdaARaw": 1.501,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3951,
+            "p1": 0.3953,
             "px": 0.2298,
-            "p2": 0.3751,
+            "p2": 0.3749,
             "pOver25": 0.5874,
             "pUnder25": 0.4126,
-            "pGG": 0.6062,
-            "pNG": 0.3938,
+            "pGG": 0.6061,
+            "pNG": 0.3939,
             "topExact": [
               [
                 "1-1",
@@ -1471,18 +1471,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.355,
-            "lambdaA": 1.631,
+            "lambdaH": 1.356,
+            "lambdaA": 1.63,
             "rho": 0.05,
-            "lambdaHRaw": 1.355,
-            "lambdaARaw": 1.631,
+            "lambdaHRaw": 1.356,
+            "lambdaARaw": 1.63,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3245,
+            "p1": 0.3248,
             "px": 0.2301,
-            "p2": 0.4454,
+            "p2": 0.4451,
             "pOver25": 0.5735,
             "pUnder25": 0.4265,
             "pGG": 0.5912,
@@ -1490,7 +1490,7 @@
             "topExact": [
               [
                 "1-1",
-                0.106
+                0.1061
               ],
               [
                 "1-2",
@@ -1547,29 +1547,29 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 1.252,
-            "lambdaA": 1.794,
+            "lambdaA": 1.793,
             "rho": 0.05,
             "lambdaHRaw": 1.252,
-            "lambdaARaw": 1.794,
+            "lambdaARaw": 1.793,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2725,
+            "p1": 0.2729,
             "px": 0.2211,
-            "p2": 0.5064,
-            "pOver25": 0.5867,
-            "pUnder25": 0.4133,
-            "pGG": 0.5898,
-            "pNG": 0.4102,
+            "p2": 0.506,
+            "pOver25": 0.5866,
+            "pUnder25": 0.4134,
+            "pGG": 0.5899,
+            "pNG": 0.4101,
             "topExact": [
               [
                 "1-1",
-                0.1015
+                0.1016
               ],
               [
                 "1-2",
-                0.0959
+                0.0958
               ],
               [
                 "0-1",
@@ -1621,22 +1621,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.179,
-            "lambdaA": 1.861,
+            "lambdaH": 1.18,
+            "lambdaA": 1.86,
             "rho": 0.05,
-            "lambdaHRaw": 1.179,
-            "lambdaARaw": 1.861,
+            "lambdaHRaw": 1.18,
+            "lambdaARaw": 1.86,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2456,
-            "px": 0.2162,
-            "p2": 0.5382,
+            "p1": 0.2461,
+            "px": 0.2163,
+            "p2": 0.5376,
             "pOver25": 0.5853,
             "pUnder25": 0.4147,
-            "pGG": 0.5793,
-            "pNG": 0.4207,
+            "pGG": 0.5794,
+            "pNG": 0.4206,
             "topExact": [
               [
                 "1-1",
@@ -1648,7 +1648,7 @@
               ],
               [
                 "0-1",
-                0.0944
+                0.0943
               ]
             ],
             "totalGoalsDist": {
@@ -1697,21 +1697,21 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 1.546,
-            "lambdaA": 1.605,
+            "lambdaA": 1.603,
             "rho": 0.05,
             "lambdaHRaw": 1.546,
-            "lambdaARaw": 1.605,
+            "lambdaARaw": 1.603,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3745,
+            "p1": 0.3748,
             "px": 0.2257,
-            "p2": 0.3998,
-            "pOver25": 0.6094,
-            "pUnder25": 0.3906,
-            "pGG": 0.6233,
-            "pNG": 0.3767,
+            "p2": 0.3994,
+            "pOver25": 0.6093,
+            "pUnder25": 0.3907,
+            "pGG": 0.6232,
+            "pNG": 0.3768,
             "topExact": [
               [
                 "1-1",
@@ -1719,7 +1719,7 @@
               ],
               [
                 "1-2",
-                0.0853
+                0.0852
               ],
               [
                 "2-1",
@@ -1771,26 +1771,26 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.146,
-            "lambdaA": 0.91,
+            "lambdaH": 2.145,
+            "lambdaA": 0.911,
             "rho": 0.05,
-            "lambdaHRaw": 2.146,
-            "lambdaARaw": 0.91,
+            "lambdaHRaw": 2.145,
+            "lambdaARaw": 0.911,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6607,
-            "px": 0.1861,
-            "p2": 0.1532,
+            "p1": 0.6605,
+            "px": 0.1862,
+            "p2": 0.1534,
             "pOver25": 0.5885,
             "pUnder25": 0.4115,
-            "pGG": 0.523,
-            "pNG": 0.477,
+            "pGG": 0.5231,
+            "pNG": 0.4769,
             "topExact": [
               [
                 "2-0",
-                0.1086
+                0.1085
               ],
               [
                 "1-0",
@@ -1855,9 +1855,9 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4278,
+            "p1": 0.428,
             "px": 0.2323,
-            "p2": 0.3398,
+            "p2": 0.3397,
             "pOver25": 0.5676,
             "pUnder25": 0.4324,
             "pGG": 0.5885,
@@ -1873,12 +1873,12 @@
               ],
               [
                 "1-0",
-                0.0875
+                0.0876
               ]
             ],
             "totalGoalsDist": {
               "0": 0.0462,
-              "1": 0.1648,
+              "1": 0.1647,
               "2": 0.2214,
               "3": 0.2241,
               "4": 0.1658,
@@ -1921,22 +1921,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.249,
+            "lambdaH": 2.248,
             "lambdaA": 0.847,
             "rho": 0.05,
-            "lambdaHRaw": 2.249,
+            "lambdaHRaw": 2.248,
             "lambdaARaw": 0.847,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6948,
-            "px": 0.174,
-            "p2": 0.1312,
+            "p1": 0.6946,
+            "px": 0.1741,
+            "p2": 0.1313,
             "pOver25": 0.5969,
             "pUnder25": 0.4031,
-            "pGG": 0.5064,
-            "pNG": 0.4936,
+            "pGG": 0.5065,
+            "pNG": 0.4935,
             "topExact": [
               [
                 "2-0",
@@ -2007,11 +2007,11 @@
             "marketWeight": 0.6,
             "p1": 0.6096,
             "px": 0.2017,
-            "p2": 0.1886,
+            "p2": 0.1887,
             "pOver25": 0.579,
             "pUnder25": 0.421,
-            "pGG": 0.5441,
-            "pNG": 0.4559,
+            "pGG": 0.5442,
+            "pNG": 0.4558,
             "topExact": [
               [
                 "1-0",
@@ -2071,22 +2071,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.034,
+            "lambdaH": 2.033,
             "lambdaA": 0.973,
             "rho": 0.05,
-            "lambdaHRaw": 2.034,
+            "lambdaHRaw": 2.033,
             "lambdaARaw": 0.973,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6236,
+            "p1": 0.6235,
             "px": 0.1983,
-            "p2": 0.1781,
+            "p2": 0.1782,
             "pOver25": 0.5778,
             "pUnder25": 0.4222,
-            "pGG": 0.5357,
-            "pNG": 0.4643,
+            "pGG": 0.5358,
+            "pNG": 0.4642,
             "topExact": [
               [
                 "1-0",
@@ -2094,7 +2094,7 @@
               ],
               [
                 "2-0",
-                0.1024
+                0.1023
               ],
               [
                 "2-1",
@@ -2147,17 +2147,17 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 1.621,
-            "lambdaA": 1.417,
+            "lambdaA": 1.416,
             "rho": 0.05,
             "lambdaHRaw": 1.621,
-            "lambdaARaw": 1.417,
+            "lambdaARaw": 1.416,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4299,
+            "p1": 0.4302,
             "px": 0.229,
-            "p2": 0.341,
+            "p2": 0.3408,
             "pOver25": 0.585,
             "pUnder25": 0.415,
             "pGG": 0.6021,
@@ -2165,7 +2165,7 @@
             "topExact": [
               [
                 "1-1",
-                0.1047
+                0.1046
               ],
               [
                 "2-1",
@@ -2230,9 +2230,9 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4446,
+            "p1": 0.4447,
             "px": 0.2289,
-            "p2": 0.3265,
+            "p2": 0.3264,
             "pOver25": 0.5804,
             "pUnder25": 0.4196,
             "pGG": 0.5968,
@@ -2244,7 +2244,7 @@
               ],
               [
                 "2-1",
-                0.0908
+                0.0909
               ],
               [
                 "1-0",
@@ -2296,22 +2296,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.122,
-            "lambdaA": 1.981,
+            "lambdaH": 1.123,
+            "lambdaA": 1.98,
             "rho": 0.05,
-            "lambdaHRaw": 1.122,
-            "lambdaARaw": 1.981,
+            "lambdaHRaw": 1.123,
+            "lambdaARaw": 1.98,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.2163,
-            "px": 0.2062,
-            "p2": 0.5775,
-            "pOver25": 0.5992,
-            "pUnder25": 0.4008,
-            "pGG": 0.5763,
-            "pNG": 0.4237,
+            "p1": 0.2168,
+            "px": 0.2064,
+            "p2": 0.5769,
+            "pOver25": 0.5991,
+            "pUnder25": 0.4009,
+            "pGG": 0.5765,
+            "pNG": 0.4235,
             "topExact": [
               [
                 "1-2",
@@ -2319,7 +2319,7 @@
               ],
               [
                 "1-1",
-                0.0949
+                0.095
               ],
               [
                 "0-1",
@@ -2327,7 +2327,7 @@
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0399,
+              "0": 0.04,
               "1": 0.1495,
               "2": 0.2114,
               "3": 0.2239,
@@ -2371,10 +2371,10 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.757,
+            "lambdaH": 1.758,
             "lambdaA": 1.171,
             "rho": 0.05,
-            "lambdaHRaw": 1.757,
+            "lambdaHRaw": 1.758,
             "lambdaARaw": 1.171,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
@@ -2383,8 +2383,8 @@
             "p1": 0.5165,
             "px": 0.224,
             "p2": 0.2595,
-            "pOver25": 0.5603,
-            "pUnder25": 0.4397,
+            "pOver25": 0.5604,
+            "pUnder25": 0.4396,
             "pGG": 0.5653,
             "pNG": 0.4347,
             "topExact": [
@@ -2446,22 +2446,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.791,
+            "lambdaH": 1.792,
             "lambdaA": 1.324,
             "rho": 0.05,
-            "lambdaHRaw": 1.791,
+            "lambdaHRaw": 1.792,
             "lambdaARaw": 1.324,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4896,
+            "p1": 0.4898,
             "px": 0.2207,
-            "p2": 0.2897,
-            "pOver25": 0.602,
-            "pUnder25": 0.398,
-            "pGG": 0.6063,
-            "pNG": 0.3937,
+            "p2": 0.2895,
+            "pOver25": 0.6019,
+            "pUnder25": 0.3981,
+            "pGG": 0.6062,
+            "pNG": 0.3938,
             "topExact": [
               [
                 "1-1",
@@ -2531,7 +2531,7 @@
             "lambdaSource": "stima",
             "marketWeight": 0.6,
             "p1": 0.5143,
-            "px": 0.2229,
+            "px": 0.2228,
             "p2": 0.2629,
             "pOver25": 0.5692,
             "pUnder25": 0.4308,
@@ -2556,7 +2556,7 @@
               "1": 0.1636,
               "2": 0.2212,
               "3": 0.2241,
-              "4": 0.1662,
+              "4": 0.1663,
               "5": 0.0987,
               "6": 0.0488,
               "7+": 0.0314
@@ -2596,20 +2596,20 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.547,
-            "lambdaA": 1.515,
+            "lambdaH": 1.548,
+            "lambdaA": 1.514,
             "rho": 0.05,
-            "lambdaHRaw": 1.547,
-            "lambdaARaw": 1.515,
+            "lambdaHRaw": 1.548,
+            "lambdaARaw": 1.514,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3924,
+            "p1": 0.3927,
             "px": 0.2293,
-            "p2": 0.3783,
-            "pOver25": 0.5905,
-            "pUnder25": 0.4095,
+            "p2": 0.3781,
+            "pOver25": 0.5904,
+            "pUnder25": 0.4096,
             "pGG": 0.6086,
             "pNG": 0.3914,
             "topExact": [
@@ -2629,7 +2629,7 @@
             "totalGoalsDist": {
               "0": 0.0413,
               "1": 0.1543,
-              "2": 0.2139,
+              "2": 0.214,
               "3": 0.224,
               "4": 0.1715,
               "5": 0.105,
@@ -2671,22 +2671,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 2.236,
-            "lambdaA": 0.879,
+            "lambdaH": 2.235,
+            "lambdaA": 0.88,
             "rho": 0.05,
-            "lambdaHRaw": 2.236,
-            "lambdaARaw": 0.879,
+            "lambdaHRaw": 2.235,
+            "lambdaARaw": 0.88,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6849,
-            "px": 0.1767,
-            "p2": 0.1384,
+            "p1": 0.6846,
+            "px": 0.1768,
+            "p2": 0.1385,
             "pOver25": 0.6013,
             "pUnder25": 0.3987,
-            "pGG": 0.518,
-            "pNG": 0.482,
+            "pGG": 0.5181,
+            "pNG": 0.4819,
             "topExact": [
               [
                 "2-0",
@@ -2703,7 +2703,7 @@
             ],
             "totalGoalsDist": {
               "0": 0.0401,
-              "1": 0.1472,
+              "1": 0.1473,
               "2": 0.2114,
               "3": 0.224,
               "4": 0.1745,
@@ -2746,18 +2746,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.546,
-            "lambdaA": 1.457,
+            "lambdaH": 1.547,
+            "lambdaA": 1.456,
             "rho": 0.05,
-            "lambdaHRaw": 1.546,
-            "lambdaARaw": 1.457,
+            "lambdaHRaw": 1.547,
+            "lambdaARaw": 1.456,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4038,
+            "p1": 0.404,
             "px": 0.2315,
-            "p2": 0.3647,
+            "p2": 0.3645,
             "pOver25": 0.5773,
             "pUnder25": 0.4227,
             "pGG": 0.5979,
@@ -2830,9 +2830,9 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4561,
-            "px": 0.2273,
-            "p2": 0.3166,
+            "p1": 0.4562,
+            "px": 0.2272,
+            "p2": 0.3165,
             "pOver25": 0.5844,
             "pUnder25": 0.4156,
             "pGG": 0.5983,
@@ -2896,18 +2896,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.642,
+            "lambdaH": 1.643,
             "lambdaA": 1.342,
             "rho": 0.05,
-            "lambdaHRaw": 1.642,
+            "lambdaHRaw": 1.643,
             "lambdaARaw": 1.342,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.451,
+            "p1": 0.4512,
             "px": 0.2297,
-            "p2": 0.3193,
+            "p2": 0.3191,
             "pOver25": 0.5731,
             "pUnder25": 0.4269,
             "pGG": 0.5901,
@@ -2981,8 +2981,8 @@
             "lambdaSource": "stima",
             "marketWeight": 0.6,
             "p1": 0.5684,
-            "px": 0.2098,
-            "p2": 0.2217,
+            "px": 0.2099,
+            "p2": 0.2218,
             "pOver25": 0.5883,
             "pUnder25": 0.4117,
             "pGG": 0.5708,
@@ -3047,17 +3047,17 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 1.486,
-            "lambdaA": 1.603,
+            "lambdaA": 1.602,
             "rho": 0.05,
             "lambdaHRaw": 1.486,
-            "lambdaARaw": 1.603,
+            "lambdaARaw": 1.602,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3607,
-            "px": 0.2278,
-            "p2": 0.4114,
+            "p1": 0.3611,
+            "px": 0.2279,
+            "p2": 0.4111,
             "pOver25": 0.5961,
             "pUnder25": 0.4039,
             "pGG": 0.6124,
@@ -3073,7 +3073,7 @@
               ],
               [
                 "2-1",
-                0.0806
+                0.0807
               ]
             ],
             "totalGoalsDist": {
@@ -3082,9 +3082,9 @@
               "2": 0.212,
               "3": 0.2239,
               "4": 0.1728,
-              "5": 0.1068,
-              "6": 0.055,
-              "7+": 0.0378
+              "5": 0.1067,
+              "6": 0.0549,
+              "7+": 0.0377
             },
             "value": null
           }
@@ -3121,22 +3121,22 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.041,
-            "lambdaA": 2.077,
+            "lambdaH": 1.042,
+            "lambdaA": 2.075,
             "rho": 0.05,
-            "lambdaHRaw": 1.041,
-            "lambdaARaw": 2.077,
+            "lambdaHRaw": 1.042,
+            "lambdaARaw": 2.075,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.187,
-            "px": 0.1966,
-            "p2": 0.6163,
+            "p1": 0.1876,
+            "px": 0.1968,
+            "p2": 0.6156,
             "pOver25": 0.602,
             "pUnder25": 0.398,
-            "pGG": 0.5608,
-            "pNG": 0.4392,
+            "pGG": 0.5611,
+            "pNG": 0.4389,
             "topExact": [
               [
                 "1-2",
@@ -3144,19 +3144,19 @@
               ],
               [
                 "0-1",
-                0.0969
+                0.0968
               ],
               [
                 "0-2",
-                0.0956
+                0.0955
               ]
             ],
             "totalGoalsDist": {
-              "0": 0.0395,
+              "0": 0.0396,
               "1": 0.1478,
-              "2": 0.2106,
+              "2": 0.2107,
               "3": 0.2239,
-              "4": 0.1745,
+              "4": 0.1744,
               "5": 0.1088,
               "6": 0.0565,
               "7+": 0.0384
@@ -3205,13 +3205,13 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4267,
+            "p1": 0.4268,
             "px": 0.23,
-            "p2": 0.3432,
+            "p2": 0.3431,
             "pOver25": 0.5803,
             "pUnder25": 0.4197,
-            "pGG": 0.5988,
-            "pNG": 0.4012,
+            "pGG": 0.5987,
+            "pNG": 0.4013,
             "topExact": [
               [
                 "1-1",
@@ -3280,9 +3280,9 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4163,
-            "px": 0.2315,
-            "p2": 0.3523,
+            "p1": 0.4165,
+            "px": 0.2314,
+            "p2": 0.3521,
             "pOver25": 0.5754,
             "pUnder25": 0.4246,
             "pGG": 0.5957,
@@ -3294,11 +3294,11 @@
               ],
               [
                 "2-1",
-                0.0879
+                0.088
               ],
               [
                 "1-0",
-                0.0842
+                0.0843
               ]
             ],
             "totalGoalsDist": {
@@ -3355,13 +3355,13 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.6683,
+            "p1": 0.6682,
             "px": 0.1839,
-            "p2": 0.1478,
-            "pOver25": 0.5876,
-            "pUnder25": 0.4124,
-            "pGG": 0.517,
-            "pNG": 0.483,
+            "p2": 0.1479,
+            "pOver25": 0.5875,
+            "pUnder25": 0.4125,
+            "pGG": 0.5171,
+            "pNG": 0.4829,
             "topExact": [
               [
                 "2-0",
@@ -3422,17 +3422,17 @@
           "dataQuality": "full",
           "prediction": {
             "lambdaH": 1.469,
-            "lambdaA": 1.598,
+            "lambdaA": 1.597,
             "rho": 0.05,
             "lambdaHRaw": 1.469,
-            "lambdaARaw": 1.598,
+            "lambdaARaw": 1.597,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3576,
+            "p1": 0.3579,
             "px": 0.2286,
-            "p2": 0.4138,
+            "p2": 0.4135,
             "pOver25": 0.5914,
             "pUnder25": 0.4086,
             "pGG": 0.6085,
@@ -3444,7 +3444,7 @@
               ],
               [
                 "1-2",
-                0.0874
+                0.0873
               ],
               [
                 "2-1",
@@ -3505,9 +3505,9 @@
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.4451,
+            "p1": 0.4453,
             "px": 0.2313,
-            "p2": 0.3235,
+            "p2": 0.3234,
             "pOver25": 0.5667,
             "pUnder25": 0.4333,
             "pGG": 0.5858,
@@ -3523,7 +3523,7 @@
               ],
               [
                 "1-0",
-                0.0897
+                0.0898
               ]
             ],
             "totalGoalsDist": {
@@ -3571,18 +3571,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.534,
-            "lambdaA": 1.49,
+            "lambdaH": 1.535,
+            "lambdaA": 1.489,
             "rho": 0.05,
-            "lambdaHRaw": 1.534,
-            "lambdaARaw": 1.49,
+            "lambdaHRaw": 1.535,
+            "lambdaARaw": 1.489,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3943,
+            "p1": 0.3946,
             "px": 0.2308,
-            "p2": 0.3749,
+            "p2": 0.3746,
             "pOver25": 0.5821,
             "pUnder25": 0.4179,
             "pGG": 0.602,
@@ -3721,18 +3721,18 @@
           "odds": null,
           "dataQuality": "full",
           "prediction": {
-            "lambdaH": 1.346,
-            "lambdaA": 1.68,
+            "lambdaH": 1.347,
+            "lambdaA": 1.679,
             "rho": 0.05,
-            "lambdaHRaw": 1.346,
-            "lambdaARaw": 1.68,
+            "lambdaHRaw": 1.347,
+            "lambdaARaw": 1.679,
             "modelVersion": "4.0",
             "leagueAvg": 1.484,
             "lambdaSource": "stima",
             "marketWeight": 0.6,
-            "p1": 0.3135,
-            "px": 0.2273,
-            "p2": 0.4592,
+            "p1": 0.3139,
+            "px": 0.2274,
+            "p2": 0.4588,
             "pOver25": 0.5825,
             "pUnder25": 0.4175,
             "pGG": 0.5964,
@@ -3740,7 +3740,7 @@
             "topExact": [
               [
                 "1-1",
-                0.1042
+                0.1043
               ],
               [
                 "1-2",
